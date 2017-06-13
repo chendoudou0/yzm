@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<root>	
+	<db_param>
+	    <DBHost>120.24.249.45</DBHost>  
+	    <DBUser>yzm</DBUser>
+	    <DBPass>123456</DBPass>
+	    <DBPort>3306</DBPort>
+	    <DBOverTime>2</DBOverTime> 
+	 </db_param>
+	 <redis_param>
+	    <ip>127.0.0.1</ip>  
+	    <port>6379</port>
+	    <time_out>2</time_out> 
+	 </redis_param>
+</root>

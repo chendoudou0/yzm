@@ -1,0 +1,27 @@
+2017-04-26 14:55:01.553 [Debug] [main.cpp:143] server start ! 
+2017-04-26 14:55:01.554 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 14:55:01.563 [Debug]  no android version to be added
+2017-04-26 14:55:01.566 [Debug] no live_show version to be added2017-04-26 14:55:01.569 [Debug] no fitting_online version to be added2017-04-26 14:58:26.579 [Debug] [main.cpp:143] server start ! 
+2017-04-26 14:58:26.579 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 14:58:26.589 [Debug]  no android version to be added
+2017-04-26 14:58:26.592 [Debug] no live_show version to be added2017-04-26 14:58:26.595 [Debug] no fitting_online version to be added2017-04-26 14:58:38.053 [Debug] [main.cpp:143] server start ! 
+2017-04-26 14:58:38.053 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 14:58:38.062 [Debug]  no android version to be added
+2017-04-26 14:58:38.065 [Debug] no live_show version to be added2017-04-26 14:58:38.068 [Debug] no fitting_online version to be added2017-04-26 14:59:55.249 [Debug] [main.cpp:143] server start ! 
+2017-04-26 14:59:55.250 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 14:59:55.260 [Debug]  no android version to be added
+2017-04-26 14:59:55.264 [Debug] no live_show version to be added2017-04-26 14:59:55.267 [Debug] no fitting_online version to be added2017-04-26 15:01:12.697 [Debug] [main.cpp:143] server start ! 
+2017-04-26 15:01:12.697 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 15:01:12.721 [Debug]  no android version to be added
+2017-04-26 15:01:12.731 [Debug] no live_show version to be added2017-04-26 15:01:12.742 [Debug] no fitting_online version to be added2017-04-26 15:11:14.051 [Debug] [main.cpp:143] server start ! 
+2017-04-26 15:11:14.051 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 15:11:14.078 [Debug]  no android version to be added
+2017-04-26 15:11:20.847 [Debug]  add version successfully, version name  live1.1.2.0892
+2017-04-26 15:11:32.065 [Debug]  add version successfully, version name  live1.1.2.0893
+2017-04-26 15:11:32.087 [Debug] no fitting_online version to be added2017-04-26 15:19:08.439 [Debug] [main.cpp:143] server start ! 
+2017-04-26 15:19:08.439 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 15:19:08.489 [Debug]  no android version to be added
+2017-04-26 15:19:08.509 [Debug] no live_show version to be added2017-04-26 15:19:08.527 [Debug] no fitting_online version to be added2017-04-26 15:19:22.301 [Debug] [main.cpp:143] server start ! 
+2017-04-26 15:19:22.301 [Error] [DBOperator.cpp:92]  read XmlConfig error 
+2017-04-26 15:19:22.345 [Debug]  no android version to be added
+2017-04-26 15:19:22.361 [Debug] no live_show version to be added2017-04-26 15:19:22.379 [Debug] no fitting_online version to be added
