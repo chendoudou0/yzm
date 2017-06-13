@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="GB2312" ?>
-<root>	
-    <DBHost>120.24.249.45</DBHost>  
-    <DBUser>yzm</DBUser>
-    <DBPass>123456</DBPass>
-    <DBPort>3306</DBPort>
-    <DBOverTime>2</DBOverTime> 
-</root>
