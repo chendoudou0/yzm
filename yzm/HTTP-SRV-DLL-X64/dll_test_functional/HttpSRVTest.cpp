@@ -51,20 +51,6 @@ void  CT::start(){
 
 }
 
-int httpCallBack2(const RecvInfo& pRecvInfo, string&  response){
-	
-	cout << "httpCallBack2 receive : " << pRecvInfo.data_ << endl;
-	cout << "from  : " << pRecvInfo.client_ip_ << endl;
-
-	response = "hello";
-
-	return 0;
-}
-
-void  test_exception(){
-	throw exception("test");
-}
-
 int main()
 { 
 	CT  ct;
@@ -72,7 +58,7 @@ int main()
 	////////////////////////////////////////////
 	std::vector<std::thread>  tvec;
 	HttpClient  httpCli;
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 15; i++)
 	{
 		tvec.emplace_back([&](){   
 			std::string  send;
@@ -92,14 +78,6 @@ int main()
 		th.join();
 	}
 
-// 	try   
-// 	{
-// 		test_exception();
-// 	}
-// 	catch (exception& e)   
-// 	{
-// 		cout << "catch exception" << endl;
-// 	}
 
 	while (_getch() != 'q');
 	return 0;

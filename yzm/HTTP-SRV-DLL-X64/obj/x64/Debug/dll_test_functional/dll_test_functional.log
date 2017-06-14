@@ -1,9 +1,9 @@
-﻿Build started 2017/6/9 11:36:20.
-     1>Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\dll_test_functional\dll_test_functional.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2017/6/14 11:37:13.
+     1>Project "D:\git_hub\yzm\HTTP-SRV-DLL-X64\dll_test_functional\dll_test_functional.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test_functional\\" /Fd"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test_functional\vc120.pdb" /Gd /TP /errorReport:prompt HttpSRVTest.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\git_hub\yzm\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test_functional\\" /Fd"D:\git_hub\yzm\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test_functional\vc120.pdb" /Gd /TP /errorReport:prompt HttpSRVTest.cpp
          HttpSRVTest.cpp
-     1>d:\baidunetdiskdownload\source\pocosource__\http-srv-dll-x64\dll_test_functional\..\HttpServer\HttpTool.h(68): warning C4251: 'HttpClient::ImpUPtr_' : class 'std::unique_ptr<HttpClient::Imp,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'HttpClient'
+     1>d:\git_hub\yzm\http-srv-dll-x64\dll_test_functional\..\HttpServer\HttpTool.h(68): warning C4251: 'HttpClient::ImpUPtr_' : class 'std::unique_ptr<HttpClient::Imp,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'HttpClient'
                  with
                  [
                      _Ty=HttpClient::Imp
@@ -17,10 +17,10 @@
          ,            _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<char>>>
                  ]
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.lib" /MACHINE:X64 "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test_functional\HttpSRVTest.obj"
-         dll_test_functional.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.exe
-     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\dll_test_functional\dll_test_functional.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\git_hub\yzm\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\git_hub\yzm\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\git_hub\yzm\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.lib" /MACHINE:X64 "D:\git_hub\yzm\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test_functional\HttpSRVTest.obj"
+         dll_test_functional.vcxproj -> D:\git_hub\yzm\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test_functional.exe
+     1>Done Building Project "D:\git_hub\yzm\HTTP-SRV-DLL-X64\dll_test_functional\dll_test_functional.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.54
+Time Elapsed 00:00:00.69
