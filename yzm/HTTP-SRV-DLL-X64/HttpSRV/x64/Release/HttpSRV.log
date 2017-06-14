@@ -1,0 +1,18 @@
+﻿Build started 2017/5/31 12:06:53.
+     1>Project "D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\HttpSRV\HttpSRV.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"D:\code\poco-1.7.6\Net\include" /I"D:\code\poco-1.7.6\Foundation\include" /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D HTTPSRV_EXPORTS /D _WINDLL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt HttpSRV.cpp
+         HttpSRV.cpp
+     1>HttpSRV.cpp(55): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>HttpSRV.cpp(105): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\x64\Release\HttpSRV.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\code\poco-1.7.6\lib64" PocoNet.lib PocoFoundation.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\x64\Release\HttpSRV.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\x64\Release\HttpSRV.lib" /MACHINE:X64 /DLL x64\Release\HttpSRV.obj
+            Creating library D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\x64\Release\HttpSRV.lib and object D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\x64\Release\HttpSRV.exp
+         Generating code
+         Finished generating code
+         HttpSRV.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\x64\Release\HttpSRV.dll
+     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource\NH-SRV- 2013\HttpSRV\HttpSRV.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.12

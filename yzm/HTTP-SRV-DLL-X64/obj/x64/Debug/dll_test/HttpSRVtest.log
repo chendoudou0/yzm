@@ -1,0 +1,26 @@
+﻿Build started 2017/6/9 11:35:51.
+     1>Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\HttpSRVtest\HttpSRVtest.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test\\" /Fd"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test\vc120.pdb" /Gd /TP /errorReport:prompt dllTest.cpp
+         dllTest.cpp
+     1>d:\baidunetdiskdownload\source\pocosource__\http-srv-dll-x64\httpsrvtest\..\HttpSRV\HttpSRV.h(17): warning C4251: 'HttpClient::ImpUPtr_' : class 'std::unique_ptr<HttpClient::Imp,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'HttpClient'
+                 with
+                 [
+                     _Ty=HttpClient::Imp
+                 ]
+     1>C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xutility(2132): warning C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xutility(2113) : see declaration of 'std::_Copy_impl'
+                 dllTest.cpp(32) : see reference to function template instantiation '_OutIt std::copy<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<char>>>,char*>(_InIt,_InIt,_OutIt)' being compiled
+                 with
+                 [
+                     _OutIt=char *
+         ,            _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<char>>>
+                 ]
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test.exe" /INCREMENTAL /NOLOGO HttpSRV.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test.lib" /MACHINE:X64 "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\dll_test\dllTest.obj"
+         HttpSRVtest.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\dll_test.exe
+     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\HttpSRVtest\HttpSRVtest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.67

@@ -1,0 +1,9 @@
+﻿Build started 2017/6/6 17:09:23.
+     1>Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\dll_test_functional\dll_test_functional.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         dll_test_functional.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Release\dll_test_functional.exe
+     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\dll_test_functional\dll_test_functional.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.03

@@ -1,0 +1,20 @@
+﻿Build started 2017/6/7 14:17:22.
+     1>Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\HttpServer\HttpServer.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D HTTPSERVER_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\HttpTool\\" /Fd"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\HttpTool\vc120.pdb" /Gd /TP /errorReport:prompt HttpTool.cpp
+         HttpTool.cpp
+     1>d:\baidunetdiskdownload\source\pocosource__\http-srv-dll-x64\httpserver\HttpTool.h(68): warning C4251: 'HttpClient::ImpUPtr_' : class 'std::unique_ptr<HttpClient::Imp,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'HttpClient'
+                 with
+                 [
+                     _Ty=HttpClient::Imp
+                 ]
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\HttpTool.dll) does not match the Linker's OutputFile property value (D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\bin\x64\Debug\HttpToolD.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1195,5): warning MSB8012: TargetName(HttpTool) does not match the Linker's OutputFile property value (HttpToolD). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\HttpToolD.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\HttpTool.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\HttpTool.lib" /MACHINE:X64 /DLL "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Debug\HttpTool\HttpTool.obj"
+         HttpServer.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Debug\HttpTool.dll
+     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\HttpServer\HttpServer.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.81

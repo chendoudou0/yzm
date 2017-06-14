@@ -1,0 +1,10 @@
+﻿Build started 2017/6/2 14:41:56.
+     1>Project "D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\HttpSRVtest\HttpSRVtest.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Debug\switch.exe" /INCREMENTAL /NOLOGO HttpSRV.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Debug\switch.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Debug\switch.lib" /MACHINE:X64 "D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\obj\x64\Debug\switch\HttpSRVTest.obj"
+         HttpSRVtest.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Debug\switch.exe
+     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\HttpSRVtest\HttpSRVtest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.19

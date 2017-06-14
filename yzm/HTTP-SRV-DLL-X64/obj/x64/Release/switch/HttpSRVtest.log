@@ -1,0 +1,15 @@
+﻿Build started 2017/6/2 14:39:18.
+     1>Project "D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\HttpSRVtest\HttpSRVtest.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I../curl /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\obj\x64\Release\switch\\" /Fd"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\obj\x64\Release\switch\vc120.pdb" /Gd /TP /errorReport:prompt HttpSRVTest.cpp
+         HttpSRVTest.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Release\switch.exe" /INCREMENTAL:NO /NOLOGO HttpSRV.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Release\switch.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Release\switch.lib" /MACHINE:X64 "D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\obj\x64\Release\switch\HttpSRVTest.obj"
+         Generating code
+         Finished generating code
+         HttpSRVtest.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\\bin\x64\Release\switch.exe
+     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource\HTTP-SRV-X64-SHARED-PTR\HttpSRVtest\HttpSRVtest.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.88

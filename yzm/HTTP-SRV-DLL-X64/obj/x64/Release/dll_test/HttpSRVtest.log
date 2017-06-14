@@ -1,0 +1,12 @@
+﻿Build started 2017/6/6 16:52:31.
+     1>Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\HttpSRVtest\HttpSRVtest.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Release\dll_test.exe" /INCREMENTAL:NO /NOLOGO HttpSRV.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Release\dll_test.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Release\dll_test.lib" /MACHINE:X64 "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\obj\x64\Release\dll_test\HttpSRVTest.obj"
+         Generating code
+         Finished generating code
+         HttpSRVtest.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\\bin\x64\Release\dll_test.exe
+     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\HttpSRVtest\HttpSRVtest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.49
