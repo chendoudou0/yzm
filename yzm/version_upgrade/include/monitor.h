@@ -1,15 +1,9 @@
-// Copyright 2017 (c) cloudream.
-// All rights reserved.
-// 
-// Author: wangjw <wangjw@cloudream.com> 2017/04/10
 #ifndef COMM_MONITOR_H
 #define COMM_MONITOR_H 
 #include <iostream>
 #include <mutex>
 #include <condition_variable>
 #include <chrono>
-
-namespace comm {
 
 class Monitor {
  public:
@@ -55,8 +49,6 @@ class Monitor {
   std::condition_variable cond_;  
 };
 
-}
-
-#endif // COMM_MONITOR_H
+#endif 
 
 

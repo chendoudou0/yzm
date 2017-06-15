@@ -2,29 +2,29 @@
 
 
 /**
- * Description: ¹¹Ôìº¯Êı
- * Input:         host         Êı¾İ¿âÖ÷»úIPµØÖ·
- *                   user         Êı¾İ¿âÓÃ»§ID
- *                   passwd     Êı¾İ¿âÓÃ»§ÃÜÂë
- *                   iOverTime Á¬½Ó³¬Ê±Ê±³¤
+ * Description: æ„é€ å‡½æ•°
+ * Input:         host         æ•°æ®åº“ä¸»æœºIPåœ°å€
+ *                   user         æ•°æ®åº“ç”¨æˆ·ID
+ *                   passwd     æ•°æ®åº“ç”¨æˆ·å¯†ç 
+ *                   iOverTime è¿æ¥è¶…æ—¶æ—¶é•¿
  */
 CMySQL::CMySQL(const char* host, const char* user, const char* passwd, const char* port, int iOverTime)
                                : m_strHost(host), m_strUser(user), m_strPasswd(passwd), m_strPort(port), m_iOverTime(iOverTime)
 {
     m_SqlHandle = NULL;      
-    m_connFlag = false;         // Êı¾İ¿âÎ´Á¬½Ó
+    m_connFlag = false;         // æ•°æ®åº“æœªè¿æ¥
     
    // gPtrAppLog->debug("host: %s ,user %s, pwd: %s, port: %s, timeout: %d", 
 	////	m_strHost.c_str(), m_strUser.c_str(), m_strPasswd.c_str(), m_strPort.c_str(), m_iOverTime);
 }
 
 /**
- * Description: ¹¹Ôìº¯Êı
- * Input:         host         Êı¾İ¿âÖ÷»úIPµØÖ·
- *                   user         Êı¾İ¿âÓÃ»§ID
- *                   passwd     Êı¾İ¿âÓÃ»§ÃÜÂë
- *                   port     	Êı¾İ¿â¶Ë¿Ú
- *                   iOverTime Á¬½Ó³¬Ê±Ê±³¤
+ * Description: æ„é€ å‡½æ•°
+ * Input:         host         æ•°æ®åº“ä¸»æœºIPåœ°å€
+ *                   user         æ•°æ®åº“ç”¨æˆ·ID
+ *                   passwd     æ•°æ®åº“ç”¨æˆ·å¯†ç 
+ *                   port     	æ•°æ®åº“ç«¯å£
+ *                   iOverTime è¿æ¥è¶…æ—¶æ—¶é•¿
  */
 CMySQL::~CMySQL()
 {
@@ -32,13 +32,13 @@ CMySQL::~CMySQL()
 }
 
 /**
- * Description: Á¬½ÓÊı¾İ¿â
- * Return:       ³ö´íÅ×³öÒì³£
+ * Description: è¿æ¥æ•°æ®åº“
+ * Return:       å‡ºé”™æŠ›å‡ºå¼‚å¸¸
  */
 void  CMySQL::Connect() throw(CException)
 {
 	//gPtrAppLog->debug("[Connect]host: %s ,user %s, pwd: %s, port: %s", m_strHost.c_str(), m_strUser.c_str(), m_strPasswd.c_str(), m_strPort.c_str());
-    // ³õÊ¼»¯Á¬½Ó¾ä±ú
+    // åˆå§‹åŒ–è¿æ¥å¥æŸ„
     if(m_SqlHandle == NULL)
     {
         m_SqlHandle =(MYSQL *)malloc(sizeof(MYSQL));
@@ -46,22 +46,22 @@ void  CMySQL::Connect() throw(CException)
     
     mysql_init(m_SqlHandle);
 
-    // ³õÊ¼»¯Ê§°Ü
+    // åˆå§‹åŒ–å¤±è´¥
     if (m_SqlHandle == NULL)
     {
         throw CException(ERR_DB_INITIAL, "Failed to allocate mysql handle in mysql_init");
     }
     
-    // ÉèÖÃÁ¬½ÓÑ¡Ïî
-    mysql_options(m_SqlHandle, MYSQL_OPT_CONNECT_TIMEOUT,  (char *)&m_iOverTime);   // ³¬Ê±Ê±³¤
+    // è®¾ç½®è¿æ¥é€‰é¡¹
+    mysql_options(m_SqlHandle, MYSQL_OPT_CONNECT_TIMEOUT,  (char *)&m_iOverTime);   // è¶…æ—¶æ—¶é•¿
     //my_bool reconnect = 0;
-    //mysql_options(m_SqlHandle, MYSQL_OPT_RECONNECT, &reconnect);	// ½ûÖ¹×Ô¶¯ÖØÁ¬
+    //mysql_options(m_SqlHandle, MYSQL_OPT_RECONNECT, &reconnect);	// ç¦æ­¢è‡ªåŠ¨é‡è¿
     if (!mysql_real_connect(m_SqlHandle, m_strHost.c_str(), m_strUser.c_str(), m_strPasswd.c_str(), NULL, atoi(m_strPort.c_str()), NULL, 0))
     {
         throw CException(ERR_DB_CONNECT, mysql_error(m_SqlHandle));
     }
 
-    // ÉèÖÃÁ¬½Ó³É¹¦±êÖ¾
+    // è®¾ç½®è¿æ¥æˆåŠŸæ ‡å¿—
     m_connFlag = true;
 
 	cout<<"mysql connect success!!!!"<<endl;
@@ -71,7 +71,7 @@ void  CMySQL::Connect() throw(CException)
 
 
 /**
- * Description: ¹Ø±ÕÊı¾İ¿â
+ * Description: å…³é—­æ•°æ®åº“
  */
 void  CMySQL::Close()
 {
@@ -86,8 +86,8 @@ void  CMySQL::Close()
 }
 
 /**
- * Description: ¼ì²âÊı¾İ¿â×´Ì¬
- * Input:         mysql     SQL²Ù×÷¾ä±ú
+ * Description: æ£€æµ‹æ•°æ®åº“çŠ¶æ€
+ * Input:         mysql     SQLæ“ä½œå¥æŸ„
  */
 
 
@@ -98,10 +98,10 @@ bool CMySQL::Ping()
 
 
 /**
- * Description: Ö´ĞĞSELECTÀàĞÍµÄSQLÓï¾ä
- * Input:         query     SQLÓï¾ä
- *                   length     SQLÓï¾äµÄ³¤¶È
- * Return:       Ê§°ÜÅ×³öÒì³£
+ * Description: æ‰§è¡ŒSELECTç±»å‹çš„SQLè¯­å¥
+ * Input:         query     SQLè¯­å¥
+ *                   length     SQLè¯­å¥çš„é•¿åº¦
+ * Return:       å¤±è´¥æŠ›å‡ºå¼‚å¸¸
  */
 void CMySQL::Query(const char *query, unsigned int length) throw(CException)
 {
@@ -113,7 +113,7 @@ void CMySQL::Query(const char *query, unsigned int length) throw(CException)
 
     if (mysql_real_query(m_SqlHandle, query, length)  !=  0 )
     {
-        // ÅĞ¶ÏÊÇ·ñÎªÊı¾İ¿â¶ÏÁ¬
+        // åˆ¤æ–­æ˜¯å¦ä¸ºæ•°æ®åº“æ–­è¿
         if (mysql_errno(m_SqlHandle) == CR_SERVER_LOST || mysql_errno(m_SqlHandle) == CR_SERVER_GONE_ERROR)
         {
             m_connFlag = false;
@@ -129,19 +129,19 @@ void CMySQL::Query(const char *query, unsigned int length) throw(CException)
 
 
 /**
- * Description: Ö´ĞĞÊÂÎñ¿ªÊ¼Óï¾ä
- * Return:       Ê§°ÜÅ×³öÒì³£
+ * Description: æ‰§è¡Œäº‹åŠ¡å¼€å§‹è¯­å¥
+ * Return:       å¤±è´¥æŠ›å‡ºå¼‚å¸¸
  */
 void CMySQL::Begin() throw (CException)
 {
-    // Èô´¦ÓÚ¶ÏÁ¬×´Ì¬£¬Ôò½øĞĞÖØÁ¬
+    // è‹¥å¤„äºæ–­è¿çŠ¶æ€ï¼Œåˆ™è¿›è¡Œé‡è¿
     if (!m_connFlag)
     {
         Close();
         Connect();
     }
 
-    // ¿ªÊ¼ÊÂÎñ
+    // å¼€å§‹äº‹åŠ¡
     if(mysql_real_query(m_SqlHandle, "BEGIN", sizeof("BEGIN")) != 0)
     {
         throw CException(ERR_DB_BEGIN, mysql_error(m_SqlHandle));
@@ -150,13 +150,13 @@ void CMySQL::Begin() throw (CException)
 
 
 /**
- * Description: Ö´ĞĞÊÂÎñÌá½»
- * Return:       Ê§°ÜÅ×³öÒì³£
+ * Description: æ‰§è¡Œäº‹åŠ¡æäº¤
+ * Return:       å¤±è´¥æŠ›å‡ºå¼‚å¸¸
  */
 void CMySQL::Commit() throw (CException)
 {
 //	gPtrAppLog->debug("Commit");
-    // Ìá½»ÊÂÎñ
+    // æäº¤äº‹åŠ¡
     if(mysql_real_query(m_SqlHandle, "COMMIT", sizeof("COMMIT")) != 0)
     {
  //   	gPtrAppLog->debug("Err Commit: errno: %d info: %s", mysql_errno(m_SqlHandle), mysql_error(m_SqlHandle));
@@ -168,13 +168,13 @@ void CMySQL::Commit() throw (CException)
 }
 
 /**
- * Description: Ö´ĞĞÊÂÎñ»Ø¹ö
- * Return:      Ê§°ÜÅ×³öÒì³£
+ * Description: æ‰§è¡Œäº‹åŠ¡å›æ»š
+ * Return:      å¤±è´¥æŠ›å‡ºå¼‚å¸¸
  */
 void CMySQL::Rollback() throw (CException)
 {
 //	gPtrAppLog->debug("Rollback");
-    // »Ø¹öÊÂÎñ
+    // å›æ»šäº‹åŠ¡
     if(mysql_real_query(m_SqlHandle, "ROLLBACK", sizeof("ROLLBACK")) != 0)
     {
         throw CException(ERR_DB_ROLLBACK, mysql_error(m_SqlHandle));
@@ -182,8 +182,8 @@ void CMySQL::Rollback() throw (CException)
 }
 
 /**
- * Description: »ñÈ¡SQLÓ°ÏìµÄĞĞÊı
- * Return:      Ê§°ÜÅ×³öÒì³£
+ * Description: è·å–SQLå½±å“çš„è¡Œæ•°
+ * Return:      å¤±è´¥æŠ›å‡ºå¼‚å¸¸
  */
 unsigned long CMySQL::AffectedRows() throw(CException)
 {
@@ -197,8 +197,8 @@ unsigned long CMySQL::AffectedRows() throw(CException)
 }
 
 /**
- * Description: È¡½á¹û¼¯
- * Return:      Ê§°ÜÅ×³öÒì³£
+ * Description: å–ç»“æœé›†
+ * Return:      å¤±è´¥æŠ›å‡ºå¼‚å¸¸
  */
 MYSQL_RES* CMySQL::FetchResult() throw(CException)
 {
@@ -270,11 +270,11 @@ CMySQL::FetchResultRow(MYSQL_ROW &row) throw(CException)
 }
 
 
-// ½á¹û¼¯Îª0£¬·µ»Ø1£¬ÆäËûÇé¿ö·µ»Ø0
+// ç»“æœé›†ä¸º0ï¼Œè¿”å›1ï¼Œå…¶ä»–æƒ…å†µè¿”å›0
 int  
 CMySQL::FetchResultMap(SqlResultSet & objMap) throw(CException)
 {
-	// Çå¿ÕÒÔÇ°map
+	// æ¸…ç©ºä»¥å‰map
 	objMap.clear();
 	
 	//char szFiledValue[MAX_FILED_LENGTH] = {0};
@@ -331,8 +331,8 @@ CMySQL::FetchResultMap(SqlResultSet & objMap) throw(CException)
 }
 
 
-// ½á¹û¼¯Îª0£¬·µ»Ø1£¬ÆäËûÇé¿ö·µ»Ø0
-//VECTORÀïÃæ·Å×ÅMAP
+// ç»“æœé›†ä¸º0ï¼Œè¿”å›1ï¼Œå…¶ä»–æƒ…å†µè¿”å›0
+//VECTORé‡Œé¢æ”¾ç€MAP
 int  
 CMySQL::FetchResultMVector(SqlMapVector & objMapVector) throw(CException)
 {
@@ -460,7 +460,7 @@ CMySQL::FetchMd5Map(KeyValueMap& outMap) throw(CException)
 }
 
 
-// ½á¹û¼¯Îª0£¬·µ»Ø1£¬ÆäËûÇé¿ö·µ»Ø0
+// ç»“æœé›†ä¸º0ï¼Œè¿”å›1ï¼Œå…¶ä»–æƒ…å†µè¿”å›0
 int  
 CMySQL::FetchResultMapVector(SqlMapVector & objMapVector) throw(CException)
 {
@@ -526,7 +526,7 @@ CMySQL::FetchResultMapVector(SqlMapVector & objMapVector) throw(CException)
 
 
 
-// ½á¹û¼¯Îª0£¬·µ»Ø1£¬ÆäËûÇé¿ö·µ»Ø0
+// ç»“æœé›†ä¸º0ï¼Œè¿”å›1ï¼Œå…¶ä»–æƒ…å†µè¿”å›0
 int  
 CMySQL::FetchResultVectorVectorMap(SqlVectorVectorMap & objVectorVectorMap) throw(CException)
 {
@@ -665,7 +665,7 @@ CMySQL::GetUpdateSQL(SqlResultSet & objValueMap, SqlResultSet & objWhereMap, con
 		ssSQL << "= '" << EscapeStr(it->second) << "' ";
 	}
 
-	// Æ´½ÓÌõ¼ş
+	// æ‹¼æ¥æ¡ä»¶
 	ssSQL << GetWhere(objWhereMap);
 
 	return ssSQL.str();
@@ -702,11 +702,11 @@ CMySQL::GetReplaceSQL(SqlResultSet & objMap, const string & strTableName) throw(
 	return ssSQL.str();
 }
 
-// Æ´½ÓÌõ¼ş
+// æ‹¼æ¥æ¡ä»¶
 string 
 CMySQL::GetWhere(SqlResultSet & objWhereMap)
 {
-	// Æ´½ÓÌõ¼ş
+	// æ‹¼æ¥æ¡ä»¶
 	if(objWhereMap.empty())
 		return "";
 
@@ -728,7 +728,7 @@ CMySQL::GetWhere(SqlResultSet & objWhereMap)
 	return ssSQL.str();
 }
 
-// ×ªÒå
+// è½¬ä¹‰
 string
 CMySQL::EscapeStr(const string & buff)
 {

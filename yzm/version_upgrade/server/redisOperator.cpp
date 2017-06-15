@@ -178,7 +178,7 @@ bool CRedisOperator::CheckStatus(redisContext *ctx)
 
 
     if(reply->type != REDIS_REPLY_STATUS)  goto _false;
-    if(strcmp(reply->str,"PONG") != 0)    goto _false;
+    if(strcmp(reply->str,"PONG") != 0)     goto _false;
 
 	freeReplyObject(reply);
     return true;

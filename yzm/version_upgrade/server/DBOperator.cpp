@@ -147,7 +147,7 @@ void CDBOperator::QueryExistingVersions(int type, SqlMapVector &objOutMapVector)
         _ptrMysql->Query(strSql,  strlen(strSql));
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "获取配置数据失败，请确认是否存在数据!");
+            throw CException(ERR_DB_FETCH, "鑾峰彇閰嶇疆鏁版嵁澶辫触锛岃纭鏄惁瀛樺湪鏁版嵁!");
         }
         
     }
@@ -178,7 +178,7 @@ void CDBOperator::QueryAndroidExistingVersions(SqlMapVector &objOutMapVector)  t
         _ptrMysql->Query(strSql,  strlen(strSql));  
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "获取配置数据失败，请确认是否存在数据!");
+            throw CException(ERR_DB_FETCH, "鑾峰彇閰嶇疆鏁版嵁澶辫触锛岃纭鏄惁瀛樺湪鏁版嵁!");
         }
    
     }
@@ -219,7 +219,7 @@ void CDBOperator::QueryNewaddedVersions(SqlMapVector &objOutMapVector, string ty
 
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "获取配置数据失败，请确认是否存在数据!");
+            throw CException(ERR_DB_FETCH, "鑾峰彇閰嶇疆鏁版嵁澶辫触锛岃纭鏄惁瀛樺湪鏁版嵁!");
         }
         
     }
@@ -251,7 +251,7 @@ void CDBOperator::QueryAndroidNewaddedVersions(SqlMapVector &objOutMapVector)  t
 
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "获取数据失败，请确认是否存在数据!");
+            throw CException(ERR_DB_FETCH, "鑾峰彇鏁版嵁澶辫触锛岃纭鏄惁瀛樺湪鏁版嵁!");
         }
     
     }

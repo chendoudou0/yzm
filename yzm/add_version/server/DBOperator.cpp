@@ -138,7 +138,7 @@ void CDBOperator::QueryExistingVersions(int type, SqlMapVector &objOutMapVector)
         _ptrMysql->Query(strSql,  strlen(strSql));
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "»ñÈ¡ÅäÖÃÊý¾ÝÊ§°Ü£¬ÇëÈ·ÈÏÊÇ·ñ´æÔÚÊý¾Ý!");
+            throw CException(ERR_DB_FETCH, "èŽ·å–é…ç½®æ•°æ®å¤±è´¥ï¼Œè¯·ç¡®è®¤æ˜¯å¦å­˜åœ¨æ•°æ®!");
         }
         
     }
@@ -169,7 +169,7 @@ void CDBOperator::QueryAndroidExistingVersions(SqlMapVector &objOutMapVector)  t
         _ptrMysql->Query(strSql,  strlen(strSql));  
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "»ñÈ¡ÅäÖÃÊý¾ÝÊ§°Ü£¬ÇëÈ·ÈÏÊÇ·ñ´æÔÚÊý¾Ý!");
+            throw CException(ERR_DB_FETCH, "èŽ·å–é…ç½®æ•°æ®å¤±è´¥ï¼Œè¯·ç¡®è®¤æ˜¯å¦å­˜åœ¨æ•°æ®!");
         }
    
     }
@@ -210,7 +210,7 @@ void CDBOperator::QueryNewaddedVersions(SqlMapVector &objOutMapVector, string ty
 
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "»ñÈ¡ÅäÖÃÊý¾ÝÊ§°Ü£¬ÇëÈ·ÈÏÊÇ·ñ´æÔÚÊý¾Ý!");
+            throw CException(ERR_DB_FETCH, "èŽ·å–é…ç½®æ•°æ®å¤±è´¥ï¼Œè¯·ç¡®è®¤æ˜¯å¦å­˜åœ¨æ•°æ®!");
         }
         
     }
@@ -243,7 +243,7 @@ void CDBOperator::QueryAndroidNewaddedVersions(SqlMapVector &objOutMapVector)  t
 
         if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
         {
-            throw CException(ERR_DB_FETCH, "»ñÈ¡Êý¾ÝÊ§°Ü£¬ÇëÈ·ÈÏÊÇ·ñ´æÔÚÊý¾Ý!");
+            throw CException(ERR_DB_FETCH, "èŽ·å–æ•°æ®å¤±è´¥ï¼Œè¯·ç¡®è®¤æ˜¯å¦å­˜åœ¨æ•°æ®!");
         }
     
     }
@@ -337,11 +337,26 @@ void CDBOperator::insertMD5toDB(SqlMapVector& inMapVec, string type)  throw (CEx
     {
         table = "t_md5_fitting_online";
     }
+    //delete old md5s
+    char strSql[1024] = {0};
+	sprintf(strSql,  "delete from  yzm_version_db.%s where Fversion_name='%s'	", \
+    table.c_str(), (*inMapVec.begin())["Fversion_name"].c_str());
+	
+	try
+    {
+        _ptrMysql->Query(strSql,  strlen(strSql));  
+    }
+    catch(...)
+    {
+        Log.WriteLog(4, "delete md5s  failed \n");
+        throw CException(ERR_DB_DELETE, "delete md5s  failed");
+    }
+
 	_ptrMysql->Begin();
 	SqlMapVector::iterator iter;  
     for (iter = inMapVec.begin(); iter != inMapVec.end(); ++iter)
     {
-	    char strSql[1024] = {0};
+	    memset(strSql, 0, 1024);
 		KeyValueMap sqlMap = *iter; 
 		sprintf(strSql,  "insert into yzm_version_db.%s	values('%s','%s','%s','%s')", table.c_str(), sqlMap["Fversion_name"].c_str(),sqlMap["Ffile_path"].c_str(),sqlMap["Fmd5"].c_str(), GetSystemTime());
 		   

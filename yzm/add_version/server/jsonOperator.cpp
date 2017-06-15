@@ -1,29 +1,28 @@
-#include"jsonOperator.h"
+# mms server Makefile公共规则定义
+#
 
-CJsonOperator::CJsonOperator(Document::AllocatorType& allocator)
-:_allocator(allocator)
-{
-	_root = new Value(kObjectType);
-}
+#CC = gcc
+CC = g++
+CXX = g++
 
-CJsonOperator::~CJsonOperator()
-{
-	if(_root)
-	{
-		delete _root;
-		_root= NULL;
-	}
+CFLAGS = -O3 -DNDEBUG -w   
 
-}
 
-bool CJsonOperator::addMember(string key, string value)
-{
-	Value vKey(kStringType);
-	vKey.SetString(key.c_str(), _allocator);
-	Value vValue(kStringType);
-	vValue.SetString(value.c_str(), _allocator);
+# 自动计算文件的依赖关系
+.%.d: %.cpp
+	$(CC) $(INCLUDE) -MM $< > $@
+	@$(CC) $(INCLUDE) -MM $< | sed s/"^"/"\."/  |  sed s/"^\. "/" "/  | \
+                sed s/"\.o"/"\.d"/  >> $@
+%.o: %.cpp 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $<  
 
-	_root->AddMember(vKey, vValue, _allocator);  
+.%.d: %.c
+	$(CC) $(INCLUDE) -MM $< > $@
+	@$(CC) $(INCLUDE) -MM $< | sed s/"^"/"\."/  |  sed s/"^\. "/" "/  | \
+                sed s/"\.o"/"\.d"/  >> $@
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
 	return true;
 }
 

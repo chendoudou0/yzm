@@ -1,12 +1,19 @@
 #include "requestProcessor.h"
+#include"jsonOperator.h"  
+#include"CLogger.h" 
+#include"redisOperator.h" 
+
+#include <chrono>
+          
+using namespace std;
+using namespace std::chrono;
 
 extern CDBOperator*    gPtrDBOperator;
 extern CRedisOperator* gPtrRedisOperator;
 extern CLogger* gPtrAppLog;
 
 
-
-CrequestProcessor::CrequestProcessor(char* request_buffer)
+CrequestProcessor::CrequestProcessor(const char* request_buffer)
 :_request_buffer(request_buffer) 
 { 
 
@@ -50,7 +57,7 @@ bool CrequestProcessor::gen_update_response(int type , SqlMapVector& inFileMapVe
 	{
 		gPtrAppLog->error("QueryBucketAndDomain failed, version name : %s", _version_to.c_str());
 		_error_msg = "query bucket or domain failed"; 
-		return false;
+		return false;      
 	} 
 
 	head = "http://" + bucket + "." + domain +"/" + _version_to  +  "/";

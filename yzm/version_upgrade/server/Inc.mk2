@@ -1,4 +1,4 @@
-# mms server Makefile¹«¹²¹æÔò¶¨Òå
+# mms server Makefileå…¬å…±è§„åˆ™å®šä¹‰
 #
 
 #CC = gcc
@@ -9,7 +9,7 @@ CXX = g++
 CFLAGS = -O3 -DNDEBUG -w  -std=c++11 -D EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET  \
 
 
-# ×Ô¶¯¼ÆËãÎÄ¼þµÄÒÀÀµ¹ØÏµ
+# è‡ªåŠ¨è®¡ç®—æ–‡ä»¶çš„ä¾èµ–å…³ç³»
 .%.d: %.cpp
 	$(CC) $(INCLUDE) -MM $< > $@
 	@$(CC) $(INCLUDE) -MM $< | sed s/"^"/"\."/  |  sed s/"^\. "/" "/  | \

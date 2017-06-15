@@ -1,34 +1,16 @@
 #ifndef _REQUEST_PROCESSOR_H
 #define _REQUEST_PROCESSOR_H
 
+#include"DBOperator.h"
+
 #include <iostream>
 #include <string>
-#include <stdio.h>
-#include <string.h>
-#include <curl/curl.h>
-#include <dirent.h>
-#include <mutex>
-#include <condition_variable>
 #include <memory>
-#include <chrono>
-
-#include"def.h"
-#include"DBOperator.h"
-#include"Common.h"
-#include"redisOperator.h"
-#include"jsonOperator.h"  
-#include"CLogger.h"  
-#include"monitor.h" 
-          
-using namespace std;
-using namespace std::chrono;
-using namespace comm;
-   
 
 class CrequestProcessor
 {
 public:
-	CrequestProcessor(char* request_buffer);
+	CrequestProcessor(const char* request_buffer);
 	~CrequestProcessor();
 	void dealwith_android_verison_query();
 	void dealwith_livershow_verison_query();
@@ -40,18 +22,18 @@ public:
 	bool query_android_version();
 	bool query_live_show_version();
 	bool query_ffitting_online_version();
-	bool get_value_from_redis(string& key, string& value);
-	bool set_value_to_redis(string& key, string& value);
+	bool get_value_from_redis(std::string& key, std::string& value);
+	bool set_value_to_redis(std::string& key, std::string& value);
 	bool find_differ_files(int type, SqlMapVector& outFileVec);
 
 	string& get_response()  {return _response; }
 
 private:
-	char* _request_buffer;
-	string _error_msg;
-	string _response;
-	string _version_current;
-	string _version_to;
+	const char* _request_buffer;
+	std::string _error_msg;
+	std::string _response;
+	std::string _version_current;
+	std::string _version_to;
 
 };
 

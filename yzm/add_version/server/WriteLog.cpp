@@ -8,7 +8,7 @@ CWriteLog watLog;
 CWriteLog statLog;
 
 
-//¹¦ÄÜ:¹¹Ôìº¯Êı
+//åŠŸèƒ½:æ„é€ å‡½æ•°
 CWriteLog::CWriteLog()
 {
     nFileSize = 0;
@@ -23,7 +23,7 @@ CWriteLog::CWriteLog()
 }
 
 
-//¹¦ÄÜ:Îö¹¹º¯Êı
+//åŠŸèƒ½:ææ„å‡½æ•°
 CWriteLog::~CWriteLog()
 {
     delete []pstrLogFile;
@@ -53,12 +53,12 @@ int CWriteLog::Init(const string  strFileName, int nWorkFlag, int nlevel, long f
 }
 
 
-//¹¦ÄÜ:Êä³öÒ»ÌõÈÕÖ¾ĞÅÏ¢
-//  nLogLevel - [in]¸ÃÈÕÖ¾ĞÅÏ¢µÄ¼¶±ğ
-//  logMsg - [in]ÈÕÖ¾ĞÅÏ¢µÄ¸ñÊ½´®
+//åŠŸèƒ½:è¾“å‡ºä¸€æ¡æ—¥å¿—ä¿¡æ¯
+//  nLogLevel - [in]è¯¥æ—¥å¿—ä¿¡æ¯çš„çº§åˆ«
+//  logMsg - [in]æ—¥å¿—ä¿¡æ¯çš„æ ¼å¼ä¸²
 int CWriteLog::WriteLog(int nlevel, const char *pszFormat, ...)
 {
-    int nResult;        //º¯ÊıµÄ·µ»Ø½á¹û
+    int nResult;        //å‡½æ•°çš„è¿”å›ç»“æœ
     
     if ((nLogLevel > nlevel))
     {
@@ -82,7 +82,7 @@ int CWriteLog::WriteLog(int nlevel, const char *pszFormat, ...)
 }
 
 
-//¹¦ÄÜ:Êä³öÒ»ÌõÈÕÖ¾ĞÅÏ¢ 
+//åŠŸèƒ½:è¾“å‡ºä¸€æ¡æ—¥å¿—ä¿¡æ¯ 
 int CWriteLog::OutputLog( int nlevel, const char * pszFormat, va_list argList)
 {
     
@@ -133,7 +133,7 @@ int CWriteLog::OutputLog( int nlevel, const char * pszFormat, va_list argList)
     if( m_fp==NULL )
     {
          printf("fopen file fail: %s\n", sLogFilename.c_str());
-         exit(1); //ÖĞÖ¹³ÌĞò 
+         exit(1); //ä¸­æ­¢ç¨‹åº 
     }
 
 

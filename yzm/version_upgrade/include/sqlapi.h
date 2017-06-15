@@ -1,9 +1,9 @@
 /**
   * FileName: sqlapi.h 
   * Author: Created by caihf 2007-03-05
-  * History: ±¾±àÒëµ¥Ôª»ùÓÚÔ­ÓĞµÄdbconn.c¸ÄÔì¶øÀ´£¬ÒÔÊÊÓ¦C++
-  *             µÄ¿ª·¢·½Ê½£¬¿ÉÒÔ²Î¿¼Ô­ÓĞµÄdbconn.c
-  *          vermin Ôö¼ÓÉú³ÉsqlµÄ½Ó¿ÚºÍÈ¡½á¹û¼¯µÄ½Ó¿Ú
+  * History: æœ¬ç¼–è¯‘å•å…ƒåŸºäºåŸæœ‰çš„dbconn.cæ”¹é€ è€Œæ¥ï¼Œä»¥é€‚åº”C++
+  *             çš„å¼€å‘æ–¹å¼ï¼Œå¯ä»¥å‚è€ƒåŸæœ‰çš„dbconn.c
+  *          vermin å¢åŠ ç”Ÿæˆsqlçš„æ¥å£å’Œå–ç»“æœé›†çš„æ¥å£
   */
 #ifndef _SQL_API_H_
 #define _SQL_API_H_
@@ -36,11 +36,11 @@ static const int MAX_FILED_LENGTH = 32000;
 #define	NSTR	""
 
 /**
-  * ±¾Àà¶ÔMySQLµÄ½Ó¿Ú½øĞĞÁË¼òµ¥·â×°£¬Ö÷Òª°üÀ¨ÈçÏÂ¹¦ÄÜ:
-  *     1¡¢ÄÚ²¿±£´æÁËÁ¬½ÓĞÅÏ¢
-  *     2¡¢Êı¾İ¿â×Ô¶¯ÖØÁ¬¹¦ÄÜ
-  *     3¡¢·ÇSELECTÓï¾äºó»ñÈ¡½á¹û¼¯Å×³öÒì³£
-  *     4¡¢»ñÈ¡SQLÓ°ÏìĞĞÊı³ö´íÊ±Å×³öÒì³£
+  * æœ¬ç±»å¯¹MySQLçš„æ¥å£è¿›è¡Œäº†ç®€å•å°è£…ï¼Œä¸»è¦åŒ…æ‹¬å¦‚ä¸‹åŠŸèƒ½:
+  *     1ã€å†…éƒ¨ä¿å­˜äº†è¿æ¥ä¿¡æ¯
+  *     2ã€æ•°æ®åº“è‡ªåŠ¨é‡è¿åŠŸèƒ½
+  *     3ã€éSELECTè¯­å¥åè·å–ç»“æœé›†æŠ›å‡ºå¼‚å¸¸
+  *     4ã€è·å–SQLå½±å“è¡Œæ•°å‡ºé”™æ—¶æŠ›å‡ºå¼‚å¸¸
   */
  
 class CMySQL
@@ -54,7 +54,7 @@ public:
     bool Ping(); 
 
     /**
-     * Ö´ĞĞQuery
+     * æ‰§è¡ŒQuery
      */
     void  Query(const char *query, unsigned int length) throw(CException);
     unsigned long AffectedRows() throw(CException);
@@ -62,7 +62,7 @@ public:
     int FetchResultRow(MYSQL_ROW &row) throw(CException);
 
     /**
-     * È¡½á¹û¼¯·µ»Ømap¸ñÊ½
+     * å–ç»“æœé›†è¿”å›mapæ ¼å¼
      * 
      */
     int  FetchMd5Map(KeyValueMap& outMap) throw(CException);
@@ -71,17 +71,17 @@ public:
     int  FetchResultMapVector(SqlMapVector & objMapVector) throw(CException);
     int  FetchResultVectorVectorMap(SqlVectorVectorMap & objVectorVectorMap) throw(CException);
 
-    // ·µ»Ø²éÑ¯×ÜĞĞÊı
+    // è¿”å›æŸ¥è¯¢æ€»è¡Œæ•°
     int  FetchRows();
 	
     /**
-     * ÊÂÎñ´¦ÀíÓï¾ä
+     * äº‹åŠ¡å¤„ç†è¯­å¥
      */
     void Begin() throw(CException);
     void Commit() throw(CException);
     void Rollback() throw(CException);
 
-    // ¾²Ì¬´¦ÀíÓï¾ä
+    // é™æ€å¤„ç†è¯­å¥
     static string GetReplaceSQL(SqlResultSet & objMap, const string & strTableName) throw(CException);
     static string GetSelectSQL(SqlResultSet & objMap, const string & strTableName, const string & strOther = "");
     static string GetInsertSQL(SqlResultSet & objMap, const string & strTableName) throw(CException);
@@ -89,25 +89,25 @@ public:
 
     static string GetWhere(SqlResultSet & objWhereMap);
 
-    // ×ªÒå
+    // è½¬ä¹‰
     static string EscapeStr(const string & buff);
 
     static char *ValiStr(char *str);
 	
 private:
-    // ½ûÖ¹¿½±´ºÍ¸³Öµ²Ù×÷
+    // ç¦æ­¢æ‹·è´å’Œèµ‹å€¼æ“ä½œ
     CMySQL(const CMySQL& ref);
     CMySQL& operator=(const CMySQL& ref);
         
 protected:    
-    std::string m_strHost;          // µÇÂ¼Ö÷»úIP
-    std::string m_strUser;          // µÇÂ¼ID
-    std::string m_strPasswd;      // µÇÂ¼ÃÜÂë
-    std::string m_strPort;    	 	 // DB¶Ë¿Ú
-    MYSQL*      m_SqlHandle;       // SQL²Ù×÷¾ä±ú
-    unsigned int m_iOverTime;    // Á¬½Ó³¬Ê±Ê±³¤
+    std::string m_strHost;          // ç™»å½•ä¸»æœºIP
+    std::string m_strUser;          // ç™»å½•ID
+    std::string m_strPasswd;      // ç™»å½•å¯†ç 
+    std::string m_strPort;    	 	 // DBç«¯å£
+    MYSQL*      m_SqlHandle;       // SQLæ“ä½œå¥æŸ„
+    unsigned int m_iOverTime;    // è¿æ¥è¶…æ—¶æ—¶é•¿
 
-    bool    m_connFlag;         // Êı¾İ¿âÁ¬½Ó×´Ì¬±êÖ¾
+    bool    m_connFlag;         // æ•°æ®åº“è¿æ¥çŠ¶æ€æ ‡å¿—
 };
 
 #endif

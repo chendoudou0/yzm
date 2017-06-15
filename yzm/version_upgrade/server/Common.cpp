@@ -320,14 +320,14 @@ void PrintAlpha(char *pBuf, int nBufLen)
 
 int ConnectRemoteServer(string strIp, int nPort )
 {
-	//ÉèÖÃÒ»¸ösocketµØÖ·½á¹¹client_addr,´ú±í¿Í»§»úinternetµØÖ·, ¶Ë¿Ú 
+	//è®¾ç½®ä¸€ä¸ªsocketåœ°å€ç»“æ„client_addr,ä»£è¡¨å®¢æˆ·æœºinternetåœ°å€, ç«¯å£ 
     struct sockaddr_in client_addr; 
-    bzero(&client_addr,sizeof(client_addr)); //°ÑÒ»¶ÎÄÚ´æÇøµÄÄÚÈİÈ«²¿ÉèÖÃÎª0 
-    client_addr.sin_family = AF_INET;    //internetĞ­Òé×å 
-    client_addr.sin_addr.s_addr = htons(INADDR_ANY);//INADDR_ANY±íÊ¾×Ô¶¯»ñÈ¡±¾»úµØÖ· 
-    client_addr.sin_port = htons(0);    //0±íÊ¾ÈÃÏµÍ³×Ô¶¯·ÖÅäÒ»¸ö¿ÕÏĞ¶Ë¿Ú 
+    bzero(&client_addr,sizeof(client_addr)); //æŠŠä¸€æ®µå†…å­˜åŒºçš„å†…å®¹å…¨éƒ¨è®¾ç½®ä¸º0 
+    client_addr.sin_family = AF_INET;    //internetåè®®æ— 
+    client_addr.sin_addr.s_addr = htons(INADDR_ANY);//INADDR_ANYè¡¨ç¤ºè‡ªåŠ¨è·å–æœ¬æœºåœ°å€ 
+    client_addr.sin_port = htons(0);    //0è¡¨ç¤ºè®©ç³»ç»Ÿè‡ªåŠ¨åˆ†é…ä¸€ä¸ªç©ºé—²ç«¯å£ 
 
-    //´´½¨ÓÃÓÚinternetµÄÁ÷Ğ­Òé(TCP)socket,ÓÃclient_socket´ú±í¿Í»§»úsocket 
+    //åˆ›å»ºç”¨äºinternetçš„æµåè®®(TCP)socket,ç”¨client_socketä»£è¡¨å®¢æˆ·æœºsocket 
     int client_socket = socket(AF_INET,SOCK_STREAM,0); 
     if( client_socket < 0) 
     { 
@@ -336,7 +336,7 @@ int ConnectRemoteServer(string strIp, int nPort )
     } 
 
  
-    //°Ñ¿Í»§»úµÄsocketºÍ¿Í»§»úµÄsocketµØÖ·½á¹¹ÁªÏµÆğÀ´ 
+    //æŠŠå®¢æˆ·æœºçš„socketå’Œå®¢æˆ·æœºçš„socketåœ°å€ç»“æ„è”ç³»èµ·æ¥ 
     if( bind(client_socket,(struct sockaddr*)&client_addr,sizeof(client_addr))) 
     { 
         //Error1("Client Bind Port Failed!msg: %s\n", strerror(errno)); 
@@ -348,11 +348,11 @@ int ConnectRemoteServer(string strIp, int nPort )
         exit(1); 
     } 
 
-   //ÉèÖÃÒ»¸ösocketµØÖ·½á¹¹server_addr,´ú±í·şÎñÆ÷µÄinternetµØÖ·, ¶Ë¿Ú
+   //è®¾ç½®ä¸€ä¸ªsocketåœ°å€ç»“æ„server_addr,ä»£è¡¨æœåŠ¡å™¨çš„internetåœ°å€, ç«¯å£
     struct sockaddr_in server_addr; 
     bzero(&server_addr,sizeof(server_addr)); 
     server_addr.sin_family = AF_INET; 
-    if(inet_aton(strIp.c_str(),&server_addr.sin_addr) == 0) //·şÎñÆ÷µÄIPµØÖ·À´×Ô³ÌĞòµÄ²ÎÊı 
+    if(inet_aton(strIp.c_str(),&server_addr.sin_addr) == 0) //æœåŠ¡å™¨çš„IPåœ°å€æ¥è‡ªç¨‹åºçš„å‚æ•° 
     { 
         //Error0("Server IP Address Error!\n"); 
 	 int nRet=close(client_socket);
@@ -366,7 +366,7 @@ int ConnectRemoteServer(string strIp, int nPort )
 
 
     socklen_t server_addr_length = sizeof(server_addr); 
-    //Ïò·şÎñÆ÷·¢ÆğÁ¬½Ó,Á¬½Ó³É¹¦ºóclient_socket´ú±íÁË¿Í»§»úºÍ·şÎñÆ÷µÄÒ»¸ösocketÁ¬½Ó 
+    //å‘æœåŠ¡å™¨å‘èµ·è¿æ¥,è¿æ¥æˆåŠŸåclient_socketä»£è¡¨äº†å®¢æˆ·æœºå’ŒæœåŠ¡å™¨çš„ä¸€ä¸ªsocketè¿æ¥ 
     if(connect(client_socket,(struct sockaddr*)&server_addr, server_addr_length) < 0) 
     { 
        // printf("Can Not Connect To ip=%s port=%d!\n", strIp.c_str(), nPort);
@@ -782,8 +782,8 @@ bool	HttpHelper::postMethod(const std::string &url,
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, param);
 	
 	/**
-	* µ±¶à¸öÏß³Ì¶¼Ê¹ÓÃ³¬Ê±´¦ÀíµÄÊ±ºò£¬Í¬Ê±Ö÷Ïß³ÌÖĞÓĞsleep»òÊÇwaitµÈ²Ù×÷¡£
-	* Èç¹û²»ÉèÖÃÕâ¸öÑ¡Ïî£¬libcurl½«»á·¢ĞÅºÅ´ò¶ÏÕâ¸öwait´Ó¶øµ¼ÖÂ³ÌĞòÍË³ö¡£
+	* å½“å¤šä¸ªçº¿ç¨‹éƒ½ä½¿ç”¨è¶…æ—¶å¤„ç†çš„æ—¶å€™ï¼ŒåŒæ—¶ä¸»çº¿ç¨‹ä¸­æœ‰sleepæˆ–æ˜¯waitç­‰æ“ä½œã€‚
+	* å¦‚æœä¸è®¾ç½®è¿™ä¸ªé€‰é¡¹ï¼Œlibcurlå°†ä¼šå‘ä¿¡å·æ‰“æ–­è¿™ä¸ªwaitä»è€Œå¯¼è‡´ç¨‹åºé€€å‡ºã€‚
 	*/
 	curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
 	curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 5);
@@ -828,7 +828,7 @@ size_t	HttpHelper::onWriteMemory(void *buffer, size_t size, size_t nmemb, void *
 		}
 		else if (lastPtr != ptr)
 		{
-			///YZM_WARN("¡¾BaseLib¡¿ÏÂÔØµ½ÄÚ´æµÄÍøÒ³³¬¹ı100MB£¬Html = %s", str->substr(0, 20).c_str());
+			///YZM_WARN("ã€BaseLibã€‘ä¸‹è½½åˆ°å†…å­˜çš„ç½‘é¡µè¶…è¿‡100MBï¼ŒHtml = %s", str->substr(0, 20).c_str());
 			lastPtr	= ptr;
 		}
 	}
@@ -836,7 +836,7 @@ size_t	HttpHelper::onWriteMemory(void *buffer, size_t size, size_t nmemb, void *
 	{
 		if (lastPtr != ptr)
 		{
-			//////YZM_ERROR("¡¾BaseLib¡¿»ù´¡×é¼şHttpHelperÓöµ½Î´Öª´íÎó£¬Html = %s", str->substr(0, 100).c_str());
+			//////YZM_ERROR("ã€BaseLibã€‘åŸºç¡€ç»„ä»¶HttpHelperé‡åˆ°æœªçŸ¥é”™è¯¯ï¼ŒHtml = %s", str->substr(0, 100).c_str());
 			lastPtr	= ptr;
 		}
 	}

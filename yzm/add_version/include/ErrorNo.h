@@ -3,21 +3,21 @@
   * Author: chenzixun
   * Version :1.0
   * Date: 2017-01-16
-  * Description: ´íÎóĞÅÏ¢£¬´íÎóÂëÁĞ±í
+  * Description: é”™è¯¯ä¿¡æ¯ï¼Œé”™è¯¯ç åˆ—è¡¨
   * ChangeList:
   */
 
 #ifndef      __ERRORNO_H
 #define      __ERRORNO_H
 
-//´íÎóÂë¶¨Òå
-#define ERR_REQ_PARAM               260100  //Èë²Î´íÎó
-#define ERR_RELAY_RET                260400  //relay·µ»Ø´íÎó
-#define ERR_DB_UPDATE               260200  //¸üĞÂ¼ÇÂ¼Ê§°Ü
-#define ERR_DB_DELETE                260201  //É¾³ı¼ÇÂ¼Ê§°Ü
-#define ERR_DB_RECORD_CNT       260202  //Êı¾İ¼ÇÂ¼ÌõÊıÓĞÎó
-#define ERR_DB_FETCH                 260203  //»ñÈ¡Êı¾İ¿â¼ÇÂ¼Ê§°Ü
-#define ERR_DB_INSERT                 260204  //»ñÈ¡Êı¾İ¿â¼ÇÂ¼Ê§°Ü
+//é”™è¯¯ç å®šä¹‰
+#define ERR_REQ_PARAM               260100  //å…¥å‚é”™è¯¯
+#define ERR_RELAY_RET                260400  //relayè¿”å›é”™è¯¯
+#define ERR_DB_UPDATE               260200  //æ›´æ–°è®°å½•å¤±è´¥
+#define ERR_DB_DELETE                260201  //åˆ é™¤è®°å½•å¤±è´¥
+#define ERR_DB_RECORD_CNT       260202  //æ•°æ®è®°å½•æ¡æ•°æœ‰è¯¯
+#define ERR_DB_FETCH                 260203  //è·å–æ•°æ®åº“è®°å½•å¤±è´¥
+#define ERR_DB_INSERT                 260204  //è·å–æ•°æ®åº“è®°å½•å¤±è´¥
 
 
 #endif

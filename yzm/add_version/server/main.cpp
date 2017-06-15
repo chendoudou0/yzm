@@ -469,9 +469,6 @@ int main()
 	addNewVersions(ADD_LIVE_SHOW_VERSION);    
 	addNewVersions(ADD_FITTING_ONLINE);   
 
-	
-	
-
 	return 0;                        
 
 }

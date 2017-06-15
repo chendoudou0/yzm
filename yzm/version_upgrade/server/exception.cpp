@@ -1,9 +1,9 @@
 #include "exception.h"
 
 /**
- * Description: Òì³£ÀàµÄ¹¹Ôìº¯Êı
- * Input:  errNum       ´íÎóÂë
- *            szErrInfo     ´íÎóÃèÊöĞÅÏ¢
+ * Description: å¼‚å¸¸ç±»çš„æ„é€ å‡½æ•°
+ * Input:  errNum       é”™è¯¯ç 
+ *            szErrInfo     é”™è¯¯æè¿°ä¿¡æ¯
  */
 CException::CException(int errNum, const char* szErrInfo) throw() 
                        : _errno(errNum), errinfo(szErrInfo)
@@ -11,9 +11,9 @@ CException::CException(int errNum, const char* szErrInfo) throw()
 }
 
 /**
- * Description: Òì³£ÀàµÄ¹¹Ôìº¯Êı
- * Input:  errNum       ´íÎóÂë
- *            szErrInfo     ´íÎóÃèÊöĞÅÏ¢
+ * Description: å¼‚å¸¸ç±»çš„æ„é€ å‡½æ•°
+ * Input:  errNum       é”™è¯¯ç 
+ *            szErrInfo     é”™è¯¯æè¿°ä¿¡æ¯
  */
 CException::CException(int errNo, const string& strErrInfo) throw()
                         : _errno(errNo), errinfo(strErrInfo)
@@ -21,15 +21,15 @@ CException::CException(int errNo, const string& strErrInfo) throw()
 }
 
 /**
- * Description: Òì³£ÀàµÄÎö¹¹º¯Êı
+ * Description: å¼‚å¸¸ç±»çš„ææ„å‡½æ•°
  */
 CException::~CException() throw()
 {
 }
 
 /**
- * Description: »ñÈ¡Òì³£µÄ´íÎóÂë
- * Return: ´íÎóÂë
+ * Description: è·å–å¼‚å¸¸çš„é”™è¯¯ç 
+ * Return: é”™è¯¯ç 
  */
 int CException::error() const throw()
 {
@@ -37,8 +37,8 @@ int CException::error() const throw()
 }
 
 /**
- * Description: Òì³£ÀàµÄÎö¹¹º¯Êı
- * Return: ´íÎóÃèÊöĞÅÏ¢
+ * Description: å¼‚å¸¸ç±»çš„ææ„å‡½æ•°
+ * Return: é”™è¯¯æè¿°ä¿¡æ¯
  */
 const char* CException::what() const throw()
 {

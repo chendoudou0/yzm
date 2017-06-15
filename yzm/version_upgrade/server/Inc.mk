@@ -1,4 +1,4 @@
-# mms server Makefile¹«¹²¹æÔò¶¨Òå
+# mms server Makefileå…¬å…±è§„åˆ™å®šä¹‰
 #
 
 #CC = gcc
@@ -8,7 +8,7 @@ CXX = g++
 CFLAGS = -O3 -DNDEBUG -w   
 
 
-# ×Ô¶¯¼ÆËãÎÄ¼þµÄÒÀÀµ¹ØÏµ
+# è‡ªåŠ¨è®¡ç®—æ–‡ä»¶çš„ä¾èµ–å…³ç³»
 .%.d: %.cpp
 	$(CC) $(INCLUDE) -MM $< > $@
 	@$(CC) $(INCLUDE) -MM $< | sed s/"^"/"\."/  |  sed s/"^\. "/" "/  | \
