@@ -17,7 +17,7 @@ class Monitor {
     std::unique_lock<std::mutex> l(mtx_);
     while (!notified_) {
       cond_.wait(l);
-    }
+    }    
 
     // release notify flag
     notified_ = false;

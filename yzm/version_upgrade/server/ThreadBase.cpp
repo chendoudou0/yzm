@@ -48,7 +48,7 @@ bool ThreadBase::start()
     {
         pAttr = &thr_attr;
         pthread_attr_init(pAttr);
-        pthread_attr_setstacksize(pAttr, 1024 * 1024);  // 1 MµÄ¶ÑÕ»
+        pthread_attr_setstacksize(pAttr, 1024 * 1024);  // 1 Mçš„å †æ ˆ
         pthread_attr_setdetachstate(pAttr,  PTHREAD_CREATE_DETACHED);
     }
   
@@ -70,8 +70,7 @@ bool ThreadBase::stop()
 		m_state = TB_STATE_STOPING;
 
 		/*
-
-		// Íâ²¿±ØĞë±£Ö¤²»ÔÚÏß³ÌÄÚ²¿µ÷ÓÃ
+		// å¤–éƒ¨å¿…é¡»ä¿è¯ä¸åœ¨çº¿ç¨‹å†…éƒ¨è°ƒç”¨
 		if( G_OS::thr_cmp_self( _threadId ) ) {
 			PLOG_ERR( "thread close in self, should not do this!!!! thread = %d", (int)getThreadHandle() );
 			return false;

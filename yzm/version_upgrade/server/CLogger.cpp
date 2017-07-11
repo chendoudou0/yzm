@@ -7,7 +7,7 @@
 #include "CLogger.h"
 
 /**
- * Ã¿´Î¼ÇÂ¼µÄÈÕÖ¾»º´æ
+ * æ¯æ¬¡è®°å½•çš„æ—¥å¿—ç¼“å­˜
  */
 #define WRITE_LOG(buf, str)\
     int iBufLen = 0;\
@@ -28,11 +28,11 @@
     return _write(buf, iBufLen);
     
 /**
- * ¹¹Ôìº¯Êı
+ * æ„é€ å‡½æ•°
  */
 CLogger::CLogger(const char *path, int max_size, int max_num, LOG_LEVEL level, SHIFT_MODE shft_mod)
 {
-    // ³ÉÔ±³õÊ¼»¯
+    // æˆå‘˜åˆå§‹åŒ–
     _path = path;
     _max_size = max_size;
     _max_file = max_num;
@@ -44,25 +44,25 @@ CLogger::CLogger(const char *path, int max_size, int max_num, LOG_LEVEL level, S
 
 
 /**
- * Îö¹¹º¯Êı
+ * ææ„å‡½æ•°
  */
 CLogger::~CLogger()
 {
-    // ¹Ø±ÕÎÄ¼ş
+    // å…³é—­æ–‡ä»¶
     _close();
 }
 
 /**
- * ´ò¿ªÎÄ¼ş
+ * æ‰“å¼€æ–‡ä»¶
  */
 int CLogger::_open()
 {
     string strFileName = _file_name();
     
-    // ÏÈ¹Ø±ÕÎÄ¼ş
+    // å…ˆå…³é—­æ–‡ä»¶
     _close();
 
-    // ´ò¿ªÎÄ¼ş
+    // æ‰“å¼€æ–‡ä»¶
     if ((_fd = open(strFileName.c_str(), O_CREAT | O_WRONLY | O_APPEND, 0644)) < 0) 
     {
         snprintf(_szErrInfo, sizeof(_szErrInfo), "open %s error:%s", strFileName.c_str(), strerror(errno));
@@ -75,7 +75,7 @@ int CLogger::_open()
 }
 
 /**
- * ¹Ø±ÕÎÄ¼ş
+ * å…³é—­æ–‡ä»¶
  */
 void CLogger::_close()
 {
@@ -87,7 +87,7 @@ void CLogger::_close()
 }
 
 /**
- * ´òÓ¡´íÎólog
+ * æ‰“å°é”™è¯¯log
  */
 int CLogger::error(const char *fmt, ...)
 {
@@ -102,7 +102,7 @@ int CLogger::error(const char *fmt, ...)
 }
 
 /**
- * ´òÓ¡¸æ¾¯log
+ * æ‰“å°å‘Šè­¦log
  */
 int CLogger::warning(const char *fmt, ...)
 {
@@ -117,7 +117,7 @@ int CLogger::warning(const char *fmt, ...)
 }
 #if 0
 /**
- * ´òÓ¡Õı³£log
+ * æ‰“å°æ­£å¸¸log
  */
 int CLogger::normal(const char *fmt, ...)
 {
@@ -133,7 +133,7 @@ int CLogger::normal(const char *fmt, ...)
 
 #endif
 /**
- * ´òÓ¡Õı³£log
+ * æ‰“å°æ­£å¸¸log
  */
 int CLogger::info(const char *fmt, ...)
 {
@@ -148,7 +148,7 @@ int CLogger::info(const char *fmt, ...)
 }
 
 /**
- * ´òÓ¡µ÷ÊÔlog
+ * æ‰“å°è°ƒè¯•log
  */
 int CLogger::debug(const char *fmt, ...)
 {
@@ -162,7 +162,7 @@ int CLogger::debug(const char *fmt, ...)
 }
 
 /**
- * Ö±½ÓĞ´ÈÕÖ¾
+ * ç›´æ¥å†™æ—¥å¿—
  */
 int CLogger::raw(const char *fmt, ...)
 {
@@ -178,13 +178,13 @@ int CLogger::raw(const char *fmt, ...)
 }
 
 /**
- * ¼ÇÂ¼ÈÕÖ¾
+ * è®°å½•æ—¥å¿—
  */
 int CLogger::_write(const char *str, int len)
 {  
-	_lock.Lock();   //chenzx
+	_lock.lock();   //chenzx
 	
-    // ÈÕÖ¾´ÎÊı¼ÆÊıÆ÷
+    // æ—¥å¿—æ¬¡æ•°è®¡æ•°å™¨
     static int __count = 0;
 
     if (_fd == -1) 
@@ -192,7 +192,7 @@ int CLogger::_write(const char *str, int len)
         if (_open() != 0) 
         {
             snprintf(_szErrInfo, sizeof(_szErrInfo), "open %s.log error:%s", _path.c_str(), strerror(errno));
-			_lock.unLock();    //chenzx
+			_lock.unlock();    //chenzx
             return -1;
         }
     }
@@ -202,53 +202,53 @@ int CLogger::_write(const char *str, int len)
     {
         _close();
         snprintf(_szErrInfo, sizeof(_szErrInfo), "puts %s.log error:%s", _path.c_str(), strerror(errno));
-		_lock.unLock();     //chenzx
+		_lock.unlock();     //chenzx
         return ret;
     }
     
-    // ÊÇ·ñÒªÖ´ĞĞÈÕÖ¾ÇĞ»»
+    // æ˜¯å¦è¦æ‰§è¡Œæ—¥å¿—åˆ‡æ¢
     if((__count++) >= SHIFT_FREQ)
     {
        _shift();
        __count = 0;
     }
 
-	_lock.unLock();     //chenzx
+	_lock.unlock();     //chenzx
     return 0;
 }
 
 /**
- * ÇĞ»»ÈÕÖ¾ÎÄ¼ş
+ * åˆ‡æ¢æ—¥å¿—æ–‡ä»¶
  */
 int CLogger::_shift()
 {
     struct stat stStat;
     string strNewFile, strOldFile;
     
-    // ÖØĞÂ´ò¿ªÎÄ¼ş
+    // é‡æ–°æ‰“å¼€æ–‡ä»¶
     _open();
     
-    // ²âÊÔµ±Ç°ÈÕÖ¾ÎÄ¼ş´óĞ¡
+    // æµ‹è¯•å½“å‰æ—¥å¿—æ–‡ä»¶å¤§å°
     if(fstat(_fd, &stStat) < 0) 
     {
         snprintf(_szErrInfo, sizeof(_szErrInfo), "stat file %s.log error:%s", _path.c_str(), strerror(errno));
         return -1;
     }
 
-    // Èôµ±Ç°ÎÄ¼ş´óĞ¡Ğ¡ÓÚ×î´óÖµ
+    // è‹¥å½“å‰æ–‡ä»¶å¤§å°å°äºæœ€å¤§å€¼
     if (stStat.st_size < _max_size) 
     {
         return 0;
     }
 
-    // É¾³ı×îºóÒ»¸öÈÕÖ¾ÎÄ¼ş
+    // åˆ é™¤æœ€åä¸€ä¸ªæ—¥å¿—æ–‡ä»¶
     strNewFile = _file_name(_max_file - 1);
     if (access(strNewFile.c_str(), F_OK) == 0) 
     {
         if(remove(strNewFile.c_str()) != 0)  return -1;
     }
 
-    // ÀÛ¼ÓÎÄ¼şĞòºÅ(ÇĞ»»ÎÄ¼şÃû)
+    // ç´¯åŠ æ–‡ä»¶åºå·(åˆ‡æ¢æ–‡ä»¶å)
     for(int i = _max_file - 2; i >= 0; i--) 
     {
         strOldFile = _file_name(i);
@@ -260,22 +260,22 @@ int CLogger::_shift()
         }
     }
 
-    // ¹Ø±ÕÎÄ¼ş
+    // å…³é—­æ–‡ä»¶
     _close();  
     
     return 0;
 }
 
 /**
- * È·¶¨ÈÕÖ¾ÎÄ¼şÃû
- * @input:  index  ÎÄ¼şË÷Òı±àºÅ
+ * ç¡®å®šæ—¥å¿—æ–‡ä»¶å
+ * @input:  index  æ–‡ä»¶ç´¢å¼•ç¼–å·
  */
 string CLogger::_file_name(int index)
 {
     char szSuffix[128] = {0};
     char szFile[256] = {0};
 
-    // ÎÄ¼şÃûºó×º
+    // æ–‡ä»¶ååç¼€
     if(index == 0)
     {
         sprintf(szSuffix, "%s.log", _suffix.c_str());

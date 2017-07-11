@@ -1,15 +1,19 @@
 #include"redisOperator.h"
+#include"glog/logging.h"
 
+#include <sstream>
+
+using  namespace std;
 
 CRedisOperator::CRedisOperator(string ip, int port, int timeout )
 :_strIp(ip),_iPort(port),_iTimeout(timeout),
 _beginInvalidTime(0)
 {
-	_lock.Init();
+
 }
 CRedisOperator::~CRedisOperator()
 {
-	_lock.Lock();
+	std::lock_guard<mutex>  lk(_lock);
     while(!_clients.empty())
     {
         redisContext *ctx = _clients.front();
@@ -17,16 +21,16 @@ CRedisOperator::~CRedisOperator()
         _clients.pop();
     }
 
-	_lock.unLock();
-
 }
 
 bool CRedisOperator::setValue(string & key,string & value)
 {
-	char command[1024*1024*4] = {0};
-	sprintf(command, "set %s %s", key.c_str(), value.c_str());
+    std::stringstream  ss;
+    ss << "set " <<key << "  "<<value;
+    string cmd;
+    cmd = ss.str();
 	string response;
-	if( !(ExecuteCmd(command, response) && strcmp(response.c_str(), "OK")==0) )
+	if( !(ExecuteCmd(cmd.c_str(), response) && response == "OK") )
 	{
 		return false;
 	}
@@ -36,23 +40,27 @@ bool CRedisOperator::setValue(string & key,string & value)
 }
 bool CRedisOperator::getValue(string & key,string & value)
 {
-	char command[1024] = {0};
-	sprintf(command, "get %s", key.c_str());
-	if(!(ExecuteCmd(command, value) && value!= ""))
+	string cmd;
+    stringstream ss;
+    ss <<"get  "<<key;
+    cmd = ss.str();
+
+	if(!(ExecuteCmd(cmd.c_str(), value) && value!= ""))
 	{
 		return false;
 	}
 		
 	return true;
-   
 }  
 
 bool CRedisOperator::setExpireTime(string & key,string secTime)
 {
-	char command[1024] = {0};
-	sprintf(command, "expire %s %s", key.c_str(), secTime.c_str());
-	string response;
-	if(!(ExecuteCmd(command, response) && strcmp(response.c_str(), "OK")==0))
+	string cmd; 	
+    string response;
+    stringstream ss;
+    ss <<"expire  "<<key << "   "<<secTime;
+    cmd = ss.str();
+	if(!(ExecuteCmd(cmd.c_str(), response) && response == "OK"))
 	{
 		return false;
 	}
@@ -131,10 +139,10 @@ redisContext* CRedisOperator::CreateContext()
 	{
         if(!_clients.empty())
         {
-        	_lock.Lock();
+        	_lock.lock();
             redisContext *ctx = _clients.front();
             _clients.pop();
-			_lock.unLock();
+			_lock.unlock();
 
             return ctx;
         }
@@ -142,6 +150,7 @@ redisContext* CRedisOperator::CreateContext()
 
 	time_t now = time(NULL);
     if(now < _beginInvalidTime + _maxReconnectInterval) return NULL;
+    if(_clients.size() > _poolSize)   return nullptr;
 
     struct timeval tv;
     tv.tv_sec = _iTimeout;
@@ -165,11 +174,9 @@ void CRedisOperator::ReleaseContext(redisContext *ctx, bool active)
 	if(ctx == NULL) return;
     if(!active) {redisFree(ctx); return;}
 
-    _lock.Lock();
-    _clients.push(ctx);
-	_lock.unLock();
-
-}
+    lock_guard<mutex>  lk(_lock);
+    _clients.push(ctx);   
+}   
 
 bool CRedisOperator::CheckStatus(redisContext *ctx)
 {
@@ -177,8 +184,8 @@ bool CRedisOperator::CheckStatus(redisContext *ctx)
     if(reply == NULL) return false;
 
 
-    if(reply->type != REDIS_REPLY_STATUS)  goto _false;
-    if(strcmp(reply->str,"PONG") != 0)     goto _false;
+    if(reply->type != REDIS_REPLY_STATUS)    goto _false;
+    if(strcmp(reply->str,"PONG") != 0)       goto _false;
 
 	freeReplyObject(reply);
     return true;
@@ -187,4 +194,9 @@ bool CRedisOperator::CheckStatus(redisContext *ctx)
 		freeReplyObject(reply);
 		return false;
 
+}
+
+void CRedisOperator::setPoolSize(int size)
+{
+    _poolSize = size;
 }

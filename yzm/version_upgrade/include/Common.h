@@ -18,7 +18,7 @@
 #include <dirent.h>
 #include<vector>
 
-//htons, htonlÍ·ÎÄ¼ş£º
+//htons, htonlå¤´æ–‡ä»¶ï¼š
 #include<netinet/in.h>
 #include "stdio.h"
 #include <string>
@@ -63,7 +63,7 @@ typedef struct DatabaseInfo
     char dbtype[20];
 }DATABASEINFO;
 
-//ÏÂÔØ
+//ä¸‹è½½
 typedef struct SecurityInfo
 {
     char type[10]; 
@@ -74,7 +74,7 @@ typedef struct SecurityInfo
 }SECURITYINFO;
 
 
-//»ã×Ü
+//æ±‡æ€»
 typedef struct LogInfo
 {
     char type[8];
@@ -83,7 +83,7 @@ typedef struct LogInfo
     int max_size;
 }LOGINFO;
 
-//ÉÏ´«
+//ä¸Šä¼ 
 typedef struct ThreadInfo
 {
     int thread_num;
@@ -144,10 +144,10 @@ public:
 	
 	//**********************************************************
 	// Method   : setHostPath
-	// Remark   : ÉèÖÃHostºÍPathÖµ
+	// Remark   : è®¾ç½®Hostå’ŒPathå€¼
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & host			URLÖĞµÄHostÈç£º 192.168.1.214
-	// Parameter: const std::string & path			URLÖĞµÄPathÈç£º /index.php
+	// Parameter: const std::string & host			URLä¸­çš„Hostå¦‚ï¼š 192.168.1.214
+	// Parameter: const std::string & path			URLä¸­çš„Pathå¦‚ï¼š /index.php
 	// Returns  : void
 	//**********************************************************
 	void	setHostPath(const std::string &host, const std::string &path);
@@ -158,7 +158,7 @@ public:
 	
 	//**********************************************************
 	// Method   : reset
-	// Remark   : ÖØÉè£¨»áÇå¿ÕËùÓĞ¡®¼üÖµ¡¯£¬µ«ÊÇHostºÍPath²»»á±»Çå¿Õ
+	// Remark   : é‡è®¾ï¼ˆä¼šæ¸…ç©ºæ‰€æœ‰â€˜é”®å€¼â€™ï¼Œä½†æ˜¯Hostå’ŒPathä¸ä¼šè¢«æ¸…ç©º
 	// DateTime : 2015/08/24
 	// Returns  : void
 	//**********************************************************
@@ -167,10 +167,10 @@ public:
 	
 	//**********************************************************
 	// Method   : setParam
-	// Remark   : Ğ´Èë¼üÖµ£¬Ìá¹©3ÖĞ³£ÓÃÀàĞÍ£¨Èç¹û¼üÖµ´æÔÚÔò»á¸²¸Ç¾É¼üÖµ£©
+	// Remark   : å†™å…¥é”®å€¼ï¼Œæä¾›3ä¸­å¸¸ç”¨ç±»å‹ï¼ˆå¦‚æœé”®å€¼å­˜åœ¨åˆ™ä¼šè¦†ç›–æ—§é”®å€¼ï¼‰
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & key			¼üKey
-	// Parameter: int val							ÖµValue
+	// Parameter: const std::string & key			é”®Key
+	// Parameter: int val							å€¼Value
 	// Returns  : bool
 	//**********************************************************
 	bool	setParam(const std::string &key, int val);
@@ -181,28 +181,28 @@ public:
 	
 	//**********************************************************
 	// Method   : getParam
-	// Remark   : »ñÈ¡¼üÖµ£¬Ö»Ìá¹©×Ö·û´®·½Ê½£¬ÓÃ»§¿ÉÒÔ½èÖúStrT½øĞĞÊı¾İ×ª»»
+	// Remark   : è·å–é”®å€¼ï¼Œåªæä¾›å­—ç¬¦ä¸²æ–¹å¼ï¼Œç”¨æˆ·å¯ä»¥å€ŸåŠ©StrTè¿›è¡Œæ•°æ®è½¬æ¢
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & key			¼üKey
-	// Returns  : const std::string&				ÖµValue
+	// Parameter: const std::string & key			é”®Key
+	// Returns  : const std::string&				å€¼Value
 	//**********************************************************
 	const std::string&	getParam(const std::string &key) const;
 
 	
 	//**********************************************************
 	// Method   : hasParam
-	// Remark   : ÅĞ¶ÏÊÇ·ñ°üº¬Ö¸¶¨¼üÖµ£¨ÍêÈ«Æ¥Åä£©
+	// Remark   : åˆ¤æ–­æ˜¯å¦åŒ…å«æŒ‡å®šé”®å€¼ï¼ˆå®Œå…¨åŒ¹é…ï¼‰
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & key			¼üKey
+	// Parameter: const std::string & key			é”®Key
 	// Returns  : bool
 	//**********************************************************
 	bool	hasParam(const std::string &key) const;
 	
 	//**********************************************************
 	// Method   : delParam
-	// Remark   : É¾³ıÖ¸¶¨¼üÖµ
+	// Remark   : åˆ é™¤æŒ‡å®šé”®å€¼
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & key			¼üKey
+	// Parameter: const std::string & key			é”®Key
 	// Returns  : bool
 	//**********************************************************
 	bool	delParam(const std::string &key);
@@ -210,7 +210,7 @@ public:
 	
 	//**********************************************************
 	// Method   : getFullUrl
-	// Remark   : Éú³ÉÍêÕûURL£¨URLÖ÷ÒªÓĞ&key=valueµÄ·½Ê½×é³É£¬·µ»ØÀı×ÓÈçÏÂ£©
+	// Remark   : ç”Ÿæˆå®Œæ•´URLï¼ˆURLä¸»è¦æœ‰&key=valueçš„æ–¹å¼ç»„æˆï¼Œè¿”å›ä¾‹å­å¦‚ä¸‹ï¼‰
 	//		http://192.168.1.214/api/index.php?ver=1.0&time=1440417938&key=test&action=app_update&platform=ios
 	// DateTime : 2015/08/24
 	// Returns  : std::string
@@ -220,11 +220,11 @@ public:
 	
 	//**********************************************************
 	// Method   : generateGetParamString
-	// Remark   : ±éÀú¼üÖµ£¬Éú³ÉÌØ¶¨¸ñÊ½µÄÆ´½Ó´®
+	// Remark   : éå†é”®å€¼ï¼Œç”Ÿæˆç‰¹å®šæ ¼å¼çš„æ‹¼æ¥ä¸²
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & firstPrefix		Æ´½Ó´®Ç°×º
-	// Parameter: const std::string & otherPrefix		¼üÖµ¼ä¸ô·û
-	// Parameter: const std::string & operPrefix		¼üÖµ¸³Öµ·û
+	// Parameter: const std::string & firstPrefix		æ‹¼æ¥ä¸²å‰ç¼€
+	// Parameter: const std::string & otherPrefix		é”®å€¼é—´éš”ç¬¦
+	// Parameter: const std::string & operPrefix		é”®å€¼èµ‹å€¼ç¬¦
 	// Returns  : std::string
 	//**********************************************************
 	std::string		generateGetParamString(const std::string &firstPrefix = "?",
@@ -232,17 +232,17 @@ public:
 											const std::string &operPrefix = "=") const;
 	//**********************************************************
 	// Method   : setFuctionName
-	// Remark   : ÉèÖÃº¯ÊıÃû³Æ
+	// Remark   : è®¾ç½®å‡½æ•°åç§°
 	// DateTime : 2015/08/24
-	// Parameter: std::string name		º¯ÊıÃû³Æ
+	// Parameter: std::string name		å‡½æ•°åç§°
 	//**********************************************************
 	void            setFunctionName(std::string name);
 protected:
 	typedef		std::map<std::string, std::string>		PARAM_MAP;
 
-	PARAM_MAP		paramMap_;		// ¼üÖµÓ³Éä¼¯ºÏ
-	std::string		apiHost_;		// URLÖĞµÄHostÈç£º 192.168.1.214
-	std::string		apiPath_;		// URLÖĞµÄPathÈç£º /index.php
+	PARAM_MAP		paramMap_;		// é”®å€¼æ˜ å°„é›†åˆ
+	std::string		apiHost_;		// URLä¸­çš„Hostå¦‚ï¼š 192.168.1.214
+	std::string		apiPath_;		// URLä¸­çš„Pathå¦‚ï¼š /index.php
 	std::string		name_;
 };
 
@@ -258,7 +258,7 @@ public:
 	
 	//**********************************************************
 	// Method   : reset
-	// Remark   : ÖØÉè£¨»áÇå¿Õ´ıÉÏ´«ÎÄ¼şÁĞ±í£©
+	// Remark   : é‡è®¾ï¼ˆä¼šæ¸…ç©ºå¾…ä¸Šä¼ æ–‡ä»¶åˆ—è¡¨ï¼‰
 	// DateTime : 2015/08/24
 	// Returns  : void
 	//**********************************************************
@@ -267,9 +267,9 @@ public:
 	
 	//**********************************************************
 	// Method   : setPostDataString
-	// Remark   : ÉèÖÃ×Ô¶¨ÒåPostÊı¾İÄÚÈİÌå
+	// Remark   : è®¾ç½®è‡ªå®šä¹‰Postæ•°æ®å†…å®¹ä½“
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & data			×Ô¶¨ÒåÄÚÈİ
+	// Parameter: const std::string & data			è‡ªå®šä¹‰å†…å®¹
 	// Returns  : void
 	//**********************************************************
 	void	setPostDataString(const std::string &data);
@@ -278,28 +278,28 @@ public:
 	
 	//**********************************************************
 	// Method   : addFile
-	// Remark   : Ìí¼ÓÖ¸¶¨ÎÄ¼şµ½´ıÉÏ´«ÎÄ¼şÁĞ±í
+	// Remark   : æ·»åŠ æŒ‡å®šæ–‡ä»¶åˆ°å¾…ä¸Šä¼ æ–‡ä»¶åˆ—è¡¨
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & path			ÎÄ¼şÂ·¾¶
-	// Parameter: const std::string & name			×Ô¶¨ÒåÎÄ¼şÃû
+	// Parameter: const std::string & path			æ–‡ä»¶è·¯å¾„
+	// Parameter: const std::string & name			è‡ªå®šä¹‰æ–‡ä»¶å
 	// Returns  : bool
 	//**********************************************************
 	bool	addFile(const std::string &path, const std::string &name = "");
 	
 	//**********************************************************
 	// Method   : delFile
-	// Remark   : ´Ó´ıÉÏ´«ÎÄ¼şÁĞ±íÒÆ³ıÖ¸¶¨ÎÄ¼ş
+	// Remark   : ä»å¾…ä¸Šä¼ æ–‡ä»¶åˆ—è¡¨ç§»é™¤æŒ‡å®šæ–‡ä»¶
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & path			ÎÄ¼şÂ·¾¶
+	// Parameter: const std::string & path			æ–‡ä»¶è·¯å¾„
 	// Returns  : bool
 	//**********************************************************
 	bool	delFile(const std::string &path);
 	
 	//**********************************************************
 	// Method   : hasFile
-	// Remark   : ÅĞ¶Ï´ıÉÏ´«ÎÄ¼şÁĞ±íÊÇ·ñ°üº¬Ö¸¶¨ÎÄ¼ş£¨ÍêÈ«Æ¥Åä£©
+	// Remark   : åˆ¤æ–­å¾…ä¸Šä¼ æ–‡ä»¶åˆ—è¡¨æ˜¯å¦åŒ…å«æŒ‡å®šæ–‡ä»¶ï¼ˆå®Œå…¨åŒ¹é…ï¼‰
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & path			ÎÄ¼şÂ·¾¶
+	// Parameter: const std::string & path			æ–‡ä»¶è·¯å¾„
 	// Returns  : bool
 	//**********************************************************
 	bool	hasFile(const std::string &path) const;
@@ -309,9 +309,9 @@ private:
 
 private:
 	typedef		std::map<std::string/*Path*/, std::string/*Name*/>	FILE_LIST;
-	FILE_LIST	fileList_;			// ÒªÉÏ´«µÄÎÄ¼şÁĞ±í
-	std::string	customData_;		// ×Ô¶¨ÒåPostÊı¾İ£¨Post°üµÄÄÚÈİÌå£©
-	bool		isCustomData_;		// ÊÇ·ñÊÇPost×Ô¶¨ÒåÊı¾İ
+	FILE_LIST	fileList_;			// è¦ä¸Šä¼ çš„æ–‡ä»¶åˆ—è¡¨
+	std::string	customData_;		// è‡ªå®šä¹‰Postæ•°æ®ï¼ˆPoståŒ…çš„å†…å®¹ä½“ï¼‰
+	bool		isCustomData_;		// æ˜¯å¦æ˜¯Postè‡ªå®šä¹‰æ•°æ®
 };
 
 
@@ -331,12 +331,12 @@ public:
 	
 	//**********************************************************
 	// Method   : uploadFile
-	// Remark   : ÎÄ¼şÉÏ´«£¨multipart/form-data·½Ê½£©
+	// Remark   : æ–‡ä»¶ä¸Šä¼ ï¼ˆmultipart/form-dataæ–¹å¼ï¼‰
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & url			ÉÏ´«½Ó¿ÚURL
-	// Parameter: std::string * html				ÉÏ´«½Ó¿Ú·µ»ØµÄhtml
-	// Parameter: const std::string & filePath		ĞèÒªÉÏ´«µÄÎÄ¼şÂ·¾¶
-	// Parameter: const std::string & nickName		×Ô¶¨ÒåÎÄ¼şÃû£¨¿ÉÑ¡£©
+	// Parameter: const std::string & url			ä¸Šä¼ æ¥å£URL
+	// Parameter: std::string * html				ä¸Šä¼ æ¥å£è¿”å›çš„html
+	// Parameter: const std::string & filePath		éœ€è¦ä¸Šä¼ çš„æ–‡ä»¶è·¯å¾„
+	// Parameter: const std::string & nickName		è‡ªå®šä¹‰æ–‡ä»¶åï¼ˆå¯é€‰ï¼‰
 	// Returns  : bool
 	//**********************************************************
 	static bool		uploadFile(const std::string &url, 
@@ -349,28 +349,28 @@ public:
 	
 	//**********************************************************
 	// Method   : formatURL
-	// Remark   : ¸ñÊ½»¯URL£¨È¥³ı´íÎó¡¢ÈßÓàµÄ/Ğ±¸Ü£©
+	// Remark   : æ ¼å¼åŒ–URLï¼ˆå»é™¤é”™è¯¯ã€å†—ä½™çš„/æ–œæ ï¼‰
 	// DateTime : 2015/08/24
-	// Parameter: std::string * url					urlµØÖ·
+	// Parameter: std::string * url					urlåœ°å€
 	// Returns  : void
 	//**********************************************************
 	static void			formatURL(std::string *url);
 	
 	//**********************************************************
 	// Method   : formatURL_C
-	// Remark   : ¸ñÊ½»¯URL£¨È¥³ı´íÎó¡¢ÈßÓàµÄ/Ğ±¸Ü£©
+	// Remark   : æ ¼å¼åŒ–URLï¼ˆå»é™¤é”™è¯¯ã€å†—ä½™çš„/æ–œæ ï¼‰
 	// DateTime : 2015/08/24
-	// Parameter: const std::string & url			urlµØÖ·
-	// Returns  : std::string				¸ñÊ½»¯ºóµÄURL
+	// Parameter: const std::string & url			urlåœ°å€
+	// Returns  : std::string				æ ¼å¼åŒ–åçš„URL
 	//**********************************************************
 	static std::string	formatURL_C(const std::string &url);
 
 	
 	//**********************************************************
 	// Method   : setDebug
-	// Remark   : ÉèÖÃµ÷ÊÔ×´Ì¬£¨µ÷ÊÔÊ±»áÔÚÈÕÖ¾ÖĞÊä³öËùÓĞhttp°üµÄÊı¾İ£©
+	// Remark   : è®¾ç½®è°ƒè¯•çŠ¶æ€ï¼ˆè°ƒè¯•æ—¶ä¼šåœ¨æ—¥å¿—ä¸­è¾“å‡ºæ‰€æœ‰httpåŒ…çš„æ•°æ®ï¼‰
 	// DateTime : 2015/08/24
-	// Parameter: bool isDebug						ÊÇ·ñ¿ªÆôµ÷ÊÔ
+	// Parameter: bool isDebug						æ˜¯å¦å¼€å¯è°ƒè¯•
 	// Returns  : void
 	//**********************************************************
 	static void			setDebug(bool isDebug);
@@ -379,7 +379,7 @@ public:
 private:
 	typedef		size_t (*WRITE_FUNC)(void*, size_t, size_t, void*);
 
-	// GetºÍPostµÄ»Øµ÷º¯Êı£¬·Ö±ğÊÇ°ÑÍøÕ¾·µ»ØµÄÊı¾İĞ´Èëµ½ÄÚ´æ»òÕßĞ´Èëµ½±¾µØÎÄ¼şÖĞ
+	// Getå’ŒPostçš„å›è°ƒå‡½æ•°ï¼Œåˆ†åˆ«æ˜¯æŠŠç½‘ç«™è¿”å›çš„æ•°æ®å†™å…¥åˆ°å†…å­˜æˆ–è€…å†™å…¥åˆ°æœ¬åœ°æ–‡ä»¶ä¸­
 	static size_t	onWriteMemory(void *buffer, 
 								size_t size, 
 								size_t nmemb, 
@@ -391,7 +391,7 @@ private:
 								void *ptr);
 	
 
-	// Get·½·¨ÊµÏÖ£¬·ÖÎªhttpºÍhttpsÁ½ÖÖ
+	// Getæ–¹æ³•å®ç°ï¼Œåˆ†ä¸ºhttpå’Œhttpsä¸¤ç§
 	static bool		getMethod(const std::string &url, 
 							void *param, 
 							WRITE_FUNC func);
@@ -402,7 +402,7 @@ private:
 								const std::string &caPath = "");
 
 
-	// Post·½·¨ÊµÏÖ£¬·ÖÎªhttpºÍhttpsÁ½ÖÖ
+	// Postæ–¹æ³•å®ç°ï¼Œåˆ†ä¸ºhttpå’Œhttpsä¸¤ç§
 	static bool		postMethod(const std::string &url, 
 							const std::string &postData, 
 							void *param, 
@@ -417,47 +417,8 @@ private:
 
 private:
 	HttpHelper();
-	static bool	s_isDebug;		// ÊÇ·ñ¿ªÆôµ÷ÊÔÄ£Ê½
+	static bool	s_isDebug;		// æ˜¯å¦å¼€å¯è°ƒè¯•æ¨¡å¼
 };
-
-
-/************************************************************************
-  *************************       MD5        *************************
-************************************************************************/
-class  MD5
-{
-private:
-    #define uint8  unsigned char
-    #define uint32 unsigned long int
-
-    struct md5_context
-    {
-        uint32 total[2];
-        uint32 state[4];
-        uint8 buffer[64];
-    };
-
-    void starts( struct md5_context *ctx );
-    void process( struct md5_context *ctx, uint8 data[64] );
-    void update( struct md5_context *ctx, uint8 *input, uint32 length );
-    void finish( struct md5_context *ctx, uint8 digest[16] );
-
-public:
-    void generate(unsigned char* buffer,int bufferlen);
-    void generate(const std::string &buffer);
-
-    MD5();
-    MD5(const char *md5src);
-    MD5(unsigned long *md5src);
-
-    MD5 operator+(const MD5 &adder);
-    bool operator==(const MD5 &cmper) const;
-
-    std::string toString();
-
-    unsigned long m_data[4];
-};
-
 
 
 

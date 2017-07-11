@@ -2,38 +2,55 @@
 #define CDBOperator_H_
 
 #include "Common.h"
-#include "exception.h"
-#include "mysql.h" 
-#include "Error.h"
-#include <string>
 #include "sqlapi.h"
 #include "def.h"
 
-using namespace std;
+#include<memory>
+#include <string>
+#include<vector>
+#include<utility>
+
+struct ANDROID_VERSION_INFO{
+	std::string name;
+	std::string domain;
+	std::string bucket;
+	std::string path;
+	std::string md5;
+	std::string size;
+	std::string description;
+};
+
+struct LIVESHOW_ADD_INFO{
+	std::string name;
+	std::string domain;
+	std::string bucket;
+	std::string description;
+	std::vector<std::pair<std::string, std::string> >   fileVec_;
+};
 
 class CDBOperator
 {
 public:
-
-    CDBOperator(DB_PARAM db_pram);
+    CDBOperator();
     virtual ~CDBOperator();
-	bool initMYSQL();  
-	void GenRepJson(SqlMapVector objVecMap, string &JsonStr);
-	void QueryExistingVersions(int type, SqlMapVector &objOutMapVector)  throw (CException);
-	void QueryAndroidExistingVersions(SqlMapVector &objOutMapVector)  throw (CException);
-	void QueryNewaddedVersions(SqlMapVector &objOutMapVector, string type)  throw (CException);
-	void QueryAndroidNewaddedVersions(SqlMapVector &objOutMapVector)  throw (CException);
-	void QueryMd5s(int type, string version, KeyValueMap& outMap)  throw (CException);
-	void insertMD5toDB(SqlMapVector& inMapVec, string type)  throw (CException);
-	void QueryBucketAndDomain(int type ,string& inVersion, string& outBucket, string& outDomain)  throw (CException);
-	void QueryAndroidBucketAndDomain(string& inVersion, string& outBucket, string& outDomain)  throw (CException);
-	void UpdateVersionStatus(string& inVersionName, string type)  throw (CException);  
-	void UpdateAndroidVersionStatus(string& inVersionName, string& inMd5, int& inSize)  throw (CException);
 	
- 
+public:
+	bool initMYSQL();  
+	bool QueryExistingVersions(int type, SqlMapVector &objOutMapVector);
+	bool QueryAndroidExistingVersions(SqlMapVector &objOutMapVector);
+	bool QueryNewaddedVersions(SqlMapVector &objOutMapVector, std::string type);  
+	bool QueryAndroidNewaddedVersions(SqlMapVector &objOutMapVector);
+	bool QueryMd5s(int type, std::string version, KeyValueMap& outMap);  
+	bool insertMD5toDB(SqlMapVector& inMapVec, std::string type);
+	bool QueryBucketAndDomain(int type ,std::string& inVersion, std::string& outBucket, std::string& outDomain); 
+	bool QueryAndroidBucketAndDomain(std::string& inVersion, std::string& outBucket, std::string& outDomain);
+	bool UpdateVersionStatus(std::string& inVersionName, std::string type);
+	bool UpdateAndroidVersionStatus(std::string& inVersionName, std::string& inMd5, int& inSize);
+	int  AddAndroidVersion(ANDROID_VERSION_INFO& avInfo);
+	int  AddLiveshowVersion(LIVESHOW_ADD_INFO&  lsInfo);
+	
 private:
-	DB_PARAM _db_param;
-	CMySQL* _ptrMysql;
+	std::shared_ptr<CMySQL>  _ptrMysql;
  
 };
 

@@ -1,6 +1,10 @@
 #include "config.h"
 #include <fstream>
 
+using namespace rapidjson;
+using rapidjson::Document;
+using namespace std;
+
 namespace  config
 {
 	void FailureHandler(const char* data, int size)
@@ -32,6 +36,7 @@ namespace  config
 
 	}
 	//////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////
 	bool CConfigManager::ParseConf(string& path, Document& doc)
 	{
 		string      stringFromStream;
@@ -56,6 +61,29 @@ namespace  config
 			return  false;
 		}
 		return true;
+	}
+
+	bool CConfigManager::get_string(rapidjson::Value& v, string& str)
+	{
+		if (v.IsNull() || !v.IsString())
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	bool CConfigManager::get_int(rapidjson::Value& v, int&  iValue)
+	{
+		if (v.IsNull() || !v.IsInt())
+		{
+			return false;
+		}
+
+		iValue = v.GetInt();
+
+		return true;
+
 	}
 
 	bool CConfigManager::get_db_paramer(string path)
@@ -177,6 +205,77 @@ namespace  config
 
 	}
 
+	bool CConfigManager::get_redis_param(std::string path)
+	{
+		Document doc;
+		if (!ParseConf(path, doc))
+		{
+			LOG(ERROR) << "parse conf file failed,  file path : " << path;
+			return false;
+		}
+
+		using rapidjson::Value;
+
+		Value & ip = doc["redis"]["ip"];
+
+		if (ip.IsNull() || !ip.IsString())
+		{
+			LOG(ERROR) << "redis ip is null";
+			return false;
+		}
+
+		redis_para_.ip_ = ip.GetString();
+
+		LOG(INFO) << "redis_para.ip_ : " << redis_para_.ip_;
+
+		Value & port = doc["redis"]["port"];
+
+		if (port.IsNull() || !port.IsInt())
+		{
+			LOG(ERROR) << "redis_para_.port_ is null";
+			return false;
+		}
+
+		redis_para_.port_ = port.GetInt();
+		LOG(INFO) << "redis_para_.port_ : " << redis_para_.port_;
+
+		Value &over_time = doc["redis"]["over_time"];
+
+		if (over_time.IsNull() || !over_time.IsInt())
+		{
+			LOG(ERROR) << "redis over_time is null";
+			return false;
+		}
+
+		redis_para_.overTime_ = over_time.GetInt();
+		LOG(INFO) << "redis_para_.overTime_ : " << redis_para_.overTime_;
+
+		return true;
+
+	}
+
+	bool CConfigManager::get_main_param(std::string  path)
+	{
+		Document doc;
+		if (!ParseConf(path, doc))
+		{
+			LOG(ERROR) << "parse conf file failed,  file path : " << path;
+			return false;
+		}
+
+		using rapidjson::Value;
+
+		if(!get_int(doc["listen_port"], listen_port_))
+		{
+			LOG(ERROR) << "listen port empty";
+			return false;
+		}
+
+		LOG(INFO) << "listen_port : " << listen_port_;
+
+		return true;
+
+	}
 
 }
 

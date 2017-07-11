@@ -9,23 +9,23 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <stdarg.h>
-#include "Mutex.h"
+#include <mutex>
 
 using std::string;
 
-const int ERR_SIZE = 1024;  // ´íÎóÐÅÏ¢³¤¶È
-const int MAX_BUF = 10240; // µ¥ÐÐÈÕÖ¾×î´ó³¤¶È
-const int SHIFT_FREQ = 128;  // ÈÕÖ¾ÇÐ»»Æµ¶È
+const int ERR_SIZE = 1024;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½
+const int MAX_BUF = 10240; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ó³¤¶ï¿½
+const int SHIFT_FREQ = 128;  // ï¿½ï¿½Ö¾ï¿½Ð»ï¿½Æµï¿½ï¿½
 
 /**
- * ÈÕÖ¾Àà
+ * ï¿½ï¿½Ö¾ï¿½ï¿½
  */
 class CLogger
 {
 public:
     
     /**
-     * ÈÕÖ¾¼¶±ð
+     * ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½
      */
     enum LOG_LEVEL
     {
@@ -37,156 +37,156 @@ public:
     };
 
     /**
-     * ÈÕÖ¾ÇÐ»»Ä£Ê½
+     * ï¿½ï¿½Ö¾ï¿½Ð»ï¿½Ä£Ê½
      */
     enum SHIFT_MODE
     {
-        _SIZE_MODE = 1,  // °´´óÐ¡ÇÐ»»
-        _DATE_MODE = 2  // °´ÈÕÆÚÇÐ»»
+        _SIZE_MODE = 1,  // ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½Ð»ï¿½
+        _DATE_MODE = 2  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½
     };
     
 public:
     
     /**
-     * ¹¹Ôìº¯Êý
+     * ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½
      */
     CLogger(const char* path, int max_size, int max_file = 10,LOG_LEVEL level = _DEBUG, SHIFT_MODE=_SIZE_MODE);
 
     /**
-     * Îö¹¹º¯Êý
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     virtual ~CLogger();
 
     /**
-     * ÉèÖÃÈÕÖ¾¼¶±ð
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½
      */
     inline void setLogLevel(LOG_LEVEL level)    { _level = level; }
 
     /**
-     * ÉèÖÃÏûÏ¢ÐòÁÐºÅ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ðºï¿½
      */
     inline void setMsgId(const string& strMsg)      { _msg_id = strMsg; }
 
     /**
-     * ÉèÖÃÎÄ¼þÃûºó×º
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½×º
      */
     inline void setSuffix(const string& suffix) { _suffix = suffix; }
 
     /**
-     * »ñÈ¡ÈÕÖ¾ÏµÍ³´íÎóÐÅÏ¢
+     * ï¿½ï¿½È¡ï¿½ï¿½Ö¾ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      */
     inline const char* getErrorInfo()    { return _szErrInfo; }
 
     /**
-     * ´òÓ¡´íÎólog
+     * ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½log
      */
     int error(const char *fmt, ...);
     
     /**
-     * ´òÓ¡¸æ¾¯log
+     * ï¿½ï¿½Ó¡ï¿½æ¾¯log
      */
     int warning(const char *fmt, ...);
     
     /**
-     * ´òÓ¡Õý³£log
+     * ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½log
      */
     //int normal(const char *fmt, ...);
     int info(const char *fmt, ...);
 
     /**
-     * ´òÓ¡µ÷ÊÔlog
+     * ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½log
      */
     int debug(const char *fmt, ...);
 
     /**
-     * Ö±½ÓÐ´ÈÕÖ¾
+     * Ö±ï¿½ï¿½Ð´ï¿½ï¿½Ö¾
      */
     int raw(const char *fmt, ...);
 
 protected:
     
     /**
-     * ´ò¿ªÎÄ¼þ
+     * ï¿½ï¿½ï¿½Ä¼ï¿½
      */
     int _open();
 
     /**
-     * ¹Ø±Õ
+     * ï¿½Ø±ï¿½
      */
     void _close();
 
     /**
-     * ÇÐ»»ÈÕÖ¾ÎÄ¼þ
+     * ï¿½Ð»ï¿½ï¿½ï¿½Ö¾ï¿½Ä¼ï¿½
      */
     int _shift();
 
     /**
-     * ¼ÇÂ¼ÈÕÖ¾
+     * ï¿½ï¿½Â¼ï¿½ï¿½Ö¾
      */
     int _write(const char *szLog, int len);
 
     /**
-     * È·¶¨ÈÕÖ¾ÎÄ¼þÃû
+     * È·ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½Ä¼ï¿½ï¿½ï¿½
      */
     string _file_name(int index=0);
 
 protected:
 
     /**
-     * ÇÐ»»Ä£Ê½
+     * ï¿½Ð»ï¿½Ä£Ê½
      */
     SHIFT_MODE _shift_mode;
     
     /**
-     * ÎÄ¼þÖ¸Õë
+     * ï¿½Ä¼ï¿½Ö¸ï¿½ï¿½
      */
     int  _fd;
 
     /**
-     * ÎÄ¼þÂ·¾¶
+     * ï¿½Ä¼ï¿½Â·ï¿½ï¿½
      */
     string _path;
 
     /**
-     * ×î´óÎÄ¼þ´óÐ¡
+     * ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ð¡
      */
     int _max_size;
 
     /**
-     * ½ø³ÌID
+     * ï¿½ï¿½ï¿½ï¿½ID
      */
     int _proc_id;
 
     /**
-     * µ±Ç°ÏµÍ³Ê±¼ä
+     * ï¿½ï¿½Ç°ÏµÍ³Ê±ï¿½ï¿½
      */
     struct tm _tm_now;
 
     /**
-     * ÏûÏ¢ÐòÁÐºÅ
+     * ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ðºï¿½
      */
     string _msg_id;
 
     /**
-     * ÎÄ¼þÃûºó×º
+     * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½×º
      */
     string _suffix;
     
     /**
-     * ×î´óÎÄ¼þ¸öÊý
+     * ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     int _max_file;
 
     /**
-     * ÈÕÖ¾¼¶±ð
+     * ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½
      */
     LOG_LEVEL _level;
 
     /**
-     * »ñÈ¡´íÎóÐÅÏ¢
+     * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      */
     char _szErrInfo[ERR_SIZE + 1];
-	cMutex _lock;
+	std::mutex  _lock;
 };
 
 #endif

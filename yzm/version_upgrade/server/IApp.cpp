@@ -3,6 +3,7 @@
 
 #include<memory>
 #include<signal.h>
+#include<unistd.h>
 
 using namespace std; 
 
@@ -22,6 +23,7 @@ int IApp::Run(int argc, char** argv, const std::string& titile)
 {
 	if ( OnStart() )
 	{
+		//daemon(1, 0);
 		signal(SIGTERM,  SignalCallback);            
 		waitForSignal();
 	}

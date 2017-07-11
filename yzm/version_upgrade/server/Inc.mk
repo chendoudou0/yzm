@@ -5,7 +5,7 @@
 CC = g++
 CXX = g++
 
-CFLAGS = -O3 -DNDEBUG -w   
+CFLAGS = -O3 -DNDEBUG  
 
 
 # 自动计算文件的依赖关系
@@ -22,4 +22,3 @@ CFLAGS = -O3 -DNDEBUG -w
                 sed s/"\.o"/"\.d"/  >> $@
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $<
-

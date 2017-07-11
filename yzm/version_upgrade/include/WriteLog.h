@@ -13,11 +13,11 @@ using namespace std;
 
 enum LogLevel
 {
-    levelDebug                                = 1,                //µ÷ÊÔ¼¶±ğ(ÔÚµ÷ÓÃ³ÌĞòÊ±Ê¹ÓÃ,Êä³ö½Ï¶àµÄµ÷ÊÔĞÅÏ¢)
-    levelNormal                                = 2,                //ÆÕÍ¨ĞÅÏ¢¼¶±ğ(Ò»°ãµÄĞÅÏ¢)
-    levelWarning                               = 3,                //¾¯¸æĞÅÏ¢¼¶±ğ(¸æ¾¯,ÏµÍ³¿ÉÄÜÓĞ´íÎó·¢Éú)
-    levelError                                       = 4,                //´íÎóĞÅÏ¢¼¶±ğ(¸æ¾¯,ÏµÍ³ÓĞÈ·¶¨µÄÒ»°ã´íÎó·¢Éú)
-    levelFatalError                        = 5                //ÖÂÃü´íÎóĞÅÏ¢¼¶±ğ(¸æ¾¯,ÏµÍ³´æÔÚÖÂÃü´íÎó,»á¶ÔÏµÍ³µÄÎÈ¶¨ÔËĞĞ²úÉúÓ°Ïì)
+    levelDebug                                = 1,                //è°ƒè¯•çº§åˆ«(åœ¨è°ƒç”¨ç¨‹åºæ—¶ä½¿ç”¨,è¾“å‡ºè¾ƒå¤šçš„è°ƒè¯•ä¿¡æ¯)
+    levelNormal                                = 2,                //æ™®é€šä¿¡æ¯çº§åˆ«(ä¸€èˆ¬çš„ä¿¡æ¯)
+    levelWarning                               = 3,                //è­¦å‘Šä¿¡æ¯çº§åˆ«(å‘Šè­¦,ç³»ç»Ÿå¯èƒ½æœ‰é”™è¯¯å‘ç”Ÿ)
+    levelError                                       = 4,                //é”™è¯¯ä¿¡æ¯çº§åˆ«(å‘Šè­¦,ç³»ç»Ÿæœ‰ç¡®å®šçš„ä¸€èˆ¬é”™è¯¯å‘ç”Ÿ)
+    levelFatalError                        = 5                //è‡´å‘½é”™è¯¯ä¿¡æ¯çº§åˆ«(å‘Šè­¦,ç³»ç»Ÿå­˜åœ¨è‡´å‘½é”™è¯¯,ä¼šå¯¹ç³»ç»Ÿçš„ç¨³å®šè¿è¡Œäº§ç”Ÿå½±å“)
 };
 
 class CWriteLog
@@ -28,7 +28,7 @@ class CWriteLog
     virtual ~CWriteLog();
     int Init(const string  strFileName, int nWorkFlag, int nlevel, long filesize );
         
-    //¹¦ÄÜ:ÈÕÖ¾ÊäÈëº¯Êı(²ÎÊı¼°¹¦ÄÜÍ¬CWriteLogÀàµÄÍ¬Ãûº¯Êı)
+    //åŠŸèƒ½:æ—¥å¿—è¾“å…¥å‡½æ•°(å‚æ•°åŠåŠŸèƒ½åŒCWriteLogç±»çš„åŒåå‡½æ•°)
     int WriteLog(int nlevel, const char *pszFormat, ...);
     int OutputLog(int nlevel, const char * pszFormat, va_list argList);
 

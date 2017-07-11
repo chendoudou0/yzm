@@ -1,62 +1,64 @@
 #include"jsonOperator.h"
 
-CJsonOperator::CJsonOperator(Document::AllocatorType& allocator)
-:_allocator(allocator)
+using namespace std;
+
+CJsonOperator::CJsonOperator()
 {
-	_root = new Value(kObjectType);
+	_root.reset(new Value);
+	_root->SetObject();
 }
 
 CJsonOperator::~CJsonOperator()
 {
-	if(_root)
-	{
-		delete _root;
-		_root= NULL;
-	}
 
 }
 
-bool CJsonOperator::addMember(string key, string value)
+bool CJsonOperator::addStringMember(string key, string value)
 {
-	Value vKey(kStringType);
-	vKey.SetString(key.c_str(), _allocator);
-	Value vValue(kStringType);
-	vValue.SetString(value.c_str(), _allocator);
+	Value vValue;
+	Value vKey;
+	vKey.SetString(key.c_str(), key.length(), doc_.GetAllocator());
+	vValue.SetString(value.c_str(), value.length(), doc_.GetAllocator());
+	_root->AddMember(vKey, vValue,  doc_.GetAllocator());  
 
-	_root->AddMember(vKey, vValue, _allocator);  
 	return true;
 }
 
-bool CJsonOperator::addArray(string key, SqlMapVector& mapVec)
+bool CJsonOperator::addIntegerMember(std::string key, int value)
 {
-	SqlMapVector::iterator iter;
+	_root->AddMember(StringRef(key.c_str()), value, doc_.GetAllocator());  
+
+	return true;   
+}
+
+bool CJsonOperator::addStringArray(string key, ssMapVec& mapVec)
+{
 	Value vArray(kArrayType);
-    for (iter = mapVec.begin(); iter != mapVec.end(); ++iter)
+    for (auto& it : mapVec)
     {
 		 Value item(kObjectType);
-		 KeyValueMap::iterator iter2;
-		 for(iter2=(*iter).begin(); iter2!=(*iter).end(); iter2++)
+		 for(auto&  it2  : it) 
          {
-            Value vKey(kStringType);
-			vKey.SetString(iter2->first.c_str(), _allocator);
-			Value vValue(kStringType);
-			vValue.SetString(iter2->second.c_str(), _allocator);
-			item.AddMember(vKey, vValue, _allocator);
+			Value vKey,vValue;
+			vKey.SetString(it2.first.c_str(), it2.first.length(), doc_.GetAllocator());
+			vValue.SetString(it2.second.c_str(), it2.second.length(), doc_.GetAllocator());
+			item.AddMember(vKey, vValue, doc_.GetAllocator());
          }
-		vArray.PushBack(item, _allocator); 
+
+		 vArray.PushBack(item, doc_.GetAllocator()); 
     }
-	Value arrayKey(kStringType);
-	arrayKey.SetString(key.c_str(), _allocator);
-	_root->AddMember(arrayKey, vArray, _allocator);
+	 Value Key;
+	 Key.SetString(key.c_str(), key.length(), doc_.GetAllocator());
+	_root->AddMember(Key, vArray, doc_.GetAllocator());
 	
 	return true;  
 }
 
-bool CJsonOperator::genOutput()
+void CJsonOperator::genOutput()
 {
 	StringBuffer buffer;
 	Writer<StringBuffer> writer(buffer);
 	_root->Accept(writer);
 	_strOutput= buffer.GetString();
-	return true; 
+
 }

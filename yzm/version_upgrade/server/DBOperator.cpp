@@ -1,129 +1,37 @@
 #include "DBOperator.h"
-#include "ErrorNo.h"
-#include"WriteLog.h"
-#include"Common.h"
-#include"xml-config.h"
-#include"def.h"
 #include "CLogger.h"
+#include "config.h"
+#include"glog/logging.h"
 
-extern CWriteLog     Log;
 extern CLogger* gPtrAppLog;
 
-CDBOperator::CDBOperator(DB_PARAM db_param)
-:_ptrMysql(NULL),
-_db_param(db_param)
+CDBOperator::CDBOperator()
 {
-
+    initMYSQL();
 }
 
 CDBOperator::~CDBOperator()
 {
    
 }
-void CDBOperator::GenRepJson(SqlMapVector objVecMap, string &JsonStr)
-{
-    SqlMapVector::iterator iter;
-    //JsonStr += "{";
-    for (iter = objVecMap.begin(); iter != objVecMap.end(); ++iter)
-    {
-    	if(iter != objVecMap.begin())
-		{
-            JsonStr.append(",");
-		}  
-		
-        KeyValueMap::iterator iter1;
-		JsonStr += "{";
-        for(iter1 = iter->begin();iter1 != iter->end(); iter1++)
-        {
-        	if(iter1 != iter->begin())
-			{
-                JsonStr.append(",");
-			}
-            JsonStr += "\"" + iter1->first + "\":";
-            JsonStr += "\"" + iter1->second + "\"";
-        }
-		JsonStr += "}";
-
-    }
-    //JsonStr += "}";
-}
-
-/*
-bool CDBOperator::readConf()
-{ 
-
-   XmlConfig config(_path.c_str());
-   if( !config ) 
-   {
-	   goto _error;   
-   }
-
-   
-   _strDBHost= config.getValue(DB_HOST_PATH, DEFAULT_STRING_NULL);
-   if( _strDBHost== DEFAULT_STRING_NULL ) 
-   {
-	   goto _error;
-   }
-	
-    _strDBUser= config.getValue(DB_USER_PATH, DEFAULT_STRING_NULL);
-   if( _strDBUser== DEFAULT_STRING_NULL ) 
-   {
-	   goto _error;
-   }
-
-   _strDBPass= config.getValue(DB_PASSWD_PATH, DEFAULT_STRING_NULL);
-   if( _strDBPass== DEFAULT_STRING_NULL ) 
-   {
-	   goto _error;
-   }
-  
-
-    _strDBPort= config.getValue(DB_PORT_PATH, DEFAULT_STRING_NULL);
-   if( _strDBHost == DEFAULT_STRING_NULL ) 
-   {
-	   goto _error;
-   }
-  
-
-    _iDBOverTime= config.getValue(DB_OVERTIME_PATH, 0);
-   if( _iDBOverTime == 0 ) 
-   {
-	   goto _error;
-   }
-
-   _error:
-		Log.WriteLog(4, "[%s:%d]  read XmlConfig error \n", __FILE__, __LINE__);
-		return false;
-
-}
-*/
 bool CDBOperator::initMYSQL()  
 {
-	 gPtrAppLog->info("db host: %s, db user : %s, db pass :%s, db host : %s, db over_time \
-        : %d", _db_param._DBHost.c_str(),
-               _db_param._DBUser.c_str(), _db_param._DBPass.c_str(),
-               _db_param._DBPort.c_str(), _db_param._DBOver_time);
+    _ptrMysql.reset(new CMySQL(config::CConfigManager::instance()->db_para_.host_,  \
+    config::CConfigManager::instance()->db_para_.user_,  \
+    config::CConfigManager::instance()->db_para_.pass_,  \
+    config::CConfigManager::instance()->db_para_.port_,  \
+    config::CConfigManager::instance()->db_para_.overTime_) );
 
-	_ptrMysql = new CMySQL(_db_param._DBHost.c_str(),
-			   _db_param._DBUser.c_str(), _db_param._DBPass.c_str(),
-			   _db_param._DBPort.c_str(), _db_param._DBOver_time);
-	try
-    {
-        _ptrMysql->Connect();
-    }
-    catch(...)
-    {
+    if(!_ptrMysql->Connect()){
         return false;
     }
-
+  
 	 return true;
-
 }
 
-
-
-void CDBOperator::QueryExistingVersions(int type, SqlMapVector &objOutMapVector)  throw (CException)
+bool CDBOperator::QueryExistingVersions(int type, SqlMapVector &objOutMapVector)
 {
+    bool ret = false;
 	string jsonStr;
     char strSql[1024]; 
     string table;
@@ -135,140 +43,130 @@ void CDBOperator::QueryExistingVersions(int type, SqlMapVector &objOutMapVector)
     {
         table = "t_version_fitting_online";
     }
-
-	sprintf(strSql,  "SET NAMES UTF8");
-	_ptrMysql->Query(strSql,  strlen(strSql));
-	memset(strSql, 0, 1024);
-	sprintf(strSql,  "select  Fversion_description,Fversion_name  from yzm_version_db.%s where Fversion_status='0' order by Fversion_name desc",\
-    table.c_str());
-	 
-    try
-    {
-        _ptrMysql->Query(strSql,  strlen(strSql));
-        if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
-        {
-            throw CException(ERR_DB_FETCH, "获取配置数据失败，请确认是否存在数据!");
+    do{
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
         }
-        
-    }
-    catch(...)
-    {
-        throw;
-    }
-    
-    return;
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  "select  Fversion_description,Fversion_name  from yzm_version_test_db.%s  order by Fversion_name desc",\
+        table.c_str());
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
 
+        if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
+            break;
+        }
+
+        ret = true;
+
+    }while(0);
+	
+    return ret;
 } 
 
-void CDBOperator::QueryAndroidExistingVersions(SqlMapVector &objOutMapVector)  throw (CException)
+bool CDBOperator::QueryAndroidExistingVersions(SqlMapVector &objOutMapVector)  
 {
-	string jsonStr;
-
-    char strSql[1024]; 
-
-	sprintf(strSql,  "SET NAMES UTF8");
-	_ptrMysql->Query(strSql,  strlen(strSql));
-	memset(strSql, 0, 1024);
-	sprintf(strSql,  "select  Fversion_description,Fversion_name,Foss_path,Ffile_size, \
-		Ffile_md5 from yzm_version_db.t_version_android \
-		where Fversion_status='0' order by Fversion_name desc");
-	 
-    try
-    {
-        _ptrMysql->Query(strSql,  strlen(strSql));  
-        if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
-        {
-            throw CException(ERR_DB_FETCH, "获取配置数据失败，请确认是否存在数据!");
-        }
-   
-    }
-    catch(...)   
-    {
-        throw;
-    }
+    bool ret  =   false;
     
-	
-    return;
-
-
+    do{
+         char strSql[1024]; 
+         
+         sprintf(strSql,  "SET NAMES UTF8");
+         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+             break;
+         }
+         
+         memset(strSql, 0, 1024);
+         sprintf(strSql,  "select  Fversion_description,Fversion_name,Ffile_url, Ffile_size, \
+            Ffile_md5 from yzm_version_test_db.t_version_android \
+            order by Fversion_name desc");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        } 
+        if(-1 ==_ptrMysql->FetchResultMVector(objOutMapVector)){
+            break;  
+         }
+   
+        ret = true;
+    }while(0);
+   
+    return ret;
 }
 
-
-void CDBOperator::QueryNewaddedVersions(SqlMapVector &objOutMapVector, string type)  throw (CException)
+bool CDBOperator::QueryNewaddedVersions(SqlMapVector &objOutMapVector, string type)  
 {
-    char strSql[1024];
-	string jsonStr;
-    string table;
-    if (type == "live_show")
-    {
-        table = "t_version_live_show";
-    }
-    else if (type == "fitting_online")
-    {
-        table = "t_version_fitting_online";
-    }
-	sprintf(strSql,  "SET NAMES UTF8");
-	_ptrMysql->Query(strSql,  strlen(strSql));
-	memset(strSql, 0, 1024);
-
-	sprintf(strSql,  "select Fversion_name,Fversion_path,Fversion_bucket from yzm_version_db.%s where Fversion_status='1'", table.c_str());
-	 
-    try
-    {
-        _ptrMysql->Query(strSql,  strlen(strSql));
-
-        if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
+    bool ret = false;
+    do{
+        char strSql[1024];
+        string table;
+        if (type == "live_show")
         {
-            throw CException(ERR_DB_FETCH, "获取配置数据失败，请确认是否存在数据!");
+            table = "t_version_live_show";
         }
+        else if (type == "fitting_online")
+        {
+            table = "t_version_fitting_online";
+        }
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        memset(strSql, 0, 1024);
+
+        sprintf(strSql,  "select Fversion_name,Fversion_path,Fversion_bucket from yzm_version_test_db.%s where Fversion_status='1'", table.c_str());
         
-    }
-    catch(...)
-    {
-        throw;
-    }
-    
-	
-    return;
+       if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+           break;
+       }
 
+       if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
+           break;
+       }
+
+       ret = true;
+
+    }while(0);
+
+    
+    return ret;
 }  
 
-void CDBOperator::QueryAndroidNewaddedVersions(SqlMapVector &objOutMapVector)  throw (CException)
+bool CDBOperator::QueryAndroidNewaddedVersions(SqlMapVector &objOutMapVector) 
 {
-	string jsonStr;
-
-    char strSql[1024];
-
-	sprintf(strSql,  "SET NAMES UTF8");
-	_ptrMysql->Query(strSql,  strlen(strSql));
-	memset(strSql, 0, 1024);
-
-	sprintf(strSql,  "select Fversion_name,Fversion_path from yzm_version_db.t_version_android where Fversion_status='1'");
-	 
-    try
-    {
-        _ptrMysql->Query(strSql,  strlen(strSql));
-
-        if(0!= _ptrMysql->FetchResultMVector(objOutMapVector))
-        {
-            throw CException(ERR_DB_FETCH, "获取数据失败，请确认是否存在数据!");
+    bool ret = false;
+    do{
+        char strSql[1024] = {0};
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
         }
+
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  "select Fversion_name,Fversion_path from yzm_version_test_db.t_version_android where Fversion_status='1'");
+        
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+
+        if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
+            break;
+        }
+
+        ret = true;
+
+    }while(0);
     
-    }
-    catch(...)
-    {
-        throw;
-    }
-    
-	
-    return;
+
+    return ret;
 
 }  
 
 
-void CDBOperator::QueryBucketAndDomain(int type ,string& inVersion, string& outBucket, string& outDomain)  throw (CException)
+bool CDBOperator::QueryBucketAndDomain(int type ,string& inVersion, string& outBucket, string& outDomain) 
 {
-	string jsonStr;
+	bool ret = false;
     char strSql[1024];
 	KeyValueMap objOutMap;
     string table;
@@ -281,61 +179,55 @@ void CDBOperator::QueryBucketAndDomain(int type ,string& inVersion, string& outB
     {
         table = "t_version_fitting_online";
     }
-	sprintf(strSql,  "select Fversion_bucket,Fversion_domain from yzm_version_db.%s where Fversion_name='%s'", table.c_str(), inVersion.c_str());
+	sprintf(strSql,  "select Fversion_bucket,Fversion_domain from yzm_version_test_db.%s where Fversion_name='%s'", table.c_str(), inVersion.c_str());
 	 
-    try
-    {
-        _ptrMysql->Query(strSql,  strlen(strSql));
-        if(0!= _ptrMysql->FetchResultMap(objOutMap))
-        {
-            throw CException(ERR_DB_FETCH, "0000");
-        }
-        
-    }
-    catch(...)
-    {
-        throw;
-    }
+    do{
+         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+         }
+         if( !_ptrMysql->FetchResultMap(objOutMap) ){
+            break;
+         }
+       
+	    outBucket = objOutMap["Fversion_bucket"];
+	    outDomain = objOutMap["Fversion_domain"];
 
-	outBucket = objOutMap["Fversion_bucket"];
-	outDomain = objOutMap["Fversion_domain"];
+        ret = true;
+
+    }while(0);
     
-    return;
+    return ret;
 
 } 
 
-void CDBOperator::QueryAndroidBucketAndDomain(string& inVersion, string& outBucket, string& outDomain)  throw (CException)
+bool CDBOperator::QueryAndroidBucketAndDomain(string& inVersion, string& outBucket, string& outDomain) 
 {
-	string jsonStr;
-    char strSql[1024] = {0};
-	KeyValueMap objOutMap;
+	bool ret = false;
+    do{
+        char strSql[1024] = {0};
+        KeyValueMap objOutMap;
+        sprintf(strSql,  "select Foss_bucket,Foss_domain from yzm_version_test_db.t_version_android where Fversion_name='%s'", inVersion.c_str());
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+         }
+         if( !_ptrMysql->FetchResultMap(objOutMap) ){
+            break;
+         }
 
-	sprintf(strSql,  "select Foss_bucket,Foss_domain from yzm_version_db.t_version_android where Fversion_name='%s'", inVersion.c_str());
-	 
-    try
-    {
-        _ptrMysql->Query(strSql,  strlen(strSql));
-        if(0!= _ptrMysql->FetchResultMap(objOutMap))
-        {
-            throw CException(ERR_DB_FETCH, "0000");
-        }
-        
-    }
-    catch(...)
-    {
-        throw;
-    }
+        outBucket = objOutMap["Foss_bucket"];
+        outDomain = objOutMap["Foss_domain"];
 
-	outBucket = objOutMap["Foss_bucket"];
-	outDomain = objOutMap["Foss_domain"];
-    
-    return;
+        ret = true;
 
+    }while(0);
+
+    return ret;
 }
 	
 
-void CDBOperator::insertMD5toDB(SqlMapVector& inMapVec, string type)  throw (CException)
+bool CDBOperator::insertMD5toDB(SqlMapVector& inMapVec, string type) 
 {
+    bool ret = false;
     string table;
     if (type == "live_show")
     {
@@ -345,32 +237,33 @@ void CDBOperator::insertMD5toDB(SqlMapVector& inMapVec, string type)  throw (CEx
     {
         table = "t_md5_fitting_online";
     }
-	_ptrMysql->Begin();
-	SqlMapVector::iterator iter;  
-    for (iter = inMapVec.begin(); iter != inMapVec.end(); ++iter)
-    {
-	    char strSql[1024] = {0};
-		KeyValueMap sqlMap = *iter; 
-		sprintf(strSql,  "insert into yzm_version_db.%s	values('%s','%s','%s','%s')", table.c_str(), sqlMap["Fversion_name"].c_str(),sqlMap["Ffile_path"].c_str(),sqlMap["Fmd5"].c_str(), GetSystemTime());
-		   
-	    try
-	    {
-	       _ptrMysql->Query(strSql,  strlen(strSql));  
-	    }
-	    catch(...)
-	    {
-	        _ptrMysql->Rollback();
-			Log.WriteLog(4, "rollback !!!\n");
-			throw CException(ERR_DB_INSERT, "insertMD5toDB error");
-	    }
+    do{
+        _ptrMysql->Begin();
 
-    }
+        SqlMapVector::iterator iter;  
+        for (iter = inMapVec.begin(); iter != inMapVec.end(); ++iter)
+        {
+            char strSql[1024] = {0};
+            KeyValueMap sqlMap = *iter; 
+            sprintf(strSql,  "insert into yzm_version_test_db.%s	values('%s','%s','%s','%s')", table.c_str(), sqlMap["Fversion_name"].c_str(),sqlMap["Ffile_path"].c_str(),sqlMap["Fmd5"].c_str(), GetSystemTime());
+             if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                 _ptrMysql->Rollback();
+                break;
+            } 
+        }
 
-	_ptrMysql->Commit(); 
+        _ptrMysql->Commit();
+
+        ret = true; 
+
+    }while(0);
+
+    return ret;
 }
 
-void CDBOperator::QueryMd5s(int type, string version, KeyValueMap& outMap)  throw (CException)
+bool  CDBOperator::QueryMd5s(int type, string version, KeyValueMap& outMap)  
 {
+    bool ret = false;
 	char strSql[1024] = {0};
     string table;
     if (type == LIVE_SHOW_VERSION_UPDATE)
@@ -381,28 +274,27 @@ void CDBOperator::QueryMd5s(int type, string version, KeyValueMap& outMap)  thro
     {
         table = "t_md5_fitting_online";
     }
-	sprintf(strSql,  "select Ffile_path, Fmd5 from yzm_version_db.%s where Fversion_name ='%s'", table.c_str(), version.c_str());
-	   
-    try
-    {
-        _ptrMysql->Query(strSql,  strlen(strSql));      
-    }
-    catch(...)
-    {
-        throw;
-    }
+	sprintf(strSql,  "select Ffile_path, Fmd5 from yzm_version_test_db.%s where Fversion_name ='%s'", table.c_str(), version.c_str());
+	
+    do{
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+         }
+         if( !_ptrMysql->FetchMd5Map(outMap) ){
+            break;
+         }
 
+        ret = true;
 
-	if(0 != _ptrMysql->FetchMd5Map(outMap))
-    {
-        throw CException(ERR_DB_FETCH, "query md5 error");   
-    }
+    }while(0);
 
-
+    return ret;
+    
 }
 
-void CDBOperator::UpdateVersionStatus(string& inVersionName, string type)  throw (CException)
+bool CDBOperator::UpdateVersionStatus(string& inVersionName, string type) 
 {
+    bool ret = false;
 	char strSql[1024];
     memset(strSql, 0x00, sizeof(strSql));
     string table;
@@ -414,70 +306,157 @@ void CDBOperator::UpdateVersionStatus(string& inVersionName, string type)  throw
     {
         table = "t_version_fitting_online";
     }
-
-	sprintf(strSql, "select * from yzm_version_db.%s where Fversion_name='%s' ", table.c_str(), inVersionName.c_str());
-    _ptrMysql->Query( strSql, strlen(strSql) );
-    int iRows = _ptrMysql->FetchRows();
-    if(0== iRows)     
-    {
-        throw CException(ERR_DB_FETCH, "version not exits");
-
-    }
-    else if(1==iRows)
-    {
+    do{
+        sprintf(strSql, "select * from yzm_version_test_db.%s where Fversion_name='%s' ", table.c_str(), inVersionName.c_str());
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }
+        int iRows = _ptrMysql->FetchRows();
+        if(iRows != 1)     
+        {
+            LOG(ERROR) << "CDBOperator::UpdateVersionStatus failed, row_num != 1 ";
+            break;
+        }
+        
         memset(strSql, 0, sizeof(strSql));
-		sprintf(strSql, "update yzm_version_db.%s set Fversion_status='0', Fupdate_time='%s' where Fversion_name='%s'",  \
-		table.c_str(), GetSystemTime(), inVersionName.c_str());
-		_ptrMysql->Query( strSql, strlen(strSql) );  
-		int iRows = _ptrMysql->AffectedRows();
-		if(1 != iRows)
-		{
-			_ptrMysql->Rollback();   
-			throw CException(ERR_DB_UPDATE, "update  error");
-		}
-    }
-    else
-    {
-        throw CException(ERR_DB_UPDATE,  "update  error!");
-    }
-	
+        sprintf(strSql, "update yzm_version_test_db.%s set Fversion_status='0', Fupdate_time='%s' where Fversion_name='%s'",  \
+        table.c_str(), GetSystemTime(), inVersionName.c_str());
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+
+        if(_ptrMysql->AffectedRows() != 1 ){
+            LOG(ERROR) << "CDBOperator::UpdateVersionStatus failed, _ptrMysql->AffectedRows() != 1 ";
+            _ptrMysql->Rollback(); 
+            break;
+        }
+        
+        ret = true;
+
+    }while(0);
+
+    return ret;
+
 }
 
-void CDBOperator::UpdateAndroidVersionStatus(string& inVersionName, string& inMd5, int& inSize)	throw (CException)
+bool CDBOperator::UpdateAndroidVersionStatus(string& inVersionName, string& inMd5, int& inSize)	
 {
+    bool ret = false;
 	string strSize;
 	int2string(inSize, strSize);  
 	char strSql[1024];
     memset(strSql, 0x00, sizeof(strSql));
-
-	sprintf(strSql, "select * from yzm_version_db.t_version_android where Fversion_name='%s' ",  inVersionName.c_str());
-    _ptrMysql->Query( strSql, strlen(strSql) );
-    int iRows = _ptrMysql->FetchRows();
-    if(0== iRows)     
-    {
-        throw CException(ERR_DB_FETCH, "version not exits");
-
-    }
-    else if(1==iRows)
-    {
+    do{
+        sprintf(strSql, "select * from yzm_version_test_db.t_version_android where Fversion_name='%s' ",  inVersionName.c_str());
+        
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+        int iRows = _ptrMysql->FetchRows();
+        if(iRows != 1)     
+        {
+            LOG(ERROR) << "CDBOperator::UpdateAndroidVersionStatus failed, _ptrMysql->FetchRows() != 1 ";
+            break;
+        }
+       
         memset(strSql, 0, sizeof(strSql));
-		sprintf(strSql, "update yzm_version_db.t_version_android set Fversion_status='0', Fupdate_time='%s', Ffile_md5='%s', Ffile_size='%s' where Fversion_name='%s'",  \
-		GetSystemTime(), 
-		inMd5.c_str(),
-		strSize.c_str(),
-		inVersionName.c_str()); 
-		_ptrMysql->Query( strSql, strlen(strSql) );  
-		int iRows = _ptrMysql->AffectedRows();
-		if(1 != iRows)
-		{
-			_ptrMysql->Rollback();   
-			throw CException(ERR_DB_UPDATE, "update  error");
-		}
+        sprintf(strSql, "update yzm_version_test_db.t_version_android set Fversion_status='0', Fupdate_time='%s', Ffile_md5='%s', Ffile_size='%s' where Fversion_name='%s'",  \
+        GetSystemTime(), 
+        inMd5.c_str(),
+        strSize.c_str(),
+        inVersionName.c_str()); 
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+
+        if(_ptrMysql->AffectedRows() != 1 ){
+            LOG(ERROR) << "CDBOperator::UpdateAndroidVersionStatus failed, _ptrMysql->AffectedRows() != 1 ";
+            _ptrMysql->Rollback(); 
+            break;
+        }
+
+        ret = true;
+        
+    }while(0); 
+
+    return ret;
+
+}
+
+int  CDBOperator::AddAndroidVersion(ANDROID_VERSION_INFO& avInfo)
+{
+	char strSql[1024] = {0};
+    sprintf(strSql, "select * from yzm_version_test_db.t_version_android where Fversion_name='%s' ", \
+    avInfo.name.c_str());
+    if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+        return 1;       
     }
-    else
+
+    int iRows = _ptrMysql->FetchRows();
+    if(iRows != 0)     
     {
-        throw CException(ERR_DB_UPDATE,  "update  error!");
+        return 2;   //版本已经存在
     }
+    
+    memset(strSql, 0, sizeof(strSql));
+    sprintf(strSql,  "insert into yzm_version_test_db.t_version_android \
+    values(NULL, '%s', '%s','%s','%s', '%s', '%s')", avInfo.name.c_str(), 
+    avInfo.description.c_str(), avInfo.path.c_str(),\
+    avInfo.md5.c_str(), avInfo.size.c_str(), GetSystemTime());
+    LOG(INFO) << "SQL : " << strSql;
+    if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+        return 1;                
+    }  
+
+    return 0;
+
+}
+
+int  CDBOperator::AddLiveshowVersion(LIVESHOW_ADD_INFO&  lsInfo)
+{
+    char strSql[1024] = {0};
+    sprintf(strSql, "select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='%s' ", \
+    lsInfo.name.c_str());
+    LOG(INFO) << "SQL : " << strSql;
+    if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+        return 1;       
+    }
+
+    int iRows = _ptrMysql->FetchRows();
+    if(iRows != 0)     
+    {
+        return 2;   //版本已经存在
+    }
+
+    _ptrMysql->Begin(); 
+
+    memset(strSql, 0, sizeof(strSql));
+
+    sprintf(strSql,  "insert into yzm_version_test_db.t_version_live_show \
+    values(NULL, '%s', '%s','%s','%s', '%s')", lsInfo.name.c_str(), lsInfo.bucket.c_str(),   \
+    lsInfo.domain.c_str(),  lsInfo.description.c_str(), GetSystemTime() );
+
+    LOG(INFO) << "SQL : " << strSql;
+    if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+        return 1;                
+    }  
+    /////////////////////////// insert md5
+    for (auto&  file : lsInfo.fileVec_)
+    {
+	    memset(strSql, 0, 1024);
+		sprintf(strSql,  "insert into yzm_version_test_db.t_md5_live_show values(NULL, '%s','%s','%s','%s')", lsInfo.name.c_str(),  \
+        file.first.c_str(), file.second.c_str(), GetSystemTime());
+        LOG(INFO) << "SQL : " << strSql;
+         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            _ptrMysql->Rollback();   
+            LOG(ERROR) << "rollback";
+            return 1;    
+         }
+    }
+
+	_ptrMysql->Commit(); 
+    
+    return 0;
 
 }
 
