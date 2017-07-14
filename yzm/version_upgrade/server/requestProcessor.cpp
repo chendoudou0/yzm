@@ -16,6 +16,7 @@ extern shared_ptr<CRedisOperator>          gPtrRedisOperator;
 CrequestProcessor::CrequestProcessor(const char* request_buffer)
 :_request_buffer(request_buffer) 
 { 
+	_error_code = "1";
 }
 
 CrequestProcessor::~CrequestProcessor()
@@ -394,7 +395,7 @@ bool CrequestProcessor::check_liveshow_version_add_paramter(LIVESHOW_ADD_INFO&  
 			string path = (*it)["file_path"].GetString();
 			int pos = path.find('/');
 			path = path.substr(pos+1);
-			LOG(INFO) << "PATH : "<< path << "  pos : "<< pos;
+			
 			if ((*it)["md5"].IsNull() || !(*it)["md5"].IsString())
 			{
 				break;
@@ -456,6 +457,7 @@ void CrequestProcessor::dealwith_android_verison_query()
 		if (!query_android_version())
 		{
 			_error_msg = "mysql query failed";
+			_error_code = "1";
 			gen_error_response();
 
 			LOG(ERROR) << "mysql query failed";
@@ -481,7 +483,7 @@ bool CrequestProcessor::query_android_version()
 	_response = pJson->getOutput();
 
 	delete pJson;
-	return true;   
+	return true;    
 }
 
 void CrequestProcessor::gen_error_response()

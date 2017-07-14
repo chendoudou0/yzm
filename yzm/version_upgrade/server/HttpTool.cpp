@@ -8,7 +8,6 @@
 3、所有的内存，必须在main函数结束全部释放，不借助系统结束进程。
 
 */
-
 #include <map>
 #include <string>
 #include <mutex>
@@ -132,6 +131,7 @@ public:
 		if (it->second != nullptr) {  
 			RecvInfo recvInfo;
 			StreamCopier::copyToString(istr, recvInfo.data_);
+
 			recvInfo.client_ip_ = request.clientAddress().toString();
 			recvInfo.uri_ = request.getURI();
 			

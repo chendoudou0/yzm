@@ -5,6 +5,8 @@
 #include"redisOperator.h"
 #include"dbPool.h"
 
+#include <fstream>
+#include <sstream>
 #include <chrono>
 #include<glog/logging.h>         
     
@@ -179,6 +181,7 @@ int CUpgradeServer::httpCallBack(const RecvInfo& pRecvInfo, string&  response)
 {
 	LOG(INFO) << "httpCallBack begin ...";
 	LOG(INFO) << "uri "<< pRecvInfo.uri_ << ", receive data  "<< pRecvInfo.data_;
+
 	auto begin = steady_clock::now();
 	int type = 0;
 	impPtr_->getServiceType(pRecvInfo.uri_, type);

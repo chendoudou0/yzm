@@ -36,7 +36,7 @@ public:
 private:
 	const char* _request_buffer;
 	std::string _error_msg;
-	std::string _error_code{1};
+	std::string _error_code;
 	std::string _response;
 	std::string _version_current;
 	std::string _version_to;

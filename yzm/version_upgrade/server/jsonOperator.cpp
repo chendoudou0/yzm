@@ -17,8 +17,8 @@ bool CJsonOperator::addStringMember(string key, string value)
 {
 	Value vValue;
 	Value vKey;
-	vKey.SetString(key.c_str(), key.length(), doc_.GetAllocator());
-	vValue.SetString(value.c_str(), value.length(), doc_.GetAllocator());
+	vKey.SetString(key.c_str(),  doc_.GetAllocator());
+	vValue.SetString(value.c_str(), doc_.GetAllocator());
 	_root->AddMember(vKey, vValue,  doc_.GetAllocator());  
 
 	return true;
@@ -26,7 +26,9 @@ bool CJsonOperator::addStringMember(string key, string value)
 
 bool CJsonOperator::addIntegerMember(std::string key, int value)
 {
-	_root->AddMember(StringRef(key.c_str()), value, doc_.GetAllocator());  
+	Value vKey;
+	vKey.SetString(key.c_str(),  doc_.GetAllocator());
+	_root->AddMember(vKey, value, doc_.GetAllocator());  
 
 	return true;   
 }
@@ -40,15 +42,15 @@ bool CJsonOperator::addStringArray(string key, ssMapVec& mapVec)
 		 for(auto&  it2  : it) 
          {
 			Value vKey,vValue;
-			vKey.SetString(it2.first.c_str(), it2.first.length(), doc_.GetAllocator());
-			vValue.SetString(it2.second.c_str(), it2.second.length(), doc_.GetAllocator());
+			vKey.SetString(it2.first.c_str(),  doc_.GetAllocator());
+			vValue.SetString(it2.second.c_str(),  doc_.GetAllocator());
 			item.AddMember(vKey, vValue, doc_.GetAllocator());
          }
 
 		 vArray.PushBack(item, doc_.GetAllocator()); 
     }
 	 Value Key;
-	 Key.SetString(key.c_str(), key.length(), doc_.GetAllocator());
+	 Key.SetString(key.c_str(), doc_.GetAllocator());
 	_root->AddMember(Key, vArray, doc_.GetAllocator());
 	
 	return true;  
