@@ -53,7 +53,14 @@ namespace config
 		GLOG_PARA _glog_para; 
 		DB_PARA   db_para_;
 		REDIS_PARAM   redis_para_;
-		int   listen_port_{0};
+		int 	listen_port_{2018};
+		int   crawler_server_port_{0};
+		int   label_server_port_;
+		std::string suanfa_ip_;
+		int suanfa_port_;
+		std::string crawler_client_ip_;
+		int  crawler_client_port_;
+
 
 	private:
 

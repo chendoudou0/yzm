@@ -621,7 +621,7 @@ bool CDBOperator::QueryUnlabeledPicture(SqlMapVector &objOutMapVector)
             break;
         }
         memset(strSql, 0, 1024);
-        sprintf(strSql,  "select Fid, Fpic_url from yzm_pose_label_db.t_picture where Flabel_count < 5 limit 10");
+        sprintf(strSql,  "select Fid, Fpic_url from yzm_pose_label_db.t_picture where Flabel_count < 5 limit 3");
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }

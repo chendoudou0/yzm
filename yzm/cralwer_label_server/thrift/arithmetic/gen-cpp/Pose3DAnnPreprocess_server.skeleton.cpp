@@ -40,11 +40,11 @@ class Pose3DAnnPreprocessHandler : virtual public Pose3DAnnPreprocessIf {
 };
 
 int main(int argc, char **argv) {
-  int port = 10000;
+  int port = 9090;
   shared_ptr<Pose3DAnnPreprocessHandler> handler(new Pose3DAnnPreprocessHandler());
   shared_ptr<TProcessor> processor(new Pose3DAnnPreprocessProcessor(handler));
   shared_ptr<TServerTransport> serverTransport(new TServerSocket(port));
-  shared_ptr<TTransportFactory> transportFactory(new TFramedTransportFactory());
+  shared_ptr<TTransportFactory> transportFactory(new TBufferedTransportFactory());
   shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
 
   TSimpleServer server(processor, serverTransport, transportFactory, protocolFactory);

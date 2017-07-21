@@ -24,7 +24,11 @@ class ReturnVals;
 
 class PicInfo;
 
+class QueryedPicInfo;
+
 class QueryUnlabeledRet;
+
+class QueryLabeledRet;
 
 class DownloadRet;
 
@@ -77,11 +81,12 @@ void swap(ReturnVals &a, ReturnVals &b);
 std::ostream& operator<<(std::ostream& out, const ReturnVals& obj);
 
 typedef struct _PicInfo__isset {
-  _PicInfo__isset() : oriBin(false), md5(false), key(false), tag(false) {}
+  _PicInfo__isset() : oriBin(false), md5(false), key(false), tag(false), filename(false) {}
   bool oriBin :1;
   bool md5 :1;
   bool key :1;
   bool tag :1;
+  bool filename :1;
 } _PicInfo__isset;
 
 class PicInfo : public virtual ::apache::thrift::TBase {
@@ -89,7 +94,7 @@ class PicInfo : public virtual ::apache::thrift::TBase {
 
   PicInfo(const PicInfo&);
   PicInfo& operator=(const PicInfo&);
-  PicInfo() : oriBin(), md5(), key(), tag() {
+  PicInfo() : oriBin(), md5(), key(), tag(), filename() {
   }
 
   virtual ~PicInfo() throw();
@@ -97,6 +102,7 @@ class PicInfo : public virtual ::apache::thrift::TBase {
   std::string md5;
   std::string key;
   std::string tag;
+  std::string filename;
 
   _PicInfo__isset __isset;
 
@@ -108,6 +114,8 @@ class PicInfo : public virtual ::apache::thrift::TBase {
 
   void __set_tag(const std::string& val);
 
+  void __set_filename(const std::string& val);
+
   bool operator == (const PicInfo & rhs) const
   {
     if (!(oriBin == rhs.oriBin))
@@ -117,6 +125,8 @@ class PicInfo : public virtual ::apache::thrift::TBase {
     if (!(key == rhs.key))
       return false;
     if (!(tag == rhs.tag))
+      return false;
+    if (!(filename == rhs.filename))
       return false;
     return true;
   }
@@ -136,11 +146,65 @@ void swap(PicInfo &a, PicInfo &b);
 
 std::ostream& operator<<(std::ostream& out, const PicInfo& obj);
 
+typedef struct _QueryedPicInfo__isset {
+  _QueryedPicInfo__isset() : pic_id(true), pic_url(false), screenshot_bin(false) {}
+  bool pic_id :1;
+  bool pic_url :1;
+  bool screenshot_bin :1;
+} _QueryedPicInfo__isset;
+
+class QueryedPicInfo : public virtual ::apache::thrift::TBase {
+ public:
+
+  QueryedPicInfo(const QueryedPicInfo&);
+  QueryedPicInfo& operator=(const QueryedPicInfo&);
+  QueryedPicInfo() : pic_id(0), pic_url(), screenshot_bin() {
+  }
+
+  virtual ~QueryedPicInfo() throw();
+  int32_t pic_id;
+  std::string pic_url;
+  std::string screenshot_bin;
+
+  _QueryedPicInfo__isset __isset;
+
+  void __set_pic_id(const int32_t val);
+
+  void __set_pic_url(const std::string& val);
+
+  void __set_screenshot_bin(const std::string& val);
+
+  bool operator == (const QueryedPicInfo & rhs) const
+  {
+    if (!(pic_id == rhs.pic_id))
+      return false;
+    if (!(pic_url == rhs.pic_url))
+      return false;
+    if (!(screenshot_bin == rhs.screenshot_bin))
+      return false;
+    return true;
+  }
+  bool operator != (const QueryedPicInfo &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const QueryedPicInfo & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(QueryedPicInfo &a, QueryedPicInfo &b);
+
+std::ostream& operator<<(std::ostream& out, const QueryedPicInfo& obj);
+
 typedef struct _QueryUnlabeledRet__isset {
-  _QueryUnlabeledRet__isset() : code(true), msg(false), picJson(false) {}
+  _QueryUnlabeledRet__isset() : code(true), msg(false), picVec(false) {}
   bool code :1;
   bool msg :1;
-  bool picJson :1;
+  bool picVec :1;
 } _QueryUnlabeledRet__isset;
 
 class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
@@ -148,13 +212,13 @@ class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
 
   QueryUnlabeledRet(const QueryUnlabeledRet&);
   QueryUnlabeledRet& operator=(const QueryUnlabeledRet&);
-  QueryUnlabeledRet() : code(0), msg(), picJson() {
+  QueryUnlabeledRet() : code(0), msg() {
   }
 
   virtual ~QueryUnlabeledRet() throw();
   int32_t code;
   std::string msg;
-  std::string picJson;
+  std::vector<QueryedPicInfo>  picVec;
 
   _QueryUnlabeledRet__isset __isset;
 
@@ -162,7 +226,7 @@ class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
 
   void __set_msg(const std::string& val);
 
-  void __set_picJson(const std::string& val);
+  void __set_picVec(const std::vector<QueryedPicInfo> & val);
 
   bool operator == (const QueryUnlabeledRet & rhs) const
   {
@@ -170,7 +234,7 @@ class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
       return false;
     if (!(msg == rhs.msg))
       return false;
-    if (!(picJson == rhs.picJson))
+    if (!(picVec == rhs.picVec))
       return false;
     return true;
   }
@@ -189,6 +253,60 @@ class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
 void swap(QueryUnlabeledRet &a, QueryUnlabeledRet &b);
 
 std::ostream& operator<<(std::ostream& out, const QueryUnlabeledRet& obj);
+
+typedef struct _QueryLabeledRet__isset {
+  _QueryLabeledRet__isset() : code(true), msg(false), picVec(false) {}
+  bool code :1;
+  bool msg :1;
+  bool picVec :1;
+} _QueryLabeledRet__isset;
+
+class QueryLabeledRet : public virtual ::apache::thrift::TBase {
+ public:
+
+  QueryLabeledRet(const QueryLabeledRet&);
+  QueryLabeledRet& operator=(const QueryLabeledRet&);
+  QueryLabeledRet() : code(0), msg() {
+  }
+
+  virtual ~QueryLabeledRet() throw();
+  int32_t code;
+  std::string msg;
+  std::vector<QueryedPicInfo>  picVec;
+
+  _QueryLabeledRet__isset __isset;
+
+  void __set_code(const int32_t val);
+
+  void __set_msg(const std::string& val);
+
+  void __set_picVec(const std::vector<QueryedPicInfo> & val);
+
+  bool operator == (const QueryLabeledRet & rhs) const
+  {
+    if (!(code == rhs.code))
+      return false;
+    if (!(msg == rhs.msg))
+      return false;
+    if (!(picVec == rhs.picVec))
+      return false;
+    return true;
+  }
+  bool operator != (const QueryLabeledRet &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const QueryLabeledRet & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(QueryLabeledRet &a, QueryLabeledRet &b);
+
+std::ostream& operator<<(std::ostream& out, const QueryLabeledRet& obj);
 
 typedef struct _DownloadRet__isset {
   _DownloadRet__isset() : code(true), msg(false), bin(false), HumanPose2DInfo(false), HumanPose3DInfo(false) {}

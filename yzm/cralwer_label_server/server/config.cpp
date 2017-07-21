@@ -69,7 +69,7 @@ namespace  config
 		{
 			return false;
 		}
-
+		str = v.GetString();
 		return true;
 	}
 
@@ -265,13 +265,47 @@ namespace  config
 
 		using rapidjson::Value;
 
-		if(!get_int(doc["listen_port"], listen_port_))
+		if(!get_int(doc["crawler_server_port"], crawler_server_port_))
 		{
-			LOG(ERROR) << "listen port empty";
+			LOG(ERROR) << "crawler_server_port empty";
 			return false;
 		}
+		LOG(INFO) << "crawler_server_port : " << crawler_server_port_;
 
-		LOG(INFO) << "listen_port : " << listen_port_;
+		if(!get_int(doc["label_server_port"], label_server_port_))
+		{
+			LOG(ERROR) << "laebl_server_port empty";
+			return false;
+		}
+		LOG(INFO) << "label_server_port : " << label_server_port_;
+
+		if(!get_string(doc["suanfa_ip"], suanfa_ip_))
+		{
+			LOG(ERROR) << "suanfa_ip empty";
+			return false;
+		}
+		LOG(INFO) << "suanfa_ip : " << suanfa_ip_;
+
+		if(!get_int(doc["suanfa_port"], suanfa_port_))
+		{
+			LOG(ERROR) << "suanfa_port empty";
+			return false;
+		}
+		LOG(INFO) << "suanfa_port : " << suanfa_port_;
+
+		if(!get_string(doc["crawler_client_ip"], crawler_client_ip_))
+		{
+			LOG(ERROR) << "crawler_client_ip empty";
+			return false;
+		}
+		LOG(INFO) << "crawler_client_ip : " << crawler_client_ip_;
+
+		if(!get_int(doc["crawler_client_port"], crawler_client_port_))
+		{
+			LOG(ERROR) << "crawler_client_port empty";
+			return false;
+		}
+		LOG(INFO) << "crawler_client_port : " << crawler_client_port_;
 
 		return true;
 

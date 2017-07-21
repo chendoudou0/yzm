@@ -145,6 +145,10 @@ void PicInfo::__set_key(const std::string& val) {
 void PicInfo::__set_tag(const std::string& val) {
   this->tag = val;
 }
+
+void PicInfo::__set_filename(const std::string& val) {
+  this->filename = val;
+}
 std::ostream& operator<<(std::ostream& out, const PicInfo& obj)
 {
   obj.printTo(out);
@@ -205,6 +209,14 @@ uint32_t PicInfo::read(::apache::thrift::protocol::TProtocol* iprot) {
           xfer += iprot->skip(ftype);
         }
         break;
+      case 5:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->filename);
+          this->__isset.filename = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -238,6 +250,10 @@ uint32_t PicInfo::write(::apache::thrift::protocol::TProtocol* oprot) const {
   xfer += oprot->writeString(this->tag);
   xfer += oprot->writeFieldEnd();
 
+  xfer += oprot->writeFieldBegin("filename", ::apache::thrift::protocol::T_STRING, 5);
+  xfer += oprot->writeString(this->filename);
+  xfer += oprot->writeFieldEnd();
+
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -249,6 +265,7 @@ void swap(PicInfo &a, PicInfo &b) {
   swap(a.md5, b.md5);
   swap(a.key, b.key);
   swap(a.tag, b.tag);
+  swap(a.filename, b.filename);
   swap(a.__isset, b.__isset);
 }
 
@@ -257,6 +274,7 @@ PicInfo::PicInfo(const PicInfo& other2) {
   md5 = other2.md5;
   key = other2.key;
   tag = other2.tag;
+  filename = other2.filename;
   __isset = other2.__isset;
 }
 PicInfo& PicInfo::operator=(const PicInfo& other3) {
@@ -264,6 +282,7 @@ PicInfo& PicInfo::operator=(const PicInfo& other3) {
   md5 = other3.md5;
   key = other3.key;
   tag = other3.tag;
+  filename = other3.filename;
   __isset = other3.__isset;
   return *this;
 }
@@ -274,6 +293,139 @@ void PicInfo::printTo(std::ostream& out) const {
   out << ", " << "md5=" << to_string(md5);
   out << ", " << "key=" << to_string(key);
   out << ", " << "tag=" << to_string(tag);
+  out << ", " << "filename=" << to_string(filename);
+  out << ")";
+}
+
+
+QueryedPicInfo::~QueryedPicInfo() throw() {
+}
+
+
+void QueryedPicInfo::__set_pic_id(const int32_t val) {
+  this->pic_id = val;
+}
+
+void QueryedPicInfo::__set_pic_url(const std::string& val) {
+  this->pic_url = val;
+}
+
+void QueryedPicInfo::__set_screenshot_bin(const std::string& val) {
+  this->screenshot_bin = val;
+}
+std::ostream& operator<<(std::ostream& out, const QueryedPicInfo& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t QueryedPicInfo::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->pic_id);
+          this->__isset.pic_id = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->pic_url);
+          this->__isset.pic_url = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readBinary(this->screenshot_bin);
+          this->__isset.screenshot_bin = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t QueryedPicInfo::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("QueryedPicInfo");
+
+  xfer += oprot->writeFieldBegin("pic_id", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->pic_id);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("pic_url", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->pic_url);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("screenshot_bin", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeBinary(this->screenshot_bin);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(QueryedPicInfo &a, QueryedPicInfo &b) {
+  using ::std::swap;
+  swap(a.pic_id, b.pic_id);
+  swap(a.pic_url, b.pic_url);
+  swap(a.screenshot_bin, b.screenshot_bin);
+  swap(a.__isset, b.__isset);
+}
+
+QueryedPicInfo::QueryedPicInfo(const QueryedPicInfo& other4) {
+  pic_id = other4.pic_id;
+  pic_url = other4.pic_url;
+  screenshot_bin = other4.screenshot_bin;
+  __isset = other4.__isset;
+}
+QueryedPicInfo& QueryedPicInfo::operator=(const QueryedPicInfo& other5) {
+  pic_id = other5.pic_id;
+  pic_url = other5.pic_url;
+  screenshot_bin = other5.screenshot_bin;
+  __isset = other5.__isset;
+  return *this;
+}
+void QueryedPicInfo::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "QueryedPicInfo(";
+  out << "pic_id=" << to_string(pic_id);
+  out << ", " << "pic_url=" << to_string(pic_url);
+  out << ", " << "screenshot_bin=" << to_string(screenshot_bin);
   out << ")";
 }
 
@@ -290,8 +442,8 @@ void QueryUnlabeledRet::__set_msg(const std::string& val) {
   this->msg = val;
 }
 
-void QueryUnlabeledRet::__set_picJson(const std::string& val) {
-  this->picJson = val;
+void QueryUnlabeledRet::__set_picVec(const std::vector<QueryedPicInfo> & val) {
+  this->picVec = val;
 }
 std::ostream& operator<<(std::ostream& out, const QueryUnlabeledRet& obj)
 {
@@ -338,9 +490,21 @@ uint32_t QueryUnlabeledRet::read(::apache::thrift::protocol::TProtocol* iprot) {
         }
         break;
       case 3:
-        if (ftype == ::apache::thrift::protocol::T_STRING) {
-          xfer += iprot->readString(this->picJson);
-          this->__isset.picJson = true;
+        if (ftype == ::apache::thrift::protocol::T_LIST) {
+          {
+            this->picVec.clear();
+            uint32_t _size6;
+            ::apache::thrift::protocol::TType _etype9;
+            xfer += iprot->readListBegin(_etype9, _size6);
+            this->picVec.resize(_size6);
+            uint32_t _i10;
+            for (_i10 = 0; _i10 < _size6; ++_i10)
+            {
+              xfer += this->picVec[_i10].read(iprot);
+            }
+            xfer += iprot->readListEnd();
+          }
+          this->__isset.picVec = true;
         } else {
           xfer += iprot->skip(ftype);
         }
@@ -370,8 +534,16 @@ uint32_t QueryUnlabeledRet::write(::apache::thrift::protocol::TProtocol* oprot) 
   xfer += oprot->writeString(this->msg);
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("picJson", ::apache::thrift::protocol::T_STRING, 3);
-  xfer += oprot->writeString(this->picJson);
+  xfer += oprot->writeFieldBegin("picVec", ::apache::thrift::protocol::T_LIST, 3);
+  {
+    xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->picVec.size()));
+    std::vector<QueryedPicInfo> ::const_iterator _iter11;
+    for (_iter11 = this->picVec.begin(); _iter11 != this->picVec.end(); ++_iter11)
+    {
+      xfer += (*_iter11).write(oprot);
+    }
+    xfer += oprot->writeListEnd();
+  }
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -383,21 +555,21 @@ void swap(QueryUnlabeledRet &a, QueryUnlabeledRet &b) {
   using ::std::swap;
   swap(a.code, b.code);
   swap(a.msg, b.msg);
-  swap(a.picJson, b.picJson);
+  swap(a.picVec, b.picVec);
   swap(a.__isset, b.__isset);
 }
 
-QueryUnlabeledRet::QueryUnlabeledRet(const QueryUnlabeledRet& other4) {
-  code = other4.code;
-  msg = other4.msg;
-  picJson = other4.picJson;
-  __isset = other4.__isset;
+QueryUnlabeledRet::QueryUnlabeledRet(const QueryUnlabeledRet& other12) {
+  code = other12.code;
+  msg = other12.msg;
+  picVec = other12.picVec;
+  __isset = other12.__isset;
 }
-QueryUnlabeledRet& QueryUnlabeledRet::operator=(const QueryUnlabeledRet& other5) {
-  code = other5.code;
-  msg = other5.msg;
-  picJson = other5.picJson;
-  __isset = other5.__isset;
+QueryUnlabeledRet& QueryUnlabeledRet::operator=(const QueryUnlabeledRet& other13) {
+  code = other13.code;
+  msg = other13.msg;
+  picVec = other13.picVec;
+  __isset = other13.__isset;
   return *this;
 }
 void QueryUnlabeledRet::printTo(std::ostream& out) const {
@@ -405,7 +577,159 @@ void QueryUnlabeledRet::printTo(std::ostream& out) const {
   out << "QueryUnlabeledRet(";
   out << "code=" << to_string(code);
   out << ", " << "msg=" << to_string(msg);
-  out << ", " << "picJson=" << to_string(picJson);
+  out << ", " << "picVec=" << to_string(picVec);
+  out << ")";
+}
+
+
+QueryLabeledRet::~QueryLabeledRet() throw() {
+}
+
+
+void QueryLabeledRet::__set_code(const int32_t val) {
+  this->code = val;
+}
+
+void QueryLabeledRet::__set_msg(const std::string& val) {
+  this->msg = val;
+}
+
+void QueryLabeledRet::__set_picVec(const std::vector<QueryedPicInfo> & val) {
+  this->picVec = val;
+}
+std::ostream& operator<<(std::ostream& out, const QueryLabeledRet& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t QueryLabeledRet::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->code);
+          this->__isset.code = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->msg);
+          this->__isset.msg = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_LIST) {
+          {
+            this->picVec.clear();
+            uint32_t _size14;
+            ::apache::thrift::protocol::TType _etype17;
+            xfer += iprot->readListBegin(_etype17, _size14);
+            this->picVec.resize(_size14);
+            uint32_t _i18;
+            for (_i18 = 0; _i18 < _size14; ++_i18)
+            {
+              xfer += this->picVec[_i18].read(iprot);
+            }
+            xfer += iprot->readListEnd();
+          }
+          this->__isset.picVec = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t QueryLabeledRet::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("QueryLabeledRet");
+
+  xfer += oprot->writeFieldBegin("code", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->code);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("msg", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->msg);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("picVec", ::apache::thrift::protocol::T_LIST, 3);
+  {
+    xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->picVec.size()));
+    std::vector<QueryedPicInfo> ::const_iterator _iter19;
+    for (_iter19 = this->picVec.begin(); _iter19 != this->picVec.end(); ++_iter19)
+    {
+      xfer += (*_iter19).write(oprot);
+    }
+    xfer += oprot->writeListEnd();
+  }
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(QueryLabeledRet &a, QueryLabeledRet &b) {
+  using ::std::swap;
+  swap(a.code, b.code);
+  swap(a.msg, b.msg);
+  swap(a.picVec, b.picVec);
+  swap(a.__isset, b.__isset);
+}
+
+QueryLabeledRet::QueryLabeledRet(const QueryLabeledRet& other20) {
+  code = other20.code;
+  msg = other20.msg;
+  picVec = other20.picVec;
+  __isset = other20.__isset;
+}
+QueryLabeledRet& QueryLabeledRet::operator=(const QueryLabeledRet& other21) {
+  code = other21.code;
+  msg = other21.msg;
+  picVec = other21.picVec;
+  __isset = other21.__isset;
+  return *this;
+}
+void QueryLabeledRet::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "QueryLabeledRet(";
+  out << "code=" << to_string(code);
+  out << ", " << "msg=" << to_string(msg);
+  out << ", " << "picVec=" << to_string(picVec);
   out << ")";
 }
 
@@ -553,21 +877,21 @@ void swap(DownloadRet &a, DownloadRet &b) {
   swap(a.__isset, b.__isset);
 }
 
-DownloadRet::DownloadRet(const DownloadRet& other6) {
-  code = other6.code;
-  msg = other6.msg;
-  bin = other6.bin;
-  HumanPose2DInfo = other6.HumanPose2DInfo;
-  HumanPose3DInfo = other6.HumanPose3DInfo;
-  __isset = other6.__isset;
+DownloadRet::DownloadRet(const DownloadRet& other22) {
+  code = other22.code;
+  msg = other22.msg;
+  bin = other22.bin;
+  HumanPose2DInfo = other22.HumanPose2DInfo;
+  HumanPose3DInfo = other22.HumanPose3DInfo;
+  __isset = other22.__isset;
 }
-DownloadRet& DownloadRet::operator=(const DownloadRet& other7) {
-  code = other7.code;
-  msg = other7.msg;
-  bin = other7.bin;
-  HumanPose2DInfo = other7.HumanPose2DInfo;
-  HumanPose3DInfo = other7.HumanPose3DInfo;
-  __isset = other7.__isset;
+DownloadRet& DownloadRet::operator=(const DownloadRet& other23) {
+  code = other23.code;
+  msg = other23.msg;
+  bin = other23.bin;
+  HumanPose2DInfo = other23.HumanPose2DInfo;
+  HumanPose3DInfo = other23.HumanPose3DInfo;
+  __isset = other23.__isset;
   return *this;
 }
 void DownloadRet::printTo(std::ostream& out) const {
