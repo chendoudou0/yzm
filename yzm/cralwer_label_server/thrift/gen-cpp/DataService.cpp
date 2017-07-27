@@ -237,6 +237,14 @@ uint32_t DataService_PicUpload_args::read(::apache::thrift::protocol::TProtocol*
           xfer += iprot->skip(ftype);
         }
         break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->sumTotal);
+          this->__isset.sumTotal = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -262,6 +270,10 @@ uint32_t DataService_PicUpload_args::write(::apache::thrift::protocol::TProtocol
   xfer += oprot->writeDouble(this->percent);
   xfer += oprot->writeFieldEnd();
 
+  xfer += oprot->writeFieldBegin("sumTotal", ::apache::thrift::protocol::T_I32, 3);
+  xfer += oprot->writeI32(this->sumTotal);
+  xfer += oprot->writeFieldEnd();
+
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -283,6 +295,10 @@ uint32_t DataService_PicUpload_pargs::write(::apache::thrift::protocol::TProtoco
 
   xfer += oprot->writeFieldBegin("percent", ::apache::thrift::protocol::T_DOUBLE, 2);
   xfer += oprot->writeDouble((*(this->percent)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("sumTotal", ::apache::thrift::protocol::T_I32, 3);
+  xfer += oprot->writeI32((*(this->sumTotal)));
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -456,13 +472,13 @@ void DataServiceClient::recv_UploadRequest(ReturnVals& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "UploadRequest failed: unknown result");
 }
 
-void DataServiceClient::PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent)
+void DataServiceClient::PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal)
 {
-  send_PicUpload(pic, percent);
+  send_PicUpload(pic, percent, sumTotal);
   recv_PicUpload(_return);
 }
 
-void DataServiceClient::send_PicUpload(const PicInfo& pic, const double percent)
+void DataServiceClient::send_PicUpload(const PicInfo& pic, const double percent, const int32_t sumTotal)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("PicUpload", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -470,6 +486,7 @@ void DataServiceClient::send_PicUpload(const PicInfo& pic, const double percent)
   DataService_PicUpload_pargs args;
   args.pic = &pic;
   args.percent = &percent;
+  args.sumTotal = &sumTotal;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -611,7 +628,7 @@ void DataServiceProcessor::process_PicUpload(int32_t seqid, ::apache::thrift::pr
 
   DataService_PicUpload_result result;
   try {
-    iface_->PicUpload(result.success, args.pic, args.percent);
+    iface_->PicUpload(result.success, args.pic, args.percent, args.sumTotal);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != NULL) {
@@ -733,13 +750,13 @@ void DataServiceConcurrentClient::recv_UploadRequest(ReturnVals& _return, const 
   } // end while(true)
 }
 
-void DataServiceConcurrentClient::PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent)
+void DataServiceConcurrentClient::PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal)
 {
-  int32_t seqid = send_PicUpload(pic, percent);
+  int32_t seqid = send_PicUpload(pic, percent, sumTotal);
   recv_PicUpload(_return, seqid);
 }
 
-int32_t DataServiceConcurrentClient::send_PicUpload(const PicInfo& pic, const double percent)
+int32_t DataServiceConcurrentClient::send_PicUpload(const PicInfo& pic, const double percent, const int32_t sumTotal)
 {
   int32_t cseqid = this->sync_.generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(&this->sync_);
@@ -748,6 +765,7 @@ int32_t DataServiceConcurrentClient::send_PicUpload(const PicInfo& pic, const do
   DataService_PicUpload_pargs args;
   args.pic = &pic;
   args.percent = &percent;
+  args.sumTotal = &sumTotal;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();

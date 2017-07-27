@@ -54,12 +54,13 @@ namespace config
 		DB_PARA   db_para_;
 		REDIS_PARAM   redis_para_;
 		int 	listen_port_{2018};
-		int   crawler_server_port_{0};
+		int   crawler_server_listen_port_{0};     
+		int   crawler_client_server_listen_port_{0};
 		int   label_server_port_;
 		std::string suanfa_ip_;
 		int suanfa_port_;
-		std::string crawler_client_ip_;
-		int  crawler_client_port_;
+		std::string crawler_ip_;
+		int  crawler_port_;
 
 
 	private:

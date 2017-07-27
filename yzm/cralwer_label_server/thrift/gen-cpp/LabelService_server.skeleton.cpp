@@ -27,6 +27,11 @@ class LabelServiceHandler : virtual public LabelServiceIf {
     printf("QueryUnlabeledPic\n");
   }
 
+  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index) {
+    // Your implementation goes here
+    printf("QueryPicLabeledByOthers\n");
+  }
+
   void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index) {
     // Your implementation goes here
     printf("QueryLabeledPic\n");
@@ -37,9 +42,19 @@ class LabelServiceHandler : virtual public LabelServiceIf {
     printf("DownloadPic\n");
   }
 
-  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& user) {
+  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& userName) {
     // Your implementation goes here
     printf("InsertToDb\n");
+  }
+
+  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& userName, const bool type) {
+    // Your implementation goes here
+    printf("InvalidatePicture\n");
+  }
+
+  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& userName) {
+    // Your implementation goes here
+    printf("QueryLabeledPoseData\n");
   }
 
 };

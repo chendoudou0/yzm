@@ -1,7 +1,7 @@
 #include"requestProcessor.h"
 #include"jsonOperator.h"  
 #include"CLogger.h" 
-#include"redisOperator.h" 
+//#include"redisOperator.h" 
 #include"dbPool.h"
 #include"DBOperator.h"
 #include"glog/logging.h"
@@ -11,7 +11,7 @@ using namespace std;
 using namespace std::chrono;
 
 extern shared_ptr<CDbPool<CDBOperator> >   gPtrDbpool;
-extern shared_ptr<CRedisOperator>          gPtrRedisOperator;      
+//extern shared_ptr<CRedisOperator>          gPtrRedisOperator;      
 
 CrequestProcessor::CrequestProcessor(const char* request_buffer)
 :_request_buffer(request_buffer) 
@@ -24,21 +24,25 @@ CrequestProcessor::~CrequestProcessor()
 
 bool CrequestProcessor::get_value_from_redis(string& key, string& value)
 {
+	/*
 	if(!gPtrRedisOperator->getValue(key, value))    
 	{
 		return false;
 	}
+
+	*/
 
 	return true;
 }
 
 bool CrequestProcessor::set_value_to_redis(string& key, string& value)
 {
+	/*
 	if(!gPtrRedisOperator->setValue(key, value))    
 	{
 		return false;
 	}
-
+	*/
 	return true;
 }
 
@@ -176,7 +180,7 @@ void CrequestProcessor::dealwith_liveshow_version_update()
 			LOG(ERROR) << " set value to redis failed ";  
 		}
 		
-		gPtrRedisOperator->setExpireTime(redis_key, REDIS_EXPIRE_TIME); 
+	//	gPtrRedisOperator->setExpireTime(redis_key, REDIS_EXPIRE_TIME); 
 
 		error = false;
 

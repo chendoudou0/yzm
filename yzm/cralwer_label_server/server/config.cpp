@@ -264,13 +264,20 @@ namespace  config
 		}
 
 		using rapidjson::Value;
-
-		if(!get_int(doc["crawler_server_port"], crawler_server_port_))
+		
+		if(!get_int(doc["crawler_server_listen_port"], crawler_server_listen_port_))
 		{
-			LOG(ERROR) << "crawler_server_port empty";
+			LOG(ERROR) << "crawler_server_listen_port empty";
 			return false;
 		}
-		LOG(INFO) << "crawler_server_port : " << crawler_server_port_;
+		LOG(INFO) << "crawler_server_listen_port : " << crawler_server_listen_port_;
+
+		if(!get_int(doc["crawler_client_server_listen_port"], crawler_client_server_listen_port_))
+		{
+			LOG(ERROR) << "crawler_client_server_listen_port empty";
+			return false;
+		}
+		LOG(INFO) << "crawler_client_server_listen_port : " << crawler_client_server_listen_port_;
 
 		if(!get_int(doc["label_server_port"], label_server_port_))
 		{
@@ -293,19 +300,19 @@ namespace  config
 		}
 		LOG(INFO) << "suanfa_port : " << suanfa_port_;
 
-		if(!get_string(doc["crawler_client_ip"], crawler_client_ip_))
+		if(!get_string(doc["crawler_ip"], crawler_ip_))
 		{
-			LOG(ERROR) << "crawler_client_ip empty";
+			LOG(ERROR) << "crawler_ip empty";
 			return false;
 		}
-		LOG(INFO) << "crawler_client_ip : " << crawler_client_ip_;
+		LOG(INFO) << "crawler_ip : " << crawler_ip_;
 
-		if(!get_int(doc["crawler_client_port"], crawler_client_port_))
+		if(!get_int(doc["crawler_port"], crawler_port_))
 		{
-			LOG(ERROR) << "crawler_client_port empty";
+			LOG(ERROR) << "crawler_port empty";
 			return false;
 		}
-		LOG(INFO) << "crawler_client_port : " << crawler_client_port_;
+		LOG(INFO) << "crawler_port : " << crawler_port_;
 
 		return true;
 

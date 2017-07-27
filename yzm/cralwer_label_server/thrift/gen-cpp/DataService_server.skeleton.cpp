@@ -27,7 +27,7 @@ class DataServiceHandler : virtual public DataServiceIf {
     printf("UploadRequest\n");
   }
 
-  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent) {
+  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal) {
     // Your implementation goes here
     printf("PicUpload\n");
   }

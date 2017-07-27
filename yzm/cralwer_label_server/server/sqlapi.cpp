@@ -191,6 +191,7 @@ CMySQL::FetchRows()
     if (pRes == NULL)
     {
         LOG(ERROR) << "CMySQL::FetchResult() failed";
+		return 0;
     }
 
 	int iRet = mysql_num_rows(pRes);

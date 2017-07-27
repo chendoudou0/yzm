@@ -21,8 +21,8 @@ namespace server { namespace pose_label {
 class CrawlerServiceIf {
  public:
   virtual ~CrawlerServiceIf() {}
-  virtual void UploadRequest(ReturnVals& _return, const std::string& md5) = 0;
-  virtual void PicUpload(ReturnVals& _return, const PicInfo& pic) = 0;
+  virtual void start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag) = 0;
+  virtual void stop(ReturnVals& _return) = 0;
 };
 
 class CrawlerServiceIfFactory {
@@ -52,45 +52,57 @@ class CrawlerServiceIfSingletonFactory : virtual public CrawlerServiceIfFactory 
 class CrawlerServiceNull : virtual public CrawlerServiceIf {
  public:
   virtual ~CrawlerServiceNull() {}
-  void UploadRequest(ReturnVals& /* _return */, const std::string& /* md5 */) {
+  void start(ReturnVals& /* _return */, const std::string& /* keyword */, const std::string& /* website */, const std::string& /* tag */) {
     return;
   }
-  void PicUpload(ReturnVals& /* _return */, const PicInfo& /* pic */) {
+  void stop(ReturnVals& /* _return */) {
     return;
   }
 };
 
-typedef struct _CrawlerService_UploadRequest_args__isset {
-  _CrawlerService_UploadRequest_args__isset() : md5(false) {}
-  bool md5 :1;
-} _CrawlerService_UploadRequest_args__isset;
+typedef struct _CrawlerService_start_args__isset {
+  _CrawlerService_start_args__isset() : keyword(false), website(false), tag(false) {}
+  bool keyword :1;
+  bool website :1;
+  bool tag :1;
+} _CrawlerService_start_args__isset;
 
-class CrawlerService_UploadRequest_args {
+class CrawlerService_start_args {
  public:
 
-  CrawlerService_UploadRequest_args(const CrawlerService_UploadRequest_args&);
-  CrawlerService_UploadRequest_args& operator=(const CrawlerService_UploadRequest_args&);
-  CrawlerService_UploadRequest_args() : md5() {
+  CrawlerService_start_args(const CrawlerService_start_args&);
+  CrawlerService_start_args& operator=(const CrawlerService_start_args&);
+  CrawlerService_start_args() : keyword(), website(), tag() {
   }
 
-  virtual ~CrawlerService_UploadRequest_args() throw();
-  std::string md5;
+  virtual ~CrawlerService_start_args() throw();
+  std::string keyword;
+  std::string website;
+  std::string tag;
 
-  _CrawlerService_UploadRequest_args__isset __isset;
+  _CrawlerService_start_args__isset __isset;
 
-  void __set_md5(const std::string& val);
+  void __set_keyword(const std::string& val);
 
-  bool operator == (const CrawlerService_UploadRequest_args & rhs) const
+  void __set_website(const std::string& val);
+
+  void __set_tag(const std::string& val);
+
+  bool operator == (const CrawlerService_start_args & rhs) const
   {
-    if (!(md5 == rhs.md5))
+    if (!(keyword == rhs.keyword))
+      return false;
+    if (!(website == rhs.website))
+      return false;
+    if (!(tag == rhs.tag))
       return false;
     return true;
   }
-  bool operator != (const CrawlerService_UploadRequest_args &rhs) const {
+  bool operator != (const CrawlerService_start_args &rhs) const {
     return !(*this == rhs);
   }
 
-  bool operator < (const CrawlerService_UploadRequest_args & ) const;
+  bool operator < (const CrawlerService_start_args & ) const;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -98,103 +110,94 @@ class CrawlerService_UploadRequest_args {
 };
 
 
-class CrawlerService_UploadRequest_pargs {
+class CrawlerService_start_pargs {
  public:
 
 
-  virtual ~CrawlerService_UploadRequest_pargs() throw();
-  const std::string* md5;
+  virtual ~CrawlerService_start_pargs() throw();
+  const std::string* keyword;
+  const std::string* website;
+  const std::string* tag;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
 };
 
-typedef struct _CrawlerService_UploadRequest_result__isset {
-  _CrawlerService_UploadRequest_result__isset() : success(false) {}
+typedef struct _CrawlerService_start_result__isset {
+  _CrawlerService_start_result__isset() : success(false) {}
   bool success :1;
-} _CrawlerService_UploadRequest_result__isset;
+} _CrawlerService_start_result__isset;
 
-class CrawlerService_UploadRequest_result {
+class CrawlerService_start_result {
  public:
 
-  CrawlerService_UploadRequest_result(const CrawlerService_UploadRequest_result&);
-  CrawlerService_UploadRequest_result& operator=(const CrawlerService_UploadRequest_result&);
-  CrawlerService_UploadRequest_result() {
+  CrawlerService_start_result(const CrawlerService_start_result&);
+  CrawlerService_start_result& operator=(const CrawlerService_start_result&);
+  CrawlerService_start_result() {
   }
 
-  virtual ~CrawlerService_UploadRequest_result() throw();
+  virtual ~CrawlerService_start_result() throw();
   ReturnVals success;
 
-  _CrawlerService_UploadRequest_result__isset __isset;
+  _CrawlerService_start_result__isset __isset;
 
   void __set_success(const ReturnVals& val);
 
-  bool operator == (const CrawlerService_UploadRequest_result & rhs) const
+  bool operator == (const CrawlerService_start_result & rhs) const
   {
     if (!(success == rhs.success))
       return false;
     return true;
   }
-  bool operator != (const CrawlerService_UploadRequest_result &rhs) const {
+  bool operator != (const CrawlerService_start_result &rhs) const {
     return !(*this == rhs);
   }
 
-  bool operator < (const CrawlerService_UploadRequest_result & ) const;
+  bool operator < (const CrawlerService_start_result & ) const;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
 };
 
-typedef struct _CrawlerService_UploadRequest_presult__isset {
-  _CrawlerService_UploadRequest_presult__isset() : success(false) {}
+typedef struct _CrawlerService_start_presult__isset {
+  _CrawlerService_start_presult__isset() : success(false) {}
   bool success :1;
-} _CrawlerService_UploadRequest_presult__isset;
+} _CrawlerService_start_presult__isset;
 
-class CrawlerService_UploadRequest_presult {
+class CrawlerService_start_presult {
  public:
 
 
-  virtual ~CrawlerService_UploadRequest_presult() throw();
+  virtual ~CrawlerService_start_presult() throw();
   ReturnVals* success;
 
-  _CrawlerService_UploadRequest_presult__isset __isset;
+  _CrawlerService_start_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
 };
 
-typedef struct _CrawlerService_PicUpload_args__isset {
-  _CrawlerService_PicUpload_args__isset() : pic(false) {}
-  bool pic :1;
-} _CrawlerService_PicUpload_args__isset;
 
-class CrawlerService_PicUpload_args {
+class CrawlerService_stop_args {
  public:
 
-  CrawlerService_PicUpload_args(const CrawlerService_PicUpload_args&);
-  CrawlerService_PicUpload_args& operator=(const CrawlerService_PicUpload_args&);
-  CrawlerService_PicUpload_args() {
+  CrawlerService_stop_args(const CrawlerService_stop_args&);
+  CrawlerService_stop_args& operator=(const CrawlerService_stop_args&);
+  CrawlerService_stop_args() {
   }
 
-  virtual ~CrawlerService_PicUpload_args() throw();
-  PicInfo pic;
+  virtual ~CrawlerService_stop_args() throw();
 
-  _CrawlerService_PicUpload_args__isset __isset;
-
-  void __set_pic(const PicInfo& val);
-
-  bool operator == (const CrawlerService_PicUpload_args & rhs) const
+  bool operator == (const CrawlerService_stop_args & /* rhs */) const
   {
-    if (!(pic == rhs.pic))
-      return false;
     return true;
   }
-  bool operator != (const CrawlerService_PicUpload_args &rhs) const {
+  bool operator != (const CrawlerService_stop_args &rhs) const {
     return !(*this == rhs);
   }
 
-  bool operator < (const CrawlerService_PicUpload_args & ) const;
+  bool operator < (const CrawlerService_stop_args & ) const;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -202,67 +205,66 @@ class CrawlerService_PicUpload_args {
 };
 
 
-class CrawlerService_PicUpload_pargs {
+class CrawlerService_stop_pargs {
  public:
 
 
-  virtual ~CrawlerService_PicUpload_pargs() throw();
-  const PicInfo* pic;
+  virtual ~CrawlerService_stop_pargs() throw();
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
 };
 
-typedef struct _CrawlerService_PicUpload_result__isset {
-  _CrawlerService_PicUpload_result__isset() : success(false) {}
+typedef struct _CrawlerService_stop_result__isset {
+  _CrawlerService_stop_result__isset() : success(false) {}
   bool success :1;
-} _CrawlerService_PicUpload_result__isset;
+} _CrawlerService_stop_result__isset;
 
-class CrawlerService_PicUpload_result {
+class CrawlerService_stop_result {
  public:
 
-  CrawlerService_PicUpload_result(const CrawlerService_PicUpload_result&);
-  CrawlerService_PicUpload_result& operator=(const CrawlerService_PicUpload_result&);
-  CrawlerService_PicUpload_result() {
+  CrawlerService_stop_result(const CrawlerService_stop_result&);
+  CrawlerService_stop_result& operator=(const CrawlerService_stop_result&);
+  CrawlerService_stop_result() {
   }
 
-  virtual ~CrawlerService_PicUpload_result() throw();
+  virtual ~CrawlerService_stop_result() throw();
   ReturnVals success;
 
-  _CrawlerService_PicUpload_result__isset __isset;
+  _CrawlerService_stop_result__isset __isset;
 
   void __set_success(const ReturnVals& val);
 
-  bool operator == (const CrawlerService_PicUpload_result & rhs) const
+  bool operator == (const CrawlerService_stop_result & rhs) const
   {
     if (!(success == rhs.success))
       return false;
     return true;
   }
-  bool operator != (const CrawlerService_PicUpload_result &rhs) const {
+  bool operator != (const CrawlerService_stop_result &rhs) const {
     return !(*this == rhs);
   }
 
-  bool operator < (const CrawlerService_PicUpload_result & ) const;
+  bool operator < (const CrawlerService_stop_result & ) const;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
 };
 
-typedef struct _CrawlerService_PicUpload_presult__isset {
-  _CrawlerService_PicUpload_presult__isset() : success(false) {}
+typedef struct _CrawlerService_stop_presult__isset {
+  _CrawlerService_stop_presult__isset() : success(false) {}
   bool success :1;
-} _CrawlerService_PicUpload_presult__isset;
+} _CrawlerService_stop_presult__isset;
 
-class CrawlerService_PicUpload_presult {
+class CrawlerService_stop_presult {
  public:
 
 
-  virtual ~CrawlerService_PicUpload_presult() throw();
+  virtual ~CrawlerService_stop_presult() throw();
   ReturnVals* success;
 
-  _CrawlerService_PicUpload_presult__isset __isset;
+  _CrawlerService_stop_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -293,12 +295,12 @@ class CrawlerServiceClient : virtual public CrawlerServiceIf {
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  void UploadRequest(ReturnVals& _return, const std::string& md5);
-  void send_UploadRequest(const std::string& md5);
-  void recv_UploadRequest(ReturnVals& _return);
-  void PicUpload(ReturnVals& _return, const PicInfo& pic);
-  void send_PicUpload(const PicInfo& pic);
-  void recv_PicUpload(ReturnVals& _return);
+  void start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag);
+  void send_start(const std::string& keyword, const std::string& website, const std::string& tag);
+  void recv_start(ReturnVals& _return);
+  void stop(ReturnVals& _return);
+  void send_stop();
+  void recv_stop(ReturnVals& _return);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -314,13 +316,13 @@ class CrawlerServiceProcessor : public ::apache::thrift::TDispatchProcessor {
   typedef  void (CrawlerServiceProcessor::*ProcessFunction)(int32_t, ::apache::thrift::protocol::TProtocol*, ::apache::thrift::protocol::TProtocol*, void*);
   typedef std::map<std::string, ProcessFunction> ProcessMap;
   ProcessMap processMap_;
-  void process_UploadRequest(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
-  void process_PicUpload(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_start(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_stop(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   CrawlerServiceProcessor(boost::shared_ptr<CrawlerServiceIf> iface) :
     iface_(iface) {
-    processMap_["UploadRequest"] = &CrawlerServiceProcessor::process_UploadRequest;
-    processMap_["PicUpload"] = &CrawlerServiceProcessor::process_PicUpload;
+    processMap_["start"] = &CrawlerServiceProcessor::process_start;
+    processMap_["stop"] = &CrawlerServiceProcessor::process_stop;
   }
 
   virtual ~CrawlerServiceProcessor() {}
@@ -349,23 +351,23 @@ class CrawlerServiceMultiface : virtual public CrawlerServiceIf {
     ifaces_.push_back(iface);
   }
  public:
-  void UploadRequest(ReturnVals& _return, const std::string& md5) {
+  void start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->UploadRequest(_return, md5);
+      ifaces_[i]->start(_return, keyword, website, tag);
     }
-    ifaces_[i]->UploadRequest(_return, md5);
+    ifaces_[i]->start(_return, keyword, website, tag);
     return;
   }
 
-  void PicUpload(ReturnVals& _return, const PicInfo& pic) {
+  void stop(ReturnVals& _return) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->PicUpload(_return, pic);
+      ifaces_[i]->stop(_return);
     }
-    ifaces_[i]->PicUpload(_return, pic);
+    ifaces_[i]->stop(_return);
     return;
   }
 
@@ -399,12 +401,12 @@ class CrawlerServiceConcurrentClient : virtual public CrawlerServiceIf {
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  void UploadRequest(ReturnVals& _return, const std::string& md5);
-  int32_t send_UploadRequest(const std::string& md5);
-  void recv_UploadRequest(ReturnVals& _return, const int32_t seqid);
-  void PicUpload(ReturnVals& _return, const PicInfo& pic);
-  int32_t send_PicUpload(const PicInfo& pic);
-  void recv_PicUpload(ReturnVals& _return, const int32_t seqid);
+  void start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag);
+  int32_t send_start(const std::string& keyword, const std::string& website, const std::string& tag);
+  void recv_start(ReturnVals& _return, const int32_t seqid);
+  void stop(ReturnVals& _return);
+  int32_t send_stop();
+  void recv_stop(ReturnVals& _return, const int32_t seqid);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;

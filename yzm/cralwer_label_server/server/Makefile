@@ -5,23 +5,26 @@ vpath %.cpp ../thrift/gen-cpp   ../thrift/arithmetic/gen-cpp
 
 INCLUDE =  -I. -I/usr/include/mysql  -I/usr/local/mysql/include -I../include  \
 -I../3party  -I../3party/rapidjson    -I../thrift/gen-cpp   -I../thrift/arithmetic/gen-cpp  \
--I/usr/local/include/opencv  -I/usr/local/include/opencv2  
+-I/usr/local/include/opencv  -I/usr/local/include/opencv2     \
+-I../3party/opencv2.4.9/opencv2  -I../3party/opencv2.4.9/opencv -I../3party/opencv2.4.9  \
+-I../3party/poco/include 
 
 TARGET = label_server		  
 
-OBJS  := DataService.o LabelService.o \
+OBJS  := DataService.o LabelService.o CrawlerClientService.o  CrawlerService.o \
 pose_label_types.o pose_label_constants.o \
 Pose3DAnnPreprocess.o Pose3DAnnNew_types.o \
 ThreadBase.o  IApp.o config.o upgradeServer.o requestProcessor.o  CLogger.o  main.o \
-redisOperator.o DBOperator.o sqlapi.o    Common.o  HttpTool.o \
+DBOperator.o sqlapi.o    Common.o  HttpTool.o \
 jsonOperator.o
 
-LIBS =  -L/usr/local/mysql/lib  -lpthread  -lPocoFoundation -lPocoNet   \
+LIBS =  -L../3party/poco/lib  -L/usr/local/mysql/lib  -lpthread  -lPocoFoundation -lPocoNet   \
 -lcurl -lmysqlclient   \
--lhiredis   -lglog   \
--lthrift    -lfreeimage   \
--lopencv_calib3d  -lopencv_core  -lopencv_highgui \
--lopencv_imgproc  -lopencv_objdetect \
+-lglog   \
+-lthrift       \
+-L../3party/dev_opencv        \
+-L../3party/opencv2.4.9/lib   \
+-lopencv_core  -lopencv_highgui  -lopencv_imgproc   \
 
 CFLAGS += -DTIXML_USE_STL -w -std=c++11 -g  
 all: $(TARGET)  
@@ -29,7 +32,7 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CXX) -o $@ $(CFLAGS) $^ $(LIBS) $(INCLUDE) 
 
-crawler_client_obj := DataService.o  LabelService.o pose_label_types.o  client.o
+crawler_client_obj := DataService.o  LabelService.o  CrawlerClientService.o  pose_label_types.o  client.o
 crawler_client: $(crawler_client_obj)
 	$(CXX) -o $@ $(CFLAGS) $^ $(LIBS) $(INCLUDE) 
 
@@ -46,7 +49,9 @@ install:
 	@mkdir -p ../build/bin/
 	@mkdir -p ../build/log/
 	@mkdir -p ../build/glog/
-	@mkdir -p ../build/pic/
+	@mkdir -p ../build/pic_ori/
+	@mkdir -p ../build/pic_preproccess/
+	@mkdir -p ../build/pic_error/
 	
 	cp -r ../libs/ ../build/
 	cp -rf ../conf/ ../build/

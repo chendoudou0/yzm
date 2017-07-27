@@ -22,7 +22,7 @@ class DataServiceIf {
  public:
   virtual ~DataServiceIf() {}
   virtual void UploadRequest(ReturnVals& _return, const std::string& md5) = 0;
-  virtual void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent) = 0;
+  virtual void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal) = 0;
 };
 
 class DataServiceIfFactory {
@@ -55,7 +55,7 @@ class DataServiceNull : virtual public DataServiceIf {
   void UploadRequest(ReturnVals& /* _return */, const std::string& /* md5 */) {
     return;
   }
-  void PicUpload(ReturnVals& /* _return */, const PicInfo& /* pic */, const double /* percent */) {
+  void PicUpload(ReturnVals& /* _return */, const PicInfo& /* pic */, const double /* percent */, const int32_t /* sumTotal */) {
     return;
   }
 };
@@ -165,9 +165,10 @@ class DataService_UploadRequest_presult {
 };
 
 typedef struct _DataService_PicUpload_args__isset {
-  _DataService_PicUpload_args__isset() : pic(false), percent(false) {}
+  _DataService_PicUpload_args__isset() : pic(false), percent(false), sumTotal(false) {}
   bool pic :1;
   bool percent :1;
+  bool sumTotal :1;
 } _DataService_PicUpload_args__isset;
 
 class DataService_PicUpload_args {
@@ -175,12 +176,13 @@ class DataService_PicUpload_args {
 
   DataService_PicUpload_args(const DataService_PicUpload_args&);
   DataService_PicUpload_args& operator=(const DataService_PicUpload_args&);
-  DataService_PicUpload_args() : percent(0) {
+  DataService_PicUpload_args() : percent(0), sumTotal(0) {
   }
 
   virtual ~DataService_PicUpload_args() throw();
   PicInfo pic;
   double percent;
+  int32_t sumTotal;
 
   _DataService_PicUpload_args__isset __isset;
 
@@ -188,11 +190,15 @@ class DataService_PicUpload_args {
 
   void __set_percent(const double val);
 
+  void __set_sumTotal(const int32_t val);
+
   bool operator == (const DataService_PicUpload_args & rhs) const
   {
     if (!(pic == rhs.pic))
       return false;
     if (!(percent == rhs.percent))
+      return false;
+    if (!(sumTotal == rhs.sumTotal))
       return false;
     return true;
   }
@@ -215,6 +221,7 @@ class DataService_PicUpload_pargs {
   virtual ~DataService_PicUpload_pargs() throw();
   const PicInfo* pic;
   const double* percent;
+  const int32_t* sumTotal;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -303,8 +310,8 @@ class DataServiceClient : virtual public DataServiceIf {
   void UploadRequest(ReturnVals& _return, const std::string& md5);
   void send_UploadRequest(const std::string& md5);
   void recv_UploadRequest(ReturnVals& _return);
-  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent);
-  void send_PicUpload(const PicInfo& pic, const double percent);
+  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal);
+  void send_PicUpload(const PicInfo& pic, const double percent, const int32_t sumTotal);
   void recv_PicUpload(ReturnVals& _return);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
@@ -366,13 +373,13 @@ class DataServiceMultiface : virtual public DataServiceIf {
     return;
   }
 
-  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent) {
+  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->PicUpload(_return, pic, percent);
+      ifaces_[i]->PicUpload(_return, pic, percent, sumTotal);
     }
-    ifaces_[i]->PicUpload(_return, pic, percent);
+    ifaces_[i]->PicUpload(_return, pic, percent, sumTotal);
     return;
   }
 
@@ -409,8 +416,8 @@ class DataServiceConcurrentClient : virtual public DataServiceIf {
   void UploadRequest(ReturnVals& _return, const std::string& md5);
   int32_t send_UploadRequest(const std::string& md5);
   void recv_UploadRequest(ReturnVals& _return, const int32_t seqid);
-  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent);
-  int32_t send_PicUpload(const PicInfo& pic, const double percent);
+  void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal);
+  int32_t send_PicUpload(const PicInfo& pic, const double percent, const int32_t sumTotal);
   void recv_PicUpload(ReturnVals& _return, const int32_t seqid);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;

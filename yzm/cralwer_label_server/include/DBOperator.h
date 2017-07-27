@@ -56,7 +56,11 @@ public:
 	int  AddPicture(const ::server::pose_label::PicInfo&   pic, string url);
 	bool UpdatePicPoseDate(const std::string& url, string& str2dPose, string& str3dPose);
 	bool AddLabeledDate(int picId,const std::string user,const std::string poseDate);
-	bool QueryUnlabeledPicture(SqlMapVector &objOutMapVector);
+	bool QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page);
+	bool QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page);
+	bool QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page);
+	int  InvalidatePicture(int  id, const std::string user, const bool type);
+	bool QueryLabeledPoseData(SqlResultSet& oMap, int pic_id, const std::string user);
 	
 private:
 	std::shared_ptr<CMySQL>  _ptrMysql;

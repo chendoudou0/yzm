@@ -9,11 +9,11 @@
 namespace server { namespace pose_label {
 
 
-CrawlerService_UploadRequest_args::~CrawlerService_UploadRequest_args() throw() {
+CrawlerService_start_args::~CrawlerService_start_args() throw() {
 }
 
 
-uint32_t CrawlerService_UploadRequest_args::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t CrawlerService_start_args::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -36,8 +36,24 @@ uint32_t CrawlerService_UploadRequest_args::read(::apache::thrift::protocol::TPr
     {
       case 1:
         if (ftype == ::apache::thrift::protocol::T_STRING) {
-          xfer += iprot->readString(this->md5);
-          this->__isset.md5 = true;
+          xfer += iprot->readString(this->keyword);
+          this->__isset.keyword = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->website);
+          this->__isset.website = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->tag);
+          this->__isset.tag = true;
         } else {
           xfer += iprot->skip(ftype);
         }
@@ -54,13 +70,21 @@ uint32_t CrawlerService_UploadRequest_args::read(::apache::thrift::protocol::TPr
   return xfer;
 }
 
-uint32_t CrawlerService_UploadRequest_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t CrawlerService_start_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("CrawlerService_UploadRequest_args");
+  xfer += oprot->writeStructBegin("CrawlerService_start_args");
 
-  xfer += oprot->writeFieldBegin("md5", ::apache::thrift::protocol::T_STRING, 1);
-  xfer += oprot->writeString(this->md5);
+  xfer += oprot->writeFieldBegin("keyword", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeString(this->keyword);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("website", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->website);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("tag", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString(this->tag);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -69,17 +93,25 @@ uint32_t CrawlerService_UploadRequest_args::write(::apache::thrift::protocol::TP
 }
 
 
-CrawlerService_UploadRequest_pargs::~CrawlerService_UploadRequest_pargs() throw() {
+CrawlerService_start_pargs::~CrawlerService_start_pargs() throw() {
 }
 
 
-uint32_t CrawlerService_UploadRequest_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t CrawlerService_start_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("CrawlerService_UploadRequest_pargs");
+  xfer += oprot->writeStructBegin("CrawlerService_start_pargs");
 
-  xfer += oprot->writeFieldBegin("md5", ::apache::thrift::protocol::T_STRING, 1);
-  xfer += oprot->writeString((*(this->md5)));
+  xfer += oprot->writeFieldBegin("keyword", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeString((*(this->keyword)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("website", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString((*(this->website)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("tag", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString((*(this->tag)));
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -88,11 +120,11 @@ uint32_t CrawlerService_UploadRequest_pargs::write(::apache::thrift::protocol::T
 }
 
 
-CrawlerService_UploadRequest_result::~CrawlerService_UploadRequest_result() throw() {
+CrawlerService_start_result::~CrawlerService_start_result() throw() {
 }
 
 
-uint32_t CrawlerService_UploadRequest_result::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t CrawlerService_start_result::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -133,11 +165,11 @@ uint32_t CrawlerService_UploadRequest_result::read(::apache::thrift::protocol::T
   return xfer;
 }
 
-uint32_t CrawlerService_UploadRequest_result::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t CrawlerService_start_result::write(::apache::thrift::protocol::TProtocol* oprot) const {
 
   uint32_t xfer = 0;
 
-  xfer += oprot->writeStructBegin("CrawlerService_UploadRequest_result");
+  xfer += oprot->writeStructBegin("CrawlerService_start_result");
 
   if (this->__isset.success) {
     xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
@@ -150,11 +182,11 @@ uint32_t CrawlerService_UploadRequest_result::write(::apache::thrift::protocol::
 }
 
 
-CrawlerService_UploadRequest_presult::~CrawlerService_UploadRequest_presult() throw() {
+CrawlerService_start_presult::~CrawlerService_start_presult() throw() {
 }
 
 
-uint32_t CrawlerService_UploadRequest_presult::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t CrawlerService_start_presult::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -196,11 +228,11 @@ uint32_t CrawlerService_UploadRequest_presult::read(::apache::thrift::protocol::
 }
 
 
-CrawlerService_PicUpload_args::~CrawlerService_PicUpload_args() throw() {
+CrawlerService_stop_args::~CrawlerService_stop_args() throw() {
 }
 
 
-uint32_t CrawlerService_PicUpload_args::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t CrawlerService_stop_args::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -219,20 +251,7 @@ uint32_t CrawlerService_PicUpload_args::read(::apache::thrift::protocol::TProtoc
     if (ftype == ::apache::thrift::protocol::T_STOP) {
       break;
     }
-    switch (fid)
-    {
-      case 1:
-        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
-          xfer += this->pic.read(iprot);
-          this->__isset.pic = true;
-        } else {
-          xfer += iprot->skip(ftype);
-        }
-        break;
-      default:
-        xfer += iprot->skip(ftype);
-        break;
-    }
+    xfer += iprot->skip(ftype);
     xfer += iprot->readFieldEnd();
   }
 
@@ -241,14 +260,10 @@ uint32_t CrawlerService_PicUpload_args::read(::apache::thrift::protocol::TProtoc
   return xfer;
 }
 
-uint32_t CrawlerService_PicUpload_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t CrawlerService_stop_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("CrawlerService_PicUpload_args");
-
-  xfer += oprot->writeFieldBegin("pic", ::apache::thrift::protocol::T_STRUCT, 1);
-  xfer += this->pic.write(oprot);
-  xfer += oprot->writeFieldEnd();
+  xfer += oprot->writeStructBegin("CrawlerService_stop_args");
 
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
@@ -256,18 +271,14 @@ uint32_t CrawlerService_PicUpload_args::write(::apache::thrift::protocol::TProto
 }
 
 
-CrawlerService_PicUpload_pargs::~CrawlerService_PicUpload_pargs() throw() {
+CrawlerService_stop_pargs::~CrawlerService_stop_pargs() throw() {
 }
 
 
-uint32_t CrawlerService_PicUpload_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t CrawlerService_stop_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
   uint32_t xfer = 0;
   apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
-  xfer += oprot->writeStructBegin("CrawlerService_PicUpload_pargs");
-
-  xfer += oprot->writeFieldBegin("pic", ::apache::thrift::protocol::T_STRUCT, 1);
-  xfer += (*(this->pic)).write(oprot);
-  xfer += oprot->writeFieldEnd();
+  xfer += oprot->writeStructBegin("CrawlerService_stop_pargs");
 
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
@@ -275,11 +286,11 @@ uint32_t CrawlerService_PicUpload_pargs::write(::apache::thrift::protocol::TProt
 }
 
 
-CrawlerService_PicUpload_result::~CrawlerService_PicUpload_result() throw() {
+CrawlerService_stop_result::~CrawlerService_stop_result() throw() {
 }
 
 
-uint32_t CrawlerService_PicUpload_result::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t CrawlerService_stop_result::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -320,11 +331,11 @@ uint32_t CrawlerService_PicUpload_result::read(::apache::thrift::protocol::TProt
   return xfer;
 }
 
-uint32_t CrawlerService_PicUpload_result::write(::apache::thrift::protocol::TProtocol* oprot) const {
+uint32_t CrawlerService_stop_result::write(::apache::thrift::protocol::TProtocol* oprot) const {
 
   uint32_t xfer = 0;
 
-  xfer += oprot->writeStructBegin("CrawlerService_PicUpload_result");
+  xfer += oprot->writeStructBegin("CrawlerService_stop_result");
 
   if (this->__isset.success) {
     xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
@@ -337,11 +348,11 @@ uint32_t CrawlerService_PicUpload_result::write(::apache::thrift::protocol::TPro
 }
 
 
-CrawlerService_PicUpload_presult::~CrawlerService_PicUpload_presult() throw() {
+CrawlerService_stop_presult::~CrawlerService_stop_presult() throw() {
 }
 
 
-uint32_t CrawlerService_PicUpload_presult::read(::apache::thrift::protocol::TProtocol* iprot) {
+uint32_t CrawlerService_stop_presult::read(::apache::thrift::protocol::TProtocol* iprot) {
 
   apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
   uint32_t xfer = 0;
@@ -382,19 +393,21 @@ uint32_t CrawlerService_PicUpload_presult::read(::apache::thrift::protocol::TPro
   return xfer;
 }
 
-void CrawlerServiceClient::UploadRequest(ReturnVals& _return, const std::string& md5)
+void CrawlerServiceClient::start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag)
 {
-  send_UploadRequest(md5);
-  recv_UploadRequest(_return);
+  send_start(keyword, website, tag);
+  recv_start(_return);
 }
 
-void CrawlerServiceClient::send_UploadRequest(const std::string& md5)
+void CrawlerServiceClient::send_start(const std::string& keyword, const std::string& website, const std::string& tag)
 {
   int32_t cseqid = 0;
-  oprot_->writeMessageBegin("UploadRequest", ::apache::thrift::protocol::T_CALL, cseqid);
+  oprot_->writeMessageBegin("start", ::apache::thrift::protocol::T_CALL, cseqid);
 
-  CrawlerService_UploadRequest_pargs args;
-  args.md5 = &md5;
+  CrawlerService_start_pargs args;
+  args.keyword = &keyword;
+  args.website = &website;
+  args.tag = &tag;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -402,7 +415,7 @@ void CrawlerServiceClient::send_UploadRequest(const std::string& md5)
   oprot_->getTransport()->flush();
 }
 
-void CrawlerServiceClient::recv_UploadRequest(ReturnVals& _return)
+void CrawlerServiceClient::recv_start(ReturnVals& _return)
 {
 
   int32_t rseqid = 0;
@@ -422,12 +435,12 @@ void CrawlerServiceClient::recv_UploadRequest(ReturnVals& _return)
     iprot_->readMessageEnd();
     iprot_->getTransport()->readEnd();
   }
-  if (fname.compare("UploadRequest") != 0) {
+  if (fname.compare("start") != 0) {
     iprot_->skip(::apache::thrift::protocol::T_STRUCT);
     iprot_->readMessageEnd();
     iprot_->getTransport()->readEnd();
   }
-  CrawlerService_UploadRequest_presult result;
+  CrawlerService_start_presult result;
   result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
@@ -437,22 +450,21 @@ void CrawlerServiceClient::recv_UploadRequest(ReturnVals& _return)
     // _return pointer has now been filled
     return;
   }
-  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "UploadRequest failed: unknown result");
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "start failed: unknown result");
 }
 
-void CrawlerServiceClient::PicUpload(ReturnVals& _return, const PicInfo& pic)
+void CrawlerServiceClient::stop(ReturnVals& _return)
 {
-  send_PicUpload(pic);
-  recv_PicUpload(_return);
+  send_stop();
+  recv_stop(_return);
 }
 
-void CrawlerServiceClient::send_PicUpload(const PicInfo& pic)
+void CrawlerServiceClient::send_stop()
 {
   int32_t cseqid = 0;
-  oprot_->writeMessageBegin("PicUpload", ::apache::thrift::protocol::T_CALL, cseqid);
+  oprot_->writeMessageBegin("stop", ::apache::thrift::protocol::T_CALL, cseqid);
 
-  CrawlerService_PicUpload_pargs args;
-  args.pic = &pic;
+  CrawlerService_stop_pargs args;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -460,7 +472,7 @@ void CrawlerServiceClient::send_PicUpload(const PicInfo& pic)
   oprot_->getTransport()->flush();
 }
 
-void CrawlerServiceClient::recv_PicUpload(ReturnVals& _return)
+void CrawlerServiceClient::recv_stop(ReturnVals& _return)
 {
 
   int32_t rseqid = 0;
@@ -480,12 +492,12 @@ void CrawlerServiceClient::recv_PicUpload(ReturnVals& _return)
     iprot_->readMessageEnd();
     iprot_->getTransport()->readEnd();
   }
-  if (fname.compare("PicUpload") != 0) {
+  if (fname.compare("stop") != 0) {
     iprot_->skip(::apache::thrift::protocol::T_STRUCT);
     iprot_->readMessageEnd();
     iprot_->getTransport()->readEnd();
   }
-  CrawlerService_PicUpload_presult result;
+  CrawlerService_stop_presult result;
   result.success = &_return;
   result.read(iprot_);
   iprot_->readMessageEnd();
@@ -495,7 +507,7 @@ void CrawlerServiceClient::recv_PicUpload(ReturnVals& _return)
     // _return pointer has now been filled
     return;
   }
-  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "PicUpload failed: unknown result");
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "stop failed: unknown result");
 }
 
 bool CrawlerServiceProcessor::dispatchCall(::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, const std::string& fname, int32_t seqid, void* callContext) {
@@ -517,38 +529,38 @@ bool CrawlerServiceProcessor::dispatchCall(::apache::thrift::protocol::TProtocol
   return true;
 }
 
-void CrawlerServiceProcessor::process_UploadRequest(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)
+void CrawlerServiceProcessor::process_start(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)
 {
   void* ctx = NULL;
   if (this->eventHandler_.get() != NULL) {
-    ctx = this->eventHandler_->getContext("CrawlerService.UploadRequest", callContext);
+    ctx = this->eventHandler_->getContext("CrawlerService.start", callContext);
   }
-  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "CrawlerService.UploadRequest");
+  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "CrawlerService.start");
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->preRead(ctx, "CrawlerService.UploadRequest");
+    this->eventHandler_->preRead(ctx, "CrawlerService.start");
   }
 
-  CrawlerService_UploadRequest_args args;
+  CrawlerService_start_args args;
   args.read(iprot);
   iprot->readMessageEnd();
   uint32_t bytes = iprot->getTransport()->readEnd();
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->postRead(ctx, "CrawlerService.UploadRequest", bytes);
+    this->eventHandler_->postRead(ctx, "CrawlerService.start", bytes);
   }
 
-  CrawlerService_UploadRequest_result result;
+  CrawlerService_start_result result;
   try {
-    iface_->UploadRequest(result.success, args.md5);
+    iface_->start(result.success, args.keyword, args.website, args.tag);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != NULL) {
-      this->eventHandler_->handlerError(ctx, "CrawlerService.UploadRequest");
+      this->eventHandler_->handlerError(ctx, "CrawlerService.start");
     }
 
     ::apache::thrift::TApplicationException x(e.what());
-    oprot->writeMessageBegin("UploadRequest", ::apache::thrift::protocol::T_EXCEPTION, seqid);
+    oprot->writeMessageBegin("start", ::apache::thrift::protocol::T_EXCEPTION, seqid);
     x.write(oprot);
     oprot->writeMessageEnd();
     oprot->getTransport()->writeEnd();
@@ -557,52 +569,52 @@ void CrawlerServiceProcessor::process_UploadRequest(int32_t seqid, ::apache::thr
   }
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->preWrite(ctx, "CrawlerService.UploadRequest");
+    this->eventHandler_->preWrite(ctx, "CrawlerService.start");
   }
 
-  oprot->writeMessageBegin("UploadRequest", ::apache::thrift::protocol::T_REPLY, seqid);
+  oprot->writeMessageBegin("start", ::apache::thrift::protocol::T_REPLY, seqid);
   result.write(oprot);
   oprot->writeMessageEnd();
   bytes = oprot->getTransport()->writeEnd();
   oprot->getTransport()->flush();
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->postWrite(ctx, "CrawlerService.UploadRequest", bytes);
+    this->eventHandler_->postWrite(ctx, "CrawlerService.start", bytes);
   }
 }
 
-void CrawlerServiceProcessor::process_PicUpload(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)
+void CrawlerServiceProcessor::process_stop(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)
 {
   void* ctx = NULL;
   if (this->eventHandler_.get() != NULL) {
-    ctx = this->eventHandler_->getContext("CrawlerService.PicUpload", callContext);
+    ctx = this->eventHandler_->getContext("CrawlerService.stop", callContext);
   }
-  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "CrawlerService.PicUpload");
+  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "CrawlerService.stop");
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->preRead(ctx, "CrawlerService.PicUpload");
+    this->eventHandler_->preRead(ctx, "CrawlerService.stop");
   }
 
-  CrawlerService_PicUpload_args args;
+  CrawlerService_stop_args args;
   args.read(iprot);
   iprot->readMessageEnd();
   uint32_t bytes = iprot->getTransport()->readEnd();
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->postRead(ctx, "CrawlerService.PicUpload", bytes);
+    this->eventHandler_->postRead(ctx, "CrawlerService.stop", bytes);
   }
 
-  CrawlerService_PicUpload_result result;
+  CrawlerService_stop_result result;
   try {
-    iface_->PicUpload(result.success, args.pic);
+    iface_->stop(result.success);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != NULL) {
-      this->eventHandler_->handlerError(ctx, "CrawlerService.PicUpload");
+      this->eventHandler_->handlerError(ctx, "CrawlerService.stop");
     }
 
     ::apache::thrift::TApplicationException x(e.what());
-    oprot->writeMessageBegin("PicUpload", ::apache::thrift::protocol::T_EXCEPTION, seqid);
+    oprot->writeMessageBegin("stop", ::apache::thrift::protocol::T_EXCEPTION, seqid);
     x.write(oprot);
     oprot->writeMessageEnd();
     oprot->getTransport()->writeEnd();
@@ -611,17 +623,17 @@ void CrawlerServiceProcessor::process_PicUpload(int32_t seqid, ::apache::thrift:
   }
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->preWrite(ctx, "CrawlerService.PicUpload");
+    this->eventHandler_->preWrite(ctx, "CrawlerService.stop");
   }
 
-  oprot->writeMessageBegin("PicUpload", ::apache::thrift::protocol::T_REPLY, seqid);
+  oprot->writeMessageBegin("stop", ::apache::thrift::protocol::T_REPLY, seqid);
   result.write(oprot);
   oprot->writeMessageEnd();
   bytes = oprot->getTransport()->writeEnd();
   oprot->getTransport()->flush();
 
   if (this->eventHandler_.get() != NULL) {
-    this->eventHandler_->postWrite(ctx, "CrawlerService.PicUpload", bytes);
+    this->eventHandler_->postWrite(ctx, "CrawlerService.stop", bytes);
   }
 }
 
@@ -632,20 +644,22 @@ void CrawlerServiceProcessor::process_PicUpload(int32_t seqid, ::apache::thrift:
   return processor;
 }
 
-void CrawlerServiceConcurrentClient::UploadRequest(ReturnVals& _return, const std::string& md5)
+void CrawlerServiceConcurrentClient::start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag)
 {
-  int32_t seqid = send_UploadRequest(md5);
-  recv_UploadRequest(_return, seqid);
+  int32_t seqid = send_start(keyword, website, tag);
+  recv_start(_return, seqid);
 }
 
-int32_t CrawlerServiceConcurrentClient::send_UploadRequest(const std::string& md5)
+int32_t CrawlerServiceConcurrentClient::send_start(const std::string& keyword, const std::string& website, const std::string& tag)
 {
   int32_t cseqid = this->sync_.generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(&this->sync_);
-  oprot_->writeMessageBegin("UploadRequest", ::apache::thrift::protocol::T_CALL, cseqid);
+  oprot_->writeMessageBegin("start", ::apache::thrift::protocol::T_CALL, cseqid);
 
-  CrawlerService_UploadRequest_pargs args;
-  args.md5 = &md5;
+  CrawlerService_start_pargs args;
+  args.keyword = &keyword;
+  args.website = &website;
+  args.tag = &tag;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -656,7 +670,7 @@ int32_t CrawlerServiceConcurrentClient::send_UploadRequest(const std::string& md
   return cseqid;
 }
 
-void CrawlerServiceConcurrentClient::recv_UploadRequest(ReturnVals& _return, const int32_t seqid)
+void CrawlerServiceConcurrentClient::recv_start(ReturnVals& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -685,7 +699,7 @@ void CrawlerServiceConcurrentClient::recv_UploadRequest(ReturnVals& _return, con
         iprot_->readMessageEnd();
         iprot_->getTransport()->readEnd();
       }
-      if (fname.compare("UploadRequest") != 0) {
+      if (fname.compare("start") != 0) {
         iprot_->skip(::apache::thrift::protocol::T_STRUCT);
         iprot_->readMessageEnd();
         iprot_->getTransport()->readEnd();
@@ -694,7 +708,7 @@ void CrawlerServiceConcurrentClient::recv_UploadRequest(ReturnVals& _return, con
         using ::apache::thrift::protocol::TProtocolException;
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
-      CrawlerService_UploadRequest_presult result;
+      CrawlerService_start_presult result;
       result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
@@ -706,7 +720,7 @@ void CrawlerServiceConcurrentClient::recv_UploadRequest(ReturnVals& _return, con
         return;
       }
       // in a bad state, don't commit
-      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "UploadRequest failed: unknown result");
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "start failed: unknown result");
     }
     // seqid != rseqid
     this->sync_.updatePending(fname, mtype, rseqid);
@@ -716,20 +730,19 @@ void CrawlerServiceConcurrentClient::recv_UploadRequest(ReturnVals& _return, con
   } // end while(true)
 }
 
-void CrawlerServiceConcurrentClient::PicUpload(ReturnVals& _return, const PicInfo& pic)
+void CrawlerServiceConcurrentClient::stop(ReturnVals& _return)
 {
-  int32_t seqid = send_PicUpload(pic);
-  recv_PicUpload(_return, seqid);
+  int32_t seqid = send_stop();
+  recv_stop(_return, seqid);
 }
 
-int32_t CrawlerServiceConcurrentClient::send_PicUpload(const PicInfo& pic)
+int32_t CrawlerServiceConcurrentClient::send_stop()
 {
   int32_t cseqid = this->sync_.generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(&this->sync_);
-  oprot_->writeMessageBegin("PicUpload", ::apache::thrift::protocol::T_CALL, cseqid);
+  oprot_->writeMessageBegin("stop", ::apache::thrift::protocol::T_CALL, cseqid);
 
-  CrawlerService_PicUpload_pargs args;
-  args.pic = &pic;
+  CrawlerService_stop_pargs args;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -740,7 +753,7 @@ int32_t CrawlerServiceConcurrentClient::send_PicUpload(const PicInfo& pic)
   return cseqid;
 }
 
-void CrawlerServiceConcurrentClient::recv_PicUpload(ReturnVals& _return, const int32_t seqid)
+void CrawlerServiceConcurrentClient::recv_stop(ReturnVals& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -769,7 +782,7 @@ void CrawlerServiceConcurrentClient::recv_PicUpload(ReturnVals& _return, const i
         iprot_->readMessageEnd();
         iprot_->getTransport()->readEnd();
       }
-      if (fname.compare("PicUpload") != 0) {
+      if (fname.compare("stop") != 0) {
         iprot_->skip(::apache::thrift::protocol::T_STRUCT);
         iprot_->readMessageEnd();
         iprot_->getTransport()->readEnd();
@@ -778,7 +791,7 @@ void CrawlerServiceConcurrentClient::recv_PicUpload(ReturnVals& _return, const i
         using ::apache::thrift::protocol::TProtocolException;
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
-      CrawlerService_PicUpload_presult result;
+      CrawlerService_stop_presult result;
       result.success = &_return;
       result.read(iprot_);
       iprot_->readMessageEnd();
@@ -790,7 +803,7 @@ void CrawlerServiceConcurrentClient::recv_PicUpload(ReturnVals& _return, const i
         return;
       }
       // in a bad state, don't commit
-      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "PicUpload failed: unknown result");
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "stop failed: unknown result");
     }
     // seqid != rseqid
     this->sync_.updatePending(fname, mtype, rseqid);

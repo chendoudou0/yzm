@@ -76,8 +76,125 @@ service CrawlerClientService{
     * 0代表成功， -1代表失败
     */  
    CrawlerStatusRet  InquireCrawlerStatus(),
+   /*   爬虫停止
+    * @params  无
+    * @return
+    * ReturnVals.code: 0代表成功， -1代表失败
+    * ReturnVals.msg : 描述信息
+    */ 
+    ReturnVals stop(),
 }
-//////////////////////////////////////////////////////////////////////// 
+
+/////////////////////////////////////////////////////
+
+struct QueryedPicInfo{
+    1:i32     pic_id = 0,      
+    2:string  pic_url,
+    3:string  tag,
+    4:string  pose_type,
+    5:string  create_time,
+    6:i32     labeledCount,
+    7:string  lastLabeledUser,
+    8:binary  screenshot_bin,    
+}
+ 
+struct QueryUnlabeledRet{
+    1:i32 code = 0,      
+    2:string msg,
+    3:i32    pageNum,
+    4:list<QueryedPicInfo>  picVec,      
+}
+ 
+struct QueryLabeledRet{
+    1:i32 code = 0,      
+    2:string msg,
+    3:i32    pageNum,
+    4:list<QueryedPicInfo>  picVec,      
+}
+ 
+struct DownloadRet {
+    1: i32 code = 0,
+    2: string msg,
+    3: binary bin,                  //图片二进制流
+    4: i32    pic_id,               //图片ID
+    5: string HumanPose2DInfo,      //2D骨骼信息，以JSON格式存储
+    6: string HumanPose3DInfo,      //3D骨骼信息，以JSON格式存储
+}
+ 
+struct LabeledPoseDataRet {
+    1: i32 code = 0,
+    2: string msg,
+    3: binary bin,                  //600*800图片二进制流
+    4: string poseData,             //姿态数据JSON包
+}
+ 
+service LabelService{
+    /*
+    * 未被任何人标注图片查询接口，查询一次就返回10张
+    * @params
+    * user:用户名, index:查询起始点
+    * @code
+    * 0查询成功， -1 查询失败, 1 没有未标注的图片
+    */
+    QueryUnlabeledRet QueryUnlabeledPic(1:string user, 2:i32 index),
+    /*
+    * 自己未标记，别人标记过的图片，查询一次就返回10张
+    * @params
+    * user:用户名, index:查询起始点
+    * @code
+    * 0查询成功， -1 查询失败, 1 没有标注过的图片
+    */
+    QueryLabeledRet QueryPicLabeledByOthers(1:string user, 2:i32 index),
+    /*
+    * 查询自己标注过的图片
+    * @params
+    * user:用户名, index:查询起始点
+    * @code
+    * 0查询成功， -1 查询失败, 1 没有标注过的图片
+    */
+    QueryLabeledRet QueryLabeledPic(1:string user, 2:i32 index),
+ 
+    /*
+    * 图片传输接口
+    * @params
+    * pic_url : 图片URL
+    * @code
+    * 0代表成功， -1代表失败,  1 没有标注过的图片
+    */
+    DownloadRet DownloadPic(1:string pic_url),
+    /*
+     * 标注结果入库
+         * @params
+         *   1.poseInfo : 标注关节点信息
+     *   2.pic_id      : 被标注图片ID
+        * @code
+        * 0入库成功， -1 入库失败
+    */
+     
+   ReturnVals InsertToDb(1:string poseInfo, 2:i32 pic_id, 3:string userName),
+   /*
+     * 将图片标记为无效状态
+         * @params
+         *   1.pic_id : 被标注图片ID
+     	 *   2.userName      : 用户名
+		 *   3.type      : TRUE 置为无效   FALSE 置为有效
+        * @code
+        * 0标记成功， -1 标记失败， 1 该用户无权标记
+    */
+   ReturnVals InvalidatePicture(1:i32 pic_id, 2:string userName, 3:bool type),
+    /*
+     * 查找已经标注信息
+         * @params
+         *   1.pic_id : 被标注图片ID
+     *   2.userName      : 用户名
+        * @code
+        * 0标记成功， -1 标记失败
+    */
+     
+   LabeledPoseDataRet QueryLabeledPoseData(1:i32 pic_id, 2:string pic_url, 3:string userName),
+  
+}
+////////////////////////////////////////////////////////////////////////////
 service CrawlerService{    
     /*
     * 爬虫开始接口
@@ -89,70 +206,11 @@ service CrawlerService{
     * 0代表成功， -1代表失败
     */  
     ReturnVals start(1:string keyword,2:string website,3:string tag),
+     /*   爬虫停止
+    * @params  无
+    * @return
+    * ReturnVals.code: 0代表成功， -1代表失败
+    * ReturnVals.msg : 描述信息
+    */ 
+    ReturnVals stop(),
 }
-
-/////////////////////////////////////////////////////
-
-struct QueryedPicInfo{
-    1:i32    pic_id = 0,       
-    2:string  pic_url,
-    3:binary  screenshot_bin,     
-}
-
-struct QueryUnlabeledRet{
-    1:i32 code = 0,       
-    2:string msg,
-    3:list<QueryedPicInfo>  picVec,       
-}
-
-struct QueryLabeledRet{
-    1:i32 code = 0,       
-    2:string msg,
-    3:list<QueryedPicInfo>  picVec,       
-}
-
-struct DownloadRet {
-    1: i32    code = 0,
-    2: string msg,
-    3: binary bin,                  //图片二进制流
-    4: string HumanPose2DInfo,      //2D骨骼信息，以JSON格式存储
-    5: string HumanPose3DInfo,      //3D骨骼信息，以JSON格式存储
-}
-
-service LabelService{
-    /*
-    * 未标注图片查询接口，查询一次就返回10张
-    * @params
-    * user:用户名, index:查询起始点
-    * @code
-    * 0查询成功， -1 查询失败, 1 没有未标注的图片
-    */
-   QueryUnlabeledRet QueryUnlabeledPic(1:string user, 2:i32 index),
-    /*
-    * 查询自己标注过的图片
-    * @params
-    * user:用户名, index:查询起始点
-    * @code
-    * 0查询成功， -1 查询失败, 1 没有标注过的图片
-    */
-    QueryLabeledRet QueryLabeledPic(1:string user, 2:i32 index),
-    /*
-    * 图片传输接口
-    * @params
-    * pic_url : 图片URL
-    * @code
-    * 0代表成功， -1代表失败
-    */
-    DownloadRet DownloadPic(1:string pic_url),
-    /*
-	 * 标注结果入库
-         * @params
-         *   1.poseInfo : 标注信息，以JSON格式存储
-	 *   2.pic_id       : 被标注图片ID
-        * @code
-        * 0入库成功， -1 入库失败
-	*/
-	ReturnVals InsertToDb(1:string poseInfo, 2:i32 pic_id, 3:string user),
-    
-}
-
