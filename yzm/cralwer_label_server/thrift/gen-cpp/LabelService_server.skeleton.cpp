@@ -22,19 +22,24 @@ class LabelServiceHandler : virtual public LabelServiceIf {
     // Your initialization goes here
   }
 
-  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index) {
+  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
     // Your implementation goes here
     printf("QueryUnlabeledPic\n");
   }
 
-  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index) {
+  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
     // Your implementation goes here
     printf("QueryPicLabeledByOthers\n");
   }
 
-  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index) {
+  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
     // Your implementation goes here
     printf("QueryLabeledPic\n");
+  }
+
+  void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id) {
+    // Your implementation goes here
+    printf("QueryPicById\n");
   }
 
   void DownloadPic(DownloadRet& _return, const std::string& pic_url) {

@@ -40,11 +40,10 @@ int main(int argc, char **argv) {
     if(cRet.code == 0){
          LOG(INFO) << "InquireCrawlerStatus success ";
          LOG(INFO) << "totalPicSum : " << cRet.crawlerStatus.totalPicSum;
-          LOG(INFO) << "dbPicSum : " <<   cRet.crawlerStatus.dbPicSum;
+         LOG(INFO) << "dbPicSum : " <<   cRet.crawlerStatus.dbPicSum;
     }else{
         LOG(INFO) << "InquireCrawlerStatus failed ";
     }
-
 
     ReturnVals stopRet;
     client__.stop(stopRet);
@@ -59,7 +58,7 @@ int main(int argc, char **argv) {
     */
    
 ////////////////////////////////////////////////////////////////////////////////
-    boost::shared_ptr<TSocket> socket_(new TSocket("localhost", 10099));  
+    boost::shared_ptr<TSocket> socket_(new TSocket("192.168.1.110", 10099));  
     boost::shared_ptr<TTransport> transport_(new TFramedTransport(socket_));  
     boost::shared_ptr<TProtocol> protocol_(new TBinaryProtocol(transport_));  
   
@@ -68,32 +67,34 @@ int main(int argc, char **argv) {
 	server::pose_label::LabelServiceClient client_(protocol_);
 
     QueryUnlabeledRet qRet;
-    client_.QueryUnlabeledPic(qRet, "chenzx", 0);  
+    QueryCondition qc;
+    qc.pose_type = "";
+    qc.tag = "";
+    qc.tBegin = "2017-1-1 10:10:10";
+    qc.tEnd = "2017-7-30 10:10:10";
+    client_.QueryUnlabeledPic(qRet, "shiyl", 0, qc);  
 
     if(qRet.code != 0){
         LOG(ERROR) << "QueryUnlabeledPic  failed ";
-        return -1;
+
     }
     else{
         LOG(INFO) << "QueryUnlabeledPic success ";
         LOG(INFO) << "vector size :  " <<qRet.picVec.size();
-        if(qRet.picVec.size() > 1){
+        if(qRet.picVec.size() > 0){
             for(auto&pic : qRet.picVec ){
-                //  LOG(INFO) <<"pic_id :"  <<pic.pic_id;
-                //  LOG(INFO) <<"create_time  :"  <<pic.create_time;
-                //  LOG(INFO) <<"labeled_count :"  <<pic.labeledCount;
-                  LOG(INFO) << "pic_url :" << pic.pic_url  << "   bin length :  " << pic.screenshot_bin.length();
+            
+                LOG(INFO) << "pic_url :" << pic.pic_url  << "bin length :  " << pic.screenshot_bin.length();
             }
         }
     }   
 
-
     QueryLabeledRet qlRet;
-    client_.QueryLabeledPic(qlRet, "chenzx", 0);  
+    client_.QueryLabeledPic(qlRet, "shiyl", 0, qc);  
 
     if(qRet.code != 0){
         LOG(ERROR) << "QueryLabeledPic  failed ";
-        return -1;
+      
     }
     else{
         LOG(INFO) << "QueryLabeledPic success ";
@@ -101,17 +102,17 @@ int main(int argc, char **argv) {
         if(qlRet.picVec.size() > 0){
             for(auto&pic : qlRet.picVec ){
                  LOG(INFO) <<"pic_id : "  <<  pic.pic_id;
-               //  LOG(INFO) << "pic_url : " << pic.pic_url  << "   bin length :  " << pic.screenshot_bin.length();
+                 //LOG(INFO) << "pic_url : " << pic.pic_url  << "   bin length :  " << pic.screenshot_bin.length();
             }
         }
     }
 
     QueryLabeledRet qoRet;
-    client_.QueryPicLabeledByOthers(qoRet, "chenzx", 30);  
+    client_.QueryPicLabeledByOthers(qoRet, "chenzx", 30, qc);  
 
     if(qoRet.code != 0){
         LOG(ERROR) << "QueryLabeledPicByOthers  failed ";
-        return -1;
+       
     }
     else{
         LOG(INFO) << "QueryLabeledPicByOthers success ";
@@ -123,37 +124,50 @@ int main(int argc, char **argv) {
             }
         }
     }
-    ReturnVals ivRet;
-    client_.InvalidatePicture(ivRet, 69, "chenzx"); 
-    if(ivRet.code == 0){
-        LOG(INFO) <<"InvalidatePicture  success ";
-    }else{
-        LOG(INFO) <<"InvalidatePicture  failed ";
-    }
-    LabeledPoseDataRet  lpRet;
-    client_.QueryLabeledPoseData(lpRet, 40, "../pic/e2356db743b6a5de82bc1aba50fd0d60.jpeg", "chenzx");
-    if(lpRet.code == 0){
-        LOG(INFO) <<"QueryLabeledPoseData  success ";
-        LOG(INFO) <<"QueryLabeledPoseData  : " << lpRet.poseData;
-    }else{
-          LOG(INFO) <<"QueryLabeledPoseData  failed ";
-    }
 
-    DownloadRet dRet;
-    client_.DownloadPic(dRet, "../pic/e2356db743b6a5de82bc1aba50fd0d60.jpeg");
-    LOG(INFO) << "HumanPose2DInfo length :  " << dRet.HumanPose2DInfo.length() ;
-    LOG(INFO) << "\n\n\n" << "HumanPose3DInfo length :  " << dRet.HumanPose3DInfo.length();
-    LOG(INFO) << "file length :  "   << dRet.bin.length();
-    LOG(INFO) << "pic id :  "   << dRet.pic_id;
 
-    ReturnVals  iRet;
-    client_.InsertToDb(iRet, "poseInfo", 42, "chenzixun");
-    if(iRet.code == 0){
-         LOG(INFO) << "InsertToDb  success  "  ;
+    QueryByIdRet qbRet;
+    client_.QueryPicById(qbRet, "chenzx", 120);  
+
+    if(qbRet.code != 0){
+        LOG(ERROR) << "QueryPicById  failed ";
+    
+    }else{
+        LOG(INFO) << "QueryPicById success ";
+      
+        LOG(INFO) <<" pic_url : "  << qbRet.pic.pic_url;
     }
-    else{
-        LOG(INFO) << "InsertToDb  failed  "  ;
-    }
+    // ReturnVals ivRet;
+    // client_.InvalidatePicture(ivRet, 69, "chenzx", true); 
+    // if(ivRet.code == 0){
+    //     LOG(INFO) <<"InvalidatePicture  success ";
+    // }else{
+    //     LOG(INFO) <<"InvalidatePicture  failed ";
+    // }
+    // LabeledPoseDataRet  lpRet;
+    // client_.QueryLabeledPoseData(lpRet, 40, "../pic/e2356db743b6a5de82bc1aba50fd0d60.jpeg", "chenzx");
+    // if(lpRet.code == 0){
+    //     LOG(INFO) <<"QueryLabeledPoseData  success ";
+    //     LOG(INFO) <<"QueryLabeledPoseData  : " << lpRet.poseData;
+    // }else{
+    //       LOG(INFO) <<"QueryLabeledPoseData  failed ";
+    // }
+
+    // DownloadRet dRet;
+    // client_.DownloadPic(dRet, "../pic/e2356db743b6a5de82bc1aba50fd0d60.jpeg");
+    // LOG(INFO) << "HumanPose2DInfo length :  " << dRet.HumanPose2DInfo.length() ;
+    // LOG(INFO) << "\n\n\n" << "HumanPose3DInfo length :  " << dRet.HumanPose3DInfo.length();
+    // LOG(INFO) << "file length :  "   << dRet.bin.length();
+    // LOG(INFO) << "pic id :  "   << dRet.pic_id;
+
+    // ReturnVals  iRet;
+    // client_.InsertToDb(iRet, "poseInfo", 42, "chenzixun");
+    // if(iRet.code == 0){
+    //      LOG(INFO) << "InsertToDb  success  "  ;
+    // }
+    // else{
+    //     LOG(INFO) << "InsertToDb  failed  "  ;
+    // }
 
     LOG(INFO) << "client end ";
    /*

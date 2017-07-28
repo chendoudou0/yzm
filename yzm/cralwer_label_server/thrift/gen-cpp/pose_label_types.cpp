@@ -1118,6 +1118,138 @@ void QueryLabeledRet::printTo(std::ostream& out) const {
 }
 
 
+QueryByIdRet::~QueryByIdRet() throw() {
+}
+
+
+void QueryByIdRet::__set_code(const int32_t val) {
+  this->code = val;
+}
+
+void QueryByIdRet::__set_msg(const std::string& val) {
+  this->msg = val;
+}
+
+void QueryByIdRet::__set_pic(const QueryedPicInfo& val) {
+  this->pic = val;
+}
+std::ostream& operator<<(std::ostream& out, const QueryByIdRet& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t QueryByIdRet::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->code);
+          this->__isset.code = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->msg);
+          this->__isset.msg = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->pic.read(iprot);
+          this->__isset.pic = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t QueryByIdRet::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("QueryByIdRet");
+
+  xfer += oprot->writeFieldBegin("code", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->code);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("msg", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->msg);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("pic", ::apache::thrift::protocol::T_STRUCT, 3);
+  xfer += this->pic.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(QueryByIdRet &a, QueryByIdRet &b) {
+  using ::std::swap;
+  swap(a.code, b.code);
+  swap(a.msg, b.msg);
+  swap(a.pic, b.pic);
+  swap(a.__isset, b.__isset);
+}
+
+QueryByIdRet::QueryByIdRet(const QueryByIdRet& other26) {
+  code = other26.code;
+  msg = other26.msg;
+  pic = other26.pic;
+  __isset = other26.__isset;
+}
+QueryByIdRet& QueryByIdRet::operator=(const QueryByIdRet& other27) {
+  code = other27.code;
+  msg = other27.msg;
+  pic = other27.pic;
+  __isset = other27.__isset;
+  return *this;
+}
+void QueryByIdRet::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "QueryByIdRet(";
+  out << "code=" << to_string(code);
+  out << ", " << "msg=" << to_string(msg);
+  out << ", " << "pic=" << to_string(pic);
+  out << ")";
+}
+
+
 DownloadRet::~DownloadRet() throw() {
 }
 
@@ -1278,23 +1410,23 @@ void swap(DownloadRet &a, DownloadRet &b) {
   swap(a.__isset, b.__isset);
 }
 
-DownloadRet::DownloadRet(const DownloadRet& other26) {
-  code = other26.code;
-  msg = other26.msg;
-  bin = other26.bin;
-  pic_id = other26.pic_id;
-  HumanPose2DInfo = other26.HumanPose2DInfo;
-  HumanPose3DInfo = other26.HumanPose3DInfo;
-  __isset = other26.__isset;
+DownloadRet::DownloadRet(const DownloadRet& other28) {
+  code = other28.code;
+  msg = other28.msg;
+  bin = other28.bin;
+  pic_id = other28.pic_id;
+  HumanPose2DInfo = other28.HumanPose2DInfo;
+  HumanPose3DInfo = other28.HumanPose3DInfo;
+  __isset = other28.__isset;
 }
-DownloadRet& DownloadRet::operator=(const DownloadRet& other27) {
-  code = other27.code;
-  msg = other27.msg;
-  bin = other27.bin;
-  pic_id = other27.pic_id;
-  HumanPose2DInfo = other27.HumanPose2DInfo;
-  HumanPose3DInfo = other27.HumanPose3DInfo;
-  __isset = other27.__isset;
+DownloadRet& DownloadRet::operator=(const DownloadRet& other29) {
+  code = other29.code;
+  msg = other29.msg;
+  bin = other29.bin;
+  pic_id = other29.pic_id;
+  HumanPose2DInfo = other29.HumanPose2DInfo;
+  HumanPose3DInfo = other29.HumanPose3DInfo;
+  __isset = other29.__isset;
   return *this;
 }
 void DownloadRet::printTo(std::ostream& out) const {
@@ -1436,19 +1568,19 @@ void swap(LabeledPoseDataRet &a, LabeledPoseDataRet &b) {
   swap(a.__isset, b.__isset);
 }
 
-LabeledPoseDataRet::LabeledPoseDataRet(const LabeledPoseDataRet& other28) {
-  code = other28.code;
-  msg = other28.msg;
-  bin = other28.bin;
-  poseData = other28.poseData;
-  __isset = other28.__isset;
+LabeledPoseDataRet::LabeledPoseDataRet(const LabeledPoseDataRet& other30) {
+  code = other30.code;
+  msg = other30.msg;
+  bin = other30.bin;
+  poseData = other30.poseData;
+  __isset = other30.__isset;
 }
-LabeledPoseDataRet& LabeledPoseDataRet::operator=(const LabeledPoseDataRet& other29) {
-  code = other29.code;
-  msg = other29.msg;
-  bin = other29.bin;
-  poseData = other29.poseData;
-  __isset = other29.__isset;
+LabeledPoseDataRet& LabeledPoseDataRet::operator=(const LabeledPoseDataRet& other31) {
+  code = other31.code;
+  msg = other31.msg;
+  bin = other31.bin;
+  poseData = other31.poseData;
+  __isset = other31.__isset;
   return *this;
 }
 void LabeledPoseDataRet::printTo(std::ostream& out) const {
@@ -1458,6 +1590,158 @@ void LabeledPoseDataRet::printTo(std::ostream& out) const {
   out << ", " << "msg=" << to_string(msg);
   out << ", " << "bin=" << to_string(bin);
   out << ", " << "poseData=" << to_string(poseData);
+  out << ")";
+}
+
+
+QueryCondition::~QueryCondition() throw() {
+}
+
+
+void QueryCondition::__set_tag(const std::string& val) {
+  this->tag = val;
+}
+
+void QueryCondition::__set_pose_type(const std::string& val) {
+  this->pose_type = val;
+}
+
+void QueryCondition::__set_tBegin(const std::string& val) {
+  this->tBegin = val;
+}
+
+void QueryCondition::__set_tEnd(const std::string& val) {
+  this->tEnd = val;
+}
+std::ostream& operator<<(std::ostream& out, const QueryCondition& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t QueryCondition::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->tag);
+          this->__isset.tag = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->pose_type);
+          this->__isset.pose_type = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->tBegin);
+          this->__isset.tBegin = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 4:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->tEnd);
+          this->__isset.tEnd = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t QueryCondition::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("QueryCondition");
+
+  xfer += oprot->writeFieldBegin("tag", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeString(this->tag);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("pose_type", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->pose_type);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("tBegin", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString(this->tBegin);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("tEnd", ::apache::thrift::protocol::T_STRING, 4);
+  xfer += oprot->writeString(this->tEnd);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(QueryCondition &a, QueryCondition &b) {
+  using ::std::swap;
+  swap(a.tag, b.tag);
+  swap(a.pose_type, b.pose_type);
+  swap(a.tBegin, b.tBegin);
+  swap(a.tEnd, b.tEnd);
+  swap(a.__isset, b.__isset);
+}
+
+QueryCondition::QueryCondition(const QueryCondition& other32) {
+  tag = other32.tag;
+  pose_type = other32.pose_type;
+  tBegin = other32.tBegin;
+  tEnd = other32.tEnd;
+  __isset = other32.__isset;
+}
+QueryCondition& QueryCondition::operator=(const QueryCondition& other33) {
+  tag = other33.tag;
+  pose_type = other33.pose_type;
+  tBegin = other33.tBegin;
+  tEnd = other33.tEnd;
+  __isset = other33.__isset;
+  return *this;
+}
+void QueryCondition::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "QueryCondition(";
+  out << "tag=" << to_string(tag);
+  out << ", " << "pose_type=" << to_string(pose_type);
+  out << ", " << "tBegin=" << to_string(tBegin);
+  out << ", " << "tEnd=" << to_string(tEnd);
   out << ")";
 }
 

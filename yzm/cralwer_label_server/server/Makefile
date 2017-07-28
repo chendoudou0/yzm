@@ -14,8 +14,8 @@ TARGET = label_server
 OBJS  := DataService.o LabelService.o CrawlerClientService.o  CrawlerService.o \
 pose_label_types.o pose_label_constants.o \
 Pose3DAnnPreprocess.o Pose3DAnnNew_types.o \
-ThreadBase.o  IApp.o config.o upgradeServer.o requestProcessor.o  CLogger.o  main.o \
-DBOperator.o sqlapi.o    Common.o  HttpTool.o \
+ThreadBase.o  IApp.o config.o upgradeServer.o   CLogger.o  main.o \
+DBOperator.o sqlapi.o    Common.o   \
 jsonOperator.o
 
 LIBS =  -L../3party/poco/lib  -L/usr/local/mysql/lib  -lpthread  -lPocoFoundation -lPocoNet   \
@@ -63,9 +63,9 @@ start:
 	sudo  supervisorctl start   label_server   
 
 genThrift:
-	@rm   ../thrift/gen-cpp/*
+	@-rm   ../thrift/gen-cpp/*
 	thrift  -r --gen cpp   -o  ../thrift  ../thrift/pose_label.thrift
-	@rm  -r ../thrift/arithmetic/*
+	@-rm  -r ../thrift/arithmetic/*
 	thrift  -r --gen cpp   -o  ../thrift/arithmetic  ../thrift/Pose3DAnnNew.thrift
 
 clean:

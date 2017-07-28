@@ -1,8 +1,7 @@
 #include"upgradeServer.h"
-#include"config.h"   
+#include"config.h"
+#include "DBOperator.h"   
 #include"CLogger.h"  
-#include"requestProcessor.h"
-//#include"redisOperator.h"
 #include"dbPool.h"
 
 #include <opencv2/opencv.hpp>
@@ -42,7 +41,6 @@ using namespace std;
 using namespace std::chrono;
 
 CLogger* 		                       gPtrAppLog = nullptr;
-//shared_ptr<CRedisOperator>             gPtrRedisOperator;
 shared_ptr<CDbPool<CDBOperator> >      gPtrDbpool;
 int  gTotalPic;
 int  gDbPic;
@@ -357,7 +355,6 @@ bool gen3dPoseJson(vector<HumanPose3DInfo>&  hp3DInfoVec, string& str3dPose)
 
 		hpItem.AddMember("camInfo", camArray, doc.GetAllocator());
 		hpArray.PushBack(hpItem, doc.GetAllocator());
-
 	}
 	root1.AddMember("hp3DInfoArray" , hpArray, doc.GetAllocator());
 	////////////////////////////////////////////////////////////
@@ -443,6 +440,8 @@ class DataServiceHandler : virtual public DataServiceIf {
 			}
 			break;
 		}
+		MoveFile(oriUrl, ppUrl);
+		CopyFile(ppUrl,  ppBakUrl);
 		if(-1 == gPtrDbpool->GetDbOper()->AddPicture(pic, ppUrl))
 		{
 			break;
@@ -451,8 +450,6 @@ class DataServiceHandler : virtual public DataServiceIf {
 			break;
 		}
 
-		MoveFile(oriUrl, ppUrl);
-		CopyFile(ppUrl,  ppBakUrl);
 		gDbPic++;
 		_return.code = 0;
 	}while(0);
@@ -511,6 +508,8 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
 			}
 			break;
 		}
+		MoveFile(oriUrl, ppUrl);
+		CopyFile(ppUrl,  ppBakUrl);
 		if(-1 == gPtrDbpool->GetDbOper()->AddPicture(pic, ppUrl))
 		{
 			break;
@@ -518,9 +517,6 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
 		if(!gPtrDbpool->GetDbOper()->UpdatePicPoseDate(ppUrl, str2dPose, str3dPose)){
 			break;
 		}
-
-		MoveFile(oriUrl, ppUrl);
-		CopyFile(ppUrl,  ppBakUrl);
 		_return.code = 0;
 	}while(0);
 	LOG(INFO) << "PicUpload end , ret code : " << _return.code;
@@ -528,7 +524,7 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
   }
 
   void start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag){
-	  LOG(INFO) << "start begin";
+	  LOG(INFO) << "start begin....";
 	  LOG(INFO) <<"key : " <<keyword;
 	  LOG(INFO) <<"website : " <<website;
 	  LOG(INFO) <<"tag : " <<tag;
@@ -553,7 +549,8 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
 				_return.code = -1;
 				break;
 			}
-			_return.code = 0;
+			gDbPic = 0;  
+			gTotalPic = 0;
 
 	  }while(0);
 
@@ -593,7 +590,7 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
 
 	  }while(0);
 	
-	  LOG(INFO) << "stop END, ret.code : " << _return.code;
+	  LOG(INFO) << "stop crawler END, ret.code : " << _return.code;
 
   }
   bool  connectCrawler()
@@ -608,7 +605,7 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
 		}
 		catch (TException& tx)
 		{
-			LOG(ERROR) << "connect error, msg : " << tx.what();
+			LOG(ERROR) << "connect crawler failed, msg : " << tx.what();
 			return false;
 		}
 		csClient_.reset(new CrawlerServiceClient(protocol_));
@@ -675,154 +672,12 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 		
 			fin.close();
 			remove(screenshotUrl.c_str());
-			stringstream sss;
 			int id;
-			sss << pic["id"];
-			sss >> id;
-		
-			QueryedPicInfo picInfo;
-			picInfo.pic_id = id;
-			LOG(INFO) << "pic_id "<< picInfo.pic_id;
-			picInfo.pic_url = pic["pic_url"];
-			picInfo.tag = pic["tag_word"];
-			picInfo.pose_type = pic["pose_type"];
-			picInfo.create_time = pic["create_time"];
-			int count;
-			sss.clear();
-			sss << pic["label_count"];
-			sss >> count;
-			picInfo.labeledCount = 5 - count;
-			picInfo.lastLabeledUser = "";
-			picInfo.screenshot_bin = screenshot_bin;
-			retVec.push_back(picInfo);
-		 }
-
-	}
-  
-
-  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index) {
-	do{
-		 LOG(INFO) << "QueryUnlabeledPic begin ";
-		 SqlMapVector picVec;
-	
-		 if(!gPtrDbpool->GetDbOper()->QueryUnlabeledPicture(picVec, user, index, _return.pageNum)){
-			 _return.code = -1;
-			 _return.msg = "db query failed !"; 
-			 break;   
-		 }
-		 if(picVec.size() == 0){
-			 _return.code = 1;
-			 _return.msg = "no unlabeled picture !"; 
-			 break;
-		 }
-
-		 PacketPicVec(_return.picVec, picVec);
-/*
-		 for(auto& pic : picVec){
-			int pos;
-			pos = pic["pic_url"].find_last_of('.');
-			string tail = pic["pic_url"].substr(pos);
-			string screenshotUrl =  pic["pic_url"].substr(0, pos)  + "screenshot"  + tail;
-			cv::Mat src = cv::imread(pic["pic_url"]); 
-			if(src.data == nullptr){
-				LOG(INFO) << "ori pic " << pic["pic_url"] << " not exist";
-				continue;
-			}
-    		cv::Mat dst = ResizeImg(src, 60, 80);
-			cv::imwrite(screenshotUrl, dst); 
-			
-			std::ifstream fin;         
-			std::stringstream ss;
-			fin.open(screenshotUrl, std::ifstream::binary);
-			if (!fin.is_open()){
-				continue;
-			}
-			ss << fin.rdbuf();
-			string screenshot_bin = ss.str();
-		
-			fin.close();
-			remove(screenshotUrl.c_str());
-			stringstream sss;
-			int id;
-			sss << pic["id"];
-			sss >> id;
-		
-			QueryedPicInfo picInfo;
-			picInfo.pic_id = id;
-			LOG(INFO) << "pic_id "<< picInfo.pic_id;
-			picInfo.pic_url = pic["pic_url"];
-			picInfo.tag = pic["tag_word"];
-			picInfo.pose_type = pic["pose_type"];
-			picInfo.create_time = pic["create_time"];
-			int count;
-			sss.clear();
-			sss << pic["label_count"];
-			sss >> count;
-			picInfo.labeledCount = 5 - count;
-			picInfo.lastLabeledUser = "";
-			picInfo.screenshot_bin = screenshot_bin;
-			_return.picVec.push_back(picInfo);
-	
-			_return.code = 0;
-		 }
-		*/
-		_return.code = 0;
-
-	}while(0);
-
-	LOG(INFO) << "QueryUnlabeledPic end , ret code : " << _return.code;
-
-  }
-
-  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index) {
-	  _return.code = -1;
-	  do{
-		 LOG(INFO) << "QueryLabeledPic begin ";
-		 SqlMapVector picVec;
-	
-		 if(!gPtrDbpool->GetDbOper()->QueryLabeledPicture(picVec, user, index,  _return.pageNum)){
-			 _return.msg = "db query failed !"; 
-			  LOG(ERROR) << " db  QueryLabeledPicture failed ";
-			 break;   
-		 }
-		 if(picVec.size() == 0){
-			 _return.code = 1;
-			 _return.msg = "no labeled pic !"; 
-			 LOG(ERROR) << user <<" has no labeled pic";
-			 break;
-		 }
-		LOG(INFO) << " picVec.size()  "<<picVec.size();
-		PacketPicVec(_return.picVec, picVec);
-		/*
-		 for(auto& pic : picVec){
-			int pos;
-			pos = pic["pic_url"].find_last_of('.');
-			string tail = pic["pic_url"].substr(pos);
-			string screenshotUrl =  pic["pic_url"].substr(0, pos)  + "screenshot"  + tail;
-			cv::Mat src = cv::imread(pic["pic_url"]); 
-			if(src.data == nullptr){
-				LOG(INFO) << "ori pic " << pic["pic_url"] << " not exist";
-				continue;
-			}
-	
-    		cv::Mat dst = ResizeImg(src, 60, 80);
-			cv::imwrite(screenshotUrl, dst); 
-			std::ifstream fin;         
-			std::stringstream ss;
-			fin.open(screenshotUrl, std::ifstream::binary);
-			if (!fin.is_open()){
-				continue;
-			}
-			ss << fin.rdbuf();
-			string screenshot_bin = ss.str();
-			fin.close();
-			remove(screenshotUrl.c_str());
 			ss.clear();
 			ss.str("");
-			int id;
 			ss << pic["id"];
 			ss >> id;
-	
+		
 			QueryedPicInfo picInfo;
 			picInfo.pic_id = id;
 			picInfo.pic_url = pic["pic_url"];
@@ -835,15 +690,32 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 			ss << pic["label_count"];
 			ss >> count;
 			picInfo.labeledCount = 5 - count;
-			LOG(INFO) << "labeledCount " << picInfo.labeledCount;
 			picInfo.lastLabeledUser = "";
 			picInfo.screenshot_bin = screenshot_bin;
-			_return.picVec.push_back(picInfo);
-
-			
+			retVec.push_back(picInfo);
 		 }
-		 */
-		 _return.code = 0;
+
+	}
+  
+
+  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+	do{
+		 LOG(INFO) << "QueryUnlabeledPic begin ";
+		 SqlMapVector picVec;
+	
+		 if(!gPtrDbpool->GetDbOper()->QueryUnlabeledPicture(picVec, user, index, _return.pageNum, qc)){
+			 _return.code = -1;
+			 _return.msg = "db query failed !"; 
+			 break;   
+		 }
+		 if(picVec.size() == 0){
+			 _return.code = 1;
+			 _return.msg = "no unlabeled picture !"; 
+			 break;
+		 }
+
+		 PacketPicVec(_return.picVec, picVec);
+		_return.code = 0;
 
 	}while(0);
 
@@ -851,12 +723,39 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 
   }
 
-  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index) {
+  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+	  _return.code = -1;
+	  do{
+		 LOG(INFO) << "QueryLabeledPic begin ";
+		 SqlMapVector picVec;
+	
+		 if(!gPtrDbpool->GetDbOper()->QueryLabeledPicture(picVec, user, index,  _return.pageNum, qc)){
+			 _return.msg = "db query failed !"; 
+			 LOG(ERROR) << " db  QueryLabeledPicture failed ";
+			 break;    
+		 }
+		 if(picVec.size() == 0){
+			 _return.code = 1;
+			 _return.msg = "no labeled pic !"; 
+			 LOG(ERROR) << user <<" has no labeled pic";
+			 break;
+		 }
+		LOG(INFO) << " picVec.size()  "<<picVec.size();
+		PacketPicVec(_return.picVec, picVec);
+		 _return.code = 0;
+
+	}while(0);
+
+	LOG(INFO) << "QueryUnlabeledPic end , ret code : " << _return.code;    
+
+  }
+
+  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
 	  _return.code = -1;
 	  do{
 		 LOG(INFO) << "QueryPicLabeledByOthers begin ";
 		 SqlMapVector picVec;
-		 if(!gPtrDbpool->GetDbOper()->QueryLabeledPicByOthers(picVec, user, index, _return.pageNum)){
+		 if(!gPtrDbpool->GetDbOper()->QueryLabeledPicByOthers(picVec, user, index, _return.pageNum, qc)){
 			 _return.msg = "db query failed !"; 
 			LOG(ERROR) << " db  query failed ";
 			 break;   
@@ -870,61 +769,39 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 
 		 LOG(INFO) << " picVec.size()  "<<picVec.size();
 		 PacketPicVec(_return.picVec, picVec);
-		 /*
-		 for(auto& pic : picVec){
-			int pos;
-			pos = pic["pic_url"].find_last_of('.');
-			string tail = pic["pic_url"].substr(pos);
-			string screenshotUrl =  pic["pic_url"].substr(0, pos)  + "screenshot"  + tail;
-			cv::Mat src = cv::imread(pic["pic_url"]); 
-			if(src.data == nullptr){
-				LOG(INFO) << "ori pic " << pic["pic_url"] << " not exist";
-				continue;
-			}
-    		cv::Mat dst = ResizeImg(src, 60, 80);
-			cv::imwrite(screenshotUrl, dst); 
-			std::ifstream fin;         
-			std::stringstream ss;
-			fin.open(screenshotUrl, std::ifstream::binary);
-			if (!fin.is_open()){
-				continue;
-			}
-			ss << fin.rdbuf();
-			string screenshot_bin = ss.str();
-			fin.close();
-			remove(screenshotUrl.c_str());
-			ss.clear();
-			ss.str("");
-			int id;
-			ss << pic["id"];
-			ss >> id;
-	
-			QueryedPicInfo picInfo;
-			picInfo.pic_id = id;
-			picInfo.pic_url = pic["pic_url"];
-			picInfo.tag = pic["tag_word"];
-			picInfo.pose_type = pic["pose_type"];
-			picInfo.create_time = pic["create_time"];
-			int count;
-			ss.clear();
-			ss.str("");
-			ss << pic["label_count"];
-			ss >> count;
-			picInfo.labeledCount = 5 - count;
-			LOG(INFO) << "labeledCount by " << picInfo.labeledCount;
-			picInfo.lastLabeledUser = "";
-			picInfo.screenshot_bin = screenshot_bin;
-			_return.picVec.push_back(picInfo);
-
-			_return.code = 0;
-		 }
-		 */
-
 		 _return.code = 0;
 
 	}while(0);
 
 	LOG(INFO) << "QueryPicLabeledByOthers end , ret code : " << _return.code;
+
+  }
+
+  void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id) {
+	  _return.code = -1;
+	  do{
+		 LOG(INFO) << "QueryPicById begin ";
+		 SqlMapVector sqlVec;
+		 if(!gPtrDbpool->GetDbOper()->QueryPicById(sqlVec, pic_id, user)){
+			_return.msg = "db query failed !"; 
+			LOG(ERROR) << " db  query failed ";
+			break;   
+		 }
+		 if(sqlVec.size() == 0){
+			 _return.code = 1;
+			 _return.msg = "no such pic !"; 
+			 LOG(ERROR) << " no such pic ： "<< pic_id;
+			 break;
+		 }
+		 std::vector<QueryedPicInfo>  picVec;
+		 PacketPicVec(picVec, sqlVec);
+
+		 _return.pic = picVec[0];
+		 _return.code = 0;
+
+	}while(0);
+
+	LOG(INFO) << "QueryPicById end , ret code : " << _return.code;
 
   }
 
@@ -942,7 +819,7 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 		 stringstream ss;
 		 ss << sqlMap["Fid"];
 		 ss >>_return.pic_id;            
-		//////////////////////
+		/////////////////////////////////////////////////////////
 		int pos;
 		pos = pic_url.find_last_of('.');
 		string tail = pic_url.substr(pos);
@@ -1064,12 +941,6 @@ public:
 			return false;
 		} 
 
-		if (!initRedis())
-		{
-			LOG(ERROR) << "init redis failed!";
-			return false;
-		} 
-
 		return true;
 	}
 
@@ -1082,18 +953,6 @@ public:
 		gPtrDbpool->InitPool();
 		
 		return true;              
-	}
-
-	bool initRedis()
-	{
-		/*
-		gPtrRedisOperator.reset(new CRedisOperator(config::CConfigManager::instance()->redis_para_.ip_ \
-		, config::CConfigManager::instance()->redis_para_.port_,            \
-		config::CConfigManager::instance()->redis_para_.overTime_) );
-
-		gPtrRedisOperator->setPoolSize(16);   
-		*/
-		return true;
 	}
 
 	bool initLog(string path) 
@@ -1118,11 +977,6 @@ public:
 		LOG(INFO) << "GLOG BEGIN TO WORK"; 
 
 		if (! config::CConfigManager::instance()->get_db_paramer(CONF_PATH))
-		{
-			return false;
-		}
-
-		if (! config::CConfigManager::instance()->get_redis_param(CONF_PATH))  
 		{
 			return false;
 		}

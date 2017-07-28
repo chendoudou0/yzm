@@ -110,6 +110,12 @@ struct QueryLabeledRet{
     2:string msg,
     3:i32    pageNum,
     4:list<QueryedPicInfo>  picVec,      
+}    
+
+struct QueryByIdRet{
+    1:i32 code = 0,      
+    2:string msg,
+    3:QueryedPicInfo  pic,      
 }
  
 struct DownloadRet {
@@ -127,6 +133,13 @@ struct LabeledPoseDataRet {
     3: binary bin,                  //600*800图片二进制流
     4: string poseData,             //姿态数据JSON包
 }
+
+struct QueryCondition{
+    1: string tag,                  //标签
+    2: string pose_type,            //姿态类型
+    3: string tBegin,               //入库开始时间
+    4: string tEnd,                 //入库结束时间
+}
  
 service LabelService{
     /*
@@ -136,7 +149,7 @@ service LabelService{
     * @code
     * 0查询成功， -1 查询失败, 1 没有未标注的图片
     */
-    QueryUnlabeledRet QueryUnlabeledPic(1:string user, 2:i32 index),
+    QueryUnlabeledRet QueryUnlabeledPic(1:string user, 2:i32 index, 3:QueryCondition qc),
     /*
     * 自己未标记，别人标记过的图片，查询一次就返回10张
     * @params
@@ -144,7 +157,7 @@ service LabelService{
     * @code
     * 0查询成功， -1 查询失败, 1 没有标注过的图片
     */
-    QueryLabeledRet QueryPicLabeledByOthers(1:string user, 2:i32 index),
+    QueryLabeledRet QueryPicLabeledByOthers(1:string user, 2:i32 index, 3:QueryCondition qc),
     /*
     * 查询自己标注过的图片
     * @params
@@ -152,8 +165,15 @@ service LabelService{
     * @code
     * 0查询成功， -1 查询失败, 1 没有标注过的图片
     */
-    QueryLabeledRet QueryLabeledPic(1:string user, 2:i32 index),
- 
+    QueryLabeledRet QueryLabeledPic(1:string user, 2:i32 index, 3:QueryCondition qc),
+     /*
+    * 按图片ID查询
+    * @params
+    * user:用户名, pic_id:图片ID
+    * @code
+    * 0查询成功， -1 查询失败, 1 没有该图片
+    */
+    QueryByIdRet QueryPicById(1:string user, 2:i32 pic_id),
     /*
     * 图片传输接口
     * @params

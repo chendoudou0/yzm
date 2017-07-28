@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `t_picture`;
 CREATE TABLE `t_picture` (
   `Fid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `Fpic_url`    varchar(256) NOT NULL DEFAULT '',
+  `Fpic_ori`     varchar(256)  NOT NULL  DEFAULT '',
   `Fpic_md5`     varchar(32)  NOT NULL  DEFAULT '',
   `Fpic_status`  tinyint(4)     NOT NULL  DEFAULT '0',
   `Fkey_word` varchar(256)  NOT NULL  DEFAULT '',
