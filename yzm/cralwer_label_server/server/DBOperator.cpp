@@ -2,6 +2,7 @@
 #include "CLogger.h"
 #include "config.h"
 #include"glog/logging.h"
+#include <uuid/uuid.h> 
 
 extern CLogger* gPtrAppLog;
 
@@ -126,69 +127,88 @@ bool  CDBOperator::UpdatePicPoseDate(const std::string& url, string& str2dPose, 
 
 }
 
-bool CDBOperator::AddLabeledDate(int picId,const std::string user,const std::string poseDate)
+bool CDBOperator::AddLabeledDate(int picId,const std::string token,const std::string poseDate)
 {
     bool ret = false;
 	char strSql[102400];
-
     memset(strSql, 0, sizeof(strSql));
+     _ptrMysql->Begin();
     do{
+        string user;
+        int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
+      
+       ///////////////////////////////
         memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' ", \
-        user.c_str());
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            break;
-        }  
-        int iRows = _ptrMysql->FetchRows();
-        if(iRows != 1)     
-        {
-            LOG(ERROR) << "CDBOperator::AddLabeledDate failed, user " <<user << " not exit ";
-            break;
-        }
-
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "delete from yzm_pose_label_db.t_label where Fuser_name='%s' and Fpic_id='%d' ", \
+        sprintf(strSql, "select * from yzm_pose_label_db.t_label where Fuser_name='%s' and Fpic_id='%d' ", \
         user.c_str(),
         picId);
+        LOG(INFO) << "sql : "<<strSql;
         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
             break;
-        }  
-        
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "insert into yzm_pose_label_db.t_label  \
-        values(NULL, '%d','%s','%s', '%s', '%s')",  \
-        picId,
-        user.c_str(),
-        poseDate.c_str(),
-        GetSystemTime(),
-        GetSystemTime() ); 
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            break;
-        }  
+        } 
+        int iRows = _ptrMysql->FetchRows();
+        if(iRows == 1)       //已经标记过，标记次数就不用减一 
+        {
+            LOG(INFO) << "user " <<user<<" has labeled pic : "<< picId;
+            memset(strSql, 0, sizeof(strSql));
+            sprintf(strSql, "update yzm_pose_label_db.t_label set Fpose_data='%s' where Fuser_name='%s' and Fpic_id='%d' ", \
+            poseDate.c_str(),
+            user.c_str(),
+            picId);
+            LOG(INFO) << "sql : "<<strSql;
+            if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                break;
+            }    
+        }else{
+            memset(strSql, 0, sizeof(strSql));
+            sprintf(strSql, "insert into yzm_pose_label_db.t_label  \
+            values(NULL, '%d','%s','%s', '%s', '%s')",  \
+            picId,
+            user.c_str(),
+            poseDate.c_str(),
+            GetSystemTime(),
+            GetSystemTime() ); 
+            LOG(INFO) << "sql : "<<strSql;
+            if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                break;
+            }  
 
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "update yzm_pose_label_db.t_picture set Flabel_count=Flabel_count -1, Fupdate_time='%s' \
-        where Fid='%d' ",  \
-        GetSystemTime(),  \
-        picId ); 
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            break;
-        }  
-        if(_ptrMysql->AffectedRows() != 1 ){
-            LOG(ERROR) << "update Flabel_count failed, AffectedRows() != 1 ";
-            _ptrMysql->Rollback(); 
-            break;      
+            memset(strSql, 0, sizeof(strSql));
+            sprintf(strSql, "update yzm_pose_label_db.t_picture set Flabel_count=Flabel_count -1, Fupdate_user='%s', Fupdate_time='%s'  \
+            where Fid='%d' ",  \
+            user.c_str(),    
+            GetSystemTime(), 
+            picId ); 
+            LOG(INFO) << "sql : "<<strSql;
+            if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                break;
+            }  
+            if(_ptrMysql->AffectedRows() != 1 ){
+                LOG(ERROR) << "update Flabel_count failed, AffectedRows() != 1 ";
+                break;      
+            }
         }
 
         ret = true;
-        
     }while(0); 
+
+    if(!ret){
+         _ptrMysql->Rollback();
+         LOG(ERROR) << "Rollback()";
+    }else{
+        _ptrMysql->Commit();
+         LOG(INFO) << "AddLabeledDate  success";
+    }
 
     return ret;
 
 }
 
-bool CDBOperator::QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const std::string user, int index, int& page, const QueryCondition& qc)
+bool CDBOperator::QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const std::string token, int index, int& page, const QueryCondition& qc)
 {
     bool ret = false;
 	string jsonStr;
@@ -199,20 +219,13 @@ bool CDBOperator::QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const std
             break;
         }
         ///////////////////check user
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' ", \
-        user.c_str());
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            LOG(ERROR) << "QueryUnlabeledPicture failed, Query failed ";
-            break;
-        }  
-        int iRows = _ptrMysql->FetchRows();
-        if(iRows != 1)     
-        {
-            LOG(ERROR) << "QueryUnlabeledPicture failed, user_name not exist ";  
-            break;
-        }
-        ///////////////////////page num
+       string user;
+        int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "GetUserByToken  failed ";
+           break;
+       }
+
         stringstream ss;
         string pose_type;
         string tag;
@@ -234,7 +247,7 @@ bool CDBOperator::QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const std
         }else{
                 tEnd = qc.tEnd;
         }
-
+        ///////////////////////page num
         memset(strSql, 0, 1024);
         sprintf(strSql,  " select COUNT(*) count from yzm_pose_label_db.t_picture  \
         where  Flabel_count = '5' and Fpic_status='0' and Fpose_type like '%s'   \
@@ -269,7 +282,7 @@ bool CDBOperator::QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const std
         where  Flabel_count = '5' and Fpic_status='0' and Fpose_type like '%s'  \
         and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' limit %d ,10 ",  \
         pose_type.c_str(),
-        tag.c_str(),
+        tag.c_str(),      
         tBegin.c_str(),
         tEnd.c_str(),
         index);
@@ -288,8 +301,8 @@ bool CDBOperator::QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const std
 
 }
 
-bool CDBOperator::QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page, const QueryCondition& qc){
-    bool ret = false;
+int CDBOperator::QueryPicByUser(SqlMapVector &objOutMapVector, const std::string token, const std::string user, int index, int& page, const QueryCondition& qc){
+    int ret = -1;
 	string jsonStr;
     char strSql[1024] = {0}; 
     do{
@@ -297,19 +310,139 @@ bool CDBOperator::QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std:
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
-
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' ", \
-        user.c_str());
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+        ///////////////////check user
+        string userName;             
+        int role_id;
+       if(!GetUserByToken(token, userName, role_id)){
+           LOG(ERROR) << "GetUserByToken  failed ";
+           break;
+       }
+       if(role_id != 0){
+            LOG(ERROR) << "user "<< userName << " is not admin";
+            ret = 2;
             break;
-        }  
-        int iRows = _ptrMysql->FetchRows();
-        if(iRows != 1)     
-        {
-            LOG(ERROR) << "QueryLabeledPicture failed, user_name not exit ";
+       }
+      ///////////////////////////////////////
+        stringstream ss;
+        string pose_type;
+        string tag;
+        string tBegin;
+        string tEnd;
+        ss << "%" <<qc.pose_type<< "%";
+        ss >> pose_type;
+        ss.clear();
+        ss.str("");
+        ss << "%" <<qc.tag<< "%";
+        ss >> tag;
+        if(qc.tBegin.empty()){
+            tBegin = "2016-1-1 10:10:10";
+        }else{
+            tBegin = qc.tBegin;
+        }
+        if(qc.tEnd.empty()){
+            tEnd = "2030-1-1 10:10:10";
+        }else{
+                tEnd = qc.tEnd;
+        }
+
+        ///////////////////////page num          
+        memset(strSql, 0, 1024);
+        if(!user.empty()){
+            sprintf(strSql,  " select COUNT(*) count from yzm_pose_label_db.t_picture  \
+            where Fpose_type like '%s' and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' \
+            and Fid  in (select Fpic_id from yzm_pose_label_db.t_label WHERE Fuser_name = '%s' GROUP BY Fpic_id )  ",
+            pose_type.c_str(),
+            tag.c_str(),
+            tBegin.c_str(),
+            tEnd.c_str(),
+            user.c_str());
+
+        }else{                 //用户名为空，即返回所有标注过的图片
+            sprintf(strSql,  " select COUNT(*) count from yzm_pose_label_db.t_picture  \
+            where Fpose_type like '%s' and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' \
+            and Fid  in (select Fpic_id from yzm_pose_label_db.t_label  GROUP BY Fpic_id )  ",
+            pose_type.c_str(),
+            tag.c_str(),
+            tBegin.c_str(),
+            tEnd.c_str());
+        }
+      
+        LOG(INFO) <<"sql : "<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
+        SqlResultSet  objMap;
+        if(!_ptrMysql->FetchResultMap(objMap)){
+            break;
+        }
+        ss.clear();
+        ss.str("");
+        int count;
+        ss << objMap["count"];
+        ss >> count;
+        if(count % 10 == 0){
+            page = count/10;
+        }else{
+            page = count/10;
+            page++;
+        }
+        LOG(INFO) << "page num  : "<< page;
+        ///////////////////////select
+        memset(strSql, 0, 1024);
+        if(!user.empty()){
+            sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fupdate_user, Fcreate_time, Flabel_count \
+            from yzm_pose_label_db.t_picture  \
+            where Fpose_type like '%s' and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' \
+            and Fid  in (select Fpic_id from yzm_pose_label_db.t_label WHERE Fuser_name = '%s' GROUP BY Fpic_id ) limit %d ,10 ",
+            pose_type.c_str(),
+            tag.c_str(),
+            tBegin.c_str(),
+            tEnd.c_str(),
+            user.c_str(),
+            index);
+
+        }else{
+            sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fupdate_user, Fcreate_time, Flabel_count \
+            from yzm_pose_label_db.t_picture  \
+            where Fpose_type like '%s' and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' \
+            and Fid  in (select Fpic_id from yzm_pose_label_db.t_label  GROUP BY Fpic_id ) limit %d ,10 ",
+            pose_type.c_str(),
+            tag.c_str(),
+            tBegin.c_str(),
+            tEnd.c_str(),
+            index);
+        }
+        LOG(INFO) << "SQL : "<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
+            break;
+        }
+        ret = 0;
+
+    }while(0);
+	
+    return ret;
+}
+
+bool CDBOperator::QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std::string token, int index, int& page, const QueryCondition& qc){
+    bool ret = false;
+	string jsonStr;
+    char strSql[1024] = {0}; 
+
+    do{
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+
+        string user;
+        int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
         /////////////////////////////////////
         stringstream ss;
         string pose_type;
@@ -365,11 +498,11 @@ bool CDBOperator::QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std:
         LOG(INFO) << "page num  : "<< page;
         ///////////////////////////////////// 
         memset(strSql, 0, 1024);
-        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fcreate_time, Flabel_count from yzm_pose_label_db.t_picture where Fid  in \
+        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fupdate_user, Fcreate_time, Flabel_count from yzm_pose_label_db.t_picture where Fid  in \
         (select Fpic_id from yzm_pose_label_db.t_label WHERE Fuser_name = '%s' GROUP BY Fpic_id )        \
         and Fpose_type like '%s' and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' limit %d,10 ",   \
         user.c_str(),
-        pose_type.c_str(),
+        pose_type.c_str(),            
         tag.c_str(),
         tBegin.c_str(),
         tEnd.c_str(),
@@ -392,7 +525,7 @@ bool CDBOperator::QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std:
 
 }
 
-bool CDBOperator::QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page, const QueryCondition& qc)
+bool CDBOperator::QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  std::string token, int index, int& page, const QueryCondition& qc)
 {
     bool ret = false;
 	string jsonStr;
@@ -402,21 +535,12 @@ bool CDBOperator::QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' and Frole_id = '0' ", \
-        user.c_str());
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            LOG(ERROR) << "_ptrMysql->Query failed" ;
-            break;
-        }  
-        
-        int iRows = _ptrMysql->FetchRows();
-   
-        if(iRows != 1)     
-        {
-            LOG(ERROR) << "QueryUnlabeledPicture failed, "<<user << " is not admin user"; 
-            break;
-        }
+        string user;
+        int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
         //////////////////////////////////////////////page num
         stringstream ss;
         string pose_type;
@@ -477,7 +601,7 @@ bool CDBOperator::QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  
         LOG(INFO) << "page num  : "<< page;
 
         memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fcreate_time, Flabel_count  \
+        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fcreate_time, Flabel_count , Fupdate_user \
         from yzm_pose_label_db.t_picture  \
         where Fid  in (select Fpic_id from yzm_pose_label_db.t_label WHERE Fuser_name != '%s' GROUP BY Fpic_id )   \
         and not EXISTS (select Fpic_id from yzm_pose_label_db.t_label WHERE  \
@@ -507,7 +631,8 @@ bool CDBOperator::QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  
     return ret;
 }
 
-bool CDBOperator::QueryPicById(SqlMapVector &objOutMapVector, int pic_id, const std::string user)
+
+bool CDBOperator::QueryPicById(SqlMapVector &objOutMapVector, int pic_id, const std::string token)
 {
     bool ret = false;
 	string jsonStr;
@@ -518,24 +643,17 @@ bool CDBOperator::QueryPicById(SqlMapVector &objOutMapVector, int pic_id, const 
             break;
         }
         ///////////////////check user    
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' ", \
-        user.c_str());
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            LOG(ERROR) << "QueryUnlabeledPicture failed, Query failed ";
-            break;
-        }  
-        int iRows = _ptrMysql->FetchRows();
-        if(iRows != 1)     
-        {
-            LOG(ERROR) << "QueryUnlabeledPicture failed, user_name not exist ";  
-            break;
-        }
+        string user;
+        int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
       
         ///////////////////////select
         memset(strSql, 0, 1024);
-        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fcreate_time, Flabel_count from yzm_pose_label_db.t_picture  \
-        where  Fid='%d' ",  \
+        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fcreate_time, Fupdate_user, Flabel_count from yzm_pose_label_db.t_picture  \
+        where  Fid='%d' and Fpic_status = '0' ",  \
         pic_id);
         
         LOG(INFO) << "SQL : "<<strSql;
@@ -553,28 +671,18 @@ bool CDBOperator::QueryPicById(SqlMapVector &objOutMapVector, int pic_id, const 
 
 }
 
-int  CDBOperator::InvalidatePicture(int  id, const std::string user, const bool type){
+int  CDBOperator::InvalidatePicture(int  id, const std::string token, const bool type){
    
     int ret = -1;                   
 	string jsonStr;
     char strSql[1024] = {0}; 
     do{
-        memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' and Frole_id=0", \
-        user.c_str());
-        LOG(INFO) << "SQL : "<< strSql;
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            break;
-        }  
-      
-        int iRows = _ptrMysql->FetchRows();
-     
-        if(iRows != 1)     
-        {
-            LOG(ERROR) << "InvalidatePicture failed, no such admin user ";
-            ret = 1;       //没有该管理员用户
-            break;
-        }
+       string user;
+       int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
        ////////////////////////////////////////////////////////////////////////
         memset(strSql, 0, sizeof(strSql));
         if(type){
@@ -587,7 +695,7 @@ int  CDBOperator::InvalidatePicture(int  id, const std::string user, const bool 
             break;
         }
 
-        iRows = _ptrMysql->AffectedRows();
+        int iRows = _ptrMysql->AffectedRows();
     
         if(iRows != 1)     
         {
@@ -604,34 +712,42 @@ int  CDBOperator::InvalidatePicture(int  id, const std::string user, const bool 
 
 }
 
-bool CDBOperator::QueryLabeledPoseData(SqlResultSet& oMap, int pic_id, const std::string user)
+bool CDBOperator::QueryLabeledPoseData(SqlResultSet& oMap, int pic_id, const std::string token)
 {
     bool ret = false;
 	string jsonStr;
-    char strSql[1024] = {0}; 
+    char strSql[1024] = {0};
     do{
         sprintf(strSql,  "SET NAMES UTF8");
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
+       string user;
+       int role_id;       
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
+        /////////////////////////////////////
+        /* 
+        SqlResultSet tempMap;   
         memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' ", \
-        user.c_str());
-        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
-            break;
-        }  
-        int iRows = _ptrMysql->FetchRows();
-        if(iRows != 1)     
-        {
-            LOG(ERROR) << "QueryLabeledPicture failed, user_name not exit ";
+        sprintf(strSql,  " select Fpre2DPoseInfo from yzm_pose_label_db.t_picture where Fid='%d'  ",  \
+        pic_id);
+        LOG(INFO) << "strSql :"<<strSql;   
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
-        /////////////////////////////////////
+        if(!_ptrMysql->FetchResultMap(tempMap)){
+            break;
+        }
+        pre2dPoseInfo = tempMap["Fpre2DPoseInfo"];  */
+        /////////////////////////////////////    
         memset(strSql, 0, sizeof(strSql));
         sprintf(strSql,  " select Fpose_data from yzm_pose_label_db.t_label  where Fpic_id='%d' and Fuser_name='%s' ",  \
         pic_id,
         user.c_str());
-        LOG(INFO) << "strSql :"<<strSql;
+        LOG(INFO) << "strSql :"<<strSql;   
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
@@ -645,6 +761,299 @@ bool CDBOperator::QueryLabeledPoseData(SqlResultSet& oMap, int pic_id, const std
     return ret;
 }
 
+bool CDBOperator::QueryLastLabeledPoseData(SqlResultSet& oMap, int pic_id, const std::string user)
+{
+    bool ret = false;
+	string jsonStr;
+    char strSql[1024] = {0};
+    do{
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        /////////////////////////////////////    
+        memset(strSql, 0, sizeof(strSql));
+        sprintf(strSql,  " select Fpose_data from yzm_pose_label_db.t_label  where Fpic_id='%d' and Fuser_name='%s' ",  \
+        pic_id,
+        user.c_str());
+        LOG(INFO) << "strSql :"<<strSql;   
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        if(!_ptrMysql->FetchResultMap(oMap)){
+            break;
+        }
+        ret = true;
+
+    }while(0);
+	
+    return ret;
+}
+
+bool CDBOperator::GetUserByToken(const std::string& token, std::string& user, int& roleId)
+{
+    bool ret = false;
+    char strSql[1024] = {0};
+    SqlResultSet  objMap; 
+    do{
+        sprintf(strSql, "select Fuser_name, Frole_id from yzm_pose_label_db.t_user where Ftoken='%s' ", \
+        token.c_str());
+        LOG(INFO) << "strSql :"<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+       
+        if(!_ptrMysql->FetchResultMap(objMap)){
+             LOG(ERROR) << "FetchResultMap  failed";
+            break;
+        }
+        user =    objMap["Fuser_name"];
+        stringstream ss;
+        ss << objMap["Frole_id"];
+        ss >> roleId;
+        ret = true;
+
+    }while(0);
+	
+    return ret;
+
+}
+
+int  CDBOperator::Register(const std::string& user, const std::string& passWd)
+{
+    int ret = -1;
+    char strSql[1024] = {0};
+    SqlResultSet  objMap; 
+    do{
+        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' ", \
+        user.c_str());
+        LOG(INFO) << "strSql :"<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+        int iRows = _ptrMysql->FetchRows();
+        if(iRows == 1)     
+        {
+            LOG(ERROR) << "Register failed, user already exist ";
+            ret = 1;
+            break;
+        }
+        memset(strSql, 0, sizeof(strSql));
+        int roleId = 1;
+        sprintf(strSql, "insert into yzm_pose_label_db.t_user(Fuser_name, Frole_id, Fpass_wd, Fcreate_time, Fupdate_time)  \
+        values('%s','%d','%s','%s','%s') ", \
+        user.c_str(),
+        roleId,
+        passWd.c_str(),
+        GetSystemTime(),
+        GetSystemTime()
+        );
+        LOG(INFO) << "strSql :"<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+
+        ret = 0;
+
+    }while(0);
+	
+    return ret;
+
+}
+int CDBOperator::Login(std::string& token, int& role_id, const std::string& user, const std::string& passWd){
+    int ret = -1;
+    char strSql[1024] = {0};
+    SqlResultSet  objMap; 
+    do{
+        sprintf(strSql, "select * from yzm_pose_label_db.t_user where Fuser_name='%s' and Fpass_wd='%s'", \
+        user.c_str(),
+        passWd.c_str());
+        LOG(INFO) << "strSql :"<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;                    
+        }  
+      
+        if(!_ptrMysql->FetchResultMap(objMap)){
+            ret = 1;
+            break;   
+        }
+        stringstream ss;
+        ss << objMap["Frole_id"];
+        ss >> role_id;
+       
+        uuid_t uu; 
+        char  buf[1024] = {0};
+        uuid_generate( uu ); 
+        uuid_unparse(uu, buf);
+        token = buf;
+
+        memset(strSql, 0, sizeof(strSql));
+        int roleId = 1;
+        sprintf(strSql, "update yzm_pose_label_db.t_user set Ftoken='%s', Fupdate_time='%s' where Fuser_name='%s' ", \
+        token.c_str(),
+        GetSystemTime(),
+        user.c_str()
+        );
+        LOG(INFO) << "strSql :"<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+
+        ret = 0;
+
+    }while(0);
+	
+    return ret;
+
+}
+
+bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryConditions& qc, int index){
+  bool ret = false;
+	string jsonStr;
+    char strSql[1024] = {0}; 
+    do{
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        /////////////////////////////////////
+        stringstream ss;
+        string pose_type, tag, tBegin, tEnd, key;            
+        ss << "%" <<qc.pose_type<< "%";
+        ss >> pose_type;
+        ss.clear();
+        ss.str("");
+        ss << "%" <<qc.tag<< "%";
+        ss >> tag;
+        ss.clear();
+        ss.str("");
+        ss << "%" <<qc.key<< "%";
+        ss >> key;
+        if(qc.tBegin.empty()){
+            tBegin = "2016-1-1 10:10:10";
+        }else{
+            tBegin = qc.tBegin;
+        }
+        if(qc.tEnd.empty()){
+            tEnd = "2030-1-1 10:10:10";
+        }else{
+            tEnd = qc.tEnd;
+        }
+        ///////////////////////////////////////////////
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  " select COUNT(*) count from yzm_pose_label_db.t_picture where  \
+        Fpose_type like '%s' and  Ftag_word like '%s' and  Fkey_word like '%s' \
+        and Fwebsite='%s' Fcreate_time BETWEEN '%s' and '%s'",  \
+        pose_type.c_str(),             
+        tag.c_str(),
+        key.c_str(),
+        qc.website.c_str(),
+        tBegin.c_str(),   
+        tEnd.c_str()
+        );
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        SqlResultSet  objMap;
+        if(!_ptrMysql->FetchResultMap(objMap)){
+            break;
+        }
+        ss.clear();
+        ss.str("");
+        int count;
+        ss << objMap["count"];
+        ss >> count;
+        int page;
+        if(count % 10 == 0){
+            page = count/10;
+        }else{
+            page = count/10;
+            page++;
+        }
+        LOG(INFO) << "page num  : "<< page;
+        ///////////////////////////////////// 
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fupdate_user, Fcreate_time, Flabel_count from yzm_pose_label_db.t_picture  \
+        where   Fpose_type like '%s' and  Ftag_word like '%s' and  Fkey_word like '%s' \
+        and Fwebsite='%s' Fcreate_time BETWEEN '%s' and '%s' limit %d,10 ",   \
+        pose_type.c_str(),
+        tag.c_str(),
+        key.c_str(),
+        qc.website.c_str(),
+        tBegin.c_str(),   
+        tEnd.c_str(),
+        index); 
+        LOG(INFO) << "sql : "<< strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+
+        if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
+            break;
+        }
+
+        ret = true;
+
+    }while(0);
+	
+    return ret;
+
+}
+
+bool CDBOperator::AddCrawlingResult(const CrawlingResult&  cs, int dbSum){
+    bool ret = false;
+    char strSql[1024] = {0};
+    do{
+        sprintf(strSql, "insert into yzm_pose_label_db.t_crawling_history(Fkey, Ftag, Ftotal_sum, Fdb_sum,  \
+        Ftime_begin, Ftime_end, Fcreate_time, Fupdate_time) values('%s','%s','%d','%d','%s','%s','%s','%s') ", \
+        cs.key.c_str(),
+        cs.tag.c_str(),
+        cs.sumTotal,
+        dbSum,
+        cs.tBegin.c_str(),
+        cs.tEnd.c_str(),
+        GetSystemTime(),
+        GetSystemTime()
+        );
+        LOG(INFO) << "strSql :"<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        }  
+        ret = true;
+
+    }while(0);
+	
+    return ret;
+}
+
+bool CDBOperator::QueryCrawlingHistory(SqlMapVector &objOutMapVector,  const HistoryQueryCondition& qc){
+     bool ret = false;
+    char strSql[1024] = {0}; 
+    do{
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+       
+        ///////////////////////select
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fcreate_time, Fupdate_user, Flabel_count from yzm_pose_label_db.t_picture  \
+        where  Fid='%d' and Fpic_status = '0' ",  \
+        pic_id);
+        
+        LOG(INFO) << "SQL : "<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+
+        if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
+            break;
+        }
+        ret = true;
+    }while(0);
+
+    return ret;
+}
 
 
 

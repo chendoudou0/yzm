@@ -22,24 +22,29 @@ class LabelServiceHandler : virtual public LabelServiceIf {
     // Your initialization goes here
   }
 
-  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) {
     // Your implementation goes here
     printf("QueryUnlabeledPic\n");
   }
 
-  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) {
     // Your implementation goes here
     printf("QueryPicLabeledByOthers\n");
   }
 
-  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) {
     // Your implementation goes here
     printf("QueryLabeledPic\n");
   }
 
-  void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id) {
+  void QueryPicById(QueryByIdRet& _return, const std::string& token, const int32_t pic_id) {
     // Your implementation goes here
     printf("QueryPicById\n");
+  }
+
+  void QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user) {
+    // Your implementation goes here
+    printf("QueryPicByUserName\n");
   }
 
   void DownloadPic(DownloadRet& _return, const std::string& pic_url) {
@@ -47,19 +52,29 @@ class LabelServiceHandler : virtual public LabelServiceIf {
     printf("DownloadPic\n");
   }
 
-  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& userName) {
+  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& token) {
     // Your implementation goes here
     printf("InsertToDb\n");
   }
 
-  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& userName, const bool type) {
+  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& token, const bool type) {
     // Your implementation goes here
     printf("InvalidatePicture\n");
   }
 
-  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& userName) {
+  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) {
     // Your implementation goes here
     printf("QueryLabeledPoseData\n");
+  }
+
+  void Register(ReturnVals& _return, const std::string& user, const std::string& passwd) {
+    // Your implementation goes here
+    printf("Register\n");
+  }
+
+  void Login(LoginRet& _return, const std::string& user, const std::string& passwd) {
+    // Your implementation goes here
+    printf("Login\n");
   }
 
 };

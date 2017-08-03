@@ -21,14 +21,17 @@ namespace server { namespace pose_label {
 class LabelServiceIf {
  public:
   virtual ~LabelServiceIf() {}
-  virtual void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) = 0;
-  virtual void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) = 0;
-  virtual void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) = 0;
-  virtual void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id) = 0;
+  virtual void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) = 0;
+  virtual void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) = 0;
+  virtual void QueryLabeledPic(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) = 0;
+  virtual void QueryPicById(QueryByIdRet& _return, const std::string& token, const int32_t pic_id) = 0;
+  virtual void QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user) = 0;
   virtual void DownloadPic(DownloadRet& _return, const std::string& pic_url) = 0;
-  virtual void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& userName) = 0;
-  virtual void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& userName, const bool type) = 0;
-  virtual void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& userName) = 0;
+  virtual void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& token) = 0;
+  virtual void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& token, const bool type) = 0;
+  virtual void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) = 0;
+  virtual void Register(ReturnVals& _return, const std::string& user, const std::string& passwd) = 0;
+  virtual void Login(LoginRet& _return, const std::string& user, const std::string& passwd) = 0;
 };
 
 class LabelServiceIfFactory {
@@ -58,35 +61,44 @@ class LabelServiceIfSingletonFactory : virtual public LabelServiceIfFactory {
 class LabelServiceNull : virtual public LabelServiceIf {
  public:
   virtual ~LabelServiceNull() {}
-  void QueryUnlabeledPic(QueryUnlabeledRet& /* _return */, const std::string& /* user */, const int32_t /* index */, const QueryCondition& /* qc */) {
+  void QueryUnlabeledPic(QueryUnlabeledRet& /* _return */, const std::string& /* token */, const int32_t /* index */, const QueryCondition& /* qc */) {
     return;
   }
-  void QueryPicLabeledByOthers(QueryLabeledRet& /* _return */, const std::string& /* user */, const int32_t /* index */, const QueryCondition& /* qc */) {
+  void QueryPicLabeledByOthers(QueryLabeledRet& /* _return */, const std::string& /* token */, const int32_t /* index */, const QueryCondition& /* qc */) {
     return;
   }
-  void QueryLabeledPic(QueryLabeledRet& /* _return */, const std::string& /* user */, const int32_t /* index */, const QueryCondition& /* qc */) {
+  void QueryLabeledPic(QueryLabeledRet& /* _return */, const std::string& /* token */, const int32_t /* index */, const QueryCondition& /* qc */) {
     return;
   }
-  void QueryPicById(QueryByIdRet& /* _return */, const std::string& /* user */, const int32_t /* pic_id */) {
+  void QueryPicById(QueryByIdRet& /* _return */, const std::string& /* token */, const int32_t /* pic_id */) {
+    return;
+  }
+  void QueryPicByUserName(QueryByIdRet& /* _return */, const std::string& /* token */, const std::string& /* user */) {
     return;
   }
   void DownloadPic(DownloadRet& /* _return */, const std::string& /* pic_url */) {
     return;
   }
-  void InsertToDb(ReturnVals& /* _return */, const std::string& /* poseInfo */, const int32_t /* pic_id */, const std::string& /* userName */) {
+  void InsertToDb(ReturnVals& /* _return */, const std::string& /* poseInfo */, const int32_t /* pic_id */, const std::string& /* token */) {
     return;
   }
-  void InvalidatePicture(ReturnVals& /* _return */, const int32_t /* pic_id */, const std::string& /* userName */, const bool /* type */) {
+  void InvalidatePicture(ReturnVals& /* _return */, const int32_t /* pic_id */, const std::string& /* token */, const bool /* type */) {
     return;
   }
-  void QueryLabeledPoseData(LabeledPoseDataRet& /* _return */, const int32_t /* pic_id */, const std::string& /* pic_url */, const std::string& /* userName */) {
+  void QueryLabeledPoseData(LabeledPoseDataRet& /* _return */, const int32_t /* pic_id */, const std::string& /* pic_url */, const std::string& /* token */) {
+    return;
+  }
+  void Register(ReturnVals& /* _return */, const std::string& /* user */, const std::string& /* passwd */) {
+    return;
+  }
+  void Login(LoginRet& /* _return */, const std::string& /* user */, const std::string& /* passwd */) {
     return;
   }
 };
 
 typedef struct _LabelService_QueryUnlabeledPic_args__isset {
-  _LabelService_QueryUnlabeledPic_args__isset() : user(false), index(false), qc(false) {}
-  bool user :1;
+  _LabelService_QueryUnlabeledPic_args__isset() : token(false), index(false), qc(false) {}
+  bool token :1;
   bool index :1;
   bool qc :1;
 } _LabelService_QueryUnlabeledPic_args__isset;
@@ -96,17 +108,17 @@ class LabelService_QueryUnlabeledPic_args {
 
   LabelService_QueryUnlabeledPic_args(const LabelService_QueryUnlabeledPic_args&);
   LabelService_QueryUnlabeledPic_args& operator=(const LabelService_QueryUnlabeledPic_args&);
-  LabelService_QueryUnlabeledPic_args() : user(), index(0) {
+  LabelService_QueryUnlabeledPic_args() : token(), index(0) {
   }
 
   virtual ~LabelService_QueryUnlabeledPic_args() throw();
-  std::string user;
+  std::string token;
   int32_t index;
   QueryCondition qc;
 
   _LabelService_QueryUnlabeledPic_args__isset __isset;
 
-  void __set_user(const std::string& val);
+  void __set_token(const std::string& val);
 
   void __set_index(const int32_t val);
 
@@ -114,7 +126,7 @@ class LabelService_QueryUnlabeledPic_args {
 
   bool operator == (const LabelService_QueryUnlabeledPic_args & rhs) const
   {
-    if (!(user == rhs.user))
+    if (!(token == rhs.token))
       return false;
     if (!(index == rhs.index))
       return false;
@@ -139,7 +151,7 @@ class LabelService_QueryUnlabeledPic_pargs {
 
 
   virtual ~LabelService_QueryUnlabeledPic_pargs() throw();
-  const std::string* user;
+  const std::string* token;
   const int32_t* index;
   const QueryCondition* qc;
 
@@ -203,8 +215,8 @@ class LabelService_QueryUnlabeledPic_presult {
 };
 
 typedef struct _LabelService_QueryPicLabeledByOthers_args__isset {
-  _LabelService_QueryPicLabeledByOthers_args__isset() : user(false), index(false), qc(false) {}
-  bool user :1;
+  _LabelService_QueryPicLabeledByOthers_args__isset() : token(false), index(false), qc(false) {}
+  bool token :1;
   bool index :1;
   bool qc :1;
 } _LabelService_QueryPicLabeledByOthers_args__isset;
@@ -214,17 +226,17 @@ class LabelService_QueryPicLabeledByOthers_args {
 
   LabelService_QueryPicLabeledByOthers_args(const LabelService_QueryPicLabeledByOthers_args&);
   LabelService_QueryPicLabeledByOthers_args& operator=(const LabelService_QueryPicLabeledByOthers_args&);
-  LabelService_QueryPicLabeledByOthers_args() : user(), index(0) {
+  LabelService_QueryPicLabeledByOthers_args() : token(), index(0) {
   }
 
   virtual ~LabelService_QueryPicLabeledByOthers_args() throw();
-  std::string user;
+  std::string token;
   int32_t index;
   QueryCondition qc;
 
   _LabelService_QueryPicLabeledByOthers_args__isset __isset;
 
-  void __set_user(const std::string& val);
+  void __set_token(const std::string& val);
 
   void __set_index(const int32_t val);
 
@@ -232,7 +244,7 @@ class LabelService_QueryPicLabeledByOthers_args {
 
   bool operator == (const LabelService_QueryPicLabeledByOthers_args & rhs) const
   {
-    if (!(user == rhs.user))
+    if (!(token == rhs.token))
       return false;
     if (!(index == rhs.index))
       return false;
@@ -257,7 +269,7 @@ class LabelService_QueryPicLabeledByOthers_pargs {
 
 
   virtual ~LabelService_QueryPicLabeledByOthers_pargs() throw();
-  const std::string* user;
+  const std::string* token;
   const int32_t* index;
   const QueryCondition* qc;
 
@@ -321,8 +333,8 @@ class LabelService_QueryPicLabeledByOthers_presult {
 };
 
 typedef struct _LabelService_QueryLabeledPic_args__isset {
-  _LabelService_QueryLabeledPic_args__isset() : user(false), index(false), qc(false) {}
-  bool user :1;
+  _LabelService_QueryLabeledPic_args__isset() : token(false), index(false), qc(false) {}
+  bool token :1;
   bool index :1;
   bool qc :1;
 } _LabelService_QueryLabeledPic_args__isset;
@@ -332,17 +344,17 @@ class LabelService_QueryLabeledPic_args {
 
   LabelService_QueryLabeledPic_args(const LabelService_QueryLabeledPic_args&);
   LabelService_QueryLabeledPic_args& operator=(const LabelService_QueryLabeledPic_args&);
-  LabelService_QueryLabeledPic_args() : user(), index(0) {
+  LabelService_QueryLabeledPic_args() : token(), index(0) {
   }
 
   virtual ~LabelService_QueryLabeledPic_args() throw();
-  std::string user;
+  std::string token;
   int32_t index;
   QueryCondition qc;
 
   _LabelService_QueryLabeledPic_args__isset __isset;
 
-  void __set_user(const std::string& val);
+  void __set_token(const std::string& val);
 
   void __set_index(const int32_t val);
 
@@ -350,7 +362,7 @@ class LabelService_QueryLabeledPic_args {
 
   bool operator == (const LabelService_QueryLabeledPic_args & rhs) const
   {
-    if (!(user == rhs.user))
+    if (!(token == rhs.token))
       return false;
     if (!(index == rhs.index))
       return false;
@@ -375,7 +387,7 @@ class LabelService_QueryLabeledPic_pargs {
 
 
   virtual ~LabelService_QueryLabeledPic_pargs() throw();
-  const std::string* user;
+  const std::string* token;
   const int32_t* index;
   const QueryCondition* qc;
 
@@ -439,8 +451,8 @@ class LabelService_QueryLabeledPic_presult {
 };
 
 typedef struct _LabelService_QueryPicById_args__isset {
-  _LabelService_QueryPicById_args__isset() : user(false), pic_id(false) {}
-  bool user :1;
+  _LabelService_QueryPicById_args__isset() : token(false), pic_id(false) {}
+  bool token :1;
   bool pic_id :1;
 } _LabelService_QueryPicById_args__isset;
 
@@ -449,22 +461,22 @@ class LabelService_QueryPicById_args {
 
   LabelService_QueryPicById_args(const LabelService_QueryPicById_args&);
   LabelService_QueryPicById_args& operator=(const LabelService_QueryPicById_args&);
-  LabelService_QueryPicById_args() : user(), pic_id(0) {
+  LabelService_QueryPicById_args() : token(), pic_id(0) {
   }
 
   virtual ~LabelService_QueryPicById_args() throw();
-  std::string user;
+  std::string token;
   int32_t pic_id;
 
   _LabelService_QueryPicById_args__isset __isset;
 
-  void __set_user(const std::string& val);
+  void __set_token(const std::string& val);
 
   void __set_pic_id(const int32_t val);
 
   bool operator == (const LabelService_QueryPicById_args & rhs) const
   {
-    if (!(user == rhs.user))
+    if (!(token == rhs.token))
       return false;
     if (!(pic_id == rhs.pic_id))
       return false;
@@ -487,7 +499,7 @@ class LabelService_QueryPicById_pargs {
 
 
   virtual ~LabelService_QueryPicById_pargs() throw();
-  const std::string* user;
+  const std::string* token;
   const int32_t* pic_id;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -544,6 +556,117 @@ class LabelService_QueryPicById_presult {
   QueryByIdRet* success;
 
   _LabelService_QueryPicById_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _LabelService_QueryPicByUserName_args__isset {
+  _LabelService_QueryPicByUserName_args__isset() : token(false), user(false) {}
+  bool token :1;
+  bool user :1;
+} _LabelService_QueryPicByUserName_args__isset;
+
+class LabelService_QueryPicByUserName_args {
+ public:
+
+  LabelService_QueryPicByUserName_args(const LabelService_QueryPicByUserName_args&);
+  LabelService_QueryPicByUserName_args& operator=(const LabelService_QueryPicByUserName_args&);
+  LabelService_QueryPicByUserName_args() : token(), user() {
+  }
+
+  virtual ~LabelService_QueryPicByUserName_args() throw();
+  std::string token;
+  std::string user;
+
+  _LabelService_QueryPicByUserName_args__isset __isset;
+
+  void __set_token(const std::string& val);
+
+  void __set_user(const std::string& val);
+
+  bool operator == (const LabelService_QueryPicByUserName_args & rhs) const
+  {
+    if (!(token == rhs.token))
+      return false;
+    if (!(user == rhs.user))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_QueryPicByUserName_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_QueryPicByUserName_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class LabelService_QueryPicByUserName_pargs {
+ public:
+
+
+  virtual ~LabelService_QueryPicByUserName_pargs() throw();
+  const std::string* token;
+  const std::string* user;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_QueryPicByUserName_result__isset {
+  _LabelService_QueryPicByUserName_result__isset() : success(false) {}
+  bool success :1;
+} _LabelService_QueryPicByUserName_result__isset;
+
+class LabelService_QueryPicByUserName_result {
+ public:
+
+  LabelService_QueryPicByUserName_result(const LabelService_QueryPicByUserName_result&);
+  LabelService_QueryPicByUserName_result& operator=(const LabelService_QueryPicByUserName_result&);
+  LabelService_QueryPicByUserName_result() {
+  }
+
+  virtual ~LabelService_QueryPicByUserName_result() throw();
+  QueryByIdRet success;
+
+  _LabelService_QueryPicByUserName_result__isset __isset;
+
+  void __set_success(const QueryByIdRet& val);
+
+  bool operator == (const LabelService_QueryPicByUserName_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_QueryPicByUserName_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_QueryPicByUserName_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_QueryPicByUserName_presult__isset {
+  _LabelService_QueryPicByUserName_presult__isset() : success(false) {}
+  bool success :1;
+} _LabelService_QueryPicByUserName_presult__isset;
+
+class LabelService_QueryPicByUserName_presult {
+ public:
+
+
+  virtual ~LabelService_QueryPicByUserName_presult() throw();
+  QueryByIdRet* success;
+
+  _LabelService_QueryPicByUserName_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -654,10 +777,10 @@ class LabelService_DownloadPic_presult {
 };
 
 typedef struct _LabelService_InsertToDb_args__isset {
-  _LabelService_InsertToDb_args__isset() : poseInfo(false), pic_id(false), userName(false) {}
+  _LabelService_InsertToDb_args__isset() : poseInfo(false), pic_id(false), token(false) {}
   bool poseInfo :1;
   bool pic_id :1;
-  bool userName :1;
+  bool token :1;
 } _LabelService_InsertToDb_args__isset;
 
 class LabelService_InsertToDb_args {
@@ -665,13 +788,13 @@ class LabelService_InsertToDb_args {
 
   LabelService_InsertToDb_args(const LabelService_InsertToDb_args&);
   LabelService_InsertToDb_args& operator=(const LabelService_InsertToDb_args&);
-  LabelService_InsertToDb_args() : poseInfo(), pic_id(0), userName() {
+  LabelService_InsertToDb_args() : poseInfo(), pic_id(0), token() {
   }
 
   virtual ~LabelService_InsertToDb_args() throw();
   std::string poseInfo;
   int32_t pic_id;
-  std::string userName;
+  std::string token;
 
   _LabelService_InsertToDb_args__isset __isset;
 
@@ -679,7 +802,7 @@ class LabelService_InsertToDb_args {
 
   void __set_pic_id(const int32_t val);
 
-  void __set_userName(const std::string& val);
+  void __set_token(const std::string& val);
 
   bool operator == (const LabelService_InsertToDb_args & rhs) const
   {
@@ -687,7 +810,7 @@ class LabelService_InsertToDb_args {
       return false;
     if (!(pic_id == rhs.pic_id))
       return false;
-    if (!(userName == rhs.userName))
+    if (!(token == rhs.token))
       return false;
     return true;
   }
@@ -710,7 +833,7 @@ class LabelService_InsertToDb_pargs {
   virtual ~LabelService_InsertToDb_pargs() throw();
   const std::string* poseInfo;
   const int32_t* pic_id;
-  const std::string* userName;
+  const std::string* token;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -772,9 +895,9 @@ class LabelService_InsertToDb_presult {
 };
 
 typedef struct _LabelService_InvalidatePicture_args__isset {
-  _LabelService_InvalidatePicture_args__isset() : pic_id(false), userName(false), type(false) {}
+  _LabelService_InvalidatePicture_args__isset() : pic_id(false), token(false), type(false) {}
   bool pic_id :1;
-  bool userName :1;
+  bool token :1;
   bool type :1;
 } _LabelService_InvalidatePicture_args__isset;
 
@@ -783,19 +906,19 @@ class LabelService_InvalidatePicture_args {
 
   LabelService_InvalidatePicture_args(const LabelService_InvalidatePicture_args&);
   LabelService_InvalidatePicture_args& operator=(const LabelService_InvalidatePicture_args&);
-  LabelService_InvalidatePicture_args() : pic_id(0), userName(), type(0) {
+  LabelService_InvalidatePicture_args() : pic_id(0), token(), type(0) {
   }
 
   virtual ~LabelService_InvalidatePicture_args() throw();
   int32_t pic_id;
-  std::string userName;
+  std::string token;
   bool type;
 
   _LabelService_InvalidatePicture_args__isset __isset;
 
   void __set_pic_id(const int32_t val);
 
-  void __set_userName(const std::string& val);
+  void __set_token(const std::string& val);
 
   void __set_type(const bool val);
 
@@ -803,7 +926,7 @@ class LabelService_InvalidatePicture_args {
   {
     if (!(pic_id == rhs.pic_id))
       return false;
-    if (!(userName == rhs.userName))
+    if (!(token == rhs.token))
       return false;
     if (!(type == rhs.type))
       return false;
@@ -827,7 +950,7 @@ class LabelService_InvalidatePicture_pargs {
 
   virtual ~LabelService_InvalidatePicture_pargs() throw();
   const int32_t* pic_id;
-  const std::string* userName;
+  const std::string* token;
   const bool* type;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -890,10 +1013,10 @@ class LabelService_InvalidatePicture_presult {
 };
 
 typedef struct _LabelService_QueryLabeledPoseData_args__isset {
-  _LabelService_QueryLabeledPoseData_args__isset() : pic_id(false), pic_url(false), userName(false) {}
+  _LabelService_QueryLabeledPoseData_args__isset() : pic_id(false), pic_url(false), token(false) {}
   bool pic_id :1;
   bool pic_url :1;
-  bool userName :1;
+  bool token :1;
 } _LabelService_QueryLabeledPoseData_args__isset;
 
 class LabelService_QueryLabeledPoseData_args {
@@ -901,13 +1024,13 @@ class LabelService_QueryLabeledPoseData_args {
 
   LabelService_QueryLabeledPoseData_args(const LabelService_QueryLabeledPoseData_args&);
   LabelService_QueryLabeledPoseData_args& operator=(const LabelService_QueryLabeledPoseData_args&);
-  LabelService_QueryLabeledPoseData_args() : pic_id(0), pic_url(), userName() {
+  LabelService_QueryLabeledPoseData_args() : pic_id(0), pic_url(), token() {
   }
 
   virtual ~LabelService_QueryLabeledPoseData_args() throw();
   int32_t pic_id;
   std::string pic_url;
-  std::string userName;
+  std::string token;
 
   _LabelService_QueryLabeledPoseData_args__isset __isset;
 
@@ -915,7 +1038,7 @@ class LabelService_QueryLabeledPoseData_args {
 
   void __set_pic_url(const std::string& val);
 
-  void __set_userName(const std::string& val);
+  void __set_token(const std::string& val);
 
   bool operator == (const LabelService_QueryLabeledPoseData_args & rhs) const
   {
@@ -923,7 +1046,7 @@ class LabelService_QueryLabeledPoseData_args {
       return false;
     if (!(pic_url == rhs.pic_url))
       return false;
-    if (!(userName == rhs.userName))
+    if (!(token == rhs.token))
       return false;
     return true;
   }
@@ -946,7 +1069,7 @@ class LabelService_QueryLabeledPoseData_pargs {
   virtual ~LabelService_QueryLabeledPoseData_pargs() throw();
   const int32_t* pic_id;
   const std::string* pic_url;
-  const std::string* userName;
+  const std::string* token;
 
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
 
@@ -1007,6 +1130,228 @@ class LabelService_QueryLabeledPoseData_presult {
 
 };
 
+typedef struct _LabelService_Register_args__isset {
+  _LabelService_Register_args__isset() : user(false), passwd(false) {}
+  bool user :1;
+  bool passwd :1;
+} _LabelService_Register_args__isset;
+
+class LabelService_Register_args {
+ public:
+
+  LabelService_Register_args(const LabelService_Register_args&);
+  LabelService_Register_args& operator=(const LabelService_Register_args&);
+  LabelService_Register_args() : user(), passwd() {
+  }
+
+  virtual ~LabelService_Register_args() throw();
+  std::string user;
+  std::string passwd;
+
+  _LabelService_Register_args__isset __isset;
+
+  void __set_user(const std::string& val);
+
+  void __set_passwd(const std::string& val);
+
+  bool operator == (const LabelService_Register_args & rhs) const
+  {
+    if (!(user == rhs.user))
+      return false;
+    if (!(passwd == rhs.passwd))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_Register_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_Register_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class LabelService_Register_pargs {
+ public:
+
+
+  virtual ~LabelService_Register_pargs() throw();
+  const std::string* user;
+  const std::string* passwd;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_Register_result__isset {
+  _LabelService_Register_result__isset() : success(false) {}
+  bool success :1;
+} _LabelService_Register_result__isset;
+
+class LabelService_Register_result {
+ public:
+
+  LabelService_Register_result(const LabelService_Register_result&);
+  LabelService_Register_result& operator=(const LabelService_Register_result&);
+  LabelService_Register_result() {
+  }
+
+  virtual ~LabelService_Register_result() throw();
+  ReturnVals success;
+
+  _LabelService_Register_result__isset __isset;
+
+  void __set_success(const ReturnVals& val);
+
+  bool operator == (const LabelService_Register_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_Register_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_Register_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_Register_presult__isset {
+  _LabelService_Register_presult__isset() : success(false) {}
+  bool success :1;
+} _LabelService_Register_presult__isset;
+
+class LabelService_Register_presult {
+ public:
+
+
+  virtual ~LabelService_Register_presult() throw();
+  ReturnVals* success;
+
+  _LabelService_Register_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _LabelService_Login_args__isset {
+  _LabelService_Login_args__isset() : user(false), passwd(false) {}
+  bool user :1;
+  bool passwd :1;
+} _LabelService_Login_args__isset;
+
+class LabelService_Login_args {
+ public:
+
+  LabelService_Login_args(const LabelService_Login_args&);
+  LabelService_Login_args& operator=(const LabelService_Login_args&);
+  LabelService_Login_args() : user(), passwd() {
+  }
+
+  virtual ~LabelService_Login_args() throw();
+  std::string user;
+  std::string passwd;
+
+  _LabelService_Login_args__isset __isset;
+
+  void __set_user(const std::string& val);
+
+  void __set_passwd(const std::string& val);
+
+  bool operator == (const LabelService_Login_args & rhs) const
+  {
+    if (!(user == rhs.user))
+      return false;
+    if (!(passwd == rhs.passwd))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_Login_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_Login_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class LabelService_Login_pargs {
+ public:
+
+
+  virtual ~LabelService_Login_pargs() throw();
+  const std::string* user;
+  const std::string* passwd;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_Login_result__isset {
+  _LabelService_Login_result__isset() : success(false) {}
+  bool success :1;
+} _LabelService_Login_result__isset;
+
+class LabelService_Login_result {
+ public:
+
+  LabelService_Login_result(const LabelService_Login_result&);
+  LabelService_Login_result& operator=(const LabelService_Login_result&);
+  LabelService_Login_result() {
+  }
+
+  virtual ~LabelService_Login_result() throw();
+  LoginRet success;
+
+  _LabelService_Login_result__isset __isset;
+
+  void __set_success(const LoginRet& val);
+
+  bool operator == (const LabelService_Login_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_Login_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_Login_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_Login_presult__isset {
+  _LabelService_Login_presult__isset() : success(false) {}
+  bool success :1;
+} _LabelService_Login_presult__isset;
+
+class LabelService_Login_presult {
+ public:
+
+
+  virtual ~LabelService_Login_presult() throw();
+  LoginRet* success;
+
+  _LabelService_Login_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
 class LabelServiceClient : virtual public LabelServiceIf {
  public:
   LabelServiceClient(boost::shared_ptr< ::apache::thrift::protocol::TProtocol> prot) {
@@ -1032,30 +1377,39 @@ class LabelServiceClient : virtual public LabelServiceIf {
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc);
-  void send_QueryUnlabeledPic(const std::string& user, const int32_t index, const QueryCondition& qc);
+  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc);
+  void send_QueryUnlabeledPic(const std::string& token, const int32_t index, const QueryCondition& qc);
   void recv_QueryUnlabeledPic(QueryUnlabeledRet& _return);
-  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc);
-  void send_QueryPicLabeledByOthers(const std::string& user, const int32_t index, const QueryCondition& qc);
+  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc);
+  void send_QueryPicLabeledByOthers(const std::string& token, const int32_t index, const QueryCondition& qc);
   void recv_QueryPicLabeledByOthers(QueryLabeledRet& _return);
-  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc);
-  void send_QueryLabeledPic(const std::string& user, const int32_t index, const QueryCondition& qc);
+  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc);
+  void send_QueryLabeledPic(const std::string& token, const int32_t index, const QueryCondition& qc);
   void recv_QueryLabeledPic(QueryLabeledRet& _return);
-  void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id);
-  void send_QueryPicById(const std::string& user, const int32_t pic_id);
+  void QueryPicById(QueryByIdRet& _return, const std::string& token, const int32_t pic_id);
+  void send_QueryPicById(const std::string& token, const int32_t pic_id);
   void recv_QueryPicById(QueryByIdRet& _return);
+  void QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user);
+  void send_QueryPicByUserName(const std::string& token, const std::string& user);
+  void recv_QueryPicByUserName(QueryByIdRet& _return);
   void DownloadPic(DownloadRet& _return, const std::string& pic_url);
   void send_DownloadPic(const std::string& pic_url);
   void recv_DownloadPic(DownloadRet& _return);
-  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& userName);
-  void send_InsertToDb(const std::string& poseInfo, const int32_t pic_id, const std::string& userName);
+  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& token);
+  void send_InsertToDb(const std::string& poseInfo, const int32_t pic_id, const std::string& token);
   void recv_InsertToDb(ReturnVals& _return);
-  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& userName, const bool type);
-  void send_InvalidatePicture(const int32_t pic_id, const std::string& userName, const bool type);
+  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& token, const bool type);
+  void send_InvalidatePicture(const int32_t pic_id, const std::string& token, const bool type);
   void recv_InvalidatePicture(ReturnVals& _return);
-  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& userName);
-  void send_QueryLabeledPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& userName);
+  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token);
+  void send_QueryLabeledPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& token);
   void recv_QueryLabeledPoseData(LabeledPoseDataRet& _return);
+  void Register(ReturnVals& _return, const std::string& user, const std::string& passwd);
+  void send_Register(const std::string& user, const std::string& passwd);
+  void recv_Register(ReturnVals& _return);
+  void Login(LoginRet& _return, const std::string& user, const std::string& passwd);
+  void send_Login(const std::string& user, const std::string& passwd);
+  void recv_Login(LoginRet& _return);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -1075,10 +1429,13 @@ class LabelServiceProcessor : public ::apache::thrift::TDispatchProcessor {
   void process_QueryPicLabeledByOthers(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_QueryLabeledPic(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_QueryPicById(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_QueryPicByUserName(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_DownloadPic(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_InsertToDb(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_InvalidatePicture(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_QueryLabeledPoseData(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_Register(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_Login(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   LabelServiceProcessor(boost::shared_ptr<LabelServiceIf> iface) :
     iface_(iface) {
@@ -1086,10 +1443,13 @@ class LabelServiceProcessor : public ::apache::thrift::TDispatchProcessor {
     processMap_["QueryPicLabeledByOthers"] = &LabelServiceProcessor::process_QueryPicLabeledByOthers;
     processMap_["QueryLabeledPic"] = &LabelServiceProcessor::process_QueryLabeledPic;
     processMap_["QueryPicById"] = &LabelServiceProcessor::process_QueryPicById;
+    processMap_["QueryPicByUserName"] = &LabelServiceProcessor::process_QueryPicByUserName;
     processMap_["DownloadPic"] = &LabelServiceProcessor::process_DownloadPic;
     processMap_["InsertToDb"] = &LabelServiceProcessor::process_InsertToDb;
     processMap_["InvalidatePicture"] = &LabelServiceProcessor::process_InvalidatePicture;
     processMap_["QueryLabeledPoseData"] = &LabelServiceProcessor::process_QueryLabeledPoseData;
+    processMap_["Register"] = &LabelServiceProcessor::process_Register;
+    processMap_["Login"] = &LabelServiceProcessor::process_Login;
   }
 
   virtual ~LabelServiceProcessor() {}
@@ -1118,43 +1478,53 @@ class LabelServiceMultiface : virtual public LabelServiceIf {
     ifaces_.push_back(iface);
   }
  public:
-  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->QueryUnlabeledPic(_return, user, index, qc);
+      ifaces_[i]->QueryUnlabeledPic(_return, token, index, qc);
     }
-    ifaces_[i]->QueryUnlabeledPic(_return, user, index, qc);
+    ifaces_[i]->QueryUnlabeledPic(_return, token, index, qc);
     return;
   }
 
-  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->QueryPicLabeledByOthers(_return, user, index, qc);
+      ifaces_[i]->QueryPicLabeledByOthers(_return, token, index, qc);
     }
-    ifaces_[i]->QueryPicLabeledByOthers(_return, user, index, qc);
+    ifaces_[i]->QueryPicLabeledByOthers(_return, token, index, qc);
     return;
   }
 
-  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc) {
+  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->QueryLabeledPic(_return, user, index, qc);
+      ifaces_[i]->QueryLabeledPic(_return, token, index, qc);
     }
-    ifaces_[i]->QueryLabeledPic(_return, user, index, qc);
+    ifaces_[i]->QueryLabeledPic(_return, token, index, qc);
     return;
   }
 
-  void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id) {
+  void QueryPicById(QueryByIdRet& _return, const std::string& token, const int32_t pic_id) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->QueryPicById(_return, user, pic_id);
+      ifaces_[i]->QueryPicById(_return, token, pic_id);
     }
-    ifaces_[i]->QueryPicById(_return, user, pic_id);
+    ifaces_[i]->QueryPicById(_return, token, pic_id);
+    return;
+  }
+
+  void QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->QueryPicByUserName(_return, token, user);
+    }
+    ifaces_[i]->QueryPicByUserName(_return, token, user);
     return;
   }
 
@@ -1168,33 +1538,53 @@ class LabelServiceMultiface : virtual public LabelServiceIf {
     return;
   }
 
-  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& userName) {
+  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& token) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->InsertToDb(_return, poseInfo, pic_id, userName);
+      ifaces_[i]->InsertToDb(_return, poseInfo, pic_id, token);
     }
-    ifaces_[i]->InsertToDb(_return, poseInfo, pic_id, userName);
+    ifaces_[i]->InsertToDb(_return, poseInfo, pic_id, token);
     return;
   }
 
-  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& userName, const bool type) {
+  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& token, const bool type) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->InvalidatePicture(_return, pic_id, userName, type);
+      ifaces_[i]->InvalidatePicture(_return, pic_id, token, type);
     }
-    ifaces_[i]->InvalidatePicture(_return, pic_id, userName, type);
+    ifaces_[i]->InvalidatePicture(_return, pic_id, token, type);
     return;
   }
 
-  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& userName) {
+  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->QueryLabeledPoseData(_return, pic_id, pic_url, userName);
+      ifaces_[i]->QueryLabeledPoseData(_return, pic_id, pic_url, token);
     }
-    ifaces_[i]->QueryLabeledPoseData(_return, pic_id, pic_url, userName);
+    ifaces_[i]->QueryLabeledPoseData(_return, pic_id, pic_url, token);
+    return;
+  }
+
+  void Register(ReturnVals& _return, const std::string& user, const std::string& passwd) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->Register(_return, user, passwd);
+    }
+    ifaces_[i]->Register(_return, user, passwd);
+    return;
+  }
+
+  void Login(LoginRet& _return, const std::string& user, const std::string& passwd) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->Login(_return, user, passwd);
+    }
+    ifaces_[i]->Login(_return, user, passwd);
     return;
   }
 
@@ -1228,30 +1618,39 @@ class LabelServiceConcurrentClient : virtual public LabelServiceIf {
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc);
-  int32_t send_QueryUnlabeledPic(const std::string& user, const int32_t index, const QueryCondition& qc);
+  void QueryUnlabeledPic(QueryUnlabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc);
+  int32_t send_QueryUnlabeledPic(const std::string& token, const int32_t index, const QueryCondition& qc);
   void recv_QueryUnlabeledPic(QueryUnlabeledRet& _return, const int32_t seqid);
-  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc);
-  int32_t send_QueryPicLabeledByOthers(const std::string& user, const int32_t index, const QueryCondition& qc);
+  void QueryPicLabeledByOthers(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc);
+  int32_t send_QueryPicLabeledByOthers(const std::string& token, const int32_t index, const QueryCondition& qc);
   void recv_QueryPicLabeledByOthers(QueryLabeledRet& _return, const int32_t seqid);
-  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& user, const int32_t index, const QueryCondition& qc);
-  int32_t send_QueryLabeledPic(const std::string& user, const int32_t index, const QueryCondition& qc);
+  void QueryLabeledPic(QueryLabeledRet& _return, const std::string& token, const int32_t index, const QueryCondition& qc);
+  int32_t send_QueryLabeledPic(const std::string& token, const int32_t index, const QueryCondition& qc);
   void recv_QueryLabeledPic(QueryLabeledRet& _return, const int32_t seqid);
-  void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id);
-  int32_t send_QueryPicById(const std::string& user, const int32_t pic_id);
+  void QueryPicById(QueryByIdRet& _return, const std::string& token, const int32_t pic_id);
+  int32_t send_QueryPicById(const std::string& token, const int32_t pic_id);
   void recv_QueryPicById(QueryByIdRet& _return, const int32_t seqid);
+  void QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user);
+  int32_t send_QueryPicByUserName(const std::string& token, const std::string& user);
+  void recv_QueryPicByUserName(QueryByIdRet& _return, const int32_t seqid);
   void DownloadPic(DownloadRet& _return, const std::string& pic_url);
   int32_t send_DownloadPic(const std::string& pic_url);
   void recv_DownloadPic(DownloadRet& _return, const int32_t seqid);
-  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& userName);
-  int32_t send_InsertToDb(const std::string& poseInfo, const int32_t pic_id, const std::string& userName);
+  void InsertToDb(ReturnVals& _return, const std::string& poseInfo, const int32_t pic_id, const std::string& token);
+  int32_t send_InsertToDb(const std::string& poseInfo, const int32_t pic_id, const std::string& token);
   void recv_InsertToDb(ReturnVals& _return, const int32_t seqid);
-  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& userName, const bool type);
-  int32_t send_InvalidatePicture(const int32_t pic_id, const std::string& userName, const bool type);
+  void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& token, const bool type);
+  int32_t send_InvalidatePicture(const int32_t pic_id, const std::string& token, const bool type);
   void recv_InvalidatePicture(ReturnVals& _return, const int32_t seqid);
-  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& userName);
-  int32_t send_QueryLabeledPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& userName);
+  void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token);
+  int32_t send_QueryLabeledPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& token);
   void recv_QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t seqid);
+  void Register(ReturnVals& _return, const std::string& user, const std::string& passwd);
+  int32_t send_Register(const std::string& user, const std::string& passwd);
+  void recv_Register(ReturnVals& _return, const int32_t seqid);
+  void Login(LoginRet& _return, const std::string& user, const std::string& passwd);
+  int32_t send_Login(const std::string& user, const std::string& passwd);
+  void recv_Login(LoginRet& _return, const int32_t seqid);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;

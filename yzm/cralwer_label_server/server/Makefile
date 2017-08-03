@@ -25,6 +25,7 @@ LIBS =  -L../3party/poco/lib  -L/usr/local/mysql/lib  -lpthread  -lPocoFoundatio
 -L../3party/dev_opencv        \
 -L../3party/opencv2.4.9/lib   \
 -lopencv_core  -lopencv_highgui  -lopencv_imgproc   \
+-luuid 	
 
 CFLAGS += -DTIXML_USE_STL -w -std=c++11 -g  
 all: $(TARGET)  

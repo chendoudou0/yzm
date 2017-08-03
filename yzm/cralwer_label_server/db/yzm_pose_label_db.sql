@@ -62,5 +62,20 @@ CREATE TABLE `t_user` (
   KEY `user_name_index` (`Fuser_name`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `t_crawling_history`;
+CREATE TABLE `t_crawling_history` (
+  `Fid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `Fkey`  varchar(64)  NOT NULL  DEFAULT '',
+  `Ftag`  varchar(64)  NOT NULL  DEFAULT '',
+  `Ftotal_sum` int(10)  NOT NULL DEFAULT '0' ,
+  `Fdb_sum`    int(10)  NOT NULL DEFAULT '0' ,
+  `Ftime_begin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `Ftime_end`   timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `Fcreate_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',          
+  `Fupdate_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Fid`),
+  KEY `key_index` (`Fkey`) USING BTREE       
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 

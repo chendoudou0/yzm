@@ -28,6 +28,8 @@ class CrawlerStatus;
 
 class CrawlerStatusRet;
 
+class CrawlingResult;
+
 class QueryedPicInfo;
 
 class QueryUnlabeledRet;
@@ -41,6 +43,8 @@ class DownloadRet;
 class LabeledPoseDataRet;
 
 class QueryCondition;
+
+class LoginRet;
 
 typedef struct _ReturnVals__isset {
   _ReturnVals__isset() : code(true), msg(false) {}
@@ -91,12 +95,14 @@ void swap(ReturnVals &a, ReturnVals &b);
 std::ostream& operator<<(std::ostream& out, const ReturnVals& obj);
 
 typedef struct _PicInfo__isset {
-  _PicInfo__isset() : oriBin(false), md5(false), key(false), tag(false), filename(false) {}
+  _PicInfo__isset() : oriBin(false), filename(false), md5(false), key(false), tag(false), ori_url(false), website(false) {}
   bool oriBin :1;
+  bool filename :1;
   bool md5 :1;
   bool key :1;
   bool tag :1;
-  bool filename :1;
+  bool ori_url :1;
+  bool website :1;
 } _PicInfo__isset;
 
 class PicInfo : public virtual ::apache::thrift::TBase {
@@ -104,19 +110,23 @@ class PicInfo : public virtual ::apache::thrift::TBase {
 
   PicInfo(const PicInfo&);
   PicInfo& operator=(const PicInfo&);
-  PicInfo() : oriBin(), md5(), key(), tag(), filename() {
+  PicInfo() : oriBin(), filename(), md5(), key(), tag(), ori_url(), website() {
   }
 
   virtual ~PicInfo() throw();
   std::string oriBin;
+  std::string filename;
   std::string md5;
   std::string key;
   std::string tag;
-  std::string filename;
+  std::string ori_url;
+  std::string website;
 
   _PicInfo__isset __isset;
 
   void __set_oriBin(const std::string& val);
+
+  void __set_filename(const std::string& val);
 
   void __set_md5(const std::string& val);
 
@@ -124,11 +134,15 @@ class PicInfo : public virtual ::apache::thrift::TBase {
 
   void __set_tag(const std::string& val);
 
-  void __set_filename(const std::string& val);
+  void __set_ori_url(const std::string& val);
+
+  void __set_website(const std::string& val);
 
   bool operator == (const PicInfo & rhs) const
   {
     if (!(oriBin == rhs.oriBin))
+      return false;
+    if (!(filename == rhs.filename))
       return false;
     if (!(md5 == rhs.md5))
       return false;
@@ -136,7 +150,9 @@ class PicInfo : public virtual ::apache::thrift::TBase {
       return false;
     if (!(tag == rhs.tag))
       return false;
-    if (!(filename == rhs.filename))
+    if (!(ori_url == rhs.ori_url))
+      return false;
+    if (!(website == rhs.website))
       return false;
     return true;
   }
@@ -257,6 +273,72 @@ class CrawlerStatusRet : public virtual ::apache::thrift::TBase {
 void swap(CrawlerStatusRet &a, CrawlerStatusRet &b);
 
 std::ostream& operator<<(std::ostream& out, const CrawlerStatusRet& obj);
+
+typedef struct _CrawlingResult__isset {
+  _CrawlingResult__isset() : key(false), tag(false), sumTotal(false), tBegin(false), tEnd(false) {}
+  bool key :1;
+  bool tag :1;
+  bool sumTotal :1;
+  bool tBegin :1;
+  bool tEnd :1;
+} _CrawlingResult__isset;
+
+class CrawlingResult : public virtual ::apache::thrift::TBase {
+ public:
+
+  CrawlingResult(const CrawlingResult&);
+  CrawlingResult& operator=(const CrawlingResult&);
+  CrawlingResult() : key(), tag(), sumTotal(0), tBegin(), tEnd() {
+  }
+
+  virtual ~CrawlingResult() throw();
+  std::string key;
+  std::string tag;
+  int32_t sumTotal;
+  std::string tBegin;
+  std::string tEnd;
+
+  _CrawlingResult__isset __isset;
+
+  void __set_key(const std::string& val);
+
+  void __set_tag(const std::string& val);
+
+  void __set_sumTotal(const int32_t val);
+
+  void __set_tBegin(const std::string& val);
+
+  void __set_tEnd(const std::string& val);
+
+  bool operator == (const CrawlingResult & rhs) const
+  {
+    if (!(key == rhs.key))
+      return false;
+    if (!(tag == rhs.tag))
+      return false;
+    if (!(sumTotal == rhs.sumTotal))
+      return false;
+    if (!(tBegin == rhs.tBegin))
+      return false;
+    if (!(tEnd == rhs.tEnd))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlingResult &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlingResult & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(CrawlingResult &a, CrawlingResult &b);
+
+std::ostream& operator<<(std::ostream& out, const CrawlingResult& obj);
 
 typedef struct _QueryedPicInfo__isset {
   _QueryedPicInfo__isset() : pic_id(true), pic_url(false), tag(false), pose_type(false), create_time(false), labeledCount(false), lastLabeledUser(false), screenshot_bin(false) {}
@@ -707,6 +789,66 @@ class QueryCondition : public virtual ::apache::thrift::TBase {
 void swap(QueryCondition &a, QueryCondition &b);
 
 std::ostream& operator<<(std::ostream& out, const QueryCondition& obj);
+
+typedef struct _LoginRet__isset {
+  _LoginRet__isset() : code(true), msg(false), role_id(false), token(false) {}
+  bool code :1;
+  bool msg :1;
+  bool role_id :1;
+  bool token :1;
+} _LoginRet__isset;
+
+class LoginRet : public virtual ::apache::thrift::TBase {
+ public:
+
+  LoginRet(const LoginRet&);
+  LoginRet& operator=(const LoginRet&);
+  LoginRet() : code(0), msg(), role_id(0), token() {
+  }
+
+  virtual ~LoginRet() throw();
+  int32_t code;
+  std::string msg;
+  int32_t role_id;
+  std::string token;
+
+  _LoginRet__isset __isset;
+
+  void __set_code(const int32_t val);
+
+  void __set_msg(const std::string& val);
+
+  void __set_role_id(const int32_t val);
+
+  void __set_token(const std::string& val);
+
+  bool operator == (const LoginRet & rhs) const
+  {
+    if (!(code == rhs.code))
+      return false;
+    if (!(msg == rhs.msg))
+      return false;
+    if (!(role_id == rhs.role_id))
+      return false;
+    if (!(token == rhs.token))
+      return false;
+    return true;
+  }
+  bool operator != (const LoginRet &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LoginRet & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(LoginRet &a, LoginRet &b);
+
+std::ostream& operator<<(std::ostream& out, const LoginRet& obj);
 
 }} // namespace
 

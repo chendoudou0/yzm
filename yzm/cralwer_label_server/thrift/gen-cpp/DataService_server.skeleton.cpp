@@ -32,6 +32,11 @@ class DataServiceHandler : virtual public DataServiceIf {
     printf("PicUpload\n");
   }
 
+  void UploadCrawlingResult(ReturnVals& _return, const CrawlingResult& cs) {
+    // Your implementation goes here
+    printf("UploadCrawlingResult\n");
+  }
+
 };
 
 int main(int argc, char **argv) {

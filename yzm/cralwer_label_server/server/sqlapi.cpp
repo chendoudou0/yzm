@@ -235,9 +235,9 @@ bool CMySQL::FetchResultMap(SqlResultSet & objMap)
 
 		for(int i = 0; i < iNumberFields; i++)
 		{
-			objMap[pField[i].name] = row[i];
+			objMap[pField[i].name] = row[i];         
 		}
-		ret = true;
+		ret = true;          
 
 	}while(0);
 	

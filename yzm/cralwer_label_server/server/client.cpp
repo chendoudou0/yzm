@@ -7,6 +7,7 @@
 #include<fstream>
 #include<sstream>
 #include<glog/logging.h> 
+#include <uuid/uuid.h> 
   
 using namespace apache::thrift;  
 using namespace apache::thrift::protocol;  
@@ -16,6 +17,20 @@ using boost::shared_ptr;
 using namespace  ::server::pose_label;
   
 int main(int argc, char **argv) { 
+
+uuid_t uu; 
+char  buf[1024] = {0};
+uuid_generate( uu ); 
+uuid_unparse(uu, buf);
+
+LOG(INFO) << buf;
+int i; 
+for(i=0; i< 16;i++) 
+{ 
+    printf("%x ",uu[i]); 
+} 
+printf("\n"); 
+
 
     
 /*
@@ -70,8 +85,8 @@ int main(int argc, char **argv) {
     QueryCondition qc;
     qc.pose_type = "";
     qc.tag = "";
-    qc.tBegin = "2017-1-1 10:10:10";
-    qc.tEnd = "2017-7-30 10:10:10";
+    qc.tBegin = "2017-7-19 10:10:10";
+    qc.tEnd = "2017-7-29 10:10:10";   
     client_.QueryUnlabeledPic(qRet, "shiyl", 0, qc);  
 
     if(qRet.code != 0){
@@ -85,6 +100,8 @@ int main(int argc, char **argv) {
             for(auto&pic : qRet.picVec ){
             
                 LOG(INFO) << "pic_url :" << pic.pic_url  << "bin length :  " << pic.screenshot_bin.length();
+                LOG(INFO) << "create_time  :" << pic.create_time;
+                 LOG(INFO) << "update_user  :" << pic.lastLabeledUser;
             }
         }
     }   
@@ -126,6 +143,8 @@ int main(int argc, char **argv) {
     }
 
 
+
+
     QueryByIdRet qbRet;
     client_.QueryPicById(qbRet, "chenzx", 120);  
 
@@ -137,20 +156,77 @@ int main(int argc, char **argv) {
       
         LOG(INFO) <<" pic_url : "  << qbRet.pic.pic_url;
     }
+
+    ReturnVals  rRet;
+    client_.Register(rRet, "cccccc", "ddddddddddd");
+    if(rRet.code == 0){
+         LOG(INFO) << "Register success ";
+    }else{
+        LOG(INFO) << "Register failed ";
+    }
+
+    LoginRet  loginRet;
+    client_.Login(loginRet, "cccccc", "ddddddddddd");
+    if(rRet.code == 0){
+         LOG(INFO) << "login success ";
+         LOG(INFO) << "token  "<<loginRet.token;
+         LOG(INFO) << "role_id  "<<loginRet.role_id;
+    }else{
+        LOG(INFO) << "login failed ";
+    }
+   
+    client_.QueryUnlabeledPic(qRet, loginRet.token, 0, qc);  
+
+    if(qRet.code != 0){
+        LOG(ERROR) << "QueryUnlabeledPic  failed ";
+
+    }
+    else{
+        LOG(INFO) << "QueryUnlabeledPic success ";
+        LOG(INFO) << "vector size :  " <<qRet.picVec.size();
+        if(qRet.picVec.size() > 0){
+            for(auto&pic : qRet.picVec ){
+            
+                LOG(INFO) << "pic_url :" << pic.pic_url  << "bin length :  " << pic.screenshot_bin.length();
+                LOG(INFO) << "create_time  :" << pic.create_time;
+                 LOG(INFO) << "update_user  :" << pic.lastLabeledUser;
+            }
+        }
+    } 
+
+    LabeledPoseDataRet  lpRet;
+    client_.QueryLabeledPoseData(lpRet, 40, "../pic/e2356db743b6a5de82bc1aba50fd0d60.jpeg", "chenzx");
+    if(lpRet.code == 0){
+        LOG(INFO) <<"QueryLabeledPoseData  success ";
+        LOG(INFO) <<"QueryLabeledPoseData  : " << lpRet.poseData;
+    }else{
+          LOG(INFO) <<"QueryLabeledPoseData  failed ";
+    } 
+    
+    QueryLabeledRet  qbuRet;
+    client_.QueryPicByUserName(qbuRet, "123456", "aoj", 0, qc);  
+
+    if(qbuRet.code != 0){
+        LOG(ERROR) << "QueryPicByUserName  failed ";
+       
+    }
+    else{
+        LOG(INFO) << "QueryPicByUserName success ";
+        LOG(INFO) << "vector size :  " <<  qbuRet.picVec.size();
+        if(qbuRet.picVec.size() > 1){
+            for(auto&pic : qbuRet.picVec ){
+                 LOG(INFO) <<"pic_id : "  << pic.pic_id;
+            }
+        }
+    } 
+
+/*
     // ReturnVals ivRet;
     // client_.InvalidatePicture(ivRet, 69, "chenzx", true); 
     // if(ivRet.code == 0){
     //     LOG(INFO) <<"InvalidatePicture  success ";
     // }else{
     //     LOG(INFO) <<"InvalidatePicture  failed ";
-    // }
-    // LabeledPoseDataRet  lpRet;
-    // client_.QueryLabeledPoseData(lpRet, 40, "../pic/e2356db743b6a5de82bc1aba50fd0d60.jpeg", "chenzx");
-    // if(lpRet.code == 0){
-    //     LOG(INFO) <<"QueryLabeledPoseData  success ";
-    //     LOG(INFO) <<"QueryLabeledPoseData  : " << lpRet.poseData;
-    // }else{
-    //       LOG(INFO) <<"QueryLabeledPoseData  failed ";
     // }
 
     // DownloadRet dRet;
@@ -160,14 +236,14 @@ int main(int argc, char **argv) {
     // LOG(INFO) << "file length :  "   << dRet.bin.length();
     // LOG(INFO) << "pic id :  "   << dRet.pic_id;
 
-    // ReturnVals  iRet;
-    // client_.InsertToDb(iRet, "poseInfo", 42, "chenzixun");
-    // if(iRet.code == 0){
-    //      LOG(INFO) << "InsertToDb  success  "  ;
-    // }
-    // else{
-    //     LOG(INFO) << "InsertToDb  failed  "  ;
-    // }
+    ReturnVals  iRet;
+    client_.InsertToDb(iRet, "poseInfo", 42, "chenzixun");
+    if(iRet.code == 0){
+         LOG(INFO) << "InsertToDb  success  "  ;
+    }
+    else{
+        LOG(INFO) << "InsertToDb  failed  "  ;
+    }
 
     LOG(INFO) << "client end ";
    /*

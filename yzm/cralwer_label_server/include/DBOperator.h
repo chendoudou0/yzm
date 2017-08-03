@@ -28,16 +28,23 @@ public:
 	int  QueryPicByURL(const std::string& url, SqlResultSet &objOutMap);
 	int  AddPicture(const ::server::pose_label::PicInfo&   pic, string url);
 	bool UpdatePicPoseDate(const std::string& url, string& str2dPose, string& str3dPose);
-	bool AddLabeledDate(int picId,const std::string user,const std::string poseDate);
-	bool QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page, const QueryCondition& qc);
-	bool QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page, const QueryCondition& qc);
-	bool QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  std::string user, int index, int& page, const QueryCondition& qc);
-	bool QueryPicById(SqlMapVector &objOutMapVector, int pic_id, const std::string user);
-	int  InvalidatePicture(int  id, const std::string user, const bool type);
-	bool QueryLabeledPoseData(SqlResultSet& oMap, int pic_id, const std::string user);
-	
+	bool AddLabeledDate(int picId,const std::string token,const std::string poseDate);
+	bool QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const  std::string token, int index, int& page, const QueryCondition& qc);
+	bool QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std::string token, int index, int& page, const QueryCondition& qc);
+	bool QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  std::string token, int index, int& page, const QueryCondition& qc);
+	bool QueryPicById(SqlMapVector &objOutMapVector, int pic_id, const std::string token);
+	int  QueryPicByUser(SqlMapVector &objOutMapVector, const std::string token, const std::string user, int index, int& page, const QueryCondition& qc);
+	int  InvalidatePicture(int  id, const std::string token, const bool type);
+	bool QueryLabeledPoseData(SqlResultSet& oMap, int pic_id,   const std::string token);
+	bool QueryLastLabeledPoseData(SqlResultSet& oMap, int pic_id,   const std::string user);
+	bool GetUserByToken(const std::string& token, std::string& user, int& roleId);
+	int  Register(const std::string& user, const std::string& passWd);
+	int  Login(std::string& token, int& role_id, const std::string& user, const std::string& passWd);
+	bool QueryCrawlingHistory(SqlMapVector &objOutMapVector,  const HistoryQueryCondition& qc);
+	bool AddCrawlingResult(const CrawlingResult&  cs, int dbSum);
+	bool QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryConditions& qc, int index);
 private:   
-	std::shared_ptr<CMySQL>  _ptrMysql;
+	std::shared_ptr<CMySQL>  _ptrMysql;   
  
 };
 

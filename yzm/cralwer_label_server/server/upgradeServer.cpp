@@ -384,7 +384,6 @@ class DataServiceHandler : virtual public DataServiceIf {
  public:
   DataServiceHandler() {
     // Your initialization goes here
-
   }
 
   void UploadRequest(ReturnVals& _return, const std::string& md5) {
@@ -417,11 +416,12 @@ class DataServiceHandler : virtual public DataServiceIf {
 		std::ofstream oriPic(oriUrl.c_str() , std::ofstream::binary);
 		oriPic.write(pic.oriBin.c_str(), pic.oriBin.length());
 		oriPic.close();
-		if(percent == 0 || percent == 1)
-		{
-			gDbPic = 0;  
+		if(percent == 0){
 			gTotalPic = 0;
-		}else {gTotalPic = sumTotal;}
+			gDbPic    = 0;
+		}else{
+			gTotalPic = sumTotal;
+		}    
 
 		string inflateUrl = path + pic.md5 +  "600*800" + tail;
 		cv::Mat src = cv::imread(oriUrl); 
@@ -436,7 +436,7 @@ class DataServiceHandler : virtual public DataServiceIf {
 			if(errorType != "thrift_error"){
 				MoveFile(oriUrl, errorUrl);
 			}else{
-				sleep(8);
+				sleep(5);
 			}
 			break;
 		}
@@ -453,7 +453,26 @@ class DataServiceHandler : virtual public DataServiceIf {
 		gDbPic++;
 		_return.code = 0;
 	}while(0);
+
 	LOG(INFO) << "PicUpload end , ret code : " << _return.code;
+  }
+
+   void UploadCrawlingResult(QueryLabeledRet& _return, const CrawlingResult& cs) {
+	LOG(INFO) << "UploadCrawlingResult  begin";
+	_return.code = -1;
+	do{
+		if(!gPtrDbpool->GetDbOper()->AddCrawlingResult(cs,  gDbPic)){
+			break;
+		}
+
+		_return.code = 0;   
+		gDbPic = 0;
+		gTotalPic = 0;
+
+	}while(0);                     
+	
+	LOG(INFO) << "UploadCrawlingResult end , ret code : " << _return.code;
+    return;
   }
 
 };
@@ -612,7 +631,7 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
 
 		connected_ = true;
 		LOG(INFO) << "connect  Crawler  success";
-		return true;
+		return true;  
 
 	}
 
@@ -690,7 +709,7 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 			ss << pic["label_count"];
 			ss >> count;
 			picInfo.labeledCount = 5 - count;
-			picInfo.lastLabeledUser = "";
+			picInfo.lastLabeledUser = pic["update_user"];
 			picInfo.screenshot_bin = screenshot_bin;
 			retVec.push_back(picInfo);
 		 }
@@ -777,6 +796,37 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 
   }
 
+  void QueryPicByUserName(QueryLabeledRet& _return, const std::string& token, const std::string& user, const int32_t index, const QueryCondition& qc){
+	   _return.code = -1;
+	  do{
+		 LOG(INFO) << "QueryPicByUserName begin ";
+		 SqlMapVector picVec;
+		 int ret = gPtrDbpool->GetDbOper()->QueryPicByUser(picVec, token, user, index, _return.pageNum, qc);
+		 if(-1 == ret){
+			 _return.msg = "db query failed !"; 
+			 LOG(ERROR) << " db  query failed ";
+			 break;   
+		 }else if(2 == ret){
+			  _return.msg = "user is not admin!"; 
+			  _return.code = 2;
+			 break;  
+		 }
+		 if(picVec.size() == 0){
+			 _return.code = 1;
+			 _return.msg = "no labeled pic !"; 
+			 LOG(ERROR) << " no labeled pic";
+			 break;
+		 }
+
+		 LOG(INFO) << " picVec.size()  "<<picVec.size();
+		 PacketPicVec(_return.picVec, picVec);
+		 _return.code = 0;
+
+	}while(0);
+
+	LOG(INFO) << "QueryPicByUserName end , ret code : " << _return.code;
+  }
+
   void QueryPicById(QueryByIdRet& _return, const std::string& user, const int32_t pic_id) {
 	  _return.code = -1;
 	  do{
@@ -790,6 +840,7 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 		 if(sqlVec.size() == 0){
 			 _return.code = 1;
 			 _return.msg = "no such pic !"; 
+			 _return.pageNum = 0;
 			 LOG(ERROR) << " no such pic ： "<< pic_id;
 			 break;
 		 }
@@ -797,6 +848,7 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 		 PacketPicVec(picVec, sqlVec);
 
 		 _return.pic = picVec[0];
+		 _return.pageNum = 1;
 		 _return.code = 0;
 
 	}while(0);
@@ -851,12 +903,12 @@ class LabelServiceHandler : virtual public LabelServiceIf {
   }
 
 
-   void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& userName) {
+   void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) {
 	LOG(INFO) << "QueryLabeledPoseData begin ";
 	_return.code = -1;
 	do{
 		 SqlResultSet  sqlMap;
-		 if(gPtrDbpool->GetDbOper()->QueryLabeledPoseData(sqlMap, pic_id, userName) != 0){
+		 if(gPtrDbpool->GetDbOper()->QueryLabeledPoseData(sqlMap, pic_id, token) != 0){
 			 _return.msg = "db query failed !";     
 		 }
 		 _return.poseData = sqlMap["Fpose_data"] ;
@@ -890,6 +942,45 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 	LOG(INFO) << "QueryLabeledPoseData end , ret code " << _return.code;
   }
 
+  void QueryLastLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& user) {
+	LOG(INFO) << "QueryLastLabeledPoseData begin ";
+	_return.code = -1;
+	do{
+		 SqlResultSet  sqlMap;
+		 if(gPtrDbpool->GetDbOper()->QueryLastLabeledPoseData(sqlMap, pic_id,  user) != 0){
+			 _return.msg = "db query failed !";     
+		 }
+		 _return.poseData = sqlMap["Fpose_data"] ;
+		//////////////////////
+		int pos;
+		pos = pic_url.find_last_of('.');
+		string tail = pic_url.substr(pos);
+		string inflateUrl =  pic_url.substr(0, pos)  + "600*800"  + tail;
+		cv::Mat src = cv::imread(pic_url);
+		if(src.data == nullptr){
+			 LOG(ERROR) << " pic  "<<pic_url << " not exist";
+			 break;
+		} 
+    	cv::Mat dst = ResizeImg(src, 600, 800);
+		cv::imwrite(inflateUrl, dst); 
+		std::ifstream fin;
+		fin.open(inflateUrl, ifstream::binary);
+		if (!fin.is_open()){        
+			break;
+		}
+		stringstream ss;
+		ss << fin.rdbuf();
+		_return.bin = ss.str();
+		fin.close();
+		remove(inflateUrl.c_str());
+
+		_return.code = 0;
+
+	}while(0);
+
+	LOG(INFO) << "QueryLastLabeledPoseData end , ret code " << _return.code;
+  }
+
   void InvalidatePicture(ReturnVals& _return, const int32_t pic_id, const std::string& userName, const bool  type) {
 	LOG(INFO) << "InvalidatePicture begin ";
 	_return.code = -1;
@@ -912,6 +1003,19 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 		_return.code = -1;
 		_return.msg = "insert into db failed";
 	}
+  }
+
+void Register(ReturnVals&  _return , const std::string&  user , const std::string&  passwd ) {
+	_return.code = gPtrDbpool->GetDbOper()->Register(user, passwd);
+	
+	
+    return;
+  }
+  void Login(LoginRet&  _return , const std::string&  user , const std::string&  passwd ) {
+	_return.code = gPtrDbpool->GetDbOper()->Login(_return.token, _return.role_id, user, passwd);
+	
+	
+    return;
   }
 
 };

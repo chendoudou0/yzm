@@ -23,6 +23,7 @@ class DataServiceIf {
   virtual ~DataServiceIf() {}
   virtual void UploadRequest(ReturnVals& _return, const std::string& md5) = 0;
   virtual void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal) = 0;
+  virtual void UploadCrawlingResult(ReturnVals& _return, const CrawlingResult& cs) = 0;
 };
 
 class DataServiceIfFactory {
@@ -56,6 +57,9 @@ class DataServiceNull : virtual public DataServiceIf {
     return;
   }
   void PicUpload(ReturnVals& /* _return */, const PicInfo& /* pic */, const double /* percent */, const int32_t /* sumTotal */) {
+    return;
+  }
+  void UploadCrawlingResult(ReturnVals& /* _return */, const CrawlingResult& /* cs */) {
     return;
   }
 };
@@ -282,6 +286,110 @@ class DataService_PicUpload_presult {
 
 };
 
+typedef struct _DataService_UploadCrawlingResult_args__isset {
+  _DataService_UploadCrawlingResult_args__isset() : cs(false) {}
+  bool cs :1;
+} _DataService_UploadCrawlingResult_args__isset;
+
+class DataService_UploadCrawlingResult_args {
+ public:
+
+  DataService_UploadCrawlingResult_args(const DataService_UploadCrawlingResult_args&);
+  DataService_UploadCrawlingResult_args& operator=(const DataService_UploadCrawlingResult_args&);
+  DataService_UploadCrawlingResult_args() {
+  }
+
+  virtual ~DataService_UploadCrawlingResult_args() throw();
+  CrawlingResult cs;
+
+  _DataService_UploadCrawlingResult_args__isset __isset;
+
+  void __set_cs(const CrawlingResult& val);
+
+  bool operator == (const DataService_UploadCrawlingResult_args & rhs) const
+  {
+    if (!(cs == rhs.cs))
+      return false;
+    return true;
+  }
+  bool operator != (const DataService_UploadCrawlingResult_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const DataService_UploadCrawlingResult_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class DataService_UploadCrawlingResult_pargs {
+ public:
+
+
+  virtual ~DataService_UploadCrawlingResult_pargs() throw();
+  const CrawlingResult* cs;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _DataService_UploadCrawlingResult_result__isset {
+  _DataService_UploadCrawlingResult_result__isset() : success(false) {}
+  bool success :1;
+} _DataService_UploadCrawlingResult_result__isset;
+
+class DataService_UploadCrawlingResult_result {
+ public:
+
+  DataService_UploadCrawlingResult_result(const DataService_UploadCrawlingResult_result&);
+  DataService_UploadCrawlingResult_result& operator=(const DataService_UploadCrawlingResult_result&);
+  DataService_UploadCrawlingResult_result() {
+  }
+
+  virtual ~DataService_UploadCrawlingResult_result() throw();
+  ReturnVals success;
+
+  _DataService_UploadCrawlingResult_result__isset __isset;
+
+  void __set_success(const ReturnVals& val);
+
+  bool operator == (const DataService_UploadCrawlingResult_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const DataService_UploadCrawlingResult_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const DataService_UploadCrawlingResult_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _DataService_UploadCrawlingResult_presult__isset {
+  _DataService_UploadCrawlingResult_presult__isset() : success(false) {}
+  bool success :1;
+} _DataService_UploadCrawlingResult_presult__isset;
+
+class DataService_UploadCrawlingResult_presult {
+ public:
+
+
+  virtual ~DataService_UploadCrawlingResult_presult() throw();
+  ReturnVals* success;
+
+  _DataService_UploadCrawlingResult_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
 class DataServiceClient : virtual public DataServiceIf {
  public:
   DataServiceClient(boost::shared_ptr< ::apache::thrift::protocol::TProtocol> prot) {
@@ -313,6 +421,9 @@ class DataServiceClient : virtual public DataServiceIf {
   void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal);
   void send_PicUpload(const PicInfo& pic, const double percent, const int32_t sumTotal);
   void recv_PicUpload(ReturnVals& _return);
+  void UploadCrawlingResult(ReturnVals& _return, const CrawlingResult& cs);
+  void send_UploadCrawlingResult(const CrawlingResult& cs);
+  void recv_UploadCrawlingResult(ReturnVals& _return);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -330,11 +441,13 @@ class DataServiceProcessor : public ::apache::thrift::TDispatchProcessor {
   ProcessMap processMap_;
   void process_UploadRequest(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_PicUpload(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_UploadCrawlingResult(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   DataServiceProcessor(boost::shared_ptr<DataServiceIf> iface) :
     iface_(iface) {
     processMap_["UploadRequest"] = &DataServiceProcessor::process_UploadRequest;
     processMap_["PicUpload"] = &DataServiceProcessor::process_PicUpload;
+    processMap_["UploadCrawlingResult"] = &DataServiceProcessor::process_UploadCrawlingResult;
   }
 
   virtual ~DataServiceProcessor() {}
@@ -383,6 +496,16 @@ class DataServiceMultiface : virtual public DataServiceIf {
     return;
   }
 
+  void UploadCrawlingResult(ReturnVals& _return, const CrawlingResult& cs) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->UploadCrawlingResult(_return, cs);
+    }
+    ifaces_[i]->UploadCrawlingResult(_return, cs);
+    return;
+  }
+
 };
 
 // The 'concurrent' client is a thread safe client that correctly handles
@@ -419,6 +542,9 @@ class DataServiceConcurrentClient : virtual public DataServiceIf {
   void PicUpload(ReturnVals& _return, const PicInfo& pic, const double percent, const int32_t sumTotal);
   int32_t send_PicUpload(const PicInfo& pic, const double percent, const int32_t sumTotal);
   void recv_PicUpload(ReturnVals& _return, const int32_t seqid);
+  void UploadCrawlingResult(ReturnVals& _return, const CrawlingResult& cs);
+  int32_t send_UploadCrawlingResult(const CrawlingResult& cs);
+  void recv_UploadCrawlingResult(ReturnVals& _return, const int32_t seqid);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
