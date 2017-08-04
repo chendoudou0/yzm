@@ -47,6 +47,21 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
     printf("stop\n");
   }
 
+  void QueryCrawlingHistory(CrawlerHistoryRet& _return, const HistoryQueryCondition& qc) {
+    // Your implementation goes here
+    printf("QueryCrawlingHistory\n");
+  }
+
+  void QueryCrawleredPic(CrawleredPicRet& _return, const QueryConditions& qc, const int32_t index) {
+    // Your implementation goes here
+    printf("QueryCrawleredPic\n");
+  }
+
+  void UpdatePicInfo(ReturnVals& _return, const int32_t pic_id, const std::string& tag, const std::string& pose_type) {
+    // Your implementation goes here
+    printf("UpdatePicInfo\n");
+  }
+
 };
 
 int main(int argc, char **argv) {

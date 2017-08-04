@@ -6,44 +6,44 @@ struct ReturnVals {
   
  struct PicInfo{
     1:binary oriBin,       //图片二进制流
-	2:string filename,     //文件名称
+    2:string filename,     //文件名称
     3:string md5,          //图片MD5
     4:string key,          //爬虫搜索关键字，关键字之间用逗号分隔，中文以UTF-8编码
     5:string tag,          //爬虫搜索标签，关标签之间用逗号分隔，中文以UTF-8编码
     6:string ori_url,     //图片原始地址
-	7:string website,     //图片来源网站
+    7:string website,     //图片来源网站
  }
-struct CrawlerStatus{             
+struct CrawlerStatus{            
     1:i32    totalPicSum,         //爬取图片总数
-    2:i32	 dbPicSum,            //入库图片数目
+    2:i32    dbPicSum,            //入库图片数目
  }
  
 struct CrawlerStatusRet{
     1: i32 code = 0,
     2: string msg,
-	3:CrawlerStatus     crawlerStatus,     //爬虫服务状态
+    3:CrawlerStatus     crawlerStatus,     //爬虫服务状态
  }
  
 struct CrawlingResult{
-    1: string    key,			 //爬取关键字
+    1: string    key,            //爬取关键字
     2: string    tag,           //爬取标签
-	3: i32      sumTotal,     //总共爬取的数量
-	4: string   tBegin,		 //爬取结束时间       格式：2017-07-31 15:35:15
-	5: string   tEnd,        //爬取开始时间		 格式：2017-07-31 15:35:15
+    3: i32      sumTotal,       //总共爬取的数量
+    4: string   tBegin,        //爬取结束时间       格式：2017-07-31 15:35:15
+    5: string   tEnd,          //爬取开始时间      格式：2017-07-31 15:35:15
  }
-
+ 
  struct HistoryQueryCondition{
     1: string key,
     2: string tag,
  }
-
+ 
  struct CrawlerHistory{
-    1: string key,
-    2: string tag,
-    3: i32    total_sum,
-    4: i32    db_sum,
-    5: string time_begin,
-    6: string time_end,
+    1: string  key,             //搜索关键字
+    2: string  tag,             //搜索标签
+    3: i32     total_sum,       //爬取总数量
+    4: i32     db_sum,          //入库数量
+    5: string  time_create,     //历史记录入库时间
+ 
  }
   struct CrawlerHistoryRet{
     1: i32 code = 0,
@@ -58,33 +58,33 @@ struct CrawlingResult{
     5: string tBegin,               //入库开始时间
     6: string tEnd,                 //入库结束时间
 }
-
-
+ 
+ 
  struct QueryedPicInfo{
-    1:i32     pic_id = 0,      
+    1:i32     pic_id = 0,     
     2:string  pic_url,
     3:string  tag,
     4:string  pose_type,
     5:string  create_time,
     6:i32     labeledCount,
     7:string  lastLabeledUser,
-    8:binary  screenshot_bin,  
+    8:binary  screenshot_bin, 
     9:string  key,               //关键字
     10:string website,           //来源网站
 }
-
-struct QueryRet{
-    1:i32 code = 0,      
+ 
+struct CrawleredPicRet{
+    1:i32 code = 0,     
     2:string msg,
     3:i32    pageNum,
-    4:list<QueryedPicInfo>  picVec,      
-} 
-
-
+    4:list<QueryedPicInfo>  picVec,     
+}
+ 
+ 
 service DataService{
     /*
     * 图片传输请求接口
-    * @params 
+    * @params
     * md5 : 图片MD5
     * @code
     * 0允许上传， -1图片已经存在
@@ -96,10 +96,10 @@ service DataService{
     * PicInfo : 图片信息
     * percent ： 爬虫爬取进度(0~1)，结束时发1，开始时发0，PicInfo为空
     * @code
-    * 0代表成功， -1代表失败
+    * 0代表成功， -1代表失败, 1 预处理不通过
     */
     ReturnVals PicUpload(1:PicInfo pic,2:double percent,3:i32 sumTotal),
-  	/*
+    /*
     * 爬取结果上报
     * @params
     * CrawlingStatus : 结果信息
@@ -110,9 +110,9 @@ service DataService{
 }
  
 service CrawlerClientService{
-	 /*
+     /*
     * 图片传输请求接口
-    * @params 
+    * @params
     * md5 : 图片MD5
     * @code
     * 0允许上传， -1图片已经存在
@@ -123,50 +123,61 @@ service CrawlerClientService{
     * @params
     * PicInfo : 图片信息
     * @code
-    * 0代表成功， -1代表失败
+    * 0代表成功， -1代表失败，1 预处理不通过
     */
     ReturnVals PicUpload(1:PicInfo pic),
-	 /*
+     /*
     * 爬虫开始接口
     * @params
     * keyword : 搜索关键字(UTF-8编码)
     * website : 搜索网站 Baidu(UTF-8编码)
     * tag :对应的标签(UTF-8编码)
     * @code
-    * 0代表成功， -1代表失败
-    */   
+    * 0代表成功， -1代表失败，
+    */  
     ReturnVals start(1:string keyword,2:string website,3:string tag),
- 	/*
+    /*
     * 爬虫服务状态查询接口
     * @params  无
     * @code
     * 0代表成功， -1代表失败
-    */   
+    */  
    CrawlerStatusRet  InquireCrawlerStatus(),
-	 /*   爬虫停止
+     /*   爬虫停止
     * @params  无
     * @return
     * ReturnVals.code: 0代表成功， -1代表失败
     * ReturnVals.msg : 描述信息
-    */  
+    */ 
     ReturnVals stop(),
-  /*   查询爬虫历史
+  /*   查询爬虫搜索历史
     * @params  无
     * key : 搜索关键字(UTF-8编码)
     * tag : 搜索标签(UTF-8编码)
-    * ReturnVals.code: 0代表成功， -1代表失败
+    * ReturnVals.code: 0代表成功， -1代表失败， 1 按条件未搜索到爬取历史
     * ReturnVals.msg : 描述信息
-    */ 
+    */
     CrawlerHistoryRet QueryCrawlingHistory(1:HistoryQueryCondition  qc),
-     /*   查询所有入库数据
+     /* 查询所有入库数据
     * @params  无
     * qc : 查询条件
-    * ReturnVals.code: 0代表成功， -1代表失败
+    * index : 记录开始索引
+    * ReturnVals.code: 0代表成功， -1代表失败， 1 按条件未搜索到图片
     * ReturnVals.msg : 描述信息
-    */ 
-     QueryRet QueryAllPic(1:QueryConditions qc),
-
-
+    */
+     CrawleredPicRet QueryCrawleredPic(1:QueryConditions qc, 2:i32  index),
+     /* 更新图片信息
+    * @params 
+    * pic_id : 图片ID号
+    * tag : 标签                
+    * pose_type : 姿态分类
+    * @return
+    * code: 0代表成功， -1代表失败，
+    * msg : 描述信息
+    */
+     ReturnVals UpdatePicInfo(1:i32 pic_id, 2:string tag, 3:string  pose_type),
+ 
+ 
 }
 
 /////////////////////////////////////////////////////

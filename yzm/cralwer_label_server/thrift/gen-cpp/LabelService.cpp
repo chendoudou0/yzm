@@ -910,6 +910,22 @@ uint32_t LabelService_QueryPicByUserName_args::read(::apache::thrift::protocol::
           xfer += iprot->skip(ftype);
         }
         break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->index);
+          this->__isset.index = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 4:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->qc.read(iprot);
+          this->__isset.qc = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -935,6 +951,14 @@ uint32_t LabelService_QueryPicByUserName_args::write(::apache::thrift::protocol:
   xfer += oprot->writeString(this->user);
   xfer += oprot->writeFieldEnd();
 
+  xfer += oprot->writeFieldBegin("index", ::apache::thrift::protocol::T_I32, 3);
+  xfer += oprot->writeI32(this->index);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("qc", ::apache::thrift::protocol::T_STRUCT, 4);
+  xfer += this->qc.write(oprot);
+  xfer += oprot->writeFieldEnd();
+
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -956,6 +980,14 @@ uint32_t LabelService_QueryPicByUserName_pargs::write(::apache::thrift::protocol
 
   xfer += oprot->writeFieldBegin("user", ::apache::thrift::protocol::T_STRING, 2);
   xfer += oprot->writeString((*(this->user)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("index", ::apache::thrift::protocol::T_I32, 3);
+  xfer += oprot->writeI32((*(this->index)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("qc", ::apache::thrift::protocol::T_STRUCT, 4);
+  xfer += (*(this->qc)).write(oprot);
   xfer += oprot->writeFieldEnd();
 
   xfer += oprot->writeFieldStop();
@@ -1916,6 +1948,225 @@ uint32_t LabelService_QueryLabeledPoseData_presult::read(::apache::thrift::proto
 }
 
 
+LabelService_QueryLastLabeledPoseData_args::~LabelService_QueryLastLabeledPoseData_args() throw() {
+}
+
+
+uint32_t LabelService_QueryLastLabeledPoseData_args::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->pic_id);
+          this->__isset.pic_id = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->pic_url);
+          this->__isset.pic_url = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->user);
+          this->__isset.user = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t LabelService_QueryLastLabeledPoseData_args::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("LabelService_QueryLastLabeledPoseData_args");
+
+  xfer += oprot->writeFieldBegin("pic_id", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->pic_id);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("pic_url", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->pic_url);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("user", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString(this->user);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+
+LabelService_QueryLastLabeledPoseData_pargs::~LabelService_QueryLastLabeledPoseData_pargs() throw() {
+}
+
+
+uint32_t LabelService_QueryLastLabeledPoseData_pargs::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("LabelService_QueryLastLabeledPoseData_pargs");
+
+  xfer += oprot->writeFieldBegin("pic_id", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32((*(this->pic_id)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("pic_url", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString((*(this->pic_url)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("user", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString((*(this->user)));
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+
+LabelService_QueryLastLabeledPoseData_result::~LabelService_QueryLastLabeledPoseData_result() throw() {
+}
+
+
+uint32_t LabelService_QueryLastLabeledPoseData_result::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->success.read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t LabelService_QueryLastLabeledPoseData_result::write(::apache::thrift::protocol::TProtocol* oprot) const {
+
+  uint32_t xfer = 0;
+
+  xfer += oprot->writeStructBegin("LabelService_QueryLastLabeledPoseData_result");
+
+  if (this->__isset.success) {
+    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
+    xfer += this->success.write(oprot);
+    xfer += oprot->writeFieldEnd();
+  }
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+
+LabelService_QueryLastLabeledPoseData_presult::~LabelService_QueryLastLabeledPoseData_presult() throw() {
+}
+
+
+uint32_t LabelService_QueryLastLabeledPoseData_presult::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 0:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += (*(this->success)).read(iprot);
+          this->__isset.success = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+
 LabelService_Register_args::~LabelService_Register_args() throw() {
 }
 
@@ -2560,13 +2811,13 @@ void LabelServiceClient::recv_QueryPicById(QueryByIdRet& _return)
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "QueryPicById failed: unknown result");
 }
 
-void LabelServiceClient::QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user)
+void LabelServiceClient::QueryPicByUserName(QueryLabeledRet& _return, const std::string& token, const std::string& user, const int32_t index, const QueryCondition& qc)
 {
-  send_QueryPicByUserName(token, user);
+  send_QueryPicByUserName(token, user, index, qc);
   recv_QueryPicByUserName(_return);
 }
 
-void LabelServiceClient::send_QueryPicByUserName(const std::string& token, const std::string& user)
+void LabelServiceClient::send_QueryPicByUserName(const std::string& token, const std::string& user, const int32_t index, const QueryCondition& qc)
 {
   int32_t cseqid = 0;
   oprot_->writeMessageBegin("QueryPicByUserName", ::apache::thrift::protocol::T_CALL, cseqid);
@@ -2574,6 +2825,8 @@ void LabelServiceClient::send_QueryPicByUserName(const std::string& token, const
   LabelService_QueryPicByUserName_pargs args;
   args.token = &token;
   args.user = &user;
+  args.index = &index;
+  args.qc = &qc;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -2581,7 +2834,7 @@ void LabelServiceClient::send_QueryPicByUserName(const std::string& token, const
   oprot_->getTransport()->flush();
 }
 
-void LabelServiceClient::recv_QueryPicByUserName(QueryByIdRet& _return)
+void LabelServiceClient::recv_QueryPicByUserName(QueryLabeledRet& _return)
 {
 
   int32_t rseqid = 0;
@@ -2855,6 +3108,66 @@ void LabelServiceClient::recv_QueryLabeledPoseData(LabeledPoseDataRet& _return)
     return;
   }
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "QueryLabeledPoseData failed: unknown result");
+}
+
+void LabelServiceClient::QueryLastLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& user)
+{
+  send_QueryLastLabeledPoseData(pic_id, pic_url, user);
+  recv_QueryLastLabeledPoseData(_return);
+}
+
+void LabelServiceClient::send_QueryLastLabeledPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& user)
+{
+  int32_t cseqid = 0;
+  oprot_->writeMessageBegin("QueryLastLabeledPoseData", ::apache::thrift::protocol::T_CALL, cseqid);
+
+  LabelService_QueryLastLabeledPoseData_pargs args;
+  args.pic_id = &pic_id;
+  args.pic_url = &pic_url;
+  args.user = &user;
+  args.write(oprot_);
+
+  oprot_->writeMessageEnd();
+  oprot_->getTransport()->writeEnd();
+  oprot_->getTransport()->flush();
+}
+
+void LabelServiceClient::recv_QueryLastLabeledPoseData(LabeledPoseDataRet& _return)
+{
+
+  int32_t rseqid = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TMessageType mtype;
+
+  iprot_->readMessageBegin(fname, mtype, rseqid);
+  if (mtype == ::apache::thrift::protocol::T_EXCEPTION) {
+    ::apache::thrift::TApplicationException x;
+    x.read(iprot_);
+    iprot_->readMessageEnd();
+    iprot_->getTransport()->readEnd();
+    throw x;
+  }
+  if (mtype != ::apache::thrift::protocol::T_REPLY) {
+    iprot_->skip(::apache::thrift::protocol::T_STRUCT);
+    iprot_->readMessageEnd();
+    iprot_->getTransport()->readEnd();
+  }
+  if (fname.compare("QueryLastLabeledPoseData") != 0) {
+    iprot_->skip(::apache::thrift::protocol::T_STRUCT);
+    iprot_->readMessageEnd();
+    iprot_->getTransport()->readEnd();
+  }
+  LabelService_QueryLastLabeledPoseData_presult result;
+  result.success = &_return;
+  result.read(iprot_);
+  iprot_->readMessageEnd();
+  iprot_->getTransport()->readEnd();
+
+  if (result.__isset.success) {
+    // _return pointer has now been filled
+    return;
+  }
+  throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "QueryLastLabeledPoseData failed: unknown result");
 }
 
 void LabelServiceClient::Register(ReturnVals& _return, const std::string& user, const std::string& passwd)
@@ -3233,7 +3546,7 @@ void LabelServiceProcessor::process_QueryPicByUserName(int32_t seqid, ::apache::
 
   LabelService_QueryPicByUserName_result result;
   try {
-    iface_->QueryPicByUserName(result.success, args.token, args.user);
+    iface_->QueryPicByUserName(result.success, args.token, args.user, args.index, args.qc);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != NULL) {
@@ -3477,6 +3790,60 @@ void LabelServiceProcessor::process_QueryLabeledPoseData(int32_t seqid, ::apache
 
   if (this->eventHandler_.get() != NULL) {
     this->eventHandler_->postWrite(ctx, "LabelService.QueryLabeledPoseData", bytes);
+  }
+}
+
+void LabelServiceProcessor::process_QueryLastLabeledPoseData(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext)
+{
+  void* ctx = NULL;
+  if (this->eventHandler_.get() != NULL) {
+    ctx = this->eventHandler_->getContext("LabelService.QueryLastLabeledPoseData", callContext);
+  }
+  ::apache::thrift::TProcessorContextFreer freer(this->eventHandler_.get(), ctx, "LabelService.QueryLastLabeledPoseData");
+
+  if (this->eventHandler_.get() != NULL) {
+    this->eventHandler_->preRead(ctx, "LabelService.QueryLastLabeledPoseData");
+  }
+
+  LabelService_QueryLastLabeledPoseData_args args;
+  args.read(iprot);
+  iprot->readMessageEnd();
+  uint32_t bytes = iprot->getTransport()->readEnd();
+
+  if (this->eventHandler_.get() != NULL) {
+    this->eventHandler_->postRead(ctx, "LabelService.QueryLastLabeledPoseData", bytes);
+  }
+
+  LabelService_QueryLastLabeledPoseData_result result;
+  try {
+    iface_->QueryLastLabeledPoseData(result.success, args.pic_id, args.pic_url, args.user);
+    result.__isset.success = true;
+  } catch (const std::exception& e) {
+    if (this->eventHandler_.get() != NULL) {
+      this->eventHandler_->handlerError(ctx, "LabelService.QueryLastLabeledPoseData");
+    }
+
+    ::apache::thrift::TApplicationException x(e.what());
+    oprot->writeMessageBegin("QueryLastLabeledPoseData", ::apache::thrift::protocol::T_EXCEPTION, seqid);
+    x.write(oprot);
+    oprot->writeMessageEnd();
+    oprot->getTransport()->writeEnd();
+    oprot->getTransport()->flush();
+    return;
+  }
+
+  if (this->eventHandler_.get() != NULL) {
+    this->eventHandler_->preWrite(ctx, "LabelService.QueryLastLabeledPoseData");
+  }
+
+  oprot->writeMessageBegin("QueryLastLabeledPoseData", ::apache::thrift::protocol::T_REPLY, seqid);
+  result.write(oprot);
+  oprot->writeMessageEnd();
+  bytes = oprot->getTransport()->writeEnd();
+  oprot->getTransport()->flush();
+
+  if (this->eventHandler_.get() != NULL) {
+    this->eventHandler_->postWrite(ctx, "LabelService.QueryLastLabeledPoseData", bytes);
   }
 }
 
@@ -3938,13 +4305,13 @@ void LabelServiceConcurrentClient::recv_QueryPicById(QueryByIdRet& _return, cons
   } // end while(true)
 }
 
-void LabelServiceConcurrentClient::QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user)
+void LabelServiceConcurrentClient::QueryPicByUserName(QueryLabeledRet& _return, const std::string& token, const std::string& user, const int32_t index, const QueryCondition& qc)
 {
-  int32_t seqid = send_QueryPicByUserName(token, user);
+  int32_t seqid = send_QueryPicByUserName(token, user, index, qc);
   recv_QueryPicByUserName(_return, seqid);
 }
 
-int32_t LabelServiceConcurrentClient::send_QueryPicByUserName(const std::string& token, const std::string& user)
+int32_t LabelServiceConcurrentClient::send_QueryPicByUserName(const std::string& token, const std::string& user, const int32_t index, const QueryCondition& qc)
 {
   int32_t cseqid = this->sync_.generateSeqId();
   ::apache::thrift::async::TConcurrentSendSentry sentry(&this->sync_);
@@ -3953,6 +4320,8 @@ int32_t LabelServiceConcurrentClient::send_QueryPicByUserName(const std::string&
   LabelService_QueryPicByUserName_pargs args;
   args.token = &token;
   args.user = &user;
+  args.index = &index;
+  args.qc = &qc;
   args.write(oprot_);
 
   oprot_->writeMessageEnd();
@@ -3963,7 +4332,7 @@ int32_t LabelServiceConcurrentClient::send_QueryPicByUserName(const std::string&
   return cseqid;
 }
 
-void LabelServiceConcurrentClient::recv_QueryPicByUserName(QueryByIdRet& _return, const int32_t seqid)
+void LabelServiceConcurrentClient::recv_QueryPicByUserName(QueryLabeledRet& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -4356,6 +4725,92 @@ void LabelServiceConcurrentClient::recv_QueryLabeledPoseData(LabeledPoseDataRet&
       }
       // in a bad state, don't commit
       throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "QueryLabeledPoseData failed: unknown result");
+    }
+    // seqid != rseqid
+    this->sync_.updatePending(fname, mtype, rseqid);
+
+    // this will temporarily unlock the readMutex, and let other clients get work done
+    this->sync_.waitForWork(seqid);
+  } // end while(true)
+}
+
+void LabelServiceConcurrentClient::QueryLastLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& user)
+{
+  int32_t seqid = send_QueryLastLabeledPoseData(pic_id, pic_url, user);
+  recv_QueryLastLabeledPoseData(_return, seqid);
+}
+
+int32_t LabelServiceConcurrentClient::send_QueryLastLabeledPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& user)
+{
+  int32_t cseqid = this->sync_.generateSeqId();
+  ::apache::thrift::async::TConcurrentSendSentry sentry(&this->sync_);
+  oprot_->writeMessageBegin("QueryLastLabeledPoseData", ::apache::thrift::protocol::T_CALL, cseqid);
+
+  LabelService_QueryLastLabeledPoseData_pargs args;
+  args.pic_id = &pic_id;
+  args.pic_url = &pic_url;
+  args.user = &user;
+  args.write(oprot_);
+
+  oprot_->writeMessageEnd();
+  oprot_->getTransport()->writeEnd();
+  oprot_->getTransport()->flush();
+
+  sentry.commit();
+  return cseqid;
+}
+
+void LabelServiceConcurrentClient::recv_QueryLastLabeledPoseData(LabeledPoseDataRet& _return, const int32_t seqid)
+{
+
+  int32_t rseqid = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TMessageType mtype;
+
+  // the read mutex gets dropped and reacquired as part of waitForWork()
+  // The destructor of this sentry wakes up other clients
+  ::apache::thrift::async::TConcurrentRecvSentry sentry(&this->sync_, seqid);
+
+  while(true) {
+    if(!this->sync_.getPending(fname, mtype, rseqid)) {
+      iprot_->readMessageBegin(fname, mtype, rseqid);
+    }
+    if(seqid == rseqid) {
+      if (mtype == ::apache::thrift::protocol::T_EXCEPTION) {
+        ::apache::thrift::TApplicationException x;
+        x.read(iprot_);
+        iprot_->readMessageEnd();
+        iprot_->getTransport()->readEnd();
+        sentry.commit();
+        throw x;
+      }
+      if (mtype != ::apache::thrift::protocol::T_REPLY) {
+        iprot_->skip(::apache::thrift::protocol::T_STRUCT);
+        iprot_->readMessageEnd();
+        iprot_->getTransport()->readEnd();
+      }
+      if (fname.compare("QueryLastLabeledPoseData") != 0) {
+        iprot_->skip(::apache::thrift::protocol::T_STRUCT);
+        iprot_->readMessageEnd();
+        iprot_->getTransport()->readEnd();
+
+        // in a bad state, don't commit
+        using ::apache::thrift::protocol::TProtocolException;
+        throw TProtocolException(TProtocolException::INVALID_DATA);
+      }
+      LabelService_QueryLastLabeledPoseData_presult result;
+      result.success = &_return;
+      result.read(iprot_);
+      iprot_->readMessageEnd();
+      iprot_->getTransport()->readEnd();
+
+      if (result.__isset.success) {
+        // _return pointer has now been filled
+        sentry.commit();
+        return;
+      }
+      // in a bad state, don't commit
+      throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "QueryLastLabeledPoseData failed: unknown result");
     }
     // seqid != rseqid
     this->sync_.updatePending(fname, mtype, rseqid);

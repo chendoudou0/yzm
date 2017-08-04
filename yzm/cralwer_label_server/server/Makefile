@@ -14,12 +14,12 @@ TARGET = label_server
 OBJS  := DataService.o LabelService.o CrawlerClientService.o  CrawlerService.o \
 pose_label_types.o pose_label_constants.o \
 Pose3DAnnPreprocess.o Pose3DAnnNew_types.o \
-ThreadBase.o  IApp.o config.o upgradeServer.o   CLogger.o  main.o \
+ThreadBase.o  IApp.o config.o poseLabelServer.o   CLogger.o  main.o \
 DBOperator.o sqlapi.o    Common.o   \
 jsonOperator.o
 
 LIBS =  -L../3party/poco/lib  -L/usr/local/mysql/lib  -lpthread  -lPocoFoundation -lPocoNet   \
--lcurl -lmysqlclient   \
+-lmysqlclient   \
 -lglog   \
 -lthrift       \
 -L../3party/dev_opencv        \

@@ -907,7 +907,7 @@ int CDBOperator::Login(std::string& token, int& role_id, const std::string& user
 
 }
 
-bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryConditions& qc, int index){
+bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryConditions& qc, int index, int& page){
   bool ret = false;
 	string jsonStr;
     char strSql[1024] = {0}; 
@@ -918,17 +918,18 @@ bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryC
         }
         /////////////////////////////////////
         stringstream ss;
-        string pose_type, tag, tBegin, tEnd, key;            
+        string pose_type, tag, tBegin, tEnd, key, website;            
         ss << "%" <<qc.pose_type<< "%";
         ss >> pose_type;
-        ss.clear();
-        ss.str("");
+        ss.clear();  ss.str("");
         ss << "%" <<qc.tag<< "%";
         ss >> tag;
-        ss.clear();
-        ss.str("");
+        ss.clear();  ss.str("");
         ss << "%" <<qc.key<< "%";
         ss >> key;
+        ss.clear();  ss.str("");
+        ss << "%" <<qc.website<< "%";
+        ss >> website;
         if(qc.tBegin.empty()){
             tBegin = "2016-1-1 10:10:10";
         }else{
@@ -943,14 +944,15 @@ bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryC
         memset(strSql, 0, 1024);
         sprintf(strSql,  " select COUNT(*) count from yzm_pose_label_db.t_picture where  \
         Fpose_type like '%s' and  Ftag_word like '%s' and  Fkey_word like '%s' \
-        and Fwebsite='%s' Fcreate_time BETWEEN '%s' and '%s'",  \
+        and Fwebsite like '%s' and Fcreate_time BETWEEN '%s' and '%s'",  \
         pose_type.c_str(),             
-        tag.c_str(),
+        tag.c_str(),    
         key.c_str(),
-        qc.website.c_str(),
+        website.c_str(),
         tBegin.c_str(),   
         tEnd.c_str()
         );
+        LOG(INFO) << "sql : "<< strSql;
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
@@ -958,12 +960,10 @@ bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryC
         if(!_ptrMysql->FetchResultMap(objMap)){
             break;
         }
-        ss.clear();
-        ss.str("");
+        ss.clear(); ss.str("");
         int count;
         ss << objMap["count"];
         ss >> count;
-        int page;
         if(count % 10 == 0){
             page = count/10;
         }else{
@@ -973,13 +973,13 @@ bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryC
         LOG(INFO) << "page num  : "<< page;
         ///////////////////////////////////// 
         memset(strSql, 0, 1024);
-        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fupdate_user, Fcreate_time, Flabel_count from yzm_pose_label_db.t_picture  \
+        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fkey_word, Fpose_type, Fupdate_user, Fcreate_time, Flabel_count from yzm_pose_label_db.t_picture  \
         where   Fpose_type like '%s' and  Ftag_word like '%s' and  Fkey_word like '%s' \
-        and Fwebsite='%s' Fcreate_time BETWEEN '%s' and '%s' limit %d,10 ",   \
+        and Fwebsite like '%s' and Fcreate_time BETWEEN '%s' and '%s' limit %d,10 ",   \
         pose_type.c_str(),
         tag.c_str(),
         key.c_str(),
-        qc.website.c_str(),
+        website.c_str(),
         tBegin.c_str(),   
         tEnd.c_str(),
         index); 
@@ -987,17 +987,14 @@ bool CDBOperator::QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryC
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
         }
-
         if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
             break;
         }
-
         ret = true;
 
     }while(0);
 	
     return ret;
-
 }
 
 bool CDBOperator::AddCrawlingResult(const CrawlingResult&  cs, int dbSum){
@@ -1036,15 +1033,25 @@ bool CDBOperator::QueryCrawlingHistory(SqlMapVector &objOutMapVector,  const His
         }
        
         ///////////////////////select
+        stringstream ss;
+        string tag, key;            
+        ss << "%" <<qc.tag<< "%";
+        ss >> tag;
+        ss.clear();
+        ss.str("");
+        ss << "%" <<qc.key<< "%";
+        ss >> key;
         memset(strSql, 0, 1024);
-        sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fcreate_time, Fupdate_user, Flabel_count from yzm_pose_label_db.t_picture  \
-        where  Fid='%d' and Fpic_status = '0' ",  \
-        pic_id);
+        sprintf(strSql,  " select Fkey, Ftag, Ftotal_sum, Fdb_sum, Fcreate_time  from yzm_pose_label_db.t_crawling_history \
+        where Ftag like '%s' and Fkey like '%s' order by Fcreate_time desc", 
+        tag.c_str(),
+        key.c_str()
+        );
         
         LOG(INFO) << "SQL : "<<strSql;
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
-        }
+        }               
 
         if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
             break;
@@ -1053,6 +1060,38 @@ bool CDBOperator::QueryCrawlingHistory(SqlMapVector &objOutMapVector,  const His
     }while(0);
 
     return ret;
+}
+
+bool CDBOperator::UpdatePicInfoById(int id, const std::string tag, const std::string pose_type){
+    bool ret = false;
+	char strSql[1024] = {0};
+    do{
+        if(!tag.empty()){
+            sprintf(strSql, "update yzm_pose_label_db.t_picture set Ftag_word='%s' where Fid='%d' ",  \
+            tag.c_str(),
+            id); 
+            LOG(INFO) << "SQL : "<<strSql;
+            if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                break;
+            }  
+        }
+        if(!pose_type.empty()){
+            memset(strSql, 0, sizeof(strSql));
+            sprintf(strSql, "update yzm_pose_label_db.t_picture set  Fpose_type='%s' where Fid='%d' ",  \
+            pose_type.c_str(),
+            id); 
+            LOG(INFO) << "SQL : "<<strSql;
+            if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                break;
+            } 
+        } 
+        
+        ret = true;
+        
+    }while(0); 
+
+    return ret;
+
 }
 
 

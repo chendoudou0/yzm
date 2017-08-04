@@ -42,7 +42,7 @@ class LabelServiceHandler : virtual public LabelServiceIf {
     printf("QueryPicById\n");
   }
 
-  void QueryPicByUserName(QueryByIdRet& _return, const std::string& token, const std::string& user) {
+  void QueryPicByUserName(QueryLabeledRet& _return, const std::string& token, const std::string& user, const int32_t index, const QueryCondition& qc) {
     // Your implementation goes here
     printf("QueryPicByUserName\n");
   }
@@ -65,6 +65,11 @@ class LabelServiceHandler : virtual public LabelServiceIf {
   void QueryLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) {
     // Your implementation goes here
     printf("QueryLabeledPoseData\n");
+  }
+
+  void QueryLastLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& user) {
+    // Your implementation goes here
+    printf("QueryLastLabeledPoseData\n");
   }
 
   void Register(ReturnVals& _return, const std::string& user, const std::string& passwd) {

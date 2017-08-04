@@ -61,6 +61,10 @@ namespace config
 		int suanfa_port_;
 		std::string crawler_ip_;
 		int  crawler_port_;
+		std::string  ori_path_;
+		std::string  success_path_;
+		std::string  error_path_;
+		std::string  bak_path_;
 
 
 	private:

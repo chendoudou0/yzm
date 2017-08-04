@@ -26,6 +26,9 @@ class CrawlerClientServiceIf {
   virtual void start(ReturnVals& _return, const std::string& keyword, const std::string& website, const std::string& tag) = 0;
   virtual void InquireCrawlerStatus(CrawlerStatusRet& _return) = 0;
   virtual void stop(ReturnVals& _return) = 0;
+  virtual void QueryCrawlingHistory(CrawlerHistoryRet& _return, const HistoryQueryCondition& qc) = 0;
+  virtual void QueryCrawleredPic(CrawleredPicRet& _return, const QueryConditions& qc, const int32_t index) = 0;
+  virtual void UpdatePicInfo(ReturnVals& _return, const int32_t pic_id, const std::string& tag, const std::string& pose_type) = 0;
 };
 
 class CrawlerClientServiceIfFactory {
@@ -68,6 +71,15 @@ class CrawlerClientServiceNull : virtual public CrawlerClientServiceIf {
     return;
   }
   void stop(ReturnVals& /* _return */) {
+    return;
+  }
+  void QueryCrawlingHistory(CrawlerHistoryRet& /* _return */, const HistoryQueryCondition& /* qc */) {
+    return;
+  }
+  void QueryCrawleredPic(CrawleredPicRet& /* _return */, const QueryConditions& /* qc */, const int32_t /* index */) {
+    return;
+  }
+  void UpdatePicInfo(ReturnVals& /* _return */, const int32_t /* pic_id */, const std::string& /* tag */, const std::string& /* pose_type */) {
     return;
   }
 };
@@ -582,6 +594,339 @@ class CrawlerClientService_stop_presult {
 
 };
 
+typedef struct _CrawlerClientService_QueryCrawlingHistory_args__isset {
+  _CrawlerClientService_QueryCrawlingHistory_args__isset() : qc(false) {}
+  bool qc :1;
+} _CrawlerClientService_QueryCrawlingHistory_args__isset;
+
+class CrawlerClientService_QueryCrawlingHistory_args {
+ public:
+
+  CrawlerClientService_QueryCrawlingHistory_args(const CrawlerClientService_QueryCrawlingHistory_args&);
+  CrawlerClientService_QueryCrawlingHistory_args& operator=(const CrawlerClientService_QueryCrawlingHistory_args&);
+  CrawlerClientService_QueryCrawlingHistory_args() {
+  }
+
+  virtual ~CrawlerClientService_QueryCrawlingHistory_args() throw();
+  HistoryQueryCondition qc;
+
+  _CrawlerClientService_QueryCrawlingHistory_args__isset __isset;
+
+  void __set_qc(const HistoryQueryCondition& val);
+
+  bool operator == (const CrawlerClientService_QueryCrawlingHistory_args & rhs) const
+  {
+    if (!(qc == rhs.qc))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerClientService_QueryCrawlingHistory_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerClientService_QueryCrawlingHistory_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class CrawlerClientService_QueryCrawlingHistory_pargs {
+ public:
+
+
+  virtual ~CrawlerClientService_QueryCrawlingHistory_pargs() throw();
+  const HistoryQueryCondition* qc;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _CrawlerClientService_QueryCrawlingHistory_result__isset {
+  _CrawlerClientService_QueryCrawlingHistory_result__isset() : success(false) {}
+  bool success :1;
+} _CrawlerClientService_QueryCrawlingHistory_result__isset;
+
+class CrawlerClientService_QueryCrawlingHistory_result {
+ public:
+
+  CrawlerClientService_QueryCrawlingHistory_result(const CrawlerClientService_QueryCrawlingHistory_result&);
+  CrawlerClientService_QueryCrawlingHistory_result& operator=(const CrawlerClientService_QueryCrawlingHistory_result&);
+  CrawlerClientService_QueryCrawlingHistory_result() {
+  }
+
+  virtual ~CrawlerClientService_QueryCrawlingHistory_result() throw();
+  CrawlerHistoryRet success;
+
+  _CrawlerClientService_QueryCrawlingHistory_result__isset __isset;
+
+  void __set_success(const CrawlerHistoryRet& val);
+
+  bool operator == (const CrawlerClientService_QueryCrawlingHistory_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerClientService_QueryCrawlingHistory_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerClientService_QueryCrawlingHistory_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _CrawlerClientService_QueryCrawlingHistory_presult__isset {
+  _CrawlerClientService_QueryCrawlingHistory_presult__isset() : success(false) {}
+  bool success :1;
+} _CrawlerClientService_QueryCrawlingHistory_presult__isset;
+
+class CrawlerClientService_QueryCrawlingHistory_presult {
+ public:
+
+
+  virtual ~CrawlerClientService_QueryCrawlingHistory_presult() throw();
+  CrawlerHistoryRet* success;
+
+  _CrawlerClientService_QueryCrawlingHistory_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _CrawlerClientService_QueryCrawleredPic_args__isset {
+  _CrawlerClientService_QueryCrawleredPic_args__isset() : qc(false), index(false) {}
+  bool qc :1;
+  bool index :1;
+} _CrawlerClientService_QueryCrawleredPic_args__isset;
+
+class CrawlerClientService_QueryCrawleredPic_args {
+ public:
+
+  CrawlerClientService_QueryCrawleredPic_args(const CrawlerClientService_QueryCrawleredPic_args&);
+  CrawlerClientService_QueryCrawleredPic_args& operator=(const CrawlerClientService_QueryCrawleredPic_args&);
+  CrawlerClientService_QueryCrawleredPic_args() : index(0) {
+  }
+
+  virtual ~CrawlerClientService_QueryCrawleredPic_args() throw();
+  QueryConditions qc;
+  int32_t index;
+
+  _CrawlerClientService_QueryCrawleredPic_args__isset __isset;
+
+  void __set_qc(const QueryConditions& val);
+
+  void __set_index(const int32_t val);
+
+  bool operator == (const CrawlerClientService_QueryCrawleredPic_args & rhs) const
+  {
+    if (!(qc == rhs.qc))
+      return false;
+    if (!(index == rhs.index))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerClientService_QueryCrawleredPic_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerClientService_QueryCrawleredPic_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class CrawlerClientService_QueryCrawleredPic_pargs {
+ public:
+
+
+  virtual ~CrawlerClientService_QueryCrawleredPic_pargs() throw();
+  const QueryConditions* qc;
+  const int32_t* index;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _CrawlerClientService_QueryCrawleredPic_result__isset {
+  _CrawlerClientService_QueryCrawleredPic_result__isset() : success(false) {}
+  bool success :1;
+} _CrawlerClientService_QueryCrawleredPic_result__isset;
+
+class CrawlerClientService_QueryCrawleredPic_result {
+ public:
+
+  CrawlerClientService_QueryCrawleredPic_result(const CrawlerClientService_QueryCrawleredPic_result&);
+  CrawlerClientService_QueryCrawleredPic_result& operator=(const CrawlerClientService_QueryCrawleredPic_result&);
+  CrawlerClientService_QueryCrawleredPic_result() {
+  }
+
+  virtual ~CrawlerClientService_QueryCrawleredPic_result() throw();
+  CrawleredPicRet success;
+
+  _CrawlerClientService_QueryCrawleredPic_result__isset __isset;
+
+  void __set_success(const CrawleredPicRet& val);
+
+  bool operator == (const CrawlerClientService_QueryCrawleredPic_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerClientService_QueryCrawleredPic_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerClientService_QueryCrawleredPic_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _CrawlerClientService_QueryCrawleredPic_presult__isset {
+  _CrawlerClientService_QueryCrawleredPic_presult__isset() : success(false) {}
+  bool success :1;
+} _CrawlerClientService_QueryCrawleredPic_presult__isset;
+
+class CrawlerClientService_QueryCrawleredPic_presult {
+ public:
+
+
+  virtual ~CrawlerClientService_QueryCrawleredPic_presult() throw();
+  CrawleredPicRet* success;
+
+  _CrawlerClientService_QueryCrawleredPic_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _CrawlerClientService_UpdatePicInfo_args__isset {
+  _CrawlerClientService_UpdatePicInfo_args__isset() : pic_id(false), tag(false), pose_type(false) {}
+  bool pic_id :1;
+  bool tag :1;
+  bool pose_type :1;
+} _CrawlerClientService_UpdatePicInfo_args__isset;
+
+class CrawlerClientService_UpdatePicInfo_args {
+ public:
+
+  CrawlerClientService_UpdatePicInfo_args(const CrawlerClientService_UpdatePicInfo_args&);
+  CrawlerClientService_UpdatePicInfo_args& operator=(const CrawlerClientService_UpdatePicInfo_args&);
+  CrawlerClientService_UpdatePicInfo_args() : pic_id(0), tag(), pose_type() {
+  }
+
+  virtual ~CrawlerClientService_UpdatePicInfo_args() throw();
+  int32_t pic_id;
+  std::string tag;
+  std::string pose_type;
+
+  _CrawlerClientService_UpdatePicInfo_args__isset __isset;
+
+  void __set_pic_id(const int32_t val);
+
+  void __set_tag(const std::string& val);
+
+  void __set_pose_type(const std::string& val);
+
+  bool operator == (const CrawlerClientService_UpdatePicInfo_args & rhs) const
+  {
+    if (!(pic_id == rhs.pic_id))
+      return false;
+    if (!(tag == rhs.tag))
+      return false;
+    if (!(pose_type == rhs.pose_type))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerClientService_UpdatePicInfo_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerClientService_UpdatePicInfo_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class CrawlerClientService_UpdatePicInfo_pargs {
+ public:
+
+
+  virtual ~CrawlerClientService_UpdatePicInfo_pargs() throw();
+  const int32_t* pic_id;
+  const std::string* tag;
+  const std::string* pose_type;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _CrawlerClientService_UpdatePicInfo_result__isset {
+  _CrawlerClientService_UpdatePicInfo_result__isset() : success(false) {}
+  bool success :1;
+} _CrawlerClientService_UpdatePicInfo_result__isset;
+
+class CrawlerClientService_UpdatePicInfo_result {
+ public:
+
+  CrawlerClientService_UpdatePicInfo_result(const CrawlerClientService_UpdatePicInfo_result&);
+  CrawlerClientService_UpdatePicInfo_result& operator=(const CrawlerClientService_UpdatePicInfo_result&);
+  CrawlerClientService_UpdatePicInfo_result() {
+  }
+
+  virtual ~CrawlerClientService_UpdatePicInfo_result() throw();
+  ReturnVals success;
+
+  _CrawlerClientService_UpdatePicInfo_result__isset __isset;
+
+  void __set_success(const ReturnVals& val);
+
+  bool operator == (const CrawlerClientService_UpdatePicInfo_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerClientService_UpdatePicInfo_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerClientService_UpdatePicInfo_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _CrawlerClientService_UpdatePicInfo_presult__isset {
+  _CrawlerClientService_UpdatePicInfo_presult__isset() : success(false) {}
+  bool success :1;
+} _CrawlerClientService_UpdatePicInfo_presult__isset;
+
+class CrawlerClientService_UpdatePicInfo_presult {
+ public:
+
+
+  virtual ~CrawlerClientService_UpdatePicInfo_presult() throw();
+  ReturnVals* success;
+
+  _CrawlerClientService_UpdatePicInfo_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
 class CrawlerClientServiceClient : virtual public CrawlerClientServiceIf {
  public:
   CrawlerClientServiceClient(boost::shared_ptr< ::apache::thrift::protocol::TProtocol> prot) {
@@ -622,6 +967,15 @@ class CrawlerClientServiceClient : virtual public CrawlerClientServiceIf {
   void stop(ReturnVals& _return);
   void send_stop();
   void recv_stop(ReturnVals& _return);
+  void QueryCrawlingHistory(CrawlerHistoryRet& _return, const HistoryQueryCondition& qc);
+  void send_QueryCrawlingHistory(const HistoryQueryCondition& qc);
+  void recv_QueryCrawlingHistory(CrawlerHistoryRet& _return);
+  void QueryCrawleredPic(CrawleredPicRet& _return, const QueryConditions& qc, const int32_t index);
+  void send_QueryCrawleredPic(const QueryConditions& qc, const int32_t index);
+  void recv_QueryCrawleredPic(CrawleredPicRet& _return);
+  void UpdatePicInfo(ReturnVals& _return, const int32_t pic_id, const std::string& tag, const std::string& pose_type);
+  void send_UpdatePicInfo(const int32_t pic_id, const std::string& tag, const std::string& pose_type);
+  void recv_UpdatePicInfo(ReturnVals& _return);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -642,6 +996,9 @@ class CrawlerClientServiceProcessor : public ::apache::thrift::TDispatchProcesso
   void process_start(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_InquireCrawlerStatus(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_stop(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_QueryCrawlingHistory(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_QueryCrawleredPic(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_UpdatePicInfo(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   CrawlerClientServiceProcessor(boost::shared_ptr<CrawlerClientServiceIf> iface) :
     iface_(iface) {
@@ -650,6 +1007,9 @@ class CrawlerClientServiceProcessor : public ::apache::thrift::TDispatchProcesso
     processMap_["start"] = &CrawlerClientServiceProcessor::process_start;
     processMap_["InquireCrawlerStatus"] = &CrawlerClientServiceProcessor::process_InquireCrawlerStatus;
     processMap_["stop"] = &CrawlerClientServiceProcessor::process_stop;
+    processMap_["QueryCrawlingHistory"] = &CrawlerClientServiceProcessor::process_QueryCrawlingHistory;
+    processMap_["QueryCrawleredPic"] = &CrawlerClientServiceProcessor::process_QueryCrawleredPic;
+    processMap_["UpdatePicInfo"] = &CrawlerClientServiceProcessor::process_UpdatePicInfo;
   }
 
   virtual ~CrawlerClientServiceProcessor() {}
@@ -728,6 +1088,36 @@ class CrawlerClientServiceMultiface : virtual public CrawlerClientServiceIf {
     return;
   }
 
+  void QueryCrawlingHistory(CrawlerHistoryRet& _return, const HistoryQueryCondition& qc) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->QueryCrawlingHistory(_return, qc);
+    }
+    ifaces_[i]->QueryCrawlingHistory(_return, qc);
+    return;
+  }
+
+  void QueryCrawleredPic(CrawleredPicRet& _return, const QueryConditions& qc, const int32_t index) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->QueryCrawleredPic(_return, qc, index);
+    }
+    ifaces_[i]->QueryCrawleredPic(_return, qc, index);
+    return;
+  }
+
+  void UpdatePicInfo(ReturnVals& _return, const int32_t pic_id, const std::string& tag, const std::string& pose_type) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->UpdatePicInfo(_return, pic_id, tag, pose_type);
+    }
+    ifaces_[i]->UpdatePicInfo(_return, pic_id, tag, pose_type);
+    return;
+  }
+
 };
 
 // The 'concurrent' client is a thread safe client that correctly handles
@@ -773,6 +1163,15 @@ class CrawlerClientServiceConcurrentClient : virtual public CrawlerClientService
   void stop(ReturnVals& _return);
   int32_t send_stop();
   void recv_stop(ReturnVals& _return, const int32_t seqid);
+  void QueryCrawlingHistory(CrawlerHistoryRet& _return, const HistoryQueryCondition& qc);
+  int32_t send_QueryCrawlingHistory(const HistoryQueryCondition& qc);
+  void recv_QueryCrawlingHistory(CrawlerHistoryRet& _return, const int32_t seqid);
+  void QueryCrawleredPic(CrawleredPicRet& _return, const QueryConditions& qc, const int32_t index);
+  int32_t send_QueryCrawleredPic(const QueryConditions& qc, const int32_t index);
+  void recv_QueryCrawleredPic(CrawleredPicRet& _return, const int32_t seqid);
+  void UpdatePicInfo(ReturnVals& _return, const int32_t pic_id, const std::string& tag, const std::string& pose_type);
+  int32_t send_UpdatePicInfo(const int32_t pic_id, const std::string& tag, const std::string& pose_type);
+  void recv_UpdatePicInfo(ReturnVals& _return, const int32_t seqid);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;

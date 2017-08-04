@@ -41,8 +41,9 @@ public:
 	int  Register(const std::string& user, const std::string& passWd);
 	int  Login(std::string& token, int& role_id, const std::string& user, const std::string& passWd);
 	bool QueryCrawlingHistory(SqlMapVector &objOutMapVector,  const HistoryQueryCondition& qc);
+	bool QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryConditions& qc, int index, int& page);
 	bool AddCrawlingResult(const CrawlingResult&  cs, int dbSum);
-	bool QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryConditions& qc, int index);
+	bool UpdatePicInfoById(int id, const std::string tag, const std::string pose_type);
 private:   
 	std::shared_ptr<CMySQL>  _ptrMysql;   
  

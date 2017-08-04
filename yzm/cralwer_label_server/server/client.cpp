@@ -18,22 +18,6 @@ using namespace  ::server::pose_label;
   
 int main(int argc, char **argv) { 
 
-uuid_t uu; 
-char  buf[1024] = {0};
-uuid_generate( uu ); 
-uuid_unparse(uu, buf);
-
-LOG(INFO) << buf;
-int i; 
-for(i=0; i< 16;i++) 
-{ 
-    printf("%x ",uu[i]); 
-} 
-printf("\n"); 
-
-
-    
-/*
     boost::shared_ptr<TSocket> socket__(new TSocket("localhost", 10077));  
     boost::shared_ptr<TTransport> transport__(new TFramedTransport(socket__));  
     boost::shared_ptr<TProtocol> protocol__(new TBinaryProtocol(transport__));  
@@ -41,7 +25,7 @@ printf("\n");
     transport__->open();  
     
 	server::pose_label::CrawlerClientServiceClient client__(protocol__);
-
+/*
     ReturnVals sRet;
     client__.start(sRet, "街拍帅哥", "Baidu", "街拍帅哥");
     if(sRet.code == 0){
@@ -50,6 +34,14 @@ printf("\n");
         LOG(INFO) << "start failed ";
     }
 
+    ReturnVals stopRet;
+    client__.stop(stopRet);
+    if(stopRet.code == 0){
+         LOG(INFO) << "stop success ";
+    }else{
+        LOG(INFO) << "stop failed ";
+    }
+*/
     CrawlerStatusRet  cRet;
     client__.InquireCrawlerStatus(cRet);
     if(cRet.code == 0){
@@ -60,18 +52,44 @@ printf("\n");
         LOG(INFO) << "InquireCrawlerStatus failed ";
     }
 
-    ReturnVals stopRet;
-    client__.stop(stopRet);
-    if(stopRet.code == 0){
-         LOG(INFO) << "stop success ";
+    CrawlerHistoryRet cHisRet;
+    HistoryQueryCondition hisQc;
+    hisQc.tag = "舞";
+    client__.QueryCrawlingHistory(cHisRet , hisQc );
+    if(cHisRet.code == 0){
+        LOG(INFO) << "QueryCrawlingHistory success ";
+        LOG(INFO) << "vec[0].key "<<cHisRet.hisVec[0].key;
+
     }else{
-        LOG(INFO) << "stop failed ";
+        LOG(INFO) << "QueryCrawlingHistory failed ";
+
     }
 
+    CrawleredPicRet  qcraedRet;
+    QueryConditions  cpqCondi;
+    cpqCondi.key = "太极";
+    client__.QueryCrawleredPic(qcraedRet, cpqCondi, 0);
+     if(qcraedRet.code == 0){
+        LOG(INFO) << "QueryCrawleredPic success ";
+        LOG(INFO) << "picVec[0].pic_url  "<<qcraedRet.picVec[0].pic_url;
+
+    }else{
+        LOG(INFO) << "QueryCrawleredPic failed ";
+
+    }
+
+    ReturnVals upRet;
+    client__.UpdatePicInfo(upRet, 64, "改标签", "蹲下");
+    if(upRet.code == 0){
+        LOG(INFO) << "UpdatePicInfo success ";
+    }else{
+        LOG(INFO) << "UpdatePicInfo  failed ";
+    }
 
     LOG(INFO) << "client end ";
-    */
-   
+    return 0;
+    
+
 ////////////////////////////////////////////////////////////////////////////////
     boost::shared_ptr<TSocket> socket_(new TSocket("192.168.1.110", 10099));  
     boost::shared_ptr<TTransport> transport_(new TFramedTransport(socket_));  

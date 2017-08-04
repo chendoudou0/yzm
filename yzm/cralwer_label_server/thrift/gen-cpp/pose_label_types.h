@@ -30,11 +30,21 @@ class CrawlerStatusRet;
 
 class CrawlingResult;
 
+class HistoryQueryCondition;
+
+class CrawlerHistory;
+
+class CrawlerHistoryRet;
+
+class QueryConditions;
+
 class QueryedPicInfo;
 
-class QueryUnlabeledRet;
+class CrawleredPicRet;
 
 class QueryLabeledRet;
+
+class QueryUnlabeledRet;
 
 class QueryByIdRet;
 
@@ -340,8 +350,248 @@ void swap(CrawlingResult &a, CrawlingResult &b);
 
 std::ostream& operator<<(std::ostream& out, const CrawlingResult& obj);
 
+typedef struct _HistoryQueryCondition__isset {
+  _HistoryQueryCondition__isset() : key(false), tag(false) {}
+  bool key :1;
+  bool tag :1;
+} _HistoryQueryCondition__isset;
+
+class HistoryQueryCondition : public virtual ::apache::thrift::TBase {
+ public:
+
+  HistoryQueryCondition(const HistoryQueryCondition&);
+  HistoryQueryCondition& operator=(const HistoryQueryCondition&);
+  HistoryQueryCondition() : key(), tag() {
+  }
+
+  virtual ~HistoryQueryCondition() throw();
+  std::string key;
+  std::string tag;
+
+  _HistoryQueryCondition__isset __isset;
+
+  void __set_key(const std::string& val);
+
+  void __set_tag(const std::string& val);
+
+  bool operator == (const HistoryQueryCondition & rhs) const
+  {
+    if (!(key == rhs.key))
+      return false;
+    if (!(tag == rhs.tag))
+      return false;
+    return true;
+  }
+  bool operator != (const HistoryQueryCondition &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const HistoryQueryCondition & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(HistoryQueryCondition &a, HistoryQueryCondition &b);
+
+std::ostream& operator<<(std::ostream& out, const HistoryQueryCondition& obj);
+
+typedef struct _CrawlerHistory__isset {
+  _CrawlerHistory__isset() : key(false), tag(false), total_sum(false), db_sum(false), time_create(false) {}
+  bool key :1;
+  bool tag :1;
+  bool total_sum :1;
+  bool db_sum :1;
+  bool time_create :1;
+} _CrawlerHistory__isset;
+
+class CrawlerHistory : public virtual ::apache::thrift::TBase {
+ public:
+
+  CrawlerHistory(const CrawlerHistory&);
+  CrawlerHistory& operator=(const CrawlerHistory&);
+  CrawlerHistory() : key(), tag(), total_sum(0), db_sum(0), time_create() {
+  }
+
+  virtual ~CrawlerHistory() throw();
+  std::string key;
+  std::string tag;
+  int32_t total_sum;
+  int32_t db_sum;
+  std::string time_create;
+
+  _CrawlerHistory__isset __isset;
+
+  void __set_key(const std::string& val);
+
+  void __set_tag(const std::string& val);
+
+  void __set_total_sum(const int32_t val);
+
+  void __set_db_sum(const int32_t val);
+
+  void __set_time_create(const std::string& val);
+
+  bool operator == (const CrawlerHistory & rhs) const
+  {
+    if (!(key == rhs.key))
+      return false;
+    if (!(tag == rhs.tag))
+      return false;
+    if (!(total_sum == rhs.total_sum))
+      return false;
+    if (!(db_sum == rhs.db_sum))
+      return false;
+    if (!(time_create == rhs.time_create))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerHistory &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerHistory & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(CrawlerHistory &a, CrawlerHistory &b);
+
+std::ostream& operator<<(std::ostream& out, const CrawlerHistory& obj);
+
+typedef struct _CrawlerHistoryRet__isset {
+  _CrawlerHistoryRet__isset() : code(true), msg(false), hisVec(false) {}
+  bool code :1;
+  bool msg :1;
+  bool hisVec :1;
+} _CrawlerHistoryRet__isset;
+
+class CrawlerHistoryRet : public virtual ::apache::thrift::TBase {
+ public:
+
+  CrawlerHistoryRet(const CrawlerHistoryRet&);
+  CrawlerHistoryRet& operator=(const CrawlerHistoryRet&);
+  CrawlerHistoryRet() : code(0), msg() {
+  }
+
+  virtual ~CrawlerHistoryRet() throw();
+  int32_t code;
+  std::string msg;
+  std::vector<CrawlerHistory>  hisVec;
+
+  _CrawlerHistoryRet__isset __isset;
+
+  void __set_code(const int32_t val);
+
+  void __set_msg(const std::string& val);
+
+  void __set_hisVec(const std::vector<CrawlerHistory> & val);
+
+  bool operator == (const CrawlerHistoryRet & rhs) const
+  {
+    if (!(code == rhs.code))
+      return false;
+    if (!(msg == rhs.msg))
+      return false;
+    if (!(hisVec == rhs.hisVec))
+      return false;
+    return true;
+  }
+  bool operator != (const CrawlerHistoryRet &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const CrawlerHistoryRet & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(CrawlerHistoryRet &a, CrawlerHistoryRet &b);
+
+std::ostream& operator<<(std::ostream& out, const CrawlerHistoryRet& obj);
+
+typedef struct _QueryConditions__isset {
+  _QueryConditions__isset() : tag(false), key(false), pose_type(false), website(false), tBegin(false), tEnd(false) {}
+  bool tag :1;
+  bool key :1;
+  bool pose_type :1;
+  bool website :1;
+  bool tBegin :1;
+  bool tEnd :1;
+} _QueryConditions__isset;
+
+class QueryConditions : public virtual ::apache::thrift::TBase {
+ public:
+
+  QueryConditions(const QueryConditions&);
+  QueryConditions& operator=(const QueryConditions&);
+  QueryConditions() : tag(), key(), pose_type(), website(), tBegin(), tEnd() {
+  }
+
+  virtual ~QueryConditions() throw();
+  std::string tag;
+  std::string key;
+  std::string pose_type;
+  std::string website;
+  std::string tBegin;
+  std::string tEnd;
+
+  _QueryConditions__isset __isset;
+
+  void __set_tag(const std::string& val);
+
+  void __set_key(const std::string& val);
+
+  void __set_pose_type(const std::string& val);
+
+  void __set_website(const std::string& val);
+
+  void __set_tBegin(const std::string& val);
+
+  void __set_tEnd(const std::string& val);
+
+  bool operator == (const QueryConditions & rhs) const
+  {
+    if (!(tag == rhs.tag))
+      return false;
+    if (!(key == rhs.key))
+      return false;
+    if (!(pose_type == rhs.pose_type))
+      return false;
+    if (!(website == rhs.website))
+      return false;
+    if (!(tBegin == rhs.tBegin))
+      return false;
+    if (!(tEnd == rhs.tEnd))
+      return false;
+    return true;
+  }
+  bool operator != (const QueryConditions &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const QueryConditions & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(QueryConditions &a, QueryConditions &b);
+
+std::ostream& operator<<(std::ostream& out, const QueryConditions& obj);
+
 typedef struct _QueryedPicInfo__isset {
-  _QueryedPicInfo__isset() : pic_id(true), pic_url(false), tag(false), pose_type(false), create_time(false), labeledCount(false), lastLabeledUser(false), screenshot_bin(false) {}
+  _QueryedPicInfo__isset() : pic_id(true), pic_url(false), tag(false), pose_type(false), create_time(false), labeledCount(false), lastLabeledUser(false), screenshot_bin(false), key(false), website(false) {}
   bool pic_id :1;
   bool pic_url :1;
   bool tag :1;
@@ -350,6 +600,8 @@ typedef struct _QueryedPicInfo__isset {
   bool labeledCount :1;
   bool lastLabeledUser :1;
   bool screenshot_bin :1;
+  bool key :1;
+  bool website :1;
 } _QueryedPicInfo__isset;
 
 class QueryedPicInfo : public virtual ::apache::thrift::TBase {
@@ -357,7 +609,7 @@ class QueryedPicInfo : public virtual ::apache::thrift::TBase {
 
   QueryedPicInfo(const QueryedPicInfo&);
   QueryedPicInfo& operator=(const QueryedPicInfo&);
-  QueryedPicInfo() : pic_id(0), pic_url(), tag(), pose_type(), create_time(), labeledCount(0), lastLabeledUser(), screenshot_bin() {
+  QueryedPicInfo() : pic_id(0), pic_url(), tag(), pose_type(), create_time(), labeledCount(0), lastLabeledUser(), screenshot_bin(), key(), website() {
   }
 
   virtual ~QueryedPicInfo() throw();
@@ -369,6 +621,8 @@ class QueryedPicInfo : public virtual ::apache::thrift::TBase {
   int32_t labeledCount;
   std::string lastLabeledUser;
   std::string screenshot_bin;
+  std::string key;
+  std::string website;
 
   _QueryedPicInfo__isset __isset;
 
@@ -388,6 +642,10 @@ class QueryedPicInfo : public virtual ::apache::thrift::TBase {
 
   void __set_screenshot_bin(const std::string& val);
 
+  void __set_key(const std::string& val);
+
+  void __set_website(const std::string& val);
+
   bool operator == (const QueryedPicInfo & rhs) const
   {
     if (!(pic_id == rhs.pic_id))
@@ -405,6 +663,10 @@ class QueryedPicInfo : public virtual ::apache::thrift::TBase {
     if (!(lastLabeledUser == rhs.lastLabeledUser))
       return false;
     if (!(screenshot_bin == rhs.screenshot_bin))
+      return false;
+    if (!(key == rhs.key))
+      return false;
+    if (!(website == rhs.website))
       return false;
     return true;
   }
@@ -424,29 +686,29 @@ void swap(QueryedPicInfo &a, QueryedPicInfo &b);
 
 std::ostream& operator<<(std::ostream& out, const QueryedPicInfo& obj);
 
-typedef struct _QueryUnlabeledRet__isset {
-  _QueryUnlabeledRet__isset() : code(true), msg(false), pageNum(false), picVec(false) {}
+typedef struct _CrawleredPicRet__isset {
+  _CrawleredPicRet__isset() : code(true), msg(false), pageNum(false), picVec(false) {}
   bool code :1;
   bool msg :1;
   bool pageNum :1;
   bool picVec :1;
-} _QueryUnlabeledRet__isset;
+} _CrawleredPicRet__isset;
 
-class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
+class CrawleredPicRet : public virtual ::apache::thrift::TBase {
  public:
 
-  QueryUnlabeledRet(const QueryUnlabeledRet&);
-  QueryUnlabeledRet& operator=(const QueryUnlabeledRet&);
-  QueryUnlabeledRet() : code(0), msg(), pageNum(0) {
+  CrawleredPicRet(const CrawleredPicRet&);
+  CrawleredPicRet& operator=(const CrawleredPicRet&);
+  CrawleredPicRet() : code(0), msg(), pageNum(0) {
   }
 
-  virtual ~QueryUnlabeledRet() throw();
+  virtual ~CrawleredPicRet() throw();
   int32_t code;
   std::string msg;
   int32_t pageNum;
   std::vector<QueryedPicInfo>  picVec;
 
-  _QueryUnlabeledRet__isset __isset;
+  _CrawleredPicRet__isset __isset;
 
   void __set_code(const int32_t val);
 
@@ -456,7 +718,7 @@ class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
 
   void __set_picVec(const std::vector<QueryedPicInfo> & val);
 
-  bool operator == (const QueryUnlabeledRet & rhs) const
+  bool operator == (const CrawleredPicRet & rhs) const
   {
     if (!(code == rhs.code))
       return false;
@@ -468,11 +730,11 @@ class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
       return false;
     return true;
   }
-  bool operator != (const QueryUnlabeledRet &rhs) const {
+  bool operator != (const CrawleredPicRet &rhs) const {
     return !(*this == rhs);
   }
 
-  bool operator < (const QueryUnlabeledRet & ) const;
+  bool operator < (const CrawleredPicRet & ) const;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
   uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
@@ -480,9 +742,9 @@ class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
   virtual void printTo(std::ostream& out) const;
 };
 
-void swap(QueryUnlabeledRet &a, QueryUnlabeledRet &b);
+void swap(CrawleredPicRet &a, CrawleredPicRet &b);
 
-std::ostream& operator<<(std::ostream& out, const QueryUnlabeledRet& obj);
+std::ostream& operator<<(std::ostream& out, const CrawleredPicRet& obj);
 
 typedef struct _QueryLabeledRet__isset {
   _QueryLabeledRet__isset() : code(true), msg(false), pageNum(false), picVec(false) {}
@@ -544,10 +806,71 @@ void swap(QueryLabeledRet &a, QueryLabeledRet &b);
 
 std::ostream& operator<<(std::ostream& out, const QueryLabeledRet& obj);
 
-typedef struct _QueryByIdRet__isset {
-  _QueryByIdRet__isset() : code(true), msg(false), pic(false) {}
+typedef struct _QueryUnlabeledRet__isset {
+  _QueryUnlabeledRet__isset() : code(true), msg(false), pageNum(false), picVec(false) {}
   bool code :1;
   bool msg :1;
+  bool pageNum :1;
+  bool picVec :1;
+} _QueryUnlabeledRet__isset;
+
+class QueryUnlabeledRet : public virtual ::apache::thrift::TBase {
+ public:
+
+  QueryUnlabeledRet(const QueryUnlabeledRet&);
+  QueryUnlabeledRet& operator=(const QueryUnlabeledRet&);
+  QueryUnlabeledRet() : code(0), msg(), pageNum(0) {
+  }
+
+  virtual ~QueryUnlabeledRet() throw();
+  int32_t code;
+  std::string msg;
+  int32_t pageNum;
+  std::vector<QueryedPicInfo>  picVec;
+
+  _QueryUnlabeledRet__isset __isset;
+
+  void __set_code(const int32_t val);
+
+  void __set_msg(const std::string& val);
+
+  void __set_pageNum(const int32_t val);
+
+  void __set_picVec(const std::vector<QueryedPicInfo> & val);
+
+  bool operator == (const QueryUnlabeledRet & rhs) const
+  {
+    if (!(code == rhs.code))
+      return false;
+    if (!(msg == rhs.msg))
+      return false;
+    if (!(pageNum == rhs.pageNum))
+      return false;
+    if (!(picVec == rhs.picVec))
+      return false;
+    return true;
+  }
+  bool operator != (const QueryUnlabeledRet &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const QueryUnlabeledRet & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(QueryUnlabeledRet &a, QueryUnlabeledRet &b);
+
+std::ostream& operator<<(std::ostream& out, const QueryUnlabeledRet& obj);
+
+typedef struct _QueryByIdRet__isset {
+  _QueryByIdRet__isset() : code(true), msg(false), pageNum(false), pic(false) {}
+  bool code :1;
+  bool msg :1;
+  bool pageNum :1;
   bool pic :1;
 } _QueryByIdRet__isset;
 
@@ -556,12 +879,13 @@ class QueryByIdRet : public virtual ::apache::thrift::TBase {
 
   QueryByIdRet(const QueryByIdRet&);
   QueryByIdRet& operator=(const QueryByIdRet&);
-  QueryByIdRet() : code(0), msg() {
+  QueryByIdRet() : code(0), msg(), pageNum(0) {
   }
 
   virtual ~QueryByIdRet() throw();
   int32_t code;
   std::string msg;
+  int32_t pageNum;
   QueryedPicInfo pic;
 
   _QueryByIdRet__isset __isset;
@@ -570,6 +894,8 @@ class QueryByIdRet : public virtual ::apache::thrift::TBase {
 
   void __set_msg(const std::string& val);
 
+  void __set_pageNum(const int32_t val);
+
   void __set_pic(const QueryedPicInfo& val);
 
   bool operator == (const QueryByIdRet & rhs) const
@@ -577,6 +903,8 @@ class QueryByIdRet : public virtual ::apache::thrift::TBase {
     if (!(code == rhs.code))
       return false;
     if (!(msg == rhs.msg))
+      return false;
+    if (!(pageNum == rhs.pageNum))
       return false;
     if (!(pic == rhs.pic))
       return false;
@@ -671,11 +999,12 @@ void swap(DownloadRet &a, DownloadRet &b);
 std::ostream& operator<<(std::ostream& out, const DownloadRet& obj);
 
 typedef struct _LabeledPoseDataRet__isset {
-  _LabeledPoseDataRet__isset() : code(true), msg(false), bin(false), poseData(false) {}
+  _LabeledPoseDataRet__isset() : code(true), msg(false), bin(false), poseData(false), pre2dPoseInfo(false) {}
   bool code :1;
   bool msg :1;
   bool bin :1;
   bool poseData :1;
+  bool pre2dPoseInfo :1;
 } _LabeledPoseDataRet__isset;
 
 class LabeledPoseDataRet : public virtual ::apache::thrift::TBase {
@@ -683,7 +1012,7 @@ class LabeledPoseDataRet : public virtual ::apache::thrift::TBase {
 
   LabeledPoseDataRet(const LabeledPoseDataRet&);
   LabeledPoseDataRet& operator=(const LabeledPoseDataRet&);
-  LabeledPoseDataRet() : code(0), msg(), bin(), poseData() {
+  LabeledPoseDataRet() : code(0), msg(), bin(), poseData(), pre2dPoseInfo() {
   }
 
   virtual ~LabeledPoseDataRet() throw();
@@ -691,6 +1020,7 @@ class LabeledPoseDataRet : public virtual ::apache::thrift::TBase {
   std::string msg;
   std::string bin;
   std::string poseData;
+  std::string pre2dPoseInfo;
 
   _LabeledPoseDataRet__isset __isset;
 
@@ -702,6 +1032,8 @@ class LabeledPoseDataRet : public virtual ::apache::thrift::TBase {
 
   void __set_poseData(const std::string& val);
 
+  void __set_pre2dPoseInfo(const std::string& val);
+
   bool operator == (const LabeledPoseDataRet & rhs) const
   {
     if (!(code == rhs.code))
@@ -711,6 +1043,8 @@ class LabeledPoseDataRet : public virtual ::apache::thrift::TBase {
     if (!(bin == rhs.bin))
       return false;
     if (!(poseData == rhs.poseData))
+      return false;
+    if (!(pre2dPoseInfo == rhs.pre2dPoseInfo))
       return false;
     return true;
   }

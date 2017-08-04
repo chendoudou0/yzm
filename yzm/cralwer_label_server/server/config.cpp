@@ -65,11 +65,14 @@ namespace  config
 
 	bool CConfigManager::get_string(rapidjson::Value& v, string& str)
 	{
+		
 		if (v.IsNull() || !v.IsString())
 		{
 			return false;
 		}
+	
 		str = v.GetString();
+
 		return true;
 	}
 
@@ -264,6 +267,34 @@ namespace  config
 		}
 
 		using rapidjson::Value;
+
+		if(!get_string(doc["ori_path"], ori_path_))
+		{
+			LOG(ERROR) << "ori_path empty";
+			return false;
+		}
+		LOG(INFO) << "ori_path : " << ori_path_;
+
+		if(!get_string(doc["success_path"], success_path_))
+		{
+			LOG(ERROR) << "success_path empty";
+			return false;
+		}
+		LOG(INFO) << "success_path : " << success_path_;
+
+		if(!get_string(doc["error_path"], error_path_))
+		{
+			LOG(ERROR) << "error_path empty";
+			return false;
+		}
+		LOG(INFO) << "error_path : " << error_path_;
+
+		if(!get_string(doc["bak_path"], bak_path_))
+		{
+			LOG(ERROR) << "bak_path empty";
+			return false;
+		}
+		LOG(INFO) << "bak_path : " << bak_path_;
 		
 		if(!get_int(doc["crawler_server_listen_port"], crawler_server_listen_port_))
 		{
@@ -314,6 +345,7 @@ namespace  config
 		}
 		LOG(INFO) << "crawler_port : " << crawler_port_;
 
+		
 		return true;
 
 	}
