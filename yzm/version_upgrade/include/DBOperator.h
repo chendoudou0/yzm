@@ -18,6 +18,7 @@ struct ANDROID_VERSION_INFO{
 	std::string md5;
 	std::string size;
 	std::string description;
+	int version_branch{0};
 };
 
 struct LIVESHOW_ADD_INFO{

@@ -1,9 +1,7 @@
 #include "DBOperator.h"
-#include "CLogger.h"
 #include "config.h"
 #include"glog/logging.h"
 
-extern CLogger* gPtrAppLog;
 
 CDBOperator::CDBOperator()
 {
@@ -49,7 +47,7 @@ bool CDBOperator::QueryExistingVersions(int type, SqlMapVector &objOutMapVector)
             break;
         }
         memset(strSql, 0, 1024);
-        sprintf(strSql,  "select  Fversion_description,Fversion_name  from yzm_version_test_db.%s  order by Fversion_name desc",\
+        sprintf(strSql,  "select  Fversion_description,Fversion_name  from cloudream_upgrade.%s  order by Fversion_name desc",\
         table.c_str());
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
@@ -79,8 +77,8 @@ bool CDBOperator::QueryAndroidExistingVersions(SqlMapVector &objOutMapVector)
          }
          
          memset(strSql, 0, 1024);
-         sprintf(strSql,  "select  Fversion_description,Fversion_name,Ffile_url, Ffile_size, \
-            Ffile_md5 from yzm_version_test_db.t_version_android \
+         sprintf(strSql,  "select  Fversion_description,Fversion_name, Fversion_branch,Ffile_url, Ffile_size, \
+            Ffile_md5 from cloudream_upgrade.t_version_android \
             order by Fversion_name desc");
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
@@ -115,7 +113,7 @@ bool CDBOperator::QueryNewaddedVersions(SqlMapVector &objOutMapVector, string ty
         }
         memset(strSql, 0, 1024);
 
-        sprintf(strSql,  "select Fversion_name,Fversion_path,Fversion_bucket from yzm_version_test_db.%s where Fversion_status='1'", table.c_str());
+        sprintf(strSql,  "select Fversion_name,Fversion_path,Fversion_bucket from cloudream_upgrade.%s where Fversion_status='1'", table.c_str());
         
        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
            break;
@@ -144,7 +142,7 @@ bool CDBOperator::QueryAndroidNewaddedVersions(SqlMapVector &objOutMapVector)
         }
 
         memset(strSql, 0, 1024);
-        sprintf(strSql,  "select Fversion_name,Fversion_path from yzm_version_test_db.t_version_android where Fversion_status='1'");
+        sprintf(strSql,  "select Fversion_name,Fversion_path from cloudream_upgrade.t_version_android where Fversion_status='1'");
         
         if(!_ptrMysql->Query(strSql,  strlen(strSql))){
             break;
@@ -179,7 +177,7 @@ bool CDBOperator::QueryBucketAndDomain(int type ,string& inVersion, string& outB
     {
         table = "t_version_fitting_online";
     }
-	sprintf(strSql,  "select Fversion_bucket,Fversion_domain from yzm_version_test_db.%s where Fversion_name='%s'", table.c_str(), inVersion.c_str());
+	sprintf(strSql,  "select Fversion_bucket,Fversion_domain from cloudream_upgrade.%s where Fversion_name='%s'", table.c_str(), inVersion.c_str());
 	 
     do{
          if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
@@ -206,7 +204,7 @@ bool CDBOperator::QueryAndroidBucketAndDomain(string& inVersion, string& outBuck
     do{
         char strSql[1024] = {0};
         KeyValueMap objOutMap;
-        sprintf(strSql,  "select Foss_bucket,Foss_domain from yzm_version_test_db.t_version_android where Fversion_name='%s'", inVersion.c_str());
+        sprintf(strSql,  "select Foss_bucket,Foss_domain from cloudream_upgrade.t_version_android where Fversion_name='%s'", inVersion.c_str());
         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
             break;
          }
@@ -245,7 +243,7 @@ bool CDBOperator::insertMD5toDB(SqlMapVector& inMapVec, string type)
         {
             char strSql[1024] = {0};
             KeyValueMap sqlMap = *iter; 
-            sprintf(strSql,  "insert into yzm_version_test_db.%s	values('%s','%s','%s','%s')", table.c_str(), sqlMap["Fversion_name"].c_str(),sqlMap["Ffile_path"].c_str(),sqlMap["Fmd5"].c_str(), GetSystemTime());
+            sprintf(strSql,  "insert into cloudream_upgrade.%s	values('%s','%s','%s','%s')", table.c_str(), sqlMap["Fversion_name"].c_str(),sqlMap["Ffile_path"].c_str(),sqlMap["Fmd5"].c_str(), GetSystemTime());
              if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
                  _ptrMysql->Rollback();
                 break;
@@ -274,7 +272,7 @@ bool  CDBOperator::QueryMd5s(int type, string version, KeyValueMap& outMap)
     {
         table = "t_md5_fitting_online";
     }
-	sprintf(strSql,  "select Ffile_path, Fmd5 from yzm_version_test_db.%s where Fversion_name ='%s'", table.c_str(), version.c_str());
+	sprintf(strSql,  "select Ffile_path, Fmd5 from cloudream_upgrade.%s where Fversion_name ='%s'", table.c_str(), version.c_str());
 	
     do{
         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
@@ -307,7 +305,7 @@ bool CDBOperator::UpdateVersionStatus(string& inVersionName, string type)
         table = "t_version_fitting_online";
     }
     do{
-        sprintf(strSql, "select * from yzm_version_test_db.%s where Fversion_name='%s' ", table.c_str(), inVersionName.c_str());
+        sprintf(strSql, "select * from cloudream_upgrade.%s where Fversion_name='%s' ", table.c_str(), inVersionName.c_str());
         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
             break;
         }
@@ -319,7 +317,7 @@ bool CDBOperator::UpdateVersionStatus(string& inVersionName, string type)
         }
         
         memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "update yzm_version_test_db.%s set Fversion_status='0', Fupdate_time='%s' where Fversion_name='%s'",  \
+        sprintf(strSql, "update cloudream_upgrade.%s set Fversion_status='0', Fupdate_time='%s' where Fversion_name='%s'",  \
         table.c_str(), GetSystemTime(), inVersionName.c_str());
         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
             break;
@@ -347,7 +345,7 @@ bool CDBOperator::UpdateAndroidVersionStatus(string& inVersionName, string& inMd
 	char strSql[1024];
     memset(strSql, 0x00, sizeof(strSql));
     do{
-        sprintf(strSql, "select * from yzm_version_test_db.t_version_android where Fversion_name='%s' ",  inVersionName.c_str());
+        sprintf(strSql, "select * from cloudream_upgrade.t_version_android where Fversion_name='%s' ",  inVersionName.c_str());
         
         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
             break;
@@ -360,7 +358,7 @@ bool CDBOperator::UpdateAndroidVersionStatus(string& inVersionName, string& inMd
         }
        
         memset(strSql, 0, sizeof(strSql));
-        sprintf(strSql, "update yzm_version_test_db.t_version_android set Fversion_status='0', Fupdate_time='%s', Ffile_md5='%s', Ffile_size='%s' where Fversion_name='%s'",  \
+        sprintf(strSql, "update cloudream_upgrade.t_version_android set Fversion_status='0', Fupdate_time='%s', Ffile_md5='%s', Ffile_size='%s' where Fversion_name='%s'",  \
         GetSystemTime(), 
         inMd5.c_str(),
         strSize.c_str(),
@@ -386,7 +384,7 @@ bool CDBOperator::UpdateAndroidVersionStatus(string& inVersionName, string& inMd
 int  CDBOperator::AddAndroidVersion(ANDROID_VERSION_INFO& avInfo)
 {
 	char strSql[1024] = {0};
-    sprintf(strSql, "select * from yzm_version_test_db.t_version_android where Fversion_name='%s' ", \
+    sprintf(strSql, "select * from cloudream_upgrade.t_version_android where Fversion_name='%s' ", \
     avInfo.name.c_str());
     if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
         return 1;       
@@ -399,8 +397,8 @@ int  CDBOperator::AddAndroidVersion(ANDROID_VERSION_INFO& avInfo)
     }
     
     memset(strSql, 0, sizeof(strSql));
-    sprintf(strSql,  "insert into yzm_version_test_db.t_version_android \
-    values(NULL, '%s', '%s','%s','%s', '%s', '%s')", avInfo.name.c_str(), 
+    sprintf(strSql,  "insert into cloudream_upgrade.t_version_android \
+    values(NULL, '%s', '%d', '%s','%s','%s', '%s', '%s')", avInfo.name.c_str(),  avInfo.version_branch,
     avInfo.description.c_str(), avInfo.path.c_str(),\
     avInfo.md5.c_str(), avInfo.size.c_str(), GetSystemTime());
     LOG(INFO) << "SQL : " << strSql;
@@ -415,7 +413,7 @@ int  CDBOperator::AddAndroidVersion(ANDROID_VERSION_INFO& avInfo)
 int  CDBOperator::AddLiveshowVersion(LIVESHOW_ADD_INFO&  lsInfo)
 {
     char strSql[1024] = {0};
-    sprintf(strSql, "select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='%s' ", \
+    sprintf(strSql, "select Fversion_name from cloudream_upgrade.t_version_live_show where Fversion_name='%s' ", \
     lsInfo.name.c_str());
     LOG(INFO) << "SQL : " << strSql;
     if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
@@ -432,8 +430,8 @@ int  CDBOperator::AddLiveshowVersion(LIVESHOW_ADD_INFO&  lsInfo)
 
     memset(strSql, 0, sizeof(strSql));
 
-    sprintf(strSql,  "insert into yzm_version_test_db.t_version_live_show \
-    values(NULL, '%s', '%s','%s','%s', '%s')", lsInfo.name.c_str(), lsInfo.bucket.c_str(),   \
+    sprintf(strSql,  "insert into cloudream_upgrade.t_version_live_show \
+    values(NULL, '%s', %s','%s','%s', '%s')", lsInfo.name.c_str(), lsInfo.bucket.c_str(),   \
     lsInfo.domain.c_str(),  lsInfo.description.c_str(), GetSystemTime() );
 
     LOG(INFO) << "SQL : " << strSql;
@@ -444,7 +442,7 @@ int  CDBOperator::AddLiveshowVersion(LIVESHOW_ADD_INFO&  lsInfo)
     for (auto&  file : lsInfo.fileVec_)
     {
 	    memset(strSql, 0, 1024);
-		sprintf(strSql,  "insert into yzm_version_test_db.t_md5_live_show values(NULL, '%s','%s','%s','%s')", lsInfo.name.c_str(),  \
+		sprintf(strSql,  "insert into cloudream_upgrade.t_md5_live_show values(NULL, '%s','%s','%s','%s')", lsInfo.name.c_str(),  \
         file.first.c_str(), file.second.c_str(), GetSystemTime());
         LOG(INFO) << "SQL : " << strSql;
          if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){

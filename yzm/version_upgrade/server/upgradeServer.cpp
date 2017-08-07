@@ -1,6 +1,5 @@
 #include"upgradeServer.h"
 #include"config.h"   
-#include"CLogger.h"  
 #include"requestProcessor.h"
 #include"redisOperator.h"
 #include"dbPool.h"
@@ -11,7 +10,6 @@
 using namespace std;
 using namespace std::chrono;
 
-CLogger* 		                    gPtrAppLog = nullptr;
 shared_ptr<CRedisOperator>          gPtrRedisOperator;
 shared_ptr<CDbPool<CDBOperator> >   gPtrDbpool;
 
@@ -23,8 +21,6 @@ public:
 public:
 	bool init() 
 	{
-		initLog(LOG_PATH);
-
 		if (!readConf())
 		{
 			LOG(ERROR) << "read conf paramer failed!";
@@ -67,18 +63,6 @@ public:
 		gPtrRedisOperator->setPoolSize(16);
 
 		return true;
-	}
-
-	bool initLog(string path) 
-	{
-		string tail = "-index";
-		gPtrAppLog = new CLogger(path.c_str(), 
-							1024*1024, 5,                  //1M
-							CLogger::LOG_LEVEL(5),
-							CLogger::SHIFT_MODE(2)); 
-		gPtrAppLog->setSuffix(tail);
-
-		gPtrAppLog->info("my log begin to work ......");
 	}
 
 	bool  readConf()     
@@ -134,7 +118,6 @@ public:
 
 	}
 
-
 };
 
 CUpgradeServer::CUpgradeServer()
@@ -156,15 +139,15 @@ bool  CUpgradeServer::Start()
 
 	impPtr_->httpPtr_ = HttpSRV_init();   
 	auto  callback = bind(&CUpgradeServer::httpCallBack, this, placeholders::_1, placeholders::_2);
-	HttpSRV_addRequestCB(impPtr_->httpPtr_, LIVE_SHOW_QUERY_URI,     callback);
-	HttpSRV_addRequestCB(impPtr_->httpPtr_, LIVE_SHOW_UPDATE_URI,    callback);
-	HttpSRV_addRequestCB(impPtr_->httpPtr_, ANDROID_QUERY_URI,       callback);
-	HttpSRV_addRequestCB(impPtr_->httpPtr_, ANDROID_VERSION_ADD_URI, callback);
+	HttpSRV_addRequestCB(impPtr_->httpPtr_, LIVE_SHOW_QUERY_URI,      callback);
+	HttpSRV_addRequestCB(impPtr_->httpPtr_, LIVE_SHOW_UPDATE_URI,     callback);
+	HttpSRV_addRequestCB(impPtr_->httpPtr_, ANDROID_QUERY_URI,        callback);
+	HttpSRV_addRequestCB(impPtr_->httpPtr_, ANDROID_VERSION_ADD_URI,  callback);
 	HttpSRV_addRequestCB(impPtr_->httpPtr_, LIVESHOW_VERSION_ADD_URI, callback);  
 
 	HttpSRV_start(impPtr_->httpPtr_,  config::CConfigManager::instance()->listen_port_);
 
-	return  true;
+	return  true;                     
 
 }
 
@@ -217,7 +200,7 @@ int CUpgradeServer::httpCallBack(const RecvInfo& pRecvInfo, string&  response)
 	auto end = steady_clock::now();
     auto cost = duration_cast<milliseconds>(end - begin).count();
 	LOG(INFO) << "response buffer length : " << response.length() << "   data :" << response;
-	LOG(INFO) << "callback end, cost " << cost << "ms";
+	LOG(INFO) << "callback end, cost " << cost << "ms"; 
 	
 	return 0;  
 }
