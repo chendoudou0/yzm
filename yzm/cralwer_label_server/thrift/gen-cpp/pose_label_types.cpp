@@ -2989,4 +2989,480 @@ void LoginRet::printTo(std::ostream& out) const {
   out << ")";
 }
 
+
+PoseData::~PoseData() throw() {
+}
+
+
+void PoseData::__set_pose_data(const std::string& val) {
+  this->pose_data = val;
+}
+
+void PoseData::__set_user_name(const std::string& val) {
+  this->user_name = val;
+}
+
+void PoseData::__set_label_time(const std::string& val) {
+  this->label_time = val;
+}
+std::ostream& operator<<(std::ostream& out, const PoseData& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t PoseData::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->pose_data);
+          this->__isset.pose_data = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->user_name);
+          this->__isset.user_name = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->label_time);
+          this->__isset.label_time = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t PoseData::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("PoseData");
+
+  xfer += oprot->writeFieldBegin("pose_data", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeString(this->pose_data);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("user_name", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->user_name);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("label_time", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString(this->label_time);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(PoseData &a, PoseData &b) {
+  using ::std::swap;
+  swap(a.pose_data, b.pose_data);
+  swap(a.user_name, b.user_name);
+  swap(a.label_time, b.label_time);
+  swap(a.__isset, b.__isset);
+}
+
+PoseData::PoseData(const PoseData& other60) {
+  pose_data = other60.pose_data;
+  user_name = other60.user_name;
+  label_time = other60.label_time;
+  __isset = other60.__isset;
+}
+PoseData& PoseData::operator=(const PoseData& other61) {
+  pose_data = other61.pose_data;
+  user_name = other61.user_name;
+  label_time = other61.label_time;
+  __isset = other61.__isset;
+  return *this;
+}
+void PoseData::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "PoseData(";
+  out << "pose_data=" << to_string(pose_data);
+  out << ", " << "user_name=" << to_string(user_name);
+  out << ", " << "label_time=" << to_string(label_time);
+  out << ")";
+}
+
+
+PoseDatasRet::~PoseDatasRet() throw() {
+}
+
+
+void PoseDatasRet::__set_code(const int32_t val) {
+  this->code = val;
+}
+
+void PoseDatasRet::__set_msg(const std::string& val) {
+  this->msg = val;
+}
+
+void PoseDatasRet::__set_pic_bin(const std::string& val) {
+  this->pic_bin = val;
+}
+
+void PoseDatasRet::__set_vecPoseData(const std::vector<PoseData> & val) {
+  this->vecPoseData = val;
+}
+std::ostream& operator<<(std::ostream& out, const PoseDatasRet& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t PoseDatasRet::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->code);
+          this->__isset.code = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->msg);
+          this->__isset.msg = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readBinary(this->pic_bin);
+          this->__isset.pic_bin = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 4:
+        if (ftype == ::apache::thrift::protocol::T_LIST) {
+          {
+            this->vecPoseData.clear();
+            uint32_t _size62;
+            ::apache::thrift::protocol::TType _etype65;
+            xfer += iprot->readListBegin(_etype65, _size62);
+            this->vecPoseData.resize(_size62);
+            uint32_t _i66;
+            for (_i66 = 0; _i66 < _size62; ++_i66)
+            {
+              xfer += this->vecPoseData[_i66].read(iprot);
+            }
+            xfer += iprot->readListEnd();
+          }
+          this->__isset.vecPoseData = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t PoseDatasRet::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("PoseDatasRet");
+
+  xfer += oprot->writeFieldBegin("code", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->code);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("msg", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->msg);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("pic_bin", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeBinary(this->pic_bin);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("vecPoseData", ::apache::thrift::protocol::T_LIST, 4);
+  {
+    xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->vecPoseData.size()));
+    std::vector<PoseData> ::const_iterator _iter67;
+    for (_iter67 = this->vecPoseData.begin(); _iter67 != this->vecPoseData.end(); ++_iter67)
+    {
+      xfer += (*_iter67).write(oprot);
+    }
+    xfer += oprot->writeListEnd();
+  }
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(PoseDatasRet &a, PoseDatasRet &b) {
+  using ::std::swap;
+  swap(a.code, b.code);
+  swap(a.msg, b.msg);
+  swap(a.pic_bin, b.pic_bin);
+  swap(a.vecPoseData, b.vecPoseData);
+  swap(a.__isset, b.__isset);
+}
+
+PoseDatasRet::PoseDatasRet(const PoseDatasRet& other68) {
+  code = other68.code;
+  msg = other68.msg;
+  pic_bin = other68.pic_bin;
+  vecPoseData = other68.vecPoseData;
+  __isset = other68.__isset;
+}
+PoseDatasRet& PoseDatasRet::operator=(const PoseDatasRet& other69) {
+  code = other69.code;
+  msg = other69.msg;
+  pic_bin = other69.pic_bin;
+  vecPoseData = other69.vecPoseData;
+  __isset = other69.__isset;
+  return *this;
+}
+void PoseDatasRet::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "PoseDatasRet(";
+  out << "code=" << to_string(code);
+  out << ", " << "msg=" << to_string(msg);
+  out << ", " << "pic_bin=" << to_string(pic_bin);
+  out << ", " << "vecPoseData=" << to_string(vecPoseData);
+  out << ")";
+}
+
+
+ScoreQueryRet::~ScoreQueryRet() throw() {
+}
+
+
+void ScoreQueryRet::__set_code(const int32_t val) {
+  this->code = val;
+}
+
+void ScoreQueryRet::__set_msg(const std::string& val) {
+  this->msg = val;
+}
+
+void ScoreQueryRet::__set_selfScore(const double val) {
+  this->selfScore = val;
+}
+
+void ScoreQueryRet::__set_averScore(const double val) {
+  this->averScore = val;
+}
+
+void ScoreQueryRet::__set_scoreCount(const int32_t val) {
+  this->scoreCount = val;
+}
+std::ostream& operator<<(std::ostream& out, const ScoreQueryRet& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t ScoreQueryRet::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->code);
+          this->__isset.code = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->msg);
+          this->__isset.msg = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_DOUBLE) {
+          xfer += iprot->readDouble(this->selfScore);
+          this->__isset.selfScore = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 4:
+        if (ftype == ::apache::thrift::protocol::T_DOUBLE) {
+          xfer += iprot->readDouble(this->averScore);
+          this->__isset.averScore = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 5:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->scoreCount);
+          this->__isset.scoreCount = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t ScoreQueryRet::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("ScoreQueryRet");
+
+  xfer += oprot->writeFieldBegin("code", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->code);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("msg", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->msg);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("selfScore", ::apache::thrift::protocol::T_DOUBLE, 3);
+  xfer += oprot->writeDouble(this->selfScore);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("averScore", ::apache::thrift::protocol::T_DOUBLE, 4);
+  xfer += oprot->writeDouble(this->averScore);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("scoreCount", ::apache::thrift::protocol::T_I32, 5);
+  xfer += oprot->writeI32(this->scoreCount);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(ScoreQueryRet &a, ScoreQueryRet &b) {
+  using ::std::swap;
+  swap(a.code, b.code);
+  swap(a.msg, b.msg);
+  swap(a.selfScore, b.selfScore);
+  swap(a.averScore, b.averScore);
+  swap(a.scoreCount, b.scoreCount);
+  swap(a.__isset, b.__isset);
+}
+
+ScoreQueryRet::ScoreQueryRet(const ScoreQueryRet& other70) {
+  code = other70.code;
+  msg = other70.msg;
+  selfScore = other70.selfScore;
+  averScore = other70.averScore;
+  scoreCount = other70.scoreCount;
+  __isset = other70.__isset;
+}
+ScoreQueryRet& ScoreQueryRet::operator=(const ScoreQueryRet& other71) {
+  code = other71.code;
+  msg = other71.msg;
+  selfScore = other71.selfScore;
+  averScore = other71.averScore;
+  scoreCount = other71.scoreCount;
+  __isset = other71.__isset;
+  return *this;
+}
+void ScoreQueryRet::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "ScoreQueryRet(";
+  out << "code=" << to_string(code);
+  out << ", " << "msg=" << to_string(msg);
+  out << ", " << "selfScore=" << to_string(selfScore);
+  out << ", " << "averScore=" << to_string(averScore);
+  out << ", " << "scoreCount=" << to_string(scoreCount);
+  out << ")";
+}
+
 }} // namespace

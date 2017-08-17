@@ -230,8 +230,29 @@ struct LoginRet {
     2: string msg,
     3: i32  role_id,     //角色ID，id为0是管理员，id为1是普通用户
     4: string  token,
+} 
+
+struct PoseData{
+    1: string pose_data,       //标注信息
+    2: string user_name,       //标注用户名
+    3: string label_time,      //标注时间
 }
  
+struct PoseDatasRet {
+    1: i32 code = 0,
+    2: string msg,
+    3: binary pic_bin,                      //图片二进制流
+    4: list<PoseData>   vecPoseData,        //标记数据列表
+}      
+ 
+struct ScoreQueryRet {
+    1: i32      code = 0,
+    2: string   msg,
+    3: double   selfScore,      //自己的评分,未评分值就是0
+    4: double   averScore,      //平均分
+    5: i32      scoreCount,     //评分人数
+}
+
 service LabelService{
     /*
     * 未被任何人标注图片查询接口，查询一次就返回10张
@@ -265,12 +286,12 @@ service LabelService{
     * 0查询成功， -1 查询失败, 1 没有该图片
     */
     QueryByIdRet QueryPicById(1:string token, 2:i32 pic_id),
-     /*
+   /*
     * 查询某用户标记的图片
     * @params
-    * token:令牌, user : 用户名
+    * token:令牌, user : 用户名（若用户名为空，则是查询所有用户标记的数据）
     * @code
-    * 0查询成功， -1 查询失败, 1 没有图片
+    * 0查询成功， -1 查询失败, 1 没有图片, 2 不是管理员用户，无权限
     */
     QueryLabeledRet QueryPicByUserName(1:string token, 2:string user, 3:i32 index, 4:QueryCondition qc ),
     /*
@@ -286,7 +307,7 @@ service LabelService{
          * @params
          *   1.poseInfo : 标注关节点信息
          *   2.pic_id      : 被标注图片ID
-         *   3. token:令牌
+         *   3.token:令牌
          *   @code
          *   0入库成功， -1 入库失败
     */
@@ -302,7 +323,7 @@ service LabelService{
         * 0标记成功， -1 标记失败， 1 该用户无权标记
     */
    ReturnVals InvalidatePicture(1:i32 pic_id, 2:string token, 3:bool type),
-    /*
+   /*
      * 查找自己已经标注信息
          * @params
          *   1.pic_id : 被标注图片ID
@@ -310,17 +331,19 @@ service LabelService{
          * @code
          * 0标记成功， -1 标记失败
     */
-      
+       
    LabeledPoseDataRet QueryLabeledPoseData(1:i32 pic_id, 2:string pic_url, 3:string token),
     /*
      * 查找最后一个人的标注信息
          * @params
          *   1.pic_id : 被标注图片ID
-         *    2.user: 用户名
+         *    2.user: 最后标注者的用户名
          * @code
          * 0标记成功， -1 标记失败
     */
+       
    LabeledPoseDataRet QueryLastLabeledPoseData(1:i32 pic_id, 2:string pic_url, 3:string user),
+ 
  /*
      * 普通用户注册
          * @params
@@ -341,7 +364,46 @@ service LabelService{
     */
       
    LoginRet Login(1:string user, 2:string passwd),
-  
+  /*
+     * 查找图片的所有标记信息     
+         * @params
+         *   1.pic_id : 被标注图片ID
+         *   2.token:   令牌
+         * @return
+         * code 0查询成功， -1 查询失败
+    */
+   PoseDatasRet QueryPicPoseData(1:i32 pic_id, 2:string pic_url ,3:string token),
+    /*
+     * 查找标记信息的评分     
+         * @params
+         *   1.pic_id : 被标注图片ID
+         *   2.user_name : 标记用户名
+         *   3.token     :   令牌
+         * @return
+         * code 0查询成功， -1 查询失败
+    */
+   ScoreQueryRet QueryPoseDataScore(1:i32 pic_id, 2:string label_user, 3:string token),
+    /*
+     * 对标记信息评分     
+         * @params
+         *   1.pic_id : 被标注图片ID
+         *   2.user_name : 标记用户名
+         *   3.token     :   令牌
+         *   4:double    :   score
+         * @return
+         * code 0 评分成功， -1 评分失败
+    */
+   ReturnVals ScorePoseData(1:i32 pic_id, 2:string label_user, 3:string token, 4:double score),
+   /*
+         * 从新预处理图片   
+         * @params
+         *   1.pic_url :   图片URL
+         *   2.token   :   令牌
+         * @return
+         * code 0 预处理成功， -1 预处理失败
+    */
+   ReturnVals RepreProcessPic(1:string pic_url, 2:string token),
+ 
 }
 ////////////////////////////////////////////////////////////////////////////爬虫脚本服务
 service CrawlerService{    
@@ -350,16 +412,16 @@ service CrawlerService{
     * @params
     * keyword : 搜索关键字
     * website : 搜索网站 Baidu
-    * tag :对应的标签
+    * tag :对应的标签                       
     * @code
     * 0代表成功， -1代表失败
     */  
     ReturnVals start(1:string keyword,2:string website,3:string tag),
-     /*   爬虫停止
+     /*  爬虫停止
     * @params  无
     * @return
     * ReturnVals.code: 0代表成功， -1代表失败
-    * ReturnVals.msg : 描述信息
+    * ReturnVals.msg : 描述信息      
     */ 
     ReturnVals stop(),
 }

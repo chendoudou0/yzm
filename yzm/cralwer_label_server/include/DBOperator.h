@@ -26,8 +26,8 @@ public:
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	int  QueryPicByMd5(const std::string& md5);
 	int  QueryPicByURL(const std::string& url, SqlResultSet &objOutMap);
-	int  AddPicture(const ::server::pose_label::PicInfo&   pic, string url);
-	bool UpdatePicPoseDate(const std::string& url, string& str2dPose, string& str3dPose);
+	int  AddPicture(const ::server::pose_label::PicInfo&   pic, string& url, string& str2dPose, string& str3dPose, string& pose_type, string& body_pos);
+	bool UpdatePicPoseDate(const std::string& url, string& str2dPose, string& str3dPose, string& pose_type, string& body_pos);
 	bool AddLabeledDate(int picId,const std::string token,const std::string poseDate);
 	bool QueryUnlabeledPicture(SqlMapVector &objOutMapVector, const  std::string token, int index, int& page, const QueryCondition& qc);
 	bool QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std::string token, int index, int& page, const QueryCondition& qc);
@@ -44,6 +44,9 @@ public:
 	bool QueryCrawleredPic(SqlMapVector &objOutMapVector,  const QueryConditions& qc, int index, int& page);
 	bool AddCrawlingResult(const CrawlingResult&  cs, int dbSum);
 	bool UpdatePicInfoById(int id, const std::string tag, const std::string pose_type);
+	bool ScorePoseData(int pic_id , const std::string&  user_name , const std::string&  token , double  score);
+	bool QueryPicPoseData(SqlMapVector &objOutMapVector, const int32_t  pic_id , const std::string&  token);
+	bool QueryPoseDataScore(ScoreQueryRet&  sqRet , const int32_t  pic_id , const std::string&  label_user , const std::string&  token );
 private:   
 	std::shared_ptr<CMySQL>  _ptrMysql;   
  

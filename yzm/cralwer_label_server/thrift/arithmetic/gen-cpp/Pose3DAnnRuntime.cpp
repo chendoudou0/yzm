@@ -46,14 +46,14 @@ uint32_t Pose3DAnnRuntime_AutoAlignment_args::read(::apache::thrift::protocol::T
         if (ftype == ::apache::thrift::protocol::T_LIST) {
           {
             this->lockInfo.clear();
-            uint32_t _size49;
-            ::apache::thrift::protocol::TType _etype52;
-            xfer += iprot->readListBegin(_etype52, _size49);
-            this->lockInfo.resize(_size49);
-            uint32_t _i53;
-            for (_i53 = 0; _i53 < _size49; ++_i53)
+            uint32_t _size53;
+            ::apache::thrift::protocol::TType _etype56;
+            xfer += iprot->readListBegin(_etype56, _size53);
+            this->lockInfo.resize(_size53);
+            uint32_t _i57;
+            for (_i57 = 0; _i57 < _size53; ++_i57)
             {
-              xfer += iprot->readBool(this->lockInfo[_i53]);
+              xfer += iprot->readBool(this->lockInfo[_i57]);
             }
             xfer += iprot->readListEnd();
           }
@@ -86,10 +86,10 @@ uint32_t Pose3DAnnRuntime_AutoAlignment_args::write(::apache::thrift::protocol::
   xfer += oprot->writeFieldBegin("lockInfo", ::apache::thrift::protocol::T_LIST, 2);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_BOOL, static_cast<uint32_t>(this->lockInfo.size()));
-    std::vector<bool> ::const_iterator _iter54;
-    for (_iter54 = this->lockInfo.begin(); _iter54 != this->lockInfo.end(); ++_iter54)
+    std::vector<bool> ::const_iterator _iter58;
+    for (_iter58 = this->lockInfo.begin(); _iter58 != this->lockInfo.end(); ++_iter58)
     {
-      xfer += oprot->writeBool((*_iter54));
+      xfer += oprot->writeBool((*_iter58));
     }
     xfer += oprot->writeListEnd();
   }
@@ -117,10 +117,10 @@ uint32_t Pose3DAnnRuntime_AutoAlignment_pargs::write(::apache::thrift::protocol:
   xfer += oprot->writeFieldBegin("lockInfo", ::apache::thrift::protocol::T_LIST, 2);
   {
     xfer += oprot->writeListBegin(::apache::thrift::protocol::T_BOOL, static_cast<uint32_t>((*(this->lockInfo)).size()));
-    std::vector<bool> ::const_iterator _iter55;
-    for (_iter55 = (*(this->lockInfo)).begin(); _iter55 != (*(this->lockInfo)).end(); ++_iter55)
+    std::vector<bool> ::const_iterator _iter59;
+    for (_iter59 = (*(this->lockInfo)).begin(); _iter59 != (*(this->lockInfo)).end(); ++_iter59)
     {
-      xfer += oprot->writeBool((*_iter55));
+      xfer += oprot->writeBool((*_iter59));
     }
     xfer += oprot->writeListEnd();
   }

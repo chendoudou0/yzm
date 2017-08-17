@@ -82,6 +82,26 @@ class LabelServiceHandler : virtual public LabelServiceIf {
     printf("Login\n");
   }
 
+  void QueryPicPoseData(PoseDatasRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) {
+    // Your implementation goes here
+    printf("QueryPicPoseData\n");
+  }
+
+  void QueryPoseDataScore(ScoreQueryRet& _return, const int32_t pic_id, const std::string& label_user, const std::string& token) {
+    // Your implementation goes here
+    printf("QueryPoseDataScore\n");
+  }
+
+  void ScorePoseData(ReturnVals& _return, const int32_t pic_id, const std::string& label_user, const std::string& token, const double score) {
+    // Your implementation goes here
+    printf("ScorePoseData\n");
+  }
+
+  void RepreProcessPic(ReturnVals& _return, const std::string& pic_url, const std::string& token) {
+    // Your implementation goes here
+    printf("RepreProcessPic\n");
+  }
+
 };
 
 int main(int argc, char **argv) {

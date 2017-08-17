@@ -156,12 +156,32 @@ bool  closeThrift()
 	return true;
 }
 
-bool preProcess(string& url, string& str2dPose, string& str3dPose, string& errorType)
+void genBodyPosJson(ImgAABB& aabb, string& bodyPosJson){
+	Document doc;
+	Value    root(kObjectType);
+	
+	root.AddMember("top_x" , aabb.minX, doc.GetAllocator());
+	root.AddMember("top_y" , aabb.minY, doc.GetAllocator());
+	root.AddMember("bottom_x" , aabb.maxX, doc.GetAllocator());
+	root.AddMember("bottom_y" , aabb.maxY, doc.GetAllocator());
+	////////////////////////////////////////////////////////////
+	StringBuffer buffer;
+	Writer<StringBuffer> writer(buffer);
+	root.Accept(writer);
+	bodyPosJson = buffer.GetString();
+
+}
+
+bool preProcess(cv::Mat mat, string& str2dPose, string& str3dPose, string& pose_type, string& body_pos, string& errorType)
 {
 	LOG(INFO) << "preProcess  begin ";
 	bool ret = false;
 
 	do{
+		if(mat.data == nullptr){
+			LOG(ERROR) << "preProcess failed, mat is null";
+			break;
+		}
 		if(!connected_){
 			if(!connectPrehandle()){
 				closeThrift();
@@ -170,8 +190,7 @@ bool preProcess(string& url, string& str2dPose, string& str3dPose, string& error
 			}
 		}
 
-		Image  img;
-		cv::Mat mat = cv::imread(url); 
+		Image  img; 
 		img.width = mat.cols;
 		img.height = mat.rows;
 		img.channel = mat.channels();
@@ -182,11 +201,17 @@ bool preProcess(string& url, string& str2dPose, string& str3dPose, string& error
 		vector<HumanPose3DInfo>  tdInfo;
 		try
 		{
-			if(!ppClient_->CheckIsValid(img)){
+			ImageInitData checkRet;
+			ppClient_->CheckIsValid(checkRet, img);
+			if(!checkRet.isValid){
 				LOG(INFO) << "CheckIsValid  failed ";
 				errorType = "0-";
 				break;
 			}
+			pose_type = checkRet.poseJsonStr;
+			genBodyPosJson(checkRet.imgAABB, body_pos);
+			LOG(INFO) << "pose_type : " <<pose_type;
+			LOG(INFO) << "body_pos : "<<body_pos;
 		
 			ppClient_->DoInitGuess(gsInfo, img);
 			if(!gsInfo.isSuccess){
@@ -218,12 +243,10 @@ bool preProcess(string& url, string& str2dPose, string& str3dPose, string& error
 		ret = true;
 
 	}while(0);
+	LOG(INFO) << "str2dPose  length : " <<  str2dPose.length();
+	LOG(INFO) << "str3dPose  length : " <<  str3dPose.length();
+	LOG(INFO) << "preProcess end, ret "<< ret;
 
-	LOG(INFO) << "str2dPose  length : " << str2dPose.length();
-	LOG(INFO) << "str3dPose length : " << str3dPose.length();
-	LOG(INFO) << "preProcess end";
-
-	remove(url.c_str());
 	return ret;
 }
 
@@ -295,7 +318,6 @@ bool gen2dPoseJson(GuessInfo& gsInfo, string& str2dPose)
 	str2dPose = buffer.GetString();
 
 	return true;
-
 }
 
 bool gen3dPoseJson(vector<HumanPose3DInfo>&  hp3DInfoVec, string& str3dPose)
@@ -373,8 +395,8 @@ private:
     boost::shared_ptr<TProtocol>  protocol_;
 	boost::shared_ptr<Pose3DAnnPreprocessClient>  ppClient_;
 	string suanfa_ip_{config::CConfigManager::instance()->suanfa_ip_};
-	int suanfa_port_{config::CConfigManager::instance()->suanfa_port_};
-	bool connected_{false}; 
+	int   suanfa_port_{config::CConfigManager::instance()->suanfa_port_};
+	bool  connected_{false}; 
 
 };
 
@@ -410,12 +432,12 @@ class DataServiceHandler : virtual public DataServiceIf {
 
 		int pos;
 		pos = pic.filename.find_last_of('.');
-		string tail = pic.filename.substr(pos );
+		string tail = pic.filename.substr(pos);
 		string oriUrl = path + pic.md5 + tail;
-		string ppUrl = ppPath + pic.md5 + tail;
+		string ppUrl  = ppPath + pic.md5 + tail;     
 		string ppBakUrl = ppBakPath + pic.md5 + tail;
 		std::ofstream oriPic(oriUrl.c_str() , std::ofstream::binary);
-		oriPic.write(pic.oriBin.c_str(), pic.oriBin.length());
+		oriPic.write(pic.oriBin.c_str(), pic.oriBin.length());      
 		oriPic.close();
 		if(percent == 0){
 			gTotalPic = 0;
@@ -430,11 +452,13 @@ class DataServiceHandler : virtual public DataServiceIf {
 		cv::imwrite(inflateUrl, dst); 
 		string str2dPose;
 		string str3dPose;
+		string pose_type;
+		string body_pos;
 		string errorType;
-		if(!gPtrPreprocessor->preProcess(inflateUrl, str2dPose, str3dPose, errorType))
+		if(!gPtrPreprocessor->preProcess(dst, str2dPose, str3dPose, pose_type, body_pos, errorType))
 		{
 			string errorUrl = errorPath + errorType + pic.md5 + tail;
-			if(errorType != "thrift_error"){
+			if(errorType != "thrift_error"){   
 				MoveFile(oriUrl, errorUrl);
 			}else{
 				sleep(5);                 //连接不上预处理算法
@@ -444,16 +468,13 @@ class DataServiceHandler : virtual public DataServiceIf {
 		}
 		MoveFile(oriUrl, ppUrl);
 		CopyFile(ppUrl,  ppBakUrl);
-		if(-1 == gPtrDbpool->GetDbOper()->AddPicture(pic, ppUrl))
+		if(-1 == gPtrDbpool->GetDbOper()->AddPicture(pic, ppUrl, str2dPose, str3dPose, pose_type, body_pos))
 		{
 			break;
 		}
-		if(!gPtrDbpool->GetDbOper()->UpdatePicPoseDate(ppUrl, str2dPose, str3dPose)){
-			break;
-		}
-
+		
 		gDbPic++;
-		_return.code = 0;
+		_return.code = 0;                                      
 	}while(0);
 
 	LOG(INFO) << "PicUpload end , ret code : " << _return.code;
@@ -489,11 +510,11 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
   }
 
   void PicUpload(ReturnVals& _return, const PicInfo& pic) { 
-		_return.code = -1;
+	_return.code = -1;
 	do{
 		LOG(INFO) << "PicUpload BEGIN";
 		if( pic.oriBin.length() == 0){
-			LOG(INFO) << "ori pic is empty ";
+			LOG(INFO) << "ori pic is empty ";  
 			break;   
 		}
 		string path = config::CConfigManager::instance()->ori_path_;
@@ -518,28 +539,28 @@ class CrawlerClientServiceHandler : virtual public CrawlerClientServiceIf {
 		/////////////////////////////////
 		string str2dPose;
 		string str3dPose;
+		string pose_type;
+		string body_pos;
 		string errorType;
-		if(!gPtrPreprocessor->preProcess(inflateUrl, str2dPose, str3dPose, errorType))
+		if(!gPtrPreprocessor->preProcess(dst, str2dPose, str3dPose, pose_type, body_pos, errorType))
 		{
 			string errorUrl = errorPath + errorType + pic.md5 + tail;
-			if(errorType != "thrift_error"){
+			if(errorType != "thrift_error"){   
 				MoveFile(oriUrl, errorUrl);
 			}else{
-				sleep(8);
+				sleep(5);                 //连接不上预处理算法
 			}
-			_return.code = 0;
+			_return.code = 1;
 			break;
 		}
 		MoveFile(oriUrl, ppUrl);
 		CopyFile(ppUrl,  ppBakUrl);
-		if(-1 == gPtrDbpool->GetDbOper()->AddPicture(pic, ppUrl))
+		if(-1 == gPtrDbpool->GetDbOper()->AddPicture(pic, ppUrl, str2dPose, str3dPose, pose_type, body_pos))
 		{
 			break;
 		}
-		if(!gPtrDbpool->GetDbOper()->UpdatePicPoseDate(ppUrl, str2dPose, str3dPose)){
-			break;
-		}
 		_return.code = 0;
+
 	}while(0);
 	LOG(INFO) << "PicUpload end , ret code : " << _return.code;
   
@@ -925,7 +946,7 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 			 break;
 		 }
 
-		 LOG(INFO) << " picVec.size()  "<<picVec.size();
+		 LOG(INFO) << " picVec.size()  "<< picVec.size();
 		 PacketPicVec(_return.picVec, picVec);
 		 _return.code = 0;
 
@@ -1000,7 +1021,6 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 	LOG(INFO) << "DownloadPic begin ";
 	_return.code = -1;
 	do{
-		 LOG(INFO) << "DownloadPic begin ";
 		 SqlResultSet  sqlMap;
 		 if(gPtrDbpool->GetDbOper()->QueryPicByURL(pic_url, sqlMap) != 0){
 			 _return.msg = "db query failed !";     
@@ -1010,29 +1030,11 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 		 stringstream ss;
 		 ss << sqlMap["Fid"];
 		 ss >>_return.pic_id;            
-		/////////////////////////////////////////////////////////
-		int pos;
-		pos = pic_url.find_last_of('.');
-		string tail = pic_url.substr(pos);
-		string inflateUrl =  pic_url.substr(0, pos)  + "600*800"  + tail;
-		cv::Mat src = cv::imread(pic_url);
-		if(src.data == nullptr){
-			 LOG(ERROR) << " pic  "<<pic_url << " not exist";
-			 break;
-		} 
-    	cv::Mat dst = ResizeImg(src, 600, 800);
-		cv::imwrite(inflateUrl, dst); 
-		std::ifstream fin;
-		fin.open(inflateUrl, ifstream::binary);
-		if (!fin.is_open()){        
-			break;
-		}
-		ss.clear();
-		ss.str("");
-		ss << fin.rdbuf();
-		_return.bin = ss.str();
-		fin.close();
-		remove(inflateUrl.c_str());
+		
+		 if(!GetInflatedPicBin(pic_url, 600, 800, sqlMap["Fbody_pos"], _return.bin)){
+			   LOG(ERROR) << " get pic 600*800 bin  failed  ";
+			   break;
+		  }
 
 		_return.code = 0;
 
@@ -1051,34 +1053,121 @@ class LabelServiceHandler : virtual public LabelServiceIf {
 			 _return.msg = "db query failed !";     
 		 }
 		 _return.poseData = sqlMap["Fpose_data"] ;
-		//////////////////////
+
+		 SqlResultSet  picInfoMap;
+		 if(gPtrDbpool->GetDbOper()->QueryPicByURL(pic_url, picInfoMap) != 0){
+			 _return.msg = "QueryPicByURL failed !";     
+		 }
+		 if(!GetInflatedPicBin(pic_url, 600, 800, picInfoMap["Fbody_pos"], _return.bin)){
+			   LOG(ERROR) << " get pic 600*800 bin  failed  ";
+			   break;
+		  }
+
+		_return.code = 0;
+	}while(0);
+
+	LOG(INFO) << "QueryLabeledPoseData end , ret code " << _return.code;
+  }
+  struct BODY_POS{
+	  int top_x_{0};
+	  int top_y_{0};
+	  int bottom_x_{0};
+	  int bottom_y_{0};
+  };
+  bool ParseBodyPosition(string strBodyPos, BODY_POS bodyPos){
+		rapidjson::Document doc;
+		doc.Parse<0>(strBodyPos.c_str());
+		if (doc.HasParseError())
+		{
+			rapidjson::ParseErrorCode code = doc.GetParseError();
+			LOG(ERROR) << "parse strBodyPos failed "; 
+			return  false;
+		}
+
+		Value &top_x = doc["top_x"];
+		if (top_x.IsNull() || !top_x.IsInt())
+		{
+			LOG(ERROR) << "top_x is null";  
+			return false;
+		}
+		bodyPos.top_x_ = top_x.GetInt();
+		LOG(INFO) << "bodyPos.top_x_ : " << bodyPos.top_x_;
+
+		Value &top_y = doc["top_y"];
+		if (top_y.IsNull() || !top_y.IsInt())
+		{
+			LOG(ERROR) << "top_x is null";  
+			return false;
+		}
+		bodyPos.top_y_ = top_y.GetInt();
+		LOG(INFO) << "bodyPos.top_y_ : " << bodyPos.top_y_;
+
+		Value &bottom_x = doc["bottom_x"];
+		if (bottom_x.IsNull() || !bottom_x.IsInt())
+		{
+			LOG(ERROR) << "bottom_x is null";  
+			return false;
+		}
+		bodyPos.bottom_x_ = bottom_x.GetInt();
+		LOG(INFO) << "bodyPos.bottom_x_ : " << bodyPos.bottom_x_;
+
+		Value &bottom_y = doc["bottom_y"];
+		if (bottom_y.IsNull() || !bottom_y.IsInt())
+		{
+			LOG(ERROR) << "bottom_y is null";  
+			return false;
+		}
+		bodyPos.bottom_y_ = bottom_y.GetInt();
+		LOG(INFO) << "bodyPos.bottom_y_ : " << bodyPos.bottom_y_;
+
+		return true;
+  }
+
+  bool GetInflatedPicBin(const string url, float width, float height , string body_pos, string& bin){
+	bool ret = false;
+	do{
 		int pos;
-		pos = pic_url.find_last_of('.');
-		string tail = pic_url.substr(pos);
-		string inflateUrl =  pic_url.substr(0, pos)  + "600*800"  + tail;
-		cv::Mat src = cv::imread(pic_url);
+		pos = url.find_last_of('.');
+		string tail = url.substr(pos);
+		stringstream ss;
+		string tag;
+		ss << width << "*" << height;
+		ss >> tag;
+		string inflateUrl =  url.substr(0, pos)  + tag  + tail;
+		cv::Mat src = cv::imread(url);
 		if(src.data == nullptr){
-			 LOG(ERROR) << " pic  "<<pic_url << " not exist";
-			 break;
+				LOG(ERROR) << " pic  "<< url << " not exist";
+				break;
 		} 
-    	cv::Mat dst = ResizeImg(src, 600, 800);
+		/////////////////////////////////////////////
+		BODY_POS bodyPos;
+		cv::Mat  roi_img;
+		if(!ParseBodyPosition(body_pos, bodyPos)){
+			roi_img = src;
+		}else{
+			roi_img = src(cv::Range(bodyPos.bottom_y_ , bodyPos.top_y_), 
+			cv::Range(bodyPos.top_x_,bodyPos.bottom_x_));
+		}
+		/////////////////////////////////////////////
+		cv::Mat dst = ResizeImg(roi_img, width, height);
 		cv::imwrite(inflateUrl, dst); 
 		std::ifstream fin;
 		fin.open(inflateUrl, ifstream::binary);
 		if (!fin.is_open()){        
 			break;
 		}
-		stringstream ss;
+		ss.clear();
+		ss.str("");
 		ss << fin.rdbuf();
-		_return.bin = ss.str();
+		bin = ss.str();
 		fin.close();
 		remove(inflateUrl.c_str());
+		ret = true;
 
-		_return.code = 0;
+	} while(0);
 
-	}while(0);
+	return ret;
 
-	LOG(INFO) << "QueryLabeledPoseData end , ret code " << _return.code;
   }
 
   void QueryLastLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& user) {
@@ -1159,6 +1248,95 @@ void Register(ReturnVals&  _return , const std::string&  user , const std::strin
 	
     return;
   }
+  void QueryPicPoseData(PoseDatasRet&  _return , const int32_t  pic_id , const std::string& pic_url, const std::string&  token ) {
+	LOG(INFO) << " QueryPicPoseData begin ";
+	_return.code = -1;
+	do{
+		 SqlMapVector sqlVec;
+		 if(!gPtrDbpool->GetDbOper()->QueryPicPoseData(sqlVec, pic_id, token)){
+			      LOG(ERROR) << " QueryPicPoseData  failed  ";
+				  break;
+		 }
+
+		  for(auto& row :sqlVec ){
+			    PoseData pd;
+				pd.pose_data  =  row["pose_data"];
+				pd.user_name  =  row["user_name"];
+				pd.label_time =  row["update_time"];
+				_return.vecPoseData.push_back(pd);
+		  }
+		 SqlResultSet  picInfoMap;
+		 if(gPtrDbpool->GetDbOper()->QueryPicByURL(pic_url, picInfoMap) != 0){
+			 _return.msg = "QueryPicByURL failed !";     
+		 }
+		 if(!GetInflatedPicBin(pic_url, 600, 800, picInfoMap["Fbody_pos"], _return.pic_bin)){
+			   LOG(ERROR) << " get pic 600*800 bin  failed  ";
+			   break;
+		}
+		 
+		_return.code = 0;
+	}while(0);
+
+	LOG(INFO) << " QueryPicPoseData end , ret code " << _return.code;
+    return;
+  }
+  void QueryPoseDataScore(ScoreQueryRet&  _return , const int32_t  pic_id , const std::string&  label_user , const std::string&  token ) {
+	LOG(INFO) << "QueryPoseDataScore begin ";   
+	_return.code = -1;
+	do{
+		 if(!gPtrDbpool->GetDbOper()->QueryPoseDataScore(_return, pic_id, label_user, token)){
+			      LOG(ERROR) << " QueryPoseDataScore  failed  ";
+				  break;           
+		 }
+		
+		_return.code = 0;
+	}while(0);
+
+	LOG(INFO) << "QueryPoseDataScore end , ret code " << _return.code;
+    return;
+  }
+  void ScorePoseData(ReturnVals&  _return , const int32_t  pic_id , const std::string&  label_user , const std::string&  token , const double  score ) {
+	LOG(INFO) << "ScorePoseData begin ";   
+	_return.code = -1;
+	do{
+		 if(!gPtrDbpool->GetDbOper()->ScorePoseData(pic_id, label_user, token, score)){
+			      LOG(ERROR) << " ScorePoseData  failed  ";
+				  break;                            
+		 }
+		
+		_return.code = 0;
+	}while(0);
+
+	LOG(INFO) << "ScorePoseData end , ret code " << _return.code;
+	
+    return;
+  }
+  void RepreProcessPic(ReturnVals&  _return , const std::string&  pic_url , const std::string&  token ) {
+    LOG(INFO) << "RepreProcessPic begin ";   
+	_return.code = -1;
+	do{
+		cv::Mat src = cv::imread(pic_url); 
+    	cv::Mat dst = ResizeImg(src, 600, 800);
+		string str2dPose;
+		string str3dPose; 
+		string pose_type;
+		string body_pos;  
+		string errorType;
+		if(!gPtrPreprocessor->preProcess(dst, str2dPose, str3dPose, pose_type, body_pos, errorType))
+		{
+			break;
+		}
+		
+		if(!gPtrDbpool->GetDbOper()->UpdatePicPoseDate(pic_url, str2dPose, str3dPose, pose_type, body_pos)){
+			break;
+		}
+		 
+		_return.code = 0;
+	}while(0);
+
+	LOG(INFO) << "RepreProcessPic end , ret code " << _return.code;
+    return;
+  }
 
 };
 
@@ -1193,9 +1371,7 @@ public:
 	bool initDB()
 	{
 		gPtrDbpool.reset(new CDbPool<CDBOperator>);
-
 		gPtrDbpool->SetPoolSize(1);
-
 		gPtrDbpool->InitPool();
 		
 		return true;              
@@ -1296,10 +1472,6 @@ bool  CPoseLabelServer::Start()
 		 
 	}));
 
-	CopyFile("./HttpTool.cpp", "/var/DataStorage/L1/PP/ori_pic/HttpTool.cpp");
-	CopyFile("/var/DataStorage/L1/PP/ori_pic/HttpTool.cpp", "/var/DataStorage/L1/PP/ori_pic/HttpTool_bak.cpp");
-
-	sleep(10000);
 	return  true;
 }
 

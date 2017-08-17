@@ -34,6 +34,10 @@ class GuessInfo;
 
 class HumanPose3DInfo;
 
+class ImgAABB;
+
+class ImageInitData;
+
 typedef struct _Image__isset {
   _Image__isset() : imgBin(false), width(false), height(false), channel(false) {}
   bool imgBin :1;
@@ -411,6 +415,124 @@ class HumanPose3DInfo : public virtual ::apache::thrift::TBase {
 void swap(HumanPose3DInfo &a, HumanPose3DInfo &b);
 
 std::ostream& operator<<(std::ostream& out, const HumanPose3DInfo& obj);
+
+typedef struct _ImgAABB__isset {
+  _ImgAABB__isset() : minX(false), minY(false), maxX(false), maxY(false) {}
+  bool minX :1;
+  bool minY :1;
+  bool maxX :1;
+  bool maxY :1;
+} _ImgAABB__isset;
+
+class ImgAABB : public virtual ::apache::thrift::TBase {
+ public:
+
+  ImgAABB(const ImgAABB&);
+  ImgAABB& operator=(const ImgAABB&);
+  ImgAABB() : minX(0), minY(0), maxX(0), maxY(0) {
+  }
+
+  virtual ~ImgAABB() throw();
+  int32_t minX;
+  int32_t minY;
+  int32_t maxX;
+  int32_t maxY;
+
+  _ImgAABB__isset __isset;
+
+  void __set_minX(const int32_t val);
+
+  void __set_minY(const int32_t val);
+
+  void __set_maxX(const int32_t val);
+
+  void __set_maxY(const int32_t val);
+
+  bool operator == (const ImgAABB & rhs) const
+  {
+    if (!(minX == rhs.minX))
+      return false;
+    if (!(minY == rhs.minY))
+      return false;
+    if (!(maxX == rhs.maxX))
+      return false;
+    if (!(maxY == rhs.maxY))
+      return false;
+    return true;
+  }
+  bool operator != (const ImgAABB &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const ImgAABB & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(ImgAABB &a, ImgAABB &b);
+
+std::ostream& operator<<(std::ostream& out, const ImgAABB& obj);
+
+typedef struct _ImageInitData__isset {
+  _ImageInitData__isset() : isValid(false), poseJsonStr(false), imgAABB(false) {}
+  bool isValid :1;
+  bool poseJsonStr :1;
+  bool imgAABB :1;
+} _ImageInitData__isset;
+
+class ImageInitData : public virtual ::apache::thrift::TBase {
+ public:
+
+  ImageInitData(const ImageInitData&);
+  ImageInitData& operator=(const ImageInitData&);
+  ImageInitData() : isValid(0), poseJsonStr() {
+  }
+
+  virtual ~ImageInitData() throw();
+  bool isValid;
+  std::string poseJsonStr;
+  ImgAABB imgAABB;
+
+  _ImageInitData__isset __isset;
+
+  void __set_isValid(const bool val);
+
+  void __set_poseJsonStr(const std::string& val);
+
+  void __set_imgAABB(const ImgAABB& val);
+
+  bool operator == (const ImageInitData & rhs) const
+  {
+    if (!(isValid == rhs.isValid))
+      return false;
+    if (__isset.poseJsonStr != rhs.__isset.poseJsonStr)
+      return false;
+    else if (__isset.poseJsonStr && !(poseJsonStr == rhs.poseJsonStr))
+      return false;
+    if (__isset.imgAABB != rhs.__isset.imgAABB)
+      return false;
+    else if (__isset.imgAABB && !(imgAABB == rhs.imgAABB))
+      return false;
+    return true;
+  }
+  bool operator != (const ImageInitData &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const ImageInitData & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(ImageInitData &a, ImageInitData &b);
+
+std::ostream& operator<<(std::ostream& out, const ImageInitData& obj);
 
 } // namespace
 

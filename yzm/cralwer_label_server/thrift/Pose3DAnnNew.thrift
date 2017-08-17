@@ -43,8 +43,20 @@ struct HumanPose3DInfo{
 	3:CameraInfo camInfo        /*相机参数*/        
 } 
 
-service Pose3DAnnPreprocess{
+struct ImgAABB{
+    1:i32 minX,
+    2:i32 minY,
+    3:i32 maxX,
+    4:i32 maxY
+}
 
+struct ImageInitData{
+    1:bool isValid, /*图片是否有效*/
+    2:optional string poseJsonStr, /*图片的TAG*/
+    3:optional ImgAABB imgAABB /*人物在图片中的AAABB*/
+}
+
+service Pose3DAnnPreprocess{
 	/*
          * 检测图片是否有效
          * @params
@@ -52,7 +64,7 @@ service Pose3DAnnPreprocess{
          * @return
          *   True 代表有效，False 代表无效
         */
-	bool CheckIsValid(1:Image img),
+	ImageInitData CheckIsValid(1:Image img),
 
 	/*
 	 * 初始图片猜测

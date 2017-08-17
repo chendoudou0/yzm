@@ -56,6 +56,12 @@ class QueryCondition;
 
 class LoginRet;
 
+class PoseData;
+
+class PoseDatasRet;
+
+class ScoreQueryRet;
+
 typedef struct _ReturnVals__isset {
   _ReturnVals__isset() : code(true), msg(false) {}
   bool code :1;
@@ -1183,6 +1189,186 @@ class LoginRet : public virtual ::apache::thrift::TBase {
 void swap(LoginRet &a, LoginRet &b);
 
 std::ostream& operator<<(std::ostream& out, const LoginRet& obj);
+
+typedef struct _PoseData__isset {
+  _PoseData__isset() : pose_data(false), user_name(false), label_time(false) {}
+  bool pose_data :1;
+  bool user_name :1;
+  bool label_time :1;
+} _PoseData__isset;
+
+class PoseData : public virtual ::apache::thrift::TBase {
+ public:
+
+  PoseData(const PoseData&);
+  PoseData& operator=(const PoseData&);
+  PoseData() : pose_data(), user_name(), label_time() {
+  }
+
+  virtual ~PoseData() throw();
+  std::string pose_data;
+  std::string user_name;
+  std::string label_time;
+
+  _PoseData__isset __isset;
+
+  void __set_pose_data(const std::string& val);
+
+  void __set_user_name(const std::string& val);
+
+  void __set_label_time(const std::string& val);
+
+  bool operator == (const PoseData & rhs) const
+  {
+    if (!(pose_data == rhs.pose_data))
+      return false;
+    if (!(user_name == rhs.user_name))
+      return false;
+    if (!(label_time == rhs.label_time))
+      return false;
+    return true;
+  }
+  bool operator != (const PoseData &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const PoseData & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(PoseData &a, PoseData &b);
+
+std::ostream& operator<<(std::ostream& out, const PoseData& obj);
+
+typedef struct _PoseDatasRet__isset {
+  _PoseDatasRet__isset() : code(true), msg(false), pic_bin(false), vecPoseData(false) {}
+  bool code :1;
+  bool msg :1;
+  bool pic_bin :1;
+  bool vecPoseData :1;
+} _PoseDatasRet__isset;
+
+class PoseDatasRet : public virtual ::apache::thrift::TBase {
+ public:
+
+  PoseDatasRet(const PoseDatasRet&);
+  PoseDatasRet& operator=(const PoseDatasRet&);
+  PoseDatasRet() : code(0), msg(), pic_bin() {
+  }
+
+  virtual ~PoseDatasRet() throw();
+  int32_t code;
+  std::string msg;
+  std::string pic_bin;
+  std::vector<PoseData>  vecPoseData;
+
+  _PoseDatasRet__isset __isset;
+
+  void __set_code(const int32_t val);
+
+  void __set_msg(const std::string& val);
+
+  void __set_pic_bin(const std::string& val);
+
+  void __set_vecPoseData(const std::vector<PoseData> & val);
+
+  bool operator == (const PoseDatasRet & rhs) const
+  {
+    if (!(code == rhs.code))
+      return false;
+    if (!(msg == rhs.msg))
+      return false;
+    if (!(pic_bin == rhs.pic_bin))
+      return false;
+    if (!(vecPoseData == rhs.vecPoseData))
+      return false;
+    return true;
+  }
+  bool operator != (const PoseDatasRet &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const PoseDatasRet & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(PoseDatasRet &a, PoseDatasRet &b);
+
+std::ostream& operator<<(std::ostream& out, const PoseDatasRet& obj);
+
+typedef struct _ScoreQueryRet__isset {
+  _ScoreQueryRet__isset() : code(true), msg(false), selfScore(false), averScore(false), scoreCount(false) {}
+  bool code :1;
+  bool msg :1;
+  bool selfScore :1;
+  bool averScore :1;
+  bool scoreCount :1;
+} _ScoreQueryRet__isset;
+
+class ScoreQueryRet : public virtual ::apache::thrift::TBase {
+ public:
+
+  ScoreQueryRet(const ScoreQueryRet&);
+  ScoreQueryRet& operator=(const ScoreQueryRet&);
+  ScoreQueryRet() : code(0), msg(), selfScore(0), averScore(0), scoreCount(0) {
+  }
+
+  virtual ~ScoreQueryRet() throw();
+  int32_t code;
+  std::string msg;
+  double selfScore;
+  double averScore;
+  int32_t scoreCount;
+
+  _ScoreQueryRet__isset __isset;
+
+  void __set_code(const int32_t val);
+
+  void __set_msg(const std::string& val);
+
+  void __set_selfScore(const double val);
+
+  void __set_averScore(const double val);
+
+  void __set_scoreCount(const int32_t val);
+
+  bool operator == (const ScoreQueryRet & rhs) const
+  {
+    if (!(code == rhs.code))
+      return false;
+    if (!(msg == rhs.msg))
+      return false;
+    if (!(selfScore == rhs.selfScore))
+      return false;
+    if (!(averScore == rhs.averScore))
+      return false;
+    if (!(scoreCount == rhs.scoreCount))
+      return false;
+    return true;
+  }
+  bool operator != (const ScoreQueryRet &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const ScoreQueryRet & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(ScoreQueryRet &a, ScoreQueryRet &b);
+
+std::ostream& operator<<(std::ostream& out, const ScoreQueryRet& obj);
 
 }} // namespace
 

@@ -1017,4 +1017,292 @@ void HumanPose3DInfo::printTo(std::ostream& out) const {
   out << ")";
 }
 
+
+ImgAABB::~ImgAABB() throw() {
+}
+
+
+void ImgAABB::__set_minX(const int32_t val) {
+  this->minX = val;
+}
+
+void ImgAABB::__set_minY(const int32_t val) {
+  this->minY = val;
+}
+
+void ImgAABB::__set_maxX(const int32_t val) {
+  this->maxX = val;
+}
+
+void ImgAABB::__set_maxY(const int32_t val) {
+  this->maxY = val;
+}
+std::ostream& operator<<(std::ostream& out, const ImgAABB& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t ImgAABB::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->minX);
+          this->__isset.minX = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->minY);
+          this->__isset.minY = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->maxX);
+          this->__isset.maxX = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 4:
+        if (ftype == ::apache::thrift::protocol::T_I32) {
+          xfer += iprot->readI32(this->maxY);
+          this->__isset.maxY = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t ImgAABB::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("ImgAABB");
+
+  xfer += oprot->writeFieldBegin("minX", ::apache::thrift::protocol::T_I32, 1);
+  xfer += oprot->writeI32(this->minX);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("minY", ::apache::thrift::protocol::T_I32, 2);
+  xfer += oprot->writeI32(this->minY);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("maxX", ::apache::thrift::protocol::T_I32, 3);
+  xfer += oprot->writeI32(this->maxX);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("maxY", ::apache::thrift::protocol::T_I32, 4);
+  xfer += oprot->writeI32(this->maxY);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(ImgAABB &a, ImgAABB &b) {
+  using ::std::swap;
+  swap(a.minX, b.minX);
+  swap(a.minY, b.minY);
+  swap(a.maxX, b.maxX);
+  swap(a.maxY, b.maxY);
+  swap(a.__isset, b.__isset);
+}
+
+ImgAABB::ImgAABB(const ImgAABB& other38) {
+  minX = other38.minX;
+  minY = other38.minY;
+  maxX = other38.maxX;
+  maxY = other38.maxY;
+  __isset = other38.__isset;
+}
+ImgAABB& ImgAABB::operator=(const ImgAABB& other39) {
+  minX = other39.minX;
+  minY = other39.minY;
+  maxX = other39.maxX;
+  maxY = other39.maxY;
+  __isset = other39.__isset;
+  return *this;
+}
+void ImgAABB::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "ImgAABB(";
+  out << "minX=" << to_string(minX);
+  out << ", " << "minY=" << to_string(minY);
+  out << ", " << "maxX=" << to_string(maxX);
+  out << ", " << "maxY=" << to_string(maxY);
+  out << ")";
+}
+
+
+ImageInitData::~ImageInitData() throw() {
+}
+
+
+void ImageInitData::__set_isValid(const bool val) {
+  this->isValid = val;
+}
+
+void ImageInitData::__set_poseJsonStr(const std::string& val) {
+  this->poseJsonStr = val;
+__isset.poseJsonStr = true;
+}
+
+void ImageInitData::__set_imgAABB(const ImgAABB& val) {
+  this->imgAABB = val;
+__isset.imgAABB = true;
+}
+std::ostream& operator<<(std::ostream& out, const ImageInitData& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t ImageInitData::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_BOOL) {
+          xfer += iprot->readBool(this->isValid);
+          this->__isset.isValid = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->poseJsonStr);
+          this->__isset.poseJsonStr = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->imgAABB.read(iprot);
+          this->__isset.imgAABB = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t ImageInitData::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("ImageInitData");
+
+  xfer += oprot->writeFieldBegin("isValid", ::apache::thrift::protocol::T_BOOL, 1);
+  xfer += oprot->writeBool(this->isValid);
+  xfer += oprot->writeFieldEnd();
+
+  if (this->__isset.poseJsonStr) {
+    xfer += oprot->writeFieldBegin("poseJsonStr", ::apache::thrift::protocol::T_STRING, 2);
+    xfer += oprot->writeString(this->poseJsonStr);
+    xfer += oprot->writeFieldEnd();
+  }
+  if (this->__isset.imgAABB) {
+    xfer += oprot->writeFieldBegin("imgAABB", ::apache::thrift::protocol::T_STRUCT, 3);
+    xfer += this->imgAABB.write(oprot);
+    xfer += oprot->writeFieldEnd();
+  }
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(ImageInitData &a, ImageInitData &b) {
+  using ::std::swap;
+  swap(a.isValid, b.isValid);
+  swap(a.poseJsonStr, b.poseJsonStr);
+  swap(a.imgAABB, b.imgAABB);
+  swap(a.__isset, b.__isset);
+}
+
+ImageInitData::ImageInitData(const ImageInitData& other40) {
+  isValid = other40.isValid;
+  poseJsonStr = other40.poseJsonStr;
+  imgAABB = other40.imgAABB;
+  __isset = other40.__isset;
+}
+ImageInitData& ImageInitData::operator=(const ImageInitData& other41) {
+  isValid = other41.isValid;
+  poseJsonStr = other41.poseJsonStr;
+  imgAABB = other41.imgAABB;
+  __isset = other41.__isset;
+  return *this;
+}
+void ImageInitData::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "ImageInitData(";
+  out << "isValid=" << to_string(isValid);
+  out << ", " << "poseJsonStr="; (__isset.poseJsonStr ? (out << to_string(poseJsonStr)) : (out << "<null>"));
+  out << ", " << "imgAABB="; (__isset.imgAABB ? (out << to_string(imgAABB)) : (out << "<null>"));
+  out << ")";
+}
+
 } // namespace

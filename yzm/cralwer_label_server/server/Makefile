@@ -66,6 +66,7 @@ start:
 genThrift:
 	@-rm   ../thrift/gen-cpp/*
 	thrift  -r --gen cpp   -o  ../thrift  ../thrift/pose_label.thrift
+	thrift --gen py  -o ../thrift  ../thrift/pose_label.thrift
 	@-rm  -r ../thrift/arithmetic/*
 	thrift  -r --gen cpp   -o  ../thrift/arithmetic  ../thrift/Pose3DAnnNew.thrift
 

@@ -78,4 +78,19 @@ CREATE TABLE `t_crawling_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+-- ----------------------------
+-- Table structure for t_score
+-- ----------------------------
+DROP TABLE IF EXISTS `t_score`;
+CREATE TABLE `t_score` (
+  `Fid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `Fpic_id`    int(10) NOT NULL DEFAULT '0',
+  `Fuser`      varchar(256)  NOT NULL  DEFAULT '',
+  `Fscore`     double(6)    NOT NULL  DEFAULT '0',
+  `Fcreate_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `Fupdate_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 

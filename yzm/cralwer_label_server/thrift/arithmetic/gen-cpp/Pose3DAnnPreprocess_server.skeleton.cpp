@@ -22,7 +22,7 @@ class Pose3DAnnPreprocessHandler : virtual public Pose3DAnnPreprocessIf {
     // Your initialization goes here
   }
 
-  bool CheckIsValid(const Image& img) {
+  void CheckIsValid(ImageInitData& _return, const Image& img) {
     // Your implementation goes here
     printf("CheckIsValid\n");
   }

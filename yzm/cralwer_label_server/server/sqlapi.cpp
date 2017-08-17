@@ -288,7 +288,10 @@ int CMySQL::FetchResultMVector(SqlMapVector & objMapVector)
 			{
 				string fieldName = pField[i].name;
 				fieldName = fieldName.substr(1, fieldName.length()-1);
-				mResultSet[fieldName] = row[i];
+				if( row[i] != NULL){
+					mResultSet[fieldName] = row[i];
+				}
+	
 			}
 			objMapVector.push_back(mResultSet);
 		}

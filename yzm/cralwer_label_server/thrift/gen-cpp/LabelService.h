@@ -33,6 +33,10 @@ class LabelServiceIf {
   virtual void QueryLastLabeledPoseData(LabeledPoseDataRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& user) = 0;
   virtual void Register(ReturnVals& _return, const std::string& user, const std::string& passwd) = 0;
   virtual void Login(LoginRet& _return, const std::string& user, const std::string& passwd) = 0;
+  virtual void QueryPicPoseData(PoseDatasRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) = 0;
+  virtual void QueryPoseDataScore(ScoreQueryRet& _return, const int32_t pic_id, const std::string& label_user, const std::string& token) = 0;
+  virtual void ScorePoseData(ReturnVals& _return, const int32_t pic_id, const std::string& label_user, const std::string& token, const double score) = 0;
+  virtual void RepreProcessPic(ReturnVals& _return, const std::string& pic_url, const std::string& token) = 0;
 };
 
 class LabelServiceIfFactory {
@@ -96,6 +100,18 @@ class LabelServiceNull : virtual public LabelServiceIf {
     return;
   }
   void Login(LoginRet& /* _return */, const std::string& /* user */, const std::string& /* passwd */) {
+    return;
+  }
+  void QueryPicPoseData(PoseDatasRet& /* _return */, const int32_t /* pic_id */, const std::string& /* pic_url */, const std::string& /* token */) {
+    return;
+  }
+  void QueryPoseDataScore(ScoreQueryRet& /* _return */, const int32_t /* pic_id */, const std::string& /* label_user */, const std::string& /* token */) {
+    return;
+  }
+  void ScorePoseData(ReturnVals& /* _return */, const int32_t /* pic_id */, const std::string& /* label_user */, const std::string& /* token */, const double /* score */) {
+    return;
+  }
+  void RepreProcessPic(ReturnVals& /* _return */, const std::string& /* pic_url */, const std::string& /* token */) {
     return;
   }
 };
@@ -1488,6 +1504,478 @@ class LabelService_Login_presult {
 
 };
 
+typedef struct _LabelService_QueryPicPoseData_args__isset {
+  _LabelService_QueryPicPoseData_args__isset() : pic_id(false), pic_url(false), token(false) {}
+  bool pic_id :1;
+  bool pic_url :1;
+  bool token :1;
+} _LabelService_QueryPicPoseData_args__isset;
+
+class LabelService_QueryPicPoseData_args {
+ public:
+
+  LabelService_QueryPicPoseData_args(const LabelService_QueryPicPoseData_args&);
+  LabelService_QueryPicPoseData_args& operator=(const LabelService_QueryPicPoseData_args&);
+  LabelService_QueryPicPoseData_args() : pic_id(0), pic_url(), token() {
+  }
+
+  virtual ~LabelService_QueryPicPoseData_args() throw();
+  int32_t pic_id;
+  std::string pic_url;
+  std::string token;
+
+  _LabelService_QueryPicPoseData_args__isset __isset;
+
+  void __set_pic_id(const int32_t val);
+
+  void __set_pic_url(const std::string& val);
+
+  void __set_token(const std::string& val);
+
+  bool operator == (const LabelService_QueryPicPoseData_args & rhs) const
+  {
+    if (!(pic_id == rhs.pic_id))
+      return false;
+    if (!(pic_url == rhs.pic_url))
+      return false;
+    if (!(token == rhs.token))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_QueryPicPoseData_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_QueryPicPoseData_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class LabelService_QueryPicPoseData_pargs {
+ public:
+
+
+  virtual ~LabelService_QueryPicPoseData_pargs() throw();
+  const int32_t* pic_id;
+  const std::string* pic_url;
+  const std::string* token;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_QueryPicPoseData_result__isset {
+  _LabelService_QueryPicPoseData_result__isset() : success(false) {}
+  bool success :1;
+} _LabelService_QueryPicPoseData_result__isset;
+
+class LabelService_QueryPicPoseData_result {
+ public:
+
+  LabelService_QueryPicPoseData_result(const LabelService_QueryPicPoseData_result&);
+  LabelService_QueryPicPoseData_result& operator=(const LabelService_QueryPicPoseData_result&);
+  LabelService_QueryPicPoseData_result() {
+  }
+
+  virtual ~LabelService_QueryPicPoseData_result() throw();
+  PoseDatasRet success;
+
+  _LabelService_QueryPicPoseData_result__isset __isset;
+
+  void __set_success(const PoseDatasRet& val);
+
+  bool operator == (const LabelService_QueryPicPoseData_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_QueryPicPoseData_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_QueryPicPoseData_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_QueryPicPoseData_presult__isset {
+  _LabelService_QueryPicPoseData_presult__isset() : success(false) {}
+  bool success :1;
+} _LabelService_QueryPicPoseData_presult__isset;
+
+class LabelService_QueryPicPoseData_presult {
+ public:
+
+
+  virtual ~LabelService_QueryPicPoseData_presult() throw();
+  PoseDatasRet* success;
+
+  _LabelService_QueryPicPoseData_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _LabelService_QueryPoseDataScore_args__isset {
+  _LabelService_QueryPoseDataScore_args__isset() : pic_id(false), label_user(false), token(false) {}
+  bool pic_id :1;
+  bool label_user :1;
+  bool token :1;
+} _LabelService_QueryPoseDataScore_args__isset;
+
+class LabelService_QueryPoseDataScore_args {
+ public:
+
+  LabelService_QueryPoseDataScore_args(const LabelService_QueryPoseDataScore_args&);
+  LabelService_QueryPoseDataScore_args& operator=(const LabelService_QueryPoseDataScore_args&);
+  LabelService_QueryPoseDataScore_args() : pic_id(0), label_user(), token() {
+  }
+
+  virtual ~LabelService_QueryPoseDataScore_args() throw();
+  int32_t pic_id;
+  std::string label_user;
+  std::string token;
+
+  _LabelService_QueryPoseDataScore_args__isset __isset;
+
+  void __set_pic_id(const int32_t val);
+
+  void __set_label_user(const std::string& val);
+
+  void __set_token(const std::string& val);
+
+  bool operator == (const LabelService_QueryPoseDataScore_args & rhs) const
+  {
+    if (!(pic_id == rhs.pic_id))
+      return false;
+    if (!(label_user == rhs.label_user))
+      return false;
+    if (!(token == rhs.token))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_QueryPoseDataScore_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_QueryPoseDataScore_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class LabelService_QueryPoseDataScore_pargs {
+ public:
+
+
+  virtual ~LabelService_QueryPoseDataScore_pargs() throw();
+  const int32_t* pic_id;
+  const std::string* label_user;
+  const std::string* token;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_QueryPoseDataScore_result__isset {
+  _LabelService_QueryPoseDataScore_result__isset() : success(false) {}
+  bool success :1;
+} _LabelService_QueryPoseDataScore_result__isset;
+
+class LabelService_QueryPoseDataScore_result {
+ public:
+
+  LabelService_QueryPoseDataScore_result(const LabelService_QueryPoseDataScore_result&);
+  LabelService_QueryPoseDataScore_result& operator=(const LabelService_QueryPoseDataScore_result&);
+  LabelService_QueryPoseDataScore_result() {
+  }
+
+  virtual ~LabelService_QueryPoseDataScore_result() throw();
+  ScoreQueryRet success;
+
+  _LabelService_QueryPoseDataScore_result__isset __isset;
+
+  void __set_success(const ScoreQueryRet& val);
+
+  bool operator == (const LabelService_QueryPoseDataScore_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_QueryPoseDataScore_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_QueryPoseDataScore_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_QueryPoseDataScore_presult__isset {
+  _LabelService_QueryPoseDataScore_presult__isset() : success(false) {}
+  bool success :1;
+} _LabelService_QueryPoseDataScore_presult__isset;
+
+class LabelService_QueryPoseDataScore_presult {
+ public:
+
+
+  virtual ~LabelService_QueryPoseDataScore_presult() throw();
+  ScoreQueryRet* success;
+
+  _LabelService_QueryPoseDataScore_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _LabelService_ScorePoseData_args__isset {
+  _LabelService_ScorePoseData_args__isset() : pic_id(false), label_user(false), token(false), score(false) {}
+  bool pic_id :1;
+  bool label_user :1;
+  bool token :1;
+  bool score :1;
+} _LabelService_ScorePoseData_args__isset;
+
+class LabelService_ScorePoseData_args {
+ public:
+
+  LabelService_ScorePoseData_args(const LabelService_ScorePoseData_args&);
+  LabelService_ScorePoseData_args& operator=(const LabelService_ScorePoseData_args&);
+  LabelService_ScorePoseData_args() : pic_id(0), label_user(), token(), score(0) {
+  }
+
+  virtual ~LabelService_ScorePoseData_args() throw();
+  int32_t pic_id;
+  std::string label_user;
+  std::string token;
+  double score;
+
+  _LabelService_ScorePoseData_args__isset __isset;
+
+  void __set_pic_id(const int32_t val);
+
+  void __set_label_user(const std::string& val);
+
+  void __set_token(const std::string& val);
+
+  void __set_score(const double val);
+
+  bool operator == (const LabelService_ScorePoseData_args & rhs) const
+  {
+    if (!(pic_id == rhs.pic_id))
+      return false;
+    if (!(label_user == rhs.label_user))
+      return false;
+    if (!(token == rhs.token))
+      return false;
+    if (!(score == rhs.score))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_ScorePoseData_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_ScorePoseData_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class LabelService_ScorePoseData_pargs {
+ public:
+
+
+  virtual ~LabelService_ScorePoseData_pargs() throw();
+  const int32_t* pic_id;
+  const std::string* label_user;
+  const std::string* token;
+  const double* score;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_ScorePoseData_result__isset {
+  _LabelService_ScorePoseData_result__isset() : success(false) {}
+  bool success :1;
+} _LabelService_ScorePoseData_result__isset;
+
+class LabelService_ScorePoseData_result {
+ public:
+
+  LabelService_ScorePoseData_result(const LabelService_ScorePoseData_result&);
+  LabelService_ScorePoseData_result& operator=(const LabelService_ScorePoseData_result&);
+  LabelService_ScorePoseData_result() {
+  }
+
+  virtual ~LabelService_ScorePoseData_result() throw();
+  ReturnVals success;
+
+  _LabelService_ScorePoseData_result__isset __isset;
+
+  void __set_success(const ReturnVals& val);
+
+  bool operator == (const LabelService_ScorePoseData_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_ScorePoseData_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_ScorePoseData_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_ScorePoseData_presult__isset {
+  _LabelService_ScorePoseData_presult__isset() : success(false) {}
+  bool success :1;
+} _LabelService_ScorePoseData_presult__isset;
+
+class LabelService_ScorePoseData_presult {
+ public:
+
+
+  virtual ~LabelService_ScorePoseData_presult() throw();
+  ReturnVals* success;
+
+  _LabelService_ScorePoseData_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _LabelService_RepreProcessPic_args__isset {
+  _LabelService_RepreProcessPic_args__isset() : pic_url(false), token(false) {}
+  bool pic_url :1;
+  bool token :1;
+} _LabelService_RepreProcessPic_args__isset;
+
+class LabelService_RepreProcessPic_args {
+ public:
+
+  LabelService_RepreProcessPic_args(const LabelService_RepreProcessPic_args&);
+  LabelService_RepreProcessPic_args& operator=(const LabelService_RepreProcessPic_args&);
+  LabelService_RepreProcessPic_args() : pic_url(), token() {
+  }
+
+  virtual ~LabelService_RepreProcessPic_args() throw();
+  std::string pic_url;
+  std::string token;
+
+  _LabelService_RepreProcessPic_args__isset __isset;
+
+  void __set_pic_url(const std::string& val);
+
+  void __set_token(const std::string& val);
+
+  bool operator == (const LabelService_RepreProcessPic_args & rhs) const
+  {
+    if (!(pic_url == rhs.pic_url))
+      return false;
+    if (!(token == rhs.token))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_RepreProcessPic_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_RepreProcessPic_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class LabelService_RepreProcessPic_pargs {
+ public:
+
+
+  virtual ~LabelService_RepreProcessPic_pargs() throw();
+  const std::string* pic_url;
+  const std::string* token;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_RepreProcessPic_result__isset {
+  _LabelService_RepreProcessPic_result__isset() : success(false) {}
+  bool success :1;
+} _LabelService_RepreProcessPic_result__isset;
+
+class LabelService_RepreProcessPic_result {
+ public:
+
+  LabelService_RepreProcessPic_result(const LabelService_RepreProcessPic_result&);
+  LabelService_RepreProcessPic_result& operator=(const LabelService_RepreProcessPic_result&);
+  LabelService_RepreProcessPic_result() {
+  }
+
+  virtual ~LabelService_RepreProcessPic_result() throw();
+  ReturnVals success;
+
+  _LabelService_RepreProcessPic_result__isset __isset;
+
+  void __set_success(const ReturnVals& val);
+
+  bool operator == (const LabelService_RepreProcessPic_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const LabelService_RepreProcessPic_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const LabelService_RepreProcessPic_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _LabelService_RepreProcessPic_presult__isset {
+  _LabelService_RepreProcessPic_presult__isset() : success(false) {}
+  bool success :1;
+} _LabelService_RepreProcessPic_presult__isset;
+
+class LabelService_RepreProcessPic_presult {
+ public:
+
+
+  virtual ~LabelService_RepreProcessPic_presult() throw();
+  ReturnVals* success;
+
+  _LabelService_RepreProcessPic_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
 class LabelServiceClient : virtual public LabelServiceIf {
  public:
   LabelServiceClient(boost::shared_ptr< ::apache::thrift::protocol::TProtocol> prot) {
@@ -1549,6 +2037,18 @@ class LabelServiceClient : virtual public LabelServiceIf {
   void Login(LoginRet& _return, const std::string& user, const std::string& passwd);
   void send_Login(const std::string& user, const std::string& passwd);
   void recv_Login(LoginRet& _return);
+  void QueryPicPoseData(PoseDatasRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token);
+  void send_QueryPicPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& token);
+  void recv_QueryPicPoseData(PoseDatasRet& _return);
+  void QueryPoseDataScore(ScoreQueryRet& _return, const int32_t pic_id, const std::string& label_user, const std::string& token);
+  void send_QueryPoseDataScore(const int32_t pic_id, const std::string& label_user, const std::string& token);
+  void recv_QueryPoseDataScore(ScoreQueryRet& _return);
+  void ScorePoseData(ReturnVals& _return, const int32_t pic_id, const std::string& label_user, const std::string& token, const double score);
+  void send_ScorePoseData(const int32_t pic_id, const std::string& label_user, const std::string& token, const double score);
+  void recv_ScorePoseData(ReturnVals& _return);
+  void RepreProcessPic(ReturnVals& _return, const std::string& pic_url, const std::string& token);
+  void send_RepreProcessPic(const std::string& pic_url, const std::string& token);
+  void recv_RepreProcessPic(ReturnVals& _return);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;
@@ -1576,6 +2076,10 @@ class LabelServiceProcessor : public ::apache::thrift::TDispatchProcessor {
   void process_QueryLastLabeledPoseData(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Register(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Login(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_QueryPicPoseData(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_QueryPoseDataScore(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_ScorePoseData(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_RepreProcessPic(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   LabelServiceProcessor(boost::shared_ptr<LabelServiceIf> iface) :
     iface_(iface) {
@@ -1591,6 +2095,10 @@ class LabelServiceProcessor : public ::apache::thrift::TDispatchProcessor {
     processMap_["QueryLastLabeledPoseData"] = &LabelServiceProcessor::process_QueryLastLabeledPoseData;
     processMap_["Register"] = &LabelServiceProcessor::process_Register;
     processMap_["Login"] = &LabelServiceProcessor::process_Login;
+    processMap_["QueryPicPoseData"] = &LabelServiceProcessor::process_QueryPicPoseData;
+    processMap_["QueryPoseDataScore"] = &LabelServiceProcessor::process_QueryPoseDataScore;
+    processMap_["ScorePoseData"] = &LabelServiceProcessor::process_ScorePoseData;
+    processMap_["RepreProcessPic"] = &LabelServiceProcessor::process_RepreProcessPic;
   }
 
   virtual ~LabelServiceProcessor() {}
@@ -1739,6 +2247,46 @@ class LabelServiceMultiface : virtual public LabelServiceIf {
     return;
   }
 
+  void QueryPicPoseData(PoseDatasRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->QueryPicPoseData(_return, pic_id, pic_url, token);
+    }
+    ifaces_[i]->QueryPicPoseData(_return, pic_id, pic_url, token);
+    return;
+  }
+
+  void QueryPoseDataScore(ScoreQueryRet& _return, const int32_t pic_id, const std::string& label_user, const std::string& token) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->QueryPoseDataScore(_return, pic_id, label_user, token);
+    }
+    ifaces_[i]->QueryPoseDataScore(_return, pic_id, label_user, token);
+    return;
+  }
+
+  void ScorePoseData(ReturnVals& _return, const int32_t pic_id, const std::string& label_user, const std::string& token, const double score) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->ScorePoseData(_return, pic_id, label_user, token, score);
+    }
+    ifaces_[i]->ScorePoseData(_return, pic_id, label_user, token, score);
+    return;
+  }
+
+  void RepreProcessPic(ReturnVals& _return, const std::string& pic_url, const std::string& token) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->RepreProcessPic(_return, pic_url, token);
+    }
+    ifaces_[i]->RepreProcessPic(_return, pic_url, token);
+    return;
+  }
+
 };
 
 // The 'concurrent' client is a thread safe client that correctly handles
@@ -1805,6 +2353,18 @@ class LabelServiceConcurrentClient : virtual public LabelServiceIf {
   void Login(LoginRet& _return, const std::string& user, const std::string& passwd);
   int32_t send_Login(const std::string& user, const std::string& passwd);
   void recv_Login(LoginRet& _return, const int32_t seqid);
+  void QueryPicPoseData(PoseDatasRet& _return, const int32_t pic_id, const std::string& pic_url, const std::string& token);
+  int32_t send_QueryPicPoseData(const int32_t pic_id, const std::string& pic_url, const std::string& token);
+  void recv_QueryPicPoseData(PoseDatasRet& _return, const int32_t seqid);
+  void QueryPoseDataScore(ScoreQueryRet& _return, const int32_t pic_id, const std::string& label_user, const std::string& token);
+  int32_t send_QueryPoseDataScore(const int32_t pic_id, const std::string& label_user, const std::string& token);
+  void recv_QueryPoseDataScore(ScoreQueryRet& _return, const int32_t seqid);
+  void ScorePoseData(ReturnVals& _return, const int32_t pic_id, const std::string& label_user, const std::string& token, const double score);
+  int32_t send_ScorePoseData(const int32_t pic_id, const std::string& label_user, const std::string& token, const double score);
+  void recv_ScorePoseData(ReturnVals& _return, const int32_t seqid);
+  void RepreProcessPic(ReturnVals& _return, const std::string& pic_url, const std::string& token);
+  int32_t send_RepreProcessPic(const std::string& pic_url, const std::string& token);
+  void recv_RepreProcessPic(ReturnVals& _return, const int32_t seqid);
  protected:
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> piprot_;
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> poprot_;

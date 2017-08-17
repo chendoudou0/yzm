@@ -114,8 +114,8 @@ uint32_t Pose3DAnnPreprocess_CheckIsValid_result::read(::apache::thrift::protoco
     switch (fid)
     {
       case 0:
-        if (ftype == ::apache::thrift::protocol::T_BOOL) {
-          xfer += iprot->readBool(this->success);
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += this->success.read(iprot);
           this->__isset.success = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -140,8 +140,8 @@ uint32_t Pose3DAnnPreprocess_CheckIsValid_result::write(::apache::thrift::protoc
   xfer += oprot->writeStructBegin("Pose3DAnnPreprocess_CheckIsValid_result");
 
   if (this->__isset.success) {
-    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_BOOL, 0);
-    xfer += oprot->writeBool(this->success);
+    xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_STRUCT, 0);
+    xfer += this->success.write(oprot);
     xfer += oprot->writeFieldEnd();
   }
   xfer += oprot->writeFieldStop();
@@ -176,8 +176,8 @@ uint32_t Pose3DAnnPreprocess_CheckIsValid_presult::read(::apache::thrift::protoc
     switch (fid)
     {
       case 0:
-        if (ftype == ::apache::thrift::protocol::T_BOOL) {
-          xfer += iprot->readBool((*(this->success)));
+        if (ftype == ::apache::thrift::protocol::T_STRUCT) {
+          xfer += (*(this->success)).read(iprot);
           this->__isset.success = true;
         } else {
           xfer += iprot->skip(ftype);
@@ -507,14 +507,14 @@ uint32_t Pose3DAnnPreprocess_AutoCalPose3D_result::read(::apache::thrift::protoc
         if (ftype == ::apache::thrift::protocol::T_LIST) {
           {
             this->success.clear();
-            uint32_t _size38;
-            ::apache::thrift::protocol::TType _etype41;
-            xfer += iprot->readListBegin(_etype41, _size38);
-            this->success.resize(_size38);
-            uint32_t _i42;
-            for (_i42 = 0; _i42 < _size38; ++_i42)
+            uint32_t _size42;
+            ::apache::thrift::protocol::TType _etype45;
+            xfer += iprot->readListBegin(_etype45, _size42);
+            this->success.resize(_size42);
+            uint32_t _i46;
+            for (_i46 = 0; _i46 < _size42; ++_i46)
             {
-              xfer += this->success[_i42].read(iprot);
+              xfer += this->success[_i46].read(iprot);
             }
             xfer += iprot->readListEnd();
           }
@@ -545,10 +545,10 @@ uint32_t Pose3DAnnPreprocess_AutoCalPose3D_result::write(::apache::thrift::proto
     xfer += oprot->writeFieldBegin("success", ::apache::thrift::protocol::T_LIST, 0);
     {
       xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->success.size()));
-      std::vector<HumanPose3DInfo> ::const_iterator _iter43;
-      for (_iter43 = this->success.begin(); _iter43 != this->success.end(); ++_iter43)
+      std::vector<HumanPose3DInfo> ::const_iterator _iter47;
+      for (_iter47 = this->success.begin(); _iter47 != this->success.end(); ++_iter47)
       {
-        xfer += (*_iter43).write(oprot);
+        xfer += (*_iter47).write(oprot);
       }
       xfer += oprot->writeListEnd();
     }
@@ -589,14 +589,14 @@ uint32_t Pose3DAnnPreprocess_AutoCalPose3D_presult::read(::apache::thrift::proto
         if (ftype == ::apache::thrift::protocol::T_LIST) {
           {
             (*(this->success)).clear();
-            uint32_t _size44;
-            ::apache::thrift::protocol::TType _etype47;
-            xfer += iprot->readListBegin(_etype47, _size44);
-            (*(this->success)).resize(_size44);
-            uint32_t _i48;
-            for (_i48 = 0; _i48 < _size44; ++_i48)
+            uint32_t _size48;
+            ::apache::thrift::protocol::TType _etype51;
+            xfer += iprot->readListBegin(_etype51, _size48);
+            (*(this->success)).resize(_size48);
+            uint32_t _i52;
+            for (_i52 = 0; _i52 < _size48; ++_i52)
             {
-              xfer += (*(this->success))[_i48].read(iprot);
+              xfer += (*(this->success))[_i52].read(iprot);
             }
             xfer += iprot->readListEnd();
           }
@@ -617,10 +617,10 @@ uint32_t Pose3DAnnPreprocess_AutoCalPose3D_presult::read(::apache::thrift::proto
   return xfer;
 }
 
-bool Pose3DAnnPreprocessClient::CheckIsValid(const Image& img)
+void Pose3DAnnPreprocessClient::CheckIsValid(ImageInitData& _return, const Image& img)
 {
   send_CheckIsValid(img);
-  return recv_CheckIsValid();
+  recv_CheckIsValid(_return);
 }
 
 void Pose3DAnnPreprocessClient::send_CheckIsValid(const Image& img)
@@ -637,7 +637,7 @@ void Pose3DAnnPreprocessClient::send_CheckIsValid(const Image& img)
   oprot_->getTransport()->flush();
 }
 
-bool Pose3DAnnPreprocessClient::recv_CheckIsValid()
+void Pose3DAnnPreprocessClient::recv_CheckIsValid(ImageInitData& _return)
 {
 
   int32_t rseqid = 0;
@@ -662,7 +662,6 @@ bool Pose3DAnnPreprocessClient::recv_CheckIsValid()
     iprot_->readMessageEnd();
     iprot_->getTransport()->readEnd();
   }
-  bool _return;
   Pose3DAnnPreprocess_CheckIsValid_presult result;
   result.success = &_return;
   result.read(iprot_);
@@ -670,7 +669,8 @@ bool Pose3DAnnPreprocessClient::recv_CheckIsValid()
   iprot_->getTransport()->readEnd();
 
   if (result.__isset.success) {
-    return _return;
+    // _return pointer has now been filled
+    return;
   }
   throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "CheckIsValid failed: unknown result");
 }
@@ -834,7 +834,7 @@ void Pose3DAnnPreprocessProcessor::process_CheckIsValid(int32_t seqid, ::apache:
 
   Pose3DAnnPreprocess_CheckIsValid_result result;
   try {
-    result.success = iface_->CheckIsValid(args.img);
+    iface_->CheckIsValid(result.success, args.img);
     result.__isset.success = true;
   } catch (const std::exception& e) {
     if (this->eventHandler_.get() != NULL) {
@@ -980,10 +980,10 @@ void Pose3DAnnPreprocessProcessor::process_AutoCalPose3D(int32_t seqid, ::apache
   return processor;
 }
 
-bool Pose3DAnnPreprocessConcurrentClient::CheckIsValid(const Image& img)
+void Pose3DAnnPreprocessConcurrentClient::CheckIsValid(ImageInitData& _return, const Image& img)
 {
   int32_t seqid = send_CheckIsValid(img);
-  return recv_CheckIsValid(seqid);
+  recv_CheckIsValid(_return, seqid);
 }
 
 int32_t Pose3DAnnPreprocessConcurrentClient::send_CheckIsValid(const Image& img)
@@ -1004,7 +1004,7 @@ int32_t Pose3DAnnPreprocessConcurrentClient::send_CheckIsValid(const Image& img)
   return cseqid;
 }
 
-bool Pose3DAnnPreprocessConcurrentClient::recv_CheckIsValid(const int32_t seqid)
+void Pose3DAnnPreprocessConcurrentClient::recv_CheckIsValid(ImageInitData& _return, const int32_t seqid)
 {
 
   int32_t rseqid = 0;
@@ -1042,7 +1042,6 @@ bool Pose3DAnnPreprocessConcurrentClient::recv_CheckIsValid(const int32_t seqid)
         using ::apache::thrift::protocol::TProtocolException;
         throw TProtocolException(TProtocolException::INVALID_DATA);
       }
-      bool _return;
       Pose3DAnnPreprocess_CheckIsValid_presult result;
       result.success = &_return;
       result.read(iprot_);
@@ -1050,8 +1049,9 @@ bool Pose3DAnnPreprocessConcurrentClient::recv_CheckIsValid(const int32_t seqid)
       iprot_->getTransport()->readEnd();
 
       if (result.__isset.success) {
+        // _return pointer has now been filled
         sentry.commit();
-        return _return;
+        return;
       }
       // in a bad state, don't commit
       throw ::apache::thrift::TApplicationException(::apache::thrift::TApplicationException::MISSING_RESULT, "CheckIsValid failed: unknown result");

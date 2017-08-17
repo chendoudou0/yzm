@@ -23,7 +23,6 @@ int IApp::Run(int argc, char** argv, const std::string& titile)
 {
 	if ( OnStart() )
 	{
-		//daemon(1, 0);
 		signal(SIGTERM,  SignalCallback);            
 		waitForSignal();
 	}

@@ -44,4 +44,18 @@ try:
   transport.close()
 
 except Thrift.TException, ex:
-  print "%s" % (ex.message)   
+  print "%s" % (ex.message) 
+
+
+本周的工作总结
+1.完成爬虫客户端的服务开发
+2.完成了标注服务端开发
+3.修改了部分测试组提供的BUG
+4.将服务迁移到实际环境
+
+
+下周的工作目标计划
+1.添加标注工具打分功能
+2.优化sql语句，提高模糊查询速率
+3.完成安卓导购机升级服务拆分成两路需求
+3.修改服务端BUG    

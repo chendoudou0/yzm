@@ -48,15 +48,16 @@ int CDBOperator::QueryPicByMd5(const std::string& md5)
     return 0;     //允许上传
 }
 
-int  CDBOperator::AddPicture(const server::pose_label::PicInfo& pic, string url)
+int  CDBOperator::AddPicture(const ::server::pose_label::PicInfo&   pic, string& url, string& str2dPose, string& str3dPose, string& pose_type, string& body_pos) 
 {
     char strSql[1024] = {0};
     int  count = 5;
     sprintf(strSql,  "insert into yzm_pose_label_db.t_picture(Fpic_url, Fpic_md5, Fkey_word, Ftag_word,  \
-    Flabel_count, Fcreate_time, Fupdate_time)  \
-    values('%s', '%s','%s','%s', '%d', '%s', '%s')", url.c_str(), 
-    pic.md5.c_str(), pic.key.c_str(),  pic.tag.c_str(),\
-    count , GetSystemTime(), GetSystemTime());
+    Flabel_count, Fpre2DPoseInfo, Fpre3DPoseInfo, Fpose_type, Fbody_pos, Fcreate_time, Fupdate_time)  \
+    values('%s', '%s','%s','%s', '%d', '%s', '%s','%s','%s','%s', '%s')", url.c_str(), 
+    pic.md5.c_str(), pic.key.c_str(),  pic.tag.c_str(),
+    count , str2dPose.c_str(), str3dPose.c_str(), pose_type.c_str(), body_pos.c_str(),
+    GetSystemTime(), GetSystemTime());
     LOG(INFO) << "SQL : " << strSql;
     if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
         return -1;                
@@ -82,7 +83,7 @@ int  CDBOperator::QueryPicByURL(const std::string& url ,SqlResultSet &objOutMap)
 
 }
 
-bool  CDBOperator::UpdatePicPoseDate(const std::string& url, string& str2dPose, string& str3dPose)
+bool  CDBOperator::UpdatePicPoseDate(const std::string& url, string& str2dPose, string& str3dPose, string& pose_type, string& body_pos)
 {
     bool ret = false;
 	char strSql[10240];
@@ -103,12 +104,14 @@ bool  CDBOperator::UpdatePicPoseDate(const std::string& url, string& str2dPose, 
        
         memset(strSql, 0, sizeof(strSql));
         sprintf(strSql, "update yzm_pose_label_db.t_picture set Fpre2DPoseInfo='%s', Fpre3DPoseInfo='%s',  \
-        Fupdate_time='%s' where Fpic_url='%s'",  \
+        Fpose_type='%s', Fbody_pos='%s', Fupdate_time='%s' where Fpic_url='%s'",  \
         str2dPose.c_str(),
         str3dPose.c_str(),
+        pose_type.c_str(),
+        body_pos.c_str(),
         GetSystemTime(),
         url.c_str()); 
-    
+        LOG(INFO) << "SQL : " << strSql;
         if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
             break;
         }  
@@ -317,12 +320,13 @@ int CDBOperator::QueryPicByUser(SqlMapVector &objOutMapVector, const std::string
            LOG(ERROR) << "GetUserByToken  failed ";
            break;
        }
-       if(role_id != 0){
-            LOG(ERROR) << "user "<< userName << " is not admin";
+       LOG(INFO) << "user "<<userName << "  role_id "<<role_id;
+       if(role_id != 0 && role_id != 2){
+            LOG(ERROR) << "user "<< userName << " is not admin or score user";
             ret = 2;
             break;
        }
-      ///////////////////////////////////////
+        ///////////////////////////////////////
         stringstream ss;
         string pose_type;
         string tag;
@@ -330,8 +334,7 @@ int CDBOperator::QueryPicByUser(SqlMapVector &objOutMapVector, const std::string
         string tEnd;
         ss << "%" <<qc.pose_type<< "%";
         ss >> pose_type;
-        ss.clear();
-        ss.str("");
+        ss.clear(); ss.str("");
         ss << "%" <<qc.tag<< "%";
         ss >> tag;
         if(qc.tBegin.empty()){
@@ -342,7 +345,7 @@ int CDBOperator::QueryPicByUser(SqlMapVector &objOutMapVector, const std::string
         if(qc.tEnd.empty()){
             tEnd = "2030-1-1 10:10:10";
         }else{
-                tEnd = qc.tEnd;
+            tEnd = qc.tEnd;
         }
 
         ///////////////////////page num          
@@ -375,8 +378,7 @@ int CDBOperator::QueryPicByUser(SqlMapVector &objOutMapVector, const std::string
         if(!_ptrMysql->FetchResultMap(objMap)){
             break;
         }
-        ss.clear();
-        ss.str("");
+        ss.clear(); ss.str("");
         int count;
         ss << objMap["count"];
         ss >> count;
@@ -487,7 +489,7 @@ bool CDBOperator::QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std:
         ss.str("");
         int count;
         ss << objMap["count"];
-        ss >> count;
+        ss >> count;  
         if(count % 10 == 0){
             page = count/10;
         }else{
@@ -495,12 +497,13 @@ bool CDBOperator::QueryLabeledPicture(SqlMapVector &objOutMapVector, const  std:
             page++;
         }
 
-        LOG(INFO) << "page num  : "<< page;
+        LOG(INFO) << "page num  : "<< page;     
         ///////////////////////////////////// 
         memset(strSql, 0, 1024);
         sprintf(strSql,  " select Fid, Fpic_url, Ftag_word, Fpose_type, Fupdate_user, Fcreate_time, Flabel_count from yzm_pose_label_db.t_picture where Fid  in \
         (select Fpic_id from yzm_pose_label_db.t_label WHERE Fuser_name = '%s' GROUP BY Fpic_id )        \
-        and Fpose_type like '%s' and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' limit %d,10 ",   \
+        and Fpose_type like '%s' and  Ftag_word like '%s' and  Fcreate_time BETWEEN '%s' and '%s' \
+        order by Fupdate_time desc limit %d,10 ",   \
         user.c_str(),
         pose_type.c_str(),            
         tag.c_str(),
@@ -583,7 +586,7 @@ bool CDBOperator::QueryLabeledPicByOthers(SqlMapVector &objOutMapVector, const  
             LOG(ERROR) << "_ptrMysql->Query failed" ;
             break;
          }
-        SqlResultSet  objMap;
+        SqlResultSet  objMap;   
         if(!_ptrMysql->FetchResultMap(objMap)){
             break;
         }
@@ -1094,6 +1097,183 @@ bool CDBOperator::UpdatePicInfoById(int id, const std::string tag, const std::st
 
 }
 
+bool CDBOperator::ScorePoseData(int pic_id , const std::string&  label_user , const std::string&  token , double  score){
+    bool ret = false;
+	char strSql[1024] = {0};
+    do{
+        string user;
+        int role_id;
+        if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+        }
+      
+       ///////////////////////////////
+        memset(strSql, 0, sizeof(strSql));
+        sprintf(strSql, "select * from yzm_pose_label_db.t_score where Fpic_id='%d' and Flabel_user='%s' and Fscore_user='%s' ", \
+        pic_id,
+        label_user.c_str(),
+        user.c_str());
+        LOG(INFO) << "sql : "<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+            break;
+        } 
+        int iRows = _ptrMysql->FetchRows();
+        if(iRows == 1)                       //已经打过分了
+        {
+            LOG(INFO) << "user " << user <<" has scored pic : "<< pic_id;
+            memset(strSql, 0, sizeof(strSql));
+            sprintf(strSql, "update yzm_pose_label_db.t_score set Fscore='%f' \
+            where Fpic_id='%d' and Flabel_user='%s' and Fscore_user='%s' ", \
+            score,
+            pic_id,
+            label_user.c_str(),
+            user.c_str());
+            LOG(INFO) << "sql : "<<strSql;
+            if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                break;
+            }    
+        }else{
+            memset(strSql, 0, sizeof(strSql));
+            sprintf(strSql, "insert into yzm_pose_label_db.t_score  \
+            values(NULL, '%d','%s','%s', '%f', '%s', '%s')",  \
+            pic_id,
+            label_user.c_str(),
+            user.c_str(),
+            score,
+            GetSystemTime(),
+            GetSystemTime() );
+            LOG(INFO) << "sql : "<< strSql;    
+            if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
+                break;
+            }  
+        }
+
+        ret = true;
+    }while(0); 
+
+    return ret;
+}
+
+bool CDBOperator::QueryPicPoseData(SqlMapVector &objOutMapVector, const int32_t  pic_id , const std::string&  token){
+    bool ret = false;
+    char strSql[1024] = {0}; 
+    do{
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        ///////////////////check user    
+        string user;
+        int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
+      
+        ///////////////////////select
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  " select Fuser_name, Fpose_data ,Fupdate_time from yzm_pose_label_db.t_label  \
+        where  Fpic_id='%d'  ",  \
+        pic_id);
+        
+        LOG(INFO) << "SQL : "<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+
+        if(-1 == _ptrMysql->FetchResultMVector(objOutMapVector)){
+            break;
+        }
+        ret = true;
+    }while(0);
+
+    return ret;
+}
+
+
+bool CDBOperator::QueryPoseDataScore(ScoreQueryRet&  sqRet , const int32_t  pic_id , const std::string&  label_user , const std::string&  token ){
+    bool ret = false;
+    char strSql[1024] = {0};
+    stringstream ss; 
+    do{
+        sprintf(strSql,  "SET NAMES UTF8");
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        ///////////////////check user    
+        string user;
+        int role_id;
+       if(!GetUserByToken(token, user, role_id)){
+           LOG(ERROR) << "token not exsist ";
+           break;
+       }
+      
+        ///////////////////////select
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  " select Fscore from yzm_pose_label_db.t_score  \
+        where  Fscore_user='%s' and Flabel_user='%s' and Fpic_id = '%d' ",  \
+        user.c_str(),
+        label_user.c_str(),
+        pic_id);
+        LOG(INFO) << "SQL : "<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        SqlMapVector sqlVec;
+        int fetRet = _ptrMysql->FetchResultMVector(sqlVec);
+        if(-1 == fetRet){
+            break;
+        }else if(-2 == fetRet){
+            sqRet.selfScore = 0;     //没有评分就赋值为0
+        }else if(0 == fetRet){
+             ss << sqlVec[0]["score"];
+             ss >> sqRet.selfScore;
+        }
+        /////////////////////////////////////////////////////////////////////
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  " select AVG(Fscore) AS FscoreAverage from yzm_pose_label_db.t_score  \
+        where  Flabel_user='%s' and Fpic_id = '%d' ",  \
+        label_user.c_str(),
+        pic_id);
+        LOG(INFO) << "SQL : "<<strSql;
+        SqlMapVector sqlVec1;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        fetRet = _ptrMysql->FetchResultMVector(sqlVec1);
+        if(-1 == fetRet){
+            break;
+        }
+        else if(-2 == fetRet){
+            sqRet.averScore = 0;     //没有评分就赋值平均分为0
+        }else if(0 == fetRet){
+              ss.clear();
+              ss.str("");
+              ss << sqlVec1[0]["scoreAverage"];
+              ss >> sqRet.averScore;
+              sqRet.averScore = int(sqRet.averScore);
+        }
+       
+        //////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////
+        memset(strSql, 0, 1024);
+        sprintf(strSql,  " select * from yzm_pose_label_db.t_score  \
+        where  Flabel_user='%s' and Fpic_id = '%d' ",  \
+        label_user.c_str(),
+        pic_id);       
+        LOG(INFO) << "SQL : "<<strSql;
+        if(!_ptrMysql->Query(strSql,  strlen(strSql))){
+            break;
+        }
+        sqRet.scoreCount =  _ptrMysql->FetchRows();          
+    
+        ret = true;    
+ 
+    }while(0);
+
+    return ret;
+}
 
 
 

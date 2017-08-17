@@ -116,10 +116,9 @@ int main(int argc, char **argv) {
         LOG(INFO) << "vector size :  " <<qRet.picVec.size();
         if(qRet.picVec.size() > 0){
             for(auto&pic : qRet.picVec ){
-            
                 LOG(INFO) << "pic_url :" << pic.pic_url  << "bin length :  " << pic.screenshot_bin.length();
                 LOG(INFO) << "create_time  :" << pic.create_time;
-                 LOG(INFO) << "update_user  :" << pic.lastLabeledUser;
+                LOG(INFO) << "update_user  :" << pic.lastLabeledUser;           
             }
         }
     }   

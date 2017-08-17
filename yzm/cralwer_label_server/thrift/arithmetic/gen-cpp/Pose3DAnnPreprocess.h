@@ -21,7 +21,7 @@ namespace ThriftPose3DAnn {
 class Pose3DAnnPreprocessIf {
  public:
   virtual ~Pose3DAnnPreprocessIf() {}
-  virtual bool CheckIsValid(const Image& img) = 0;
+  virtual void CheckIsValid(ImageInitData& _return, const Image& img) = 0;
   virtual void DoInitGuess(GuessInfo& _return, const Image& img) = 0;
   virtual void AutoCalPose3D(std::vector<HumanPose3DInfo> & _return, const Image& img, const GuessInfo& guessInfo) = 0;
 };
@@ -53,9 +53,8 @@ class Pose3DAnnPreprocessIfSingletonFactory : virtual public Pose3DAnnPreprocess
 class Pose3DAnnPreprocessNull : virtual public Pose3DAnnPreprocessIf {
  public:
   virtual ~Pose3DAnnPreprocessNull() {}
-  bool CheckIsValid(const Image& /* img */) {
-    bool _return = false;
-    return _return;
+  void CheckIsValid(ImageInitData& /* _return */, const Image& /* img */) {
+    return;
   }
   void DoInitGuess(GuessInfo& /* _return */, const Image& /* img */) {
     return;
@@ -124,15 +123,15 @@ class Pose3DAnnPreprocess_CheckIsValid_result {
 
   Pose3DAnnPreprocess_CheckIsValid_result(const Pose3DAnnPreprocess_CheckIsValid_result&);
   Pose3DAnnPreprocess_CheckIsValid_result& operator=(const Pose3DAnnPreprocess_CheckIsValid_result&);
-  Pose3DAnnPreprocess_CheckIsValid_result() : success(0) {
+  Pose3DAnnPreprocess_CheckIsValid_result() {
   }
 
   virtual ~Pose3DAnnPreprocess_CheckIsValid_result() throw();
-  bool success;
+  ImageInitData success;
 
   _Pose3DAnnPreprocess_CheckIsValid_result__isset __isset;
 
-  void __set_success(const bool val);
+  void __set_success(const ImageInitData& val);
 
   bool operator == (const Pose3DAnnPreprocess_CheckIsValid_result & rhs) const
   {
@@ -161,7 +160,7 @@ class Pose3DAnnPreprocess_CheckIsValid_presult {
 
 
   virtual ~Pose3DAnnPreprocess_CheckIsValid_presult() throw();
-  bool* success;
+  ImageInitData* success;
 
   _Pose3DAnnPreprocess_CheckIsValid_presult__isset __isset;
 
@@ -409,9 +408,9 @@ class Pose3DAnnPreprocessClient : virtual public Pose3DAnnPreprocessIf {
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  bool CheckIsValid(const Image& img);
+  void CheckIsValid(ImageInitData& _return, const Image& img);
   void send_CheckIsValid(const Image& img);
-  bool recv_CheckIsValid();
+  void recv_CheckIsValid(ImageInitData& _return);
   void DoInitGuess(GuessInfo& _return, const Image& img);
   void send_DoInitGuess(const Image& img);
   void recv_DoInitGuess(GuessInfo& _return);
@@ -470,13 +469,14 @@ class Pose3DAnnPreprocessMultiface : virtual public Pose3DAnnPreprocessIf {
     ifaces_.push_back(iface);
   }
  public:
-  bool CheckIsValid(const Image& img) {
+  void CheckIsValid(ImageInitData& _return, const Image& img) {
     size_t sz = ifaces_.size();
     size_t i = 0;
     for (; i < (sz - 1); ++i) {
-      ifaces_[i]->CheckIsValid(img);
+      ifaces_[i]->CheckIsValid(_return, img);
     }
-    return ifaces_[i]->CheckIsValid(img);
+    ifaces_[i]->CheckIsValid(_return, img);
+    return;
   }
 
   void DoInitGuess(GuessInfo& _return, const Image& img) {
@@ -529,9 +529,9 @@ class Pose3DAnnPreprocessConcurrentClient : virtual public Pose3DAnnPreprocessIf
   boost::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
-  bool CheckIsValid(const Image& img);
+  void CheckIsValid(ImageInitData& _return, const Image& img);
   int32_t send_CheckIsValid(const Image& img);
-  bool recv_CheckIsValid(const int32_t seqid);
+  void recv_CheckIsValid(ImageInitData& _return, const int32_t seqid);
   void DoInitGuess(GuessInfo& _return, const Image& img);
   int32_t send_DoInitGuess(const Image& img);
   void recv_DoInitGuess(GuessInfo& _return, const int32_t seqid);
