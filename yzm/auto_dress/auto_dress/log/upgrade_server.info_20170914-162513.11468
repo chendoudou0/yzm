@@ -1,0 +1,13 @@
+Log file created at: 2017/09/14 16:25:13
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0914 16:25:13.291532  7744 autodress.cpp:495] GLOG BEGIN TO WORK
+I0914 16:25:13.293532  7744 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0914 16:25:13.293532  7744 config.cpp:121] db_para_.user_ : yzm
+I0914 16:25:13.294533  7744 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0914 16:25:13.294533  7744 config.cpp:143] db_para_.port_ : 3306
+I0914 16:25:13.294533  7744 config.cpp:154] db_para_.overTime_ : 2
+I0914 16:25:13.296532  7744 config.cpp:225] listen_port : 10022
+I0914 16:26:41.911600  8604 autodress.cpp:194] download d:/zip_download/test.zip begin
+E0914 16:26:43.200675  8604 autodress.cpp:211] download d:/zip_download/test.zip failed
+I0914 16:26:43.205674  8604 autodress.cpp:247] download d:/zip_download/test.zip failed

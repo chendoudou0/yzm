@@ -1,0 +1,46 @@
+Log file created at: 2017/09/16 14:32:59
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0916 14:32:59.264482  1880 autodress.cpp:686] GLOG BEGIN TO WORK.....
+I0916 14:32:59.266482  1880 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0916 14:32:59.267482  1880 config.cpp:121] db_para_.user_ : yzm
+I0916 14:32:59.268482  1880 config.cpp:132] db_para_.pass_ : 123456
+I0916 14:32:59.270483  1880 config.cpp:143] db_para_.port_ : 3306
+I0916 14:32:59.270483  1880 config.cpp:154] db_para_.overTime_ : 2
+I0916 14:32:59.271482  1880 config.cpp:225] listen_port : 10022
+I0916 14:32:59.466493  1880 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:32:59.479495  1880 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:32:59.487494  1880 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:32:59.489495  1880 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:33:03.773741  9776 autodress.cpp:742] httpCallBack begin ...
+I0916 14:33:03.774740  9776 autodress.cpp:743] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0916 14:33:03.774740  9776 autodress.cpp:748] receive add_task request 
+I0916 14:33:03.775740  9776 autodress.cpp:759] response buffer length : 26   data :{"msg":"success","code":0}
+I0916 14:33:03.775740  9776 autodress.cpp:760] callback end, cost 0ms
+I0916 14:33:05.496839 13604 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0916 14:33:05.786855 13604 autodress.cpp:239] download d:/zip_download/test.zip success
+I0916 14:33:05.790855 13604 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0916 14:33:05.791856 13604 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0916 14:33:05.912863 13604 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0916 14:33:05.913862 13604 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0916 14:33:05.981866 13604 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0916 14:33:05.981866 13604 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0916 14:33:06.200878 13604 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0916 14:33:06.200878 13604 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0916 14:33:06.383889 13604 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0916 14:33:06.384889 13604 dboperator.cpp:59] SQL : insert into yzm_auto_dress_db.t_auto_dress_clothes(Fid, Ftask_id, Fclothes_name, Fstatus,      Fpng_local_path, Fjpg_local_path, Fmatt_local_path, Fdress_local_path, 	Fpng_url, Fjpg_url, Fmatt_url, Fdress_url, Fcreate_time, Fupdate_time)     values(NULL, '0','0_chenzixun','0', 'd:/unzip/test/0_chenzixun/1111.png', 'd:/unzip/test/0_chenzixun/1111.jpg', 'd:/pic_dressed/0_chenzixun/3333.jpg','d:/pic_dressed/0_chenzixun/4444.jpg','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.png','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/3333.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/4444.jpg', '2017-09-16 14:33:06', '2017-09-16 14:33:06')
+I0916 14:33:06.473894 13604 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0916 14:33:06.499897 13604 autodress.cpp:239] download d:/zip_download/test.zip success
+I0916 14:33:06.503896 13604 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0916 14:33:06.504896 13604 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0916 14:33:06.554899 13604 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0916 14:33:06.554899 13604 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0916 14:33:06.620903 13604 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0916 14:33:06.620903 13604 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0916 14:33:06.976923 13604 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0916 14:33:06.976923 13604 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0916 14:33:07.028926 13604 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0916 14:33:07.029927 13604 dboperator.cpp:59] SQL : insert into yzm_auto_dress_db.t_auto_dress_clothes(Fid, Ftask_id, Fclothes_name, Fstatus,      Fpng_local_path, Fjpg_local_path, Fmatt_local_path, Fdress_local_path, 	Fpng_url, Fjpg_url, Fmatt_url, Fdress_url, Fcreate_time, Fupdate_time)     values(NULL, '0','0_chenzixun','0', 'd:/unzip/test/0_chenzixun/1111.png', 'd:/unzip/test/0_chenzixun/1111.jpg', 'd:/pic_dressed/0_chenzixun/3333.jpg','d:/pic_dressed/0_chenzixun/4444.jpg','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.png','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/3333.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/4444.jpg', '2017-09-16 14:33:07', '2017-09-16 14:33:07')

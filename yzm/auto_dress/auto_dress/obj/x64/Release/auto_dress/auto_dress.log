@@ -1,0 +1,117 @@
+﻿  autoDress.cpp
+d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\HttpTool.h(68): warning C4251: “HttpClient::ImpUPtr_”: class“std::unique_ptr<HttpClient::Imp,std::default_delete<_Ty>>”需要有 dll 接口由 class“HttpClient”的客户端使用
+          with
+          [
+              _Ty=HttpClient::Imp
+          ]
+  d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\HttpTool.h(68): note: 参见“std::unique_ptr<HttpClient::Imp,std::default_delete<_Ty>>”的声明
+          with
+          [
+              _Ty=HttpClient::Imp
+          ]
+d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\singleton.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\zlib\yzm_assist.h(88): warning C4251: “std::_String_alloc<std::_String_base_types<_Elem,_Alloc>>::_Mypair”: class“std::_Compressed_pair<std::_Wrap_alloc<std::allocator<char>>,std::_String_val<std::_Simple_types<char>>,true>”需要有 dll 接口由 class“std::_String_alloc<std::_String_base_types<_Elem,_Alloc>>”的客户端使用
+          with
+          [
+              _Elem=char,
+              _Alloc=std::allocator<char>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xstring(743): note: 参见“std::_Compressed_pair<std::_Wrap_alloc<std::allocator<char>>,std::_String_val<std::_Simple_types<char>>,true>”的声明
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\map(73): warning C4251: “std::_Tree_comp_alloc<_Traits>::_Mypair”: class“std::_Compressed_pair<std::less<_Kty>,std::_Compressed_pair<std::_Wrap_alloc<std::allocator<_Other>>,std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>,true>,true>”需要有 dll 接口由 class“std::_Tree_comp_alloc<_Traits>”的客户端使用
+          with
+          [
+              _Traits=std::_Tmap_traits<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>,false>
+          ]
+          and
+          [
+              _Kty=std::string,
+              _Other=std::_Tree_node<std::pair<const std::string,std::string>,void *>,
+              _Ty=std::string
+          ]
+          and
+          [
+              _Traits=std::_Tmap_traits<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>,false>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\xtree(949): note: 参见“std::_Compressed_pair<std::less<_Kty>,std::_Compressed_pair<std::_Wrap_alloc<std::allocator<_Other>>,std::_Tree_val<std::_Tree_simple_types<std::pair<const _Kty,_Ty>>>,true>,true>”的声明
+          with
+          [
+              _Kty=std::string,
+              _Other=std::_Tree_node<std::pair<const std::string,std::string>,void *>,
+              _Ty=std::string
+          ]
+  d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\zlib\yzm_assist.h(89): note: 参见对正在编译的类 模板 实例化“std::map<std::string,std::string,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的引用
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector(680): warning C4251: “std::_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc>>::_Mypair”: class“std::_Compressed_pair<std::_Wrap_alloc<std::allocator<_Ty>>,std::_Vector_val<std::_Simple_types<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>>,true>”需要有 dll 接口由 class“std::_Vector_alloc<std::_Vec_base_types<_Ty,_Alloc>>”的客户端使用
+          with
+          [
+              _Ty=std::string,
+              _Alloc=std::allocator<std::string>
+          ]
+          and
+          [
+              _Ty=std::string
+          ]
+          and
+          [
+              _Ty=std::string,
+              _Alloc=std::allocator<std::string>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector(672): note: 参见“std::_Compressed_pair<std::_Wrap_alloc<std::allocator<_Ty>>,std::_Vector_val<std::_Simple_types<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>>,true>”的声明
+          with
+          [
+              _Ty=std::string
+          ]
+  d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\zlib\yzm_assist.h(90): note: 参见对正在编译的类 模板 实例化“std::vector<std::string,std::allocator<_Ty>>”的引用
+          with
+          [
+              _Ty=std::string
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\list(864): warning C4251: “std::_List_alloc<std::_List_base_types<_Ty,_Alloc>>::_Mypair”: class“std::_Compressed_pair<std::_Wrap_alloc<std::allocator<_Other>>,std::_List_val<std::_List_simple_types<int>>,true>”需要有 dll 接口由 class“std::_List_alloc<std::_List_base_types<_Ty,_Alloc>>”的客户端使用
+          with
+          [
+              _Ty=int,
+              _Alloc=std::allocator<int>
+          ]
+          and
+          [
+              _Other=std::_List_node<int,void *>
+          ]
+          and
+          [
+              _Ty=int,
+              _Alloc=std::allocator<int>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\list(801): note: 参见“std::_Compressed_pair<std::_Wrap_alloc<std::allocator<_Other>>,std::_List_val<std::_List_simple_types<int>>,true>”的声明
+          with
+          [
+              _Other=std::_List_node<int,void *>
+          ]
+  d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\zlib\yzm_assist.h(91): note: 参见对正在编译的类 模板 实例化“std::list<int,std::allocator<_Ty>>”的引用
+          with
+          [
+              _Ty=int
+          ]
+d:\git_hub\yzm\auto_dress\auto_dress\auto_dress\db\sqlapi.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+autoDress.cpp(182): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(333): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(334): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(336): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(338): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(340): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(359): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(409): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(414): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(419): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+autoDress.cpp(424): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+    正在创建库 D:\git_hub\yzm\auto_dress\auto_dress\\bin\x64\Release\auto_dress.lib 和对象 D:\git_hub\yzm\auto_dress\auto_dress\\bin\x64\Release\auto_dress.exp
+  正在生成代码
+  49 of 2716 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
+    38 functions were new in current compilation
+    15 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  auto_dress.vcxproj -> D:\git_hub\yzm\auto_dress\auto_dress\\bin\x64\Release\auto_dress.exe
+  auto_dress.vcxproj -> D:\git_hub\yzm\auto_dress\auto_dress\\bin\x64\Release\auto_dress.pdb (Full PDB)

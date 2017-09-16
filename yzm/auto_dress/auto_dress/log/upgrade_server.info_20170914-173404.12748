@@ -1,0 +1,16 @@
+Log file created at: 2017/09/14 17:34:04
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0914 17:34:04.303812 10644 autodress.cpp:537] GLOG BEGIN TO WORK
+I0914 17:34:04.304812 10644 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0914 17:34:04.304812 10644 config.cpp:121] db_para_.user_ : yzm
+I0914 17:34:04.304812 10644 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0914 17:34:04.305812 10644 config.cpp:143] db_para_.port_ : 3306
+I0914 17:34:04.305812 10644 config.cpp:154] db_para_.overTime_ : 2
+I0914 17:34:04.306813 10644 config.cpp:225] listen_port : 10022
+I0914 17:34:08.321043  9124 autodress.cpp:194] download d:/zip_download/test.zip begin
+I0914 17:34:08.660061  9124 autodress.cpp:248] download d:/zip_download/test.zip successed
+I0914 17:34:08.665061  9124 autodress.cpp:38] unzip d:/zip_download/test.zip success
+I0914 17:34:38.857789  9124 autodress.cpp:253] upload d:/unzip/test/0_chenzixun/1111.png begin
+E0914 17:34:39.885848  9124 autodress.cpp:270] upload d:/unzip/test/0_chenzixun/1111.png failed
+I0914 17:34:39.887847  9124 autodress.cpp:306] upload d:/unzip/test/0_chenzixun/1111.png failed

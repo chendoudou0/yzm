@@ -1,0 +1,58 @@
+Log file created at: 2017/09/16 11:45:48
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0916 11:45:48.415899 15948 autodress.cpp:702] GLOG BEGIN TO WORK.....
+I0916 11:45:48.416899 15948 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0916 11:45:48.417899 15948 config.cpp:121] db_para_.user_ : yzm
+I0916 11:45:48.417899 15948 config.cpp:132] db_para_.pass_ : 123456
+I0916 11:45:48.417899 15948 config.cpp:143] db_para_.port_ : 3306
+I0916 11:45:48.418900 15948 config.cpp:154] db_para_.overTime_ : 2
+I0916 11:45:48.418900 15948 config.cpp:225] listen_port : 10022
+I0916 11:45:48.490903 15948 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:45:48.500905 15948 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:45:48.508904 15948 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:45:48.519906 15948 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:45:59.223517  6208 autodress.cpp:784] httpCallBack begin ...
+I0916 11:45:59.224517  6208 autodress.cpp:785] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0916 11:45:59.226517  6208 autodress.cpp:790] receive add_task request 
+I0916 11:45:59.229517  6208 autodress.cpp:801] response buffer length : 26   data :{"msg":"success","code":0}
+I0916 11:45:59.230517  6208 autodress.cpp:802] callback end, cost 2ms
+I0916 11:46:00.332581  6208 autodress.cpp:784] httpCallBack begin ...
+I0916 11:46:00.333581  6208 autodress.cpp:785] receive data  {
+    "task_id":1001
+}
+I0916 11:46:00.333581  6208 autodress.cpp:795] receive query_task request 
+I0916 11:46:00.334581  6208 autodress.cpp:801] response buffer length : 41   data :{"code":1,"msg":"no such task","list":[]}
+I0916 11:46:00.334581  6208 autodress.cpp:802] callback end, cost 0ms
+I0916 11:46:00.522591 10112 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0916 11:46:00.716603 10112 autodress.cpp:239] download d:/zip_download/test.zip success
+I0916 11:46:00.724603 10112 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0916 11:46:00.725603 10112 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0916 11:46:00.841610 10112 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0916 11:46:00.842610 10112 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0916 11:46:00.917614 10112 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0916 11:46:00.918614 10112 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0916 11:46:01.203630 10112 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0916 11:46:01.204630 10112 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0916 11:46:01.238632 10112 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0916 11:46:01.238632 10112 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0916 11:46:01.263634 10112 autodress.cpp:239] download d:/zip_download/test.zip success
+I0916 11:46:01.267634 10112 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0916 11:46:01.268635 10112 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0916 11:46:01.301636 10112 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0916 11:46:01.302636 10112 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0916 11:46:01.465646 10112 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0916 11:46:01.466645 10112 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0916 11:46:01.752662 10112 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0916 11:46:01.752662 10112 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0916 11:46:01.785665 10112 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0916 11:46:01.920671 15504 autodress.cpp:784] httpCallBack begin ...
+I0916 11:46:01.920671 15504 autodress.cpp:785] receive data  {
+    "task_id":1001
+}
+I0916 11:46:01.921671 15504 autodress.cpp:795] receive query_task request 
+I0916 11:46:01.922672 15504 autodress.cpp:801] response buffer length : 258   data :{"code":0,"msg":"success","list":[{"name":"0_chenzixun","dress_url":"http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/4444.jpg","matt_url":"http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/3333.jpg","status":0,"info":""}]}
+I0916 11:46:01.923671 15504 autodress.cpp:802] callback end, cost 0ms

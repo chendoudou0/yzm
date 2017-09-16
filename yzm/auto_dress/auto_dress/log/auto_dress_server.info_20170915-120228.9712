@@ -1,0 +1,25 @@
+Log file created at: 2017/09/15 12:02:28
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0915 12:02:28.549791 14504 autodress.cpp:530] GLOG BEGIN TO WORK.....
+I0915 12:02:28.550791 14504 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0915 12:02:28.550791 14504 config.cpp:121] db_para_.user_ : yzm
+I0915 12:02:28.550791 14504 config.cpp:132] db_para_.pass_ : 123456
+I0915 12:02:28.551792 14504 config.cpp:143] db_para_.port_ : 3306
+I0915 12:02:28.551792 14504 config.cpp:154] db_para_.overTime_ : 2
+I0915 12:02:28.551792 14504 config.cpp:225] listen_port : 10022
+I0915 12:02:28.718801 14504 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 12:02:28.721801 14504 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 12:02:28.731802 14504 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 12:02:28.747803 14504 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 12:02:28.754803  5880 autodress.cpp:424] download d:/zip_download/test.zip begin
+I0915 12:02:31.184942  5880 autodress.cpp:479] download d:/zip_download/test.zip successed
+I0915 12:02:31.192944  5880 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 12:02:31.193943  5880 autodress.cpp:200] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 12:02:31.326951  5880 autodress.cpp:253] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 12:02:31.327950  5880 autodress.cpp:200] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 12:02:31.418956  5880 autodress.cpp:253] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 12:02:31.419956  5880 autodress.cpp:200] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 12:02:31.630969  5880 autodress.cpp:253] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 12:02:31.631968  5880 autodress.cpp:200] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 12:02:31.677970  5880 autodress.cpp:253] upload d:/pic_dressed/0_chenzixun/4444.jpg successed

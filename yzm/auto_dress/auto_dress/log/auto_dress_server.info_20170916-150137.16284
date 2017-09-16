@@ -1,0 +1,25 @@
+Log file created at: 2017/09/16 15:01:37
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0916 15:01:37.858780  6200 autodress.cpp:686] GLOG BEGIN TO WORK.....
+I0916 15:01:37.859781  6200 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0916 15:01:37.860780  6200 config.cpp:121] db_para_.user_ : yzm
+I0916 15:01:37.861780  6200 config.cpp:132] db_para_.pass_ : 123456
+I0916 15:01:37.861780  6200 config.cpp:143] db_para_.port_ : 3306
+I0916 15:01:37.861780  6200 config.cpp:154] db_para_.overTime_ : 2
+I0916 15:01:37.862781  6200 config.cpp:225] listen_port : 10022
+I0916 15:01:37.897783  6200 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 15:01:37.903782  6200 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 15:01:37.907783  6200 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 15:01:37.910784  6200 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 15:01:44.336150  3896 autodress.cpp:742] httpCallBack begin ...
+I0916 15:01:44.358151  3896 autodress.cpp:743] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0916 15:01:44.359151  3896 autodress.cpp:748] receive add_task request 
+I0916 15:01:44.360152  3896 autodress.cpp:759] response buffer length : 26   data :{"msg":"success","code":0}
+I0916 15:01:44.360152  3896 autodress.cpp:760] callback end, cost 0ms
+I0916 15:01:46.914299 11884 autodress.cpp:199] download d:/zip_download/test.zip begin
+I0916 15:01:47.050305 11884 autodress.cpp:240] download d:/zip_download/test.zip success
+I0916 15:01:47.054306 11884 autodress.cpp:43] unzip d:/zip_download/test.zip success

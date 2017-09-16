@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="zip">
+      <UniqueIdentifier>{82ec441f-6efe-4fa4-9f8d-d8773cb60526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="md5">
+      <UniqueIdentifier>{d7062d27-1c03-4a96-a3df-ce0e3c31abc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="db">
+      <UniqueIdentifier>{c1fd5f9c-0fbb-48eb-8faa-5da8f83e4087}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IApp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="autoDress.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\yzm_file_system.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\yzm_string_helper.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\yzm_zip_helper.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\yzm_log.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\yzm_assist.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\unzip.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\zip.cpp">
+      <Filter>zip</Filter>
+    </ClCompile>
+    <ClCompile Include="md5\yzm_md5.cpp">
+      <Filter>md5</Filter>
+    </ClCompile>
+    <ClCompile Include="jsonOperator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="db\DBOperator.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+    <ClCompile Include="db\sqlapi.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IApp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="autoDress.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpTool.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="task.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\yzm_assist.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\yzm_file_system.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\yzm_string_helper.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\yzm_zip_helper.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\yzm_log.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\unzip.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\zip.h">
+      <Filter>zip</Filter>
+    </ClInclude>
+    <ClInclude Include="md5\yzm_md5.h">
+      <Filter>md5</Filter>
+    </ClInclude>
+    <ClInclude Include="jsonOperator.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="db\DBOperator.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\dbPool.h">
+      <Filter>db</Filter>
+    </ClInclude>
+    <ClInclude Include="db\sqlapi.h">
+      <Filter>db</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

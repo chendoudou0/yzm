@@ -1,0 +1,10 @@
+Log file created at: 2017/09/14 11:13:27
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0914 11:13:27.564321  7408 autodress.cpp:334] GLOG BEGIN TO WORK
+I0914 11:13:27.566320  7408 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0914 11:13:27.566320  7408 config.cpp:121] db_para_.user_ : yzm
+I0914 11:13:27.566320  7408 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0914 11:13:27.566320  7408 config.cpp:143] db_para_.port_ : 3306
+I0914 11:13:27.566320  7408 config.cpp:154] db_para_.overTime_ : 2
+I0914 11:13:27.567320  7408 config.cpp:225] listen_port : 10022

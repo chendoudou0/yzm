@@ -1,0 +1,33 @@
+Log file created at: 2017/09/16 11:21:27
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0916 11:21:27.768355 13868 autodress.cpp:702] GLOG BEGIN TO WORK.....
+I0916 11:21:27.770355 13868 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0916 11:21:27.772356 13868 config.cpp:121] db_para_.user_ : yzm
+I0916 11:21:27.772356 13868 config.cpp:132] db_para_.pass_ : 123456
+I0916 11:21:27.773355 13868 config.cpp:143] db_para_.port_ : 3306
+I0916 11:21:27.773355 13868 config.cpp:154] db_para_.overTime_ : 2
+I0916 11:21:27.774355 13868 config.cpp:225] listen_port : 10022
+I0916 11:21:27.795356 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:21:27.796356 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:21:27.807358 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:21:27.818357 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 11:21:35.712810 12348 autodress.cpp:784] httpCallBack begin ...
+I0916 11:21:35.713809 12348 autodress.cpp:785] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0916 11:21:35.731811 12348 autodress.cpp:790] receive add_task request 
+I0916 11:21:35.733810 12348 autodress.cpp:801] response buffer length : 26   data :{"msg":"success","code":0}
+I0916 11:21:35.734810 12348 autodress.cpp:802] callback end, cost 1ms
+I0916 11:21:36.820873  9348 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0916 11:21:38.489969  9348 autodress.cpp:239] download d:/zip_download/test.zip success
+I0916 11:21:38.544971  9348 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0916 11:21:38.545971  9348 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0916 11:21:38.626976  9348 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0916 11:21:38.627976  9348 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0916 11:21:38.712981  9348 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0916 11:21:38.713981  9348 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0916 11:21:38.944994  9348 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0916 11:21:38.945994  9348 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0916 11:21:39.019999  9348 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed

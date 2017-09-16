@@ -1,0 +1,19 @@
+Log file created at: 2017/09/14 17:36:09
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0914 17:36:09.749987  7300 autodress.cpp:537] GLOG BEGIN TO WORK
+I0914 17:36:09.750988  7300 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0914 17:36:09.750988  7300 config.cpp:121] db_para_.user_ : yzm
+I0914 17:36:09.750988  7300 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0914 17:36:09.750988  7300 config.cpp:143] db_para_.port_ : 3306
+I0914 17:36:09.750988  7300 config.cpp:154] db_para_.overTime_ : 2
+I0914 17:36:09.751987  7300 config.cpp:225] listen_port : 10022
+I0914 17:36:09.755987  9836 autodress.cpp:194] download d:/zip_download/test.zip begin
+I0914 17:36:09.822991  9836 autodress.cpp:248] download d:/zip_download/test.zip successed
+I0914 17:36:09.827992  9836 autodress.cpp:38] unzip d:/zip_download/test.zip success
+I0914 17:36:21.537662  9836 autodress.cpp:253] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0914 17:36:21.680670  9836 autodress.cpp:306] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0914 17:36:21.681670  9836 autodress.cpp:253] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0914 17:36:21.758674  9836 autodress.cpp:306] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0914 17:36:33.410341  9836 autodress.cpp:253] upload d:/pic_dressed/ 0_chenzixun/3333.jpg begin
+I0914 17:36:33.415341  9836 autodress.cpp:306] upload d:/pic_dressed/ 0_chenzixun/3333.jpg failed

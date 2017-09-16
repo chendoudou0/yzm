@@ -1,0 +1,198 @@
+Log file created at: 2017/09/15 16:04:22
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0915 16:04:22.124225  8168 autodress.cpp:551] GLOG BEGIN TO WORK.....
+I0915 16:04:22.125226  8168 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0915 16:04:22.126225  8168 config.cpp:121] db_para_.user_ : yzm
+I0915 16:04:22.126225  8168 config.cpp:132] db_para_.pass_ : 123456
+I0915 16:04:22.126225  8168 config.cpp:143] db_para_.port_ : 3306
+I0915 16:04:22.126225  8168 config.cpp:154] db_para_.overTime_ : 2
+I0915 16:04:22.127225  8168 config.cpp:225] listen_port : 10022
+I0915 16:04:22.144227  8168 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:04:22.160228  8168 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:04:22.162227  8168 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:04:22.163228  8168 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:04:27.465531 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:27.466531 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:27.467531 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:27.467531 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:27.468531 11912 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:28.165571 13020 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:04:28.593595 13020 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:04:28.600596 13020 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:04:28.603596 13020 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:04:28.713603 13020 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:04:28.713603 13020 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:04:28.761605 13020 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:04:28.761605 13020 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:04:29.049621 13020 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:04:29.050621 13020 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:04:29.094624 13020 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:04:31.031735 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:31.032735 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:31.033735 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:31.034735 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:31.034735 11912 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:31.742775 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:31.743777 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:31.744776 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:31.745776 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:31.746776 14428 autodress.cpp:637] callback end, cost 1ms
+I0915 16:04:31.943787 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:31.944787 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:31.944787 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:31.946787 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:31.946787 11912 autodress.cpp:637] callback end, cost 1ms
+I0915 16:04:32.199802 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:32.201802 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:32.202802 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:32.203802 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:32.203802 14428 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:32.477818 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:32.485818 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:32.495820 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:32.496819 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:32.496819 11912 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:32.736832 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:32.736832 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:32.737833 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:32.738832 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:32.738832 14428 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:32.978847 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:32.979846 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:32.979846 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:32.984846 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:32.985847 11912 autodress.cpp:637] callback end, cost 4ms
+I0915 16:04:33.145856 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:33.145856 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:33.146857 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:33.147856 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:33.148856 14428 autodress.cpp:637] callback end, cost 1ms
+I0915 16:04:33.305866 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:33.307865 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:33.311866 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:33.312865 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:33.312865 11912 autodress.cpp:637] callback end, cost 1ms
+I0915 16:04:33.545879 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:33.548879 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:33.549880 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:33.556879 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:33.558879 14428 autodress.cpp:637] callback end, cost 6ms
+I0915 16:04:33.710888 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:33.715888 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:33.716888 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:33.716888 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:33.717888 11912 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:33.935901 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:33.936902 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:33.937901 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:33.938901 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:33.938901 14428 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:34.101910 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:34.102910 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:34.103910 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:34.104912 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:34.105911 11912 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:34.355926 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:34.356925 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:34.357925 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:34.363925 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:34.364925 14428 autodress.cpp:637] callback end, cost 5ms
+I0915 16:04:34.540935 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:34.541936 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:34.541936 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:34.542937 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:34.542937 11912 autodress.cpp:637] callback end, cost 0ms
+I0915 16:04:34.757948 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:34.757948 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:34.758949 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:34.759948 14428 autodress.cpp:435] task is too many
+I0915 16:04:34.759948 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:34.759948 14428 autodress.cpp:637] callback end, cost 1ms
+I0915 16:04:34.920958 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:34.921957 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:34.921957 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:34.922957 11912 autodress.cpp:435] task is too many
+I0915 16:04:34.922957 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:34.923957 11912 autodress.cpp:637] callback end, cost 1ms
+I0915 16:04:35.155972 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:35.155972 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:35.155972 14428 autodress.cpp:626] receive add_task request 
+I0915 16:04:35.156971 14428 autodress.cpp:435] task is too many
+I0915 16:04:35.157971 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:35.157971 14428 autodress.cpp:637] callback end, cost 1ms
+I0915 16:04:52.251950 11912 autodress.cpp:620] httpCallBack begin ...
+I0915 16:04:52.251950 11912 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:04:52.251950 11912 autodress.cpp:626] receive add_task request 
+I0915 16:04:52.251950 11912 autodress.cpp:435] task is too many
+I0915 16:04:52.252949 11912 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:04:52.252949 11912 autodress.cpp:637] callback end, cost 0ms
+I0915 16:05:05.617713 14428 autodress.cpp:620] httpCallBack begin ...
+I0915 16:05:05.617713 14428 autodress.cpp:621] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:05:05.617713 14428 autodress.cpp:626] receive add_task request 
+I0915 16:05:05.618713 14428 autodress.cpp:435] task is too many
+I0915 16:05:05.618713 14428 autodress.cpp:636] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:05:05.618713 14428 autodress.cpp:637] callback end, cost 0ms

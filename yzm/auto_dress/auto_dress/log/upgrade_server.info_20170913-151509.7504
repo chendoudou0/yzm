@@ -1,0 +1,9 @@
+Log file created at: 2017/09/13 15:15:09
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0913 15:15:09.217764  7588 autodress.cpp:56] GLOG BEGIN TO WORK
+I0913 15:15:09.218765  7588 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0913 15:15:09.218765  7588 config.cpp:121] db_para_.user_ : yzm
+I0913 15:15:09.218765  7588 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0913 15:15:12.878973 12796 autodress.cpp:111] httpCallBack begin ...
+I0913 15:15:12.879973 12796 autodress.cpp:112] uri /auto_dress/task_begin, receive data  jjjjjjj

@@ -1,0 +1,14 @@
+Log file created at: 2017/09/15 11:37:41
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0915 11:37:41.553740  2324 autodress.cpp:538] GLOG BEGIN TO WORK.....
+I0915 11:37:41.555740  2324 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0915 11:37:41.555740  2324 config.cpp:121] db_para_.user_ : yzm
+I0915 11:37:41.556740  2324 config.cpp:132] db_para_.pass_ : 123456
+I0915 11:37:41.556740  2324 config.cpp:143] db_para_.port_ : 3306
+I0915 11:37:41.557740  2324 config.cpp:154] db_para_.overTime_ : 2
+I0915 11:37:41.559741  2324 config.cpp:225] listen_port : 10022
+I0915 11:37:41.575742  2324 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 11:37:41.578742  2324 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 11:37:41.580742  2324 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 11:37:41.583742  2324 sqlapi.cpp:53] connect mysql  success!!!!

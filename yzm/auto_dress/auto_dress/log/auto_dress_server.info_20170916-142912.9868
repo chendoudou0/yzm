@@ -1,0 +1,57 @@
+Log file created at: 2017/09/16 14:29:12
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0916 14:29:12.177494  8660 autodress.cpp:686] GLOG BEGIN TO WORK.....
+I0916 14:29:12.178493  8660 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0916 14:29:12.178493  8660 config.cpp:121] db_para_.user_ : yzm
+I0916 14:29:12.178493  8660 config.cpp:132] db_para_.pass_ : 123456
+I0916 14:29:12.178493  8660 config.cpp:143] db_para_.port_ : 3306
+I0916 14:29:12.179493  8660 config.cpp:154] db_para_.overTime_ : 2
+I0916 14:29:12.179493  8660 config.cpp:225] listen_port : 10022
+I0916 14:29:12.232496  8660 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:29:12.234496  8660 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:29:12.245497  8660 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:29:12.248497  8660 sqlapi.cpp:53] connect mysql  success!!!!
+I0916 14:29:16.067716 12436 autodress.cpp:742] httpCallBack begin ...
+I0916 14:29:16.068717 12436 autodress.cpp:743] receive data  {
+    "task_id":1001
+}
+I0916 14:29:16.068717 12436 autodress.cpp:753] receive query_task request 
+I0916 14:29:16.069716 12436 autodress.cpp:759] response buffer length : 41   data :{"code":1,"msg":"no such task","list":[]}
+I0916 14:29:16.069716 12436 autodress.cpp:760] callback end, cost 0ms
+I0916 14:29:20.293957 12436 autodress.cpp:742] httpCallBack begin ...
+I0916 14:29:20.294957 12436 autodress.cpp:743] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0916 14:29:20.294957 12436 autodress.cpp:748] receive add_task request 
+I0916 14:29:20.295958 12436 autodress.cpp:759] response buffer length : 26   data :{"msg":"success","code":0}
+I0916 14:29:20.296957 12436 autodress.cpp:760] callback end, cost 0ms
+I0916 14:29:21.259012  7136 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0916 14:29:21.453024  7136 autodress.cpp:239] download d:/zip_download/test.zip success
+I0916 14:29:21.458024  7136 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0916 14:29:21.459024  7136 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0916 14:29:21.573030  7136 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0916 14:29:21.574030  7136 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0916 14:29:21.640034  7136 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0916 14:29:21.641034  7136 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0916 14:29:21.979054  7136 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0916 14:29:21.980054  7136 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0916 14:29:22.025056  7136 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0916 14:29:22.026057  7136 dboperator.cpp:59] SQL : insert into yzm_auto_dress_db.t_auto_dress_clothes(Fid, Ftask_id, Fclothes_name, Fstatus,      Fpng_local_path, Fjpg_local_path, Fmatt_local_path, Fdress_local_path, 	Fpng_url, Fjpg_url, Fmatt_url, Fdress_url, Fcreate_time, Fupdate_time)     values(NULL, '0','0_chenzixun','0', 'd:/unzip/test/0_chenzixun/1111.png', 'd:/unzip/test/0_chenzixun/1111.jpg', 'd:/pic_dressed/0_chenzixun/3333.jpg','d:/pic_dressed/0_chenzixun/4444.jpg','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.png','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/3333.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/4444.jpg', '2017-09-16 14:29:22', '2017-09-16 14:29:22')
+E0916 14:29:22.027056  7136 sqlapi.cpp:99] unknowed mysql error....
+E0916 14:29:22.028056  7136 autodress.cpp:365]  add clothes to db failed 
+I0916 14:29:22.029057  7136 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0916 14:29:22.057059  7136 autodress.cpp:239] download d:/zip_download/test.zip success
+I0916 14:29:22.061058  7136 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0916 14:29:22.062058  7136 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0916 14:29:22.107061  7136 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0916 14:29:22.108062  7136 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0916 14:29:22.310073  7136 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0916 14:29:22.311074  7136 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0916 14:29:22.514084  7136 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0916 14:29:22.514084  7136 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0916 14:29:22.686094  7136 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0916 14:29:22.687094  7136 dboperator.cpp:59] SQL : insert into yzm_auto_dress_db.t_auto_dress_clothes(Fid, Ftask_id, Fclothes_name, Fstatus,      Fpng_local_path, Fjpg_local_path, Fmatt_local_path, Fdress_local_path, 	Fpng_url, Fjpg_url, Fmatt_url, Fdress_url, Fcreate_time, Fupdate_time)     values(NULL, '0','0_chenzixun','0', 'd:/unzip/test/0_chenzixun/1111.png', 'd:/unzip/test/0_chenzixun/1111.jpg', 'd:/pic_dressed/0_chenzixun/3333.jpg','d:/pic_dressed/0_chenzixun/4444.jpg','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.png','http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/1111.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/3333.jpg', 'http://auto-dress.oss-cn-shenzhen.aliyuncs.com/clothes/0_chenzixun/4444.jpg', '2017-09-16 14:29:22', '2017-09-16 14:29:22')
+E0916 14:29:22.688094  7136 sqlapi.cpp:99] unknowed mysql error....
+E0916 14:29:22.688094  7136 autodress.cpp:365]  add clothes to db failed 

@@ -1,0 +1,4 @@
+Log file created at: 2017/09/14 17:34:39
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0914 17:34:39.885848  9124 autodress.cpp:270] upload d:/unzip/test/0_chenzixun/1111.png failed

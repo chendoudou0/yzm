@@ -1,0 +1,7 @@
+Log file created at: 2017/09/16 14:29:22
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0916 14:29:22.027056  7136 sqlapi.cpp:99] unknowed mysql error....
+E0916 14:29:22.028056  7136 autodress.cpp:365]  add clothes to db failed 
+E0916 14:29:22.688094  7136 sqlapi.cpp:99] unknowed mysql error....
+E0916 14:29:22.688094  7136 autodress.cpp:365]  add clothes to db failed 

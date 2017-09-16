@@ -1,0 +1,15 @@
+Log file created at: 2017/09/15 11:56:24
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0915 11:56:24.135948 13648 autodress.cpp:530] GLOG BEGIN TO WORK.....
+I0915 11:56:24.140949 13648 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0915 11:56:24.141948 13648 config.cpp:121] db_para_.user_ : yzm
+I0915 11:56:24.141948 13648 config.cpp:132] db_para_.pass_ : 123456
+I0915 11:56:24.141948 13648 config.cpp:143] db_para_.port_ : 3306
+I0915 11:56:24.141948 13648 config.cpp:154] db_para_.overTime_ : 2
+I0915 11:56:24.142949 13648 config.cpp:225] listen_port : 10022
+I0915 11:56:24.169950 13648 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 11:56:24.180951 13648 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 11:56:24.192951 13648 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 11:56:24.203953 13648 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 11:56:24.247956  9292 autodress.cpp:425] download d:/zip_download/test.zip begin

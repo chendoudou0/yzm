@@ -1,0 +1,2264 @@
+Log file created at: 2017/09/15 16:05:40
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0915 16:05:40.066684 13868 autodress.cpp:550] GLOG BEGIN TO WORK.....
+I0915 16:05:40.067683 13868 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0915 16:05:40.067683 13868 config.cpp:121] db_para_.user_ : yzm
+I0915 16:05:40.067683 13868 config.cpp:132] db_para_.pass_ : 123456
+I0915 16:05:40.067683 13868 config.cpp:143] db_para_.port_ : 3306
+I0915 16:05:40.067683 13868 config.cpp:154] db_para_.overTime_ : 2
+I0915 16:05:40.068683 13868 config.cpp:225] listen_port : 10022
+I0915 16:05:40.106686 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:05:40.116686 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:05:40.117686 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:05:40.119686 13868 sqlapi.cpp:53] connect mysql  success!!!!
+I0915 16:05:46.330042 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:05:46.331043 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:05:46.331043 12388 autodress.cpp:625] receive add_task request 
+I0915 16:05:46.333042 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:05:46.334043 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:05:49.121201 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:05:50.055255 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:05:50.060256 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:05:50.061255 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:05:50.091258 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:05:50.091258 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:05:50.146260 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:05:50.147260 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:05:50.421277 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:05:50.422276 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:05:50.456279 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:05:50.457278 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:05:50.485280 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:05:50.489279 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:05:50.491281 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:05:50.522281 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:05:50.523281 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:05:50.800297 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:05:50.800297 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:05:50.979308 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:05:50.979308 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:05:51.018311 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:05:55.836585 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:05:55.837585 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:05:55.837585 12388 autodress.cpp:625] receive add_task request 
+I0915 16:05:55.838585 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:05:55.838585 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:05:57.019654 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:05:57.059655 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:05:57.063657 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:05:57.067656 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:05:57.105659 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:05:57.105659 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:05:57.149660 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:05:57.150660 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:05:57.438678 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:05:57.439677 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:05:57.468679 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:05:57.468679 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:05:57.494680 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:05:57.499680 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:05:57.500681 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:05:57.535683 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:05:57.535683 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:05:57.706692 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:05:57.706692 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:05:57.986708 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:05:57.986708 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:05:58.014710 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:03.573029  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:03.574028  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:03.574028  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:03.575028  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:03.576028  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:03.791040 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:03.792040 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:03.792040 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:03.793040 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:03.793040 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:03.981051  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:03.987052  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:04.000052  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:04.001052  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:04.015053  8696 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:04.015053 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:04.211064 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:04.212064 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:04.213064 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:04.214066 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:04.215065 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:04.333071 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:04.339072 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:04.341073 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:04.375074 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:04.407076 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:04.511081  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:04.527082  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:04.529083  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:04.530083  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:04.531083  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:04.563084 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:04.590086 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:04.769096 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:04.779098 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:04.779098 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:04.783097 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:04.806098 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:04.812099 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:04.813099 12388 autodress.cpp:636] callback end, cost 6ms
+I0915 16:06:04.838100 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:04.863102 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:04.932106 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:05.035111 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:05.055114 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:05.076114  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:05.080114  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:05.081115  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:05.082114  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:05.082114  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:05.126117 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:05.130117 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:05.274125 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:05.283126 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:05.294126 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:05.324128 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:05.363131 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:05.365130 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:05.366130 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:05.504138 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:05.515139 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:05.554141  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:05.572142  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:05.573143  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:05.573143  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:05.573143  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:05.589143 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:05.594143 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:05.643146 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:05.670148 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:05.678148 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:05.722151 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:05.727151 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:05.807157 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:05.819156 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:05.838157 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:05.856158 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:05.856158 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:05.877161 12388 autodress.cpp:636] callback end, cost 17ms
+I0915 16:06:05.878160 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:06.061170 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:06.132174 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:06.150176  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:06.184177  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:06.237180  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:06.259181  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:06.259181 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:06.264183  8696 autodress.cpp:636] callback end, cost 22ms
+I0915 16:06:06.270182 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:06.341187 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:06.353188 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:06.368188 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:06.461194 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:06.520196 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:06.534198 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:06.535197 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:06.536197 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:06.536197 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:06.536197 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:06.602201 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:06.602201 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:06.752210  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:06.754210  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:06.755210  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:06.755210  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:06.756211  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:06.886217 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:06.888217 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:06.913219 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:06.914219 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:06.920219 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:06.920219 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:06.921219 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:06.927220 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:06.927220 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:06.972223 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:06.977223 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:06.978224 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:07.059227  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:07.069228  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:07.070228  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:07.070228  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:07.070228  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:07.086230 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:07.089229 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:07.143232 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:07.147233 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:07.262239 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:07.265239 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:07.266239 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:07.267240 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:07.274240 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:07.430248 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:07.430248 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:07.456250  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:07.456250  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:07.457250  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:07.457250  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:07.457250 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:07.458250  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:07.458250 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:07.496253 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:07.500252 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:07.501253 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:07.541255 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:07.542255 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:07.613260 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:07.613260 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:07.614259 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:07.614259 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:07.615259 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:07.705265 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:07.706264 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:07.849272  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:07.849272  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:07.849272  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:07.850272  8696 autodress.cpp:434] task is too many
+I0915 16:06:07.850272  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:07.850272  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:07.995281 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:07.997282 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:08.010282 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:08.010282 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:08.010282 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:08.011282 12388 autodress.cpp:434] task is too many
+I0915 16:06:08.011282 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:08.011282 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:08.033283 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:08.033283 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:08.071285 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:08.075285 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:08.076285 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:08.108288 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:08.108288 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:08.274297  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:08.275297  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:08.275297  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:08.275297  8696 autodress.cpp:434] task is too many
+I0915 16:06:08.275297  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:08.276298  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:08.279297 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:08.279297 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:08.430306 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:08.431306 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:08.431306 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:08.431306 12388 autodress.cpp:434] task is too many
+I0915 16:06:08.433306 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:08.437306 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:08.562314 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:08.562314 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:08.588315 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:08.588315 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:08.621317 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:08.625318 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:08.625318 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:08.660320 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:08.660320 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:08.673321  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:08.673321  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:08.673321  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:08.674320  8696 autodress.cpp:434] task is too many
+I0915 16:06:08.674320  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:08.674320  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:08.835330 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:08.835330 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:08.844329 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:08.844329 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:08.845329 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:08.845329 12388 autodress.cpp:434] task is too many
+I0915 16:06:08.845329 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:08.846329 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:09.102344  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:09.102344  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:09.102344  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:09.103344  8696 autodress.cpp:434] task is too many
+I0915 16:06:09.103344  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:09.103344  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:09.116345 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:09.116345 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:09.153347 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:09.153347 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:09.188349 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:09.193349 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:09.194350 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:09.229351 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:09.229351 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:09.280354 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:09.281354 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:09.282354 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:09.282354 12388 autodress.cpp:434] task is too many
+I0915 16:06:09.283354 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:09.283354 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:09.399361 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:09.399361 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:09.522368  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:09.522368  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:09.523368  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:09.523368  8696 autodress.cpp:434] task is too many
+I0915 16:06:09.523368  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:09.524369  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:09.677377 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:09.686378 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:09.720379 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:09.728380 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:09.766382 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:09.770382 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:09.770382 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:09.801384 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:09.801384 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:09.806385 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:09.806385 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:09.807384 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:09.807384 12388 autodress.cpp:434] task is too many
+I0915 16:06:09.808384 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:09.808384 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:09.970394 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:09.970394 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:09.978394  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:09.978394  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:09.979394  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:09.979394  8696 autodress.cpp:434] task is too many
+I0915 16:06:09.980394  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:09.980394  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:10.133404 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:10.133404 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:10.260411 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:10.261410 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:10.261410 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:10.261410 12388 autodress.cpp:434] task is too many
+I0915 16:06:10.262410 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:10.262410 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:10.284412 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:10.284412 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:10.322414 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:10.326414 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:10.328414 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:10.368417 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:10.368417 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:10.538426 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:10.538426 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:10.543427  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:10.543427  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:10.543427  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:10.544427  8696 autodress.cpp:434] task is too many
+I0915 16:06:10.544427  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:10.545428  8696 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:10.712436 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:10.714437 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:10.750438 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:10.751438 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:10.781440 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:10.785440 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:10.786440 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:10.808442 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:10.809442 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:10.809442 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:10.810442 12388 autodress.cpp:434] task is too many
+I0915 16:06:10.810442 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:10.811442 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:10.815443 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:10.819442 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:11.053457  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:11.054456  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:11.054456  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:11.054456  8696 autodress.cpp:434] task is too many
+I0915 16:06:11.055456  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:11.055456  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:11.097458 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:11.097458 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:11.203464 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:11.203464 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:11.203464 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:11.204464 12388 autodress.cpp:434] task is too many
+I0915 16:06:11.204464 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:11.204464 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:11.273468 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:11.273468 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:11.304471 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:11.305470 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:11.338472 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:11.342473 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:11.343472 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:11.360473  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:11.360473  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:11.360473  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:11.361474  8696 autodress.cpp:434] task is too many
+I0915 16:06:11.361474  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:11.361474  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:11.375474 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:11.376474 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:11.583487 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:11.584486 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:11.584486 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:11.585486 12388 autodress.cpp:434] task is too many
+I0915 16:06:11.586486 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:11.586486 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:11.657490 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:11.657490 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:11.747495  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:11.747495  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:11.748495  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:11.748495  8696 autodress.cpp:434] task is too many
+I0915 16:06:11.748495  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:11.748495  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:11.828500 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:11.828500 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:11.860502 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:11.861502 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:11.896504 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:11.900504 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:11.901504 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:11.903504 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:11.904505 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:11.905504 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:11.905504 12388 autodress.cpp:434] task is too many
+I0915 16:06:11.906504 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:11.906504 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:11.938506 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:11.939507 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:12.185520  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:12.185520  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:12.185520  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:12.186520  8696 autodress.cpp:434] task is too many
+I0915 16:06:12.186520  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:12.186520  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:12.214522 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:12.215523 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:12.339529 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:12.339529 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:12.339529 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:12.340529 12388 autodress.cpp:434] task is too many
+I0915 16:06:12.341529 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:12.341529 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:12.385532 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:12.385532 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:12.411533 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:12.412533 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:12.446535 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:12.451536 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:12.452536 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:12.484539 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:12.484539 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:12.588543  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:12.588543  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:12.589545  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:12.589545  8696 autodress.cpp:434] task is too many
+I0915 16:06:12.589545  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:12.589545  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:12.753553 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:12.755553 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:12.756553 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:12.756553 12388 autodress.cpp:434] task is too many
+I0915 16:06:12.757553 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:12.758553 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:12.767554 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:12.767554 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:12.908562  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:12.908562  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:12.909562  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:12.910562  8696 autodress.cpp:434] task is too many
+I0915 16:06:12.910562  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:12.911562  8696 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:12.938565 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:12.939564 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:12.973567 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:12.974566 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:13.146575 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:13.146575 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:13.146575 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:13.147575 12388 autodress.cpp:434] task is too many
+I0915 16:06:13.147575 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:13.147575 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:13.267582 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:13.271584 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:13.272583 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:13.302584  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:13.302584  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:13.303584  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:13.303584  8696 autodress.cpp:434] task is too many
+I0915 16:06:13.303584  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:13.304584  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:13.316586 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:13.316586 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:13.364588 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:13.365588 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:13.544598 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:13.544598 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:13.545598 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:13.545598 12388 autodress.cpp:434] task is too many
+I0915 16:06:13.545598 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:13.546598 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:13.646605 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:13.647604 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:13.677606 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:13.678606 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:13.711608  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:13.711608  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:13.711608  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:13.712608  8696 autodress.cpp:434] task is too many
+I0915 16:06:13.712608  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:13.712608  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:13.735610 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:13.739609 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:13.740609 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:13.776612 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:13.777612 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:13.878618 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:13.878618 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:13.879617 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:13.879617 12388 autodress.cpp:434] task is too many
+I0915 16:06:13.879617 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:13.880617 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:13.962622 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:13.962622 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:14.048627  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:14.049628  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:14.049628  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:14.049628  8696 autodress.cpp:434] task is too many
+I0915 16:06:14.050627  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:14.050627  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:14.243638 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:14.244638 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:14.281641 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:14.282640 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:14.293642 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:14.293642 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:14.294641 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:14.294641 12388 autodress.cpp:434] task is too many
+I0915 16:06:14.295641 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:14.295641 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:14.326643 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:14.330643 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:14.331643 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:14.358645 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:14.359645 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:14.470651  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:14.470651  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:14.470651  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:14.471652  8696 autodress.cpp:434] task is too many
+I0915 16:06:14.471652  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:14.471652  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:14.537655 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:14.537655 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:14.700664 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:14.701664 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:14.706665 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:14.707665 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:14.707665 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:14.708665 12388 autodress.cpp:434] task is too many
+I0915 16:06:14.708665 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:14.709666 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:14.850673 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:14.851673 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:14.878674 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:14.883675  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:14.885675  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:14.883675 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:14.886675  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:14.886675 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:14.887676  8696 autodress.cpp:434] task is too many
+I0915 16:06:14.888675  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:14.888675  8696 autodress.cpp:636] callback end, cost 2ms
+I0915 16:06:14.919677 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:14.920677 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:15.087687 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:15.088686 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:15.127689 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:15.127689 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:15.128690 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:15.128690 12388 autodress.cpp:434] task is too many
+I0915 16:06:15.128690 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:15.129689 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:15.265697 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:15.265697 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:15.294698  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:15.294698  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:15.294698  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:15.295698  8696 autodress.cpp:434] task is too many
+I0915 16:06:15.295698  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:15.295698  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:15.413705 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:15.414705 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:15.453707 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:15.457708 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:15.458709 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:15.467708 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:15.468708 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:15.469708 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:15.469708 12388 autodress.cpp:434] task is too many
+I0915 16:06:15.470708 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:15.470708 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:15.495710 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:15.496711 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:15.659719 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:15.660719 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:15.711722  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:15.711722  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:15.711722  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:15.712723  8696 autodress.cpp:434] task is too many
+I0915 16:06:15.712723  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:15.712723  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:15.830729 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:15.831729 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:15.859731 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:15.860731 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:15.882732 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:15.882732 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:15.883733 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:15.883733 12388 autodress.cpp:434] task is too many
+I0915 16:06:15.884732 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:15.885732 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:15.890733 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:15.895733 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:15.896733 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:15.929735 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:15.930735 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:16.164748  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:16.165748  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:16.165748  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:16.165748  8696 autodress.cpp:434] task is too many
+I0915 16:06:16.166749  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:16.166749  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:16.212751 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:16.213752 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:16.339758 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:16.339758 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:16.340759 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:16.340759 12388 autodress.cpp:434] task is too many
+I0915 16:06:16.340759 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:16.340759 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:16.376760 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:16.376760 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:16.526769 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:16.527770 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:16.551770  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:16.552770  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:16.552770  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:16.552770  8696 autodress.cpp:434] task is too many
+I0915 16:06:16.553771  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:16.553771  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:16.563771 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:16.567771 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:16.568771 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:16.601773 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:16.602773 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:16.742781 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:16.743782 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:16.743782 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:16.743782 12388 autodress.cpp:434] task is too many
+I0915 16:06:16.744781 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:16.744781 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:16.775784 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:16.775784 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:16.933792  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:16.933792  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:16.934792  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:16.936792  8696 autodress.cpp:434] task is too many
+I0915 16:06:16.937793  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:16.937793 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:16.937793  8696 autodress.cpp:636] callback end, cost 3ms
+I0915 16:06:16.938792 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:16.972795 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:16.972795 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:17.007797 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:17.011796 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:17.012797 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:17.045799 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:17.045799 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:17.182806 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:17.182806 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:17.183806 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:17.183806 12388 autodress.cpp:434] task is too many
+I0915 16:06:17.184806 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:17.184806 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:17.325814 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:17.325814 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:17.398819  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:17.398819  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:17.399819  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:17.399819  8696 autodress.cpp:434] task is too many
+I0915 16:06:17.399819  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:17.400820  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:17.502825 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:17.502825 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:17.538827 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:17.538827 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:17.576829 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:17.580829 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:17.581830 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:17.621831 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:17.622831 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:17.630832 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:17.630832 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:17.631832 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:17.631832 12388 autodress.cpp:434] task is too many
+I0915 16:06:17.632833 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:17.632833 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:17.819844  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:17.820843  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:17.820843  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:17.821843  8696 autodress.cpp:434] task is too many
+I0915 16:06:17.821843  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:17.821843  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:17.900847 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:17.901847 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:18.014854 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:18.014854 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:18.015854 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:18.015854 12388 autodress.cpp:434] task is too many
+I0915 16:06:18.015854 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:18.015854 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:18.068857 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:18.068857 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:18.099859 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:18.100859 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:18.317872 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:18.321871 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:18.322871 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:18.367874  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:18.367874  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:18.367874  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:18.368875  8696 autodress.cpp:434] task is too many
+I0915 16:06:18.368875  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:18.368875  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:18.436878 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:18.437878 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:18.494881 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:18.495882 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:18.642890 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:18.643890 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:18.643890 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:18.643890 12388 autodress.cpp:434] task is too many
+I0915 16:06:18.644891 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:18.644891 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:18.692893 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:18.692893 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:18.732895 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:18.733896 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:18.793898 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:18.797899 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:18.798899 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:18.831902 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:18.831902 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:18.866904  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:18.866904  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:18.867903  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:18.868903  8696 autodress.cpp:434] task is too many
+I0915 16:06:18.869904  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:18.869904  8696 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:19.123917 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:19.124917 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:19.143918 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:19.143918 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:19.143918 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:19.144918 12388 autodress.cpp:434] task is too many
+I0915 16:06:19.144918 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:19.144918 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:19.312928 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:19.312928 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:19.349931 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:19.349931 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:19.361932  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:19.361932  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:19.362931  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:19.362931  8696 autodress.cpp:434] task is too many
+I0915 16:06:19.362931  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:19.363931  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:19.407934 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:19.411934 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:19.412935 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:19.457937 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:19.457937 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:19.639947 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:19.640947 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:19.644948 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:19.644948 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:19.645947 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:19.645947 12388 autodress.cpp:434] task is too many
+I0915 16:06:19.646947 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:19.646947 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:19.817957 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:19.818958 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:19.896962 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:19.896962 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:19.922963  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:19.922963  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:19.923964  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:19.923964  8696 autodress.cpp:434] task is too many
+I0915 16:06:19.923964  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:19.924963  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:19.950965 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:19.954965 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:19.954965 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:19.988967 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:19.988967 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:20.139976 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:20.140975 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:20.140975 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:20.141976 12388 autodress.cpp:434] task is too many
+I0915 16:06:20.141976 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:20.141976 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:20.179978 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:20.179978 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:20.300985  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:20.300985  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:20.301985  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:20.302985  8696 autodress.cpp:434] task is too many
+I0915 16:06:20.302985  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:20.302985  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:20.359988 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:20.360988 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:20.398990 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:20.398990 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:20.450994 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:20.454993 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:20.455993 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:20.474995 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:20.475996 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:20.475996 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:20.475996 12388 autodress.cpp:434] task is too many
+I0915 16:06:20.476995 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:20.476995 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:20.497997 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:20.497997 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:20.642004  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:20.643004  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:20.643004  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:20.643004  8696 autodress.cpp:434] task is too many
+I0915 16:06:20.644004  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:20.644004  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:20.793014 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:20.793014 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:20.808014 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:20.809015 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:20.809015 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:20.810014 12388 autodress.cpp:434] task is too many
+I0915 16:06:20.810014 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:20.810014 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:20.973023  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:20.973023  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:20.974023  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:20.974023  8696 autodress.cpp:434] task is too many
+I0915 16:06:20.974023  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:20.974023  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:20.980023 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:20.980023 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:21.024026 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:21.024026 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:21.083029 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:21.087030 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:21.088030 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:21.130033 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:21.131032 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:21.132032 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:21.136032 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:21.138032 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:21.138032 12388 autodress.cpp:434] task is too many
+I0915 16:06:21.139034 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:21.139034 12388 autodress.cpp:636] callback end, cost 1ms
+I0915 16:06:21.283041  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:21.283041  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:21.283041  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:21.284041  8696 autodress.cpp:434] task is too many
+I0915 16:06:21.285042  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:21.286041  8696 autodress.cpp:636] callback end, cost 2ms
+I0915 16:06:21.326043 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:21.326043 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:21.455051 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:21.456051 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:21.456051 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:21.456051 12388 autodress.cpp:434] task is too many
+I0915 16:06:21.456051 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:21.457051 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:21.509054 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:21.509054 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:21.544056 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:21.544056 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:21.591058 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:21.595059 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:21.596060 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:21.626060  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:21.626060  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:21.627060  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:21.627060  8696 autodress.cpp:434] task is too many
+I0915 16:06:21.627060  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:21.627060  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:21.641062 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:21.641062 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:21.824072 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:21.824072 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:21.825073 12388 autodress.cpp:625] receive add_task request 
+I0915 16:06:21.825073 12388 autodress.cpp:434] task is too many
+I0915 16:06:21.825073 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:21.826072 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:21.827072 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:21.828073 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:22.122089 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:22.122089 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:22.183092 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:22.183092 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:22.209095  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:06:22.209095  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:06:22.209095  8696 autodress.cpp:625] receive add_task request 
+I0915 16:06:22.209095  8696 autodress.cpp:434] task is too many
+I0915 16:06:22.210094  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:06:22.210094  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:06:22.234096 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:22.238095 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:22.238095 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:22.282099 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:22.282099 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:22.469110 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:22.469110 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:22.676120 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:22.677121 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:22.737124 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:22.738124 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:22.797127 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:22.803128 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:22.804128 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:22.860131 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:22.862131 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:22.987138 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:22.988138 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:23.201150 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:23.202152 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:23.261154 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:23.262154 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:23.310158 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:23.315157 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:23.316157 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:23.369160 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:23.370160 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:23.581172 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:23.582172 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:24.027199 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:24.028198 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:24.092201 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:24.093202 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:24.644233 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:24.653234 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:24.654234 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:24.726238 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:24.727238 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:24.809242 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:24.810243 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:25.016254 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:25.018254 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:25.088258 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:25.089258 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:25.216266 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:25.223266 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:25.224267 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:25.263268 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:25.264269 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:25.347273 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:25.348273 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:25.553285 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:25.554286 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:25.601289 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:25.602288 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:25.682292 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:25.691293 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:25.692293 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:25.754297 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:25.756297 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:25.967309 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:25.968309 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:26.191323 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:26.193322 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:26.263326 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:26.264327 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:26.331331 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:26.338330 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:26.340330 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:26.391333 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:26.392333 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:26.481338 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:26.482338 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:26.733353 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:26.733353 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:26.780355 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:26.780355 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:26.887362 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:26.902362 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:26.904362 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:26.987367 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:26.988368 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:27.077373 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:27.079372 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:27.275384 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:27.277384 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:27.567400 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:27.568400 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:27.773412 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:27.779412 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:27.781412 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:27.844416 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:27.845417 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:27.950423 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:27.951422 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:28.150434 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:28.151434 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:28.225438 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:28.226438 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:28.349445 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:28.364446 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:28.366446 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:28.450451 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:28.451452 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:28.602459 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:28.603459 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:28.826472 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:28.827472 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:28.897476 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:28.898476 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:28.997483 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:29.003482 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:29.005482 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:29.290499 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:29.291499 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:29.422507 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:29.424506 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:29.732524 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:29.733525 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:29.782527 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:29.782527 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:29.876533 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:29.883533 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:29.884533 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:29.943536 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:29.944536 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:30.018540 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:30.020541 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:30.254554 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:30.255554 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:30.309557 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:30.309557 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:30.376561 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:30.387562 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:30.389562 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:30.461566 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:30.462566 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:30.549571 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:30.551571 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:30.761584 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:30.762583 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:30.826587 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:30.827587 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:30.888590 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:30.898591 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:30.901592 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:30.959594 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:30.960594 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:31.168606 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:31.170606 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:31.415621 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:31.416620 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:31.460623 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:31.460623 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:31.538627 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:31.545629 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:31.546628 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:31.609632 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:31.610631 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:31.735640 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:31.736639 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:31.963652 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:31.964653 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:32.029655 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:32.030656 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:32.104660 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:32.120661 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:32.122661 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:32.194665 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:32.195665 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:32.338673 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:32.339673 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:32.546685 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:32.546685 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:32.614689 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:32.615689 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:32.671692 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:32.685693 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:32.688694 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:32.759697 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:32.761698 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:32.866703 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:32.866703 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:33.076715 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:33.077715 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:33.162720 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:33.164721 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:33.296728 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:33.311729 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:33.313730 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:33.396734 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:33.397734 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:33.495739 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:33.496739 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:33.714752 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:33.715752 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:33.814759 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:33.815758 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:33.909763 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:33.924764 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:33.926764 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:34.005769 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:34.006769 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:34.141777 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:34.141777 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:34.362789 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:34.363790 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:34.455795 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:34.456794 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:34.546799 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:34.559800 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:34.562800 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:34.661806 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:34.662806 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:34.768812 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:34.768812 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:34.970824 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:34.971824 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:35.031827 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:35.032827 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:35.104831 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:35.118832 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:35.121832 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:35.192836 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:35.193836 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:35.299844 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:35.300843 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:35.517855 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:35.518856 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:35.619861 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:35.620862 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:35.700865 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:35.705866 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:35.706866 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:35.757869 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:35.759869 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:35.872875 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:35.873875 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:36.086889 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:36.087888 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:36.152891 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:36.153892 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:36.201894 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:36.205894 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:36.206894 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:36.255897 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:36.256897 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:36.441908 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:36.443908 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:36.641919 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:36.642920 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:36.696923 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:36.697922 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:36.876933 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:36.882933 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:36.883934 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:37.012940 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:37.013942 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:37.088945 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:37.089946 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:37.275956 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:37.276957 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:37.330960 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:37.331959 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:37.357960 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:37.362962 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:37.363961 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:37.407963 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:37.407963 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:37.612975 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:37.613976 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:37.835988 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:37.836988 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:37.913992 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:37.915992 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:37.940994 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:37.946995 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:37.947994 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:38.007997 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:38.008997 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:38.204010 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:38.205009 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:38.549028 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:38.550029 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:38.619032 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:38.620033 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:38.651034 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:38.665035 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:38.666035 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:38.728039 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:38.728039 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:38.800043 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:38.801043 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:39.111060 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:39.112061 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:39.163064 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:39.164064 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:39.201066 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:39.206066 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:39.207067 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:39.248069 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:39.248069 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:39.441079 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:39.442080 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:39.642091 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:39.643091 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:39.700094 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:39.700094 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:39.727097 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:39.742097 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:39.744097 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:39.798100 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:39.798100 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:39.993111 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:39.994112 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:40.199123 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:40.200124 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:40.266127 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:40.267127 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:40.764155 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:40.779156 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:40.781157 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:40.868161 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:40.870162 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:40.976167 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:40.977167 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:41.221181 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:41.223181 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:41.288185 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:41.288185 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:41.358189 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:41.368191 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:41.370190 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:41.465195 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:41.466195 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:41.585202 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:41.586202 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:41.821216 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:41.822216 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:41.885220 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:41.885220 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:41.919221 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:41.924221 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:41.925221 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:41.974225 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:41.974225 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:42.174237 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:42.175236 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:42.375247 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:42.377248 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:42.439251 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:42.440251 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:42.724267 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:42.727267 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:42.728267 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:42.771270 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:42.772270 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:42.892277 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:42.893277 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:43.092288 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:43.093288 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:43.147291 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:43.147291 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:43.185294 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:43.191294 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:43.192294 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:43.241297 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:43.242297 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:43.435308 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:43.436308 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:43.645320 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:43.646320 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:43.722324 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:43.722324 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:43.753326 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:43.757326 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:43.758327 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:43.799329 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:43.800329 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:43.981339 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:43.983340 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:44.195351 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:44.196352 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:44.287358 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:44.288357 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:44.315358 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:44.319358 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:44.320358 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:44.377362 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:44.378362 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:44.622376 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:44.624377 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:44.749383 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:44.750383 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:44.807386 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:44.808387 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:44.843389 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:44.849390 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:44.851389 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:44.903393 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:44.904392 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:45.095403 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:45.095403 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:45.399420 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:45.400420 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:45.501426 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:45.502426 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:45.541429 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:45.547430 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:45.549429 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:45.617434 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:45.618433 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:45.707438 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:45.709439 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:45.929450 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:45.931452 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:46.002455 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:46.003455 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:46.033457 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:46.047457 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:46.049458 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:46.127462 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:46.128463 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:46.222467 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:46.224467 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:46.452481 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:46.453480 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:46.565487 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:46.570487 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:46.623491 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:46.628490 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:46.628490 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:46.674494 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:46.676493 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:46.772500 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:46.773499 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:47.076516 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:47.078516 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:47.154521 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:47.155521 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:47.204524 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:47.211524 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:47.213524 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:47.266527 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:47.267527 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:47.347532 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:47.349532 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:47.556545 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:47.557544 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:47.633548 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:47.634548 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:47.664551 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:47.670550 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:47.671550 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:47.729553 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:47.730554 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:47.931565 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:47.932565 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:48.156579 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:48.156579 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:48.200580 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:48.201581 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:48.235582 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:48.240583 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:48.241583 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:48.292587 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:48.294586 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:48.525599 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:48.527600 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:48.742611 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:48.743612 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:48.821616 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:48.823616 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:48.879619 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:48.883620 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:48.884620 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:48.925622 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:48.926622 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:49.018627 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:49.019628 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:49.220639 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:49.221639 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:49.275642 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:49.275642 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:49.313644 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:49.322645 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:49.324645 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:49.383648 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:49.384649 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:49.600661 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:49.602661 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:49.819674 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:49.819674 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:49.896677 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:49.896677 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:49.927680 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:49.938680 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:49.940680 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:50.001683 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:50.002683 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:50.102689 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:50.104689 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:50.332702 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:50.333703 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:50.420707 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:50.422708 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:50.462710 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:50.474710 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:50.477711 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:50.537714 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:50.538714 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:50.742727 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:50.743726 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:50.948738 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:50.950738 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:51.023742 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:51.024742 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:51.057744 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:51.065744 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:51.109747 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:51.156749 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:51.157750 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:51.261755 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:51.262756 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:51.462767 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:51.463768 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:51.514770 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:51.515770 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:51.546772 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:51.549772 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:51.550772 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:51.589774 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:51.589774 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:51.780786 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:51.781785 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:52.085803 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:52.086803 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:52.137806 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:52.138806 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:52.187808 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:52.194809 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:52.195809 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:52.267813 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:52.267813 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:52.346818 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:52.347818 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:52.650835 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:52.650835 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:52.705838 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:52.705838 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:52.742841 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:52.746840 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:52.747840 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:52.786844 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:52.787843 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:52.976855 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:52.977854 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:53.182865 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:53.183866 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:53.236868 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:53.236868 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:53.267870 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:53.272871 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:53.273871 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:53.316874 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:53.317873 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:53.512884 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:53.513885 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:53.707895 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:53.708895 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:53.776899 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:53.776899 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:53.808902 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:53.813901 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:53.814903 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:53.868906 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:53.869905 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:54.065917 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:54.066916 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:54.280928 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:54.280928 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:54.322932 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:54.322932 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:54.479940 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:54.494940 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:54.496942 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:54.625948 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:54.626948 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:54.702952 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:54.703953 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:54.992969 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:54.992969 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:55.054972 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:55.055972 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:55.079974 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:55.085974 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:55.086974 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:55.136977 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:55.136977 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:55.318989 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:55.318989 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:55.500998 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:55.501998 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:55.579002 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:55.580003 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:55.610004 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:55.616005 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:55.617005 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:55.654007 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:55.655007 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:55.834017 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:55.835017 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:56.018028 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:56.019028 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:56.073031 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:56.073031 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:56.099032 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:56.105032 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:56.106034 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:56.159036 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:56.160037 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:56.375048 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:56.377048 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:56.593060 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:56.594060 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:56.664064 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:56.665066 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:56.690066 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:56.696066 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:56.697067 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:56.760071 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:56.760071 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:56.942080 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:56.943080 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:57.134091 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:57.135092 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:57.220096 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:57.222096 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:57.249099 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:57.259099 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:57.260099 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:57.351104 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:57.352104 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:57.557116 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:57.557116 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:57.771128 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:57.772128 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:57.830132 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:57.831131 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:57.866133 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:57.870133 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:57.871134 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:57.922137 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:57.923136 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:58.109148 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:58.110147 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:58.300158 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:58.300158 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:58.356161 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:58.357161 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:58.392163 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:58.397164 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:58.398164 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:58.450167 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:58.451167 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:58.641178 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:58.642179 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:58.868191 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:58.869191 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:58.923194 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:58.923194 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:58.951195 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:58.955196 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:58.956197 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:58.992198 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:58.992198 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:59.174208 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:59.175209 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:59.356218 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:59.357219 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:06:59.397222 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:06:59.398221 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:06:59.423223 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:06:59.427223 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:06:59.428223 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:06:59.462225 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:06:59.462225 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:06:59.765242 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:06:59.766242 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:06:59.960253 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:06:59.960253 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:00.005256 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:00.005256 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:00.029258 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:00.044258 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:00.046258 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:00.096261 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:00.097261 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:00.289273 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:00.290272 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:00.508285 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:00.509284 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:00.580288 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:00.581290 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:00.858304 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:00.864305 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:00.865305 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:00.916308 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:00.917309 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:00.979311 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:00.980311 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:01.273329 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:01.273329 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:01.319331 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:01.319331 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:01.355334 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:01.359333 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:01.360333 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:01.398335 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:01.398335 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:01.578346 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:01.579346 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:01.776357 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:01.776357 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:01.853361 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:01.854362 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:01.879364 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:01.884363 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:01.884363 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:01.943367 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:01.943367 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:02.125377 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:02.125377 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:02.300387 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:02.301388 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:02.356390 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:02.357390 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:02.388392 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:02.398392 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:02.400393 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:02.454396 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:02.454396 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:02.644407 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:02.645407 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:02.855419 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:02.856420 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:02.917423 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:02.918422 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:02.958425 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:02.969425 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:02.970425 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:03.032429 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:03.032429 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:03.219439 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:03.219439 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:03.403450 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:03.404450 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:03.453454 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:03.454453 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:03.483455 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:03.488456 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:03.489455 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:03.527457 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:03.527457 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:03.832474 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:03.833475 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:04.048487 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:04.049487 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:04.115491 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:04.116492 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:04.149493 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:04.157493 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:04.159493 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:04.209496 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:04.209496 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:04.289501 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:04.289501 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:04.598518 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:04.599519 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:04.678524 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:04.679523 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:04.719525 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:04.726526 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:04.727526 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:04.774528 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:04.774528 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:04.950538 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:04.951539 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:05.149550 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:05.150550 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:05.225554 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:05.225554 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:05.251556 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:05.257556 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:05.258556 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:05.305559 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:05.306560 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:05.495570 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:05.496570 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:05.701581 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:05.701581 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:05.751585 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:07:05.752584 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:07:05.779587 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:07:05.784586 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:07:05.785586 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:07:05.832589 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:07:05.832589 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:07:06.068603 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:07:06.069602 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:07:06.279614 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:07:06.280616 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:07:06.357620 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:24:06.935993 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:24:06.935993 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:24:06.936993 12388 autodress.cpp:625] receive add_task request 
+I0915 16:24:06.936993 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:24:06.937994 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:24:09.417135 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:24:09.674149 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:24:09.679150 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:24:09.680150 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:24:09.789156 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:24:09.790156 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:24:09.872161 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:24:09.873162 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:24:10.168179 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:24:10.169178 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:24:10.232182 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:24:10.233181 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:24:10.271183 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:24:10.279184 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:24:10.283185 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:24:10.340188 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:24:10.341187 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:24:10.426192 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:24:10.427192 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:24:10.633204 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:24:10.634204 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:24:10.681207 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:40.448341  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:40.448341  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:40.449342  8696 autodress.cpp:625] receive add_task request 
+I0915 16:25:40.450341  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:40.450341  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:25:40.686355 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:40.876366 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:40.883366 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:40.884366 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:41.003373 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:41.005373 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:41.089378 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:41.090378 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:41.296391 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:41.298390 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:41.358393 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:41.359393 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:41.385396 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:41.389395 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:41.390395 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:41.428397 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:41.429397 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:41.727414 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:41.728415 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:41.957428 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:41.958428 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:42.023432 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:43.679527 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:43.679527 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:43.679527 12388 autodress.cpp:625] receive add_task request 
+I0915 16:25:43.680526 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:43.680526 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:25:45.024603 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:45.067605 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:45.074606 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:45.076606 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:45.114609 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:45.114609 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:45.189612 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:45.190613 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:45.393625 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:45.394624 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:45.470629 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:45.471629 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:45.796648 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:45.806648 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:45.807648 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:45.861651 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:45.862651 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:45.938655 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:45.938655 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:46.145668 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:46.146667 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:46.216671 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:47.357736  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:47.357736  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:47.358737  8696 autodress.cpp:625] receive add_task request 
+I0915 16:25:47.358737  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:47.358737  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:25:47.543747 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:47.543747 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:47.543747 12388 autodress.cpp:625] receive add_task request 
+I0915 16:25:47.544747 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:47.544747 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:25:47.781761  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:47.784761  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:47.784761  8696 autodress.cpp:625] receive add_task request 
+I0915 16:25:47.785761  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:47.785761  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:25:47.944770 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:47.944770 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:47.945770 12388 autodress.cpp:625] receive add_task request 
+I0915 16:25:47.946770 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:47.946770 12388 autodress.cpp:636] callback end, cost 0ms
+I0915 16:25:48.125780  8696 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:48.126780  8696 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:48.126780  8696 autodress.cpp:625] receive add_task request 
+I0915 16:25:48.126780  8696 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:48.127780  8696 autodress.cpp:636] callback end, cost 0ms
+I0915 16:25:49.217844 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:49.264847 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:49.277846 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:49.279846 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:49.355851 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:49.357851 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:49.440856 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:49.441856 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:49.629866 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:49.630867 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:49.677870 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:49.677870 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:49.705871 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:49.710871 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:49.711871 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:49.752873 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:49.753873 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:50.067891 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:50.069892 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:50.184898 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:50.184898 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:50.231901 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:50.231901 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:50.790933 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:50.795933 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:50.796933 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:50.835935 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:50.836935 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:50.926941 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:50.928941 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:51.135953 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:51.137953 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:51.211957 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:51.211957 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:51.265960 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:51.270961 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:51.273960 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:51.329964 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:51.329964 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:51.378967 12388 autodress.cpp:619] httpCallBack begin ...
+I0915 16:25:51.380967 12388 autodress.cpp:620] receive data  {
+    "task_id":1001,
+    "zip_url" : "http://auto-dress.oss-cn-shenzhen.aliyuncs.com/zip/test.zip"
+}
+I0915 16:25:51.381968 12388 autodress.cpp:625] receive add_task request 
+I0915 16:25:51.384968 12388 autodress.cpp:635] response buffer length : 26   data :{"msg":"success","code":0}
+I0915 16:25:51.385967 12388 autodress.cpp:636] callback end, cost 2ms
+I0915 16:25:51.531975 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:51.533975 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:51.766989 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:51.766989 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:51.809991 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:51.809991 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:51.852994 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:51.856994 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:51.857995 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:51.894996 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:51.895997 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:52.076006 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:52.077006 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:52.268018 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:52.270017 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:52.325021 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:52.325021 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:52.355022 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:52.361023 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:52.362023 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:52.411026 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:52.412026 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:52.609037 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:52.611037 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:52.806048 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:52.807049 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:52.863051 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:52.864051 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:52.894053 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:52.909054 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:52.912055 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:52.970057 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:52.971058 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:53.174069 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:53.175070 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:53.381081 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:53.382081 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:53.454085 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:53.455085 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:53.479087 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:53.482087 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:53.483088 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:53.530089 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:53.530089 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:53.705099 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:53.707100 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:53.903111 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:53.904111 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:53.950114 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:53.950114 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:53.988116 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:53.995116 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:53.996116 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:54.045120 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:54.046119 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:54.334136 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:54.334136 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:54.551148 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:54.552148 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:54.612151 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:54.613152 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:54.646153 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:54.656154 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:54.657155 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:54.712157 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:54.713157 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:54.830164 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:54.831164 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:55.038177 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:55.039176 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:55.114181 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:55.115180 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:55.142182 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:55.156183 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:55.158183 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:55.204185 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:55.205185 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:55.387197 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:55.388196 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:55.589207 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:55.590207 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:55.654211 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
+I0915 16:25:55.655211 14076 autodress.cpp:198] download d:/zip_download/test.zip begin
+I0915 16:25:55.681213 14076 autodress.cpp:239] download d:/zip_download/test.zip success
+I0915 16:25:55.688213 14076 autodress.cpp:42] unzip d:/zip_download/test.zip success
+I0915 16:25:55.689213 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.png begin
+I0915 16:25:55.738216 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.png successed
+I0915 16:25:55.739217 14076 autodress.cpp:244] upload d:/unzip/test/0_chenzixun/1111.jpg begin
+I0915 16:25:55.963229 14076 autodress.cpp:293] upload d:/unzip/test/0_chenzixun/1111.jpg successed
+I0915 16:25:55.964229 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/3333.jpg begin
+I0915 16:25:56.171241 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/3333.jpg successed
+I0915 16:25:56.171241 14076 autodress.cpp:244] upload d:/pic_dressed/0_chenzixun/4444.jpg begin
+I0915 16:25:56.224244 14076 autodress.cpp:293] upload d:/pic_dressed/0_chenzixun/4444.jpg successed
