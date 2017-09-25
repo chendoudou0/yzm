@@ -1,5 +1,5 @@
-﻿Build started 2017/6/6 10:39:23.
-     1>Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\asio\asio.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2017/9/22 17:34:01.
+     1>Project "D:\git_hub\yzm\HTTP-SRV-DLL-X64\asio\asio.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
          main.cpp
@@ -8,12 +8,12 @@
          - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
          Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\x64\Debug\asio.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\x64\Debug\asio.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\x64\Debug\asio.lib" /MACHINE:X64 x64\Debug\AsyncThreadPool.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\git_hub\yzm\HTTP-SRV-DLL-X64\x64\Debug\asio.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\git_hub\yzm\HTTP-SRV-DLL-X64\x64\Debug\asio.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\git_hub\yzm\HTTP-SRV-DLL-X64\x64\Debug\asio.lib" /MACHINE:X64 x64\Debug\AsyncThreadPool.obj
          x64\Debug\main.obj
          x64\Debug\Proactor.obj
-         asio.vcxproj -> D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\x64\Debug\asio.exe
-     1>Done Building Project "D:\BaiduNetdiskDownload\source\PocoSource__\HTTP-SRV-DLL-X64\asio\asio.vcxproj" (Build target(s)).
+         asio.vcxproj -> D:\git_hub\yzm\HTTP-SRV-DLL-X64\x64\Debug\asio.exe
+     1>Done Building Project "D:\git_hub\yzm\HTTP-SRV-DLL-X64\asio\asio.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.45
+Time Elapsed 00:00:01.63
