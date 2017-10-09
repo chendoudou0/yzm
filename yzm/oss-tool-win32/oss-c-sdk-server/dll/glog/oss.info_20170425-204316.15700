@@ -1,0 +1,87 @@
+Log file created at: 2017/04/25 20:43:16
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0425 20:43:16.566489  7484 configManager.cpp:131] listen_port 1888
+I0425 20:43:16.568490  7484 configManager.cpp:140] oss_endpoint oss-cn-shenzhen.aliyuncs.com
+I0425 20:43:16.570489  7484 configManager.cpp:150] access_key_id ItHyfCNDQzdGvmLl
+I0425 20:43:16.571490  7484 configManager.cpp:158] access_key_secret s7SwH31Pah9j67zYOmPceRLjpfwnz1
+I0425 20:43:23.880908 25320 main.cpp:176] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png4"
+}
+I0425 20:43:30.441282 25320 main.cpp:176] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:36.512630 24888 main.cpp:176] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:41.367908 25320 main.cpp:176] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:43.908053 24888 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:45.375136 25320 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:46.368193 24888 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:47.169239 25320 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:47.687269 24888 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:48.034289 25320 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:48.312304 24888 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:48.531317 25320 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:48.810333 24888 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:50.950455 25320 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:51.284474 24888 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:43:51.780503 25320 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}

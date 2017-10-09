@@ -1,0 +1,17 @@
+Log file created at: 2017/04/25 20:38:46
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0425 20:38:46.075017 23184 configManager.cpp:131] listen_port 1888
+I0425 20:38:46.077018 23184 configManager.cpp:140] oss_endpoint oss-cn-shenzhen.aliyuncs.com
+I0425 20:38:46.079018 23184 configManager.cpp:150] access_key_id ItHyfCNDQzdGvmLl
+I0425 20:38:46.080018 23184 configManager.cpp:158] access_key_secret s7SwH31Pah9j67zYOmPceRLjpfwnz1
+I0425 20:38:50.841290 19412 main.cpp:211] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:38:54.361491 19412 main.cpp:176] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}

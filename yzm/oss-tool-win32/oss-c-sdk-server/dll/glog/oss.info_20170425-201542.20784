@@ -1,0 +1,4 @@
+Log file created at: 2017/04/25 20:15:42
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0425 20:15:42.660892  8716 main.cpp:580] glog begin to work 

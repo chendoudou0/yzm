@@ -1,0 +1,14 @@
+Log file created at: 2017/10/09 14:34:38
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I1009 14:34:38.874521  8848 configManager.cpp:131] listen_port 18888
+I1009 14:34:38.876520  8848 configManager.cpp:140] oss_endpoint oss-cn-shenzhen.aliyuncs.com
+I1009 14:34:38.877521  8848 configManager.cpp:150] access_key_id ItHyfCNDQzdGvmLl
+I1009 14:34:38.878520  8848 configManager.cpp:158] access_key_secret s7SwH31Pah9j67zYOmPceRLjpfwnz1
+I1009 14:37:22.633888  9988 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}
+I1009 14:38:34.155978 10612 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}
+I1009 14:39:52.017431  9988 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}
+I1009 14:39:57.024718  9988 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}
+I1009 14:40:02.030004  9988 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}
+I1009 14:40:07.038290 10612 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}
+I1009 14:41:25.229763 10612 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}

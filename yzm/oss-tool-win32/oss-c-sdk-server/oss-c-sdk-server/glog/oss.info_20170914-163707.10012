@@ -1,0 +1,34 @@
+Log file created at: 2017/09/14 16:37:07
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0914 16:37:07.980409  9488 configManager.cpp:131] listen_port 18888
+I0914 16:37:07.981410  9488 configManager.cpp:140] oss_endpoint oss-cn-shenzhen.aliyuncs.com
+I0914 16:37:07.982410  9488 configManager.cpp:150] access_key_id ItHyfCNDQzdGvmLl
+I0914 16:37:07.982410  9488 configManager.cpp:158] access_key_secret s7SwH31Pah9j67zYOmPceRLjpfwnz1
+I0914 16:37:24.759369  8640 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 16:41:25.680150  8640 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 16:41:50.463567 12560 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:34:08.329042  8640 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:35:14.751842 12560 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:35:25.616463  8640 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.png","bucket":"auto-dress","object":"picture/1111.png"}
+I0914 17:35:35.141008 12560 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.jpg","bucket":"auto-dress","object":"picture/1111.jpg"}
+I0914 17:36:09.759989  8640 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:36:21.546663 12560 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.png","bucket":"auto-dress","object":"picture/1111.png"}
+I0914 17:36:21.683670  8640 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.jpg","bucket":"auto-dress","object":"picture/1111.jpg"}
+I0914 17:36:33.412340 12560 main.cpp:176] receive json : {"file_path":"d:/pic_dressed/ 0_chenzixun/3333.jpg","bucket":"auto-dress","object":"picture/3333.jpg"}
+I0914 17:36:59.507833  8640 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:37:17.549865 12560 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:37:19.083953  8640 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.png","bucket":"auto-dress","object":"picture/1111.png"}
+I0914 17:37:19.153957 12560 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.jpg","bucket":"auto-dress","object":"picture/1111.jpg"}
+I0914 17:37:23.258193  8640 main.cpp:176] receive json : {"file_path":"d:/pic_dressed/0_chenzixun/3333.jpg","bucket":"auto-dress","object":"picture/3333.jpg"}
+I0914 17:37:29.416544 12560 main.cpp:176] receive json : {"file_path":"d:/pic_dressed/0_chenzixun/4444.jpg","bucket":"auto-dress","object":"picture/4444.jpg"}
+I0914 17:38:12.719022  8640 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:38:16.143216 12560 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.png","bucket":"auto-dress","object":"picture/1111.png"}
+I0914 17:38:16.257223  8640 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.jpg","bucket":"auto-dress","object":"picture/1111.jpg"}
+I0914 17:38:18.789368 12560 main.cpp:176] receive json : {"file_path":"d:/pic_dressed/0_chenzixun/3333.jpg","bucket":"auto-dress","object":"picture/3333.jpg"}
+I0914 17:38:20.333456  8640 main.cpp:176] receive json : {"file_path":"d:/pic_dressed/0_chenzixun/4444.jpg","bucket":"auto-dress","object":"picture/4444.jpg"}
+I0914 17:39:53.121763 12560 main.cpp:211] receive json : {"file_path":"d:/zip_download/test.zip","bucket":"auto-dress","object":"zip/test.zip"}
+I0914 17:39:54.524843  8640 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.png","bucket":"auto-dress","object":"picture/0_chenzixun/1111.png"}
+I0914 17:39:54.890864 12560 main.cpp:176] receive json : {"file_path":"d:/unzip/test/0_chenzixun/1111.jpg","bucket":"auto-dress","object":"picture/0_chenzixun/1111.jpg"}
+I0914 17:39:55.627907  8640 main.cpp:176] receive json : {"file_path":"d:/pic_dressed/0_chenzixun/3333.jpg","bucket":"auto-dress","object":"picture/0_chenzixun/3333.jpg"}
+I0914 17:39:57.798032 12560 main.cpp:176] receive json : {"file_path":"d:/pic_dressed/0_chenzixun/4444.jpg","bucket":"auto-dress","object":"picture/0_chenzixun/4444.jpg"}

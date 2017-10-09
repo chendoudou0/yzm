@@ -1,0 +1,42 @@
+Log file created at: 2017/04/25 20:20:36
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0425 20:20:36.222681 17092 configManager.cpp:131] listen_port 1888
+I0425 20:20:36.223682 17092 configManager.cpp:140] oss_endpoint oss-cn-shenzhen.aliyuncs.com
+I0425 20:20:36.224683 17092 configManager.cpp:150] access_key_id ItHyfCNDQzdGvmLl
+I0425 20:20:36.224683 17092 configManager.cpp:158] access_key_secret s7SwH31Pah9j67zYOmPceRLjpfwnz1
+I0425 20:20:39.068845 12468 main.cpp:212] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:20:51.010527 12468 main.cpp:212] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:20:54.474725 22272 main.cpp:212] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:21:08.571532 12468 main.cpp:212] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:21:14.233856 22272 main.cpp:212] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:21:19.265143 12468 main.cpp:212] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}
+I0425 20:21:45.903667 22272 main.cpp:212] receive json : {
+	"bucket":"fitting",
+	"object":"ccc.png",
+	"file_path":"d:/ccc.png"
+}

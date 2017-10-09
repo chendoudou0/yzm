@@ -1,0 +1,7 @@
+Log file created at: 2017/09/26 17:00:01
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0926 17:00:01.941593 12992 configManager.cpp:131] listen_port 18888
+I0926 17:00:01.943593 12992 configManager.cpp:140] oss_endpoint oss-cn-shenzhen.aliyuncs.com
+I0926 17:00:01.944593 12992 configManager.cpp:150] access_key_id ItHyfCNDQzdGvmLl
+I0926 17:00:01.946594 12992 configManager.cpp:158] access_key_secret s7SwH31Pah9j67zYOmPceRLjpfwnz1

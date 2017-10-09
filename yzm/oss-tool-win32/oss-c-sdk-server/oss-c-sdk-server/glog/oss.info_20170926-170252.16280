@@ -1,0 +1,8 @@
+Log file created at: 2017/09/26 17:02:52
+Running on machine: ADMIN-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0926 17:02:52.223333 12476 configManager.cpp:131] listen_port 18888
+I0926 17:02:52.225333 12476 configManager.cpp:140] oss_endpoint oss-cn-shenzhen.aliyuncs.com
+I0926 17:02:52.226333 12476 configManager.cpp:150] access_key_id ItHyfCNDQzdGvmLl
+I0926 17:02:52.227334 12476 configManager.cpp:158] access_key_secret s7SwH31Pah9j67zYOmPceRLjpfwnz1
+I0926 17:04:31.557014 13712 main.cpp:211] receive json : {"file_path":"d:/zip_download/big.zip","bucket":"auto-dress","object":"zip/big.zip"}
