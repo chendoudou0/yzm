@@ -1,0 +1,303 @@
+Log file created at: 2017/07/11 11:53:24
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 11:53:24.033032 20244 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 11:53:24.033278 20244 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 11:53:24.033340 20244 config.cpp:121] db_para_.user_ : yzm
+I0711 11:53:24.033370 20244 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 11:53:24.033399 20244 config.cpp:143] db_para_.port_ : 3306
+I0711 11:53:24.033426 20244 config.cpp:154] db_para_.overTime_ : 2
+I0711 11:53:24.033543 20244 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 11:53:24.033607 20244 config.cpp:240] redis_para_.port_ : 6379
+I0711 11:53:24.033639 20244 config.cpp:251] redis_para_.overTime_ : 2
+I0711 11:53:24.033710 20244 config.cpp:274] listen_port : 2018
+I0711 11:53:24.072958 20244 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:24.092001 20244 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:24.125962 20244 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:24.145941 20244 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:28.045541 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:53:28.045611 20246 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.11",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"0.0.11/data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"0.0.11/data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"test"
+	
+}
+ 
+I0711 11:53:28.045646 20246 requestProcessor.cpp:503] add liveshow version begin
+I0711 11:53:28.045693 20246 requestProcessor.cpp:397] PATH : data/document.js  pos : 6
+I0711 11:53:28.045713 20246 requestProcessor.cpp:397] PATH : data/styles.css  pos : 6
+I0711 11:53:28.045732 20246 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.11' 
+E0711 11:53:28.058064 20246 requestProcessor.cpp:521] liveshow version  0.0.11 already exists
+I0711 11:53:28.058414 20246 requestProcessor.cpp:547] add android version end
+I0711 11:53:28.058435 20246 upgradeServer.cpp:219] response buffer length : 45   data :{"err":"2","errmsg":" version already exist"}
+I0711 11:53:28.058452 20246 upgradeServer.cpp:220] callback end, cost 12ms
+I0711 11:53:52.991545 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:53:52.991629 20246 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.113",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"0.0.11/data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"0.0.11/data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"test"
+	
+}
+ 
+I0711 11:53:52.991665 20246 requestProcessor.cpp:503] add liveshow version begin
+I0711 11:53:52.991715 20246 requestProcessor.cpp:397] PATH : data/document.js  pos : 6
+I0711 11:53:52.991739 20246 requestProcessor.cpp:397] PATH : data/styles.css  pos : 6
+I0711 11:53:52.991761 20246 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.113' 
+I0711 11:53:53.002244 20246 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '0.0.113', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','test', '2017-07-11 11:53:53.002')
+I0711 11:53:53.007205 20246 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.113','data/document.js','74542dd63d2c54073d80e69aa6289239','2017-07-11 11:53:53.007')
+I0711 11:53:53.013218 20246 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.113','data/styles.css','38e3e5d46427a3f7f1c11d36660a389f','2017-07-11 11:53:53.013')
+I0711 11:53:53.032265 20246 requestProcessor.cpp:547] add android version end
+I0711 11:53:53.032419 20246 upgradeServer.cpp:219] response buffer length : 30   data :{"err":"0","errmsg":"success"}
+I0711 11:53:53.032472 20246 upgradeServer.cpp:220] callback end, cost 40ms
+I0711 11:54:49.289937 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:54:49.290046 20247 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.0",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"0.0.11/data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"0.0.11/data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"test"
+	
+}
+ 
+I0711 11:54:49.290179 20247 requestProcessor.cpp:503] add liveshow version begin
+I0711 11:54:49.290268 20247 requestProcessor.cpp:397] PATH : data/document.js  pos : 6
+I0711 11:54:49.290299 20247 requestProcessor.cpp:397] PATH : data/styles.css  pos : 6
+I0711 11:54:49.290326 20247 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.0' 
+I0711 11:54:49.312834 20247 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '0.0.0', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','test', '2017-07-11 11:54:49.313')
+I0711 11:54:49.323220 20247 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.0','data/document.js','74542dd63d2c54073d80e69aa6289239','2017-07-11 11:54:49.323')
+I0711 11:54:49.333793 20247 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.0','data/styles.css','38e3e5d46427a3f7f1c11d36660a389f','2017-07-11 11:54:49.334')
+I0711 11:54:49.370883 20247 requestProcessor.cpp:547] add android version end
+I0711 11:54:49.371117 20247 upgradeServer.cpp:219] response buffer length : 30   data :{"err":"0","errmsg":"success"}
+I0711 11:54:49.371170 20247 upgradeServer.cpp:220] callback end, cost 80ms
+I0711 11:55:50.440660 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:55:50.440840 20246 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.0",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"0.0.0/data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"0.0.0/data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"test"
+	
+}
+ 
+I0711 11:55:50.440922 20246 requestProcessor.cpp:503] add liveshow version begin
+I0711 11:55:50.440989 20246 requestProcessor.cpp:397] PATH : data/document.js  pos : 5
+I0711 11:55:50.441017 20246 requestProcessor.cpp:397] PATH : data/styles.css  pos : 5
+I0711 11:55:50.441046 20246 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.0' 
+I0711 11:55:50.456291 20246 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '0.0.0', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','test', '2017-07-11 11:55:50.456')
+I0711 11:55:50.463291 20246 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.0','data/document.js','74542dd63d2c54073d80e69aa6289239','2017-07-11 11:55:50.463')
+I0711 11:55:50.470283 20246 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.0','data/styles.css','38e3e5d46427a3f7f1c11d36660a389f','2017-07-11 11:55:50.470')
+I0711 11:55:50.493263 20246 requestProcessor.cpp:547] add android version end
+I0711 11:55:50.493330 20246 upgradeServer.cpp:219] response buffer length : 30   data :{"err":"0","errmsg":"success"}
+I0711 11:55:50.493355 20246 upgradeServer.cpp:220] callback end, cost 52ms
+I0711 11:56:03.426080 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:56:03.426314 20247 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"0.0.0/data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"0.0.0/data/styles.cssss","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"test"
+	
+}
+ 
+I0711 11:56:03.426436 20247 requestProcessor.cpp:503] add liveshow version begin
+I0711 11:56:03.426491 20247 requestProcessor.cpp:397] PATH : data/document.js  pos : 5
+I0711 11:56:03.426517 20247 requestProcessor.cpp:397] PATH : data/styles.cssss  pos : 5
+I0711 11:56:03.426544 20247 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0711 11:56:03.452008 20247 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '0.0.1', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','test', '2017-07-11 11:56:03.452')
+I0711 11:56:03.463984 20247 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.1','data/document.js','74542dd63d2c54073d80e69aa6289239','2017-07-11 11:56:03.464')
+I0711 11:56:03.474956 20247 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.1','data/styles.cssss','38e3e5d46427a3f7f1c11d36660a389f','2017-07-11 11:56:03.475')
+I0711 11:56:03.513962 20247 requestProcessor.cpp:547] add android version end
+I0711 11:56:03.514027 20247 upgradeServer.cpp:219] response buffer length : 30   data :{"err":"0","errmsg":"success"}
+I0711 11:56:03.514052 20247 upgradeServer.cpp:220] callback end, cost 87ms
+I0711 11:57:02.385936 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:02.386133 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:02.386176 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:02.386337 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:02.386366 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:02.407650 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:02.417623 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:02.417670 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:02.417685 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:02.417697 20246 upgradeServer.cpp:220] callback end, cost 31ms
+I0711 11:57:21.899680 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:21.899896 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:21.899992 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:21.900171 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:21.900218 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:21.917218 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:21.927227 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:21.927337 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:21.927373 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:21.927400 20247 upgradeServer.cpp:220] callback end, cost 27ms
+I0711 11:57:24.216274 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:24.216352 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:24.216392 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:24.216483 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:24.216521 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:24.235453 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:24.242120 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:24.242178 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:24.242194 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:24.242205 20246 upgradeServer.cpp:220] callback end, cost 25ms
+I0711 11:57:24.995151 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:24.995244 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:24.995275 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:24.995316 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:24.995339 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:25.015100 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:25.033179 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:25.033285 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:25.033316 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:25.033337 20247 upgradeServer.cpp:220] callback end, cost 38ms
+I0711 11:57:25.723044 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:25.723203 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:25.723239 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:25.723278 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:25.723296 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:25.739059 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:25.746059 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:25.746121 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:25.746142 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:25.746165 20246 upgradeServer.cpp:220] callback end, cost 22ms
+I0711 11:57:25.902976 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:25.903022 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:25.903039 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:25.903072 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:25.903087 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:25.921046 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:25.934137 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:25.934195 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:25.934269 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:25.934301 20247 upgradeServer.cpp:220] callback end, cost 31ms
+I0711 11:57:26.578291 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:26.578394 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:26.578419 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:26.578445 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:26.578459 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:26.598026 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:26.606036 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:26.606065 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:26.606076 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:26.606083 20246 upgradeServer.cpp:220] callback end, cost 27ms
+I0711 11:57:26.767539 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:26.767660 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:26.767676 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:26.767690 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:26.767696 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:26.785265 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:26.797039 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:26.797062 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:26.797070 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:26.797076 20247 upgradeServer.cpp:220] callback end, cost 29ms
+I0711 11:57:28.784966 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:57:28.785140 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:57:28.785181 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:57:28.785349 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:57:28.785405 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:57:28.802996 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:57:28.811121 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:57:28.811203 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:57:28.811230 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:57:28.811249 20246 upgradeServer.cpp:220] callback end, cost 26ms
+I0711 11:58:07.229619 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:58:07.229840 20247 upgradeServer.cpp:181] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0711 11:58:07.229907 20247 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0711 11:58:07.257128 20247 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 11:58:07.257223 20247 upgradeServer.cpp:219] response buffer length : 222   data :{"ver":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 11:58:07.257243 20247 upgradeServer.cpp:220] callback end, cost 27ms
+I0711 11:58:28.292800 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:58:28.292994 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:58:28.293030 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:58:28.293164 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:58:28.293197 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:58:28.313587 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:58:28.320637 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:58:28.320714 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:58:28.320740 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:58:28.320760 20246 upgradeServer.cpp:220] callback end, cost 27ms
+I0711 11:59:08.864619 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:59:08.864812 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:59:08.864861 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:59:08.865041 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:59:08.865085 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:59:08.883584 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:59:08.893873 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:59:08.893967 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:59:08.893997 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:59:08.894019 20247 upgradeServer.cpp:220] callback end, cost 29ms
+I0711 11:59:13.983711 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:59:13.983857 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:59:13.983893 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:59:13.984109 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:59:13.984158 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:59:14.002441 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:59:14.008481 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:59:14.008615 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:59:14.008654 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:59:14.008713 20246 upgradeServer.cpp:220] callback end, cost 24ms
+I0711 11:59:14.104992 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:59:14.105105 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:59:14.105144 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:59:14.105191 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:59:14.105216 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:59:14.122421 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:59:14.134452 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:59:14.134559 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:59:14.134593 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:59:14.134616 20247 upgradeServer.cpp:220] callback end, cost 29ms
+I0711 11:59:14.910239 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:59:14.910338 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:59:14.910372 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:59:14.910418 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:59:14.910442 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:59:14.928416 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:59:14.935397 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:59:14.935508 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:59:14.935544 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:59:14.935570 20246 upgradeServer.cpp:220] callback end, cost 25ms
+I0711 11:59:15.056604 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:59:15.056690 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:59:15.056725 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:59:15.056769 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:59:15.056807 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:59:15.079399 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:59:15.090412 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:59:15.090509 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:59:15.090541 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:59:15.090564 20247 upgradeServer.cpp:220] callback end, cost 33ms
+I0711 11:59:15.237149 20246 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:59:15.237227 20246 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:59:15.237257 20246 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:59:15.237367 20246 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:59:15.237398 20246 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:59:15.257392 20246 requestProcessor.cpp:131] find_differ_files end
+E0711 11:59:15.263427 20246 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:59:15.263629 20246 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:59:15.263682 20246 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:59:15.263717 20246 upgradeServer.cpp:220] callback end, cost 26ms
+I0711 11:59:15.385867 20247 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:59:15.385957 20247 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 11:59:15.385990 20247 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 11:59:15.386034 20247 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 11:59:15.386065 20247 requestProcessor.cpp:76] find_differ_files begin...
+I0711 11:59:15.405302 20247 requestProcessor.cpp:131] find_differ_files end
+E0711 11:59:15.420416 20247 requestProcessor.cpp:176]  set value to redis failed 
+I0711 11:59:15.420580 20247 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 11:59:15.420611 20247 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 11:59:15.420635 20247 upgradeServer.cpp:220] callback end, cost 34ms

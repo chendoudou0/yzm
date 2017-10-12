@@ -1,0 +1,35 @@
+Log file created at: 2017/07/10 10:41:55
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 10:41:55.244124 17731 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 10:41:55.244387 17731 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0710 10:41:55.244433 17731 config.cpp:121] db_para_.user_ : yzm
+I0710 10:41:55.244460 17731 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0710 10:41:55.244485 17731 config.cpp:143] db_para_.port_ : 3306
+I0710 10:41:55.244521 17731 config.cpp:154] db_para_.overTime_ : 2
+I0710 10:41:55.244595 17731 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 10:41:55.244626 17731 config.cpp:240] redis_para_.port_ : 6379
+I0710 10:41:55.244650 17731 config.cpp:251] redis_para_.overTime_ : 2
+I0710 10:41:55.244712 17731 config.cpp:274] listen_port : 2018
+I0710 10:41:55.278846 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:55.301812 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:55.324816 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:55.353775 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:55.374018 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:55.397840 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:55.422806 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:55.443831 17731 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:41:58.392503 17733 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 10:41:58.392583 17733 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 10:41:58.392616 17733 requestProcessor.cpp:457] dealwith_android_verison_query begin
+E0710 10:41:58.418952 17733 sqlapi.cpp:273] mysql_num_rows  is  0
+I0710 10:41:58.419309 17733 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 10:41:58.419330 17733 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0710 10:41:58.419345 17733 upgradeServer.cpp:220] callback end, cost 26ms
+I0710 10:42:33.547809 17733 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 10:42:33.547863 17733 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 10:42:33.547878 17733 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 10:42:33.562165 17733 requestProcessor.cpp:484] 1111111111111
+I0710 10:42:33.570140 17733 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 10:42:33.570178 17733 upgradeServer.cpp:219] response buffer length : 219   data :{"ret":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.1/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.1"}]}
+I0710 10:42:33.570191 17733 upgradeServer.cpp:220] callback end, cost 22ms

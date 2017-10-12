@@ -1,0 +1,29 @@
+Log file created at: 2017/07/06 17:38:51
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0706 17:38:51.643010 14865 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0706 17:38:51.643311 14865 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0706 17:38:51.643368 14865 config.cpp:121] db_para_.user_ : yzm
+I0706 17:38:51.643419 14865 config.cpp:132] db_para_.pass_ : 123456
+I0706 17:38:51.643466 14865 config.cpp:143] db_para_.port_ : 3306
+I0706 17:38:51.643517 14865 config.cpp:154] db_para_.overTime_ : 2
+I0706 17:38:51.643646 14865 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0706 17:38:51.643697 14865 config.cpp:240] redis_para_.port_ : 6379
+I0706 17:38:51.643741 14865 config.cpp:251] redis_para_.overTime_ : 2
+I0706 17:38:51.643860 14865 config.cpp:274] listen_port : 2018
+I0706 17:38:51.647907 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:38:51.648541 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:38:51.649130 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:38:51.649653 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:38:51.650192 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:38:51.650755 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:38:51.651387 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:38:51.651886 14865 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:39:31.805908 14867 upgradeServer.cpp:180] httpCallBack begin ...
+I0706 17:39:31.805969 14867 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0706 17:39:31.805989 14867 requestProcessor.cpp:417] dealwith_livershow_verison_query begin
+E0706 17:39:31.806402 14867 sqlapi.cpp:273] mysql_num_rows return is NULL
+E0706 17:39:31.806610 14867 requestProcessor.cpp:426] no live_show version exist 
+I0706 17:39:31.806640 14867 requestProcessor.cpp:449] dealwith_livershow_verison_query end
+I0706 17:39:31.806651 14867 upgradeServer.cpp:214] response buffer length : 49
+I0706 17:39:31.806663 14867 upgradeServer.cpp:215] callback end, cost 0ms

@@ -1,0 +1,37 @@
+Log file created at: 2017/07/11 11:48:44
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 11:48:44.872045 20178 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 11:48:44.872320 20178 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 11:48:44.872365 20178 config.cpp:121] db_para_.user_ : yzm
+I0711 11:48:44.872400 20178 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 11:48:44.872428 20178 config.cpp:143] db_para_.port_ : 3306
+I0711 11:48:44.872450 20178 config.cpp:154] db_para_.overTime_ : 2
+I0711 11:48:44.872514 20178 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 11:48:44.872542 20178 config.cpp:240] redis_para_.port_ : 6379
+I0711 11:48:44.872563 20178 config.cpp:251] redis_para_.overTime_ : 2
+I0711 11:48:44.872617 20178 config.cpp:274] listen_port : 2018
+I0711 11:48:44.892917 20178 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:48:44.910948 20178 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:48:44.931958 20178 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:48:44.953881 20178 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:48:48.274935 20180 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:48:48.275053 20180 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.11",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"0.0.11/data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"0.0.11/data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"test"
+	
+}
+ 
+I0711 11:48:48.275188 20180 requestProcessor.cpp:502] add liveshow version begin
+I0711 11:48:48.275288 20180 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.11' 
+I0711 11:48:48.286851 20180 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '0.0.11', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','test', '2017-07-11 11:48:48.287')
+I0711 11:48:48.293845 20180 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.11','0.0.11/data/document.js','74542dd63d2c54073d80e69aa6289239','2017-07-11 11:48:48.294')
+I0711 11:48:48.299806 20180 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.11','0.0.11/data/styles.css','38e3e5d46427a3f7f1c11d36660a389f','2017-07-11 11:48:48.300')
+I0711 11:48:48.322826 20180 requestProcessor.cpp:546] add android version end
+I0711 11:48:48.322882 20180 upgradeServer.cpp:219] response buffer length : 30   data :{"err":"0","errmsg":"success"}
+I0711 11:48:48.322906 20180 upgradeServer.cpp:220] callback end, cost 47ms

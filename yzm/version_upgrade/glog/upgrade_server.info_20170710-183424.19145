@@ -1,0 +1,36 @@
+Log file created at: 2017/07/10 18:34:24
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 18:34:24.897397 19145 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 18:34:24.897713 19145 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 18:34:24.897756 19145 config.cpp:121] db_para_.user_ : yzm
+I0710 18:34:24.897780 19145 config.cpp:132] db_para_.pass_ : 123456
+I0710 18:34:24.897802 19145 config.cpp:143] db_para_.port_ : 3306
+I0710 18:34:24.897824 19145 config.cpp:154] db_para_.overTime_ : 2
+I0710 18:34:24.897891 19145 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 18:34:24.897920 19145 config.cpp:240] redis_para_.port_ : 6379
+I0710 18:34:24.897943 19145 config.cpp:251] redis_para_.overTime_ : 2
+I0710 18:34:24.897999 19145 config.cpp:274] listen_port : 2018
+I0710 18:34:24.901756 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:24.902380 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:24.903038 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:24.903637 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:24.904294 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:24.904835 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:24.905334 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:24.905683 19145 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:34:31.492002 19147 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 18:34:31.492096 19147 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"测试"
+	
+}
+ 
+I0710 18:34:31.492143 19147 requestProcessor.cpp:523] add liveshow version begin
+I0710 18:34:31.492203 19147 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 18:34:31.492542 19147 requestProcessor.cpp:541] liveshow version  0.0.1 already exists

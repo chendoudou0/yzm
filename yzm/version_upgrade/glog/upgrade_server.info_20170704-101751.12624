@@ -1,0 +1,76 @@
+Log file created at: 2017/07/04 10:17:51
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0704 10:17:51.537931 12624 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0704 10:17:51.551498 12624 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0704 10:17:51.551512 12624 config.cpp:121] db_para_.user_ : yzm
+I0704 10:17:51.551519 12624 config.cpp:132] db_para_.pass_ : 123456
+I0704 10:17:51.551524 12624 config.cpp:143] db_para_.port_ : 3306
+I0704 10:17:51.551530 12624 config.cpp:154] db_para_.overTime_ : 2
+I0704 10:17:51.551553 12624 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0704 10:17:51.551560 12624 config.cpp:240] redis_para_.port_ : 6379
+I0704 10:17:51.551565 12624 config.cpp:251] redis_para_.overTime_ : 2
+I0704 10:17:51.578438 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:17:51.578712 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:17:51.579066 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:17:51.579401 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:17:51.579668 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:17:51.579897 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:17:51.580209 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:17:51.580474 12624 sqlapi.cpp:52] connect mysql  success!!!!
+I0704 10:18:44.479349 12632 upgradeServer.cpp:170] httpCallBack begin ...
+I0704 10:18:44.479391 12632 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"测试",
+	"file_size": "100"
+} 
+I0704 10:18:44.479405 12632 requestProcessor.cpp:198] add android version begin
+I0704 10:18:44.558706 12632 requestProcessor.cpp:241] add android version end
+I0704 10:18:44.558732 12632 upgradeServer.cpp:204] response buffer length : 30
+I0704 10:18:44.558740 12632 upgradeServer.cpp:205] callback end, cost 79ms
+I0704 10:19:25.358932 12632 upgradeServer.cpp:170] httpCallBack begin ...
+I0704 10:19:25.359025 12632 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.11", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0704 10:19:25.359062 12632 requestProcessor.cpp:198] add android version begin
+I0704 10:19:25.438735 12632 requestProcessor.cpp:241] add android version end
+I0704 10:19:25.438784 12632 upgradeServer.cpp:204] response buffer length : 30
+I0704 10:19:25.438796 12632 upgradeServer.cpp:205] callback end, cost 79ms
+I0704 10:19:43.789638 12633 upgradeServer.cpp:170] httpCallBack begin ...
+I0704 10:19:43.789732 12633 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.1", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0704 10:19:43.789770 12633 requestProcessor.cpp:198] add android version begin
+I0704 10:19:43.879281 12633 requestProcessor.cpp:241] add android version end
+I0704 10:19:43.879343 12633 upgradeServer.cpp:204] response buffer length : 30
+I0704 10:19:43.879362 12633 upgradeServer.cpp:205] callback end, cost 89ms
+I0704 10:31:42.598894 12632 upgradeServer.cpp:170] httpCallBack begin ...
+I0704 10:31:42.598989 12632 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.1", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0704 10:31:42.599025 12632 requestProcessor.cpp:198] add android version begin
+I0704 10:31:42.683226 12632 requestProcessor.cpp:241] add android version end
+I0704 10:31:42.683454 12632 upgradeServer.cpp:204] response buffer length : 30
+I0704 10:31:42.683499 12632 upgradeServer.cpp:205] callback end, cost 84ms

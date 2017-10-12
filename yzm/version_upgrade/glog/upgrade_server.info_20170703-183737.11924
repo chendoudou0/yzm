@@ -1,0 +1,54 @@
+Log file created at: 2017/07/03 18:37:37
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0703 18:37:37.680673 11924 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0703 18:37:37.680835 11924 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0703 18:37:37.680866 11924 config.cpp:121] db_para_.user_ : yzm
+I0703 18:37:37.680888 11924 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0703 18:37:37.680909 11924 config.cpp:143] db_para_.port_ : 3306
+I0703 18:37:37.680928 11924 config.cpp:154] db_para_.overTime_ : 2
+I0703 18:37:37.680979 11924 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0703 18:37:37.681004 11924 config.cpp:240] redis_para_.port_ : 6379
+I0703 18:37:37.681022 11924 config.cpp:251] redis_para_.overTime_ : 2
+I0703 18:37:37.704254 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:37.722301 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:37.753347 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:37.784250 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:37.811271 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:37.831434 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:37.853292 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:37.882323 11924 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:37:40.877534 11926 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:37:40.877578 11926 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0703 18:37:40.877601 11926 requestProcessor.cpp:198] add android version begin
+E0703 18:37:40.892350 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:40.904361 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:40.904379 11926 requestProcessor.cpp:219] insert into db failed 
+I0703 18:37:40.904394 11926 requestProcessor.cpp:241] add android version end
+I0703 18:37:40.904398 11926 upgradeServer.cpp:204] response buffer length : 44
+I0703 18:37:40.904403 11926 upgradeServer.cpp:205] callback end, cost 26ms
+I0703 18:37:42.633136 11926 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:37:42.633219 11926 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0703 18:37:42.633254 11926 requestProcessor.cpp:198] add android version begin
+E0703 18:37:42.653363 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:42.675380 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:42.675456 11926 requestProcessor.cpp:219] insert into db failed 
+I0703 18:37:42.675499 11926 requestProcessor.cpp:241] add android version end
+I0703 18:37:42.675516 11926 upgradeServer.cpp:204] response buffer length : 44
+I0703 18:37:42.675530 11926 upgradeServer.cpp:205] callback end, cost 42ms

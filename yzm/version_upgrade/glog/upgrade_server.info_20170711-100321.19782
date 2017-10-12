@@ -1,0 +1,51 @@
+Log file created at: 2017/07/11 10:03:21
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 10:03:21.209488 19782 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 10:03:21.209614 19782 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0711 10:03:21.209635 19782 config.cpp:121] db_para_.user_ : yzm
+I0711 10:03:21.209648 19782 config.cpp:132] db_para_.pass_ : 123456
+I0711 10:03:21.209659 19782 config.cpp:143] db_para_.port_ : 3306
+I0711 10:03:21.209671 19782 config.cpp:154] db_para_.overTime_ : 2
+I0711 10:03:21.209710 19782 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 10:03:21.209727 19782 config.cpp:240] redis_para_.port_ : 6379
+I0711 10:03:21.209738 19782 config.cpp:251] redis_para_.overTime_ : 2
+I0711 10:03:21.209771 19782 config.cpp:274] listen_port : 2018
+I0711 10:03:21.211848 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:21.212208 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:21.212599 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:21.212971 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:21.213296 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:21.213593 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:21.213874 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:21.214128 19782 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:03:25.681942 19784 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:03:25.681995 19784 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"测试"
+	
+}
+ 
+I0711 10:03:25.682020 19784 requestProcessor.cpp:523] add liveshow version begin
+I0711 10:03:25.682050 19784 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0711 10:03:25.682201 19784 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+I0711 10:03:29.039732 19785 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:03:29.039808 19785 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"测试"
+	
+}
+ 
+I0711 10:03:29.039836 19785 requestProcessor.cpp:523] add liveshow version begin
+I0711 10:03:29.039877 19785 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0711 10:03:29.040163 19785 requestProcessor.cpp:541] liveshow version  0.0.1 already exists

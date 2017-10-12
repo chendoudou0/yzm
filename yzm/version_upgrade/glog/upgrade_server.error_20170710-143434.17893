@@ -1,0 +1,11 @@
+Log file created at: 2017/07/10 14:34:34
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 14:34:34.067519 17895 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:34.068071 17895 requestProcessor.cpp:465] mysql query failed
+E0710 14:34:35.301184 17896 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:35.301259 17896 requestProcessor.cpp:465] mysql query failed
+E0710 14:34:35.903164 17895 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:35.903378 17895 requestProcessor.cpp:465] mysql query failed
+E0710 14:34:36.056030 17896 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:36.056203 17896 requestProcessor.cpp:465] mysql query failed

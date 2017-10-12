@@ -1,0 +1,74 @@
+Log file created at: 2017/07/10 12:25:23
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 12:25:23.524140 17871 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 12:25:23.524291 17871 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 12:25:23.524318 17871 config.cpp:121] db_para_.user_ : yzm
+I0710 12:25:23.524341 17871 config.cpp:132] db_para_.pass_ : 123456
+I0710 12:25:23.524364 17871 config.cpp:143] db_para_.port_ : 3306
+I0710 12:25:23.524387 17871 config.cpp:154] db_para_.overTime_ : 2
+I0710 12:25:23.524454 17871 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 12:25:23.524478 17871 config.cpp:240] redis_para_.port_ : 6379
+I0710 12:25:23.524498 17871 config.cpp:251] redis_para_.overTime_ : 2
+I0710 12:25:23.524549 17871 config.cpp:274] listen_port : 2018
+I0710 12:25:23.526552 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:23.526890 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:23.527253 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:23.527568 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:23.527885 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:23.528226 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:23.528599 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:23.528950 17871 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:25:40.115471 17878 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:40.115561 17878 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0710 12:25:40.115597 17878 requestProcessor.cpp:420] dealwith_livershow_verison_query begin
+E0710 12:25:40.116400 17878 sqlapi.cpp:273] mysql_num_rows is  0
+I0710 12:25:40.116796 17878 requestProcessor.cpp:452] dealwith_livershow_verison_query end
+I0710 12:25:40.116823 17878 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0710 12:25:40.116843 17878 upgradeServer.cpp:220] callback end, cost 1ms
+I0710 12:25:41.741053 17878 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:41.741134 17878 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0710 12:25:41.741160 17878 requestProcessor.cpp:420] dealwith_livershow_verison_query begin
+E0710 12:25:41.741590 17878 sqlapi.cpp:273] mysql_num_rows is  0
+I0710 12:25:41.741698 17878 requestProcessor.cpp:452] dealwith_livershow_verison_query end
+I0710 12:25:41.741724 17878 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0710 12:25:41.741742 17878 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:25:42.920431 17879 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:42.920503 17879 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0710 12:25:42.920524 17879 requestProcessor.cpp:420] dealwith_livershow_verison_query begin
+E0710 12:25:42.920840 17879 sqlapi.cpp:273] mysql_num_rows is  0
+I0710 12:25:42.920924 17879 requestProcessor.cpp:452] dealwith_livershow_verison_query end
+I0710 12:25:42.920943 17879 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0710 12:25:42.920958 17879 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:25:43.100822 17878 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:43.100872 17878 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0710 12:25:43.100898 17878 requestProcessor.cpp:420] dealwith_livershow_verison_query begin
+E0710 12:25:43.101089 17878 sqlapi.cpp:273] mysql_num_rows is  0
+I0710 12:25:43.101148 17878 requestProcessor.cpp:452] dealwith_livershow_verison_query end
+I0710 12:25:43.101167 17878 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0710 12:25:43.101181 17878 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:25:43.292073 17879 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:43.292300 17879 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0710 12:25:43.292346 17879 requestProcessor.cpp:420] dealwith_livershow_verison_query begin
+E0710 12:25:43.292634 17879 sqlapi.cpp:273] mysql_num_rows is  0
+I0710 12:25:43.292696 17879 requestProcessor.cpp:452] dealwith_livershow_verison_query end
+I0710 12:25:43.292716 17879 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0710 12:25:43.292729 17879 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:25:55.388209 17878 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:55.388262 17878 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 12:25:55.388320 17878 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 12:25:55.388829 17878 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 12:25:55.388866 17878 upgradeServer.cpp:219] response buffer length : 310   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1版本说明：1）提升用户体验；2）增加用户互动","version_name":"1.0.1"}]}
+I0710 12:25:55.388880 17878 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:25:57.361703 17879 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:57.361870 17879 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 12:25:57.361909 17879 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 12:25:57.362964 17879 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 12:25:57.363113 17879 upgradeServer.cpp:219] response buffer length : 310   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1版本说明：1）提升用户体验；2）增加用户互动","version_name":"1.0.1"}]}
+I0710 12:25:57.363150 17879 upgradeServer.cpp:220] callback end, cost 1ms
+I0710 12:25:57.526662 17878 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:25:57.526825 17878 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 12:25:57.526865 17878 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 12:25:57.527592 17878 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 12:25:57.527671 17878 upgradeServer.cpp:219] response buffer length : 310   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1版本说明：1）提升用户体验；2）增加用户互动","version_name":"1.0.1"}]}
+I0710 12:25:57.527703 17878 upgradeServer.cpp:220] callback end, cost 0ms

@@ -1,0 +1,45 @@
+Log file created at: 2017/07/10 14:34:41
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 14:34:41.360189 18217 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 14:34:41.360386 18217 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 14:34:41.360424 18217 config.cpp:121] db_para_.user_ : yzm
+I0710 14:34:41.360453 18217 config.cpp:132] db_para_.pass_ : 123456
+I0710 14:34:41.360486 18217 config.cpp:143] db_para_.port_ : 3306
+I0710 14:34:41.360517 18217 config.cpp:154] db_para_.overTime_ : 2
+I0710 14:34:41.360590 18217 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 14:34:41.360621 18217 config.cpp:240] redis_para_.port_ : 6379
+I0710 14:34:41.360651 18217 config.cpp:251] redis_para_.overTime_ : 2
+I0710 14:34:41.360719 18217 config.cpp:274] listen_port : 2018
+I0710 14:34:41.387529 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:41.388026 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:41.388495 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:41.388934 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:41.389366 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:41.389747 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:41.390094 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:41.390492 18217 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:34:44.872644 18227 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:44.872730 18227 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:44.872766 18227 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 14:34:44.873929 18227 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:44.873986 18227 upgradeServer.cpp:219] response buffer length : 270   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1?????1????????2???????","version_name":"1.0.1"}]}
+I0710 14:34:44.874009 18227 upgradeServer.cpp:220] callback end, cost 1ms
+I0710 14:34:45.865968 18227 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:45.866047 18227 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:45.866072 18227 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 14:34:45.866664 18227 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:45.866730 18227 upgradeServer.cpp:219] response buffer length : 270   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1?????1????????2???????","version_name":"1.0.1"}]}
+I0710 14:34:45.866753 18227 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 14:34:46.639231 18228 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:46.639315 18228 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:46.639338 18228 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 14:34:46.639858 18228 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:46.639904 18228 upgradeServer.cpp:219] response buffer length : 270   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1?????1????????2???????","version_name":"1.0.1"}]}
+I0710 14:34:46.639922 18228 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 14:34:46.819892 18227 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:46.820000 18227 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:46.820216 18227 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 14:34:46.820863 18227 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:46.821050 18227 upgradeServer.cpp:219] response buffer length : 270   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1?????1????????2???????","version_name":"1.0.1"}]}
+I0710 14:34:46.821094 18227 upgradeServer.cpp:220] callback end, cost 0ms

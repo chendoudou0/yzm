@@ -1,0 +1,34 @@
+Log file created at: 2017/07/11 10:55:41
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 10:55:41.600666 19954 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 10:55:41.600924 19954 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 10:55:41.600967 19954 config.cpp:121] db_para_.user_ : yzm
+I0711 10:55:41.600996 19954 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 10:55:41.601034 19954 config.cpp:143] db_para_.port_ : 3306
+I0711 10:55:41.601064 19954 config.cpp:154] db_para_.overTime_ : 2
+I0711 10:55:41.601135 19954 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 10:55:41.601173 19954 config.cpp:240] redis_para_.port_ : 6379
+I0711 10:55:41.601199 19954 config.cpp:251] redis_para_.overTime_ : 2
+I0711 10:55:41.601261 19954 config.cpp:274] listen_port : 2018
+I0711 10:55:41.635810 19954 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:55:41.664842 19954 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:55:41.681809 19954 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:55:41.704784 19954 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:55:52.677018 19956 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:55:52.677110 19956 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:55:52.677147 19956 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:55:52.723819 19956 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:55:52.723884 19956 upgradeServer.cpp:219] response buffer length : 1000   data :{"ret":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/3.0.1.333/test.apk","version_description":"test","version_name":"3.0.1.333"},{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.1/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.1"},{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.5/http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk","version_description":"我也不知道说明版本\n1）测试测试\n我也不知道说明版本\n1）测试测试\n我也不知道说明版本\n1）测试测试\n我也不知道说明版本\n1）测试测试\n我也不知道说明版本\n1）测试测试\n我也不知道说明版本\n1）测试测试\n我也不知道说明版本\n1）测试测试","version_name":"0.0.5"}]}
+I0711 10:55:52.723917 19956 upgradeServer.cpp:220] callback end, cost 46ms
+I0711 11:34:35.830205 19956 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:34:35.830296 19956 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:34:35.830334 19956 requestProcessor.cpp:196] add android version begin

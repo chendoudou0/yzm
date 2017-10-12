@@ -1,0 +1,90 @@
+Log file created at: 2017/07/10 18:08:33
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 18:08:33.341179 19030 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 18:08:33.341362 19030 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 18:08:33.341394 19030 config.cpp:121] db_para_.user_ : yzm
+I0710 18:08:33.341421 19030 config.cpp:132] db_para_.pass_ : 123456
+I0710 18:08:33.341455 19030 config.cpp:143] db_para_.port_ : 3306
+I0710 18:08:33.341485 19030 config.cpp:154] db_para_.overTime_ : 2
+I0710 18:08:33.341549 19030 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 18:08:33.341578 19030 config.cpp:240] redis_para_.port_ : 6379
+I0710 18:08:33.341603 19030 config.cpp:251] redis_para_.overTime_ : 2
+I0710 18:08:33.341662 19030 config.cpp:274] listen_port : 2018
+I0710 18:08:33.344128 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:33.344560 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:33.345006 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:33.345353 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:33.345692 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:33.345964 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:33.346285 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:33.346622 19030 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:08:41.849555 19032 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 18:08:41.849630 19032 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"æµ‹è¯•"
+	
+}
+ 
+I0710 18:08:41.849669 19032 requestProcessor.cpp:542] add liveshow version begin
+I0710 18:08:41.849719 19032 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 18:08:41.849952 19032 requestProcessor.cpp:560] liveshow version  0.0.1 already exists
+I0710 18:08:41.850294 19032 requestProcessor.cpp:527] 111111
+E0710 18:08:41.850337 19032 config.cpp:12] *** Aborted at 1499681321 (unix time) try "date -d @1499681321" if you are using GNU date ***
+E0710 18:08:41.850535 19032 config.cpp:12] PC: @           0x429138 CJsonOperator::addStringMember()
+×Ñ
+E0710 18:08:41.850805 19032 config.cpp:12] *** SIGSEGV (@0x0) received by PID 19030 (TID 0x7f19d1d72700) from PID 0; stack trace: ***
+**
+E0710 18:08:41.851608 19032 config.cpp:12]     @     0x7f19d9023330 (unknown)
+×
+E0710 18:08:41.851747 19032 config.cpp:12]     @           0x429138 CJsonOperator::addStringMember()
+Ñ×
+E0710 18:08:41.851847 19032 config.cpp:12]     @           0x4100da CrequestProcessor::gen_error_response()
+×Ñ
+E0710 18:08:41.851984 19032 config.cpp:12]     @           0x417df6 CrequestProcessor::dealwith_liveshow_version_add()
+
+E0710 18:08:41.852071 19032 config.cpp:12]     @           0x40dc45 CUpgradeServer::httpCallBack()
+eshow_version_add()
+
+E0710 18:08:41.852219 19032 config.cpp:12]     @           0x4284ce HTTPRequestHandler_::handleRequest()
+version_add()
+
+E0710 18:08:41.852987 19032 config.cpp:12]     @     0x7f19d89865db (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:08:41.853523 19032 config.cpp:12]     @     0x7f19d89a1177 (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:08:41.853986 19032 config.cpp:12]     @     0x7f19d89b17de (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:08:41.854641 19032 config.cpp:12]     @     0x7f19d8d41d37 (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:08:41.855522 19032 config.cpp:12]     @     0x7f19d8d3ddb6 (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:08:41.856391 19032 config.cpp:12]     @     0x7f19d901b184 start_thread
+ndler_::handleRequest()
+version_add()
+
+E0710 18:08:41.856995 19032 config.cpp:12]     @     0x7f19d753237d (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+
+E0710 18:08:41.857653 19032 config.cpp:12]     @                0x0 (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+

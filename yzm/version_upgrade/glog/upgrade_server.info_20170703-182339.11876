@@ -1,0 +1,37 @@
+Log file created at: 2017/07/03 18:23:39
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0703 18:23:39.174444 11876 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0703 18:23:39.174619 11876 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0703 18:23:39.174645 11876 config.cpp:121] db_para_.user_ : yzm
+I0703 18:23:39.174664 11876 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0703 18:23:39.174679 11876 config.cpp:143] db_para_.port_ : 3306
+I0703 18:23:39.174695 11876 config.cpp:154] db_para_.overTime_ : 2
+I0703 18:23:39.174733 11876 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0703 18:23:39.174754 11876 config.cpp:240] redis_para_.port_ : 6379
+I0703 18:23:39.174777 11876 config.cpp:251] redis_para_.overTime_ : 2
+I0703 18:23:39.203457 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:39.224448 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:39.244442 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:39.269526 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:39.299441 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:39.325464 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:39.357465 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:39.375453 11876 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:23:51.890727 11878 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:23:51.890816 11878 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.0.1", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0703 18:23:51.890859 11878 requestProcessor.cpp:198] add android version begin
+E0703 18:23:51.912422 11878 sqlapi.cpp:98] unknowed mysql error
+E0703 18:23:51.925460 11878 sqlapi.cpp:98] unknowed mysql error
+E0703 18:23:51.925534 11878 requestProcessor.cpp:219] insert into db failed 
+I0703 18:23:51.925585 11878 requestProcessor.cpp:241] add android version end
+I0703 18:23:51.925604 11878 upgradeServer.cpp:204] response buffer length : 44
+I0703 18:23:51.925624 11878 upgradeServer.cpp:205] callback end, cost 34ms

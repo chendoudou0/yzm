@@ -1,0 +1,4 @@
+Log file created at: 2017/07/12 18:01:26
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0712 18:01:26.505724 21817 requestProcessor.cpp:255] parse json failed

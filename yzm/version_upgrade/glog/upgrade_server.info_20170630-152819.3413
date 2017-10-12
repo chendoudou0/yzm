@@ -1,0 +1,258 @@
+Log file created at: 2017/06/30 15:28:19
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0630 15:28:19.315016  3413 upgradeServer.cpp:92] GLOG BEGIN TO WORK
+I0630 15:28:19.315160  3413 config.cpp:109] db_para_.host_ : 120.24.249.45
+I0630 15:28:19.315187  3413 config.cpp:120] db_para_.user_ : yzm
+I0630 15:28:19.315204  3413 config.cpp:131] db_para_.pass_ : Yzm@55*#jkl
+I0630 15:28:19.315219  3413 config.cpp:142] db_para_.port_ : 3306
+I0630 15:28:19.315238  3413 config.cpp:153] db_para_.overTime_ : 2
+I0630 15:28:19.315281  3413 config.cpp:228] redis_para.ip_ : 127.0.0.1
+I0630 15:28:19.315301  3413 config.cpp:239] redis_para_.port_ : 6379
+I0630 15:28:19.315316  3413 config.cpp:250] redis_para_.overTime_ : 2
+I0630 15:28:19.346741  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:28:19.367784  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:28:19.394718  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:28:19.426697  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:28:19.460691  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:28:19.487699  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:28:19.516701  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:28:19.539990  3413 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:29:42.388370  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:29:42.388456  3415 upgradeServer.cpp:149] uri /android/queryreceive data  {
+    "service_type": "2002"
+}
+I0630 15:29:42.388490  3415 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 15:29:42.408535  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 测试2
+I0630 15:29:42.408612  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: v2.0.0
+I0630 15:29:42.408634  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: test.apk
+I0630 15:29:42.408651  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 5
+I0630 15:29:42.408668  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 649f43038a539f820dd52064a1e3a7c6
+I0630 15:29:42.408689  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 测试1
+I0630 15:29:42.408706  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: v1.0.0
+I0630 15:29:42.408722  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: test.apk
+I0630 15:29:42.408737  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 5
+I0630 15:29:42.408753  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 649f43038a539f820dd52064a1e3a7c6
+I0630 15:29:42.408774  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 5.定时器（timer）：操作之间设置等待时间；
+6.  前置处理器（per processors）:用于在实际的请求发出之前对即将发出的请求进行特殊处理。
+7.后置处理器（post processors）:用于对sampler发出请求后得到的服务器响应进行处理。一般用来提取响应中特定数据。
+8.断言（assertion）:用于检测测试中得到的相应数据等是否符合预期；
+9.监听（listener）：用来对测试结果数据进行处理和可视化展示的一系列元件；
+I0630 15:29:42.408797  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 5.0.0
+I0630 15:29:42.408813  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-release-signed-78.apk
+I0630 15:29:42.408828  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 117262520
+I0630 15:29:42.408843  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 7ff8746380113c9c7eb1c1ac3e30d3da
+I0630 15:29:42.408861  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 1.测试计划：用来描述一个性能测试，包含本次性能测试所有相关的功能。（相当于lr的一个测试场景）。
+2.线程treads(user）：
+  2.1）setup tread group：执行预操作，这类线程执行测试前进行定期线程组的执行（相当于LR中的init()）;
+  2.2)teardown tread group：执行结束后的操作（相当于LR中的end()）;
+  2.3)tread group:一个虚拟用户（相当于LR中的action()）;
+I0630 15:29:42.409026  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 3.0.1
+I0630 15:29:42.409076  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-release-signed-77.apk
+I0630 15:29:42.409104  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 117260854
+I0630 15:29:42.409152  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 9fdf3b945da09d55839a3dcc2705a2b8
+I0630 15:29:42.409178  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 5.1.1版本：
+1）UI设计；
+2）BUG回归；
+I0630 15:29:42.409198  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 2.0.6
+I0630 15:29:42.409214  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-debug-5.apk
+I0630 15:29:42.409231  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 22814849
+I0630 15:29:42.409248  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 98b6806b7d8713e05cdfed6d2a067f15
+I0630 15:29:42.409273  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 4
+I0630 15:29:42.409391  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 2.0.5
+I0630 15:29:42.409440  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-debug-4.apk
+I0630 15:29:42.409461  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 22833747
+I0630 15:29:42.409479  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: de821c8f2333a0c68147ceb801e72dcd
+I0630 15:29:42.409502  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 3
+I0630 15:29:42.409520  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 2.0.4
+I0630 15:29:42.409538  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-debug-3.apk
+I0630 15:29:42.409555  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 19135129
+I0630 15:29:42.409572  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 1bd7da5556dafbd03f98451e63d1cbf7
+I0630 15:29:42.409592  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: bug2
+I0630 15:29:42.409608  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 2.0.3
+I0630 15:29:42.409626  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-debug-2.apk
+I0630 15:29:42.409641  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 19135129
+I0630 15:29:42.409657  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 1bd7da5556dafbd03f98451e63d1cbf7
+I0630 15:29:42.409683  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 提升用户体验
+I0630 15:29:42.409703  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 2.0.2
+I0630 15:29:42.409718  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-debug(1).apk
+I0630 15:29:42.409735  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 35469249
+I0630 15:29:42.409751  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: cd42712ad27eb674c77ff22625695a99
+I0630 15:29:42.409771  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 5.2.1版本说明：1）提升用户体验；2）增加用户互动
+I0630 15:29:42.409793  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 1.0.1
+I0630 15:29:42.409809  3415 sqlapi.cpp:333] i : 2 field: Foss_path value: app-release_6.0.0.apk
+I0630 15:29:42.409826  3415 sqlapi.cpp:333] i : 3 field: Ffile_size value: 19196586
+I0630 15:29:42.409843  3415 sqlapi.cpp:333] i : 4 field: Ffile_md5 value: 57effbed1e7076c30592e380395d3d83
+I0630 15:29:42.420235  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.420320  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-hangzhou.aliyuncs.com
+I0630 15:29:42.430255  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.430320  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-hangzhou.aliyuncs.com
+I0630 15:29:42.441341  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.441404  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.452253  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.452376  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.461305  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.461408  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.471261  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.471467  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.478274  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.478339  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.488262  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.488327  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.498262  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.498327  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.508291  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Foss_bucket value:  cloudreamversions
+I0630 15:29:42.508354  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Foss_domain value:  oss-cn-shenzhen.aliyuncs.com
+I0630 15:29:42.508493  3415 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 15:29:42.508522  3415 upgradeServer.cpp:188] response buffer length : 3278
+I0630 15:29:42.508543  3415 upgradeServer.cpp:189] callback end, cost 120ms
+I0630 15:30:43.093013  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:30:43.093206  3415 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 15:30:43.093250  3415 requestProcessor.cpp:147] dealwith_liveShow_version_update begin
+I0630 15:30:43.111073  3415 requestProcessor.cpp:169]  get_value_from_redis fialed 
+I0630 15:30:43.230325  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Fversion_bucket value:  cloudreamversions
+I0630 15:30:43.230469  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Fversion_domain value:  oss-cn-shenzhen.aliyuncs.com
+E0630 15:30:43.230610  3415 requestProcessor.cpp:185]  set value to redis failed 
+I0630 15:30:43.230922  3415 requestProcessor.cpp:199] dealwith_liveShow_version_update end
+I0630 15:30:43.231036  3415 upgradeServer.cpp:188] response buffer length : 1365
+I0630 15:30:43.231084  3415 upgradeServer.cpp:189] callback end, cost 137ms
+I0630 15:31:07.575151  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:07.575320  3416 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 15:31:07.575354  3416 requestProcessor.cpp:147] dealwith_liveShow_version_update begin
+I0630 15:31:07.575495  3416 requestProcessor.cpp:169]  get_value_from_redis fialed 
+I0630 15:31:07.649670  3416 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Fversion_bucket value:  cloudreamversions
+I0630 15:31:07.649842  3416 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Fversion_domain value:  oss-cn-shenzhen.aliyuncs.com
+E0630 15:31:07.649947  3416 requestProcessor.cpp:185]  set value to redis failed 
+I0630 15:31:07.649997  3416 requestProcessor.cpp:199] dealwith_liveShow_version_update end
+I0630 15:31:07.650048  3416 upgradeServer.cpp:188] response buffer length : 1365
+I0630 15:31:07.650091  3416 upgradeServer.cpp:189] callback end, cost 74ms
+I0630 15:31:08.550559  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:08.550638  3415 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 15:31:08.550667  3415 requestProcessor.cpp:147] dealwith_liveShow_version_update begin
+I0630 15:31:08.550741  3415 requestProcessor.cpp:169]  get_value_from_redis fialed 
+I0630 15:31:08.635985  3415 sqlapi.cpp:281]  [FetchResultMap]i: 0 field: Fversion_bucket value:  cloudreamversions
+I0630 15:31:08.636133  3415 sqlapi.cpp:281]  [FetchResultMap]i: 1 field: Fversion_domain value:  oss-cn-shenzhen.aliyuncs.com
+E0630 15:31:08.636281  3415 requestProcessor.cpp:185]  set value to redis failed 
+I0630 15:31:08.636373  3415 requestProcessor.cpp:199] dealwith_liveShow_version_update end
+I0630 15:31:08.636463  3415 upgradeServer.cpp:188] response buffer length : 1365
+I0630 15:31:08.636551  3415 upgradeServer.cpp:189] callback end, cost 85ms
+I0630 15:31:23.614524  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:23.614639  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:23.615016  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+E0630 15:31:23.637262  3416 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 15:31:23.637348  3416 requestProcessor.cpp:251]  query live_show version failed
+I0630 15:31:23.637408  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:23.637434  3416 upgradeServer.cpp:188] response buffer length : 52
+I0630 15:31:23.637449  3416 upgradeServer.cpp:189] callback end, cost 22ms
+I0630 15:31:43.826148  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:43.826272  3415 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:43.826289  3415 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:43.844851  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:43.844873  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:43.844888  3415 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:43.844895  3415 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:43.844900  3415 upgradeServer.cpp:189] callback end, cost 18ms
+I0630 15:31:51.685603  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:51.685663  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:51.685683  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:51.702738  3416 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:51.702780  3416 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:51.702810  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:51.702822  3416 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:51.702833  3416 upgradeServer.cpp:189] callback end, cost 17ms
+I0630 15:31:52.381613  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:52.381749  3415 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:52.381772  3415 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:52.394637  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:52.394671  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:52.394695  3415 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:52.394704  3415 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:52.394711  3415 upgradeServer.cpp:189] callback end, cost 12ms
+I0630 15:31:52.879305  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:52.879357  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:52.879376  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:52.898629  3416 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:52.898654  3416 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:52.898672  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:52.898680  3416 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:52.898686  3416 upgradeServer.cpp:189] callback end, cost 19ms
+I0630 15:31:53.028321  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:53.028443  3415 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:53.028465  3415 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:53.048637  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:53.048666  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:53.048682  3415 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:53.048688  3415 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:53.048693  3415 upgradeServer.cpp:189] callback end, cost 20ms
+I0630 15:31:53.164865  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:53.164969  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:53.164988  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:53.181609  3416 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:53.181628  3416 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:53.181643  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:53.181648  3416 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:53.181653  3416 upgradeServer.cpp:189] callback end, cost 16ms
+I0630 15:31:53.323199  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:53.323216  3415 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:53.323225  3415 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:53.345649  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:53.345669  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:53.345682  3415 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:53.345688  3415 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:53.345693  3415 upgradeServer.cpp:189] callback end, cost 22ms
+I0630 15:31:53.455654  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:53.455680  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:53.455687  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:53.476590  3416 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:53.476609  3416 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:53.476622  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:53.476629  3416 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:53.476634  3416 upgradeServer.cpp:189] callback end, cost 20ms
+I0630 15:31:53.664679  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:53.664791  3415 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:53.664805  3415 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:53.683620  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:53.683640  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:53.683653  3415 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:53.683660  3415 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:53.683665  3415 upgradeServer.cpp:189] callback end, cost 18ms
+I0630 15:31:53.766013  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:31:53.766140  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:31:53.766156  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:31:53.784582  3416 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:31:53.784610  3416 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:31:53.784631  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:31:53.784639  3416 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:31:53.784660  3416 upgradeServer.cpp:189] callback end, cost 18ms
+I0630 15:32:00.577060  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:32:00.577179  3415 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:32:00.577204  3415 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:32:00.591572  3415 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:32:00.591617  3415 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:32:00.591637  3415 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:32:00.591645  3415 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:32:00.591651  3415 upgradeServer.cpp:189] callback end, cost 14ms
+I0630 15:32:01.218792  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:32:01.218910  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:32:01.218945  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+I0630 15:32:01.238528  3416 sqlapi.cpp:333] i : 0 field: Fversion_description value: 
+I0630 15:32:01.238580  3416 sqlapi.cpp:333] i : 1 field: Fversion_name value: 0.1.0.0502
+I0630 15:32:01.238618  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:32:01.238636  3416 upgradeServer.cpp:188] response buffer length : 84
+I0630 15:32:01.238649  3416 upgradeServer.cpp:189] callback end, cost 19ms
+I0630 15:32:10.573158  3415 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:32:10.573392  3415 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:32:10.573444  3415 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+E0630 15:32:10.593437  3415 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 15:32:10.593513  3415 requestProcessor.cpp:251]  query live_show version failed
+I0630 15:32:10.593554  3415 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:32:10.593572  3415 upgradeServer.cpp:188] response buffer length : 52
+I0630 15:32:10.593588  3415 upgradeServer.cpp:189] callback end, cost 20ms
+I0630 15:34:03.841256  3416 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 15:34:03.841440  3416 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0630 15:34:03.841512  3416 requestProcessor.cpp:242] dealwith_livershow_verison_query begin
+E0630 15:34:03.859159  3416 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 15:34:03.859261  3416 requestProcessor.cpp:251]  query live_show version failed
+I0630 15:34:03.859316  3416 requestProcessor.cpp:274] dealwith_livershow_verison_query end
+I0630 15:34:03.859361  3416 upgradeServer.cpp:188] response buffer length : 52
+I0630 15:34:03.859401  3416 upgradeServer.cpp:189] callback end, cost 17ms

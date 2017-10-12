@@ -1,0 +1,5 @@
+Log file created at: 2017/07/11 09:42:02
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0711 09:42:02.229059 19661 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+E0711 09:42:05.494663 19662 requestProcessor.cpp:541] liveshow version  0.0.1 already exists

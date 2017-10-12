@@ -1,0 +1,288 @@
+Log file created at: 2017/06/24 17:14:12
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0624 17:14:12.973968  5442 upgradeServer.cpp:92] GLOG BEGIN TO WORK
+I0624 17:14:12.974171  5442 config.cpp:86] db_para_.host_ : 120.24.249.45
+I0624 17:14:12.974206  5442 config.cpp:97] db_para_.user_ : yzm
+I0624 17:14:12.974225  5442 config.cpp:108] db_para_.pass_ : Yzm@55*#jkl
+I0624 17:14:12.974241  5442 config.cpp:119] db_para_.port_ : 3306
+I0624 17:14:12.974256  5442 config.cpp:130] db_para_.overTime_ : 2
+I0624 17:14:12.974323  5442 config.cpp:205] redis_para.ip_ : 127.0.0.1
+I0624 17:14:12.974346  5442 config.cpp:216] redis_para_.port_ : 6379
+I0624 17:14:12.974362  5442 config.cpp:227] redis_para_.overTime_ : 2
+I0624 17:14:12.996073  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:13.015040  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:13.033190  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:13.060055  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:14.281051  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:14.298035  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:14.944072  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:14.961098  5442 DBOperator.cpp:16] connect mysql success !
+I0624 17:14:24.747370  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0624 17:14:24.747454  5444 upgradeServer.cpp:149] uri /android/queryreceive data  {
+    "service_type": "2002"
+}
+I0624 17:14:24.747498  5444 requestProcessor.cpp:290] dealwith_android_verison_query begin
+I0624 17:14:25.041208  5444 requestProcessor.cpp:303] dealwith_android_verison_query end
+I0624 17:14:25.041290  5444 upgradeServer.cpp:188] response buffer length : 3278
+I0624 17:14:25.041316  5444 upgradeServer.cpp:189] callback end, cost 293ms
+I0626 17:15:50.841656  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:15:50.841748  5444 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0626 17:15:50.841773  5444 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:15:50.841958  5444 requestProcessor.cpp:262] query live_show version failed
+I0626 17:15:50.842322  5444 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:15:50.842345  5444 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:15:50.842360  5444 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:54:01.556843  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:54:01.556938  5445 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0626 17:54:01.556962  5445 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:54:01.557075  5445 requestProcessor.cpp:262] query live_show version failed
+I0626 17:54:01.557147  5445 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:54:01.557166  5445 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:54:01.557183  5445 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:54:03.414912  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:54:03.414983  5444 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0626 17:54:03.415004  5444 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:54:03.415107  5444 requestProcessor.cpp:262] query live_show version failed
+I0626 17:54:03.415176  5444 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:54:03.415194  5444 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:54:03.415208  5444 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:54:04.060493  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:54:04.060572  5445 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0626 17:54:04.060595  5445 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:54:04.060855  5445 requestProcessor.cpp:262] query live_show version failed
+I0626 17:54:04.060987  5445 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:54:04.061044  5445 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:54:04.061067  5445 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:54:04.186774  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:54:04.186934  5444 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0626 17:54:04.186969  5444 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:54:04.187073  5444 requestProcessor.cpp:262] query live_show version failed
+I0626 17:54:04.187136  5444 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:54:04.187156  5444 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:54:04.187175  5444 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:54:04.380769  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:54:04.380859  5445 upgradeServer.cpp:149] uri /live_show/queryreceive data  {"service_type":"2003"}
+I0626 17:54:04.380887  5445 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:54:04.381002  5445 requestProcessor.cpp:262] query live_show version failed
+I0626 17:54:04.381072  5445 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:54:04.381094  5445 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:54:04.381114  5445 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:54:52.474834  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:54:52.475054  5444 upgradeServer.cpp:149] uri /live_show/queryreceive data  name=cjb
+I0626 17:54:52.475112  5444 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:54:52.475236  5444 requestProcessor.cpp:262] query live_show version failed
+I0626 17:54:52.475306  5444 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:54:52.475327  5444 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:54:52.475347  5444 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:58:31.172762  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:58:31.172958  5445 upgradeServer.cpp:149] uri /live_show/queryreceive data  name=cjb
+I0626 17:58:31.172997  5445 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:58:31.173113  5445 requestProcessor.cpp:262] query live_show version failed
+I0626 17:58:31.173187  5445 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:58:31.173210  5445 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:58:31.173228  5445 upgradeServer.cpp:189] callback end, cost 0ms
+I0626 17:58:34.945668  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 17:58:34.945875  5444 upgradeServer.cpp:149] uri /live_show/queryreceive data  name=cjb
+I0626 17:58:34.945933  5444 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 17:58:35.018610  5444 requestProcessor.cpp:262] query live_show version failed
+I0626 17:58:35.018707  5444 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 17:58:35.018731  5444 upgradeServer.cpp:188] response buffer length : 52
+I0626 17:58:35.018749  5444 upgradeServer.cpp:189] callback end, cost 72ms
+I0626 18:01:14.500305  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 18:01:14.500422  5445 upgradeServer.cpp:149] uri /live_show/queryreceive data  name=cjbffffffffffffffffffffffffffffffffffffffffffff
+I0626 18:01:14.500916  5445 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 18:01:14.565639  5445 requestProcessor.cpp:262] query live_show version failed
+I0626 18:01:14.565762  5445 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 18:01:14.565793  5445 upgradeServer.cpp:188] response buffer length : 52
+I0626 18:01:14.565816  5445 upgradeServer.cpp:189] callback end, cost 64ms
+I0626 18:17:35.113268  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 18:17:35.113437  5444 upgradeServer.cpp:149] uri /live_show/queryreceive data  name=chenzixun
+I0626 18:17:35.113508  5444 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 18:17:35.172346  5444 requestProcessor.cpp:262] query live_show version failed
+I0626 18:17:35.172580  5444 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 18:17:35.172619  5444 upgradeServer.cpp:188] response buffer length : 52
+I0626 18:17:35.172641  5444 upgradeServer.cpp:189] callback end, cost 59ms
+I0626 18:17:37.801232  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0626 18:17:37.801323  5445 upgradeServer.cpp:149] uri /live_show/queryreceive data  name=chenzixun
+I0626 18:17:37.801352  5445 requestProcessor.cpp:249] dealwith_livershow_verison_query begin
+E0626 18:17:37.860288  5445 requestProcessor.cpp:262] query live_show version failed
+I0626 18:17:37.860394  5445 requestProcessor.cpp:285] dealwith_livershow_verison_query end
+I0626 18:17:37.860419  5445 upgradeServer.cpp:188] response buffer length : 52
+I0626 18:17:37.860436  5445 upgradeServer.cpp:189] callback end, cost 59ms
+I0629 17:20:26.961235  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:20:26.961336  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:20:26.961412  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:20:26.961652  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:20:27.324134  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:20:27.324339  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:20:27.324391  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:20:27.324420  5444 upgradeServer.cpp:189] callback end, cost 362ms
+I0629 17:22:02.043409  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:02.043596  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:02.043635  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:02.043815  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:02.096530  5445 requestProcessor.cpp:181] find_differ_files  failed
+I0629 17:22:02.096767  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:02.096812  5445 upgradeServer.cpp:188] response buffer length : 38
+I0629 17:22:02.096834  5445 upgradeServer.cpp:189] callback end, cost 53ms
+I0629 17:22:11.722266  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:11.722409  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:11.722440  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:11.722578  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:11.722712  5444 requestProcessor.cpp:181] find_differ_files  failed
+I0629 17:22:11.722764  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:11.722784  5444 upgradeServer.cpp:188] response buffer length : 38
+I0629 17:22:11.722800  5444 upgradeServer.cpp:189] callback end, cost 0ms
+I0629 17:22:37.947724  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:37.947918  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:37.947954  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:37.948104  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:37.948254  5445 requestProcessor.cpp:181] find_differ_files  failed
+I0629 17:22:37.948313  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:37.948334  5445 upgradeServer.cpp:188] response buffer length : 38
+I0629 17:22:37.948352  5445 upgradeServer.cpp:189] callback end, cost 0ms
+I0629 17:22:48.897541  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:48.897711  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:48.897789  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:48.897979  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:48.898200  5444 requestProcessor.cpp:181] find_differ_files  failed
+I0629 17:22:48.898301  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:48.898560  5444 upgradeServer.cpp:188] response buffer length : 38
+I0629 17:22:48.898607  5444 upgradeServer.cpp:189] callback end, cost 0ms
+I0629 17:22:49.861515  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:49.861610  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:49.861652  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:49.861719  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:49.946542  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:22:49.946615  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:49.946653  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:22:49.946671  5445 upgradeServer.cpp:189] callback end, cost 84ms
+I0629 17:22:50.675510  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:50.675638  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:50.675675  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:50.675724  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:50.796663  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:22:50.796766  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:50.796819  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:22:50.796866  5444 upgradeServer.cpp:189] callback end, cost 121ms
+I0629 17:22:50.949503  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:50.949571  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:50.949595  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:50.949633  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:51.073748  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:22:51.073853  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:51.073902  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:22:51.073951  5445 upgradeServer.cpp:189] callback end, cost 124ms
+I0629 17:22:51.691076  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:51.691170  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:51.691200  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:51.691247  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:51.767575  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:22:51.767662  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:51.767724  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:22:51.767746  5444 upgradeServer.cpp:189] callback end, cost 76ms
+I0629 17:22:58.397320  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:22:58.397486  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:22:58.397523  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:22:58.397686  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:22:58.477464  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:22:58.477550  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:22:58.477665  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:22:58.477694  5445 upgradeServer.cpp:189] callback end, cost 80ms
+I0629 17:23:00.545765  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:23:00.545974  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:23:00.546015  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:23:00.546058  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:23:00.613366  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:23:00.613502  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:23:00.613561  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:23:00.613579  5444 upgradeServer.cpp:189] callback end, cost 67ms
+I0629 17:25:11.374780  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:25:11.375063  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:25:11.375344  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:25:11.375665  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:25:11.442994  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:25:11.443079  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:25:11.443126  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:25:11.443146  5445 upgradeServer.cpp:189] callback end, cost 67ms
+I0629 17:27:04.690596  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:27:04.690768  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:27:04.690806  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:27:04.690971  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:27:04.782719  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:27:04.782817  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:27:04.782888  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:27:04.782913  5444 upgradeServer.cpp:189] callback end, cost 92ms
+I0629 17:27:05.898582  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:27:05.898730  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:27:05.898763  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:27:05.898807  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:27:06.004181  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:27:06.004281  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:27:06.004334  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:27:06.004357  5445 upgradeServer.cpp:189] callback end, cost 105ms
+I0629 17:30:32.189609  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:30:32.189808  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:30:32.189851  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:30:32.190024  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:30:32.259718  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:30:32.259943  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:30:32.260047  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:30:32.260076  5444 upgradeServer.cpp:189] callback end, cost 70ms
+I0629 17:32:34.094274  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:32:34.094449  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:32:34.094487  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:32:34.094681  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:32:34.170253  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:32:34.170498  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:32:34.170567  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:32:34.170624  5445 upgradeServer.cpp:189] callback end, cost 76ms
+I0629 17:32:41.937021  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:32:41.937252  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:32:41.937304  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:32:41.937460  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:32:42.007073  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:32:42.007140  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:32:42.007191  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:32:42.007208  5444 upgradeServer.cpp:189] callback end, cost 69ms
+I0629 17:34:29.814934  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:34:29.815106  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:34:29.815147  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:34:29.815318  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:34:29.895122  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:34:29.895355  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:34:29.895427  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:34:29.895449  5445 upgradeServer.cpp:189] callback end, cost 80ms
+I0629 17:35:43.962407  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:35:43.962592  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:35:43.962643  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:35:43.962841  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:35:44.029644  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:35:44.029743  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:35:44.029814  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:35:44.029839  5444 upgradeServer.cpp:189] callback end, cost 67ms
+I0629 17:36:50.396232  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:36:50.396421  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:36:50.396461  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:36:50.396625  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:36:50.463230  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:36:50.463307  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:36:50.463351  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:36:50.463368  5445 upgradeServer.cpp:189] callback end, cost 66ms
+I0629 17:40:42.252622  5444 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:40:42.252862  5444 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:40:42.252915  5444 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:40:42.253077  5444 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:40:42.331960  5444 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:40:42.332196  5444 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:40:42.332289  5444 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:40:42.332314  5444 upgradeServer.cpp:189] callback end, cost 79ms
+I0629 17:41:59.339012  5445 upgradeServer.cpp:148] httpCallBack begin ...
+I0629 17:41:59.339200  5445 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0629 17:41:59.339243  5445 requestProcessor.cpp:154] dealwith_liveShow_version_update begin
+I0629 17:41:59.339355  5445 requestProcessor.cpp:176]  get_value_from_redis fialed 
+E0629 17:41:59.625216  5445 requestProcessor.cpp:192]  set value to redis failed 
+I0629 17:41:59.625396  5445 requestProcessor.cpp:206] dealwith_liveShow_version_update end
+I0629 17:41:59.625457  5445 upgradeServer.cpp:188] response buffer length : 1365
+I0629 17:41:59.625478  5445 upgradeServer.cpp:189] callback end, cost 286ms

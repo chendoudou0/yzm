@@ -1,0 +1,56 @@
+Log file created at: 2017/07/10 18:19:35
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 18:19:35.187330 19065 requestProcessor.cpp:562] liveshow version  0.0.1 already exists
+E0710 18:19:35.187851 19065 config.cpp:12] *** Aborted at 1499681975 (unix time) try "date -d @1499681975" if you are using GNU date ***
+E0710 18:19:35.188679 19065 config.cpp:12] PC: @     0x7f122437e45b (unknown)
+19012‚¼4$
+E0710 18:19:35.188992 19065 config.cpp:12] *** SIGSEGV (@0xfffffffffffffff8) received by PID 19063 (TID 0x7f121e622700) from PID 18446744073709551608; stack trace: ***
+E0710 18:19:35.189858 19065 config.cpp:12]     @     0x7f12258d3330 (unknown)
+$
+E0710 18:19:35.190515 19065 config.cpp:12]     @     0x7f122437e45b (unknown)
+$
+E0710 18:19:35.190642 19065 config.cpp:12]     @           0x410202 CrequestProcessor::gen_error_response()
+b
+E0710 18:19:35.190753 19065 config.cpp:12]     @           0x417e76 CrequestProcessor::dealwith_liveshow_version_add()
+
+E0710 18:19:35.190857 19065 config.cpp:12]     @           0x40dc45 CUpgradeServer::httpCallBack()
+eshow_version_add()
+
+E0710 18:19:35.190999 19065 config.cpp:12]     @           0x42857e HTTPRequestHandler_::handleRequest()
+version_add()
+
+E0710 18:19:35.191705 19065 config.cpp:12]     @     0x7f12252365db (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:19:35.192445 19065 config.cpp:12]     @     0x7f1225251177 (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:19:35.193157 19065 config.cpp:12]     @     0x7f12252617de (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:19:35.194003 19065 config.cpp:12]     @     0x7f12255f1d37 (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:19:35.194846 19065 config.cpp:12]     @     0x7f12255eddb6 (unknown)
+tHandler_::handleRequest()
+version_add()
+
+E0710 18:19:35.195842 19065 config.cpp:12]     @     0x7f12258cb184 start_thread
+ndler_::handleRequest()
+version_add()
+
+E0710 18:19:35.196668 19065 config.cpp:12]     @     0x7f1223de237d (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+
+E0710 18:19:35.197711 19065 config.cpp:12]     @                0x0 (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+

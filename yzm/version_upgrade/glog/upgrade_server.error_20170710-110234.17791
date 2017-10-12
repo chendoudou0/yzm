@@ -1,0 +1,66 @@
+Log file created at: 2017/07/10 11:02:34
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 11:02:34.053093 17791 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 11:02:39.614356 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:02:40.343355 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:02:41.070420 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:02:41.255344 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:02:41.443336 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:02:41.662348 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:02:42.005339 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:25.745795 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:27.230850 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:27.943799 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:28.238744 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:28.420758 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:28.730761 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:29.040822 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:29.302778 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:29.507741 17793 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:04:29.751809 17794 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 11:10:39.736027 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:14:06.996914 17793 sqlapi.cpp:93] mysql lost
+E0710 11:14:06.997005 17793 requestProcessor.cpp:557] insert into db failed
+E0710 11:14:15.445847 17798 sqlapi.cpp:93] mysql lost
+E0710 11:14:15.446015 17798 requestProcessor.cpp:557] insert into db failed
+E0710 11:16:45.585172 17798 sqlapi.cpp:93] mysql lost
+E0710 11:16:45.585232 17798 requestProcessor.cpp:557] insert into db failed
+E0710 11:16:47.446316 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:48.415288 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:49.168215 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:49.820278 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:51.015200 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:51.583190 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:51.791215 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:52.010224 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:52.207160 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:52.404140 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:52.597165 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:52.787192 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:55.440059 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:56.088153 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:56.463194 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:56.699095 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:56.949030 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:57.195063 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:57.381103 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:57.707025 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:57.925992 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:16:58.734331 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:01.128007 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:01.439888 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:02.010942 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:02.200942 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:02.445930 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:02.688928 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:02.818920 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:03.120852 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:03.349884 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:17:03.475858 17798 requestProcessor.cpp:551] liveshow version  0.0.1 already exists
+E0710 11:26:02.512063 17794 sqlapi.cpp:93] mysql lost
+E0710 11:26:02.512305 17794 requestProcessor.cpp:429] mysql  query failed
+E0710 11:29:41.136086 17800 sqlapi.cpp:93] mysql lost
+E0710 11:29:41.136320 17800 requestProcessor.cpp:557] insert into db failed
+E0710 11:30:04.176043 17793 sqlapi.cpp:93] mysql lost
+E0710 11:30:04.176187 17793 requestProcessor.cpp:557] insert into db failed

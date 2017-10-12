@@ -1,0 +1,42 @@
+Log file created at: 2017/07/11 12:13:13
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0711 12:13:13.514580 20435 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:02.109329 20435 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:02.692190 20436 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:02.812223 20435 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:02.949223 20436 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:03.133342 20435 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:03.253298 20436 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:03.385191 20435 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:14:03.499241 20436 requestProcessor.cpp:176]  set value to redis failed 
+E0711 12:15:49.075671 20436 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:15:49.676753 20435 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:15:49.784713 20436 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:15:49.923759 20435 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:15:50.064621 20436 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:15:50.258641 20435 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:15:50.376662 20436 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:15:50.559665 20435 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 12:16:01.872328 20436 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:01.872401 20436 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:03.178025 20435 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:03.178122 20435 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:13.768954 20436 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:13.769050 20436 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:18.306910 20435 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:18.306962 20435 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:32.295475 20436 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:32.295653 20436 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:32.585484 20435 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:32.585552 20435 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:32.767457 20436 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:32.767508 20436 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:33.597468 20435 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:33.597565 20435 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:33.774427 20436 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:33.774518 20436 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:33.931457 20435 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:33.931630 20435 requestProcessor.cpp:427] mysql  query failed
+E0711 12:16:34.166379 20436 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:16:34.166404 20436 requestProcessor.cpp:427] mysql  query failed

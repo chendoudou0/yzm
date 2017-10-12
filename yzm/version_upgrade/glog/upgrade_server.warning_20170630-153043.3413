@@ -1,0 +1,12 @@
+Log file created at: 2017/06/30 15:30:43
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0630 15:30:43.230610  3415 requestProcessor.cpp:185]  set value to redis failed 
+E0630 15:31:07.649947  3416 requestProcessor.cpp:185]  set value to redis failed 
+E0630 15:31:08.636281  3415 requestProcessor.cpp:185]  set value to redis failed 
+E0630 15:31:23.637262  3416 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 15:31:23.637348  3416 requestProcessor.cpp:251]  query live_show version failed
+E0630 15:32:10.593437  3415 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 15:32:10.593513  3415 requestProcessor.cpp:251]  query live_show version failed
+E0630 15:34:03.859159  3416 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 15:34:03.859261  3416 requestProcessor.cpp:251]  query live_show version failed

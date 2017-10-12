@@ -1,0 +1,18 @@
+Log file created at: 2017/07/06 17:59:17
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0706 17:59:17.060487 14934 sqlapi.cpp:98] unknowed mysql error
+E0706 17:59:17.100100 14934 DBOperator.cpp:453] rollback
+E0706 17:59:17.100183 14934 requestProcessor.cpp:552] insert into db failed 
+E0706 18:00:27.430198 14934 sqlapi.cpp:98] unknowed mysql error
+E0706 18:00:27.489608 14934 DBOperator.cpp:453] rollback
+E0706 18:00:27.489745 14934 requestProcessor.cpp:552] insert into db failed 
+E0706 18:00:28.205473 14935 sqlapi.cpp:98] unknowed mysql error
+E0706 18:00:28.244947 14935 DBOperator.cpp:453] rollback
+E0706 18:00:28.245189 14935 requestProcessor.cpp:552] insert into db failed 
+E0706 18:00:28.382299 14934 sqlapi.cpp:98] unknowed mysql error
+E0706 18:00:28.419443 14934 DBOperator.cpp:453] rollback
+E0706 18:00:28.419577 14934 requestProcessor.cpp:552] insert into db failed 
+E0706 18:00:30.282441 14935 sqlapi.cpp:98] unknowed mysql error
+E0706 18:00:30.336755 14935 DBOperator.cpp:453] rollback
+E0706 18:00:30.336931 14935 requestProcessor.cpp:552] insert into db failed 

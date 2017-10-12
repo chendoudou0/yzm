@@ -1,0 +1,160 @@
+Log file created at: 2017/07/11 11:33:57
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 11:33:57.171350 20142 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 11:33:57.171634 20142 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 11:33:57.171691 20142 config.cpp:121] db_para_.user_ : yzm
+I0711 11:33:57.171725 20142 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 11:33:57.171757 20142 config.cpp:143] db_para_.port_ : 3306
+I0711 11:33:57.171788 20142 config.cpp:154] db_para_.overTime_ : 2
+I0711 11:33:57.171867 20142 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 11:33:57.171903 20142 config.cpp:240] redis_para_.port_ : 6379
+I0711 11:33:57.171972 20142 config.cpp:251] redis_para_.overTime_ : 2
+I0711 11:33:57.172083 20142 config.cpp:274] listen_port : 2018
+I0711 11:33:57.210130 20142 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:33:57.238193 20142 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:33:57.274135 20142 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:33:57.294104 20142 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:34:41.570864 20144 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:34:41.570957 20144 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:34:41.571003 20144 requestProcessor.cpp:196] add android version begin
+I0711 11:34:41.581410 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:41.581')
+E0711 11:34:41.590250 20144 sqlapi.cpp:98] unknowed mysql error....
+I0711 11:34:41.597368 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:41.597')
+E0711 11:34:41.604192 20144 sqlapi.cpp:98] unknowed mysql error....
+E0711 11:34:41.604272 20144 requestProcessor.cpp:220] insert into db failed 
+I0711 11:34:41.604317 20144 requestProcessor.cpp:240] add android version end
+I0711 11:34:41.604336 20144 upgradeServer.cpp:219] response buffer length : 44   data :{"err":"3","errmsg":"insert into db failed"}
+I0711 11:34:41.604357 20144 upgradeServer.cpp:220] callback end, cost 33ms
+I0711 11:34:45.867473 20144 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:34:45.867539 20144 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:34:45.867568 20144 requestProcessor.cpp:196] add android version begin
+I0711 11:34:45.880228 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:45.880')
+E0711 11:34:45.891152 20144 sqlapi.cpp:98] unknowed mysql error....
+I0711 11:34:45.898238 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:45.898')
+E0711 11:34:45.905040 20144 sqlapi.cpp:98] unknowed mysql error....
+E0711 11:34:45.905102 20144 requestProcessor.cpp:220] insert into db failed 
+I0711 11:34:45.905270 20144 requestProcessor.cpp:240] add android version end
+I0711 11:34:45.905303 20144 upgradeServer.cpp:219] response buffer length : 44   data :{"err":"3","errmsg":"insert into db failed"}
+I0711 11:34:45.905364 20144 upgradeServer.cpp:220] callback end, cost 37ms
+I0711 11:34:46.653815 20145 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:34:46.653884 20145 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:34:46.654423 20145 requestProcessor.cpp:196] add android version begin
+I0711 11:34:46.672902 20145 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:34:46.681185 20145 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:46.681')
+E0711 11:34:46.688052 20145 sqlapi.cpp:98] unknowed mysql error....
+I0711 11:34:46.708835 20145 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:34:46.716184 20145 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:46.716')
+E0711 11:34:46.723147 20145 sqlapi.cpp:98] unknowed mysql error....
+E0711 11:34:46.723173 20145 requestProcessor.cpp:220] insert into db failed 
+I0711 11:34:46.723191 20145 requestProcessor.cpp:240] add android version end
+I0711 11:34:46.723198 20145 upgradeServer.cpp:219] response buffer length : 44   data :{"err":"3","errmsg":"insert into db failed"}
+I0711 11:34:46.723203 20145 upgradeServer.cpp:220] callback end, cost 68ms
+I0711 11:34:47.710516 20144 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:34:47.710592 20144 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:34:47.710624 20144 requestProcessor.cpp:196] add android version begin
+I0711 11:34:47.736104 20144 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:34:47.746235 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:47.746')
+E0711 11:34:47.754081 20144 sqlapi.cpp:98] unknowed mysql error....
+I0711 11:34:47.782892 20144 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:34:47.795172 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:34:47.795')
+E0711 11:34:47.805037 20144 sqlapi.cpp:98] unknowed mysql error....
+E0711 11:34:47.805132 20144 requestProcessor.cpp:220] insert into db failed 
+I0711 11:34:47.805198 20144 requestProcessor.cpp:240] add android version end
+I0711 11:34:47.805225 20144 upgradeServer.cpp:219] response buffer length : 44   data :{"err":"3","errmsg":"insert into db failed"}
+I0711 11:34:47.805246 20144 upgradeServer.cpp:220] callback end, cost 94ms
+I0711 11:35:11.070209 20145 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:35:11.070338 20145 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:35:11.070456 20145 requestProcessor.cpp:196] add android version begin
+I0711 11:35:11.097277 20145 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:35:11.107563 20145 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:35:11.108')
+E0711 11:35:11.117449 20145 sqlapi.cpp:98] unknowed mysql error....
+I0711 11:35:11.141330 20145 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:35:11.149554 20145 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:35:11.150')
+E0711 11:35:11.157433 20145 sqlapi.cpp:98] unknowed mysql error....
+E0711 11:35:11.157505 20145 requestProcessor.cpp:220] insert into db failed 
+I0711 11:35:11.157551 20145 requestProcessor.cpp:240] add android version end
+I0711 11:35:11.157570 20145 upgradeServer.cpp:219] response buffer length : 44   data :{"err":"3","errmsg":"insert into db failed"}
+I0711 11:35:11.157585 20145 upgradeServer.cpp:220] callback end, cost 87ms
+I0711 11:35:11.955425 20144 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:35:11.955564 20144 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:35:11.955611 20144 requestProcessor.cpp:196] add android version begin
+I0711 11:35:11.982332 20144 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:35:11.991663 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:35:11.992')
+E0711 11:35:12.000546 20144 sqlapi.cpp:98] unknowed mysql error....
+I0711 11:35:12.021319 20144 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:35:12.028857 20144 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:35:12.029')
+E0711 11:35:12.038679 20144 sqlapi.cpp:98] unknowed mysql error....
+E0711 11:35:12.038755 20144 requestProcessor.cpp:220] insert into db failed 
+I0711 11:35:12.038800 20144 requestProcessor.cpp:240] add android version end
+I0711 11:35:12.038818 20144 upgradeServer.cpp:219] response buffer length : 44   data :{"err":"3","errmsg":"insert into db failed"}
+I0711 11:35:12.038836 20144 upgradeServer.cpp:220] callback end, cost 83ms
+I0711 11:35:12.144443 20145 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:35:12.144516 20145 upgradeServer.cpp:181] uri /android/add_version, receive data  {
+	"version_name":"1.0.1333.144", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0711 11:35:12.144557 20145 requestProcessor.cpp:196] add android version begin
+I0711 11:35:12.172255 20145 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:35:12.183543 20145 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:35:12.184')
+E0711 11:35:12.193429 20145 sqlapi.cpp:98] unknowed mysql error....
+I0711 11:35:12.211246 20145 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:35:12.220633 20145 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.1333.144', test','http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.5/2345reader.apk','1111', '100', '2017-07-11 11:35:12.221')
+E0711 11:35:12.226428 20145 sqlapi.cpp:98] unknowed mysql error....
+E0711 11:35:12.226653 20145 requestProcessor.cpp:220] insert into db failed 
+I0711 11:35:12.226727 20145 requestProcessor.cpp:240] add android version end
+I0711 11:35:12.226750 20145 upgradeServer.cpp:219] response buffer length : 44   data :{"err":"3","errmsg":"insert into db failed"}
+I0711 11:35:12.226770 20145 upgradeServer.cpp:220] callback end, cost 82ms

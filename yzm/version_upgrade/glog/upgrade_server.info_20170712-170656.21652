@@ -1,0 +1,32 @@
+Log file created at: 2017/07/12 17:06:56
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0712 17:06:56.014206 21652 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0712 17:06:56.014428 21652 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0712 17:06:56.014468 21652 config.cpp:121] db_para_.user_ : yzm
+I0712 17:06:56.014508 21652 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0712 17:06:56.014534 21652 config.cpp:143] db_para_.port_ : 3306
+I0712 17:06:56.014559 21652 config.cpp:154] db_para_.overTime_ : 2
+I0712 17:06:56.014627 21652 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0712 17:06:56.014658 21652 config.cpp:240] redis_para_.port_ : 6379
+I0712 17:06:56.014680 21652 config.cpp:251] redis_para_.overTime_ : 2
+I0712 17:06:56.014736 21652 config.cpp:274] listen_port : 2018
+I0712 17:06:56.050386 21652 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:06:56.071372 21652 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:06:56.102378 21652 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:06:56.129379 21652 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:10:03.075515 21654 upgradeServer.cpp:180] httpCallBack begin ...
+I0712 17:10:03.075603 21654 upgradeServer.cpp:182] receive data  {"service_type":"2002"}
+I0712 17:10:03.075624 21654 upgradeServer.cpp:183]  data  leng 23
+I0712 17:10:03.075654 21654 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0712 17:10:03.097580 21654 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0712 17:10:03.097636 21654 upgradeServer.cpp:222] response buffer length : 2259   data :{"ret":"0","version_array":[{"file_md5":"d1777ead42b46653c3da22a6ecd9f847","file_size":"126951140","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/1.7.0/app-release-1.6.0-7.apk","version_description":"1.7","version_name":"1.7.0"},{"file_md5":"45013d61a3093ee65ffbe3d4c4339f43","file_size":"9199592","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/1.1.3/15-翠圻.apk","version_description":"1.1.300","version_name":"1.1.3"},{"file_md5":"45013d61a3093ee65ffbe3d4c4339f43","file_size":"9199592","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/1.1.2/15-翠圻.apk","version_description":"1.1.2","version_name":"1.1.2"},{"file_md5":"45013d61a3093ee65ffbe3d4c4339f43","file_size":"9199592","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/1.1.1/15-ç¿ åœ».apk","version_description":"æµ‹è¯•ä¸€ä¸‹","version_name":"1.1.1"},{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.5/2345reader.apk","version_description":"test","version_name":"0.1.6"},{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.5/2345reader.apk","version_description":"test","version_name":"0.1.5"},{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.105/2345reader.apk","version_description":"test","version_name":"0.1.105"},{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.1/2345reader.apk","version_description":"teest","version_name":"0.1.1"},{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.6/2345reader.apk","version_description":"test","version_name":"0.0.6"},{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.0.120/2345reader.apk","version_description":"test","version_name":"0.0.120"}]}
+I0712 17:10:03.097673 21654 upgradeServer.cpp:223] callback end, cost 21ms
+I0712 17:19:39.888162 21654 upgradeServer.cpp:180] httpCallBack begin ...
+I0712 17:19:39.888329 21654 upgradeServer.cpp:182] receive data  GIF89a,�
+I0712 17:19:39.888361 21654 upgradeServer.cpp:183]  data  leng 11
+I0712 17:19:39.888397 21654 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0712 17:20:20.286658 21655 upgradeServer.cpp:180] httpCallBack begin ...
+I0712 17:20:20.286741 21655 upgradeServer.cpp:182] receive data  
+I0712 17:20:20.286830 21655 upgradeServer.cpp:183]  data  leng 0
+I0712 17:20:20.286876 21655 requestProcessor.cpp:453] dealwith_android_verison_query begin

@@ -1,0 +1,144 @@
+Log file created at: 2017/07/10 11:56:38
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 11:56:38.152372 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:56:57.595263 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:56:57.595310 17839 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:30.560425 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:30.560489 17840 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:31.419392 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:31.419445 17839 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:32.019424 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:32.019466 17840 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:32.559548 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:32.559599 17839 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:33.143996 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:33.144125 17840 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:33.703076 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:33.703124 17839 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:34.373471 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:34.373497 17840 requestProcessor.cpp:554] insert into db failed
+E0710 11:59:35.286808 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:39.795745 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:40.527714 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:42.567956 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:43.414695 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:44.041615 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:45.416515 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:47.175536 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:47.678534 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:47.963520 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:48.150530 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:48.311537 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:48.491516 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:48.753492 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:48.950500 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:49.280455 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 11:59:49.592300 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:21.284868 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:22.015918 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:22.319770 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:22.599861 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:22.778761 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:22.952798 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:23.113759 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:23.316788 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:23.575775 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:23.752842 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:23.910805 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:24.081751 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:04:24.370941 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 12:07:35.027110 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:35.027137 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:35.924383 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:35.924399 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:36.169364 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.169423 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:36.320119 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.320227 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:36.605087 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.605145 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:36.847853 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.847913 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:37.016571 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.016630 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:37.269032 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.269086 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:37.539913 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:37.540026 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.540069 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:37.697931 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:37.698019 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.698060 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:37.971894 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:37.972009 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.972048 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:38.229894 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:38.230015 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:38.230031 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:38.480819 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:38.480842 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:38.480852 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:38.724838 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:38.724876 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:38.724895 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:39.033828 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.033875 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.033892 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:39.275874 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.275924 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.275974 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:39.572832 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.572875 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.572896 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:39.843832 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.843888 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.843910 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:40.092859 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.092905 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.092926 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:40.295809 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.295852 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.295872 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:40.493814 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.493840 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.493888 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:40.676861 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.676942 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.676964 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:40.946894 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.946995 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.947037 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:41.144819 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.144896 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.144932 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:41.426856 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.426956 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.426998 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:41.717751 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.717785 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.717800 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:41.995822 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.995911 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.995996 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:42.246801 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:42.246950 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:42.247006 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:42.692803 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:42.692901 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:42.692944 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:42.940805 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:42.940904 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:42.940950 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:43.230787 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:43.230896 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:43.230943 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:43.502815 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:43.502904 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:43.502945 17840 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:43.778755 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:43.778797 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:43.778815 17839 requestProcessor.cpp:554] insert into db failed
+E0710 12:07:44.088745 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:44.088798 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:44.088824 17840 requestProcessor.cpp:554] insert into db failed

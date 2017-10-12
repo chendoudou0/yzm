@@ -1,0 +1,7 @@
+Log file created at: 2017/09/12 10:53:14
+Running on machine: Master
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0912 10:53:14.293437  1270 sqlapi.cpp:45] connect mysql failed!!!!
+E0912 10:53:16.551245  1270 sqlapi.cpp:45] connect mysql failed!!!!
+E0912 10:53:17.545436  1270 sqlapi.cpp:45] connect mysql failed!!!!
+E0912 10:53:19.547540  1270 sqlapi.cpp:45] connect mysql failed!!!!

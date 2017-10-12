@@ -1,0 +1,17 @@
+Log file created at: 2017/07/14 15:51:56
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0714 15:51:56.837306 29139 upgradeServer.cpp:93] GLOG BEGIN TO WORK
+I0714 15:51:56.837546 29139 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0714 15:51:56.837611 29139 config.cpp:121] db_para_.user_ : yzm
+I0714 15:51:56.837640 29139 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0714 15:51:56.837662 29139 config.cpp:143] db_para_.port_ : 3306
+I0714 15:51:56.837719 29139 config.cpp:154] db_para_.overTime_ : 2
+I0714 15:51:56.837815 29139 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0714 15:51:56.837858 29139 config.cpp:240] redis_para_.port_ : 6379
+I0714 15:51:56.837882 29139 config.cpp:251] redis_para_.overTime_ : 2
+I0714 15:51:56.837944 29139 config.cpp:274] listen_port : 2018
+I0714 15:51:56.860981 29139 sqlapi.cpp:52] connect mysql  success!!!!
+I0714 15:51:56.880975 29139 sqlapi.cpp:52] connect mysql  success!!!!
+I0714 15:51:56.898934 29139 sqlapi.cpp:52] connect mysql  success!!!!
+I0714 15:51:56.922941 29139 sqlapi.cpp:52] connect mysql  success!!!!

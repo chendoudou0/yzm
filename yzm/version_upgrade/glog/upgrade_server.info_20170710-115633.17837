@@ -1,0 +1,1411 @@
+Log file created at: 2017/07/10 11:56:33
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 11:56:33.279062 17837 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 11:56:33.279400 17837 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0710 11:56:33.279450 17837 config.cpp:121] db_para_.user_ : yzm
+I0710 11:56:33.279491 17837 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0710 11:56:33.279536 17837 config.cpp:143] db_para_.port_ : 3306
+I0710 11:56:33.279577 17837 config.cpp:154] db_para_.overTime_ : 2
+I0710 11:56:33.279673 17837 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 11:56:33.279717 17837 config.cpp:240] redis_para_.port_ : 6379
+I0710 11:56:33.279767 17837 config.cpp:251] redis_para_.overTime_ : 2
+I0710 11:56:33.279865 17837 config.cpp:274] listen_port : 2018
+I0710 11:56:33.300060 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:33.321087 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:33.349045 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:33.366050 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:33.384059 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:33.404016 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:33.422019 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:33.441021 17837 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 11:56:38.145694 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:56:38.145783 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:56:38.145826 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:56:38.145881 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:56:38.152372 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:56:38.152771 17839 requestProcessor.cpp:576] add android version end
+I0710 11:56:38.152796 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:56:38.152817 17839 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 11:56:57.594974 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:56:57.595080 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:56:57.595124 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:56:57.595180 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:56:57.595263 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:56:57.595310 17839 requestProcessor.cpp:554] insert into db failed
+I0710 11:56:57.595355 17839 requestProcessor.cpp:576] add android version end
+I0710 11:56:57.595373 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:56:57.595391 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:30.559859 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:30.560000 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:30.560190 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:30.560281 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:30.560425 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:30.560489 17840 requestProcessor.cpp:554] insert into db failed
+I0710 11:59:30.560536 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:30.560566 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:59:30.560585 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:31.419028 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:31.419206 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:31.419258 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:31.419315 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:31.419392 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:31.419445 17839 requestProcessor.cpp:554] insert into db failed
+I0710 11:59:31.419494 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:31.419517 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:59:31.419538 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:32.019201 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:32.019286 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:32.019320 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:32.019366 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:32.019424 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:32.019466 17840 requestProcessor.cpp:554] insert into db failed
+I0710 11:59:32.019507 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:32.019526 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:59:32.019543 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:32.559252 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:32.559373 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:32.559422 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:32.559476 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:32.559548 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:32.559599 17839 requestProcessor.cpp:554] insert into db failed
+I0710 11:59:32.559649 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:32.559671 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:59:32.559774 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:33.143762 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:33.143890 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:33.143911 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:33.143947 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:33.143996 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:33.144125 17840 requestProcessor.cpp:554] insert into db failed
+I0710 11:59:33.144176 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:33.144188 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:59:33.144198 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:33.702793 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:33.702913 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:33.702957 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:33.703009 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:33.703076 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:33.703124 17839 requestProcessor.cpp:554] insert into db failed
+I0710 11:59:33.703169 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:33.703189 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:59:33.703217 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:34.373277 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:34.373378 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:34.373404 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:34.373430 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:34.373471 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 11:59:34.373497 17840 requestProcessor.cpp:554] insert into db failed
+I0710 11:59:34.373522 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:34.373533 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 11:59:34.373543 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 11:59:34.967150 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:34.967198 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:34.967242 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:34.967264 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:35.278664 17839 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:35.286808 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:35.287060 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:35.287117 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:35.287143 17839 upgradeServer.cpp:220] callback end, cost 319ms
+I0710 11:59:39.506824 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:39.506952 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:39.506994 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:39.507043 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:39.782574 17840 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:39.795745 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:39.795866 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:39.795897 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:39.795920 17840 upgradeServer.cpp:220] callback end, cost 288ms
+I0710 11:59:40.492641 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:40.492754 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:40.492776 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:40.492795 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:40.519611 17839 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:40.527714 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:40.527778 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:40.527794 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:40.527807 17839 upgradeServer.cpp:220] callback end, cost 35ms
+I0710 11:59:41.134294 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:41.134485 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:41.134529 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:41.134578 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:42.558609 17840 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:42.567956 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:42.568075 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:42.568109 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:42.568208 17840 upgradeServer.cpp:220] callback end, cost 1433ms
+I0710 11:59:43.367283 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:43.367497 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:43.367588 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:43.367686 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:43.404479 17839 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:43.414695 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:43.414815 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:43.414845 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:43.414867 17839 upgradeServer.cpp:220] callback end, cost 47ms
+I0710 11:59:43.983866 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:43.983981 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:43.984030 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:43.984083 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:44.024442 17840 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:44.041615 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:44.041725 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:44.041754 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:44.041775 17840 upgradeServer.cpp:220] callback end, cost 57ms
+I0710 11:59:44.376153 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:44.376277 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:44.376322 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:44.376363 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:45.408486 17839 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:45.416515 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:45.416568 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:45.416579 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:45.416589 17839 upgradeServer.cpp:220] callback end, cost 1040ms
+I0710 11:59:47.148957 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:47.149128 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:47.149179 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:47.149312 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+I0710 11:59:47.169375 17840 sqlapi.cpp:52] connect mysql  success!!!!
+E0710 11:59:47.175536 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:47.175719 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:47.175753 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:47.175775 17840 upgradeServer.cpp:220] callback end, cost 26ms
+I0710 11:59:47.460541 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:47.460616 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:47.460650 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:47.460693 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:47.678534 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:47.678635 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:47.678661 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:47.678689 17839 upgradeServer.cpp:220] callback end, cost 218ms
+I0710 11:59:47.951182 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:47.951297 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:47.951318 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:47.951337 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:47.963520 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:47.963554 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:47.963563 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:47.963569 17840 upgradeServer.cpp:220] callback end, cost 12ms
+I0710 11:59:48.141728 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:48.141856 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:48.141902 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:48.141957 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:48.150530 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:48.150629 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:48.150655 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:48.150682 17839 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 11:59:48.304837 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:48.304908 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:48.305012 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:48.305063 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:48.311537 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:48.311749 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:48.311794 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:48.311813 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 11:59:48.484289 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:48.484519 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:48.484581 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:48.484633 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:48.491516 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:48.491614 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:48.491641 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:48.491668 17839 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 11:59:48.747579 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:48.747679 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:48.747714 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:48.747756 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:48.753492 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:48.753551 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:48.753566 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:48.753577 17840 upgradeServer.cpp:220] callback end, cost 5ms
+I0710 11:59:48.941722 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:48.941807 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:48.941848 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:48.941901 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:48.950500 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:48.950597 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:48.950623 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:48.950753 17839 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 11:59:49.275014 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:49.275120 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:49.275174 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:49.275219 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:49.280455 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:49.280515 17840 requestProcessor.cpp:576] add android version end
+I0710 11:59:49.280530 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:49.280540 17840 upgradeServer.cpp:220] callback end, cost 5ms
+I0710 11:59:49.584015 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 11:59:49.584094 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 11:59:49.584116 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 11:59:49.584141 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 11:59:49.592300 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 11:59:49.592350 17839 requestProcessor.cpp:576] add android version end
+I0710 11:59:49.592361 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 11:59:49.592370 17839 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 12:04:21.278193 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:21.278348 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:21.278395 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:21.278447 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:21.284868 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:21.284970 17840 requestProcessor.cpp:576] add android version end
+I0710 12:04:21.284997 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:21.285028 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:04:22.007576 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:22.007743 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:22.007794 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:22.007853 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:22.015918 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:22.016090 17839 requestProcessor.cpp:576] add android version end
+I0710 12:04:22.016129 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:22.016178 17839 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 12:04:22.313594 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:22.313700 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:22.313735 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:22.313772 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:22.319770 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:22.319974 17840 requestProcessor.cpp:576] add android version end
+I0710 12:04:22.320005 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:22.320021 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:04:22.592108 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:22.592330 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:22.592391 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:22.592443 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:22.599861 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:22.599973 17839 requestProcessor.cpp:576] add android version end
+I0710 12:04:22.600006 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:22.600034 17839 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 12:04:22.771805 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:22.771844 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:22.771872 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:22.771901 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:22.778761 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:22.778818 17840 requestProcessor.cpp:576] add android version end
+I0710 12:04:22.778833 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:22.778846 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:04:22.944380 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:22.944404 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:22.944444 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:22.944461 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:22.952798 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:22.952831 17839 requestProcessor.cpp:576] add android version end
+I0710 12:04:22.952838 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:22.952843 17839 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 12:04:23.106408 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:23.106509 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:23.106525 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:23.106541 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:23.113759 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:23.113783 17840 requestProcessor.cpp:576] add android version end
+I0710 12:04:23.113790 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:23.113795 17840 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 12:04:23.309994 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:23.310014 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:23.310022 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:23.310034 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:23.316788 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:23.316812 17839 requestProcessor.cpp:576] add android version end
+I0710 12:04:23.316819 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:23.316824 17839 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:04:23.569074 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:23.569130 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:23.569155 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:23.569180 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:23.575775 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:23.575820 17840 requestProcessor.cpp:576] add android version end
+I0710 12:04:23.575834 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:23.575842 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:04:23.743476 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:23.743603 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:23.743657 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:23.743675 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:23.752842 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:23.752959 17839 requestProcessor.cpp:576] add android version end
+I0710 12:04:23.752971 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:23.752982 17839 upgradeServer.cpp:220] callback end, cost 9ms
+I0710 12:04:23.903995 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:23.904146 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:23.904197 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:23.904255 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:23.910805 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:23.910917 17840 requestProcessor.cpp:576] add android version end
+I0710 12:04:23.910948 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:23.910970 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:04:24.075099 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:24.075145 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:24.075173 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:24.075203 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:24.081751 17839 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:24.081799 17839 requestProcessor.cpp:576] add android version end
+I0710 12:04:24.081812 17839 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:24.081822 17839 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:04:24.363060 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:04:24.363214 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:04:24.363257 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:04:24.363306 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:04:24.370941 17840 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+I0710 12:04:24.371104 17840 requestProcessor.cpp:576] add android version end
+I0710 12:04:24.371130 17840 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 12:04:24.371186 17840 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 12:07:35.026932 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:35.027034 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:35.027057 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:35.027078 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:35.027110 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:35.027137 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:35.027156 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:35.027164 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:35.027206 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:35.924195 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:35.924324 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:35.924341 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:35.924357 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:35.924383 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:35.924399 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:35.924413 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:35.924419 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:35.924424 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:36.169001 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:36.169164 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:36.169214 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:36.169282 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:36.169364 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.169423 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:36.169478 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:36.169502 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:36.169534 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:36.319741 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:36.319828 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:36.319869 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:36.320031 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:36.320119 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.320227 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:36.320325 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:36.320436 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:36.320497 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:36.604739 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:36.604904 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:36.604953 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:36.605010 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:36.605087 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.605145 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:36.605201 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:36.605224 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:36.605257 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:36.847580 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:36.847676 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:36.847718 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:36.847777 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:36.847853 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:36.847913 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:36.848017 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:36.848045 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:36.848067 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:37.016233 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:37.016392 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:37.016440 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:37.016495 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:37.016571 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.016630 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:37.016685 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:37.016713 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:37.016741 17839 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:37.268770 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:37.268888 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:37.268932 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:37.268970 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:37.269032 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.269086 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:37.269124 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:37.269140 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:37.269153 17840 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 12:07:37.533375 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:37.533540 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:37.533591 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:37.533648 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:37.539913 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:37.540026 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.540069 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:37.540122 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:37.540143 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:37.540163 17839 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:07:37.690810 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:37.690881 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:37.690917 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:37.690964 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:37.697931 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:37.698019 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.698060 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:37.698110 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:37.698132 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:37.698150 17840 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 12:07:37.962442 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:37.962559 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:37.962594 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:37.962635 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:37.971894 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:37.972009 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:37.972048 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:37.972079 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:37.972091 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:37.972103 17839 upgradeServer.cpp:220] callback end, cost 9ms
+I0710 12:07:38.221161 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:38.221276 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:38.221302 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:38.221330 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:38.229894 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:38.230015 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:38.230031 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:38.230047 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:38.230054 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:38.230060 17840 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 12:07:38.473449 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:38.473564 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:38.473589 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:38.473616 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:38.480819 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:38.480842 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:38.480852 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:38.480865 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:38.480871 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:38.480876 17839 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 12:07:38.714704 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:38.714848 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:38.714879 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:38.714902 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:38.724838 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:38.724876 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:38.724895 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:38.724917 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:38.724926 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:38.724968 17840 upgradeServer.cpp:220] callback end, cost 10ms
+I0710 12:07:39.025414 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:39.025491 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:39.025511 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:39.025532 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:39.033828 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.033875 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.033892 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:39.033912 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:39.033921 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:39.033927 17839 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 12:07:39.259719 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:39.259783 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:39.259804 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:39.259829 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:39.275874 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.275924 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.275974 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:39.275990 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:39.275995 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:39.276000 17840 upgradeServer.cpp:220] callback end, cost 16ms
+I0710 12:07:39.562727 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:39.562836 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:39.562858 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:39.562882 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:39.572832 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.572875 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.572896 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:39.572919 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:39.572929 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:39.572938 17839 upgradeServer.cpp:220] callback end, cost 10ms
+I0710 12:07:39.833858 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:39.833969 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:39.834030 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:39.834070 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:39.843832 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:39.843888 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:39.843910 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:39.843955 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:39.843969 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:39.843979 17840 upgradeServer.cpp:220] callback end, cost 9ms
+I0710 12:07:40.082159 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:40.082271 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:40.082656 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:40.082692 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:40.092859 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.092905 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.092926 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:40.092952 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:40.092962 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:40.092972 17839 upgradeServer.cpp:220] callback end, cost 10ms
+I0710 12:07:40.284577 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:40.284698 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:40.284715 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:40.284732 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:40.295809 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.295852 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.295872 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:40.295897 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:40.295907 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:40.295917 17840 upgradeServer.cpp:220] callback end, cost 11ms
+I0710 12:07:40.486578 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:40.486639 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:40.486649 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:40.486665 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:40.493814 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.493840 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.493888 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:40.493906 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:40.493918 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:40.493924 17839 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 12:07:40.667524 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:40.667649 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:40.667676 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:40.667706 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:40.676861 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.676942 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.676964 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:40.677023 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:40.677037 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:40.677047 17840 upgradeServer.cpp:220] callback end, cost 9ms
+I0710 12:07:40.937832 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:40.937947 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:40.937989 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:40.938038 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:40.946894 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:40.946995 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:40.947037 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:40.947088 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:40.947109 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:40.947129 17839 upgradeServer.cpp:220] callback end, cost 9ms
+I0710 12:07:41.138183 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:41.138252 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:41.138286 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:41.138329 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:41.144819 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.144896 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.144932 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:41.144978 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:41.144997 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:41.145015 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:07:41.420114 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:41.420300 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:41.420363 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:41.420413 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:41.426856 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.426956 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.426998 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:41.427044 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:41.427064 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:41.427083 17839 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:07:41.708273 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:41.708410 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:41.708433 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:41.708454 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:41.717751 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.717785 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.717800 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:41.717820 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:41.717828 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:41.717835 17840 upgradeServer.cpp:220] callback end, cost 9ms
+I0710 12:07:41.984130 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:41.984215 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:41.984251 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:41.984299 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:41.995822 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:41.995911 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:41.995996 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:41.996047 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:41.996065 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:41.996083 17839 upgradeServer.cpp:220] callback end, cost 11ms
+I0710 12:07:42.238298 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:42.238459 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:42.238508 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:42.238632 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:42.246801 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:42.246950 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:42.247006 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:42.247064 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:42.247089 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:42.247112 17840 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 12:07:42.686049 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:42.686259 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:42.686328 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:42.686385 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:42.692803 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:42.692901 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:42.692944 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:42.692993 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:42.693014 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:42.693035 17839 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:07:42.934659 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:42.934753 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:42.934794 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:42.934849 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:42.940805 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:42.940904 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:42.940950 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:42.941007 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:42.941030 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:42.941052 17840 upgradeServer.cpp:220] callback end, cost 6ms
+I0710 12:07:43.222124 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:43.222302 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:43.222335 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:43.222371 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:43.230787 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:43.230896 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:43.230943 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:43.230999 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:43.231091 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:43.231123 17839 upgradeServer.cpp:220] callback end, cost 8ms
+I0710 12:07:43.495519 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:43.495735 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:43.495790 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:43.495848 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:43.502815 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:43.502904 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:43.502945 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:43.502996 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:43.503016 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:43.503036 17840 upgradeServer.cpp:220] callback end, cost 7ms
+I0710 12:07:43.769062 17839 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:43.769188 17839 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:43.769214 17839 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:43.769235 17839 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:43.778755 17839 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:43.778797 17839 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:43.778815 17839 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:43.778836 17839 requestProcessor.cpp:576] add android version end
+I0710 12:07:43.778846 17839 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:43.778854 17839 upgradeServer.cpp:220] callback end, cost 9ms
+I0710 12:07:44.084244 17840 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:07:44.084324 17840 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"请问热情为"
+	
+}
+ 
+I0710 12:07:44.084352 17840 requestProcessor.cpp:530] add liveshow version begin
+I0710 12:07:44.084383 17840 DBOperator.cpp:419] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 12:07:44.088745 17840 sqlapi.cpp:45] connect mysql failed!!!!
+E0710 12:07:44.088798 17840 sqlapi.cpp:93] mysql lost or go away
+E0710 12:07:44.088824 17840 requestProcessor.cpp:554] insert into db failed
+I0710 12:07:44.088855 17840 requestProcessor.cpp:576] add android version end
+I0710 12:07:44.088867 17840 upgradeServer.cpp:219] response buffer length : 44   data :{"ret":"3","errmsg":"insert into db failed"}
+I0710 12:07:44.088879 17840 upgradeServer.cpp:220] callback end, cost 4ms

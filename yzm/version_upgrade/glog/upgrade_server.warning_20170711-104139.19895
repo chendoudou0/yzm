@@ -1,0 +1,22 @@
+Log file created at: 2017/07/11 10:41:39
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0711 10:41:39.920222 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:42.093899 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:43.852165 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:44.307216 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:44.461766 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:44.663275 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:44.789304 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:44.963143 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:45.079006 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:45.229048 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:45.430598 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:46.013434 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:46.117465 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:46.295022 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:46.446564 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:46.617133 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:46.717028 19897 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:46.894325 19898 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 10:41:47.021904 19897 sqlapi.cpp:273] mysql_num_rows is  0

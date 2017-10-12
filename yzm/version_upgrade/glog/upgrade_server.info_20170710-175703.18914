@@ -1,0 +1,99 @@
+Log file created at: 2017/07/10 17:57:03
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 17:57:03.871326 18914 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 17:57:03.871393 18914 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 17:57:03.871404 18914 config.cpp:121] db_para_.user_ : yzm
+I0710 17:57:03.871415 18914 config.cpp:132] db_para_.pass_ : 123456
+I0710 17:57:03.871423 18914 config.cpp:143] db_para_.port_ : 3306
+I0710 17:57:03.871430 18914 config.cpp:154] db_para_.overTime_ : 2
+I0710 17:57:03.871449 18914 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 17:57:03.871457 18914 config.cpp:240] redis_para_.port_ : 6379
+I0710 17:57:03.871464 18914 config.cpp:251] redis_para_.overTime_ : 2
+I0710 17:57:03.871480 18914 config.cpp:274] listen_port : 2018
+I0710 17:57:03.872674 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:03.872951 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:03.873162 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:03.873363 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:03.873564 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:03.873685 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:03.873808 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:03.873917 18914 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 17:57:15.835661 18916 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:15.835737 18916 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:15.835768 18916 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:15.836505 18916 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:15.836566 18916 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:15.836591 18916 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:17.175310 18916 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:17.175391 18916 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:17.175418 18916 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:17.176103 18916 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:17.176157 18916 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:17.176177 18916 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:17.352933 18917 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:17.352987 18917 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:17.353003 18917 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:17.353488 18917 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:17.353525 18917 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:17.353538 18917 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:17.830416 18916 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:17.830499 18916 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:17.830526 18916 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:17.831379 18916 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:17.831446 18916 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:17.831468 18916 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:18.004276 18917 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:18.004338 18917 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:18.004356 18917 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:18.004940 18917 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:18.005122 18917 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:18.005154 18917 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:18.299618 18916 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:18.299752 18916 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:18.299789 18916 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:18.300402 18916 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:18.300542 18916 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:18.300576 18916 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:18.477175 18917 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:18.477232 18917 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:18.477249 18917 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:18.477710 18917 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:18.477749 18917 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:18.477763 18917 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:18.745554 18916 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:18.745649 18916 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:18.745682 18916 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:18.746465 18916 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:18.746542 18916 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:18.746569 18916 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:18.914299 18917 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:18.914367 18917 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:18.914387 18917 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:18.914901 18917 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:18.914947 18917 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:18.914963 18917 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:19.084292 18916 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:19.084394 18916 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:19.084426 18916 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:19.085064 18916 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:19.085125 18916 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:19.085146 18916 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:19.801728 18917 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:19.801842 18917 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:19.801874 18917 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:19.802340 18917 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:19.802397 18917 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:19.802417 18917 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:20.232635 18916 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:20.232755 18916 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:20.232790 18916 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:20.233472 18916 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:20.233541 18916 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:20.233564 18916 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 17:57:21.033367 18917 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 17:57:21.033538 18917 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 17:57:21.033594 18917 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 17:57:21.034195 18917 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 17:57:21.034277 18917 upgradeServer.cpp:219] response buffer length : 32   data :{"ret":"v","version_array":null}
+I0710 17:57:21.034303 18917 upgradeServer.cpp:220] callback end, cost 0ms

@@ -1,0 +1,30 @@
+Log file created at: 2017/07/01 15:35:42
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0701 15:35:42.793072  5226 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0701 15:35:42.793262  5226 config.cpp:109] db_para_.host_ : 120.24.249.45
+I0701 15:35:42.793298  5226 config.cpp:120] db_para_.user_ : yzm
+I0701 15:35:42.793323  5226 config.cpp:131] db_para_.pass_ : Yzm@55*#jkl
+I0701 15:35:42.793345  5226 config.cpp:142] db_para_.port_ : 3306
+I0701 15:35:42.793365  5226 config.cpp:153] db_para_.overTime_ : 2
+I0701 15:35:42.793422  5226 config.cpp:228] redis_para.ip_ : 127.0.0.1
+I0701 15:35:42.793463  5226 config.cpp:239] redis_para_.port_ : 6379
+I0701 15:35:42.793505  5226 config.cpp:250] redis_para_.overTime_ : 2
+I0701 15:35:42.813505  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:35:42.831336  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:35:43.846518  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:35:43.868506  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:35:43.898910  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:35:43.933509  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:35:43.951496  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:35:43.971501  5226 sqlapi.cpp:52] connect mysql  success!!!!
+I0701 15:38:33.922693  5228 upgradeServer.cpp:148] httpCallBack begin ...
+I0701 15:38:33.922780  5228 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0701 15:38:33.922813  5228 requestProcessor.cpp:140] dealwith_liveShow_version_update begin
+I0701 15:38:33.923007  5228 requestProcessor.cpp:162]  get_value_from_redis fialed 
+I0701 15:38:33.923040  5228 requestProcessor.cpp:78] find_differ_files begin...
+I0701 15:38:33.973929  5228 requestProcessor.cpp:133] find_differ_files end
+E0701 15:38:34.187914  5228 requestProcessor.cpp:178]  set value to redis failed 
+I0701 15:38:34.188328  5228 requestProcessor.cpp:192] dealwith_liveShow_version_update end
+I0701 15:38:34.188393  5228 upgradeServer.cpp:188] response buffer length : 1365
+I0701 15:38:34.188429  5228 upgradeServer.cpp:189] callback end, cost 265ms

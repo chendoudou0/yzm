@@ -1,0 +1,211 @@
+Log file created at: 2017/07/05 11:24:24
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0705 11:24:24.088692 13946 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0705 11:24:24.088804 13946 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0705 11:24:24.088824 13946 config.cpp:121] db_para_.user_ : yzm
+I0705 11:24:24.088842 13946 config.cpp:132] db_para_.pass_ : 123456
+I0705 11:24:24.088856 13946 config.cpp:143] db_para_.port_ : 3306
+I0705 11:24:24.088870 13946 config.cpp:154] db_para_.overTime_ : 2
+I0705 11:24:24.088901 13946 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0705 11:24:24.088915 13946 config.cpp:240] redis_para_.port_ : 6379
+I0705 11:24:24.088927 13946 config.cpp:251] redis_para_.overTime_ : 2
+I0705 11:24:24.088955 13946 config.cpp:274] listen_port : 2018
+I0705 11:24:24.090847 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:24:24.091167 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:24:24.091493 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:24:24.091827 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:24:24.092435 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:24:24.093052 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:24:24.093621 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:24:24.094151 13946 sqlapi.cpp:52] connect mysql  success!!!!
+I0705 11:25:46.271178 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:46.271260 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:46.271287 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:46.271734 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:46.272066 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:46.272112 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:46.272130 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:46.272145 13948 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:47.796181 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:47.796265 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:47.796293 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:47.796897 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:47.796985 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:47.797044 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:47.797067 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:47.797086 13948 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:48.916061 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:48.916142 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:48.916167 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:48.916769 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:48.916851 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:48.916909 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:48.916932 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:48.916950 13949 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:50.121294 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:50.121376 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:50.121403 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:50.122010 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.122098 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:50.122148 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:50.122316 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:50.122370 13948 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:50.323400 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:50.323511 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:50.323534 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:50.323863 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.323918 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:50.323968 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:50.323990 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:50.324008 13949 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:50.449787 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:50.449859 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:50.449878 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:50.450237 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.450394 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:50.450434 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:50.450448 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:50.450458 13948 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:50.607849 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:50.608001 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:50.608060 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:50.608633 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.608772 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:50.608834 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:50.608861 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:50.608882 13949 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:50.748734 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:50.748824 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:50.748855 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+E0705 11:25:50.749399 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.749557 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:50.749615 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:50.749640 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:50.749660 13948 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:25:50.882792 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:25:50.882870 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:25:50.882891 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:25:50.883548 13949 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:25:50.883906 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.883999 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:25:50.884044 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:25:50.884064 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:25:50.884100 13949 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:08.518160 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:08.518312 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:08.518353 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:08.519181 13948 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:08.519745 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:08.519841 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:08.519906 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:08.520002 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:08.520040 13948 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:09.842700 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:09.842905 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:09.842952 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:09.843785 13949 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:09.844485 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:09.844583 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:09.844650 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:09.844679 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:09.844700 13949 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:10.045195 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:10.045287 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:10.045317 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:10.045907 13948 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:10.046296 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.046355 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:10.046401 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:10.046422 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:10.046437 13948 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:10.203383 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:10.203435 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:10.203464 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:10.204049 13949 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:10.204701 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.204818 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:10.204905 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:10.204955 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:10.204991 13949 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:10.860321 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:10.860507 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:10.860566 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:10.861456 13948 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:10.862011 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.862118 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:10.862202 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:10.862252 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:10.862292 13948 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:10.993460 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:10.993538 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:10.993563 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:10.994220 13949 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:10.994622 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.994700 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:10.994763 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:10.994801 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:10.994829 13949 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:11.129344 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:11.129417 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:11.129446 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:11.129956 13948 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:11.130358 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.130466 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:11.130515 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:11.130542 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:11.130584 13948 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:11.344700 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:11.344792 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:11.344821 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:11.345223 13949 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:11.345492 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.345544 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:11.345580 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:11.345600 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:11.345624 13949 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:26:11.485738 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:11.485770 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:11.485780 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:11.486114 13948 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:11.486323 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.486356 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:11.486373 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:11.486380 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:11.486387 13948 upgradeServer.cpp:210] callback end, cost 0ms
+I0705 11:26:11.903049 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:11.903223 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:11.903264 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:11.904167 13949 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:11.904644 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.904739 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:11.904816 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:11.904856 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:11.904889 13949 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:12.063768 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:12.063848 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:12.063879 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:12.064695 13948 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:12.065186 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:12.065274 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:12.065330 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:12.065356 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:12.065377 13948 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:12.220533 13949 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:12.220623 13949 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:12.220669 13949 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:12.221501 13949 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:12.222059 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:12.222144 13949 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:12.222196 13949 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:12.222219 13949 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:12.222297 13949 upgradeServer.cpp:210] callback end, cost 1ms
+I0705 11:26:12.422111 13948 upgradeServer.cpp:175] httpCallBack begin ...
+I0705 11:26:12.422252 13948 upgradeServer.cpp:176] uri /live_show/query, receive data  {"service_type":"2003"}
+I0705 11:26:12.422289 13948 requestProcessor.cpp:348] dealwith_livershow_verison_query begin
+I0705 11:26:12.422961 13948 sqlapi.cpp:52] connect mysql  success!!!!
+E0705 11:26:12.423445 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:12.423522 13948 requestProcessor.cpp:357] no live_show version exist 
+I0705 11:26:12.423570 13948 requestProcessor.cpp:380] dealwith_livershow_verison_query end
+I0705 11:26:12.423593 13948 upgradeServer.cpp:209] response buffer length : 49
+I0705 11:26:12.423612 13948 upgradeServer.cpp:210] callback end, cost 1ms

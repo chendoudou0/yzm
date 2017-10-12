@@ -1,0 +1,59 @@
+Log file created at: 2017/07/10 12:27:56
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 12:27:56.596756 17893 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 12:27:56.596984 17893 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 12:27:56.597012 17893 config.cpp:121] db_para_.user_ : yzm
+I0710 12:27:56.597028 17893 config.cpp:132] db_para_.pass_ : 123456
+I0710 12:27:56.597043 17893 config.cpp:143] db_para_.port_ : 3306
+I0710 12:27:56.597056 17893 config.cpp:154] db_para_.overTime_ : 2
+I0710 12:27:56.597111 17893 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 12:27:56.597128 17893 config.cpp:240] redis_para_.port_ : 6379
+I0710 12:27:56.597142 17893 config.cpp:251] redis_para_.overTime_ : 2
+I0710 12:27:56.597190 17893 config.cpp:274] listen_port : 2018
+I0710 12:27:56.601436 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:27:56.602118 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:27:56.602725 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:27:56.603281 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:27:56.603778 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:27:56.604290 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:27:56.604883 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:27:56.605439 17893 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 12:28:03.345707 17895 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 12:28:03.345746 17895 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 12:28:03.345757 17895 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 12:28:03.346000 17895 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 12:28:03.346017 17895 upgradeServer.cpp:219] response buffer length : 270   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1?????1????????2???????","version_name":"1.0.1"}]}
+I0710 12:28:03.346024 17895 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 14:34:34.067278 17895 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:34.067373 17895 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:34.067401 17895 requestProcessor.cpp:457] dealwith_android_verison_query begin
+E0710 14:34:34.067519 17895 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:34.068071 17895 requestProcessor.cpp:465] mysql query failed
+I0710 14:34:34.068111 17895 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:34.068130 17895 upgradeServer.cpp:219] response buffer length : 46   data :{"ret":"\u0001","errmsg":"mysql query failed"}
+I0710 14:34:34.068147 17895 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 14:34:35.300972 17896 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:35.301060 17896 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:35.301087 17896 requestProcessor.cpp:457] dealwith_android_verison_query begin
+E0710 14:34:35.301184 17896 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:35.301259 17896 requestProcessor.cpp:465] mysql query failed
+I0710 14:34:35.301290 17896 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:35.301307 17896 upgradeServer.cpp:219] response buffer length : 46   data :{"ret":"\u0001","errmsg":"mysql query failed"}
+I0710 14:34:35.301326 17896 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 14:34:35.902973 17895 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:35.903040 17895 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:35.903061 17895 requestProcessor.cpp:457] dealwith_android_verison_query begin
+E0710 14:34:35.903164 17895 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:35.903378 17895 requestProcessor.cpp:465] mysql query failed
+I0710 14:34:35.903432 17895 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:35.903477 17895 upgradeServer.cpp:219] response buffer length : 46   data :{"ret":"\u0001","errmsg":"mysql query failed"}
+I0710 14:34:35.903514 17895 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 14:34:36.055755 17896 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:34:36.055858 17896 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:34:36.055892 17896 requestProcessor.cpp:457] dealwith_android_verison_query begin
+E0710 14:34:36.056030 17896 sqlapi.cpp:93] mysql lost or go away
+E0710 14:34:36.056203 17896 requestProcessor.cpp:465] mysql query failed
+I0710 14:34:36.056258 17896 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:34:36.056279 17896 upgradeServer.cpp:219] response buffer length : 46   data :{"ret":"\u0001","errmsg":"mysql query failed"}
+I0710 14:34:36.056300 17896 upgradeServer.cpp:220] callback end, cost 0ms

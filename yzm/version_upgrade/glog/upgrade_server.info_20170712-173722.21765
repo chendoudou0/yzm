@@ -1,0 +1,26 @@
+Log file created at: 2017/07/12 17:37:22
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0712 17:37:22.078014 21765 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0712 17:37:22.078236 21765 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0712 17:37:22.078276 21765 config.cpp:121] db_para_.user_ : yzm
+I0712 17:37:22.078300 21765 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0712 17:37:22.078332 21765 config.cpp:143] db_para_.port_ : 3306
+I0712 17:37:22.078357 21765 config.cpp:154] db_para_.overTime_ : 2
+I0712 17:37:22.078421 21765 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0712 17:37:22.078451 21765 config.cpp:240] redis_para_.port_ : 6379
+I0712 17:37:22.078477 21765 config.cpp:251] redis_para_.overTime_ : 2
+I0712 17:37:22.078531 21765 config.cpp:274] listen_port : 2018
+I0712 17:37:22.108685 21765 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:37:22.138648 21765 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:37:22.165663 21765 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:37:22.187619 21765 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 17:37:26.521700 21767 HttpTool.cpp:136] LENGTH : -1
+I0712 17:37:26.521749 21767 upgradeServer.cpp:180] httpCallBack begin ...
+I0712 17:37:26.521765 21767 upgradeServer.cpp:182] receive data  GIF89a,÷
+I0712 17:37:26.521775 21767 upgradeServer.cpp:183]  data  length 11
+I0712 17:37:26.521791 21767 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+E0712 17:37:26.521802 21767 requestProcessor.cpp:255] parse json failed
+I0712 17:37:26.521991 21767 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0712 17:37:26.522006 21767 upgradeServer.cpp:222] response buffer length : 34   data :{"ret":"","errmsg":"invalid json"}
+I0712 17:37:26.522014 21767 upgradeServer.cpp:223] callback end, cost 0ms

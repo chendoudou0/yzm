@@ -1,0 +1,516 @@
+Log file created at: 2017/07/14 15:39:33
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0714 15:39:33.177729 29121 upgradeServer.cpp:93] GLOG BEGIN TO WORK
+I0714 15:39:33.177932 29121 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0714 15:39:33.177968 29121 config.cpp:121] db_para_.user_ : yzm
+I0714 15:39:33.177994 29121 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0714 15:39:33.178015 29121 config.cpp:143] db_para_.port_ : 3306
+I0714 15:39:33.178040 29121 config.cpp:154] db_para_.overTime_ : 2
+I0714 15:39:33.178099 29121 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0714 15:39:33.178138 29121 config.cpp:240] redis_para_.port_ : 6379
+I0714 15:39:33.178176 29121 config.cpp:251] redis_para_.overTime_ : 2
+I0714 15:39:33.178274 29121 config.cpp:274] listen_port : 2018
+I0714 15:39:33.213572 29121 sqlapi.cpp:52] connect mysql  success!!!!
+I0714 15:39:33.239564 29121 sqlapi.cpp:52] connect mysql  success!!!!
+I0714 15:39:33.262552 29121 sqlapi.cpp:52] connect mysql  success!!!!
+I0714 15:39:33.294586 29121 sqlapi.cpp:52] connect mysql  success!!!!
+I0714 15:39:36.847698 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:39:36.847784 29123 upgradeServer.cpp:183] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0714 15:39:36.847831 29123 requestProcessor.cpp:503] add liveshow version begin
+I0714 15:39:36.847903 29123 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1444' 
+I0714 15:39:36.869474 29123 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '1.0.0.1444', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','test', '2017-07-14 15:39:36.869')
+I0714 15:39:36.879457 29123 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1444','def.h','3bdc1308fd4fb3511cce0f0ac41c3a2b','2017-07-14 15:39:36.879')
+I0714 15:39:36.890450 29123 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1444','D3Dcompiler_47.dll','3bdc1308fd4fb3511cce0f0ac41c3a2b','2017-07-14 15:39:36.890')
+I0714 15:39:36.920472 29123 requestProcessor.cpp:547] add android version end
+I0714 15:39:36.920537 29123 upgradeServer.cpp:222] response buffer length : 30   data :{"ret":"0","errmsg":"success"}
+I0714 15:39:36.920564 29123 upgradeServer.cpp:223] callback end, cost 72ms
+I0714 15:39:38.405620 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:39:38.405730 29123 upgradeServer.cpp:183] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0714 15:39:38.406424 29123 requestProcessor.cpp:503] add liveshow version begin
+I0714 15:39:38.406513 29123 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1444' 
+E0714 15:39:38.415606 29123 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+I0714 15:39:38.416103 29123 requestProcessor.cpp:547] add android version end
+I0714 15:39:38.416131 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:39:38.416151 29123 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:39:39.711314 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:39:39.711452 29124 upgradeServer.cpp:183] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0714 15:39:39.711477 29124 requestProcessor.cpp:503] add liveshow version begin
+I0714 15:39:39.711495 29124 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1444' 
+E0714 15:39:39.718479 29124 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+I0714 15:39:39.718513 29124 requestProcessor.cpp:547] add android version end
+I0714 15:39:39.718520 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:39:39.718525 29124 upgradeServer.cpp:223] callback end, cost 7ms
+I0714 15:39:39.894075 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:39:39.894172 29123 upgradeServer.cpp:183] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0714 15:39:39.894218 29123 requestProcessor.cpp:503] add liveshow version begin
+I0714 15:39:39.894286 29123 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1444' 
+E0714 15:39:39.905536 29123 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+I0714 15:39:39.905650 29123 requestProcessor.cpp:547] add android version end
+I0714 15:39:39.905681 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:39:39.905704 29123 upgradeServer.cpp:223] callback end, cost 11ms
+I0714 15:43:24.278445 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:24.278615 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:24.278664 29124 requestProcessor.cpp:196] add android version begin
+I0714 15:43:24.289012 29124 DBOperator.cpp:406] SQL : insert into yzm_version_test_db.t_version_android     values(NULL, '1.0.0.1', 'test','http://test.apk','1111', '100', '2017-07-14 15:43:24.289')
+I0714 15:43:24.314030 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:24.314097 29124 upgradeServer.cpp:222] response buffer length : 30   data :{"ret":"0","errmsg":"success"}
+I0714 15:43:24.314122 29124 upgradeServer.cpp:223] callback end, cost 35ms
+I0714 15:43:25.577091 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:25.577230 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:25.577263 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:25.584971 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:25.585072 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:25.585101 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:25.585168 29123 upgradeServer.cpp:223] callback end, cost 7ms
+I0714 15:43:26.357867 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:26.358075 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:26.358144 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:26.367959 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:26.368101 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:26.368139 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:26.368162 29124 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:43:26.501827 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:26.501993 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:26.502041 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:26.512856 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:26.512954 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:26.512991 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:26.513015 29123 upgradeServer.cpp:223] callback end, cost 10ms
+I0714 15:43:26.664585 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:26.664680 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:26.664718 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:26.673933 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:26.674032 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:26.674062 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:26.674090 29124 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:43:26.808908 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:26.808984 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:26.809012 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:26.816865 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:26.816967 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:26.816994 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:26.817010 29123 upgradeServer.cpp:223] callback end, cost 7ms
+I0714 15:43:27.009039 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:27.009181 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:27.009207 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:27.019846 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:27.019906 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:27.019914 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:27.019934 29124 upgradeServer.cpp:223] callback end, cost 10ms
+I0714 15:43:27.112275 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:27.112303 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:27.112313 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:27.122843 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:27.122943 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:27.122959 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:27.122967 29123 upgradeServer.cpp:223] callback end, cost 10ms
+I0714 15:43:27.284600 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:27.284641 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:27.284653 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:27.294160 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:27.294198 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:27.294206 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:27.294214 29124 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:43:28.957186 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:28.957360 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:28.957407 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:28.965868 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:28.965978 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:28.966015 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:28.966044 29123 upgradeServer.cpp:223] callback end, cost 8ms
+I0714 15:43:29.094533 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:29.094619 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:29.094658 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:29.105865 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:29.105973 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:29.106014 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:29.106037 29124 upgradeServer.cpp:223] callback end, cost 11ms
+I0714 15:43:29.230029 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:29.230161 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:29.230293 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:29.241935 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:29.242061 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:29.242112 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:29.242136 29123 upgradeServer.cpp:223] callback end, cost 11ms
+I0714 15:43:29.410890 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:29.411054 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:29.411576 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:29.420874 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:29.420985 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:29.421015 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:29.421039 29124 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:43:29.539440 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:29.539510 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:29.539535 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:29.547827 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:29.547966 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:29.548002 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:29.548027 29123 upgradeServer.cpp:223] callback end, cost 8ms
+I0714 15:43:29.730178 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:29.730262 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:29.730296 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:29.740897 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:29.740996 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:29.741024 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:29.741044 29124 upgradeServer.cpp:223] callback end, cost 10ms
+I0714 15:43:30.265559 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:30.265658 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:30.265689 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:30.276854 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:30.276935 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:30.276957 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:30.276973 29123 upgradeServer.cpp:223] callback end, cost 11ms
+I0714 15:43:30.415627 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:30.415665 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:30.415747 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:30.424835 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:30.424983 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:30.425019 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:30.425043 29124 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:43:30.549621 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:30.549772 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:30.549808 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:30.557826 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:30.557909 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:30.557929 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:30.557955 29123 upgradeServer.cpp:223] callback end, cost 8ms
+I0714 15:43:30.736966 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:30.737015 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:30.737040 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:30.747805 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:30.747916 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:30.747995 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:30.748023 29124 upgradeServer.cpp:223] callback end, cost 10ms
+I0714 15:43:31.463268 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:31.463349 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:31.463369 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:31.474776 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:31.474822 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:31.474833 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:31.474843 29123 upgradeServer.cpp:223] callback end, cost 11ms
+I0714 15:43:31.583009 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:31.583039 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:31.583052 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:31.592757 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:31.592814 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:31.592826 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:31.592835 29124 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:43:31.750789 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:31.750844 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:31.750865 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:31.758744 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:31.758797 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:31.758810 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:31.758821 29123 upgradeServer.cpp:223] callback end, cost 7ms
+I0714 15:43:31.906729 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:31.906785 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:31.906800 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:31.917929 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:31.917980 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:31.917992 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:31.918000 29124 upgradeServer.cpp:223] callback end, cost 11ms
+I0714 15:43:32.100471 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:32.100495 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:32.100507 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:32.111707 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:32.111738 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:32.111745 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:32.111752 29123 upgradeServer.cpp:223] callback end, cost 11ms
+I0714 15:43:32.848431 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:32.848522 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:32.848539 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:32.857740 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:32.857806 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:32.857817 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:32.857825 29124 upgradeServer.cpp:223] callback end, cost 9ms
+I0714 15:43:33.027866 29123 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:33.027899 29123 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:33.027914 29123 requestProcessor.cpp:196] add android version begin
+E0714 15:43:33.035717 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:33.035756 29123 requestProcessor.cpp:240] add android version end
+I0714 15:43:33.035766 29123 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:33.035809 29123 upgradeServer.cpp:223] callback end, cost 7ms
+I0714 15:43:33.205346 29124 upgradeServer.cpp:182] httpCallBack begin ...
+I0714 15:43:33.205407 29124 upgradeServer.cpp:183] uri /android/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "oss_path":"http://test.apk",
+    "md5":"1111",
+    "description":"test",
+    "file_size": "100"
+}
+I0714 15:43:33.205420 29124 requestProcessor.cpp:196] add android version begin
+E0714 15:43:33.216756 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+I0714 15:43:33.216799 29124 requestProcessor.cpp:240] add android version end
+I0714 15:43:33.216809 29124 upgradeServer.cpp:222] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0714 15:43:33.216814 29124 upgradeServer.cpp:223] callback end, cost 11ms

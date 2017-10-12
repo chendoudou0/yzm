@@ -1,0 +1,5 @@
+Log file created at: 2017/07/05 11:18:22
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0705 11:18:22.497830 13907 config.cpp:270] listen port empty
+E0705 11:18:22.498147 13907 upgradeServer.cpp:30] read conf paramer failed!

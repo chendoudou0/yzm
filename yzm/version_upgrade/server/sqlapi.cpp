@@ -78,13 +78,7 @@ bool CMySQL::Ping()
 
 bool CMySQL::Query(const char *query, unsigned int length) 
 {
-    if (!m_connFlag)
-    {
-        Close();
-        Connect();
-    }
-
-    if (mysql_real_query(m_SqlHandle, query, length)  !=  0 )
+	if (mysql_real_query(m_SqlHandle, query, length)  !=  0 )
     {
         // 判断是否为数据库断连
         if (mysql_errno(m_SqlHandle) == CR_SERVER_LOST || mysql_errno(m_SqlHandle) == CR_SERVER_GONE_ERROR)
@@ -97,7 +91,13 @@ bool CMySQL::Query(const char *query, unsigned int length)
             m_connFlag = false;
             LOG(ERROR) << "unknowed mysql error....";
         }
-		return  false;
+		
+		Close();
+		Connect();
+		if (mysql_real_query(m_SqlHandle, query, length) != 0) {
+			return  false;
+		}
+		
     }
 
 	return true;

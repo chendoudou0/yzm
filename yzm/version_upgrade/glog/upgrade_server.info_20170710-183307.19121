@@ -1,0 +1,75 @@
+Log file created at: 2017/07/10 18:33:07
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 18:33:07.144846 19121 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 18:33:07.145089 19121 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 18:33:07.145138 19121 config.cpp:121] db_para_.user_ : yzm
+I0710 18:33:07.145176 19121 config.cpp:132] db_para_.pass_ : 123456
+I0710 18:33:07.145220 19121 config.cpp:143] db_para_.port_ : 3306
+I0710 18:33:07.145262 19121 config.cpp:154] db_para_.overTime_ : 2
+I0710 18:33:07.145354 19121 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 18:33:07.145391 19121 config.cpp:240] redis_para_.port_ : 6379
+I0710 18:33:07.145428 19121 config.cpp:251] redis_para_.overTime_ : 2
+I0710 18:33:07.145519 19121 config.cpp:274] listen_port : 2018
+I0710 18:33:07.149006 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:07.149623 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:07.150208 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:07.150689 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:07.151161 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:07.151614 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:07.152026 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:07.152376 19121 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:33:11.272655 19123 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 18:33:11.272720 19123 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"测试"
+	
+}
+ 
+I0710 18:33:11.272756 19123 requestProcessor.cpp:523] add liveshow version begin
+I0710 18:33:11.272801 19123 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 18:33:11.273057 19123 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+I0710 18:33:11.273381 19123 requestProcessor.cpp:567] add android version end
+I0710 18:33:11.273401 19123 upgradeServer.cpp:219] response buffer length : 45   data :{"err":"2","errmsg":" version already exist"}
+I0710 18:33:11.273418 19123 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 18:33:12.069095 19123 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 18:33:12.069164 19123 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"测试"
+	
+}
+ 
+I0710 18:33:12.069192 19123 requestProcessor.cpp:523] add liveshow version begin
+I0710 18:33:12.069236 19123 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 18:33:12.069427 19123 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+I0710 18:33:12.069494 19123 requestProcessor.cpp:567] add android version end
+I0710 18:33:12.069509 19123 upgradeServer.cpp:219] response buffer length : 45   data :{"err":"2","errmsg":" version already exist"}
+I0710 18:33:12.069522 19123 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 18:33:12.266827 19124 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 18:33:12.266863 19124 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"测试"
+	
+}
+ 
+I0710 18:33:12.266945 19124 requestProcessor.cpp:523] add liveshow version begin
+I0710 18:33:12.266983 19124 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 18:33:12.267101 19124 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+I0710 18:33:12.267140 19124 requestProcessor.cpp:567] add android version end
+I0710 18:33:12.267150 19124 upgradeServer.cpp:219] response buffer length : 45   data :{"err":"2","errmsg":" version already exist"}
+I0710 18:33:12.267156 19124 upgradeServer.cpp:220] callback end, cost 0ms

@@ -1,0 +1,27 @@
+Log file created at: 2017/07/11 12:11:02
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 12:11:02.755990 20406 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 12:11:02.756299 20406 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 12:11:02.756345 20406 config.cpp:121] db_para_.user_ : yzm
+I0711 12:11:02.756372 20406 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 12:11:02.756413 20406 config.cpp:143] db_para_.port_ : 3306
+I0711 12:11:02.756438 20406 config.cpp:154] db_para_.overTime_ : 2
+I0711 12:11:02.756505 20406 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 12:11:02.756536 20406 config.cpp:240] redis_para_.port_ : 6379
+I0711 12:11:02.756561 20406 config.cpp:251] redis_para_.overTime_ : 2
+I0711 12:11:02.756620 20406 config.cpp:274] listen_port : 2018
+I0711 12:11:02.789589 20406 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:11:02.816890 20406 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:11:02.842564 20406 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:11:02.870537 20406 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:11:05.658092 20408 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:11:05.658183 20408 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 12:11:05.658221 20408 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 12:11:05.658429 20408 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 12:11:05.658465 20408 requestProcessor.cpp:76] find_differ_files begin...
+I0711 12:11:05.677752 20408 requestProcessor.cpp:131] find_differ_files end
+E0711 12:11:05.686714 20408 requestProcessor.cpp:176]  set value to redis failed 
+I0711 12:11:05.687171 20408 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 12:11:05.687204 20408 upgradeServer.cpp:219] response buffer length : 182   data :{"ret":"0","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 12:11:05.687227 20408 upgradeServer.cpp:220] callback end, cost 28ms

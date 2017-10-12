@@ -1,0 +1,5 @@
+Log file created at: 2017/07/06 17:39:31
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0706 17:39:31.806402 14867 sqlapi.cpp:273] mysql_num_rows return is NULL
+E0706 17:39:31.806610 14867 requestProcessor.cpp:426] no live_show version exist 

@@ -1,0 +1,27 @@
+Log file created at: 2017/07/10 14:39:10
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 14:39:10.147881 18419 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 14:39:10.148154 18419 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 14:39:10.148208 18419 config.cpp:121] db_para_.user_ : yzm
+I0710 14:39:10.148236 18419 config.cpp:132] db_para_.pass_ : 123456
+I0710 14:39:10.148262 18419 config.cpp:143] db_para_.port_ : 3306
+I0710 14:39:10.148286 18419 config.cpp:154] db_para_.overTime_ : 2
+I0710 14:39:10.148353 18419 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 14:39:10.148382 18419 config.cpp:240] redis_para_.port_ : 6379
+I0710 14:39:10.148404 18419 config.cpp:251] redis_para_.overTime_ : 2
+I0710 14:39:10.148460 18419 config.cpp:274] listen_port : 2018
+I0710 14:39:10.176111 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:10.176612 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:10.177103 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:10.177530 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:10.177986 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:10.178416 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:10.178836 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:10.179285 18419 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 14:39:13.604531 18428 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 14:39:13.604600 18428 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0710 14:39:13.604626 18428 requestProcessor.cpp:457] dealwith_android_verison_query begin
+I0710 14:39:13.605507 18428 requestProcessor.cpp:470] dealwith_android_verison_query end
+I0710 14:39:13.605554 18428 upgradeServer.cpp:219] response buffer length : 270   data :{"ret":"0","version_array":[{"file_md5":"57effbed1e7076c30592e380395d3d83","file_size":"19196586","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1/app-release_6.0.0.apk","version_description":"5.2.1?????1????????2???????","version_name":"1.0.1"}]}
+I0710 14:39:13.605572 18428 upgradeServer.cpp:220] callback end, cost 0ms

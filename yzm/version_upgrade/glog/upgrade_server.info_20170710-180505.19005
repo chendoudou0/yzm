@@ -1,0 +1,89 @@
+Log file created at: 2017/07/10 18:05:05
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 18:05:05.420367 19005 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 18:05:05.420596 19005 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 18:05:05.420646 19005 config.cpp:121] db_para_.user_ : yzm
+I0710 18:05:05.420673 19005 config.cpp:132] db_para_.pass_ : 123456
+I0710 18:05:05.420699 19005 config.cpp:143] db_para_.port_ : 3306
+I0710 18:05:05.420723 19005 config.cpp:154] db_para_.overTime_ : 2
+I0710 18:05:05.420788 19005 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 18:05:05.420816 19005 config.cpp:240] redis_para_.port_ : 6379
+I0710 18:05:05.420837 19005 config.cpp:251] redis_para_.overTime_ : 2
+I0710 18:05:05.420892 19005 config.cpp:274] listen_port : 2018
+I0710 18:05:05.424633 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:05.425231 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:05.425752 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:05.426241 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:05.426676 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:05.427100 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:05.427484 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:05.427842 19005 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 18:05:11.300951 19007 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 18:05:11.301040 19007 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"æµ‹è¯•"
+	
+}
+ 
+I0710 18:05:11.301086 19007 requestProcessor.cpp:540] add liveshow version begin
+I0710 18:05:11.301146 19007 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1' 
+E0710 18:05:11.301475 19007 requestProcessor.cpp:558] liveshow version  0.0.1 already exists
+E0710 18:05:11.301921 19007 config.cpp:12] *** Aborted at 1499681111 (unix time) try "date -d @1499681111" if you are using GNU date ***
+E0710 18:05:11.302182 19007 config.cpp:12] PC: @           0x429208 CJsonOperator::addStringMember()
+\Ð
+E0710 18:05:11.302530 19007 config.cpp:12] *** SIGSEGV (@0x40) received by PID 19005 (TID 0x7fd05c0e3700) from PID 64; stack trace: ***
+
+E0710 18:05:11.303536 19007 config.cpp:12]     @     0x7fd063394330 (unknown)
+bÐ
+E0710 18:05:11.303710 19007 config.cpp:12]     @           0x429208 CJsonOperator::addStringMember()
+bÐ
+E0710 18:05:11.303839 19007 config.cpp:12]     @           0x410097 CrequestProcessor::gen_error_response()
+\Ð
+E0710 18:05:11.303994 19007 config.cpp:12]     @           0x417e96 CrequestProcessor::dealwith_liveshow_version_add()
+Ð
+E0710 18:05:11.304128 19007 config.cpp:12]     @           0x40dc45 CUpgradeServer::httpCallBack()
+eshow_version_add()
+Ð
+E0710 18:05:11.304286 19007 config.cpp:12]     @           0x42859e HTTPRequestHandler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.305106 19007 config.cpp:12]     @     0x7fd062cf75db (unknown)
+tHandler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.305901 19007 config.cpp:12]     @     0x7fd062d12177 (unknown)
+tHandler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.306687 19007 config.cpp:12]     @     0x7fd062d227de (unknown)
+tHandler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.307502 19007 config.cpp:12]     @     0x7fd0630b2d37 (unknown)
+tHandler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.308331 19007 config.cpp:12]     @     0x7fd0630aedb6 (unknown)
+tHandler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.309170 19007 config.cpp:12]     @     0x7fd06338c184 start_thread
+ndler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.310088 19007 config.cpp:12]     @     0x7fd0618a337d (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+Ð
+E0710 18:05:11.311153 19007 config.cpp:12]     @                0x0 (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+Ð

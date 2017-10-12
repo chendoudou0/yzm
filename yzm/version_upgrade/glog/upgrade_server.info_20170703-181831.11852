@@ -1,0 +1,32 @@
+Log file created at: 2017/07/03 18:18:31
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0703 18:18:31.334295 11852 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0703 18:18:31.334434 11852 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0703 18:18:31.334450 11852 config.cpp:121] db_para_.user_ : yzm
+I0703 18:18:31.334461 11852 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0703 18:18:31.334471 11852 config.cpp:143] db_para_.port_ : 3306
+I0703 18:18:31.334481 11852 config.cpp:154] db_para_.overTime_ : 2
+I0703 18:18:31.334517 11852 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0703 18:18:31.334528 11852 config.cpp:240] redis_para_.port_ : 6379
+I0703 18:18:31.334538 11852 config.cpp:251] redis_para_.overTime_ : 2
+I0703 18:18:31.366403 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:31.395462 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:31.421437 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:31.457432 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:31.475436 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:31.492450 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:31.522421 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:31.542454 11852 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:18:36.808317 11854 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:18:36.808401 11854 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.0.1", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0703 18:18:36.808439 11854 upgradeServer.cpp:199] response buffer length : 0
+I0703 18:18:36.808459 11854 upgradeServer.cpp:200] callback end, cost 0ms

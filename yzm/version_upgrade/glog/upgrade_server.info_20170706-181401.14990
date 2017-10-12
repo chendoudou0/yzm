@@ -1,0 +1,141 @@
+Log file created at: 2017/07/06 18:14:01
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0706 18:14:01.872573 14990 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0706 18:14:01.872663 14990 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0706 18:14:01.872678 14990 config.cpp:121] db_para_.user_ : yzm
+I0706 18:14:01.872685 14990 config.cpp:132] db_para_.pass_ : 123456
+I0706 18:14:01.872692 14990 config.cpp:143] db_para_.port_ : 3306
+I0706 18:14:01.872699 14990 config.cpp:154] db_para_.overTime_ : 2
+I0706 18:14:01.872720 14990 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0706 18:14:01.872748 14990 config.cpp:240] redis_para_.port_ : 6379
+I0706 18:14:01.872758 14990 config.cpp:251] redis_para_.overTime_ : 2
+I0706 18:14:01.872778 14990 config.cpp:274] listen_port : 2018
+I0706 18:14:01.874183 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:01.874387 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:01.874701 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:01.875018 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:01.875203 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:01.875360 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:01.875512 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:01.875661 14990 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:14:04.149464 14992 upgradeServer.cpp:180] httpCallBack begin ...
+I0706 18:14:04.149516 14992 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    } ]
+}
+I0706 18:14:04.149543 14992 requestProcessor.cpp:531] add liveshow version begin
+I0706 18:14:04.149579 14992 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1' 
+I0706 18:14:04.149936 14992 DBOperator.cpp:430] iRows : 0
+I0706 18:14:04.150089 14992 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show(Fversion_name, Fversion_bucket,    Fversion_domain,Fversion_status, Fversion_description, Fupdate_time)      values('1.0.0.1','cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', 'test','2017-07-06 18:14:04.150')
+E0706 18:14:04.150563 14992 sqlapi.cpp:98] unknowed mysql error
+E0706 18:14:04.199605 14992 DBOperator.cpp:453] rollback
+E0706 18:14:04.199640 14992 requestProcessor.cpp:552] insert into db failed 
+I0706 18:14:04.199652 14992 requestProcessor.cpp:574] add android version end
+I0706 18:14:04.199657 14992 upgradeServer.cpp:219] response buffer length : 44
+I0706 18:14:04.199662 14992 upgradeServer.cpp:220] callback end, cost 50ms
+I0706 18:14:27.842306 14992 upgradeServer.cpp:180] httpCallBack begin ...
+I0706 18:14:27.842386 14992 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    } ]
+}
+I0706 18:14:27.842424 14992 requestProcessor.cpp:531] add liveshow version begin
+I0706 18:14:27.842478 14992 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1' 
+I0706 18:14:27.843107 14992 DBOperator.cpp:430] iRows : 0
+I0706 18:14:27.843408 14992 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show(Fversion_name, Fversion_bucket,    Fversion_domain,Fversion_status, Fversion_description, Fupdate_time)      values('1.0.0.1','cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', 'test','2017-07-06 18:14:27.843')
+E0706 18:14:27.844156 14992 sqlapi.cpp:98] unknowed mysql error
+E0706 18:14:27.901367 14992 DBOperator.cpp:453] rollback
+E0706 18:14:27.901476 14992 requestProcessor.cpp:552] insert into db failed 
+I0706 18:14:27.901516 14992 requestProcessor.cpp:574] add android version end
+I0706 18:14:27.901530 14992 upgradeServer.cpp:219] response buffer length : 44
+I0706 18:14:27.901542 14992 upgradeServer.cpp:220] callback end, cost 59ms
+I0706 18:14:35.835381 14993 upgradeServer.cpp:180] httpCallBack begin ...
+I0706 18:14:35.835599 14993 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    } ]
+}
+I0706 18:14:35.835695 14993 requestProcessor.cpp:531] add liveshow version begin
+I0706 18:14:35.835801 14993 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1' 
+I0706 18:14:35.836393 14993 DBOperator.cpp:430] iRows : 0
+I0706 18:14:35.836678 14993 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show(Fversion_name, Fversion_bucket,    Fversion_domain,Fversion_status, Fversion_description, Fupdate_time)      values('1.0.0.1','cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', 'test','2017-07-06 18:14:35.837')
+E0706 18:14:35.837455 14993 sqlapi.cpp:98] unknowed mysql error
+E0706 18:14:35.876579 14993 DBOperator.cpp:453] rollback
+E0706 18:14:35.876711 14993 requestProcessor.cpp:552] insert into db failed 
+I0706 18:14:35.876763 14993 requestProcessor.cpp:574] add android version end
+I0706 18:14:35.876782 14993 upgradeServer.cpp:219] response buffer length : 44
+I0706 18:14:35.876798 14993 upgradeServer.cpp:220] callback end, cost 41ms
+I0706 18:14:36.733199 14992 upgradeServer.cpp:180] httpCallBack begin ...
+I0706 18:14:36.733319 14992 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    } ]
+}
+I0706 18:14:36.733364 14992 requestProcessor.cpp:531] add liveshow version begin
+I0706 18:14:36.733415 14992 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1' 
+I0706 18:14:36.733909 14992 DBOperator.cpp:430] iRows : 0
+I0706 18:14:36.734191 14992 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show(Fversion_name, Fversion_bucket,    Fversion_domain,Fversion_status, Fversion_description, Fupdate_time)      values('1.0.0.1','cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', 'test','2017-07-06 18:14:36.734')
+E0706 18:14:36.734946 14992 sqlapi.cpp:98] unknowed mysql error
+E0706 18:14:36.772997 14992 DBOperator.cpp:453] rollback
+E0706 18:14:36.773150 14992 requestProcessor.cpp:552] insert into db failed 
+I0706 18:14:36.773202 14992 requestProcessor.cpp:574] add android version end
+I0706 18:14:36.773221 14992 upgradeServer.cpp:219] response buffer length : 44
+I0706 18:14:36.773288 14992 upgradeServer.cpp:220] callback end, cost 39ms

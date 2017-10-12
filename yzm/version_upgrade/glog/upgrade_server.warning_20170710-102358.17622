@@ -1,0 +1,37 @@
+Log file created at: 2017/07/10 10:23:58
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 10:23:58.869102 17624 config.cpp:12] *** Aborted at 1499653438 (unix time) try "date -d @1499653438" if you are using GNU date ***
+E0710 10:23:58.870317 17624 config.cpp:12] PC: @     0x7f12055bdc37 (unknown)
+E0710 10:23:58.887816 17624 config.cpp:12] *** SIGABRT (@0x3e8000044d6) received by PID 17622 (TID 0x7f11ffec1700) from PID 17622; stack trace: ***
+E0710 10:23:58.888999 17624 config.cpp:12]     @     0x7f1207172330 (unknown)
+
+E0710 10:23:58.889729 17624 config.cpp:12]     @     0x7f12055bdc37 (unknown)
+
+E0710 10:23:58.890522 17624 config.cpp:12]     @     0x7f12055c1028 (unknown)
+
+E0710 10:23:58.891166 17624 config.cpp:12]     @     0x7f12055fa2a4 (unknown)
+
+E0710 10:23:58.891609 17624 config.cpp:12]     @     0x7f120560655e (unknown)
+
+E0710 10:23:58.891700 17624 config.cpp:12]     @           0x40dc59 CUpgradeServer::httpCallBack()
+ÐHæ
+E0710 10:23:58.891804 17624 config.cpp:12]     @           0x42856e HTTPRequestHandler_::handleRequest()
+E0710 10:23:58.892303 17624 config.cpp:12]     @     0x7f1206ad55db (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.892786 17624 config.cpp:12]     @     0x7f1206af0177 (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.893261 17624 config.cpp:12]     @     0x7f1206b007de (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.893756 17624 config.cpp:12]     @     0x7f1206e90d37 (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.894248 17624 config.cpp:12]     @     0x7f1206e8cdb6 (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.894750 17624 config.cpp:12]     @     0x7f120716a184 start_thread
+ndler_::handleRequest()
+E0710 10:23:58.895172 17624 config.cpp:12]     @     0x7f120568137d (unknown)
+ad
+ndler_::handleRequest()
+E0710 10:23:58.895683 17624 config.cpp:12]     @                0x0 (unknown)
+ad
+ndler_::handleRequest()

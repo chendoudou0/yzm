@@ -1,0 +1,51 @@
+Log file created at: 2017/07/06 18:07:30
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0706 18:07:30.151659 14951 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0706 18:07:30.163271 14951 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0706 18:07:30.163303 14951 config.cpp:121] db_para_.user_ : yzm
+I0706 18:07:30.163326 14951 config.cpp:132] db_para_.pass_ : 123456
+I0706 18:07:30.163349 14951 config.cpp:143] db_para_.port_ : 3306
+I0706 18:07:30.163365 14951 config.cpp:154] db_para_.overTime_ : 2
+I0706 18:07:30.163419 14951 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0706 18:07:30.163434 14951 config.cpp:240] redis_para_.port_ : 6379
+I0706 18:07:30.163446 14951 config.cpp:251] redis_para_.overTime_ : 2
+I0706 18:07:30.163497 14951 config.cpp:274] listen_port : 2018
+I0706 18:07:30.166885 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:30.167445 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:30.168040 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:30.168567 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:30.169118 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:30.169631 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:30.170140 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:30.170687 14951 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 18:07:32.836271 14953 upgradeServer.cpp:180] httpCallBack begin ...
+I0706 18:07:32.836352 14953 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    } ]
+}
+I0706 18:07:32.836401 14953 requestProcessor.cpp:531] add liveshow version begin
+I0706 18:07:32.836463 14953 DBOperator.cpp:420] SQL : select * from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1' 
+I0706 18:07:32.837065 14953 DBOperator.cpp:430] iRows : 0
+I0706 18:07:32.837326 14953 DBOperator.cpp:440] SQL : insert into yzm_version_test_db.t_version_live_show(Fversion_name, Fversion_bucket,     Fversion_domain, Fversion_status, Fversion_description, Fupdate_time) 	    values('1.0.0.1','cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', 'test','2017-07-06 18:07:32.837')
+E0706 18:07:32.838090 14953 sqlapi.cpp:98] unknowed mysql error
+E0706 18:07:32.886576 14953 DBOperator.cpp:454] rollback
+E0706 18:07:32.886664 14953 requestProcessor.cpp:552] insert into db failed 
+I0706 18:07:32.886705 14953 requestProcessor.cpp:574] add android version end
+I0706 18:07:32.886721 14953 upgradeServer.cpp:219] response buffer length : 44
+I0706 18:07:32.886740 14953 upgradeServer.cpp:220] callback end, cost 50ms

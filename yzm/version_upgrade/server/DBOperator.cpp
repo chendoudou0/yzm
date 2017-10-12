@@ -85,7 +85,7 @@ bool CDBOperator::QueryAndroidExistingVersions(SqlMapVector &objOutMapVector)
         } 
         if(-1 ==_ptrMysql->FetchResultMVector(objOutMapVector)){
             break;  
-         }
+        }   
    
         ret = true;
     }while(0);
@@ -384,8 +384,11 @@ bool CDBOperator::UpdateAndroidVersionStatus(string& inVersionName, string& inMd
 int  CDBOperator::AddAndroidVersion(ANDROID_VERSION_INFO& avInfo)
 {
 	char strSql[1024] = {0};
-    sprintf(strSql, "select * from cloudream_upgrade.t_version_android where Fversion_name='%s' ", \
-    avInfo.name.c_str());
+    sprintf(strSql, "select * from cloudream_upgrade.t_version_android where Fversion_name='%s' \
+    and Fversion_branch='%s'", \
+    avInfo.name.c_str(),
+    avInfo.version_branch.c_str());
+    LOG(INFO) << "strSql : " << strSql;
     if(!_ptrMysql->Query(strSql,  strlen(strSql)) ){
         return 1;       
     }
@@ -398,7 +401,7 @@ int  CDBOperator::AddAndroidVersion(ANDROID_VERSION_INFO& avInfo)
     
     memset(strSql, 0, sizeof(strSql));
     sprintf(strSql,  "insert into cloudream_upgrade.t_version_android \
-    values(NULL, '%s', '%d', '%s','%s','%s', '%s', '%s')", avInfo.name.c_str(),  avInfo.version_branch,
+    values(NULL, '%s', '%s', '%s','%s','%s', '%s', '%s')", avInfo.name.c_str(),  avInfo.version_branch.c_str(),
     avInfo.description.c_str(), avInfo.path.c_str(),\
     avInfo.md5.c_str(), avInfo.size.c_str(), GetSystemTime());
     LOG(INFO) << "SQL : " << strSql;

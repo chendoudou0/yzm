@@ -1,0 +1,19 @@
+Log file created at: 2017/08/24 11:04:30
+Running on machine: yzm-hj
+HOSTNAME=Master
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0824 11:04:30.845432  1346 upgradeServer.cpp:75] GLOG BEGIN TO WORK
+I0824 11:04:30.880756  1346 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0824 11:04:30.880769  1346 config.cpp:121] db_para_.user_ : yzm
+I0824 11:04:30.880774  1346 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0824 11:04:30.880776  1346 config.cpp:143] db_para_.port_ : 3306
+I0824 11:04:30.880779  1346 config.cpp:154] db_para_.overTime_ : 2
+I0824 11:04:30.880794  1346 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0824 11:04:30.880797  1346 config.cpp:240] redis_para_.port_ : 6379
+I0824 11:04:30.880801  1346 config.cpp:251] redis_para_.overTime_ : 2
+I0824 11:04:30.880813  1346 config.cpp:274] listen_port : 2018
+I0824 11:04:31.198173  1346 sqlapi.cpp:52] connect mysql  success!!!!
+I0824 11:04:31.229143  1346 sqlapi.cpp:52] connect mysql  success!!!!
+I0824 11:04:31.257191  1346 sqlapi.cpp:52] connect mysql  success!!!!
+I0824 11:04:31.286177  1346 sqlapi.cpp:52] connect mysql  success!!!!
+I0824 12:10:58.502825  1346 upgradeServer.cpp:158] UpgradeServer stop

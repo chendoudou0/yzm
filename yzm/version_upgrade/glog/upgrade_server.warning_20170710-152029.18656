@@ -1,0 +1,12 @@
+Log file created at: 2017/07/10 15:20:29
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 15:20:29.640432 18658 requestProcessor.cpp:548] liveshow version  0.0.1 already exists
+E0710 15:20:37.339259 18659 requestProcessor.cpp:216] android version  1.0.1333.144 already exists
+E0710 15:20:38.357090 18658 requestProcessor.cpp:216] android version  1.0.1333.144 already exists
+E0710 15:30:16.027354 18659 requestProcessor.cpp:360] parse json failed
+E0710 15:30:16.027400 18659 requestProcessor.cpp:541] invalid  paramter
+E0710 15:32:51.160043 18658 requestProcessor.cpp:360] parse json failed
+E0710 15:32:51.160122 18658 requestProcessor.cpp:541] invalid  paramter
+E0710 15:48:31.550894 18659 requestProcessor.cpp:360] parse json failed
+E0710 15:48:31.550940 18659 requestProcessor.cpp:541] invalid  paramter

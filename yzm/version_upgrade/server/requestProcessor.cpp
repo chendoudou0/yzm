@@ -335,11 +335,11 @@ bool CrequestProcessor::check_android_version_add_paramter(ANDROID_VERSION_INFO&
 		}
 		avInfo.size = doc["file_size"].GetString();
 
-		if (doc["version_branch"].IsNull() || !doc["version_branch"].IsInt())
+		if (doc["version_branch"].IsNull() || !doc["version_branch"].IsString())
 		{
 			break;
 		}
-		avInfo.version_branch = doc["version_branch"].GetInt();
+		avInfo.version_branch = doc["version_branch"].GetString();
 
 
 		ret = true;

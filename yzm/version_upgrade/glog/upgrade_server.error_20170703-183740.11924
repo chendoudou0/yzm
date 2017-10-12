@@ -1,0 +1,9 @@
+Log file created at: 2017/07/03 18:37:40
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0703 18:37:40.892350 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:40.904361 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:40.904379 11926 requestProcessor.cpp:219] insert into db failed 
+E0703 18:37:42.653363 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:42.675380 11926 sqlapi.cpp:98] unknowed mysql error
+E0703 18:37:42.675456 11926 requestProcessor.cpp:219] insert into db failed 

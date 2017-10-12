@@ -1,0 +1,43 @@
+Log file created at: 2017/07/06 17:40:41
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0706 17:40:41.690340 14877 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0706 17:40:41.690574 14877 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0706 17:40:41.690634 14877 config.cpp:121] db_para_.user_ : yzm
+I0706 17:40:41.690665 14877 config.cpp:132] db_para_.pass_ : 123456
+I0706 17:40:41.690692 14877 config.cpp:143] db_para_.port_ : 3306
+I0706 17:40:41.690719 14877 config.cpp:154] db_para_.overTime_ : 2
+I0706 17:40:41.690789 14877 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0706 17:40:41.690820 14877 config.cpp:240] redis_para_.port_ : 6379
+I0706 17:40:41.690845 14877 config.cpp:251] redis_para_.overTime_ : 2
+I0706 17:40:41.690906 14877 config.cpp:274] listen_port : 2018
+I0706 17:40:41.694722 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:40:41.695312 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:40:41.695884 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:40:41.696416 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:40:41.696802 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:40:41.697146 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:40:41.697466 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:40:41.697839 14877 sqlapi.cpp:52] connect mysql  success!!!!
+I0706 17:41:51.059648 14879 upgradeServer.cpp:180] httpCallBack begin ...
+I0706 17:41:51.059720 14879 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test"
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    } ]
+}
+I0706 17:41:51.059757 14879 upgradeServer.cpp:214] response buffer length : 0
+I0706 17:41:51.059772 14879 upgradeServer.cpp:215] callback end, cost 0ms

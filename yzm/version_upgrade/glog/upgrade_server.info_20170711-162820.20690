@@ -1,0 +1,164 @@
+Log file created at: 2017/07/11 16:28:20
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 16:28:20.951884 20690 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 16:28:20.952209 20690 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 16:28:20.952256 20690 config.cpp:121] db_para_.user_ : yzm
+I0711 16:28:20.952291 20690 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 16:28:20.952316 20690 config.cpp:143] db_para_.port_ : 3306
+I0711 16:28:20.952359 20690 config.cpp:154] db_para_.overTime_ : 2
+I0711 16:28:20.952445 20690 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 16:28:20.952478 20690 config.cpp:240] redis_para_.port_ : 6379
+I0711 16:28:20.952499 20690 config.cpp:251] redis_para_.overTime_ : 2
+I0711 16:28:20.952569 20690 config.cpp:274] listen_port : 2018
+I0711 16:28:20.975280 20690 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 16:28:20.994480 20690 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 16:28:21.028309 20690 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 16:28:21.057476 20690 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 16:28:32.013291 20692 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:28:32.013384 20692 upgradeServer.cpp:181] uri /android/query, receive data  
+I0711 16:28:32.013419 20692 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0711 16:28:32.025425 20692 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 16:28:32.025483 20692 upgradeServer.cpp:219] response buffer length : 248   data :{"ret":"0","version_array":[{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.1/2345reader.apk","version_description":"teest","version_name":"0.1.1"}]}
+I0711 16:28:32.025507 20692 upgradeServer.cpp:220] callback end, cost 12ms
+I0711 16:28:33.526305 20692 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:28:33.526391 20692 upgradeServer.cpp:181] uri /android/query, receive data  
+I0711 16:28:33.526417 20692 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0711 16:28:33.541254 20692 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 16:28:33.541301 20692 upgradeServer.cpp:219] response buffer length : 248   data :{"ret":"0","version_array":[{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.1/2345reader.apk","version_description":"teest","version_name":"0.1.1"}]}
+I0711 16:28:33.541319 20692 upgradeServer.cpp:220] callback end, cost 14ms
+I0711 16:28:34.834854 20693 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:28:34.834940 20693 upgradeServer.cpp:181] uri /android/query, receive data  
+I0711 16:28:34.834965 20693 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0711 16:28:34.858283 20693 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 16:28:34.858352 20693 upgradeServer.cpp:219] response buffer length : 248   data :{"ret":"0","version_array":[{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.1/2345reader.apk","version_description":"teest","version_name":"0.1.1"}]}
+I0711 16:28:34.858376 20693 upgradeServer.cpp:220] callback end, cost 23ms
+I0711 16:28:35.112020 20692 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:28:35.112078 20692 upgradeServer.cpp:181] uri /android/query, receive data  
+I0711 16:28:35.112097 20692 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0711 16:28:35.130216 20692 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 16:28:35.130265 20692 upgradeServer.cpp:219] response buffer length : 248   data :{"ret":"0","version_array":[{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.1/2345reader.apk","version_description":"teest","version_name":"0.1.1"}]}
+I0711 16:28:35.130421 20692 upgradeServer.cpp:220] callback end, cost 18ms
+I0711 16:39:08.113082 20693 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:39:08.113198 20693 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test"
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0711 16:39:08.113317 20693 requestProcessor.cpp:503] add liveshow version begin
+E0711 16:39:08.113391 20693 requestProcessor.cpp:356] parse json failed
+E0711 16:39:08.113759 20693 requestProcessor.cpp:514] invalid  paramter
+I0711 16:39:08.113812 20693 requestProcessor.cpp:547] add android version end
+I0711 16:39:08.113836 20693 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0711 16:39:08.113857 20693 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 16:39:09.840137 20692 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:39:09.840236 20692 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test"
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0711 16:39:09.840273 20692 requestProcessor.cpp:503] add liveshow version begin
+E0711 16:39:09.840303 20692 requestProcessor.cpp:356] parse json failed
+E0711 16:39:09.840334 20692 requestProcessor.cpp:514] invalid  paramter
+I0711 16:39:09.840366 20692 requestProcessor.cpp:547] add android version end
+I0711 16:39:09.840381 20692 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0711 16:39:09.840395 20692 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 16:39:47.442906 20693 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:39:47.443068 20693 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0711 16:39:47.443112 20693 requestProcessor.cpp:503] add liveshow version begin
+I0711 16:39:47.443166 20693 requestProcessor.cpp:397] PATH : def.h  pos : 4
+I0711 16:39:47.443190 20693 requestProcessor.cpp:397] PATH : D3Dcompiler_47.dll  pos : -1
+I0711 16:39:47.443214 20693 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1444' 
+I0711 16:39:47.459390 20693 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '1.0.0.1444', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','test', '2017-07-11 16:39:47.459')
+I0711 16:39:47.465297 20693 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1444','def.h','3bdc1308fd4fb3511cce0f0ac41c3a2b','2017-07-11 16:39:47.465')
+I0711 16:39:47.471267 20693 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1444','D3Dcompiler_47.dll','3bdc1308fd4fb3511cce0f0ac41c3a2b','2017-07-11 16:39:47.471')
+I0711 16:39:47.504300 20693 requestProcessor.cpp:547] add android version end
+I0711 16:39:47.504374 20693 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","errmsg":"success"}
+I0711 16:39:47.504441 20693 upgradeServer.cpp:220] callback end, cost 61ms
+I0711 16:39:48.691855 20692 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:39:48.692023 20692 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0711 16:39:48.692085 20692 requestProcessor.cpp:503] add liveshow version begin
+I0711 16:39:48.692126 20692 requestProcessor.cpp:397] PATH : def.h  pos : 4
+I0711 16:39:48.692147 20692 requestProcessor.cpp:397] PATH : D3Dcompiler_47.dll  pos : -1
+I0711 16:39:48.692168 20692 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1444' 
+E0711 16:39:48.698592 20692 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+I0711 16:39:48.698712 20692 requestProcessor.cpp:547] add android version end
+I0711 16:39:48.698740 20692 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0711 16:39:48.698757 20692 upgradeServer.cpp:220] callback end, cost 6ms
+I0711 16:39:49.708469 20693 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:39:49.708637 20693 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "cccc/def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    }
+   ]
+}
+I0711 16:39:49.708686 20693 requestProcessor.cpp:503] add liveshow version begin
+I0711 16:39:49.708734 20693 requestProcessor.cpp:397] PATH : def.h  pos : 4
+I0711 16:39:49.708758 20693 requestProcessor.cpp:397] PATH : D3Dcompiler_47.dll  pos : -1
+I0711 16:39:49.708784 20693 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1444' 
+E0711 16:39:49.722364 20693 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+I0711 16:39:49.722465 20693 requestProcessor.cpp:547] add android version end
+I0711 16:39:49.722501 20693 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0711 16:39:49.722522 20693 upgradeServer.cpp:220] callback end, cost 13ms

@@ -1,0 +1,27 @@
+Log file created at: 2017/07/11 12:12:27
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 12:12:27.260717 20421 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 12:12:27.260948 20421 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 12:12:27.261000 20421 config.cpp:121] db_para_.user_ : yzm
+I0711 12:12:27.261027 20421 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 12:12:27.261054 20421 config.cpp:143] db_para_.port_ : 3306
+I0711 12:12:27.261078 20421 config.cpp:154] db_para_.overTime_ : 2
+I0711 12:12:27.261140 20421 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 12:12:27.261170 20421 config.cpp:240] redis_para_.port_ : 6379
+I0711 12:12:27.261198 20421 config.cpp:251] redis_para_.overTime_ : 2
+I0711 12:12:27.261257 20421 config.cpp:274] listen_port : 2018
+I0711 12:12:27.287441 20421 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:12:27.308419 20421 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:12:27.326422 20421 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:12:27.346436 20421 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:12:34.475086 20423 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:12:34.475175 20423 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 12:12:34.475211 20423 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 12:12:34.475419 20423 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 12:12:34.475456 20423 requestProcessor.cpp:76] find_differ_files begin...
+I0711 12:12:34.490496 20423 requestProcessor.cpp:131] find_differ_files end
+E0711 12:12:34.496515 20423 requestProcessor.cpp:176]  set value to redis failed 
+I0711 12:12:34.496902 20423 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 12:12:34.496930 20423 upgradeServer.cpp:219] response buffer length : 308   data :{"ret":"0","file_arr":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","file_array\u0000rent":"0.0.0","file_array":"0.0.1","file_array":[{"file_path":"data/styles.css","file_status":"0","md5":"NULL"},{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 12:12:34.496954 20423 upgradeServer.cpp:220] callback end, cost 21ms

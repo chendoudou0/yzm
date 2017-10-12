@@ -1,0 +1,47 @@
+Log file created at: 2017/07/03 18:28:42
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0703 18:28:42.776783 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:42.792789 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:42.792850 11894 requestProcessor.cpp:219] insert into db failed 
+E0703 18:28:45.990780 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:46.004707 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:46.004792 11894 requestProcessor.cpp:219] insert into db failed 
+E0703 18:28:46.784726 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:46.802716 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:46.802790 11895 requestProcessor.cpp:219] insert into db failed 
+E0703 18:28:46.945765 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:46.959720 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:46.959852 11894 requestProcessor.cpp:219] insert into db failed 
+E0703 18:28:48.360683 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:48.393784 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:28:48.393868 11895 requestProcessor.cpp:219] insert into db failed 
+E0703 18:29:04.178251 11894 sqlapi.cpp:45] connect mysql failed!!!!
+E0703 18:29:04.178449 11894 sqlapi.cpp:93] mysql lost
+E0703 18:29:04.215406 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:04.215492 11894 requestProcessor.cpp:219] insert into db failed 
+E0703 18:29:05.643218 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:05.692482 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:05.692574 11895 requestProcessor.cpp:219] insert into db failed 
+E0703 18:29:05.989410 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:06.028342 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:06.028427 11894 requestProcessor.cpp:219] insert into db failed 
+E0703 18:29:06.394408 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:06.433372 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:06.433423 11895 requestProcessor.cpp:219] insert into db failed 
+E0703 18:29:07.050362 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:07.082376 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:07.082471 11894 requestProcessor.cpp:219] insert into db failed 
+E0703 18:29:07.244382 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:07.274381 11895 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:07.274499 11895 requestProcessor.cpp:219] insert into db failed 
+E0703 18:29:07.409358 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:08.448333 11894 sqlapi.cpp:98] unknowed mysql error
+E0703 18:29:08.448410 11894 requestProcessor.cpp:219] insert into db failed 
+E0703 18:31:48.219391 11895 requestProcessor.cpp:214] android version  1.0.1 already exists
+E0703 18:31:50.130363 11894 requestProcessor.cpp:214] android version  1.0.1 already exists
+E0703 18:31:50.736351 11895 requestProcessor.cpp:214] android version  1.0.1 already exists
+E0703 18:31:50.963263 11894 requestProcessor.cpp:214] android version  1.0.1 already exists
+E0703 18:31:51.687245 11895 requestProcessor.cpp:214] android version  1.0.1 already exists
+E0703 18:31:51.851240 11894 requestProcessor.cpp:214] android version  1.0.1 already exists
+E0703 18:32:27.906613 11895 requestProcessor.cpp:214] android version  1.0.1 already exists

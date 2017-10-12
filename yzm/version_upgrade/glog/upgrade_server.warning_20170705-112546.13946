@@ -1,0 +1,47 @@
+Log file created at: 2017/07/05 11:25:46
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0705 11:25:46.271734 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:46.272066 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:47.796897 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:47.796985 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:48.916769 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:48.916851 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:50.122010 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.122098 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:50.323863 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.323918 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:50.450237 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.450394 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:50.608633 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.608772 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:50.749399 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.749557 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:25:50.883906 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:25:50.883999 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:08.519745 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:08.519841 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:09.844485 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:09.844583 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:10.046296 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.046355 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:10.204701 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.204818 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:10.862011 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.862118 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:10.994622 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:10.994700 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:11.130358 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.130466 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:11.345492 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.345544 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:11.486323 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.486356 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:11.904644 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:11.904739 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:12.065186 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:12.065274 13948 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:12.222059 13949 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:12.222144 13949 requestProcessor.cpp:357] no live_show version exist 
+E0705 11:26:12.423445 13948 sqlapi.cpp:98] unknowed mysql error
+E0705 11:26:12.423522 13948 requestProcessor.cpp:357] no live_show version exist 

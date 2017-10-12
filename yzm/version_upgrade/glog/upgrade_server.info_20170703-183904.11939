@@ -1,0 +1,108 @@
+Log file created at: 2017/07/03 18:39:04
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0703 18:39:04.865155 11939 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0703 18:39:04.865416 11939 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0703 18:39:04.865461 11939 config.cpp:121] db_para_.user_ : yzm
+I0703 18:39:04.865512 11939 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0703 18:39:04.865545 11939 config.cpp:143] db_para_.port_ : 3306
+I0703 18:39:04.865576 11939 config.cpp:154] db_para_.overTime_ : 2
+I0703 18:39:04.865653 11939 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0703 18:39:04.865689 11939 config.cpp:240] redis_para_.port_ : 6379
+I0703 18:39:04.865717 11939 config.cpp:251] redis_para_.overTime_ : 2
+I0703 18:39:04.900712 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:04.927665 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:04.953570 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:04.980603 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:05.002606 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:05.021890 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:05.050673 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:05.067679 11939 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 18:39:07.456562 11941 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:39:07.456619 11941 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0703 18:39:07.456645 11941 requestProcessor.cpp:198] add android version begin
+I0703 18:39:07.497908 11941 requestProcessor.cpp:241] add android version end
+I0703 18:39:07.497946 11941 upgradeServer.cpp:204] response buffer length : 30
+I0703 18:39:07.497961 11941 upgradeServer.cpp:205] callback end, cost 41ms
+I0703 18:39:12.812772 11941 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:39:12.812846 11941 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0703 18:39:12.812875 11941 requestProcessor.cpp:198] add android version begin
+E0703 18:39:12.822826 11941 requestProcessor.cpp:214] android version  1.0.1.111 already exists
+I0703 18:39:12.823186 11941 requestProcessor.cpp:241] add android version end
+I0703 18:39:12.823210 11941 upgradeServer.cpp:204] response buffer length : 45
+I0703 18:39:12.823225 11941 upgradeServer.cpp:205] callback end, cost 10ms
+I0703 18:39:13.672906 11942 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:39:13.672961 11942 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"test",
+	"file_size": "100"
+} 
+I0703 18:39:13.672982 11942 requestProcessor.cpp:198] add android version begin
+E0703 18:39:13.692762 11942 requestProcessor.cpp:214] android version  1.0.1.111 already exists
+I0703 18:39:13.692831 11942 requestProcessor.cpp:241] add android version end
+I0703 18:39:13.692849 11942 upgradeServer.cpp:204] response buffer length : 45
+I0703 18:39:13.692858 11942 upgradeServer.cpp:205] callback end, cost 19ms
+I0703 18:40:20.362782 11941 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:40:20.362859 11941 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"测试",
+	"file_size": "100"
+} 
+I0703 18:40:20.363018 11941 requestProcessor.cpp:198] add android version begin
+I0703 18:40:20.392463 11941 requestProcessor.cpp:241] add android version end
+I0703 18:40:20.392617 11941 upgradeServer.cpp:204] response buffer length : 30
+I0703 18:40:20.392650 11941 upgradeServer.cpp:205] callback end, cost 29ms
+I0703 18:40:26.585232 11942 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:40:26.585342 11942 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"测试",
+	"file_size": "100"
+} 
+I0703 18:40:26.585475 11942 requestProcessor.cpp:198] add android version begin
+E0703 18:40:26.595362 11942 requestProcessor.cpp:214] android version  1.0.1.111 already exists
+I0703 18:40:26.595485 11942 requestProcessor.cpp:241] add android version end
+I0703 18:40:26.595516 11942 upgradeServer.cpp:204] response buffer length : 45
+I0703 18:40:26.595537 11942 upgradeServer.cpp:205] callback end, cost 10ms
+I0703 18:40:26.716595 11941 upgradeServer.cpp:170] httpCallBack begin ...
+I0703 18:40:26.716677 11941 upgradeServer.cpp:171] uri /android/add_version, receive data  {
+	"version_name":"1.0.1.111", 
+	"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+	"oss_bucket":"cloudreamversions",
+	"oss_path":"1.0.0.1/test.apk",
+	"md5":"1111",
+	"description":"测试",
+	"file_size": "100"
+} 
+I0703 18:40:26.716717 11941 requestProcessor.cpp:198] add android version begin
+E0703 18:40:26.723358 11941 requestProcessor.cpp:214] android version  1.0.1.111 already exists
+I0703 18:40:26.723466 11941 requestProcessor.cpp:241] add android version end
+I0703 18:40:26.723498 11941 upgradeServer.cpp:204] response buffer length : 45
+I0703 18:40:26.723526 11941 upgradeServer.cpp:205] callback end, cost 6ms

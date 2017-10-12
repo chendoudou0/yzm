@@ -1,0 +1,32 @@
+Log file created at: 2017/07/14 15:39:38
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0714 15:39:38.415606 29123 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+E0714 15:39:39.718479 29124 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+E0714 15:39:39.905536 29123 requestProcessor.cpp:521] liveshow version  1.0.0.1444 already exists
+E0714 15:43:25.584971 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:26.367959 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:26.512856 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:26.673933 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:26.816865 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:27.019846 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:27.122843 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:27.294160 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:28.965868 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:29.105865 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:29.241935 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:29.420874 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:29.547827 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:29.740897 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:30.276854 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:30.424835 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:30.557826 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:30.747805 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:31.474776 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:31.592757 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:31.758744 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:31.917929 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:32.111707 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:32.857740 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:33.035717 29123 requestProcessor.cpp:214] android version  1.0.0.1 already exists
+E0714 15:43:33.216756 29124 requestProcessor.cpp:214] android version  1.0.0.1 already exists

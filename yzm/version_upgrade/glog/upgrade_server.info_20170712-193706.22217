@@ -1,0 +1,65 @@
+Log file created at: 2017/07/12 19:37:06
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0712 19:37:06.502770 22217 upgradeServer.cpp:93] GLOG BEGIN TO WORK
+I0712 19:37:06.503093 22217 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0712 19:37:06.503154 22217 config.cpp:121] db_para_.user_ : yzm
+I0712 19:37:06.503201 22217 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0712 19:37:06.503249 22217 config.cpp:143] db_para_.port_ : 3306
+I0712 19:37:06.503301 22217 config.cpp:154] db_para_.overTime_ : 2
+I0712 19:37:06.503427 22217 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0712 19:37:06.503489 22217 config.cpp:240] redis_para_.port_ : 6379
+I0712 19:37:06.503536 22217 config.cpp:251] redis_para_.overTime_ : 2
+I0712 19:37:06.503665 22217 config.cpp:274] listen_port : 2018
+I0712 19:37:06.531622 22217 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 19:37:06.552630 22217 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 19:37:06.575633 22217 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 19:37:06.600574 22217 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 19:37:10.438000 22219 HttpTool.cpp:140] http pool LENGTH : 3
+I0712 19:37:10.438048 22219 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.438060 22219 upgradeServer.cpp:186]  data  length33333333333333 3
+I0712 19:37:10.438582 22220 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.438618 22220 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.438628 22220 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.439172 22223 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.439208 22223 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.439219 22223 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.439750 22224 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.439784 22224 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.439795 22224 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.440320 22225 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.440369 22225 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.440381 22225 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.441999 22226 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.442029 22226 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.442039 22226 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.442576 22227 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.442610 22227 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.442625 22227 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.443164 22228 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.443212 22228 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.443230 22228 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.443729 22229 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.443771 22229 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.443820 22229 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.444355 22230 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.444397 22230 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.444411 22230 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.444878 22231 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.444934 22231 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.444959 22231 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.445473 22232 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.445511 22232 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.445524 22232 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.446277 22233 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.446354 22233 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.446378 22233 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.446825 22234 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.446912 22234 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.446949 22234 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.447443 22235 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.447554 22235 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.447573 22235 upgradeServer.cpp:186]  data  length33333333333333 56308
+I0712 19:37:10.448034 22236 HttpTool.cpp:140] http pool LENGTH : 7156
+I0712 19:37:10.448163 22236 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 19:37:10.448204 22236 upgradeServer.cpp:186]  data  length33333333333333 56308

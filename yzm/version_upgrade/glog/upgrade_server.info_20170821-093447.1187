@@ -1,0 +1,18 @@
+Log file created at: 2017/08/21 09:34:47
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0821 09:34:47.654964  1187 upgradeServer.cpp:75] GLOG BEGIN TO WORK
+I0821 09:34:47.707020  1187 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0821 09:34:47.707028  1187 config.cpp:121] db_para_.user_ : yzm
+I0821 09:34:47.707032  1187 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0821 09:34:47.707036  1187 config.cpp:143] db_para_.port_ : 3306
+I0821 09:34:47.707039  1187 config.cpp:154] db_para_.overTime_ : 2
+I0821 09:34:47.707052  1187 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0821 09:34:47.707056  1187 config.cpp:240] redis_para_.port_ : 6379
+I0821 09:34:47.707059  1187 config.cpp:251] redis_para_.overTime_ : 2
+I0821 09:34:47.707072  1187 config.cpp:274] listen_port : 2018
+I0821 09:34:47.870404  1187 sqlapi.cpp:52] connect mysql  success!!!!
+I0821 09:34:47.900382  1187 sqlapi.cpp:52] connect mysql  success!!!!
+I0821 09:34:47.923384  1187 sqlapi.cpp:52] connect mysql  success!!!!
+I0821 09:34:47.953387  1187 sqlapi.cpp:52] connect mysql  success!!!!
+I0824 11:03:54.907918  1187 upgradeServer.cpp:158] UpgradeServer stop

@@ -1,0 +1,8 @@
+Log file created at: 2017/07/11 11:36:11
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0711 11:36:11.816066 20157 requestProcessor.cpp:214] android version  1.0.1333.144 already exists
+E0711 11:36:38.882321 20157 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+E0711 11:36:39.749184 20158 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+E0711 11:36:39.883204 20157 requestProcessor.cpp:541] liveshow version  0.0.1 already exists
+E0711 11:37:35.772882 20158 requestProcessor.cpp:541] liveshow version  0.0.1 already exists

@@ -1,0 +1,17 @@
+Log file created at: 2017/09/21 09:54:44
+Running on machine: Master
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0921 09:54:44.064863  1409 upgradeServer.cpp:75] GLOG BEGIN TO WORK
+I0921 09:54:44.323420  1409 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0921 09:54:44.323431  1409 config.cpp:121] db_para_.user_ : yzm
+I0921 09:54:44.323434  1409 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0921 09:54:44.323438  1409 config.cpp:143] db_para_.port_ : 3306
+I0921 09:54:44.323441  1409 config.cpp:154] db_para_.overTime_ : 2
+I0921 09:54:44.323456  1409 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0921 09:54:44.323459  1409 config.cpp:240] redis_para_.port_ : 6379
+I0921 09:54:44.323462  1409 config.cpp:251] redis_para_.overTime_ : 2
+I0921 09:54:44.323474  1409 config.cpp:274] listen_port : 2018
+I0921 09:54:44.478834  1409 sqlapi.cpp:52] connect mysql  success!!!!
+I0921 09:54:44.505797  1409 sqlapi.cpp:52] connect mysql  success!!!!
+I0921 09:54:44.534832  1409 sqlapi.cpp:52] connect mysql  success!!!!
+I0921 09:54:44.560799  1409 sqlapi.cpp:52] connect mysql  success!!!!

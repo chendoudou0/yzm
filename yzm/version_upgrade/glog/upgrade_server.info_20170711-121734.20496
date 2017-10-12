@@ -1,0 +1,139 @@
+Log file created at: 2017/07/11 12:17:34
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 12:17:34.078655 20496 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 12:17:34.079017 20496 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 12:17:34.079064 20496 config.cpp:121] db_para_.user_ : yzm
+I0711 12:17:34.079095 20496 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 12:17:34.079123 20496 config.cpp:143] db_para_.port_ : 3306
+I0711 12:17:34.079146 20496 config.cpp:154] db_para_.overTime_ : 2
+I0711 12:17:34.079224 20496 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 12:17:34.079257 20496 config.cpp:240] redis_para_.port_ : 6379
+I0711 12:17:34.079280 20496 config.cpp:251] redis_para_.overTime_ : 2
+I0711 12:17:34.079344 20496 config.cpp:274] listen_port : 2018
+I0711 12:17:34.100826 20496 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:17:34.133838 20496 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:17:34.168804 20496 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:17:34.201786 20496 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 12:17:37.138938 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:37.139024 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:37.139060 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+E0711 12:17:37.152863 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:37.153193 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:37.153237 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:37.153254 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:37.153270 20498 upgradeServer.cpp:220] callback end, cost 14ms
+I0711 12:17:38.523211 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:38.523282 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:38.523303 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+E0711 12:17:38.544823 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:38.544909 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:38.544962 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:38.544984 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:38.545001 20498 upgradeServer.cpp:220] callback end, cost 21ms
+I0711 12:17:39.028331 20499 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:39.028414 20499 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:39.028436 20499 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+E0711 12:17:39.054853 20499 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:39.054921 20499 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:39.054967 20499 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:39.054986 20499 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:39.054999 20499 upgradeServer.cpp:220] callback end, cost 26ms
+I0711 12:17:39.175539 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:39.175617 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:39.175643 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+E0711 12:17:39.197860 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:39.197938 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:39.197980 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:39.197999 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:39.198176 20498 upgradeServer.cpp:220] callback end, cost 22ms
+I0711 12:17:39.321763 20499 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:39.321894 20499 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:39.321952 20499 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:39.352660 20499 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:39.373790 20499 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:39.373901 20499 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:39.373955 20499 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:39.373976 20499 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:39.373992 20499 upgradeServer.cpp:220] callback end, cost 52ms
+I0711 12:17:39.526666 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:39.526727 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:39.526746 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:39.557658 20498 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:39.577827 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:39.577883 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:39.577922 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:39.577939 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:39.577951 20498 upgradeServer.cpp:220] callback end, cost 51ms
+I0711 12:17:39.662189 20499 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:39.662268 20499 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:39.662298 20499 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:39.679647 20499 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:39.691778 20499 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:39.691869 20499 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:39.691964 20499 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:39.692006 20499 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:39.692026 20499 upgradeServer.cpp:220] callback end, cost 29ms
+I0711 12:17:39.867664 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:39.867714 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:39.867729 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:39.894665 20498 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:39.914783 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:39.914811 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:39.914830 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:39.914839 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:39.914844 20498 upgradeServer.cpp:220] callback end, cost 47ms
+I0711 12:17:40.040066 20499 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:40.040140 20499 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:40.040170 20499 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:40.056638 20499 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:40.068778 20499 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:40.068861 20499 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:40.068905 20499 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:40.068928 20499 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:40.068945 20499 upgradeServer.cpp:220] callback end, cost 28ms
+I0711 12:17:40.750381 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:40.750591 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:40.750640 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:40.782680 20498 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:40.804841 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:40.804929 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:40.804976 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:40.804998 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:40.805018 20498 upgradeServer.cpp:220] callback end, cost 54ms
+I0711 12:17:41.587496 20499 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:41.587585 20499 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:41.587615 20499 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:41.617652 20499 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:41.637754 20499 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:41.637850 20499 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:41.637912 20499 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:41.637939 20499 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:41.637962 20499 upgradeServer.cpp:220] callback end, cost 50ms
+I0711 12:17:41.734735 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:41.734827 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:41.734854 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:41.756660 20498 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:41.769765 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:41.769872 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:41.769927 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:41.769953 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:41.769976 20498 upgradeServer.cpp:220] callback end, cost 35ms
+I0711 12:17:41.893523 20499 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:41.893688 20499 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:41.893715 20499 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:41.914599 20499 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:41.928755 20499 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:41.928848 20499 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:41.928900 20499 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:41.928925 20499 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:41.928946 20499 upgradeServer.cpp:220] callback end, cost 35ms
+I0711 12:17:42.121677 20498 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 12:17:42.121758 20498 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 12:17:42.121807 20498 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 12:17:42.157567 20498 sqlapi.cpp:52] connect mysql  success!!!!
+E0711 12:17:42.181722 20498 sqlapi.cpp:98] unknowed mysql error....
+E0711 12:17:42.181792 20498 requestProcessor.cpp:427] mysql  query failed
+I0711 12:17:42.181831 20498 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 12:17:42.181849 20498 upgradeServer.cpp:219] response buffer length : 47   data :{"ret":"\u0001","errmsg":"mysql  query failed"}
+I0711 12:17:42.181865 20498 upgradeServer.cpp:220] callback end, cost 60ms

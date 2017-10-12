@@ -1,0 +1,28 @@
+Log file created at: 2017/06/30 15:27:24
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0630 15:27:24.526407  3398 upgradeServer.cpp:92] GLOG BEGIN TO WORK
+I0630 15:27:24.526623  3398 config.cpp:109] db_para_.host_ : 120.24.249.45
+I0630 15:27:24.526635  3398 config.cpp:120] db_para_.user_ : yzm
+I0630 15:27:24.526643  3398 config.cpp:131] db_para_.pass_ : Yzm@55*#jkl
+I0630 15:27:24.526651  3398 config.cpp:142] db_para_.port_ : 3306
+I0630 15:27:24.526659  3398 config.cpp:153] db_para_.overTime_ : 2
+I0630 15:27:24.526676  3398 config.cpp:228] redis_para.ip_ : 127.0.0.1
+I0630 15:27:24.526685  3398 config.cpp:239] redis_para_.port_ : 6379
+I0630 15:27:24.526692  3398 config.cpp:250] redis_para_.overTime_ : 2
+I0630 15:27:24.589833  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.589861  3398 DBOperator.cpp:16] connect mysql success !
+I0630 15:27:24.625866  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.625888  3398 DBOperator.cpp:16] connect mysql success !
+I0630 15:27:24.647866  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.647897  3398 DBOperator.cpp:16] connect mysql success !
+I0630 15:27:24.678974  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.678993  3398 DBOperator.cpp:16] connect mysql success !
+I0630 15:27:24.706847  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.706881  3398 DBOperator.cpp:16] connect mysql success !
+I0630 15:27:24.726851  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.726876  3398 DBOperator.cpp:16] connect mysql success !
+I0630 15:27:24.769891  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.769922  3398 DBOperator.cpp:16] connect mysql success !
+I0630 15:27:24.803869  3398 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 15:27:24.803897  3398 DBOperator.cpp:16] connect mysql success !

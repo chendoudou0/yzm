@@ -1,0 +1,37 @@
+Log file created at: 2017/06/26 17:15:50
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0626 17:15:50.841958  5444 requestProcessor.cpp:262] query live_show version failed
+E0626 17:54:01.557075  5445 requestProcessor.cpp:262] query live_show version failed
+E0626 17:54:03.415107  5444 requestProcessor.cpp:262] query live_show version failed
+E0626 17:54:04.060855  5445 requestProcessor.cpp:262] query live_show version failed
+E0626 17:54:04.187073  5444 requestProcessor.cpp:262] query live_show version failed
+E0626 17:54:04.381002  5445 requestProcessor.cpp:262] query live_show version failed
+E0626 17:54:52.475236  5444 requestProcessor.cpp:262] query live_show version failed
+E0626 17:58:31.173113  5445 requestProcessor.cpp:262] query live_show version failed
+E0626 17:58:35.018610  5444 requestProcessor.cpp:262] query live_show version failed
+E0626 18:01:14.565639  5445 requestProcessor.cpp:262] query live_show version failed
+E0626 18:17:35.172346  5444 requestProcessor.cpp:262] query live_show version failed
+E0626 18:17:37.860288  5445 requestProcessor.cpp:262] query live_show version failed
+E0629 17:20:27.324134  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:22:02.096530  5445 requestProcessor.cpp:181] find_differ_files  failed
+E0629 17:22:11.722712  5444 requestProcessor.cpp:181] find_differ_files  failed
+E0629 17:22:37.948254  5445 requestProcessor.cpp:181] find_differ_files  failed
+E0629 17:22:48.898200  5444 requestProcessor.cpp:181] find_differ_files  failed
+E0629 17:22:49.946542  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:22:50.796663  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:22:51.073748  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:22:51.767575  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:22:58.477464  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:23:00.613366  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:25:11.442994  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:27:04.782719  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:27:06.004181  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:30:32.259718  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:32:34.170253  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:32:42.007073  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:34:29.895122  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:35:44.029644  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:36:50.463230  5445 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:40:42.331960  5444 requestProcessor.cpp:192]  set value to redis failed 
+E0629 17:41:59.625216  5445 requestProcessor.cpp:192]  set value to redis failed 

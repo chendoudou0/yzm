@@ -1,0 +1,27 @@
+Log file created at: 2017/07/12 18:12:12
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0712 18:12:12.206081 21852 upgradeServer.cpp:93] GLOG BEGIN TO WORK
+I0712 18:12:12.206324 21852 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0712 18:12:12.206382 21852 config.cpp:121] db_para_.user_ : yzm
+I0712 18:12:12.206413 21852 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0712 18:12:12.206441 21852 config.cpp:143] db_para_.port_ : 3306
+I0712 18:12:12.206470 21852 config.cpp:154] db_para_.overTime_ : 2
+I0712 18:12:12.206539 21852 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0712 18:12:12.206570 21852 config.cpp:240] redis_para_.port_ : 6379
+I0712 18:12:12.206594 21852 config.cpp:251] redis_para_.overTime_ : 2
+I0712 18:12:12.206656 21852 config.cpp:274] listen_port : 2018
+I0712 18:12:12.239981 21852 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 18:12:12.261049 21852 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 18:12:12.289995 21852 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 18:12:12.332916 21852 sqlapi.cpp:52] connect mysql  success!!!!
+I0712 18:12:21.772584 21854 HttpTool.cpp:140] LENGTH : 11
+I0712 18:12:21.772660 21854 HttpTool.cpp:145] length : 0
+I0712 18:12:21.772693 21854 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 18:12:21.772709 21854 upgradeServer.cpp:185] receive data  GIF89a,÷
+I0712 18:12:21.772723 21854 upgradeServer.cpp:186]  data  length 11
+I0712 18:13:44.395118 21854 HttpTool.cpp:140] LENGTH : 11
+I0712 18:13:44.395190 21854 HttpTool.cpp:145] length : 0
+I0712 18:13:44.395216 21854 upgradeServer.cpp:182] httpCallBack begin ...
+I0712 18:13:44.395231 21854 upgradeServer.cpp:185] receive data  GIF89a,÷
+I0712 18:13:44.395246 21854 upgradeServer.cpp:186]  data  length 11

@@ -1,0 +1,7 @@
+Log file created at: 2017/07/07 09:55:38
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0707 09:55:38.623670 15660 requestProcessor.cpp:547] liveshow version  1.0.0.1.444 already exists
+E0707 10:03:20.239156 15661 sqlapi.cpp:98] unknowed mysql error....
+E0707 10:03:20.303985 15661 DBOperator.cpp:451] rollback
+E0707 10:03:20.304111 15661 requestProcessor.cpp:552] insert into db failed 

@@ -1,0 +1,124 @@
+Log file created at: 2017/06/30 16:09:23
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0630 16:09:23.434954  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:09:50.328508  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:09:50.510368  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:09:57.764123  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:09:57.764164  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:09:58.619138  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:09:58.619168  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:36.414427  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:36.414500  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:38.620434  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:38.620508  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:38.893303  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:38.893426  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:39.036365  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:39.036389  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:39.183298  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:39.183320  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:39.391311  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:39.391340  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:39.830355  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:39.830394  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:39.982285  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:39.982342  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:40.128276  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:40.128406  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:40.277268  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:40.277297  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:40.459326  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:40.459352  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:40.753293  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:40.753319  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:44.295200  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:44.295227  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:46.325177  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:46.325237  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:46.464210  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:46.464247  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:46.617203  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:46.617226  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:46.762177  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:46.762209  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:46.944165  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:46.944188  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:47.046174  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:47.046196  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:47.189151  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:47.189183  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:10:47.336238  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:10:47.336424  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:11:22.347564  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:11:22.347728  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:11:22.444571  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:11:22.444658  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:12:59.422765  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:00.118016  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:00.831784  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:01.009692  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:01.405870  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:10.846583  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:11.115483  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:11.281509  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:11.528574  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:11.678596  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:11.848513  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:12.149503  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:12.389600  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:12.563637  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:12.752670  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:12.976501  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:13.151448  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:13.430470  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:13.688495  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:13.953579  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:15.913318  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:15.913549  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:16.138337  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:16.138447  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:16.426254  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:16.426288  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:16.551265  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:16.551296  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:16.751250  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:16.751282  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:16.888298  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:16.888447  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:17.018244  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:17.018278  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:17.180434  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:17.180542  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:17.322417  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:17.322526  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:17.519326  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:17.519392  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:17.633241  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:17.633276  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:17.810245  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:17.810425  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:17.936281  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:17.936312  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:18.070283  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:18.070327  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:18.234341  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:18.234371  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:18.363234  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:18.363282  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:18.548329  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:18.548399  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:18.658231  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:18.658324  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:18.794227  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:18.794266  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:18.975205  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:18.975239  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:19.097234  3597 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:19.097362  3597 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:19.235216  3598 sqlapi.cpp:319] mysql_num_rows return is NULL
+E0630 16:13:19.235245  3598 requestProcessor.cpp:252] no live_show version exist 
+E0630 16:13:21.108448  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:21.355433  3598 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:21.529912  3597 requestProcessor.cpp:184]  set value to redis failed 
+E0630 16:13:21.778328  3598 requestProcessor.cpp:184]  set value to redis failed 

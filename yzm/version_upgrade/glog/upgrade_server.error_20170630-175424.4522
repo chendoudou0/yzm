@@ -1,0 +1,8 @@
+Log file created at: 2017/06/30 17:54:24
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0630 17:54:24.168900  4524 requestProcessor.cpp:178]  set value to redis failed 
+E0630 17:54:24.400879  4524 requestProcessor.cpp:178]  set value to redis failed 
+E0630 17:54:24.567873  4525 requestProcessor.cpp:178]  set value to redis failed 
+E0630 17:54:24.786952  4524 requestProcessor.cpp:178]  set value to redis failed 
+E0630 17:54:24.949846  4525 requestProcessor.cpp:178]  set value to redis failed 

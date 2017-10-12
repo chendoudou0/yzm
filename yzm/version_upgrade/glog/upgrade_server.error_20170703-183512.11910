@@ -1,0 +1,61 @@
+Log file created at: 2017/07/03 18:35:12
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0703 18:35:12.453492 11912 requestProcessor.cpp:214] android version  1.0.1 already exists
+E0703 18:35:24.570276 11912 config.cpp:12] *** Aborted at 1499078124 (unix time) try "date -d @1499078124" if you are using GNU date ***
+E0703 18:35:24.571137 11912 config.cpp:12] PC: @     0x7f49eb69d943 (unknown)
+11912Ç\ÀÎI
+E0703 18:35:24.597201 11912 config.cpp:12] *** SIGSEGV (@0x0) received by PID 11910 (TID 0x7f49e5f8c700) from PID 0; stack trace: ***
+**
+E0703 18:35:24.608134 11912 config.cpp:12]     @     0x7f49ed23d330 (unknown)
+ÎI
+E0703 18:35:24.608773 11912 config.cpp:12]     @     0x7f49eb69d943 (unknown)
+ÎI
+E0703 18:35:24.609341 11912 config.cpp:12]     @     0x7f49eb75b024 (unknown)
+ÎI
+E0703 18:35:24.609953 11912 config.cpp:12]     @     0x7f49eb75af7d (unknown)
+ÎI
+E0703 18:35:24.610103 11912 config.cpp:12]     @           0x41f5c7 CDBOperator::AddAndroidVersion()
+ÚÎI
+E0703 18:35:24.610234 11912 config.cpp:12]     @           0x4175a7 CrequestProcessor::dealwith_android_version_add()
+ÎI
+E0703 18:35:24.610328 11912 config.cpp:12]     @           0x40d448 CUpgradeServer::httpCallBack()
+roid_version_add()
+ÎI
+E0703 18:35:24.610455 11912 config.cpp:12]     @           0x426bee HTTPRequestHandler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.611091 11912 config.cpp:12]     @     0x7f49ecba05db (unknown)
+tHandler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.611718 11912 config.cpp:12]     @     0x7f49ecbbb177 (unknown)
+tHandler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.612565 11912 config.cpp:12]     @     0x7f49ecbcb7de (unknown)
+tHandler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.613334 11912 config.cpp:12]     @     0x7f49ecf5bd37 (unknown)
+tHandler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.614095 11912 config.cpp:12]     @     0x7f49ecf57db6 (unknown)
+tHandler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.614830 11912 config.cpp:12]     @     0x7f49ed235184 start_thread
+ndler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.615447 11912 config.cpp:12]     @     0x7f49eb74c37d (unknown)
+ad
+ndler_::handleRequest()
+ersion_add()
+ÎI
+E0703 18:35:24.616192 11912 config.cpp:12]     @                0x0 (unknown)
+ad
+ndler_::handleRequest()
+ersion_add()
+ÎI

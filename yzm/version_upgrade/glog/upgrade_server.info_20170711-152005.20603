@@ -1,0 +1,161 @@
+Log file created at: 2017/07/11 15:20:05
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 15:20:05.351578 20603 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 15:20:05.351825 20603 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 15:20:05.351887 20603 config.cpp:121] db_para_.user_ : yzm
+I0711 15:20:05.351920 20603 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 15:20:05.351996 20603 config.cpp:143] db_para_.port_ : 3306
+I0711 15:20:05.352041 20603 config.cpp:154] db_para_.overTime_ : 2
+I0711 15:20:05.352121 20603 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 15:20:05.352157 20603 config.cpp:240] redis_para_.port_ : 6379
+I0711 15:20:05.352183 20603 config.cpp:251] redis_para_.overTime_ : 2
+I0711 15:20:05.352247 20603 config.cpp:274] listen_port : 2018
+I0711 15:20:05.395223 20603 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 15:20:05.435508 20603 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 15:20:05.472262 20603 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 15:20:05.520185 20603 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 15:20:08.616755 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:20:08.616850 20605 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:20:08.616888 20605 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:20:08.617097 20605 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:20:08.617136 20605 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:20:08.631433 20605 requestProcessor.cpp:131] find_differ_files end
+E0711 15:20:08.637434 20605 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:20:08.637843 20605 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:20:08.637871 20605 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:20:08.637892 20605 upgradeServer.cpp:220] callback end, cost 20ms
+I0711 15:20:11.669358 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:20:11.669433 20605 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:20:11.669458 20605 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:20:11.669600 20605 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:20:11.669631 20605 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:20:11.688210 20605 requestProcessor.cpp:131] find_differ_files end
+E0711 15:20:11.694233 20605 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:20:11.694308 20605 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:20:11.694334 20605 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:20:11.694352 20605 upgradeServer.cpp:220] callback end, cost 24ms
+I0711 15:20:12.302731 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:20:12.302769 20606 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:20:12.302779 20606 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:20:12.302798 20606 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:20:12.302804 20606 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:20:12.321193 20606 requestProcessor.cpp:131] find_differ_files end
+E0711 15:20:12.330184 20606 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:20:12.330240 20606 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:20:12.330255 20606 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:20:12.330268 20606 upgradeServer.cpp:220] callback end, cost 27ms
+I0711 15:20:12.499874 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:20:12.500138 20605 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:20:12.500391 20605 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:20:12.500473 20605 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:20:12.500511 20605 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:20:12.514191 20605 requestProcessor.cpp:131] find_differ_files end
+E0711 15:20:12.524235 20605 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:20:12.524338 20605 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:20:12.524370 20605 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:20:12.524394 20605 upgradeServer.cpp:220] callback end, cost 23ms
+I0711 15:20:17.934382 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:20:17.934558 20606 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:20:17.934597 20606 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:20:17.934742 20606 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:20:17.934779 20606 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:20:17.949111 20606 requestProcessor.cpp:131] find_differ_files end
+E0711 15:20:17.956094 20606 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:20:17.956192 20606 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:20:17.956221 20606 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:20:17.956243 20606 upgradeServer.cpp:220] callback end, cost 21ms
+I0711 15:20:39.003835 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:20:39.003921 20605 upgradeServer.cpp:181] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0711 15:20:39.003990 20605 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0711 15:20:39.024538 20605 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 15:20:39.024602 20605 upgradeServer.cpp:219] response buffer length : 248   data :{"ret":"0","version_array":[{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.1/2345reader.apk","version_description":"teest","version_name":"0.1.1"}]}
+I0711 15:20:39.024626 20605 upgradeServer.cpp:220] callback end, cost 20ms
+I0711 15:21:03.456252 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:03.456423 20606 upgradeServer.cpp:181] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0711 15:21:03.456465 20606 requestProcessor.cpp:453] dealwith_android_verison_query begin
+I0711 15:21:03.472013 20606 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 15:21:03.472082 20606 upgradeServer.cpp:219] response buffer length : 248   data :{"ret":"0","version_array":[{"file_md5":"6f5d28983f63bf4355f031060851586d","file_size":"6962741","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/android/0.1.1/2345reader.apk","version_description":"teest","version_name":"0.1.1"}]}
+I0711 15:21:03.472160 20606 upgradeServer.cpp:220] callback end, cost 15ms
+I0711 15:21:05.345770 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:05.345938 20605 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:21:05.345981 20605 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:21:05.346140 20605 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:21:05.346182 20605 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:21:05.358865 20605 requestProcessor.cpp:131] find_differ_files end
+E0711 15:21:05.368937 20605 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:21:05.369047 20605 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:21:05.369081 20605 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:21:05.369105 20605 upgradeServer.cpp:220] callback end, cost 23ms
+I0711 15:21:06.228395 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:06.228579 20606 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:21:06.228622 20606 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:21:06.228670 20606 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:21:06.228695 20606 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:21:06.243861 20606 requestProcessor.cpp:131] find_differ_files end
+E0711 15:21:06.249893 20606 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:21:06.249994 20606 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:21:06.250026 20606 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:21:06.250051 20606 upgradeServer.cpp:220] callback end, cost 21ms
+I0711 15:21:07.171044 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:07.171167 20605 upgradeServer.cpp:181] uri /live_show/update, receive data  {"version_current":"0.0.0", "version_to":"0.0.1"}   
+I0711 15:21:07.171211 20605 requestProcessor.cpp:138] dealwith_liveShow_version_update begin
+I0711 15:21:07.171278 20605 requestProcessor.cpp:160]  get_value_from_redis fialed 
+I0711 15:21:07.171322 20605 requestProcessor.cpp:76] find_differ_files begin...
+I0711 15:21:07.189851 20605 requestProcessor.cpp:131] find_differ_files end
+E0711 15:21:07.196905 20605 requestProcessor.cpp:176]  set value to redis failed 
+I0711 15:21:07.197006 20605 requestProcessor.cpp:190] dealwith_liveShow_version_update end
+I0711 15:21:07.197039 20605 upgradeServer.cpp:219] response buffer length : 240   data :{"ret":"0","url_head":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/0.0.1/","version_current":"0.0.0","version_to":"0.0.1","file_array":[{"file_path":"data/styles.cssss","file_status":"1","md5":"38e3e5d46427a3f7f1c11d36660a389f"}]}
+I0711 15:21:07.197063 20605 upgradeServer.cpp:220] callback end, cost 25ms
+I0711 15:21:11.752063 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:11.752235 20606 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 15:21:11.752277 20606 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 15:21:11.764750 20606 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 15:21:11.764860 20606 upgradeServer.cpp:219] response buffer length : 193   data :{"ret":"0","version_array":[{"version_description":"test","version_name":"0.1.1.1"},{"version_description":"test","version_name":"0.0.1"},{"version_description":"test","version_name":"0.0.0"}]}
+I0711 15:21:11.764974 20606 upgradeServer.cpp:220] callback end, cost 12ms
+I0711 15:21:20.766751 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:20.766866 20605 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 15:21:20.766896 20605 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 15:21:20.788458 20605 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 15:21:20.788491 20605 upgradeServer.cpp:219] response buffer length : 193   data :{"ret":"0","version_array":[{"version_description":"test","version_name":"0.1.1.1"},{"version_description":"test","version_name":"0.0.1"},{"version_description":"test","version_name":"0.0.0"}]}
+I0711 15:21:20.788501 20605 upgradeServer.cpp:220] callback end, cost 21ms
+I0711 15:21:22.140489 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:22.140609 20606 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 15:21:22.140626 20606 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 15:21:22.156379 20606 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 15:21:22.156399 20606 upgradeServer.cpp:219] response buffer length : 193   data :{"ret":"0","version_array":[{"version_description":"test","version_name":"0.1.1.1"},{"version_description":"test","version_name":"0.0.1"},{"version_description":"test","version_name":"0.0.0"}]}
+I0711 15:21:22.156406 20606 upgradeServer.cpp:220] callback end, cost 15ms
+I0711 15:21:22.964937 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 15:21:22.965064 20605 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0711 15:21:22.965080 20605 requestProcessor.cpp:418] dealwith_livershow_verison_query begin
+I0711 15:21:22.978373 20605 requestProcessor.cpp:448] dealwith_livershow_verison_query end
+I0711 15:21:22.978391 20605 upgradeServer.cpp:219] response buffer length : 193   data :{"ret":"0","version_array":[{"version_description":"test","version_name":"0.1.1.1"},{"version_description":"test","version_name":"0.0.1"},{"version_description":"test","version_name":"0.0.0"}]}
+I0711 15:21:22.978397 20605 upgradeServer.cpp:220] callback end, cost 13ms
+I0711 16:25:16.869184 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:25:16.869366 20606 upgradeServer.cpp:181] uri /android/add_version, receive data  
+I0711 16:25:16.869410 20606 requestProcessor.cpp:196] add android version begin
+E0711 16:25:16.869434 20606 requestProcessor.cpp:293] parse json failed
+E0711 16:25:16.869480 20606 requestProcessor.cpp:207] invalid  paramter
+I0711 16:25:16.869532 20606 requestProcessor.cpp:240] add android version end
+I0711 16:25:16.869557 20606 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0711 16:25:16.869580 20606 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 16:25:19.075338 20605 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:25:19.075544 20605 upgradeServer.cpp:181] uri /android/add_version, receive data  
+I0711 16:25:19.075606 20605 requestProcessor.cpp:196] add android version begin
+E0711 16:25:19.075634 20605 requestProcessor.cpp:293] parse json failed
+E0711 16:25:19.075676 20605 requestProcessor.cpp:207] invalid  paramter
+I0711 16:25:19.075726 20605 requestProcessor.cpp:240] add android version end
+I0711 16:25:19.075750 20605 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0711 16:25:19.075773 20605 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 16:25:30.097573 20606 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 16:25:30.097764 20606 upgradeServer.cpp:181] uri /android/query, receive data  
+I0711 16:25:30.097808 20606 requestProcessor.cpp:453] dealwith_android_verison_query begin
+E0711 16:25:30.106648 20606 sqlapi.cpp:93] mysql lost or go away
+E0711 16:25:30.106788 20606 requestProcessor.cpp:461] mysql query failed
+I0711 16:25:30.106832 20606 requestProcessor.cpp:466] dealwith_android_verison_query end
+I0711 16:25:30.106873 20606 upgradeServer.cpp:219] response buffer length : 46   data :{"ret":"\u0001","errmsg":"mysql query failed"}
+I0711 16:25:30.106896 20606 upgradeServer.cpp:220] callback end, cost 9ms

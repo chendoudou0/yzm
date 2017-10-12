@@ -1,0 +1,61 @@
+Log file created at: 2017/07/10 10:23:43
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 10:23:43.486068 17622 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 10:23:43.486266 17622 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0710 10:23:43.486304 17622 config.cpp:121] db_para_.user_ : yzm
+I0710 10:23:43.486325 17622 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0710 10:23:43.486344 17622 config.cpp:143] db_para_.port_ : 3306
+I0710 10:23:43.486368 17622 config.cpp:154] db_para_.overTime_ : 2
+I0710 10:23:43.486426 17622 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 10:23:43.486454 17622 config.cpp:240] redis_para_.port_ : 6379
+I0710 10:23:43.486475 17622 config.cpp:251] redis_para_.overTime_ : 2
+I0710 10:23:43.486529 17622 config.cpp:274] listen_port : 2018
+I0710 10:23:43.517050 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:43.553171 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:43.584056 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:43.610059 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:43.643337 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:43.666126 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:43.686161 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:43.721201 17622 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 10:23:58.849210 17624 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 10:23:58.849306 17624 upgradeServer.cpp:181] uri /live_show/query, receive data  {"service_type":"2003"}
+I0710 10:23:58.849342 17624 requestProcessor.cpp:420] dealwith_livershow_verison_query begin
+I0710 10:23:58.868911 17624 requestProcessor.cpp:452] dealwith_livershow_verison_query end
+I0710 10:23:58.868978 17624 upgradeServer.cpp:219] response buffer length : 1
+I0710 10:23:58.869001 17624 upgradeServer.cpp:220] callback end, cost 19ms
+E0710 10:23:58.869102 17624 config.cpp:12] *** Aborted at 1499653438 (unix time) try "date -d @1499653438" if you are using GNU date ***
+E0710 10:23:58.870317 17624 config.cpp:12] PC: @     0x7f12055bdc37 (unknown)
+E0710 10:23:58.887816 17624 config.cpp:12] *** SIGABRT (@0x3e8000044d6) received by PID 17622 (TID 0x7f11ffec1700) from PID 17622; stack trace: ***
+E0710 10:23:58.888999 17624 config.cpp:12]     @     0x7f1207172330 (unknown)
+
+E0710 10:23:58.889729 17624 config.cpp:12]     @     0x7f12055bdc37 (unknown)
+
+E0710 10:23:58.890522 17624 config.cpp:12]     @     0x7f12055c1028 (unknown)
+
+E0710 10:23:58.891166 17624 config.cpp:12]     @     0x7f12055fa2a4 (unknown)
+
+E0710 10:23:58.891609 17624 config.cpp:12]     @     0x7f120560655e (unknown)
+
+E0710 10:23:58.891700 17624 config.cpp:12]     @           0x40dc59 CUpgradeServer::httpCallBack()
+ÐHæ
+E0710 10:23:58.891804 17624 config.cpp:12]     @           0x42856e HTTPRequestHandler_::handleRequest()
+E0710 10:23:58.892303 17624 config.cpp:12]     @     0x7f1206ad55db (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.892786 17624 config.cpp:12]     @     0x7f1206af0177 (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.893261 17624 config.cpp:12]     @     0x7f1206b007de (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.893756 17624 config.cpp:12]     @     0x7f1206e90d37 (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.894248 17624 config.cpp:12]     @     0x7f1206e8cdb6 (unknown)
+tHandler_::handleRequest()
+E0710 10:23:58.894750 17624 config.cpp:12]     @     0x7f120716a184 start_thread
+ndler_::handleRequest()
+E0710 10:23:58.895172 17624 config.cpp:12]     @     0x7f120568137d (unknown)
+ad
+ndler_::handleRequest()
+E0710 10:23:58.895683 17624 config.cpp:12]     @                0x0 (unknown)
+ad
+ndler_::handleRequest()

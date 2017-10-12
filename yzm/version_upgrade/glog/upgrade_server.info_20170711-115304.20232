@@ -1,0 +1,37 @@
+Log file created at: 2017/07/11 11:53:04
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 11:53:04.905161 20232 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 11:53:04.905477 20232 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0711 11:53:04.905534 20232 config.cpp:121] db_para_.user_ : yzm
+I0711 11:53:04.905581 20232 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0711 11:53:04.905628 20232 config.cpp:143] db_para_.port_ : 3306
+I0711 11:53:04.905675 20232 config.cpp:154] db_para_.overTime_ : 2
+I0711 11:53:04.905803 20232 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 11:53:04.905853 20232 config.cpp:240] redis_para_.port_ : 6379
+I0711 11:53:04.905897 20232 config.cpp:251] redis_para_.overTime_ : 2
+I0711 11:53:04.906009 20232 config.cpp:274] listen_port : 2018
+I0711 11:53:04.937465 20232 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:04.956390 20232 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:04.976420 20232 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:05.013357 20232 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 11:53:09.437034 20234 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 11:53:09.437086 20234 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.11",
+"oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+"oss_bucket":"cloudreamversions",
+"path_array":
+[{"file_path":"0.0.11/data/document.js",
+"md5":"74542dd63d2c54073d80e69aa6289239"},
+{"file_path":"0.0.11/data/styles.css","md5":"38e3e5d46427a3f7f1c11d36660a389f"}],
+"description":"test"
+	
+}
+ 
+I0711 11:53:09.437109 20234 requestProcessor.cpp:503] add liveshow version begin
+I0711 11:53:09.437141 20234 requestProcessor.cpp:397] PATH : /data/document.js  pos : 6
+I0711 11:53:09.437155 20234 requestProcessor.cpp:397] PATH : /data/styles.css  pos : 6
+I0711 11:53:09.437167 20234 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.11' 
+E0711 11:53:09.446563 20234 requestProcessor.cpp:521] liveshow version  0.0.11 already exists
+I0711 11:53:09.447028 20234 requestProcessor.cpp:547] add android version end
+I0711 11:53:09.447057 20234 upgradeServer.cpp:219] response buffer length : 45   data :{"err":"2","errmsg":" version already exist"}
+I0711 11:53:09.447079 20234 upgradeServer.cpp:220] callback end, cost 9ms

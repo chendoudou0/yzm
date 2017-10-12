@@ -1,0 +1,70 @@
+Log file created at: 2017/06/30 17:54:21
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0630 17:54:21.464102  4522 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0630 17:54:21.464166  4522 config.cpp:109] db_para_.host_ : 120.24.249.45
+I0630 17:54:21.464177  4522 config.cpp:120] db_para_.user_ : yzm
+I0630 17:54:21.464186  4522 config.cpp:131] db_para_.pass_ : Yzm@55*#jkl
+I0630 17:54:21.464193  4522 config.cpp:142] db_para_.port_ : 3306
+I0630 17:54:21.464200  4522 config.cpp:153] db_para_.overTime_ : 2
+I0630 17:54:21.464217  4522 config.cpp:228] redis_para.ip_ : 127.0.0.1
+I0630 17:54:21.464226  4522 config.cpp:239] redis_para_.port_ : 6379
+I0630 17:54:21.464232  4522 config.cpp:250] redis_para_.overTime_ : 2
+I0630 17:54:21.485723  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:21.504652  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:21.522681  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:21.540696  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:21.560665  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:21.590709  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:21.610671  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:21.629626  4522 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:54:24.094600  4524 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:54:24.094640  4524 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:54:24.094655  4524 requestProcessor.cpp:140] dealwith_liveShow_version_update begin
+I0630 17:54:24.094739  4524 requestProcessor.cpp:162]  get_value_from_redis fialed 
+I0630 17:54:24.094756  4524 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:54:24.159083  4524 requestProcessor.cpp:133] find_differ_files end
+E0630 17:54:24.168900  4524 requestProcessor.cpp:178]  set value to redis failed 
+I0630 17:54:24.169024  4524 requestProcessor.cpp:192] dealwith_liveShow_version_update end
+I0630 17:54:24.169049  4524 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:54:24.169064  4524 upgradeServer.cpp:189] callback end, cost 74ms
+I0630 17:54:24.335312  4524 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:54:24.335350  4524 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:54:24.335361  4524 requestProcessor.cpp:140] dealwith_liveShow_version_update begin
+I0630 17:54:24.335376  4524 requestProcessor.cpp:162]  get_value_from_redis fialed 
+I0630 17:54:24.335386  4524 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:54:24.391454  4524 requestProcessor.cpp:133] find_differ_files end
+E0630 17:54:24.400879  4524 requestProcessor.cpp:178]  set value to redis failed 
+I0630 17:54:24.400910  4524 requestProcessor.cpp:192] dealwith_liveShow_version_update end
+I0630 17:54:24.400940  4524 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:54:24.400954  4524 upgradeServer.cpp:189] callback end, cost 65ms
+I0630 17:54:24.490620  4525 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:54:24.490646  4525 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:54:24.490651  4525 requestProcessor.cpp:140] dealwith_liveShow_version_update begin
+I0630 17:54:24.490664  4525 requestProcessor.cpp:162]  get_value_from_redis fialed 
+I0630 17:54:24.490669  4525 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:54:24.552673  4525 requestProcessor.cpp:133] find_differ_files end
+E0630 17:54:24.567873  4525 requestProcessor.cpp:178]  set value to redis failed 
+I0630 17:54:24.567906  4525 requestProcessor.cpp:192] dealwith_liveShow_version_update end
+I0630 17:54:24.567937  4525 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:54:24.568078  4525 upgradeServer.cpp:189] callback end, cost 77ms
+I0630 17:54:24.729604  4524 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:54:24.729658  4524 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:54:24.729674  4524 requestProcessor.cpp:140] dealwith_liveShow_version_update begin
+I0630 17:54:24.729687  4524 requestProcessor.cpp:162]  get_value_from_redis fialed 
+I0630 17:54:24.729693  4524 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:54:24.778422  4524 requestProcessor.cpp:133] find_differ_files end
+E0630 17:54:24.786952  4524 requestProcessor.cpp:178]  set value to redis failed 
+I0630 17:54:24.787021  4524 requestProcessor.cpp:192] dealwith_liveShow_version_update end
+I0630 17:54:24.787050  4524 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:54:24.787065  4524 upgradeServer.cpp:189] callback end, cost 57ms
+I0630 17:54:24.870488  4525 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:54:24.870528  4525 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:54:24.870544  4525 requestProcessor.cpp:140] dealwith_liveShow_version_update begin
+I0630 17:54:24.870566  4525 requestProcessor.cpp:162]  get_value_from_redis fialed 
+I0630 17:54:24.870579  4525 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:54:24.942414  4525 requestProcessor.cpp:133] find_differ_files end
+E0630 17:54:24.949846  4525 requestProcessor.cpp:178]  set value to redis failed 
+I0630 17:54:24.949877  4525 requestProcessor.cpp:192] dealwith_liveShow_version_update end
+I0630 17:54:24.949892  4525 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:54:24.949903  4525 upgradeServer.cpp:189] callback end, cost 79ms

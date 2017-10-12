@@ -1,0 +1,106 @@
+Log file created at: 2017/06/30 17:11:39
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0630 17:11:39.134980  3959 upgradeServer.cpp:92] GLOG BEGIN TO WORK
+I0630 17:11:39.135056  3959 config.cpp:109] db_para_.host_ : 120.24.249.45
+I0630 17:11:39.135074  3959 config.cpp:120] db_para_.user_ : yzm
+I0630 17:11:39.135085  3959 config.cpp:131] db_para_.pass_ : Yzm@55*#jkl
+I0630 17:11:39.135097  3959 config.cpp:142] db_para_.port_ : 3306
+I0630 17:11:39.135107  3959 config.cpp:153] db_para_.overTime_ : 2
+I0630 17:11:39.135136  3959 config.cpp:228] redis_para.ip_ : 127.0.0.1
+I0630 17:11:39.135148  3959 config.cpp:239] redis_para_.port_ : 6379
+I0630 17:11:39.135159  3959 config.cpp:250] redis_para_.overTime_ : 2
+I0630 17:11:39.161226  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:39.192214  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:39.215247  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:39.240236  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:39.262228  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:39.285292  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:39.309209  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:39.336231  3959 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 17:11:43.153841  3961 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:43.153918  3961 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:11:43.153947  3961 requestProcessor.cpp:145] dealwith_liveShow_version_update begin
+I0630 17:11:43.154148  3961 requestProcessor.cpp:167]  get_value_from_redis fialed 
+I0630 17:11:43.154196  3961 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:11:43.213035  3961 requestProcessor.cpp:138] find_differ_files end
+E0630 17:11:43.219619  3961 requestProcessor.cpp:183]  set value to redis failed 
+I0630 17:11:43.219836  3961 requestProcessor.cpp:197] dealwith_liveShow_version_update end
+I0630 17:11:43.219871  3961 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:11:43.219902  3961 upgradeServer.cpp:189] callback end, cost 65ms
+I0630 17:11:43.892630  3961 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:43.892688  3961 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:11:43.892707  3961 requestProcessor.cpp:145] dealwith_liveShow_version_update begin
+I0630 17:11:43.892735  3961 requestProcessor.cpp:167]  get_value_from_redis fialed 
+I0630 17:11:43.892751  3961 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:11:43.946508  3961 requestProcessor.cpp:138] find_differ_files end
+E0630 17:11:43.953449  3961 requestProcessor.cpp:183]  set value to redis failed 
+I0630 17:11:43.953474  3961 requestProcessor.cpp:197] dealwith_liveShow_version_update end
+I0630 17:11:43.953490  3961 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:11:43.953496  3961 upgradeServer.cpp:189] callback end, cost 60ms
+I0630 17:11:44.203030  3962 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:44.203070  3962 upgradeServer.cpp:149] uri /live_show/update, receive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 17:11:44.203079  3962 requestProcessor.cpp:145] dealwith_liveShow_version_update begin
+I0630 17:11:44.203094  3962 requestProcessor.cpp:167]  get_value_from_redis fialed 
+I0630 17:11:44.203101  3962 requestProcessor.cpp:78] find_differ_files begin...
+I0630 17:11:44.268031  3962 requestProcessor.cpp:138] find_differ_files end
+E0630 17:11:44.277427  3962 requestProcessor.cpp:183]  set value to redis failed 
+I0630 17:11:44.277456  3962 requestProcessor.cpp:197] dealwith_liveShow_version_update end
+I0630 17:11:44.277469  3962 upgradeServer.cpp:188] response buffer length : 1365
+I0630 17:11:44.277601  3962 upgradeServer.cpp:189] callback end, cost 74ms
+I0630 17:11:45.864668  3961 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:45.864737  3961 upgradeServer.cpp:149] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0630 17:11:45.864764  3961 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 17:11:45.959293  3961 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 17:11:45.959336  3961 upgradeServer.cpp:188] response buffer length : 3278
+I0630 17:11:45.959344  3961 upgradeServer.cpp:189] callback end, cost 94ms
+I0630 17:11:46.180093  3962 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:46.180136  3962 upgradeServer.cpp:149] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0630 17:11:46.180160  3962 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 17:11:46.288324  3962 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 17:11:46.288451  3962 upgradeServer.cpp:188] response buffer length : 3278
+I0630 17:11:46.288465  3962 upgradeServer.cpp:189] callback end, cost 108ms
+I0630 17:11:46.902544  3961 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:46.902578  3961 upgradeServer.cpp:149] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0630 17:11:46.902585  3961 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 17:11:46.991263  3961 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 17:11:46.991282  3961 upgradeServer.cpp:188] response buffer length : 3278
+I0630 17:11:46.991288  3961 upgradeServer.cpp:189] callback end, cost 88ms
+I0630 17:11:47.171650  3962 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:47.171670  3962 upgradeServer.cpp:149] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0630 17:11:47.171677  3962 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 17:11:47.259241  3962 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 17:11:47.259263  3962 upgradeServer.cpp:188] response buffer length : 3278
+I0630 17:11:47.259268  3962 upgradeServer.cpp:189] callback end, cost 87ms
+I0630 17:11:47.486889  3961 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:47.486914  3961 upgradeServer.cpp:149] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0630 17:11:47.486922  3961 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 17:11:47.582281  3961 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 17:11:47.582300  3961 upgradeServer.cpp:188] response buffer length : 3278
+I0630 17:11:47.582306  3961 upgradeServer.cpp:189] callback end, cost 95ms
+I0630 17:11:47.735736  3962 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:47.735774  3962 upgradeServer.cpp:149] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0630 17:11:47.735782  3962 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 17:11:47.819264  3962 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 17:11:47.819291  3962 upgradeServer.cpp:188] response buffer length : 3278
+I0630 17:11:47.819298  3962 upgradeServer.cpp:189] callback end, cost 83ms
+I0630 17:11:48.019716  3961 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 17:11:48.019757  3961 upgradeServer.cpp:149] uri /android/query, receive data  {
+    "service_type": "2002"
+}
+I0630 17:11:48.019767  3961 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 17:11:48.107280  3961 requestProcessor.cpp:292] dealwith_android_verison_query end
+I0630 17:11:48.107313  3961 upgradeServer.cpp:188] response buffer length : 3278
+I0630 17:11:48.107321  3961 upgradeServer.cpp:189] callback end, cost 87ms

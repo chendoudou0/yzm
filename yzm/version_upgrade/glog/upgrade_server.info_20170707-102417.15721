@@ -1,0 +1,105 @@
+Log file created at: 2017/07/07 10:24:17
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0707 10:24:17.196668 15721 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0707 10:24:17.196916 15721 config.cpp:110] db_para_.host_ : 120.24.249.45
+I0707 10:24:17.196961 15721 config.cpp:121] db_para_.user_ : yzm
+I0707 10:24:17.196990 15721 config.cpp:132] db_para_.pass_ : Yzm@55*#jkl
+I0707 10:24:17.197021 15721 config.cpp:143] db_para_.port_ : 3306
+I0707 10:24:17.197049 15721 config.cpp:154] db_para_.overTime_ : 2
+I0707 10:24:17.197116 15721 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0707 10:24:17.197154 15721 config.cpp:240] redis_para_.port_ : 6379
+I0707 10:24:17.197185 15721 config.cpp:251] redis_para_.overTime_ : 2
+I0707 10:24:17.197247 15721 config.cpp:274] listen_port : 2018
+I0707 10:24:17.219384 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:17.241384 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:17.270421 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:17.287338 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:17.318351 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:17.341373 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:17.371352 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:17.399333 15721 sqlapi.cpp:52] connect mysql  success!!!!
+I0707 10:24:19.741396 15723 upgradeServer.cpp:180] httpCallBack begin ...
+I0707 10:24:19.741479 15723 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1.444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2a"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2c"
+    } ]
+}
+I0707 10:24:19.741526 15723 requestProcessor.cpp:531] add liveshow version begin
+I0707 10:24:19.741587 15723 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1.444' 
+I0707 10:24:19.753309 15723 DBOperator.cpp:446] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '1.0.0.1.444', '', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', 'test','2017-07-07 10:24:19.753')
+I0707 10:24:19.759306 15723 DBOperator.cpp:456] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1.444','def.h','3bdc1308fd4fb3511cce0f0ac41c3a2a','2017-07-07 10:24:19.759')
+I0707 10:24:19.765305 15723 DBOperator.cpp:456] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1.444','D3Dcompiler_47.dll','3bdc1308fd4fb3511cce0f0ac41c3a2b','2017-07-07 10:24:19.765')
+I0707 10:24:19.798317 15723 DBOperator.cpp:456] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1.444','Filters/cartoon.jpg','3bdc1308fd4fb3511cce0f0ac41c3a2c','2017-07-07 10:24:19.798')
+I0707 10:24:19.876281 15723 requestProcessor.cpp:574] add android version end
+I0707 10:24:19.876348 15723 upgradeServer.cpp:219] response buffer length : 30
+I0707 10:24:19.876374 15723 upgradeServer.cpp:220] callback end, cost 134ms
+I0707 10:24:58.308584 15723 upgradeServer.cpp:180] httpCallBack begin ...
+I0707 10:24:58.308652 15723 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1.444",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2a"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2c"
+    } ]
+}
+I0707 10:24:58.308851 15723 requestProcessor.cpp:531] add liveshow version begin
+I0707 10:24:58.308919 15723 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1.444' 
+E0707 10:24:58.316660 15723 requestProcessor.cpp:547] liveshow version  1.0.0.1.444 already exists
+I0707 10:24:58.316925 15723 requestProcessor.cpp:574] add android version end
+I0707 10:24:58.316943 15723 upgradeServer.cpp:219] response buffer length : 45
+I0707 10:24:58.316954 15723 upgradeServer.cpp:220] callback end, cost 8ms
+I0707 10:25:02.175289 15724 upgradeServer.cpp:180] httpCallBack begin ...
+I0707 10:25:02.175462 15724 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {
+    "version_name":"1.0.0.1.4443",
+    "oss_domain":"oss-cn-shenzhen.aliyuncs.com",
+    "oss_bucket":"cloudreamversions",
+    "description": "test",
+    "path_array": [
+    {
+      "file_path": "def.h",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2a"
+    },
+    {
+      "file_path": "D3Dcompiler_47.dll",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2b"
+    },
+    {
+      "file_path": "Filters/cartoon.jpg",
+      "md5": "3bdc1308fd4fb3511cce0f0ac41c3a2c"
+    } ]
+}
+I0707 10:25:02.175518 15724 requestProcessor.cpp:531] add liveshow version begin
+I0707 10:25:02.175583 15724 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='1.0.0.1.4443' 
+I0707 10:25:02.198444 15724 DBOperator.cpp:446] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '1.0.0.1.4443', '', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', 'test','2017-07-07 10:25:02.198')
+I0707 10:25:02.208452 15724 DBOperator.cpp:456] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1.4443','def.h','3bdc1308fd4fb3511cce0f0ac41c3a2a','2017-07-07 10:25:02.208')
+I0707 10:25:02.224457 15724 DBOperator.cpp:456] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1.4443','D3Dcompiler_47.dll','3bdc1308fd4fb3511cce0f0ac41c3a2b','2017-07-07 10:25:02.224')
+I0707 10:25:02.238401 15724 DBOperator.cpp:456] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '1.0.0.1.4443','Filters/cartoon.jpg','3bdc1308fd4fb3511cce0f0ac41c3a2c','2017-07-07 10:25:02.238')
+I0707 10:25:02.271425 15724 requestProcessor.cpp:574] add android version end
+I0707 10:25:02.271605 15724 upgradeServer.cpp:219] response buffer length : 30
+I0707 10:25:02.271659 15724 upgradeServer.cpp:220] callback end, cost 96ms

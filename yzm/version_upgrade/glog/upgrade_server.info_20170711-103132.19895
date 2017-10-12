@@ -1,0 +1,180 @@
+Log file created at: 2017/07/11 10:31:32
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 10:31:32.544826 19895 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 10:31:32.545020 19895 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0711 10:31:32.545054 19895 config.cpp:121] db_para_.user_ : yzm
+I0711 10:31:32.545074 19895 config.cpp:132] db_para_.pass_ : 123456
+I0711 10:31:32.545091 19895 config.cpp:143] db_para_.port_ : 3306
+I0711 10:31:32.545120 19895 config.cpp:154] db_para_.overTime_ : 2
+I0711 10:31:32.545174 19895 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 10:31:32.545198 19895 config.cpp:240] redis_para_.port_ : 6379
+I0711 10:31:32.545217 19895 config.cpp:251] redis_para_.overTime_ : 2
+I0711 10:31:32.545262 19895 config.cpp:274] listen_port : 2018
+I0711 10:31:32.548358 19895 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:31:32.548802 19895 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:31:32.549365 19895 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:31:32.549842 19895 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:31:39.787560 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:31:39.787652 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:31:39.787689 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:31:39.788516 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:31:39.788584 19897 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:31:39.788610 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:31:48.792634 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:31:48.792709 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:31:48.792733 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:31:48.793419 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:31:48.793480 19897 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:31:48.793500 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:32:17.829901 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:32:17.829988 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:32:17.830013 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:32:17.830680 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:32:17.830739 19898 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:32:17.830761 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:32:29.909548 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:32:29.909617 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:32:29.909637 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:32:29.910274 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:32:29.910325 19897 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:32:29.910459 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:32:39.675467 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:32:39.675699 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:32:39.675743 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:32:39.676489 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:32:39.676640 19898 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"0","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:32:39.676676 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:39.919520 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:39.919611 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:39.919634 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:39.920222 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:39.920574 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:39.920600 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:39.920616 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:42.093271 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:42.093442 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:42.093483 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:42.093899 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:42.094017 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:42.094048 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:42.094071 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:43.851610 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:43.851732 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:43.851765 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:43.852165 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:43.852265 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:43.852291 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:43.852310 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:44.306629 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:44.306780 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:44.306816 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:44.307216 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:44.307307 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:44.307332 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:44.307349 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:44.461400 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:44.461477 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:44.461500 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:44.461766 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:44.461843 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:44.461864 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:44.461880 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:44.662986 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:44.663058 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:44.663072 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:44.663275 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:44.663316 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:44.663324 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:44.663329 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:44.789052 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:44.789141 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:44.789155 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:44.789304 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:44.789335 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:44.789343 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:44.789350 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:44.962429 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:44.962568 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:44.962945 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:44.963143 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:44.963173 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:44.963181 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:44.963186 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:45.078766 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:45.078786 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:45.078794 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:45.079006 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:45.079035 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:45.079041 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:45.079046 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:45.228752 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:45.228797 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:45.228811 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:45.229048 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:45.229100 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:45.229111 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:45.229120 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:45.430227 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:45.430286 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:45.430305 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:45.430598 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:45.430658 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:45.430673 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:45.430685 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:46.012892 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:46.012984 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:46.013016 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:46.013434 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:46.013548 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:46.013653 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:46.013686 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:46.116791 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:46.116971 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:46.117049 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:46.117465 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:46.117655 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:46.117709 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:46.117745 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:46.294574 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:46.294654 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:46.294682 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:46.295022 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:46.295101 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:46.295123 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:46.295140 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:46.446251 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:46.446313 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:46.446328 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:46.446564 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:46.446605 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:46.446615 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:46.446622 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:46.616858 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:46.616889 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:46.616899 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:46.617133 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:46.617163 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:46.617172 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:46.617177 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:46.716881 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:46.716900 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:46.716907 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:46.717028 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:46.717056 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:46.717061 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:46.717067 19897 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:46.893793 19898 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:46.893870 19898 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:46.893898 19898 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:46.894325 19898 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:46.894421 19898 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:46.894448 19898 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:46.894466 19898 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:41:47.021579 19897 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:41:47.021605 19897 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:41:47.021649 19897 requestProcessor.cpp:451] dealwith_android_verison_query begin
+E0711 10:41:47.021904 19897 sqlapi.cpp:273] mysql_num_rows is  0
+I0711 10:41:47.021953 19897 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:41:47.021975 19897 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","version_array":[]}
+I0711 10:41:47.021984 19897 upgradeServer.cpp:220] callback end, cost 0ms

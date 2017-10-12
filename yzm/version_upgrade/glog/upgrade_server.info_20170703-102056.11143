@@ -1,0 +1,21 @@
+Log file created at: 2017/07/03 10:20:56
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0703 10:20:56.275177 11143 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0703 10:20:56.275250 11143 config.cpp:109] db_para_.host_ : 120.24.249.45
+I0703 10:20:56.275260 11143 config.cpp:120] db_para_.user_ : yzm
+I0703 10:20:56.275265 11143 config.cpp:131] db_para_.pass_ : Yzm@55*#jkl
+I0703 10:20:56.275269 11143 config.cpp:142] db_para_.port_ : 3306
+I0703 10:20:56.275271 11143 config.cpp:153] db_para_.overTime_ : 2
+I0703 10:20:56.275287 11143 config.cpp:228] redis_para.ip_ : 127.0.0.1
+I0703 10:20:56.275292 11143 config.cpp:239] redis_para_.port_ : 6379
+I0703 10:20:56.275295 11143 config.cpp:250] redis_para_.overTime_ : 2
+I0703 10:20:56.374496 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:20:56.402482 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:20:56.422474 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:20:56.441484 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:20:56.474468 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:20:56.495458 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:20:56.513483 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:20:56.541471 11143 sqlapi.cpp:52] connect mysql  success!!!!
+I0703 10:32:08.726970 11143 upgradeServer.cpp:143] UpgradeServer stop

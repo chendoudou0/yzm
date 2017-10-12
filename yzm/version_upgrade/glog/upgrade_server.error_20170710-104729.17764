@@ -1,0 +1,11 @@
+Log file created at: 2017/07/10 10:47:29
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 10:47:29.490074 17767 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 10:47:29.756047 17766 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 10:47:32.236008 17767 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 10:47:32.916970 17766 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 10:47:33.141927 17767 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 10:47:33.357936 17766 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 10:47:33.597982 17767 sqlapi.cpp:273] mysql_num_rows  is  0
+E0710 10:47:33.837975 17766 sqlapi.cpp:273] mysql_num_rows  is  0

@@ -1,0 +1,102 @@
+Log file created at: 2017/07/10 15:48:55
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0710 15:48:55.971309 18678 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0710 15:48:55.971592 18678 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0710 15:48:55.971637 18678 config.cpp:121] db_para_.user_ : yzm
+I0710 15:48:55.971664 18678 config.cpp:132] db_para_.pass_ : 123456
+I0710 15:48:55.971690 18678 config.cpp:143] db_para_.port_ : 3306
+I0710 15:48:55.971731 18678 config.cpp:154] db_para_.overTime_ : 2
+I0710 15:48:55.971812 18678 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0710 15:48:55.971848 18678 config.cpp:240] redis_para_.port_ : 6379
+I0710 15:48:55.971879 18678 config.cpp:251] redis_para_.overTime_ : 2
+I0710 15:48:55.971999 18678 config.cpp:274] listen_port : 2018
+I0710 15:48:55.975620 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:48:55.976217 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:48:55.976712 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:48:55.977138 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:48:55.977566 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:48:55.978039 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:48:55.978466 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:48:55.978839 18678 sqlapi.cpp:52] connect mysql  success!!!!
+I0710 15:49:29.752825 18680 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 15:49:29.752869 18680 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {}
+I0710 15:49:29.752884 18680 requestProcessor.cpp:530] add liveshow version begin
+E0710 15:49:29.752897 18680 requestProcessor.cpp:541] invalid  paramter
+I0710 15:49:29.753031 18680 requestProcessor.cpp:576] add android version end
+I0710 15:49:29.753038 18680 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 15:49:29.753046 18680 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 15:53:31.745676 18680 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 15:53:31.745738 18680 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {}
+I0710 15:53:31.745755 18680 requestProcessor.cpp:530] add liveshow version begin
+E0710 15:53:31.745770 18680 requestProcessor.cpp:541] invalid  paramter
+I0710 15:53:31.745807 18680 requestProcessor.cpp:576] add android version end
+I0710 15:53:31.745820 18680 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 15:53:31.745831 18680 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:07:05.238288 18681 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:07:05.238375 18681 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {}
+I0710 16:07:05.238399 18681 requestProcessor.cpp:530] add liveshow version begin
+E0710 16:07:05.238416 18681 requestProcessor.cpp:541] invalid  paramter
+I0710 16:07:05.238461 18681 requestProcessor.cpp:576] add android version end
+I0710 16:07:05.238477 18681 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 16:07:05.238492 18681 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:09:59.898840 18680 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:09:59.898880 18680 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"Name":"0.0.1.666666"}
+I0710 16:09:59.898887 18680 requestProcessor.cpp:530] add liveshow version begin
+E0710 16:09:59.898896 18680 requestProcessor.cpp:541] invalid  paramter
+I0710 16:09:59.898911 18680 requestProcessor.cpp:576] add android version end
+I0710 16:09:59.898916 18680 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 16:09:59.898921 18680 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:10:50.362660 18681 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:10:50.362723 18681 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"Name":"0.0.1.666666","Domain":"oss-cn-shenzhen.aliyuncs.com","Bucket":"cloudreamversions","Description":"测试","File":[{}]}
+I0710 16:10:50.362864 18681 requestProcessor.cpp:530] add liveshow version begin
+E0710 16:10:50.362907 18681 requestProcessor.cpp:541] invalid  paramter
+I0710 16:10:50.362943 18681 requestProcessor.cpp:576] add android version end
+I0710 16:10:50.362957 18681 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 16:10:50.362969 18681 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:11:31.640072 18680 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:11:31.640174 18680 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"Name":"0.0.1.666666","Domain":"oss-cn-shenzhen.aliyuncs.com","Bucket":"cloudreamversions","Description":"测试","File":[{"File_path":"test/test.py","Md5":"ddddddddddddddd"}]}
+I0710 16:11:31.640281 18680 requestProcessor.cpp:530] add liveshow version begin
+E0710 16:11:31.640336 18680 requestProcessor.cpp:541] invalid  paramter
+I0710 16:11:31.640385 18680 requestProcessor.cpp:576] add android version end
+I0710 16:11:31.640404 18680 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 16:11:31.640422 18680 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:13:00.933746 18681 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:13:00.933876 18681 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"name":"0.0.1.666666","Domain":"oss-cn-shenzhen.aliyuncs.com","Bucket":"cloudreamversions","Description":"测试","File":[{"File_path":"test/test.py","Md5":"ddddddddddddddd"}]}
+I0710 16:13:00.933909 18681 requestProcessor.cpp:530] add liveshow version begin
+E0710 16:13:00.933938 18681 requestProcessor.cpp:541] invalid  paramter
+I0710 16:13:00.933981 18681 requestProcessor.cpp:576] add android version end
+I0710 16:13:00.933998 18681 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 16:13:00.934015 18681 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:17:33.072144 18680 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:17:33.072307 18680 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"name":"0.0.1.666666","domain":"oss-cn-shenzhen.aliyuncs.com","bucket":"cloudreamversions","description":"测试","path_array":[{"file_path":"test/test.py","md5":"ddddddddddddddd"}]}
+I0710 16:17:33.072346 18680 requestProcessor.cpp:530] add liveshow version begin
+E0710 16:17:33.072381 18680 requestProcessor.cpp:541] invalid  paramter
+I0710 16:17:33.072430 18680 requestProcessor.cpp:576] add android version end
+I0710 16:17:33.072451 18680 upgradeServer.cpp:219] response buffer length : 40   data :{"ret":"1","errmsg":"invalid  paramter"}
+I0710 16:17:33.072470 18680 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:18:33.464443 18681 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:18:33.464615 18681 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1.666666","oss_domain":"oss-cn-shenzhen.aliyuncs.com","oss_bucket":"cloudreamversions","description":"测试","path_array":[{"file_path":"test/test.py","md5":"ddddddddddddddd"}]}
+I0710 16:18:33.464659 18681 requestProcessor.cpp:530] add liveshow version begin
+I0710 16:18:33.464728 18681 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1.666666' 
+I0710 16:18:33.465458 18681 DBOperator.cpp:439] SQL : insert into yzm_version_test_db.t_version_live_show     values(NULL, '0.0.1.666666', '', 'cloudreamversions','oss-cn-shenzhen.aliyuncs.com','0', '测试','2017-07-10 16:18:33.465')
+I0710 16:18:33.465914 18681 DBOperator.cpp:449] SQL : insert into yzm_version_test_db.t_md5_live_show values(NULL, '0.0.1.666666','test/test.py','ddddddddddddddd','2017-07-10 16:18:33.466')
+I0710 16:18:33.561794 18681 requestProcessor.cpp:576] add android version end
+I0710 16:18:33.561935 18681 upgradeServer.cpp:219] response buffer length : 30   data :{"ret":"0","errmsg":"success"}
+I0710 16:18:33.561991 18681 upgradeServer.cpp:220] callback end, cost 97ms
+I0710 16:18:37.481811 18680 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:18:37.482013 18680 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1.666666","oss_domain":"oss-cn-shenzhen.aliyuncs.com","oss_bucket":"cloudreamversions","description":"测试","path_array":[{"file_path":"test/test.py","md5":"ddddddddddddddd"}]}
+I0710 16:18:37.482060 18680 requestProcessor.cpp:530] add liveshow version begin
+I0710 16:18:37.482110 18680 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1.666666' 
+E0710 16:18:37.482802 18680 requestProcessor.cpp:548] liveshow version  0.0.1.666666 already exists
+I0710 16:18:37.482928 18680 requestProcessor.cpp:576] add android version end
+I0710 16:18:37.482957 18680 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 16:18:37.482978 18680 upgradeServer.cpp:220] callback end, cost 0ms
+I0710 16:49:14.287652 18681 upgradeServer.cpp:180] httpCallBack begin ...
+I0710 16:49:14.287797 18681 upgradeServer.cpp:181] uri /live_show/add_version, receive data  {"version_name":"0.0.1.666666","oss_domain":"oss-cn-shenzhen.aliyuncs.com","oss_bucket":"cloudreamversions","description":"测试","path_array":[{"file_path":"test/test.py","md5":"ddddddddddddddd"}]}
+I0710 16:49:14.287842 18681 requestProcessor.cpp:530] add liveshow version begin
+I0710 16:49:14.287895 18681 DBOperator.cpp:420] SQL : select Fversion_name from yzm_version_test_db.t_version_live_show where Fversion_name='0.0.1.666666' 
+E0710 16:49:14.288192 18681 requestProcessor.cpp:548] liveshow version  0.0.1.666666 already exists
+I0710 16:49:14.288301 18681 requestProcessor.cpp:576] add android version end
+I0710 16:49:14.288331 18681 upgradeServer.cpp:219] response buffer length : 45   data :{"ret":"2","errmsg":" version already exist"}
+I0710 16:49:14.288353 18681 upgradeServer.cpp:220] callback end, cost 0ms

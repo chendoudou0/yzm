@@ -1,0 +1,46 @@
+Log file created at: 2017/07/07 10:49:17
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0707 10:49:17.697299 15746 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:19.800568 15747 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:20.034535 15746 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:20.211539 15747 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:20.372531 15746 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:20.979533 15747 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:21.111521 15746 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:21.279527 15747 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:21.425508 15746 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 10:52:21.654490 15747 requestProcessor.cpp:214] android version  1.0.1333.1 already exists
+E0707 15:18:58.766788 15747 sqlapi.cpp:93] mysql lost
+E0707 15:18:58.766827 15747 requestProcessor.cpp:552] insert into db failed 
+E0707 15:19:06.494251 15746 sqlapi.cpp:93] mysql lost
+E0707 15:19:06.494294 15746 sqlapi.cpp:93] mysql lost
+E0707 15:19:06.494374 15746 requestProcessor.cpp:219] insert into db failed 
+E0707 18:11:22.843902 15747 sqlapi.cpp:93] mysql lost
+E0707 18:11:22.844004 15747 requestProcessor.cpp:552] insert into db failed 
+E0707 18:11:25.043843 15746 sqlapi.cpp:93] mysql lost
+E0707 18:11:25.043866 15746 requestProcessor.cpp:552] insert into db failed 
+E0707 18:11:26.121582 15747 sqlapi.cpp:93] mysql lost
+E0707 18:11:26.121639 15747 requestProcessor.cpp:552] insert into db failed 
+E0707 18:11:32.575105 15746 sqlapi.cpp:93] mysql lost
+E0707 18:11:32.575153 15746 requestProcessor.cpp:552] insert into db failed 
+E0707 18:11:33.836446 15747 sqlapi.cpp:93] mysql lost
+E0707 18:11:33.836478 15747 requestProcessor.cpp:552] insert into db failed 
+E0707 18:11:34.593741 15747 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:35.672816 15746 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:37.175822 15747 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:38.723798 15746 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:39.753783 15747 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:40.326705 15746 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:40.684731 15747 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:41.229701 15746 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:44.398723 15747 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:44.531797 15746 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:44.738616 15747 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:44.862771 15746 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:45.050618 15747 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:11:45.307695 15746 requestProcessor.cpp:547] liveshow version  0.0.1 already exists
+E0707 18:29:51.131784 15747 requestProcessor.cpp:357] parse json failed
+E0707 18:29:51.131819 15747 requestProcessor.cpp:541] invalid  paramter
+E0707 18:30:43.269070 15746 requestProcessor.cpp:357] parse json failed
+E0707 18:30:43.269110 15746 requestProcessor.cpp:541] invalid  paramter

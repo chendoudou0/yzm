@@ -1,0 +1,4 @@
+Log file created at: 2017/07/10 10:41:58
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 10:41:58.418952 17733 sqlapi.cpp:273] mysql_num_rows  is  0

@@ -1,0 +1,65 @@
+Log file created at: 2017/07/11 10:27:11
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0711 10:27:11.121470 19879 upgradeServer.cpp:91] GLOG BEGIN TO WORK
+I0711 10:27:11.121716 19879 config.cpp:110] db_para_.host_ : 192.168.1.211
+I0711 10:27:11.121767 19879 config.cpp:121] db_para_.user_ : yzm
+I0711 10:27:11.121827 19879 config.cpp:132] db_para_.pass_ : 123456
+I0711 10:27:11.121882 19879 config.cpp:143] db_para_.port_ : 3306
+I0711 10:27:11.121934 19879 config.cpp:154] db_para_.overTime_ : 2
+I0711 10:27:11.122040 19879 config.cpp:229] redis_para.ip_ : 127.0.0.1
+I0711 10:27:11.122084 19879 config.cpp:240] redis_para_.port_ : 6379
+I0711 10:27:11.122109 19879 config.cpp:251] redis_para_.overTime_ : 2
+I0711 10:27:11.122174 19879 config.cpp:274] listen_port : 2018
+I0711 10:27:11.126245 19879 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:27:11.126935 19879 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:27:11.127622 19879 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:27:11.128221 19879 sqlapi.cpp:52] connect mysql  success!!!!
+I0711 10:27:17.984071 19881 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:17.984164 19881 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:17.984202 19881 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:17.985056 19881 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:17.985122 19881 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:17.985149 19881 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:27:18.986251 19881 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:18.986327 19881 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:18.986351 19881 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:18.986973 19881 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:18.987031 19881 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:18.987053 19881 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:27:19.806856 19882 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:19.806943 19882 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:19.806970 19882 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:19.807709 19882 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:19.807776 19882 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:19.807801 19882 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:27:21.633667 19881 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:21.633771 19881 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:21.633818 19881 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:21.634555 19881 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:21.634621 19881 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:21.634814 19881 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:27:29.068951 19882 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:29.069236 19882 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:29.069363 19882 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:29.069927 19882 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:29.069986 19882 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:29.070024 19882 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:27:35.139293 19881 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:35.139467 19881 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:35.139497 19881 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:35.139885 19881 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:35.139915 19881 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:35.139947 19881 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:27:54.147723 19882 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:54.147881 19882 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:54.147917 19882 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:54.148597 19882 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:54.148658 19882 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:54.148681 19882 upgradeServer.cpp:220] callback end, cost 0ms
+I0711 10:27:57.911914 19881 upgradeServer.cpp:180] httpCallBack begin ...
+I0711 10:27:57.912077 19881 upgradeServer.cpp:181] uri /android/query, receive data  {"service_type":"2003"}
+I0711 10:27:57.912119 19881 requestProcessor.cpp:451] dealwith_android_verison_query begin
+I0711 10:27:57.912858 19881 requestProcessor.cpp:464] dealwith_android_verison_query end
+I0711 10:27:57.912935 19881 upgradeServer.cpp:219] response buffer length : 223   data :{"ret":"v","version_array":[{"file_md5":"1111","file_size":"100","file_url":"http://cloudreamversions.oss-cn-shenzhen.aliyuncs.com/1.0.1333.144/1.0.0.1/test.apk","version_description":"test","version_name":"1.0.1333.144"}]}
+I0711 10:27:57.912966 19881 upgradeServer.cpp:220] callback end, cost 0ms

@@ -1,0 +1,57 @@
+Log file created at: 2017/07/10 18:05:11
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0710 18:05:11.301475 19007 requestProcessor.cpp:558] liveshow version  0.0.1 already exists
+E0710 18:05:11.301921 19007 config.cpp:12] *** Aborted at 1499681111 (unix time) try "date -d @1499681111" if you are using GNU date ***
+E0710 18:05:11.302182 19007 config.cpp:12] PC: @           0x429208 CJsonOperator::addStringMember()
+\–
+E0710 18:05:11.302530 19007 config.cpp:12] *** SIGSEGV (@0x40) received by PID 19005 (TID 0x7fd05c0e3700) from PID 64; stack trace: ***
+
+E0710 18:05:11.303536 19007 config.cpp:12]     @     0x7fd063394330 (unknown)
+b–
+E0710 18:05:11.303710 19007 config.cpp:12]     @           0x429208 CJsonOperator::addStringMember()
+b–
+E0710 18:05:11.303839 19007 config.cpp:12]     @           0x410097 CrequestProcessor::gen_error_response()
+\–
+E0710 18:05:11.303994 19007 config.cpp:12]     @           0x417e96 CrequestProcessor::dealwith_liveshow_version_add()
+–
+E0710 18:05:11.304128 19007 config.cpp:12]     @           0x40dc45 CUpgradeServer::httpCallBack()
+eshow_version_add()
+–
+E0710 18:05:11.304286 19007 config.cpp:12]     @           0x42859e HTTPRequestHandler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.305106 19007 config.cpp:12]     @     0x7fd062cf75db (unknown)
+tHandler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.305901 19007 config.cpp:12]     @     0x7fd062d12177 (unknown)
+tHandler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.306687 19007 config.cpp:12]     @     0x7fd062d227de (unknown)
+tHandler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.307502 19007 config.cpp:12]     @     0x7fd0630b2d37 (unknown)
+tHandler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.308331 19007 config.cpp:12]     @     0x7fd0630aedb6 (unknown)
+tHandler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.309170 19007 config.cpp:12]     @     0x7fd06338c184 start_thread
+ndler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.310088 19007 config.cpp:12]     @     0x7fd0618a337d (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+–
+E0710 18:05:11.311153 19007 config.cpp:12]     @                0x0 (unknown)
+ad
+ndler_::handleRequest()
+version_add()
+–

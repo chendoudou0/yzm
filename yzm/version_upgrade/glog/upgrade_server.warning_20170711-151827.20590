@@ -1,0 +1,8 @@
+Log file created at: 2017/07/11 15:18:27
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0711 15:18:27.063890 20592 sqlapi.cpp:273] mysql_num_rows is  0
+E0711 15:18:30.447755 20592 requestProcessor.cpp:176]  set value to redis failed 
+E0711 15:18:31.243765 20593 requestProcessor.cpp:176]  set value to redis failed 
+E0711 15:18:31.401763 20592 requestProcessor.cpp:176]  set value to redis failed 
+E0711 15:18:31.566745 20593 requestProcessor.cpp:176]  set value to redis failed 

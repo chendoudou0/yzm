@@ -1,0 +1,34 @@
+Log file created at: 2017/06/30 16:02:01
+Running on machine: yzm-hj
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0630 16:02:01.784417  3574 upgradeServer.cpp:92] GLOG BEGIN TO WORK
+I0630 16:02:01.784606  3574 config.cpp:109] db_para_.host_ : 120.24.249.45
+I0630 16:02:01.784651  3574 config.cpp:120] db_para_.user_ : yzm
+I0630 16:02:01.784693  3574 config.cpp:131] db_para_.pass_ : Yzm@55*#jkl
+I0630 16:02:01.784726  3574 config.cpp:142] db_para_.port_ : 3306
+I0630 16:02:01.784761  3574 config.cpp:153] db_para_.overTime_ : 2
+I0630 16:02:01.784843  3574 config.cpp:228] redis_para.ip_ : 127.0.0.1
+I0630 16:02:01.784878  3574 config.cpp:239] redis_para_.port_ : 6379
+I0630 16:02:01.784909  3574 config.cpp:250] redis_para_.overTime_ : 2
+I0630 16:02:01.807210  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:02:01.839205  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:02:01.860193  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:02:01.881268  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:02:01.902230  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:02:01.925210  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:02:01.946197  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:02:01.972203  3574 sqlapi.cpp:52] connect mysql  success!!!!
+I0630 16:06:22.919423  3576 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 16:06:22.919497  3576 upgradeServer.cpp:149] uri /android/queryreceive data  {
+    "service_type": "2002"
+}
+I0630 16:06:22.919523  3576 requestProcessor.cpp:279] dealwith_android_verison_query begin
+I0630 16:06:26.596235  3577 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 16:06:26.596278  3577 upgradeServer.cpp:149] uri /live_show/updatereceive data  {"version_current":"0.1.0.0511", "version_to":"0.1.0.0510"}   
+I0630 16:06:26.596289  3577 requestProcessor.cpp:147] dealwith_liveShow_version_update begin
+I0630 16:06:26.596395  3577 requestProcessor.cpp:169]  get_value_from_redis fialed 
+I0630 16:07:52.092851  3583 upgradeServer.cpp:148] httpCallBack begin ...
+I0630 16:07:52.092908  3583 upgradeServer.cpp:149] uri /android/queryreceive data  {
+    "service_type": "2002"
+}
+I0630 16:07:52.092922  3583 requestProcessor.cpp:279] dealwith_android_verison_query begin
