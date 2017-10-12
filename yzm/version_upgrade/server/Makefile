@@ -10,7 +10,7 @@ OBJS  :=   IApp.o config.o upgradeServer.o requestProcessor.o   main.o \
  jsonOperator.o
 
 LIBS =  -L/usr/local/mysql/lib  -lpthread  -lPocoFoundation -lPocoNet   \
--lmysqlclient   \
+-lcurl -lmysqlclient   \
 -lhiredis   -lglog
 
 CFLAGS += -DTIXML_USE_STL -w -std=c++11 -g  

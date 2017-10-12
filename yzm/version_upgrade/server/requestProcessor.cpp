@@ -1,6 +1,5 @@
 #include"requestProcessor.h"
-#include"jsonOperator.h"  
-#include"CLogger.h" 
+#include"jsonOperator.h"   
 #include"redisOperator.h" 
 #include"dbPool.h"
 #include"DBOperator.h"
